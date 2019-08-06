@@ -1,10 +1,11 @@
-package candybar.sample.activities;
+package com.candybar.sample.activities;
 
 import android.support.annotation.NonNull;
 
+import com.candybar.sample.licenses.License;
+
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.activities.configurations.ActivityConfiguration;
-import candybar.sample.licenses.License;
 
 public class MainActivity extends CandyBarMainActivity {
 

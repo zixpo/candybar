@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto"
-    package="candybar.sample">
+    package="com.candybar.sample">
 
     <!-- If you are not using donation and premium request, you need to remove BILLING permission -->
     <uses-permission android:name="com.android.vending.BILLING" />
@@ -17,7 +17,7 @@
         android:xlargeScreens="true" />
 
     <application
-        android:name=".applications.CandyBar"
+        android:name="com.candybar.sample.applications.CandyBar"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,7 +26,7 @@
         tools:replace="android:icon">
 
         <activity
-            android:name=".activities.SplashActivity"
+            android:name="com.candybar.sample.activities.SplashActivity"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:screenOrientation="portrait"
@@ -40,7 +40,7 @@
         </activity>
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.candybar.sample.activities.MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme"
             android:configChanges="orientation|keyboardHidden|screenSize">
@@ -161,14 +161,14 @@
         </activity>
 
         <activity
-            android:name=".activities.MuzeiActivity"
+            android:name="com.candybar.sample.activities.MuzeiActivity"
             android:label="@string/muzei_settings"
             android:theme="@style/AppTheme"
             android:exported="true"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <service
-            android:name=".services.MuzeiService"
+            android:name="com.candybar.sample.services.MuzeiService"
             android:label="@string/muzei_art_source_name"
             android:description="@string/muzei_art_source_desc"
             android:icon="@drawable/ic_muzei_logo"

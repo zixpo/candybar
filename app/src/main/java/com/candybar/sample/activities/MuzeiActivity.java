@@ -1,9 +1,10 @@
-package candybar.sample.activities;
+package com.candybar.sample.activities;
 
 import android.support.annotation.NonNull;
 
+import com.candybar.sample.services.MuzeiService;
+
 import candybar.lib.activities.CandyBarMuzeiActivity;
-import candybar.sample.services.MuzeiService;
 
 public class MuzeiActivity extends CandyBarMuzeiActivity {
 
