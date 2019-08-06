@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Leave empty if you don't want to show changelog date -->
+    <string name="changelog_date">August 04, 2019</string>
+
+    <!-- Changelog support html formatting
+    * <b> for Bold
+    * <i> for Italic
+    * <u> for Underline
+    * <a href="linkUrl">Link Text</a> for links -->
+    <string-array name="changelog">
+        <item>Added Adaptive Icon Generation for Requests.</item>
+        <item>Support for Android P</item>
+        <item>Use of New JSON Format</item>
+        <item>Added Lawnchair Launcher to Apply Section</item>
+        <item>Added Turkish and Traditional Chinese Languages</item>
+        <item>Support for OneSignal Notifications</item>
+        <item>
+            <![CDATA[
+            Support for <a href="https://github.com/javiersantos/AppUpdater">AppUpdater</a>.
+            ]]>
+        </item>
+        <item>Option to Edit Links of "Rate and Review" and "Share". Now You can Even Remove Them.</item>
+        <item>
+            <![CDATA[
+            <b>Hope</b> <i>You</i> <u>Like</u> <a href="https://github.com/zipox/candybar">It</a>.
+            ]]>
+        </item>
+    </string-array>
+
+</resources>

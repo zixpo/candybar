@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.CompileSdk
+    buildToolsVersion rootProject.ext.BuildTools
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.MinSdk
+        targetSdkVersion rootProject.ext.TargetSdk
+        versionCode 40
+        versionName "1.9.5"
+        vectorDrawables.useSupportLibrary = true
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:3.3.2'
+    testImplementation 'com.squareup.assertj:assertj-android:1.1.1'
+    
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.SupportLibrary"
+}

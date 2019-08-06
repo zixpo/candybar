@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <version>1</version>
+
+    <category title="Newly Added" />
+    <item drawable="accubattery" />
+    <item drawable="backup" />
+    <item drawable="classroom" />
+    <item drawable="kore" />
+
+    <category title="Apps" />
+    <item drawable="accubattery" />
+    <item drawable="adaway" />
+    <item drawable="airbrush" />
+    <item drawable="kore" />
+    <item drawable="kwgt" />
+    <item drawable="mini_metro" />
+    <item drawable="overdrop" />
+    <item drawable="slack" />
+    <item drawable="smart_launcher" />
+    <item drawable="spotify" />
+
+    <category title="Google" />
+    <item drawable="classroom" />
+    <item drawable="drive" />
+    <item drawable="gmail" />
+    <item drawable="google" />
+    <item drawable="maps" />
+    <item drawable="tasks" />
+    <item drawable="youtube_music" />
+
+    <category title="System" />
+    <item drawable="backup" />
+    <item drawable="calculator" />
+    <item drawable="contacts" />
+    <item drawable="downloads" />
+    <item drawable="gallery" />
+    <item drawable="messaging" />
+    <item drawable="phone" />
+
+</resources>

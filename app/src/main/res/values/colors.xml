@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#1A73E9</color>
+    <color name="colorPrimaryDark">@color/colorPrimary</color>
+    <color name="colorAccent">#6E3AFF</color>
+
+    <color name="darkColorPrimary">#222222</color>
+    <color name="darkColorPrimaryDark">@color/darkColorPrimary</color>
+    <color name="darkColorAccent">@color/colorAccent</color>
+
+    <!-- Shortcut Icon -->
+    <color name="shortcutIconBackground">#1A73E9</color>
+    <color name="shortcutIconForeground">#FFF</color>
+
+    <!-- Navigation Bar
+    * Must be solid color, no alpha -->
+    <color name="navigationBar">#33000000</color>
+    <color name="navigationBarDark">@color/darkColorPrimary</color>
+
+    <!-- Splash Screen -->
+    <color name="splashColor">#FFFFFF</color>
+
+    <!-- Navigation View -->
+    <color name="navigationViewTitle">#FFFFFF</color>
+    <color name="navigationViewTitleBack">#33000000</color>
+
+    <color name="navigationViewText">#484848</color>
+    <color name="navigationViewTextDark">#FFFFFF</color>
+    <color name="navigationViewTextSelected">#1A73E9</color>
+    <color name="navigationViewTextSelectedDark">@color/navigationViewTextSelected</color>
+    <color name="navigationViewSelectedBackground">#2A1A73E9</color>
+    <color name="navigationViewSelectedBackgroundDark">@color/navigationViewSelectedBackground
+    </color>
+
+    <!-- Swipe Refresh -->
+    <color name="swipeRefresh">@color/colorAccent</color>
+
+    <!-- Toolbar -->
+    <color name="toolbarIcon">#FFF</color>
+    <color name="toolbarIconDark">#FFFFFFFF</color>
+
+    <!-- Tab -->
+    <color name="tabIndicator">#FFF</color>
+    <color name="tabIndicatorDark">@color/colorAccent</color>
+    <color name="tabText">#32FFFFFF</color>
+    <color name="tabTextDark">@color/tabText</color>
+    <color name="tabTextSelected">#FFF</color>
+    <color name="tabTextSelectedDark">@color/colorAccent</color>
+
+    <!-- Card -->
+    <color name="cardBackground">#FFFFFF</color>
+    <color name="cardBackgroundDark">#2C2C2C</color>
+
+    <!-- Ripple -->
+    <color name="rippleColor">@color/navigationViewTextSelected</color>
+    <color name="rippleColorDark">@color/rippleColor</color>
+    <color name="rippleAccent">@color/colorAccent</color>
+    <color name="rippleAccentDark">@color/rippleAccent</color>
+
+    <!-- Attributes -->
+    <color name="mainBackground">#FFFFFF</color>
+    <color name="mainBackgroundDark">#222222</color>
+    <color name="primaryText">#484848</color>
+    <color name="primaryTextDark">#FFFFFF</color>
+    <color name="secondaryText">#777777</color>
+    <color name="secondaryTextDark">#ABABAB</color>
+
+    <color name="dividerList">@color/cardBackground</color>
+    <color name="dividerListDark">@color/cardBackgroundDark</color>
+
+    <!-- Wallpaper Preview -->
+    <color name="wallpaperStatusBar">@color/wallpaperToolbar</color>
+    <color name="wallpaperToolbar">#66000000</color>
+
+</resources>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="launcher_names">
+        <item>Action Launcher</item>
+        <item>ADW Launcher</item>
+        <item>Apex Launcher</item>
+        <item>ZenUI Launcher</item>
+        <item>Atom Launcher</item>
+        <item>Aviate Launcher</item>
+        <item>CM Theme Engine</item>
+        <item>GO Launcher EX</item>
+        <item>Holo Launcher</item>
+        <item>Holo Launcher HD</item>
+        <item>Lawnchair</item>
+        <item>LG Home</item>
+        <item>Lucid Launcher</item>
+        <item>M Launcher</item>
+        <item>Mini Launcher</item>
+        <item>Next Launcher</item>
+        <item>Nougat Launcher</item>
+        <item>Nova Launcher</item>
+        <item>Smart Launcher</item>
+        <item>Solo Launcher</item>
+        <item>Zero Launcher</item>
+        <item>V Launcher</item>
+        <item>ABC Launcher</item>
+        <item>Evie Launcher</item>
+    </string-array>
+
+    <array name="launcher_icons">
+        <item>@drawable/ic_launcher_action</item>
+        <item>@drawable/ic_launcher_adw</item>
+        <item>@drawable/ic_launcher_apex</item>
+        <item>@drawable/ic_launcher_zenui</item>
+        <item>@drawable/ic_launcher_atom</item>
+        <item>@drawable/ic_launcher_aviate</item>
+        <item>@drawable/ic_launcher_cm</item>
+        <item>@drawable/ic_launcher_go</item>
+        <item>@drawable/ic_launcher_holo</item>
+        <item>@drawable/ic_launcher_holohd</item>
+        <item>@drawable/ic_launcher_lawnchair</item>
+        <item>@drawable/ic_launcher_lg</item>
+        <item>@drawable/ic_launcher_lucid</item>
+        <item>@drawable/ic_launcher_m</item>
+        <item>@drawable/ic_launcher_mini</item>
+        <item>@drawable/ic_launcher_next</item>
+        <item>@drawable/ic_launcher_nougat</item>
+        <item>@drawable/ic_launcher_nova</item>
+        <item>@drawable/ic_launcher_smart</item>
+        <item>@drawable/ic_launcher_solo</item>
+        <item>@drawable/ic_launcher_zero</item>
+        <item>@drawable/ic_launcher_v</item>
+        <item>@drawable/ic_launcher_abc</item>
+        <item>@drawable/ic_launcher_evie</item>
+    </array>
+
+    <!-- Launcher Packages -->
+    <string-array name="launcher_packages_1">
+        <item>com.actionlauncher.playstore</item>        <!-- 0 -->
+        <item>org.adw.launcher</item>                    <!-- 1 -->
+        <item>com.anddoes.launcher</item>                <!-- 2 -->
+        <item>com.asus.launcher</item>                  <!-- 3 -->
+        <item>com.dlto.atom.launcher</item>                <!-- 4 -->
+        <item>com.tul.aviate</item>                        <!-- 5 -->
+        <item>org.cyanogenmod.theme.chooser</item>      <!-- 6 -->
+        <item>com.gau.go.launcherex</item>                <!-- 7 -->
+        <item>com.mobint.hololauncher</item>            <!-- 8 -->
+        <item>com.mobint.hololauncher.hd</item>            <!-- 9 -->
+        <item>ch.deletescape.lawnchair.ci</item>        <!-- 10 -->
+        <item>com.lge.launcher2</item>                  <!-- 11 -->
+        <item>com.powerpoint45.launcher</item>          <!-- 12 -->
+        <item>com.uprui.launcher.marshmallow</item>        <!-- 13 -->
+        <item>com.jiubang.go.mini.launcher</item>        <!-- 14 -->
+        <item>com.gtp.nextlauncher</item>                <!-- 15 -->
+        <item>me.craftsapp.nlauncher</item>             <!-- 16 -->
+        <item>com.teslacoilsw.launcher</item>            <!-- 17 -->
+        <item>ginlemon.flowerfree</item>                <!-- 18 -->
+        <item>home.solo.launcher.free</item>            <!-- 19 -->
+        <item>com.zeroteam.zerolauncher</item>          <!-- 20 -->
+        <item>com.vivid.launcher</item>                 <!-- 21 -->
+        <item>com.abclauncher.launcher</item>           <!-- 22 -->
+        <item>is.shortcut</item>                        <!-- 23 -->
+    </string-array>
+
+    <string-array name="launcher_packages_2">
+        <item>com.chrislacy.actionlauncher.pro</item>    <!-- 0 -->
+        <item>org.adwfreak.launcher</item>                <!-- 1 -->
+        <item>com.anddoes.launcher.pro</item>            <!-- 2 -->
+        <item>none</item>                                <!-- 3 -->
+        <item>none</item>                                <!-- 4 -->
+        <item>none</item>                                <!-- 5 -->
+        <item>none</item>                                <!-- 6 -->
+        <item>none</item>                                <!-- 7 -->
+        <item>none</item>                                <!-- 8 -->
+        <item>none</item>                                <!-- 9 -->
+        <item>ch.deletescape.lawnchair.plah</item>      <!-- 10 -->
+        <item>com.lge.launcher3</item>                  <!-- 11 -->
+        <item>none</item>                                <!-- 12 -->
+        <item>none</item>                                <!-- 13 -->
+        <item>none</item>                                <!-- 14 -->
+        <item>com.gtp.nextlauncher.trial</item>            <!-- 15 -->
+        <item>none</item>                                <!-- 16 -->
+        <item>com.teslacoilsw.launcher.prime</item>        <!-- 17 -->
+        <item>ginlemon.flowerpro</item>                    <!-- 18 -->
+        <item>none</item>                                <!-- 19 -->
+        <item>none</item>                                <!-- 20 -->
+        <item>none</item>                               <!-- 21 -->
+        <item>none</item>                               <!-- 22 -->
+        <item>none</item>                               <!-- 23 -->
+    </string-array>
+
+    <string-array name="launcher_packages_3">
+        <item>none</item>                                <!-- 0 -->
+        <item>none</item>                                <!-- 1 -->
+        <item>none</item>                                <!-- 2 -->
+        <item>none</item>                                <!-- 3 -->
+        <item>none</item>                                <!-- 4 -->
+        <item>none</item>                                <!-- 5 -->
+        <item>none</item>                                <!-- 6 -->
+        <item>none</item>                                <!-- 7 -->
+        <item>none</item>                                <!-- 8 -->
+        <item>none</item>                                <!-- 9 -->
+        <item>ch.deletescape.lawnchair</item>            <!-- 10 -->
+        <item>none</item>                                <!-- 11 -->
+        <item>none</item>                                <!-- 12 -->
+        <item>none</item>                                <!-- 13 -->
+        <item>none</item>                                <!-- 14 -->
+        <item>none</item>                                <!-- 15 -->
+        <item>none</item>                                <!-- 16 -->
+        <item>none</item>                                <!-- 17 -->
+        <item>ginlemon.flowerpro.special</item>            <!-- 18 -->
+        <item>none</item>                                <!-- 19 -->
+        <item>none</item>                                <!-- 20 -->
+        <item>note</item>                               <!-- 21 -->
+        <item>none</item>                               <!-- 22 -->
+        <item>none</item>                               <!-- 23 -->
+    </string-array>
+
+</resources>

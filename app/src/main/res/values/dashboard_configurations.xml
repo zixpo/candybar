@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- ======================================================================================= -->
+    <!-- ============================== DASHBOARD CONFIGURATIONS =============================== -->
+    <!-- ======================================================================================= -->
+
+    <!-- CONFIG: DEFAULT THEME -->
+
+    <!-- Use dark theme as default theme -->
+    <bool name="use_dark_theme">false</bool>
+
+    <!-- CONFIG: MUZEI -->
+
+    <!-- Muzei art source name -->
+    <string name="muzei_art_source_name">Your Art Source Name</string>
+
+    <!-- Muzei art source description -->
+    <string name="muzei_art_source_desc">Your Art Source Description</string>
+
+    <!-- Muzei base color -->
+    <color name="muzei_color">#0082B4</color>
+
+    <!-- CONFIG: HOME -->
+
+    <!-- Home title must be defined -->
+    <string name="home_title">CandyBar</string>
+
+    <!-- Home image
+    * If you want to use image from url, just put the url here
+    * If you want to use image stored in project (drawable folder)
+    * just put image name here without the extension (ex: home_image.png -> home_image)
+    *
+    * If you want to use solid color, you can put hex color code here
+    * ex: <string name="navigation_view_header">#000000</string> -->
+    <string name="home_image">home_image</string>
+
+    <!-- Home image style
+    * Available choices:
+    * card_square
+    * card_landscape
+    * landscape
+    * square
+    -->
+    <string name="home_image_style">card_landscape</string>
+
+    <!-- Home description
+    - If you don't want to show description, just leave this empty -->
+    <string name="home_description">
+        <![CDATA[
+        CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>Many Features</i>. Again in <u>Development</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
+        ]]>
+    </string>
+
+    <!-- More apps at Google Play Store
+    * Link to google play store developer
+    * If you don't want to show this part, just leave this empty -->
+    <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
+
+    <!-- CONFIG: NAVIGATION VIEW HEADER -->
+
+    <!-- Navigation view header image
+    * If you want to use image from url, just put the url here
+    * If you want to use image stored in project (drawable folder)
+    * just put image name here without the extension
+    * (ex: navigation_view_header.png -> navigation_view_header)
+    *
+    * If you want to use solid color, you can put hex color code here
+    * ex: <string name="navigation_view_header">#000000</string> -->
+    <string name="navigation_view_header">nav_head</string>
+
+    <!-- Navigation view header text
+    * Leave empty if you don't want to show any text -->
+    <string name="navigation_view_header_title">CandyBar</string>
+
+    <!-- CONFIG: APPLY -->
+    <!-- Enable or disable apply section -->
+    <bool name="enable_apply">true</bool>
+
+    <!-- CONFIG: ICONS -->
+
+    <!-- Sort
+    * Enable or disable icons sort
+    * Disabling this will improve icons section performance, icons will load faster
+    * You can use CandyBar drawable.xml builder to sort icons
+    * Enable -> true
+    * Disable -> false -->
+    <bool name="enable_icons_sort">true</bool>
+
+    <!-- Icon picker icon name text below icon
+    * default: true
+    * Change to false to disable it -->
+    <bool name="show_icon_name">true</bool>
+
+    <!-- Icons section will read icons from drawable.xml same as Nova Launcher
+    * Put drawable.xml inside xml folder -->
+
+    <!-- CONFIG: ICON REQUEST -->
+
+    <!-- Enable or disable regular icon request
+    * default: true
+    * change to false to disable it -->
+    <bool name="enable_icon_request">true</bool>
+
+    <!-- Enable regular icon request limit
+    * default: false
+    * change to true to enable it -->
+    <bool name="enable_icon_request_limit">false</bool>
+
+    <!-- Limit regular icon request
+    * IGNORE if icon request limit is disabled
+    * ex: If you set icon request limit to 10, user only able to make 10 icon request in all time
+    * After making 10 icon request user not able to request again -->
+    <integer name="icon_request_limit">10</integer>
+
+    <!-- Reset regular icon request limit every update
+    * IGNORE if icon request limit is disabled
+    * ex: You want to make user only able to make 10 request, set icon request limit (above) to 10
+    * but you also want user able to make 10 request again after update, then enable this option
+    * default: false
+    * change to true to enable it -->
+    <bool name="reset_icon_request_limit">true</bool>
+
+    <!-- Enable or disable premium request
+    * default: false
+    * change to true to enable it -->
+    <bool name="enable_premium_request">true</bool>
+
+    <!-- Take a look inside License.java for premium request product -->
+
+    <!-- Email that will be used to send icon request and report bugs -->
+    <string name="dev_email">sarsamurmu05@gmail.com</string>
+
+    <!-- CONFIG: CLOUD WALLPAPERS -->
+
+    <!-- Wallpaper json link
+    * If your icon pack doesn't contains any wallpaper, just leave this empty
+    * <string name="wallpaper_json"></string>
+    *
+    * If you want to separate wallpaper app from icon pack and keep wallpapers section shown in navigation drawer,
+    * but instead open wallpapers section pressing it will open your wallpaper app
+    * just put your wallpaper app package name here
+    * example: com.dm.wallpaper.board.demo
+    * <string name="wallpaper_json">com.dm.wallpaper.board.demo</string> -->
+    <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/wallpapers.json</string>
+
+    <!-- Allow to download wallpaper
+    * If disabled user only able to apply wallpaper from dashboard -->
+    <bool name="enable_wallpaper_download">true</bool>
+
+    <!-- Auto generated color for wallpaper card
+    * default: true
+    * change to false to disable it -->
+    <bool name="card_wallpaper_auto_generated_color">true</bool>
+
+    <!-- Wallpaper name and author below wallpaper
+    * Show or hide name and author below wallpaper
+    * Show -> true
+    * Hide -> false -->
+    <bool name="wallpaper_show_name_author">true</bool>
+
+    <!-- Wallpapers grid preview style
+    * Available choices:
+    * square
+    * landscape
+    * portrait
+    -->
+    <string name="wallpaper_grid_preview_style">square</string>
+
+    <!-- CONFIG: ABOUT -->
+
+    <!-- About header image
+    * If you want to use image from url, just put the url here
+    * If you want to use image stored in project (drawable folder)
+    * just put image name here without the extension (ex: about_image.png -> about_image)
+    *
+    * If you want to use solid color, you can put hex color code here
+    * ex: <string name="navigation_view_header">#000000</string> -->
+    <string name="about_image">https://drive.google.com/uc?id=0B0f4ypHfNKm5VHVjbXZNSS1TUUU</string>
+
+    <!-- About profile image
+    * If you want to use image from url, just put the url here
+    * If you want to use image stored in project (drawable folder)
+    * just put image name here without the extension (ex: about_profile_image.png -> about_profile_image) -->
+    <string name="about_profile_image">https://avatars2.githubusercontent.com/u/44255990?s=460</string>
+
+    <!-- About title above description -->
+    <string name="about_title">CandyBar \nMaterial Dashboard</string>
+
+    <!-- About description below title -->
+    <string name="about_desc">
+        <![CDATA[
+        CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>Many Features</i>. Again in <u>Development</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
+        ]]>
+    </string>
+
+    <!-- Social link inside about
+    * Supported link:
+    * Email, Behance, Dribbble, Facebook, Github, Google+, Instagram, Pinterest, Twitter
+    * The link will be marked as regular website if doesn't listed above
+    *
+    * If you don't want to show social link, just set about_social_links to empty
+    * ex:
+    * <string-array name="about_social_links"></string-array>-->
+    <string-array name="about_social_links">
+        <item>https://www.instagram.com/_u/yourusername</item>
+        <item>https://twitter.com/</item>
+        <item>https://www.behance.net/</item>
+        <item>https://plus.google.com/u/1/+yourusername</item>
+        <item>http://github.com/yourusername</item>
+        <item>http://www.yourwebsite.com</item>
+        <item>your@email.com</item>
+    </string-array>
+
+    <!-- Contributors dialog
+    * Take a look inside res/xml/contributors.xml to add contributors -->
+    <bool name="show_contributors_dialog">false</bool>
+
+    <!-- CONFIG: DONATE -->
+
+    <!-- DONATION
+    * Show support development option in navigation view
+    * default: true
+    * change to false to disable it -->
+    <bool name="enable_donation">true</bool>
+
+    <!-- Take a look inside License.java for donation product -->
+
+</resources>

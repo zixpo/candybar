@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <version>1</version>
+
+    <category title="Newly Added" />
+    <item drawable="email" />
+    <item drawable="app_camera" />
+    <item drawable="keyboard" />
+
+    <category title="Apps" />
+    <item drawable="email" />
+    <item drawable="app_camera" />
+    <item drawable="keyboard" />
+    <item drawable="email" />
+    <item drawable="app_camera" />
+    <item drawable="keyboard" />
+
+    <category title="Games" />
+    <item drawable="email" />
+    <item drawable="app_camera" />
+    <item drawable="keyboard" />
+    <item drawable="email" />
+    <item drawable="app_camera" />
+    <item drawable="keyboard" />
+    <item drawable="email" />
+    <item drawable="app_camera" />
+    <item drawable="keyboard" />
+</resources>
