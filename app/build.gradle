@@ -13,81 +13,70 @@ apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: 'com.android.application'
 
 repositories {
-  maven { url 'https://maven.google.com' }
+    maven { url 'https://maven.google.com' }
 }
 
 android {
 
-  signingConfigs {
-    release {
-      keyAlias 'key0'
-      keyPassword 'candybar'
-      storeFile file('candybar.jks')
-      storePassword 'candybar'
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword 'candybar'
+            storeFile file('candybar.jks')
+            storePassword 'candybar'
+        }
     }
-  }
 
-  compileSdkVersion rootProject.ext.CompileSdk
-  buildToolsVersion rootProject.ext.BuildTools
+    compileSdkVersion rootProject.ext.CompileSdk
+    buildToolsVersion rootProject.ext.BuildTools
 
-  android.applicationVariants.all { variant ->
-    variant.outputs.all { output ->
-      def appName = parent.name
-      def fileName = appName.replace(" ", "_")
-      outputFileName = "$fileName-v${variant.versionName}.apk"
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def appName = parent.name
+            def fileName = appName.replace(" ", "_")
+            outputFileName = "$fileName-v${variant.versionName}.apk"
+        }
     }
-  }
 
-  defaultConfig {
-    applicationId "candybar.sample"
-    minSdkVersion rootProject.ext.MinSdk
-    targetSdkVersion rootProject.ext.TargetSdk
-    versionCode 1
-    versionName "1.0"
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    defaultConfig {
+        applicationId "candybar.sample"
+        minSdkVersion rootProject.ext.MinSdk
+        targetSdkVersion rootProject.ext.TargetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-    // Remove '/*' and '*/' below to enable OneSignal
-    /*
-    manifestPlaceholders = [
-      onesignal_app_id: 'ONESIGNAL APP ID',
-                      // ^^^^^ Put Your App ID There
-      onesignal_google_project_number: 'REMOTE'
-    ]
-    */
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled true
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        // Remove '/*' and '*/' below to enable OneSignal
+        /*
+        manifestPlaceholders = [
+          onesignal_app_id: 'ONESIGNAL APP ID',
+                          // ^^^^^ Put Your App ID There
+          onesignal_google_project_number: 'REMOTE'
+        ]
+        */
     }
-  }
 
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-  api fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
-  /*
-   * CandyBar Material Dashboard Library
-   *
-   * How to update?
-   * 1. See latest version at GitHub, https://github.com/danimahardhika/candybar-library/releases
-   * 2. Change candybar dependency matching latest version
-   * 3. com.github.danimahardhika.candybar-library:core:$versionNumber
-   * 4. Sync Project with Gradle Files
-   * 5. Clean project
-   * 6. Done
-   */
-  implementation project (':library')
-  implementation "com.android.support:support-annotations:$rootProject.ext.SupportLibrary"
-  implementation "com.android.support:appcompat-v7:$rootProject.ext.SupportLibrary"
-  implementation 'com.google.android.apps.muzei:muzei-api:2.0'
+    implementation project (':library')
+    implementation "com.android.support:support-annotations:$rootProject.ext.SupportLibrary"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.SupportLibrary"
+    implementation 'com.google.android.apps.muzei:muzei-api:2.0'
 
-  // Remove '//' below to Enable OneSignal
-  //implementation 'com.onesignal:OneSignal:3.9.1'
+    // Remove '//' below to Enable OneSignal
+    //implementation 'com.onesignal:OneSignal:3.9.1'
 }
