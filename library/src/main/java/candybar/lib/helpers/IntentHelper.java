@@ -1,7 +1,8 @@
 package candybar.lib.helpers;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 /*
  * CandyBar - Material Dashboard

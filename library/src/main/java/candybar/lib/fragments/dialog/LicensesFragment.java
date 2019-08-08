@@ -4,23 +4,24 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.dm.material.dashboard.candybar.R;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import candybar.lib.R;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.TypefaceHelper;
 
@@ -76,6 +77,7 @@ public class LicensesFragment extends DialogFragment {
                 TypefaceHelper.getMedium(getActivity()),
                 TypefaceHelper.getRegular(getActivity()));
         builder.title(R.string.about_open_source_licenses);
+        builder.negativeText(R.string.close);
         MaterialDialog dialog = builder.build();
         dialog.show();
 

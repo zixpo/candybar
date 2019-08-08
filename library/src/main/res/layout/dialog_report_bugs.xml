@@ -17,7 +17,7 @@
         android:text="@string/report_bugs_desc"
         fontPath="fonts/Font-Regular.ttf" />
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -32,6 +32,6 @@
             android:textColor="?android:attr/textColorPrimary"
             fontPath="fonts/Font-Regular.ttf" />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

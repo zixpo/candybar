@@ -3,15 +3,16 @@ package candybar.lib.activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.FileHelper;
-import com.dm.material.dashboard.candybar.R;
 
 import java.io.File;
 
+import candybar.lib.R;
 import candybar.lib.helpers.DeviceHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.ReportBugsHelper;

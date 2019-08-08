@@ -10,16 +10,17 @@ import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.webkit.URLUtil;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.danimahardhika.android.helpers.core.WindowHelper;
-import com.dm.material.dashboard.candybar.R;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 
 import java.io.File;
 
+import candybar.lib.R;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 

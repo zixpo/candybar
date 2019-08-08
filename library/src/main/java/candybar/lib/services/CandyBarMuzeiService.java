@@ -3,13 +3,14 @@ package candybar.lib.services;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.webkit.URLUtil;
 
-import com.dm.material.dashboard.candybar.R;
+import androidx.annotation.Nullable;
+
 import com.google.android.apps.muzei.api.Artwork;
 import com.google.android.apps.muzei.api.RemoteMuzeiArtSource;
 
+import candybar.lib.R;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.MuzeiHelper;
 import candybar.lib.items.Wallpaper;

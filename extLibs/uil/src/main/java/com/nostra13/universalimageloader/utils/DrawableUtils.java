@@ -2,7 +2,8 @@ package com.nostra13.universalimageloader.utils;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.AppCompatDrawableManager;
+
+import androidx.appcompat.widget.AppCompatDrawableManager;
 
 public class DrawableUtils {
 

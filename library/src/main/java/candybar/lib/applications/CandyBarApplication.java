@@ -2,12 +2,12 @@ package candybar.lib.applications;
 
 import android.app.Application;
 import android.content.Intent;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.dm.material.dashboard.candybar.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.text.SimpleDateFormat;
@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import candybar.lib.R;
 import candybar.lib.activities.CandyBarCrashReport;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.LocaleHelper;

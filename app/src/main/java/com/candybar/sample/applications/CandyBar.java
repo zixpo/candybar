@@ -1,6 +1,6 @@
 package com.candybar.sample.applications;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import candybar.lib.applications.CandyBarApplication;
 

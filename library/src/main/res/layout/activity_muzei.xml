@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -25,7 +25,7 @@
             android:textSize="@dimen/text_toolbar_title"
             android:textColor="?attr/toolbar_icon"
             fontPath="fonts/Font-Medium.ttf" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                     fontPath="fonts/Font-Regular.ttf" />
             </LinearLayout>
 
-            <android.support.v7.widget.AppCompatCheckBox
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/wifi_only"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

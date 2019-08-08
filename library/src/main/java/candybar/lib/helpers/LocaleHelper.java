@@ -7,17 +7,18 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.LocaleList;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.dm.material.dashboard.candybar.R;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import candybar.lib.R;
 import candybar.lib.items.Language;
 import candybar.lib.preferences.Preferences;
 

@@ -1,6 +1,6 @@
 package candybar.lib.activities.callbacks;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Author: Dani Mahardhika

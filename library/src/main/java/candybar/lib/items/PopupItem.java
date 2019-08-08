@@ -2,14 +2,14 @@ package candybar.lib.items;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
 
-import com.dm.material.dashboard.candybar.R;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import candybar.lib.R;
 import candybar.lib.preferences.Preferences;
 
 /*

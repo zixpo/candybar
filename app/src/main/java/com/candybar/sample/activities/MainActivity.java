@@ -1,6 +1,6 @@
 package com.candybar.sample.activities;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.candybar.sample.licenses.License;
 

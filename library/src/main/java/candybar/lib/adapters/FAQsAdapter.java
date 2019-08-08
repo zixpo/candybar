@@ -1,19 +1,19 @@
 package candybar.lib.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dm.material.dashboard.candybar.R;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import candybar.lib.R;
 import candybar.lib.items.FAQs;
 import candybar.lib.preferences.Preferences;
 

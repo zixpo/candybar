@@ -4,18 +4,19 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Point;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v7.view.ContextThemeWrapper;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.WindowHelper;
-import com.dm.material.dashboard.candybar.R;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.Locale;
 
+import candybar.lib.R;
 import candybar.lib.items.Home;
 
 /*

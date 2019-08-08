@@ -1,6 +1,6 @@
 package candybar.lib.applications;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Author: Dani Mahardhika

@@ -19,10 +19,11 @@ package com.kogitune.activitytransition.fragment;
 
 import android.animation.TimeInterpolator;
 import android.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+
+import androidx.fragment.app.FragmentManager;
 
 import com.kogitune.activitytransition.core.MoveData;
 import com.kogitune.activitytransition.core.TransitionAnimation;
@@ -30,7 +31,7 @@ import com.kogitune.activitytransition.core.TransitionAnimation;
 public class ExitFragmentTransition {
     private final MoveData moveData;
     private Fragment fragment;
-    private android.support.v4.app.Fragment supportFragment;
+    private androidx.fragment.app.Fragment supportFragment;
     private TimeInterpolator interpolator;
 
 
@@ -39,7 +40,7 @@ public class ExitFragmentTransition {
         this.moveData = moveData;
     }
 
-    public ExitFragmentTransition(final android.support.v4.app.Fragment fragment, MoveData moveData) {
+    public ExitFragmentTransition(final androidx.fragment.app.Fragment fragment, MoveData moveData) {
         this.supportFragment = fragment;
         this.moveData = moveData;
     }

@@ -48,7 +48,7 @@
     <dimen name="md_action_corner_radius">6dp</dimen>
 
     <!-- Splash Screen -->
-    <dimen name="splash_screen_logo">96dp</dimen>
+    <dimen name="splash_screen_logo">120dp</dimen>
     <dimen name="splash_screen_text">14sp</dimen>
 
     <!-- Progress Bar -->

@@ -7,13 +7,13 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.dm.material.dashboard.candybar.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
@@ -31,7 +32,7 @@ import candybar.lib.items.Icon;
 import candybar.lib.utils.AlphanumComparator;
 import candybar.lib.utils.ImageConfig;
 
-import static candybar.lib.helpers.DrawableHelper.getMergedIcon;
+import static candybar.lib.helpers.DrawableHelper.getRightIcon;
 import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
 import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
 
@@ -191,17 +192,18 @@ public class IconsHelper {
         String fileName = name.toLowerCase().replaceAll(" ", "_") + ".png";
         File file = new File(directory, fileName);
         try {
-            Bitmap bitmap = getMergedIcon(drawable);
+            Bitmap bitmap = getRightIcon(drawable);
 
             if (files.contains(file.toString())) {
                 fileName = fileName.replace(".png", "_" + System.currentTimeMillis() + ".png");
                 file = new File(directory, fileName);
 
-                LogUtil.e("duplicate file name, renamed: " + fileName);
+                LogUtil.e("Duplicate File name, Renamed: " + fileName);
             }
 
             FileOutputStream outStream = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 50, outStream);
+            bitmap = Bitmap.createScaledBitmap(bitmap, 192, 192, false);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             outStream.flush();
             outStream.close();
             return directory.toString() + "/" + fileName;

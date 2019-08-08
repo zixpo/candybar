@@ -1,14 +1,15 @@
 package candybar.lib.helpers;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.license.LicenseCallback;
 import com.danimahardhika.android.helpers.license.LicenseHelper;
-import com.dm.material.dashboard.candybar.R;
 
+import candybar.lib.R;
 import candybar.lib.fragments.dialog.ChangelogFragment;
 import candybar.lib.preferences.Preferences;
 

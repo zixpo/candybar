@@ -2,13 +2,13 @@ package candybar.lib.helpers;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Patterns;
 import android.webkit.URLUtil;
 
-import com.dm.material.dashboard.candybar.R;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
+import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 
 import static com.danimahardhika.android.helpers.core.DrawableHelper.getTintedDrawable;
@@ -47,8 +47,6 @@ public class UrlHelper {
                 return getTintedDrawable(context, R.drawable.ic_toolbar_facebook, color);
             case GITHUB:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_github, color);
-            case GOOGLE_PLUS:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_google_plus, color);
             case INSTAGRAM:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_instagram, color);
             case PINTEREST:
@@ -77,8 +75,6 @@ public class UrlHelper {
             return Type.FACEBOOK;
         } else if (url.contains("github.")) {
             return Type.GITHUB;
-        } else if (url.contains("plus.google.")) {
-            return Type.GOOGLE_PLUS;
         } else if (url.contains("instagram.")) {
             return Type.INSTAGRAM;
         } else if (url.contains("pinterest.")) {
@@ -96,7 +92,6 @@ public class UrlHelper {
         DRIBBBLE,
         FACEBOOK,
         GITHUB,
-        GOOGLE_PLUS,
         INSTAGRAM,
         PINTEREST,
         TWITTER,

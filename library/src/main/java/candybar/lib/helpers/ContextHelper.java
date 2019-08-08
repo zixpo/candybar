@@ -1,9 +1,10 @@
 package candybar.lib.helpers;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.view.ContextThemeWrapper;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.view.ContextThemeWrapper;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 

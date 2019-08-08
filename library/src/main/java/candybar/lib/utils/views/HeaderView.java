@@ -2,10 +2,11 @@ package candybar.lib.utils.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
-import com.dm.material.dashboard.candybar.R;
+import androidx.appcompat.widget.AppCompatImageView;
+
+import candybar.lib.R;
 
 /*
  * CandyBar - Material Dashboard

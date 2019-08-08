@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.dm.material.dashboard.candybar.R;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -13,6 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import candybar.lib.R;
 import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Wallpaper;

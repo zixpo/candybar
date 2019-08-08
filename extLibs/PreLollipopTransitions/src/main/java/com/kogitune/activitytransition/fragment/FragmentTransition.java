@@ -31,14 +31,14 @@ public class FragmentTransition {
     private static TimeInterpolator interpolator;
     private int duration = 1000;
     private View toView;
-    private android.support.v4.app.Fragment supportFragment;
+    private androidx.fragment.app.Fragment supportFragment;
     private Fragment fragment;
 
     private FragmentTransition(Fragment fragment) {
         this.fragment = fragment;
     }
 
-    private FragmentTransition(android.support.v4.app.Fragment fragment) {
+    private FragmentTransition(androidx.fragment.app.Fragment fragment) {
         this.supportFragment = fragment;
     }
 
@@ -46,7 +46,7 @@ public class FragmentTransition {
         return new FragmentTransition(fragment);
     }
 
-    public static FragmentTransition with(android.support.v4.app.Fragment fragment) {
+    public static FragmentTransition with(androidx.fragment.app.Fragment fragment) {
         return new FragmentTransition(fragment);
     }
 

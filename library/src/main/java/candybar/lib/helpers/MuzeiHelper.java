@@ -1,11 +1,11 @@
 package candybar.lib.helpers;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.dm.material.dashboard.candybar.R;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.Random;
 
+import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.items.Wallpaper;

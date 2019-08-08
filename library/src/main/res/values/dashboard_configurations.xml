@@ -7,11 +7,14 @@
 
     <!-- New -->
     <!-- Link Used to Rate and Review Your App. Set Blank to Disable -->
-    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=candybar.sample</string>
+    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
+    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=thisPackage</string>
 
-    <!-- Link Used for Share Text of Your App. Set Blank to Disable -->
-    <string name="share_link">https://play.google.com/store/apps/details?id=candybar.sample</string>
+    <!-- Link Used for Share Link of Your App. Set Blank to Disable -->
+    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
+    <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
 
+    <!-- Link to JSON from which the app will check for updates. Set Blank to Disable -->
     <string name="update_json_link">https://zixpo.github.io/candybar-sources/update.json</string>
 
     <!-- CONFIG: DEFAULT THEME -->

@@ -23,13 +23,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.view.ViewCompat;
 import android.transition.ChangeBounds;
 import android.transition.ChangeImageTransform;
 import android.transition.TransitionSet;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.DecelerateInterpolator;
+
+import androidx.core.view.ViewCompat;
 
 import com.kogitune.activitytransition.core.MoveData;
 import com.kogitune.activitytransition.core.TransitionAnimation;

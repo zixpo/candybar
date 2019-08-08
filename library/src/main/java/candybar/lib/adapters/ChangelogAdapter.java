@@ -1,16 +1,18 @@
 package candybar.lib.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import androidx.annotation.NonNull;
+
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
-import com.dm.material.dashboard.candybar.R;
 
 import org.sufficientlysecure.htmltextview.HtmlTextView;
+
+import candybar.lib.R;
 
 /*
  * CandyBar - Material Dashboard

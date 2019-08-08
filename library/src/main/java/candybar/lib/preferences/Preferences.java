@@ -5,14 +5,14 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.annotation.NonNull;
 
-import com.dm.material.dashboard.candybar.R;
+import androidx.annotation.NonNull;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Locale;
 
+import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.items.Language;

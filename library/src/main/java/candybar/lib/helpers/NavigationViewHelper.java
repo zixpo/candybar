@@ -1,12 +1,11 @@
 package candybar.lib.helpers;
 
 import android.content.Context;
-import android.support.design.internal.NavigationMenuView;
-import android.support.design.widget.NavigationView;
 import android.view.MenuItem;
 
-import com.dm.material.dashboard.candybar.R;
+import com.google.android.material.navigation.NavigationView;
 
+import candybar.lib.R;
 import candybar.lib.preferences.Preferences;
 
 /*
@@ -59,8 +58,8 @@ public class NavigationViewHelper {
     }
 
     public static void hideScrollBar(NavigationView navigationView) {
-        NavigationMenuView navigationMenuView = (NavigationMenuView) navigationView.getChildAt(0);
+        NavigationView navigationMenuView = (NavigationView) navigationView.getChildAt(0);
         if (navigationMenuView != null)
-            navigationMenuView.setVerticalScrollBarEnabled(false);
+            navigationMenuView.setVerticalScrollBarEnabled(true);
     }
 }

@@ -2,6 +2,12 @@
 <resources>
 
     <contributor
+        name="Sarsa Murmu"
+        contribution="Improved the Project"
+        image="https://avatars1.githubusercontent.com/u/44255990?s=400&amp;v=4"
+        link="https://github.com/sarsamurmu" />
+
+    <contributor
         name="Leif Niemczik"
         contribution=""
         image="https://avatars1.githubusercontent.com/u/5417518?v=3&amp;s=400"

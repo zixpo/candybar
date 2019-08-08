@@ -7,13 +7,6 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -27,11 +20,18 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.dm.material.dashboard.candybar.R;
 import com.github.javiersantos.appupdater.AppUpdaterUtils;
 import com.github.javiersantos.appupdater.enums.AppUpdaterError;
 import com.github.javiersantos.appupdater.enums.UpdateFrom;
@@ -42,6 +42,7 @@ import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import java.util.List;
 
+import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
@@ -363,7 +364,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.rate) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext.getResources().getString(R.string.rate_and_review_link)));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext.getResources().getString(R.string.rate_and_review_link).replaceAll("thisPackage", mContext.getPackageName())));
                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                 mContext.startActivity(intent);
             } else if (id == R.id.share) {
@@ -375,17 +376,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 intent.putExtra(Intent.EXTRA_TEXT,
                         mContext.getResources().getString(R.string.share_app_body,
                                 mContext.getResources().getString(R.string.app_name),
-                                mContext.getResources().getString(R.string.share_link)));
+                                "\n" + mContext.getResources().getString(R.string.share_link).replaceAll("thisPackage", mContext.getPackageName())));
                 mContext.startActivity(Intent.createChooser(intent,
                         mContext.getResources().getString(R.string.app_client)));
             } else if (id == R.id.update) {
-                /*
-                new AppUpdater(mContext)
-                        .setUpdateFrom(UpdateFrom.JSON)
-                        .setUpdateJSON(mContext.getResources().getString(R.string.update_json_link))
-                        .setDisplay(Display.DIALOG)
-                        .start();
-                */
 
                 new AppUpdaterUtils(mContext)
                         .setUpdateFrom(UpdateFrom.JSON)
@@ -398,16 +392,18 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                         TypefaceHelper.getMedium(mContext),
                                         TypefaceHelper.getRegular(mContext));
                                 builder.customView(R.layout.fragment_update, false);
-                                builder.negativeText(R.string.close);
 
                                 if (isUpdateAvailable) {
                                     builder.positiveText(R.string.update);
+                                    builder.negativeText(R.string.close);
                                     builder.onPositive((dialog, which) -> {
                                         String downloadUrl = update.getUrlToDownload().toString();
                                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(downloadUrl));
                                         intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                                         mContext.startActivity(intent);
                                     });
+                                } else {
+                                    builder.positiveText(R.string.close);
                                 }
 
                                 MaterialDialog dialog = builder.build();

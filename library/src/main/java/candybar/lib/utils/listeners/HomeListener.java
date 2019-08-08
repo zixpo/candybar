@@ -1,6 +1,6 @@
 package candybar.lib.utils.listeners;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import candybar.lib.items.Home;
 

@@ -3,11 +3,12 @@ package candybar.lib.helpers;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 
-import com.dm.material.dashboard.candybar.BuildConfig;
-import com.dm.material.dashboard.candybar.R;
+import androidx.annotation.NonNull;
+
+import candybar.lib.BuildConfig;
+import candybar.lib.R;
 
 /*
  * CandyBar - Material Dashboard

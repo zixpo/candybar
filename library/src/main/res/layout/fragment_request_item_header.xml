@@ -39,7 +39,7 @@
         android:text="@string/premium_request_desc"
         fontPath="fonts/Font-Regular.ttf" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
