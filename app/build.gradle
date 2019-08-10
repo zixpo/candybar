@@ -42,8 +42,8 @@ android {
         applicationId "com.candybar.dev"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 1
-        versionName "1.0"
+        versionCode 354
+        versionName "3.5.0-b5"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // Remove '/*' and '*/' below to enable OneSignal
