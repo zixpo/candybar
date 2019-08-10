@@ -10,9 +10,9 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Added Adaptive Icon Generation for Requests.</item>
+        <item>Added Adaptive Icon Generation for Requests</item>
         <item>Support for Android P</item>
-        <item>Use of New JSON Format</item>
+        <item>Use of New JSON Format for Wallpaper</item>
         <item>Added Lawnchair Launcher to Apply Section</item>
         <item>Added Turkish and Traditional Chinese Languages</item>
         <item>Support for OneSignal Notifications</item>
@@ -21,12 +21,17 @@
             Support for <a href="https://github.com/javiersantos/AppUpdater">AppUpdater</a>.
             ]]>
         </item>
-        <item>Option to Edit Links of "Rate and Review" and "Share". Now You can Even Remove Them.</item>
+        <item>Option to Edit Links of \"Rate and Review\" and \"Share\". Now You can Even Remove Them.</item>
         <item>
             <![CDATA[
             <b>Hope</b> <i>You</i> <u>Like</u> <a href="https://github.com/zipox/candybar">It</a>.
             ]]>
         </item>
+        <item>Migrate to AndroidX</item>
+        <item>Improved Adaptive Icon Generation</item>
+        <item>Improved Icon Request App Image Quality</item>
+        <item>Update CandyBar Translators List</item>
+        <item>Added Support for Linking \"Privacy Policy\" and \"Terms and Conditions\"</item>
     </string-array>
 
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:id="@+id/container"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingPrefix"
     android:layout_height="wrap_content"
@@ -15,7 +14,7 @@
     android:paddingEnd="@dimen/dialog_content_padding"
     android:gravity="center_vertical"
     android:background="?attr/selectableItemBackground"
-    app:theme="@style/ButtonStyle">
+    android:theme="@style/ButtonStyle">
 
     <ImageView
         android:id="@+id/image"

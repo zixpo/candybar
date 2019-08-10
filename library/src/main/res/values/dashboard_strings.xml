@@ -244,6 +244,8 @@
 
     <!-- About -->
     <string name="about_contributors_title">Contributors</string>
+    <string name="about_privacy_policy_title">Privacy Policy</string> <!-- New -->
+    <string name="about_terms_and_conditions_title">Terms and Conditions</string> <!-- New -->
 
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Please give a description about what kind of problem that you want to report</string>

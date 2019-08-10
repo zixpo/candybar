@@ -77,6 +77,7 @@ public class LanguagesFragment extends DialogFragment {
         builder.customView(R.layout.fragment_languages, false);
         builder.typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()));
         builder.title(R.string.pref_language_header);
+        builder.negativeText(R.string.close);
         MaterialDialog dialog = builder.build();
         dialog.show();
 

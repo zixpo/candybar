@@ -15,10 +15,11 @@
         android:paddingRight="@dimen/content_padding"
         android:paddingEnd="@dimen/content_padding"
         android:clipToPadding="false"
+        app:tabIndicator="@drawable/tab_indicator"
         app:tabIndicatorColor="?attr/tab_indicator"
         app:tabSelectedTextColor="?attr/tab_text_selected"
         app:tabTextColor="?attr/tab_text"
-        app:tabIndicatorHeight="2dp"
+        app:tabIndicatorHeight="3dp"
         app:tabPadding="@dimen/content_padding"
         app:tabMode="scrollable" />
 

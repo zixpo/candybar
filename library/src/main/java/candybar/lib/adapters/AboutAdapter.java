@@ -64,10 +64,12 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     private int mItemCount;
 
-    private final boolean mShowContributors;
+    private final boolean mShowExtraInfo;
+
+    boolean mShowContributors, mShowPrivacyPolicy, mShowTerms;
 
     private static final int TYPE_HEADER = 0;
-    private static final int TYPE_CONTRIBUTORS = 1;
+    private static final int TYPE_EXTRA_INFO = 1;
     private static final int TYPE_FOOTER = 2;
     private static final int TYPE_BOTTOM_SHADOW = 3;
 
@@ -81,7 +83,23 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
 
         mShowContributors = mContext.getResources().getBoolean(R.bool.show_contributors_dialog);
-        if (mShowContributors) {
+
+        if (mContext.getResources().getString(R.string.privacy_policy_link).length() > 0)
+            mShowPrivacyPolicy = true;
+        else
+            mShowPrivacyPolicy = false;
+
+        if (mContext.getResources().getString(R.string.terms_and_conditions_link).length() > 0)
+            mShowTerms = true;
+        else
+            mShowTerms = false;
+
+        if (mShowContributors || mShowPrivacyPolicy || mShowTerms)
+            mShowExtraInfo = true;
+        else
+            mShowExtraInfo = false;
+
+        if (mShowExtraInfo) {
             mItemCount += 1;
         }
     }
@@ -92,11 +110,12 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             View view = LayoutInflater.from(mContext).inflate(
                     R.layout.fragment_about_item_header, parent, false);
             return new HeaderViewHolder(view);
-        } else if (viewType == TYPE_CONTRIBUTORS) {
+        } else if (viewType == TYPE_EXTRA_INFO) {
             View view = LayoutInflater.from(mContext).inflate(
                     R.layout.fragment_about_item_sub, parent, false);
-            return new ContributorsViewHolder(view);
+            return new ExtraInfoViewHolder(view);
         }
+
         if (viewType == TYPE_FOOTER) {
             View view = LayoutInflater.from(mContext).inflate(
                     R.layout.fragment_about_item_footer, parent, false);
@@ -149,11 +168,11 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public int getItemViewType(int position) {
         if (position == 0) return TYPE_HEADER;
         if (position == 1) {
-            if (mShowContributors) return TYPE_CONTRIBUTORS;
+            if (mShowExtraInfo) return TYPE_EXTRA_INFO;
             else return TYPE_FOOTER;
         }
 
-        if (position == 2 && mShowContributors) return TYPE_FOOTER;
+        if (position == 2 && mShowExtraInfo) return TYPE_FOOTER;
         return TYPE_BOTTOM_SHADOW;
     }
 
@@ -220,11 +239,16 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
-    private class ContributorsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    private class ExtraInfoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        ContributorsViewHolder(View itemView) {
+        ExtraInfoViewHolder(View itemView) {
             super(itemView);
-            TextView title = itemView.findViewById(R.id.title);
+            LinearLayout contributorsHolder = itemView.findViewById(R.id.contributors);
+            TextView contributorsTitle = itemView.findViewById(R.id.contributors_title);
+            LinearLayout privacyPolicyHolder = itemView.findViewById(R.id.privacy_policy);
+            TextView privacyPolicyTitle = itemView.findViewById(R.id.privacy_policy_title);
+            LinearLayout termsHolder = itemView.findViewById(R.id.terms);
+            TextView termsTitle = itemView.findViewById(R.id.terms_title);
 
             CardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getAboutStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT &&
@@ -246,18 +270,48 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 if (card != null) card.setCardElevation(0);
             }
 
-            int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
-            title.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
-                    mContext, R.drawable.ic_toolbar_people, color), null, null, null);
-            title.setText(mContext.getResources().getString(R.string.about_contributors_title));
 
-            title.setOnClickListener(this);
+            if (!mShowContributors)
+                contributorsHolder.setVisibility(View.GONE);
+            if (!mShowPrivacyPolicy)
+                privacyPolicyHolder.setVisibility(View.GONE);
+            if (!mShowTerms)
+                termsHolder.setVisibility(View.GONE);
+
+            int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
+
+            contributorsTitle.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
+                    mContext, R.drawable.ic_toolbar_people, color), null, null, null);
+            contributorsTitle.setText(mContext.getResources().getString(R.string.about_contributors_title));
+
+            privacyPolicyTitle.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
+                    mContext, R.drawable.ic_toolbar_link, color), null, null, null);
+            privacyPolicyTitle.setText(mContext.getResources().getString(R.string.about_privacy_policy_title));
+
+            termsTitle.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
+                    mContext, R.drawable.ic_toolbar_link, color), null, null, null);
+            termsTitle.setText(mContext.getResources().getString(R.string.about_terms_and_conditions_title));
+
+            contributorsTitle.setOnClickListener(this);
+            privacyPolicyTitle.setOnClickListener(this);
+            termsTitle.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            CreditsFragment.showCreditsDialog(((AppCompatActivity) mContext).getSupportFragmentManager(),
-                    CreditsFragment.TYPE_ICON_PACK_CONTRIBUTORS);
+            int id = view.getId();
+            if (id == R.id.contributors_title) {
+                CreditsFragment.showCreditsDialog(((AppCompatActivity) mContext).getSupportFragmentManager(),
+                        CreditsFragment.TYPE_ICON_PACK_CONTRIBUTORS);
+            } else if (id == R.id.privacy_policy_title) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext.getResources().getString(R.string.privacy_policy_link)));
+                intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+                mContext.startActivity(intent);
+            } else if (id == R.id.terms_title) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext.getResources().getString(R.string.terms_and_conditions_link)));
+                intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+                mContext.startActivity(intent);
+            }
         }
     }
 
