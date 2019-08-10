@@ -140,8 +140,18 @@ public class IconsHelper {
         }
         name = name.replaceAll("_", " ");
         name = name.trim().replaceAll("\\s+", " ");
-        char character = Character.toUpperCase(name.charAt(0));
-        return character + name.substring(1);
+        return capitalizeWord(name);
+    }
+
+    public static String capitalizeWord(String str) {
+        String words[] = str.split("\\s");
+        String capitalizeWord = "";
+        for (String w : words) {
+            String first = w.substring(0, 1);
+            String afterfirst = w.substring(1);
+            capitalizeWord += first.toUpperCase() + afterfirst + " ";
+        }
+        return capitalizeWord.trim();
     }
 
     public static void selectIcon(@NonNull Context context, int action, Icon icon) {
