@@ -66,6 +66,7 @@ gen-external-apklibs
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 .idea/
+/.idea/
 
 # Gradle:
 .idea/gradle.xml
@@ -163,3 +164,4 @@ gradle-app.setting
 *.iml
 debug/
 build/
+release/
