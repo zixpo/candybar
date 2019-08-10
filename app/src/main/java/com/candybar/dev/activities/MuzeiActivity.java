@@ -1,8 +1,8 @@
-package com.candybar.sample.activities;
+package com.candybar.dev.activities;
 
 import androidx.annotation.NonNull;
 
-import com.candybar.sample.services.MuzeiService;
+import com.candybar.dev.services.MuzeiService;
 
 import candybar.lib.activities.CandyBarMuzeiActivity;
 

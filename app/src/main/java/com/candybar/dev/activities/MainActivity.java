@@ -1,8 +1,8 @@
-package com.candybar.sample.activities;
+package com.candybar.dev.activities;
 
 import androidx.annotation.NonNull;
 
-import com.candybar.sample.licenses.License;
+import com.candybar.dev.licenses.License;
 
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.activities.configurations.ActivityConfiguration;

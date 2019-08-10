@@ -416,7 +416,7 @@ public final class DisplayImageOptions {
         /**
          * Sets options for image decoding.<br />
          * <b>NOTE:</b> {@link Options#inSampleSize} of incoming options will <b>NOT</b> be considered. Library
-         * calculate the most appropriate sample size itself according yo {@link #imageScaleType(ImageScaleType)}
+         * calculate the most appropriate dev size itself according yo {@link #imageScaleType(ImageScaleType)}
          * options.<br />
          * <b>NOTE:</b> This option overlaps {@link #bitmapConfig(android.graphics.Bitmap.Config) bitmapConfig()}
          * option.

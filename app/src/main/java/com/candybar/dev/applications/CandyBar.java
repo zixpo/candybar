@@ -1,4 +1,4 @@
-package com.candybar.sample.applications;
+package com.candybar.dev.applications;
 
 import androidx.annotation.NonNull;
 

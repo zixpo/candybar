@@ -16,7 +16,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="candybar.sample"
-            android:targetClass="com.candybar.sample.activities.MainActivity"></intent>
+            android:targetClass="com.candybar.dev.activities.MainActivity"></intent>
 
         <extra
             android:name="position"
@@ -39,7 +39,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="candybar.sample"
-            android:targetClass="com.candybar.sample.activities.MainActivity"></intent>
+            android:targetClass="com.candybar.dev.activities.MainActivity"></intent>
 
         <extra
             android:name="position"
@@ -61,7 +61,7 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="candybar.sample"
-            android:targetClass="com.candybar.sample.activities.MainActivity"></intent>
+            android:targetClass="com.candybar.dev.activities.MainActivity"></intent>
 
         <extra
             android:name="position"

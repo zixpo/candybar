@@ -1,4 +1,4 @@
-package com.candybar.sample.licenses;
+package com.candybar.dev.licenses;
 
 import candybar.lib.items.InAppBilling;
 

@@ -39,7 +39,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.candybar.sample"
+        applicationId "com.candybar.dev"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode 1

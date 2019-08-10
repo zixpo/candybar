@@ -62,7 +62,7 @@ public final class ImageSizeUtils {
     }
 
     /**
-     * Computes sample size for downscaling image size (<b>srcSize</b>) to view size (<b>targetSize</b>). This sample
+     * Computes dev size for downscaling image size (<b>srcSize</b>) to view size (<b>targetSize</b>). This dev
      * size is used during
      * {@linkplain BitmapFactory#decodeStream(java.io.InputStream, android.graphics.Rect, android.graphics.BitmapFactory.Options)
      * decoding image} to bitmap.<br />
@@ -78,15 +78,15 @@ public final class ImageSizeUtils {
      * </pre>
      * <p/>
      * <br />
-     * The sample size is the number of pixels in either dimension that correspond to a single pixel in the decoded
+     * The dev size is the number of pixels in either dimension that correspond to a single pixel in the decoded
      * bitmap. For example, inSampleSize == 4 returns an image that is 1/4 the width/height of the original, and 1/16
      * the number of pixels. Any value <= 1 is treated the same as 1.
      *
      * @param srcSize       Original (image) size
      * @param targetSize    Target (view) size
      * @param viewScaleType {@linkplain ViewScaleType Scale type} for placing image in view
-     * @param powerOf2Scale <i>true</i> - if sample size be a power of 2 (1, 2, 4, 8, ...)
-     * @return Computed sample size
+     * @param powerOf2Scale <i>true</i> - if dev size be a power of 2 (1, 2, 4, 8, ...)
+     * @return Computed dev size
      */
     public static int computeImageSampleSize(ImageSize srcSize, ImageSize targetSize, ViewScaleType viewScaleType,
                                              boolean powerOf2Scale) {
@@ -144,13 +144,13 @@ public final class ImageSizeUtils {
     }
 
     /**
-     * Computes minimal sample size for downscaling image so result image size won't exceed max acceptable OpenGL
+     * Computes minimal dev size for downscaling image so result image size won't exceed max acceptable OpenGL
      * texture size.<br />
      * We can't create Bitmap in memory with size exceed max texture size (usually this is 2048x2048) so this method
-     * calculate minimal sample size which should be applied to image to fit into these limits.
+     * calculate minimal dev size which should be applied to image to fit into these limits.
      *
      * @param srcSize Original image size
-     * @return Minimal sample size
+     * @return Minimal dev size
      */
     public static int computeMinImageSampleSize(ImageSize srcSize) {
         final int srcWidth = srcSize.getWidth();
