@@ -213,7 +213,7 @@
 
     <!-- Contributors dialog
     * Take a look inside res/xml/contributors.xml to add contributors -->
-    <bool name="show_contributors_dialog">false</bool>
+    <bool name="show_contributors_dialog">true</bool>
 
     <!-- CONFIG: DONATE -->
 

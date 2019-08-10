@@ -32,6 +32,7 @@
         <item>Improved Icon Request App Image Quality</item>
         <item>Update CandyBar Translators List</item>
         <item>Added Support for Linking \"Privacy Policy\" and \"Terms and Conditions\"</item>
+        <item>Now shows from where the app installed</item>
     </string-array>
 
 </resources>

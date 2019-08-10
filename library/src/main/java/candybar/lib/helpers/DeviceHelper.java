@@ -36,6 +36,8 @@ public class DeviceHelper {
         StringBuilder sb = new StringBuilder();
         final int height = displaymetrics.heightPixels;
         final int width = displaymetrics.widthPixels;
+        PackageManager pm = context.getPackageManager();
+        String installerPackage = pm.getInstallerPackageName(context.getPackageName());
 
         String appVersion = "";
         try {
@@ -44,13 +46,14 @@ public class DeviceHelper {
         } catch (PackageManager.NameNotFoundException ignored) {
         }
 
+
         sb.append("Manufacturer : ").append(Build.MANUFACTURER)
                 .append("\nModel : ").append(Build.MODEL)
                 .append("\nProduct : ").append(Build.PRODUCT)
                 .append("\nScreen Resolution : ")
                 .append(width).append(" x ").append(height).append(" pixels")
                 .append("\nAndroid Version : ").append(Build.VERSION.RELEASE)
-                .append("\nApp Version : ").append(appVersion)
+                .append("\nApp Version : ").append(appVersion).append("  ").append(installerPackage)
                 .append("\nCandyBar Version : ").append(BuildConfig.VERSION_NAME)
                 .append("\n");
         return sb.toString();
