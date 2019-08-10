@@ -22,3 +22,7 @@ android:
 
   licenses:
     - '.+'
+
+before_script:
+  - rm -rf $TRAVIS_BUILD_DIR/app/build/outputs
+  - chmod +x gradlew
