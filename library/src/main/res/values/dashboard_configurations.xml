@@ -6,22 +6,7 @@
     <!-- ======================================================================================= -->
 
     <!-- New -->
-    <!-- Link Used to Rate and Review Your App. Set Blank to Disable -->
-    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
-    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=thisPackage</string>
 
-    <!-- Link Used for Share Link of Your App. Set Blank to Disable -->
-    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
-    <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
-
-    <!-- Link to JSON from which the app will check for updates. Set Blank to Disable -->
-    <string name="update_json_link">https://zixpo.github.io/candybar-sources/update.json</string>
-
-    <!-- Privacy Policy Link. Set Blank to Disable -->
-    <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
-
-    <!-- Terms and Conditions link. Set Blank to Disable -->
-    <string name="terms_and_conditions_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
 
     <!-- CONFIG: DEFAULT THEME -->
 
@@ -227,7 +212,7 @@
 
     <!-- Contributors dialog
     * Take a look inside res/xml/contributors.xml to add contributors -->
-    <bool name="show_contributors_dialog">false</bool>
+    <bool name="show_contributors_dialog">true</bool>
 
     <!-- CONFIG: DONATE -->
 
@@ -238,5 +223,22 @@
     <bool name="enable_donation">true</bool>
 
     <!-- Take a look inside License.java for donation product -->
+
+    <!-- Link Used to Rate and Review Your App. Set Blank to Disable -->
+    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
+    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=thisPackage</string>
+
+    <!-- Link Used for Share Link of Your App. Set Blank to Disable -->
+    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
+    <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
+
+    <!-- Link to JSON from which the app will check for updates. Set Blank to Disable -->
+    <string name="update_json_link">https://zixpo.github.io/candybar-sources/update.json</string>
+
+    <!-- Privacy Policy Link. Set Blank to Disable -->
+    <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
+
+    <!-- Terms and Conditions link. Set Blank to Disable -->
+    <string name="terms_and_conditions_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
 
 </resources>
