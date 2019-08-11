@@ -212,7 +212,8 @@ public class IconsHelper {
             }
 
             FileOutputStream outStream = new FileOutputStream(file);
-            bitmap = Bitmap.createScaledBitmap(bitmap, 192, 192, false);
+            // Disabled Because of OutOfMemory
+            //bitmap = Bitmap.createScaledBitmap(bitmap, 192, 192, false);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             outStream.flush();
             outStream.close();

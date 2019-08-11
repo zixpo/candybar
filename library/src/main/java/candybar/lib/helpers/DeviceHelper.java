@@ -46,12 +46,13 @@ public class DeviceHelper {
         } catch (PackageManager.NameNotFoundException ignored) {
         }
 
+
         String installationFlag;
 
         if (installerPackage == "com.android.vending") {
-            installationFlag = "R";
+            installationFlag = " R";
         } else {
-            installationFlag = "";
+            installationFlag = " ";
         }
 
         sb.append("Manufacturer : ").append(Build.MANUFACTURER)
@@ -60,7 +61,7 @@ public class DeviceHelper {
                 .append("\nScreen Resolution : ")
                 .append(width).append(" x ").append(height).append(" pixels")
                 .append("\nAndroid Version : ").append(Build.VERSION.RELEASE)
-                .append("\nApp Version : ").append(appVersion).append("  ").append(installationFlag)
+                .append("\nApp Version : ").append(appVersion).append(installationFlag)
                 .append("\nCandyBar Version : ").append(BuildConfig.VERSION_NAME)
                 .append("\n");
         return sb.toString();
