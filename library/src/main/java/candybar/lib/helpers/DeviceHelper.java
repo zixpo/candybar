@@ -51,7 +51,7 @@ public class DeviceHelper {
         if (installerPackage == "com.android.vending") {
             installationFlag = "R";
         } else {
-            installationFlag = "NR";
+            installationFlag = "";
         }
 
         sb.append("Manufacturer : ").append(Build.MANUFACTURER)
