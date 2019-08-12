@@ -1,4 +1,5 @@
 # v3.5.0-b5
+- Updated Gradle Distribution and Gradle Plugin
 - Added Adaptive Icon Generation for Requests
 - Support for Android P
 - Use of New JSON Format for Wallpaper
