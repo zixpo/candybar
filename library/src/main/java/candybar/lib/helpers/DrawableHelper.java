@@ -96,28 +96,5 @@ public class DrawableHelper {
         }
         return null;
     }
-
-    @Nullable
-    public static Drawable getHighQualityIcon(@NonNull Context context, String packageName) {
-        try {
-            PackageManager packageManager = context.getPackageManager();
-            ApplicationInfo info = packageManager.getApplicationInfo(
-                    packageName, PackageManager.GET_META_DATA);
-
-            Resources resources = packageManager.getResourcesForApplication(packageName);
-            int density = DisplayMetrics.DENSITY_XXHIGH;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                density = DisplayMetrics.DENSITY_XXXHIGH;
-            }
-
-            Drawable drawable = ResourcesCompat.getDrawableForDensity(
-                    resources, info.icon, density, null);
-            if (drawable != null) return drawable;
-            return info.loadIcon(packageManager);
-        } catch (Exception | OutOfMemoryError e) {
-            LogUtil.e(Log.getStackTraceString(e));
-        }
-        return null;
-    }
 }
 
