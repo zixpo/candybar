@@ -6,7 +6,8 @@
     <!-- ======================================================================================= -->
 
     <!-- New -->
-
+    <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
+    <bool name="enable_non_mail_app_request">false</bool>
 
     <!-- CONFIG: DEFAULT THEME -->
 
