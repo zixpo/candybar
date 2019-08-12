@@ -151,6 +151,13 @@
     <string name="request_limit_buy">You can buy Premium Requests to request more icons.</string>
     <string name="request_limit_reset">Icon request limit will be reset on every update.</string>
 
+    <!-- Normal Request --> <!-- New -->
+    <string name="regular_request">Regular Icon Request</string>
+    <string name="regular_request_desc">Get Your Icon Requested and Developer will try to Include Your Icons.</string>
+    <string name="regular_request_count">Total\n%d request</string>
+    <string name="regular_request_used">Used\n%d request</string>
+    <string name="regular_request_available">Available\n%d request</string>
+
     <!-- Premium Request -->
     <string name="premium_request">Premium Icon Request</string>
     <string name="premium_request_no_internet">Make sure your phone connected to internet before sending a premium request</string>

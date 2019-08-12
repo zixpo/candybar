@@ -71,6 +71,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private final boolean mShowShadow;
     private final boolean mShowPremiumRequest;
+    private final boolean mShowRegularRequest;
 
     private static final int TYPE_HEADER = 0;
     private static final int TYPE_CONTENT = 1;
@@ -86,6 +87,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         mShowShadow = (spanCount == 1);
         mShowPremiumRequest = Preferences.get(mContext).isPremiumRequestEnabled();
+        mShowRegularRequest = Preferences.get(mContext).isRegularRequestLimit();
 
         mOptions = ImageConfig.getRawDefaultImageOptions();
         mOptions.resetViewBeforeLoading(true);
@@ -137,31 +139,59 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder.getItemViewType() == TYPE_HEADER) {
-            HeaderViewHolder headerViewHolder = (HeaderViewHolder) holder;
-            if (Preferences.get(mContext).isPremiumRequest()) {
-                headerViewHolder.button.setVisibility(View.GONE);
-                headerViewHolder.content.setVisibility(View.GONE);
-                headerViewHolder.container.setVisibility(View.VISIBLE);
+            HeaderViewHolder HeaderViewHolder = (HeaderViewHolder) holder;
+            if (Preferences.get(mContext).isPremiumRequestEnabled()) {
+                if (Preferences.get(mContext).isPremiumRequest()) {
+                    HeaderViewHolder.button.setVisibility(View.GONE);
+                    HeaderViewHolder.premContent.setVisibility(View.GONE);
+                    HeaderViewHolder.premContainer.setVisibility(View.VISIBLE);
 
-                int total = Preferences.get(mContext).getPremiumRequestTotal();
-                int available = Preferences.get(mContext).getPremiumRequestCount();
+                    int total = Preferences.get(mContext).getPremiumRequestTotal();
+                    int available = Preferences.get(mContext).getPremiumRequestCount();
 
-                headerViewHolder.total.setText(String.format(
-                        mContext.getResources().getString(R.string.premium_request_count),
-                        total));
-                headerViewHolder.available.setText(String.format(
-                        mContext.getResources().getString(R.string.premium_request_available),
-                        available));
-                headerViewHolder.used.setText(String.format(
-                        mContext.getResources().getString(R.string.premium_request_used),
-                        (total - available)));
+                    HeaderViewHolder.premTotal.setText(String.format(
+                            mContext.getResources().getString(R.string.premium_request_count),
+                            total));
+                    HeaderViewHolder.premAvailable.setText(String.format(
+                            mContext.getResources().getString(R.string.premium_request_available),
+                            available));
+                    HeaderViewHolder.premUsed.setText(String.format(
+                            mContext.getResources().getString(R.string.premium_request_used),
+                            (total - available)));
 
-                headerViewHolder.progress.setMax(total);
-                headerViewHolder.progress.setProgress(available);
+                    HeaderViewHolder.premProgress.setMax(total);
+                    HeaderViewHolder.premProgress.setProgress(available);
+                } else {
+                    HeaderViewHolder.button.setVisibility(View.VISIBLE);
+                    HeaderViewHolder.premContent.setVisibility(View.VISIBLE);
+                    HeaderViewHolder.premContainer.setVisibility(View.GONE);
+                }
             } else {
-                headerViewHolder.button.setVisibility(View.VISIBLE);
-                headerViewHolder.content.setVisibility(View.VISIBLE);
-                headerViewHolder.container.setVisibility(View.GONE);
+                HeaderViewHolder.premWholeContainer.setVisibility(View.GONE);
+            }
+
+            if (Preferences.get(mContext).isRegularRequestLimit()) {
+                //HeaderViewHolder.regContent.setVisibility(View.GONE);
+                //HeaderViewHolder.regContainer.setVisibility(View.VISIBLE);
+
+                int total = mContext.getResources().getInteger(R.integer.icon_request_limit);
+                int used = Preferences.get(mContext).getRegularRequestUsed();
+                int available = total - used;
+
+                HeaderViewHolder.regTotal.setText(String.format(
+                        mContext.getResources().getString(R.string.regular_request_count),
+                        total));
+                HeaderViewHolder.regAvailable.setText(String.format(
+                        mContext.getResources().getString(R.string.regular_request_available),
+                        available));
+                HeaderViewHolder.regUsed.setText(String.format(
+                        mContext.getResources().getString(R.string.regular_request_used),
+                        used));
+
+                HeaderViewHolder.regProgress.setMax(total);
+                HeaderViewHolder.regProgress.setProgress(available);
+            } else {
+                HeaderViewHolder.regWholeContainer.setVisibility(View.GONE);
             }
         } else if (holder.getItemViewType() == TYPE_CONTENT) {
             int finalPosition = mShowPremiumRequest ? position - 1 : position;
@@ -200,33 +230,54 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0 && mShowPremiumRequest) return TYPE_HEADER;
+        if (position == 0 && (mShowPremiumRequest || mShowRegularRequest)) return TYPE_HEADER;
         if (position == (getItemCount() - 1) && mShowShadow) return TYPE_FOOTER;
         return TYPE_CONTENT;
     }
 
     private class HeaderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private final TextView title;
-        private final TextView content;
-        private final TextView total;
-        private final TextView available;
-        private final TextView used;
+        private final TextView premTitle;
+        private final TextView premContent;
+        private final TextView premTotal;
+        private final TextView premAvailable;
+        private final TextView premUsed;
         private final AppCompatButton button;
-        private final LinearLayout container;
-        private final ProgressBar progress;
+        private final LinearLayout premContainer;
+        private final LinearLayout premWholeContainer;
+        private final ProgressBar premProgress;
+
+        private final TextView regTitle;
+        private final TextView regContent;
+        private final TextView regTotal;
+        private final TextView regAvailable;
+        private final TextView regUsed;
+        private final LinearLayout regContainer;
+        private final LinearLayout regWholeContainer;
+        private final ProgressBar regProgress;
 
         HeaderViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
-            content = itemView.findViewById(R.id.content);
+            premTitle = itemView.findViewById(R.id.premium_request_title);
+            premContent = itemView.findViewById(R.id.premium_request_content);
             button = itemView.findViewById(R.id.buy);
 
-            container = itemView.findViewById(R.id.premium_request);
-            total = itemView.findViewById(R.id.premium_request_total);
-            available = itemView.findViewById(R.id.premium_request_available);
-            used = itemView.findViewById(R.id.premium_request_used);
-            progress = itemView.findViewById(R.id.progress);
+            premWholeContainer = itemView.findViewById(R.id.premium_request_container);
+            premContainer = itemView.findViewById(R.id.premium_request);
+            premTotal = itemView.findViewById(R.id.premium_request_total);
+            premAvailable = itemView.findViewById(R.id.premium_request_available);
+            premUsed = itemView.findViewById(R.id.premium_request_used);
+            premProgress = itemView.findViewById(R.id.premium_request_progress);
+
+
+            regTitle = itemView.findViewById(R.id.regular_request_title);
+            regContent = itemView.findViewById(R.id.regular_request_content);
+            regWholeContainer = itemView.findViewById(R.id.regular_request_container);
+            regContainer = itemView.findViewById(R.id.regular_request);
+            regTotal = itemView.findViewById(R.id.regular_request_total);
+            regAvailable = itemView.findViewById(R.id.regular_request_available);
+            regUsed = itemView.findViewById(R.id.regular_request_used);
+            regProgress = itemView.findViewById(R.id.regular_request_progress);
 
             CardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getRequestStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT &&
@@ -248,22 +299,30 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 card.setCardElevation(0);
             }
 
-            int padding = mContext.getResources().getDimensionPixelSize(R.dimen.content_margin) +
-                    mContext.getResources().getDimensionPixelSize(R.dimen.icon_size_small);
-            content.setPadding(padding, 0, 0, 0);
-            container.setPadding(padding, 0, padding, 0);
+            int padding = mContext.getResources().getDimensionPixelSize(R.dimen.content_margin) + mContext.getResources().getDimensionPixelSize(R.dimen.icon_size_small);
+            premContent.setPadding(padding, 0, 0, 0);
+            premContainer.setPadding(padding, 0, padding, 0);
+
+            regContent.setPadding(padding, 0, 0, 0);
+            regContainer.setPadding(padding, 0, padding, 0);
 
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
-            title.setCompoundDrawablesWithIntrinsicBounds(
+            premTitle.setCompoundDrawablesWithIntrinsicBounds(
                     DrawableHelper.getTintedDrawable(mContext,
                             R.drawable.ic_toolbar_premium_request, color),
+                    null, null, null);
+
+            regTitle.setCompoundDrawablesWithIntrinsicBounds(
+                    DrawableHelper.getTintedDrawable(mContext,
+                            R.drawable.ic_toolbar_icon_request, color),
                     null, null, null);
 
             int primary = ColorHelper.getAttributeColor(mContext, R.attr.colorPrimary);
             int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorAccent);
             button.setTextColor(ColorHelper.getTitleTextColor(primary));
 
-            progress.getProgressDrawable().setColorFilter(accent, PorterDuff.Mode.SRC_IN);
+            premProgress.getProgressDrawable().setColorFilter(accent, PorterDuff.Mode.SRC_IN);
+            regProgress.getProgressDrawable().setColorFilter(accent, PorterDuff.Mode.SRC_IN);
 
             button.setOnClickListener(this);
         }

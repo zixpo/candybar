@@ -249,6 +249,14 @@ public class Preferences {
         return getSharedPreferences().getInt(KEY_REGULAR_REQUEST_USED, 0);
     }
 
+    public boolean isRegularRequestLimit() {
+        if (mContext.getResources().getBoolean(R.bool.enable_icon_request_limit)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void setRegularRequestUsed(int used) {
         getSharedPreferences().edit().putInt(KEY_REGULAR_REQUEST_USED, used).apply();
     }

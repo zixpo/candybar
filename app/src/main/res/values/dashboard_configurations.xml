@@ -105,13 +105,13 @@
     <!-- Enable regular icon request limit
     * default: false
     * change to true to enable it -->
-    <bool name="enable_icon_request_limit">false</bool>
+    <bool name="enable_icon_request_limit">true</bool>
 
     <!-- Limit regular icon request
     * IGNORE if icon request limit is disabled
     * ex: If you set icon request limit to 10, user only able to make 10 icon request in all time
     * After making 10 icon request user not able to request again -->
-    <integer name="icon_request_limit">10</integer>
+    <integer name="icon_request_limit">100</integer>
 
     <!-- Reset regular icon request limit every update
     * IGNORE if icon request limit is disabled
