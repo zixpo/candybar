@@ -55,8 +55,22 @@ public class DrawableHelper {
     public static Drawable getReqIcon(@NonNull Context context, String packageName) {
         try {
             PackageManager packageManager = context.getPackageManager();
-            Drawable drawable = packageManager.getApplicationIcon(packageName);
-            return drawable;
+
+            Drawable normalDrawable = packageManager.getApplicationIcon(packageName);
+
+            ApplicationInfo info = packageManager.getApplicationInfo(
+                    packageName, PackageManager.GET_META_DATA);
+
+            Resources resources = packageManager.getResourcesForApplication(packageName);
+            int density = DisplayMetrics.DENSITY_XXHIGH;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                density = DisplayMetrics.DENSITY_XXXHIGH;
+            }
+            Drawable drawable = ResourcesCompat.getDrawableForDensity(
+                    resources, info.icon, density, null);
+
+            if (drawable != null) return drawable;
+            return normalDrawable;
         } catch (Exception | OutOfMemoryError e) {
             LogUtil.e(Log.getStackTraceString(e));
         }
@@ -65,18 +79,18 @@ public class DrawableHelper {
 
     public static Bitmap getRightIcon(Drawable drawable) {
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
-            Log.d("CandyBarIconGeneration", "Made Normal Icon in Low SDK");
+            Log.d("CandyBar", "Made Normal Icon in Low SDK");
             return ((BitmapDrawable) drawable).getBitmap();
         } else {
             if (drawable instanceof BitmapDrawable) {
-                Log.d("CandyBarIconGeneration", "Made Normal Icon in High SDK");
+                Log.d("CandyBar", "Made Normal Icon in High SDK");
                 return ((BitmapDrawable) drawable).getBitmap();
             } else if (drawable instanceof AdaptiveIconDrawable) {
                 AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
                 AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
                 adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
                 Bitmap iconBitmap = adaptiveIcon.render();
-                Log.d("CandyBarIconGeneration", "Made Adaptive Icon in High SDK");
+                Log.d("CandyBar", "Made Adaptive Icon in High SDK");
                 return iconBitmap;
             }
         }

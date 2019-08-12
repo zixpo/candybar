@@ -30,7 +30,6 @@ import candybar.lib.adapters.SettingsAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
-import candybar.lib.helpers.DrawableHelper;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
@@ -40,6 +39,8 @@ import candybar.lib.items.Language;
 import candybar.lib.items.Request;
 import candybar.lib.items.Setting;
 import candybar.lib.preferences.Preferences;
+
+import static candybar.lib.helpers.DrawableHelper.getReqIcon;
 
 /*
  * CandyBar - Material Dashboard
@@ -248,8 +249,7 @@ public class SettingsFragment extends Fragment {
                     List<String> files = new ArrayList<>();
 
                     for (int i = 0; i < requests.size(); i++) {
-                        Drawable drawable = DrawableHelper.getHighQualityIcon(
-                                getActivity(), requests.get(i).getPackageName());
+                        Drawable drawable = getReqIcon(getActivity(), requests.get(i).getPackageName());
                         String icon = IconsHelper.saveIcon(files, directory, drawable, requests.get(i).getName());
                         if (icon != null) files.add(icon);
                     }
