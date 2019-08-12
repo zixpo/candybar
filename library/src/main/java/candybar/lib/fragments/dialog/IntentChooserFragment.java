@@ -169,7 +169,6 @@ public class IntentChooserFragment extends DialogFragment {
             while (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-
                     /*
                     Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getResources().getString(R.string.dev_email), null));
                     */
