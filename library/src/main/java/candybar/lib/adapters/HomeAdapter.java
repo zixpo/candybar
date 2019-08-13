@@ -341,7 +341,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 share.setVisibility(View.GONE);
             }
 
-            if (mContext.getResources().getString(R.string.update_json_link).length() == 0) {
+            if (mContext.getResources().getString(R.string.candybar_config_json).length() == 0) {
                 update.setVisibility(View.GONE);
             }
 
@@ -383,7 +383,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 new AppUpdaterUtils(mContext)
                         .setUpdateFrom(UpdateFrom.JSON)
-                        .setUpdateJSON(mContext.getResources().getString(R.string.update_json_link))
+                        .setUpdateJSON(mContext.getResources().getString(R.string.candybar_config_json))
                         .withListener(new AppUpdaterUtils.UpdateListener() {
                             @Override
                             public void onSuccess(Update update, Boolean isUpdateAvailable) {

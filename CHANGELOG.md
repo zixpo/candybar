@@ -1,3 +1,6 @@
+# After v3.5.0-b5
+- Added Ability to request app from non-mailing apps. 
+
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin
 - Added Adaptive Icon Generation for Requests
