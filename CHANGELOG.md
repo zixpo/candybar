@@ -1,6 +1,8 @@
 # After v3.5.0-b5
 - Added Ability to request app from non-mailing apps.
-- Added option to Disable Icon Request from JSON.
+- Added option to Disable Icon Request from JSON stored in Cloud.
+- Now shows Request Available, Used even for Regular Requests.
+- Option to Close app if installed outside of Playstore.
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin
