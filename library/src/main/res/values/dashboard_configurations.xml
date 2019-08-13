@@ -9,8 +9,8 @@
     <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
     <bool name="enable_non_mail_app_request">false</bool>
 
-    <!-- CandyBar Config Link -->
-    <string name="candybar_config_json">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
+    <!-- CandyBar Config JSON Link -->
+    <string name="config_json_link">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
 
     <!-- CONFIG: DEFAULT THEME -->
 

@@ -519,7 +519,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            String str = getActivity().getResources().getString(R.string.candybar_config_json);
+            String str = getActivity().getResources().getString(R.string.config_json_link);
             URLConnection urlConn = null;
             BufferedReader bufferedReader = null;
             try {

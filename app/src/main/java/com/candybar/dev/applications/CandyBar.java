@@ -29,6 +29,7 @@ public class CandyBar extends CandyBarApplication {
         configuration.setGenerateAppFilter(true);
         configuration.setGenerateAppMap(true);
         configuration.setGenerateThemeResources(true);
+        configuration.setNavigationIcon(NavigationIcon.STYLE_4);
 
         return configuration;
     }

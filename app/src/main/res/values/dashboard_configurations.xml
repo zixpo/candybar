@@ -233,6 +233,9 @@
     <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
     <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
 
+    <!-- CandyBar Config JSON Link -->
+    <string name="config_json_link">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
+
     <!-- Privacy Policy Link. Set Blank to Disable -->
     <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
 
