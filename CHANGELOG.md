@@ -1,5 +1,6 @@
 # After v3.5.0-b5
-- Added Ability to request app from non-mailing apps. 
+- Added Ability to request app from non-mailing apps.
+- Added option to Disable Icon Request from JSON.
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin

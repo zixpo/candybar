@@ -69,6 +69,7 @@ import candybar.lib.helpers.IntentHelper;
 import candybar.lib.helpers.LicenseCallbackHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
+import candybar.lib.helpers.PlaystoreCheckHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
@@ -187,6 +188,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         checkWallpapers();
         IconRequestTask.start(this, AsyncTask.THREAD_POOL_EXECUTOR);
         IconsLoaderTask.start(this);
+
+        new PlaystoreCheckHelper(this).run();
 
         if (Preferences.get(this).isFirstRun() && mConfig.isLicenseCheckerEnabled()) {
             mLicenseHelper = new LicenseHelper(this);

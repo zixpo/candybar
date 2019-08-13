@@ -65,6 +65,12 @@
         You will not be able to use it.</string>
     <string name="license_check_retry">Unable to check license, please try again in a few moments.</string>
 
+    <!-- Playstore Installation Check -->
+    <string name="playstore_check">Playstore Check</string> <!-- New -->
+    <string name="playstore_check_success">Thanks for Installing the App from Playstore. Please Enjoy.</string>
+    <string name="playstore_check_failed">It Seems Like You Installed this Icon Pack from outside of Playstore.
+        You will not be able to use it.</string> <!-- New -->
+
     <!-- Share -->
     <string name="share_app_title">Yo! Check out %s</string>
     <string name="share_app_body">Check out %1$s, this icon pack is really cool! %2$s</string>

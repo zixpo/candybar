@@ -12,6 +12,9 @@
     <!-- CandyBar Config JSON Link -->
     <string name="config_json_link">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
 
+    <!-- Closes app if installed outside of Playstore -->
+    <bool name="playstore_check_enabled">false</bool>
+
     <!-- CONFIG: DEFAULT THEME -->
 
     <!-- Use dark theme as default theme -->
