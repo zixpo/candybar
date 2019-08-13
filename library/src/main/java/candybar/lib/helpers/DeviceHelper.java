@@ -49,7 +49,7 @@ public class DeviceHelper {
 
         String installationFlag;
 
-        if (installerPackage == "com.android.vending") {
+        if (installerPackage.contentEquals("com.android.vending")) {
             installationFlag = " R";
         } else {
             installationFlag = " ";
