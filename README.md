@@ -1,8 +1,10 @@
 # CandyBar
+[![JitPack Version](https://jitpack.io/v/zixpo/candybar.svg)](https://jitpack.io/#zixpo/candybar)
+[![Build Status](https://api.travis-ci.com/zixpo/candybar.svg?branch=master)](https://travis-ci.com/zixpo/candybar)
 
 Improved Version of Original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
 
-This is the Library of CandyBar. It is only used for Development Purpose. Use the Sample, Get it From [Here](https://github.com/zixpo/candybar-sample).
+This is the Library of CandyBar. It is only used for Development Purpose. Use the Sample for making Icon Pack, Get it From [Here](https://github.com/zixpo/candybar-sample).
 
 # License
 ```
