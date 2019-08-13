@@ -1,6 +1,8 @@
 package candybar.lib.fragments;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
@@ -38,7 +40,15 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,6 +100,12 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private AsyncTask mAsyncTask;
 
     public static List<Integer> sSelectedRequests;
+
+    private static boolean canRequest = true;
+    private static int appVersionCode = 0, disabledReqBelow = 0;
+    private static String disabledReqOn = "0", updateUrl = "";
+
+    private boolean noEmailClientError = false;
 
     @Nullable
     @Override
@@ -245,7 +261,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     }
                 }
 
-                mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                mAsyncTask = new checkConfigBeforeRequest().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             } else {
                 Toast.makeText(getActivity(), R.string.request_not_selected,
                         Toast.LENGTH_LONG).show();
@@ -355,11 +371,11 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private class RequestLoader extends AsyncTask<Void, Void, Boolean> {
 
         private MaterialDialog dialog;
-        private boolean noEmailClientError = false;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+
             MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
             builder.typeface(
                     TypefaceHelper.getMedium(getActivity()),
@@ -458,6 +474,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
             mAsyncTask = null;
             dialog.dismiss();
+
             if (aBoolean) {
                 IntentChooserFragment.showIntentChooserDialog(getActivity().getSupportFragmentManager(),
                         IntentChooserFragment.ICON_REQUEST);
@@ -472,6 +489,137 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     Toast.makeText(getActivity(), R.string.request_build_failed,
                             Toast.LENGTH_LONG).show();
                 }
+            }
+
+        }
+    }
+
+    public class checkConfigBeforeRequest extends AsyncTask<Void, Void, Boolean> {
+
+        MaterialDialog fetchingDataDialog;
+        private JSONObject configJson;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            MaterialDialog.Builder fetchDataDialogBuilder = new MaterialDialog.Builder(getActivity());
+            fetchDataDialogBuilder.typeface(
+                    TypefaceHelper.getMedium(getActivity()),
+                    TypefaceHelper.getRegular(getActivity()));
+            fetchDataDialogBuilder.content(R.string.request_fetching_data);
+            fetchDataDialogBuilder.cancelable(false);
+            fetchDataDialogBuilder.canceledOnTouchOutside(false);
+            fetchDataDialogBuilder.progress(true, 0);
+            fetchDataDialogBuilder.progressIndeterminateStyle(true);
+
+            fetchingDataDialog = fetchDataDialogBuilder.build();
+            fetchingDataDialog.show();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            String str = getActivity().getResources().getString(R.string.candybar_config_json);
+            URLConnection urlConn = null;
+            BufferedReader bufferedReader = null;
+            try {
+                URL url = new URL(str);
+                urlConn = url.openConnection();
+                bufferedReader = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
+
+                StringBuffer stringBuffer = new StringBuffer();
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    stringBuffer.append(line);
+                }
+
+                configJson = new JSONObject(stringBuffer.toString());
+
+                return true;
+            } catch (Exception ex) {
+                Log.e("CandyBar", "Error Loading ConfigJson", ex);
+                return false;
+            } finally {
+                if (bufferedReader != null) {
+                    try {
+                        bufferedReader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean resBoolean) {
+            if (resBoolean) {
+                // Load Data
+                try {
+                    updateUrl = configJson.getString("url");
+
+                    JSONObject disabledRequest = configJson.getJSONObject("disableRequest");
+
+                    disabledReqBelow = disabledRequest.getInt("below");
+                    disabledReqOn = disabledRequest.getString("on");
+                } catch (JSONException e) {
+                    LogUtil.e(Log.getStackTraceString(e));
+                }
+
+                try {
+                    PackageInfo pInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
+                    appVersionCode = pInfo.versionCode;
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                // Checks If Request can be Done or Not
+                if (appVersionCode < disabledReqBelow) canRequest = false;
+                String disabledReqOns[] = disabledReqOn.split("[\\s,]");
+                for (String version : disabledReqOns) {
+                    //Log.d("Disabled Versions", version);
+                    //Log.d("Disabled Version Length", version.length() + "");
+                    if ((appVersionCode + "").contentEquals(version)) canRequest = false;
+                }
+
+                // Icon Request
+                fetchingDataDialog.dismiss();
+
+                if (!canRequest) {
+                    MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
+                    builder.typeface(
+                            TypefaceHelper.getMedium(getActivity()),
+                            TypefaceHelper.getRegular(getActivity()));
+                    builder.content(R.string.request_app_disabled);
+                    builder.negativeText(R.string.close);
+                    builder.positiveText(R.string.update);
+                    builder.onPositive(((dialog, which) -> {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+                        getActivity().startActivity(intent);
+                    }));
+                    builder.cancelable(false);
+                    builder.canceledOnTouchOutside(false);
+                    MaterialDialog requestNotPermittedDialog = builder.build();
+                    requestNotPermittedDialog.show();
+                    mAdapter.resetSelectedItems();
+                    if (mMenuItem != null) mMenuItem.setIcon(R.drawable.ic_toolbar_select_all);
+                } else {
+                    mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                }
+
+            } else {
+                fetchingDataDialog.dismiss();
+
+                MaterialDialog.Builder errorDialogBuilder = new MaterialDialog.Builder(getActivity());
+                errorDialogBuilder.typeface(
+                        TypefaceHelper.getMedium(getActivity()),
+                        TypefaceHelper.getRegular(getActivity()));
+                errorDialogBuilder.content(R.string.connection_error_long);
+                errorDialogBuilder.canceledOnTouchOutside(false);
+                errorDialogBuilder.positiveText(R.string.close);
+
+                MaterialDialog errorDialog = errorDialogBuilder.build();
+                errorDialog.show();
             }
         }
     }

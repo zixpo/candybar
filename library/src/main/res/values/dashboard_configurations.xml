@@ -9,6 +9,9 @@
     <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
     <bool name="enable_non_mail_app_request">false</bool>
 
+    <!-- CandyBar Config Link -->
+    <string name="candybar_config_json">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
+
     <!-- CONFIG: DEFAULT THEME -->
 
     <!-- Use dark theme as default theme -->
@@ -232,9 +235,6 @@
     <!-- Link Used for Share Link of Your App. Set Blank to Disable -->
     <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
     <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
-
-    <!-- Link to JSON from which the app will check for updates. Set Blank to Disable -->
-    <string name="update_json_link">https://zixpo.github.io/candybar-sources/update.json</string>
 
     <!-- Privacy Policy Link. Set Blank to Disable -->
     <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
