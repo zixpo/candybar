@@ -341,7 +341,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 share.setVisibility(View.GONE);
             }
 
-            if (mContext.getResources().getString(R.string.config_json_link).length() == 0) {
+            if (!mContext.getResources().getBoolean(R.bool.enable_check_update)) {
                 update.setVisibility(View.GONE);
             }
 

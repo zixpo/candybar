@@ -261,7 +261,14 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     }
                 }
 
-                mAsyncTask = new checkConfigBeforeRequest().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                if (getActivity().getResources().getBoolean(R.bool.json_check_before_request)) {
+                    Log.d("CandyBar", "JSON Check Before Request");
+                    mAsyncTask = new checkConfigBeforeRequest().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                } else {
+                    Log.d("CandyBar", "No JSON Check Before Request");
+                    mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                }
+
             } else {
                 Toast.makeText(getActivity(), R.string.request_not_selected,
                         Toast.LENGTH_LONG).show();

@@ -15,6 +15,13 @@
     <!-- Closes app if installed outside of Playstore -->
     <bool name="playstore_check_enabled">false</bool>
 
+    <!-- Enable Check for Update -->
+    <bool name="enable_check_update">true</bool>
+
+    <!-- Enable JSON Data check before Requesting Icons -->
+    <bool name="json_check_before_request">true</bool>
+
+
     <!-- CONFIG: DEFAULT THEME -->
 
     <!-- Use dark theme as default theme -->

@@ -151,7 +151,7 @@
     <string name="request_appfilter_failed">Unable to read appfilter.xml</string>
     <string name="request_requested">Please check your request again.
         Because you are trying to request app that was already requested.</string>
-    <string name="request_email_client">Choose the email client you want to use to send the icon request</string>
+    <string name="request_email_client">Choose the app you want to use to send the icon request</string>
     <string name="request_app_disabled">You\'re using Older Version of this Icon Pack, The Requested Icons may be included in the Latest Version. Please Update your app to Latest Version to Request Icons.</string> <!-- New -->
     <string name="connection_error_long">Unable to Load Data from Server, Please Check your Network Connection.</string> <!-- New -->
 
