@@ -26,11 +26,10 @@ import com.google.android.apps.muzei.api.provider.MuzeiArtProvider;
  */
 
 public class CandyBarMuzeiService extends MuzeiArtProvider {
-    private static final String LOG_TAG = "MuzeiService";
-    private static String PROVIDER_NAME = "CandyBarMuzeiProvider";
+    private static String blank;
 
     public CandyBarMuzeiService(String name) {
-        PROVIDER_NAME = name;
+        blank = name;
     }
 
     // Pass true to clear cache and download new images
@@ -41,24 +40,6 @@ public class CandyBarMuzeiService extends MuzeiArtProvider {
     }
 }
 
-
-/*
-public abstract class CandyBarMuzeiService extends MuzeiArtProvider {
-
-    public final String SOURCE_NAME;
-
-    public CandyBarMuzeiService(String name) {
-        Log.d("CandyBarMuzeiService", "Initialized");
-        SOURCE_NAME = name;
-    }
-
-    @Override
-    protected void onLoadRequested(Boolean initial) {
-        Log.d("CandyBar Muzei", "Load Requested");
-    }
-
-}
-*/
 /*
 public abstract class CandyBarMuzeiService extends RemoteMuzeiArtSource {
 
