@@ -261,7 +261,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     }
                 }
 
-                if ((getActivity().getResources().getBoolean(R.bool.json_check_before_request)) && (getActivity().getResources().getString(R.string.config_json_link).length() != 0)) {
+                if ((getActivity().getResources().getBoolean(R.bool.json_check_before_request)) && (getActivity().getResources().getString(R.string.config_json).length() != 0)) {
                     mAsyncTask = new checkConfigBeforeRequest().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 } else {
                     mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -524,7 +524,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            String str = getActivity().getResources().getString(R.string.config_json_link);
+            String str = getActivity().getResources().getString(R.string.config_json);
             URLConnection urlConn = null;
             BufferedReader bufferedReader = null;
             try {
