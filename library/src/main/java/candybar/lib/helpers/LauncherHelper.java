@@ -239,6 +239,7 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, "ch.deletescape.lawnchair.plah", launcherName);
                 }
+                break;
             case LGHOME:
                 applyLgHome(context, launcherPackage, launcherName,
                         "com.lge.launcher2.homesettings.HomeSettingsPrefActivity");
