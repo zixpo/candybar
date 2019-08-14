@@ -9,4 +9,10 @@ public class MuzeiService extends CandyBarMuzeiService {
     public MuzeiService() {
         super(SOURCE_NAME);
     }
+
+    /*
+    public MuzeiService() {
+        super(SOURCE_NAME);
+    }
+    */
 }

@@ -70,12 +70,8 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project (':library')
-    implementation 'androidx.annotation:annotation:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.apps.muzei:muzei-api:2.0'
 
     // Remove '//' below to Enable OneSignal
     //implementation 'com.onesignal:OneSignal:3.9.1'

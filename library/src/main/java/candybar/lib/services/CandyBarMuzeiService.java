@@ -1,20 +1,11 @@
 package candybar.lib.services;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.webkit.URLUtil;
-
-import androidx.annotation.Nullable;
-
+/*
 import com.google.android.apps.muzei.api.Artwork;
 import com.google.android.apps.muzei.api.RemoteMuzeiArtSource;
+*/
 
-import candybar.lib.R;
-import candybar.lib.databases.Database;
-import candybar.lib.helpers.MuzeiHelper;
-import candybar.lib.items.Wallpaper;
-import candybar.lib.preferences.Preferences;
+import com.google.android.apps.muzei.api.provider.MuzeiArtProvider;
 
 /*
  * CandyBar - Material Dashboard
@@ -34,6 +25,41 @@ import candybar.lib.preferences.Preferences;
  * limitations under the License.
  */
 
+public class CandyBarMuzeiService extends MuzeiArtProvider {
+    private static final String LOG_TAG = "MuzeiService";
+    private static String PROVIDER_NAME = "CandyBarMuzeiProvider";
+
+    public CandyBarMuzeiService(String name) {
+        PROVIDER_NAME = name;
+    }
+
+    // Pass true to clear cache and download new images
+    // Pass false to add new images to cache
+    @Override
+    protected void onLoadRequested(boolean initial) {
+        CandyBarArtWorker.enqueueLoad(getContext());
+    }
+}
+
+
+/*
+public abstract class CandyBarMuzeiService extends MuzeiArtProvider {
+
+    public final String SOURCE_NAME;
+
+    public CandyBarMuzeiService(String name) {
+        Log.d("CandyBarMuzeiService", "Initialized");
+        SOURCE_NAME = name;
+    }
+
+    @Override
+    protected void onLoadRequested(Boolean initial) {
+        Log.d("CandyBar Muzei", "Load Requested");
+    }
+
+}
+*/
+/*
 public abstract class CandyBarMuzeiService extends RemoteMuzeiArtSource {
 
     public CandyBarMuzeiService(String name) {
@@ -91,4 +117,4 @@ public abstract class CandyBarMuzeiService extends RemoteMuzeiArtSource {
         }
     }
 }
-
+*/

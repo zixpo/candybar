@@ -13,10 +13,10 @@
     <!-- CONFIG: MUZEI -->
 
     <!-- Muzei art source name -->
-    <string name="muzei_art_source_name">Your Art Source Name</string>
+    <string name="muzei_art_source_name">CandyBar</string>
 
     <!-- Muzei art source description -->
-    <string name="muzei_art_source_desc">Your Art Source Description</string>
+    <string name="muzei_art_source_desc">Pleasing Wallpaper from CandyBar</string>
 
     <!-- Muzei base color -->
     <color name="muzei_color">#0082B4</color>
@@ -51,6 +51,9 @@
         CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>Many Features</i>. Again in <u>Development</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
         ]]>
     </string>
+
+    <!-- Enable Check for Update -->
+    <bool name="enable_check_update">true</bool>
 
     <!-- More apps at Google Play Store
     * Link to google play store developer
@@ -121,6 +124,9 @@
     * change to true to enable it -->
     <bool name="reset_icon_request_limit">true</bool>
 
+    <!-- Enable JSON Data check before Requesting Icons -->
+    <bool name="json_check_before_request">true</bool>
+
     <!-- Enable or disable premium request
     * default: false
     * change to true to enable it -->
@@ -148,7 +154,8 @@
     * just put your wallpaper app package name here
     * example: com.dm.wallpaper.board.demo
     * <string name="wallpaper_json">com.dm.wallpaper.board.demo</string> -->
-    <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/wallpapers.json</string>
+    <!--<string name="wallpaper_json">https://zixpo.github.io/candybar-sources/wallpapers.json</string>-->
+    <string name="wallpaper_json">https://raw.githubusercontent.com/zixpo/candybar-sources/master/wallpapers.json</string>
 
     <!-- Allow to download wallpaper
     * If disabled user only able to apply wallpaper from dashboard -->
