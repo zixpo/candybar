@@ -1,4 +1,5 @@
 # CandyBar
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f92c02522d2e425ca7e0e039caf3dae3)](https://app.codacy.com/app/zixpo/candybar?utm_source=github.com&utm_medium=referral&utm_content=zixpo/candybar&utm_campaign=Badge_Grade_Dashboard)
 [![JitPack Version](https://jitpack.io/v/zixpo/candybar.svg)](https://jitpack.io/#zixpo/candybar)
 [![Build Status](https://api.travis-ci.com/zixpo/candybar.svg?branch=master)](https://travis-ci.com/zixpo/candybar)
 
