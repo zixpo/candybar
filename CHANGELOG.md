@@ -4,6 +4,7 @@
 - Now shows Request Available, Used even for Regular Requests.
 - Option to Close app if installed outside of Playstore.
 - Option to Enable/Disable AppUpdater and Checking JSON Before Requesting.
+- Uses New Muzei API.
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin

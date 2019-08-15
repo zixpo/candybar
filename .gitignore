@@ -66,7 +66,8 @@ gen-external-apklibs
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 .idea/
-/.idea/
+.idea/*
+.idea
 
 # Gradle:
 .idea/gradle.xml
