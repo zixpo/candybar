@@ -4,6 +4,6 @@ if [ "$TRAVIS_PULL_REQUEST" = false ]; then
   for apk in $(find *.apk -type f); do
     apkName="${apk}"
     echo $apkName
-    curl -v -F chat_id=\"@candybar_builds\" -F document=@"${TRAVIS_BUILD_DIR}/app/build/outputs/apk/release/${apkName}" https://api.telegram.org/bot$BOT_TOKEN/sendDocument/
+    curl -v -F chat_id=\"@candybar_builds\" -F document=@"${TRAVIS_BUILD_DIR}/app/build/outputs/apk/release/${apkName}" https://api.telegram.org/bot$BOT_TOKEN/sendDocument
   done
 fi
