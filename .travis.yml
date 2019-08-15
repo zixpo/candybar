@@ -22,3 +22,7 @@ before_install:
   
 script:
   - ./gradlew clean :app:assembleRelease --stacktrace
+
+after_success:
+  - chmod +x send-to-telegram.sh
+  - bash ./send-to-telegram.sh
