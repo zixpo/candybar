@@ -15,12 +15,14 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="candybar.sample"
-            android:targetClass="com.candybar.dev.activities.MainActivity"></intent>
+            android:targetPackage="com.candybar.dev"
+            android:targetClass="com.candybar.dev.activities.MainActivity">
 
-        <extra
-            android:name="position"
-            android:value="1" />
+            <extra
+                android:name="position"
+                android:value="1" />
+
+        </intent>
 
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
@@ -38,12 +40,14 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="candybar.sample"
-            android:targetClass="com.candybar.dev.activities.MainActivity"></intent>
+            android:targetPackage="com.candybar.dev"
+            android:targetClass="com.candybar.dev.activities.MainActivity">
 
-        <extra
-            android:name="position"
-            android:value="3" />
+            <extra
+                android:name="position"
+                android:value="3" />
+
+        </intent>
 
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
@@ -60,12 +64,14 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="candybar.sample"
-            android:targetClass="com.candybar.dev.activities.MainActivity"></intent>
+            android:targetPackage="com.candybar.dev"
+            android:targetClass="com.candybar.dev.activities.MainActivity">
 
-        <extra
-            android:name="position"
-            android:value="4" />
+            <extra
+                android:name="position"
+                android:value="4" />
+
+        </intent>
 
         <categories android:name="android.shortcut.conversation" />
     </shortcut>

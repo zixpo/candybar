@@ -33,6 +33,7 @@ public class IntentHelper {
 
     private static final String ACTION_ADW_PICK_ICON = "org.adw.launcher.icons.ACTION_PICK_ICON";
     private static final String ACTION_TURBO_PICK_ICON = "com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON";
+    private static final String ACTION_LAWNCHAIR_PICK_ICON = "ch.deletescape.lawnchair.ICONPACK";
     private static final String ACTION_NOVA_LAUNCHER = "com.novalauncher.THEME";
     private static final String ACTION_PLUS_HOME = "jp.co.a_tm.android.launcher.icons.ACTION_PICK_ICON";
 
@@ -43,6 +44,7 @@ public class IntentHelper {
             switch (action) {
                 case ACTION_ADW_PICK_ICON:
                 case ACTION_TURBO_PICK_ICON:
+                case ACTION_LAWNCHAIR_PICK_ICON:
                 case ACTION_NOVA_LAUNCHER:
                 case ACTION_PLUS_HOME:
                     return ICON_PICKER;

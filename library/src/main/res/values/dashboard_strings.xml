@@ -286,9 +286,7 @@
     <string name="about_open_source_licenses">Open Source Licenses</string>
     <string name="about_dashboard_contributors">CandyBar Contributors</string>
     <string name="about_dashboard_translator">CandyBar Translator</string>
-    <string name="about_dashboard_dev_google_plus_url">https://plus.google.com/+DaniMahardhika</string>
-    <string name="about_dashboard_dev_github_url">https://github.com/danimahardhika</string>
-    <string name="about_dashboard_dev_instagram_url">https://www.instagram.com/_u/danimahardhika112/</string>
+    <string name="about_dashboard_github_url">https://github.com/zixpo/candybar</string>
 
     <!-- DrawerToggle -->
     <string name="txt_open">Open</string>

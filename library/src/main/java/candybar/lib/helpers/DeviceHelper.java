@@ -49,10 +49,10 @@ public class DeviceHelper {
 
         String installationFlag;
 
-        if (installerPackage.contentEquals("com.android.vending")) {
-            installationFlag = " R";
+        if (installerPackage == null || !installerPackage.contentEquals("com.android.vending")) {
+            installationFlag = "";
         } else {
-            installationFlag = " ";
+            installationFlag = " R";
         }
 
         sb.append("Manufacturer : ").append(Build.MANUFACTURER)

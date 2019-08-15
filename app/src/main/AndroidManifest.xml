@@ -108,6 +108,11 @@
                 <action android:name="com.gridappsinc.launcher.theme.apk_action" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <!-- Lawnchair -->
+            <intent-filter>
+                <action android:name="ch.deletescape.lawnchair.ICONPACK" />
+                <category android:name="ch.deletescape.lawnchair.PICK_ICON" />
+            </intent-filter>
             <!-- Nova Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="com.novalauncher.THEME" />
@@ -160,32 +165,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".activities.MuzeiActivity"
-            android:label="@string/muzei_settings"
-            android:theme="@style/AppTheme"
-            android:exported="true"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
-
-        <!--<service
-            android:name=".services.MuzeiService"
-            android:label="@string/muzei_art_source_name"
-            android:description="@string/muzei_art_source_desc"
-            android:icon="@drawable/ic_muzei_logo"
-            android:permission="android.permission.WAKE_LOCK">
-            <intent-filter>
-                <action android:name="com.google.android.apps.muzei.api.MuzeiArtSource" />
-            </intent-filter>
-
-            <meta-data
-                android:name="color"
-                android:value="@color/muzei_color" />
-            <meta-data
-                android:name="settingsActivity"
-                android:value=".activities.MuzeiActivity" />
-        </service>-->
-
 
         <provider
             android:name=".services.MuzeiService"

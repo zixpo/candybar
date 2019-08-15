@@ -9,6 +9,10 @@
     <color name="darkColorPrimaryDark">#258854</color>
     <color name="darkColorAccent">#FE9700</color>
 
+    <!-- Shortcut Icons -->
+    <color name="shortcutIconForeground">#FFF</color>
+    <color name="shortcutIconBackground">#20AC6B</color>
+
     <!-- Navigation Bar
     * Must be solid color, no alpha -->
     <color name="navigationBar">#000000</color>

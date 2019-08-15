@@ -319,8 +319,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         FooterViewHolder(View itemView) {
             super(itemView);
-            ImageView instagram = itemView.findViewById(R.id.about_dev_instagram);
-            ImageView github = itemView.findViewById(R.id.about_dev_github);
+            ImageView github = itemView.findViewById(R.id.about_dashboard_github);
             TextView title = itemView.findViewById(R.id.about_dashboard_title);
             TextView licenses = itemView.findViewById(R.id.about_dashboard_licenses);
             TextView contributors = itemView.findViewById(R.id.about_dashboard_contributors);
@@ -352,10 +351,8 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
             color = ConfigurationHelper.getSocialIconColor(mContext,
                     CandyBarApplication.getConfiguration().getSocialIconColor());
-            instagram.setImageDrawable(DrawableHelper.getTintedDrawable(mContext, R.drawable.ic_toolbar_instagram, color));
             github.setImageDrawable(DrawableHelper.getTintedDrawable(mContext, R.drawable.ic_toolbar_github, color));
 
-            instagram.setOnClickListener(this);
             github.setOnClickListener(this);
             licenses.setOnClickListener(this);
             contributors.setOnClickListener(this);
@@ -383,12 +380,9 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             }
 
             Intent intent = null;
-            if (id == R.id.about_dev_github) {
+            if (id == R.id.about_dashboard_github) {
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext
-                        .getResources().getString(R.string.about_dashboard_dev_github_url)));
-            } else if (id == R.id.about_dev_instagram) {
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext
-                        .getResources().getString(R.string.about_dashboard_dev_instagram_url)));
+                        .getResources().getString(R.string.about_dashboard_github_url)));
             }
 
             try {

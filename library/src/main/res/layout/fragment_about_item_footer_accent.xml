@@ -104,7 +104,7 @@
         android:paddingStart="@dimen/content_margin">
 
         <ImageView
-            android:id="@+id/about_dev_github"
+            android:id="@+id/about_dashboard_github"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/content_padding"

@@ -5,6 +5,7 @@
 - Option to Close app if installed outside of Playstore.
 - Option to Enable/Disable AppUpdater and Checking JSON Before Requesting.
 - Uses New Muzei API.
+- Now you can set Your Own Email Subject for Icon Requests.
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin

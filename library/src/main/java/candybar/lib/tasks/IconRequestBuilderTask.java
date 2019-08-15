@@ -205,9 +205,20 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
             }
         }
 
+        String appName = mContext.get().getResources().getString(R.string.app_name);
+        String regRequestSubject = appName + " Icon Request";
+        String premRequestSubject = appName + " Premium Icon Request";
+
+        if (mContext.get().getResources().getString(R.string.request_email_subject).length() > 0) {
+            regRequestSubject = mContext.get().getResources().getString(R.string.request_email_subject);
+        }
+
+        if (mContext.get().getResources().getString(R.string.premium_request_email_subject).length() > 0) {
+            premRequestSubject = mContext.get().getResources().getString(R.string.premium_request_email_subject);
+        }
+
         String subject = Preferences.get(mContext.get()).isPremiumRequest() ?
-                "Premium Icon Request " : "Icon Request ";
-        subject += mContext.get().getResources().getString(R.string.app_name);
+                premRequestSubject : regRequestSubject;
 
         intent.putExtra(Intent.EXTRA_EMAIL,
                 new String[]{mContext.get().getResources().getString(R.string.dev_email)});

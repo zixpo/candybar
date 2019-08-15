@@ -125,7 +125,7 @@
     <bool name="reset_icon_request_limit">true</bool>
 
     <!-- Enable JSON Data check before Requesting Icons -->
-    <bool name="json_check_before_request">true</bool>
+    <bool name="json_check_before_request">false</bool>
 
     <!-- Enable or disable premium request
     * default: false
@@ -138,7 +138,7 @@
     <bool name="playstore_check_enabled">false</bool>
 
     <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
-    <bool name="enable_non_mail_app_request">false</bool>
+    <bool name="enable_non_mail_app_request">true</bool>
 
     <!-- Email that will be used to send icon request and report bugs -->
     <string name="dev_email">sarsamurmu05@gmail.com</string>

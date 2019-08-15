@@ -21,6 +21,10 @@
     <!-- Enable JSON Data check before Requesting Icons -->
     <bool name="json_check_before_request">true</bool>
 
+    <!-- Icon Request Email Subject. Set Empty to Use Deafult Subject. -->
+    <string name="request_email_subject"></string>
+    <string name="premium_request_email_subject"></string>
+
 
     <!-- CONFIG: DEFAULT THEME -->
 
