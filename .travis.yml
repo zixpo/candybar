@@ -24,11 +24,11 @@ script:
   - ./gradlew clean :app:assembleRelease --stacktrace
 
 after_success:
-  - cd app/build/outputs/apk/
-  - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $HOME/app/candybar.jks -storepass candybar -keypass candybar candybar.apk key0
+  - cd $TRAVIS_BUILD_DIR/app/build/outputs/apk/
+  - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $TRAVIS_BUILD_DIR/app/candybar.jks -storepass candybar -keypass candybar candybar.apk key0
   # Verification
   - jarsigner -verify candybar.apk
   - "${ANDROID_HOME}/build-tools/29.0.0/zipalign -v 4 candybar.apk candybar-signed.apk"
-  - cd $HOME
+  - cd $TRAVIS_BUILD_DIR
   - chmod +x send-to-telegram.sh
   - bash ./send-to-telegram.sh
