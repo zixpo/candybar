@@ -17,7 +17,6 @@ repositories {
 }
 
 android {
-
     signingConfigs {
         release {
             keyAlias 'key0'
@@ -32,11 +31,11 @@ android {
 
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            def appName = parent.name
-            def fileName = appName.replace(" ", "_")
-            def date = new Date();
-            def formattedDate = date.format('dd-MM-yy-HH-mm')
-            outputFileName = "$fileName-v${variant.versionName}-${formattedDate}.apk"
+            //def appName = parent.name
+            //def fileName = appName.replace(" ", "_")
+            //def date = new Date();
+            //def formattedDate = date.format('dd-MM-yy-HH-mm')
+            outputFileName = "candybar.apk"
         }
     }
 
