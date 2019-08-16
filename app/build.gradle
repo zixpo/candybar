@@ -36,7 +36,7 @@ android {
             def fileName = appName.replace(" ", "_")
             def date = new Date();
             def formattedDate = date.format('dd-MM-yy-HH-mm')
-            outputFileName = "$fileName-v${variant.versionName}-$formattedDate.apk"
+            outputFileName = "$fileName-v${variant.versionName}-${formattedDate}.apk"
         }
     }
 
