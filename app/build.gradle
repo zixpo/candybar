@@ -34,7 +34,9 @@ android {
         variant.outputs.all { output ->
             def appName = parent.name
             def fileName = appName.replace(" ", "_")
-            outputFileName = "$fileName-v${variant.versionName}.apk"
+            def date = new Date();
+            def formattedDate = date.format('dd-MM-yy-HH-mm')
+            outputFileName = "$fileName-v${variant.versionName}-$formattedDate.apk"
         }
     }
 
