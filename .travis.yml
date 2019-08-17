@@ -28,7 +28,7 @@ after_script:
   - cd $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/
   - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $TRAVIS_BUILD_DIR/app/candybar.jks -storepass candybar -keypass candybar candybar.apk key0
   - jarsigner -verify candybar.apk
-  - "${ANDROID_HOME}/build-tools/29.0.0/zipalign -z 4 candybar.apk candybar-signed.apk"
+  - "${ANDROID_HOME}/build-tools/29.0.0/zipalign -f 4 candybar.apk candybar-signed.apk"
   - cd $TRAVIS_BUILD_DIR
   - chmod +x send-to-telegram.sh
   - bash ./send-to-telegram.sh
