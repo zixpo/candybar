@@ -1,6 +1,9 @@
 package candybar.lib.helpers;
 
+import android.annotation.SuppressLint;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -41,6 +44,7 @@ import sarsamurmu.adaptiveicon.AdaptiveIcon;
  * limitations under the License.
  */
 
+@SuppressLint("NewApi")
 public class DrawableHelper {
 
     public static Drawable getAppIcon(@NonNull Context context, ResolveInfo info) {
@@ -52,20 +56,33 @@ public class DrawableHelper {
     }
 
     @Nullable
-    public static Drawable getReqIcon(@NonNull Context context, String packageName) {
+    public static Drawable getReqIcon(@NonNull Context context, String fullComponentName) {
+        PackageManager packageManager = context.getPackageManager();
+
+        // Load Deafult Icons
+        int slashIndex = fullComponentName.indexOf("/");
+        String activityName = fullComponentName.substring(slashIndex).replace("/", "");
+        String packageName = fullComponentName.replace("/" + activityName, "");
+        ComponentName componentName = new ComponentName(packageName, activityName);
+
+        Intent intent = new Intent();
+        intent.setComponent(componentName);
+        ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
+        Drawable normalDrawable = resolveInfo.loadIcon(packageManager);
+
+        if (normalDrawable instanceof AdaptiveIconDrawable) return normalDrawable;
+
         try {
-            PackageManager packageManager = context.getPackageManager();
-
-            Drawable normalDrawable = packageManager.getApplicationIcon(packageName);
-
+            // Get XXXHDPI Icon for Non-Adaptive Icons
             ApplicationInfo info = packageManager.getApplicationInfo(
                     packageName, PackageManager.GET_META_DATA);
+            Resources resources = packageManager.getResourcesForActivity(componentName);
 
-            Resources resources = packageManager.getResourcesForApplication(packageName);
             int density = DisplayMetrics.DENSITY_XXHIGH;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                 density = DisplayMetrics.DENSITY_XXXHIGH;
             }
+
             Drawable drawable = ResourcesCompat.getDrawableForDensity(
                     resources, info.icon, density, null);
 

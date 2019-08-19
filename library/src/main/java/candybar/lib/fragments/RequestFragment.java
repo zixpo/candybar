@@ -443,7 +443,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     List<String> files = new ArrayList<>();
 
                     for (Request request : requests) {
-                        Drawable drawable = getReqIcon(getActivity(), request.getPackageName());
+                        Drawable drawable = getReqIcon(getActivity(), request.getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable, request.getName());
                         if (icon != null) files.add(icon);
                     }

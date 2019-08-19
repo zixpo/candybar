@@ -129,7 +129,7 @@ public class ReportBugsTask extends AsyncTask<Void, Void, Boolean> {
         mDialog.dismiss();
         if (aBoolean) {
             final Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("message/rfc822");
+            intent.setType("application/zip");
             intent.putExtra(Intent.EXTRA_EMAIL,
                     new String[]{mContext.get().getResources().getString(R.string.dev_email)});
             intent.putExtra(Intent.EXTRA_SUBJECT,

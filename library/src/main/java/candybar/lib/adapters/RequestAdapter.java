@@ -197,7 +197,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             int finalPosition = mShowPremiumRequest ? position - 1 : position;
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
 
-            ImageLoader.getInstance().displayImage("package://" + mRequests.get(finalPosition).getPackageName(),
+            ImageLoader.getInstance().displayImage("package://" + mRequests.get(finalPosition).getActivity(),
                     new ImageViewAware(contentViewHolder.icon), mOptions.build(),
                     new ImageSize(114, 114), null, null);
 

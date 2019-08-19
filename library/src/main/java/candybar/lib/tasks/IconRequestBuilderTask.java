@@ -193,7 +193,7 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
     }
 
     private Intent addIntentExtra(@NonNull Intent intent, String emailBody) {
-        intent.setType("message/rfc822");
+        intent.setType("application/zip");
 
         if (CandyBarApplication.sZipPath != null) {
             File zip = new File(CandyBarApplication.sZipPath);

@@ -106,7 +106,7 @@ public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
                         String value = appFilter.get(activity);
 
                         if (value == null) {
-                            String name = LocaleHelper.getOtherAppLocaleName(mContext.get(), new Locale("en"), packageName);
+                            String name = LocaleHelper.getOtherAppLocaleName(mContext.get(), new Locale("en"), activity);
                             if (name == null) {
                                 name = app.activityInfo.loadLabel(packageManager).toString();
                             }

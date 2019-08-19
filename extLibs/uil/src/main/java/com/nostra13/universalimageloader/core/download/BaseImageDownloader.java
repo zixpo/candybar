@@ -16,10 +16,12 @@
 package com.nostra13.universalimageloader.core.download;
 
 import android.annotation.TargetApi;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.pm.PackageInfo;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.drawable.AdaptiveIconDrawable;
@@ -290,39 +292,41 @@ public class BaseImageDownloader implements ImageDownloader {
      */
     protected InputStream getStreamFromPackage(String imageUri, Object extra) throws IOException {
         PackageManager packageManager = context.getPackageManager();
-        PackageInfo packageInfo = null;
-        String packageName = Scheme.PACKAGE.crop(imageUri);
+        String componentName = Scheme.PACKAGE.crop(imageUri);
         Bitmap resBitmap;
 
-        try {
-            Drawable drawable = packageManager.getApplicationIcon(packageName);
-            resBitmap = getRightIcon(drawable);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            resBitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
-            // Quality only for format JPEG
-            resBitmap.recycle();
-            // Recycle bitmap
-            return new ByteArrayInputStream(stream.toByteArray());
-        } catch (PackageManager.NameNotFoundException ignored) {
-        }
+        int slashIndex = componentName.indexOf("/");
+        String activityName = componentName.substring(slashIndex).replace("/", "");
+        String packageName = componentName.replace("/" + activityName, "");
 
-        return getStreamFromOtherSource(imageUri, extra);
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName(packageName, activityName));
+        ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
+        //Drawable drawable = packageManager.getActivityIcon(packageName);
+        Drawable drawable = resolveInfo.loadIcon(packageManager);
+        resBitmap = getRightIcon(drawable);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        resBitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        // Quality only for format JPEG
+        resBitmap.recycle();
+        // Recycle bitmap
+        return new ByteArrayInputStream(stream.toByteArray());
     }
 
     public static Bitmap getRightIcon(Drawable drawable) {
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
-            Log.d("UILIconGeneration", "Made Normal Icon in Low SDK");
+            Log.d("UIL", "Made Normal Icon in Low SDK");
             return ((BitmapDrawable) drawable).getBitmap();
         } else {
             if (drawable instanceof BitmapDrawable) {
-                Log.d("UILIconGeneration", "Made Normal Icon in High SDK");
+                Log.d("UIL", "Made Normal Icon in High SDK");
                 return ((BitmapDrawable) drawable).getBitmap();
             } else if (drawable instanceof AdaptiveIconDrawable) {
                 AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
                 AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
                 adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
                 Bitmap iconBitmap = adaptiveIcon.render();
-                Log.d("UILIconGeneration", "Made Adaptive Icon in High SDK");
+                Log.d("UIL", "Made Adaptive Icon in High SDK");
                 return iconBitmap;
             }
         }

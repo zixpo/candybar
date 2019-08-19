@@ -152,7 +152,7 @@ public class RequestHelper {
             String value = appFilter.get(activity);
 
             if (value == null) {
-                String name = LocaleHelper.getOtherAppLocaleName(context, new Locale("en"), packageName);
+                String name = LocaleHelper.getOtherAppLocaleName(context, new Locale("en"), activity);
                 if (name == null) {
                     name = app.activityInfo.loadLabel(packageManager).toString();
                 }

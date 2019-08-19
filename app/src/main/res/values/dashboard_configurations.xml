@@ -114,7 +114,7 @@
     * IGNORE if icon request limit is disabled
     * ex: If you set icon request limit to 10, user only able to make 10 icon request in all time
     * After making 10 icon request user not able to request again -->
-    <integer name="icon_request_limit">100</integer>
+    <integer name="icon_request_limit">1000</integer>
 
     <!-- Reset regular icon request limit every update
     * IGNORE if icon request limit is disabled
@@ -142,6 +142,10 @@
 
     <!-- Email that will be used to send icon request and report bugs -->
     <string name="dev_email">sarsamurmu05@gmail.com</string>
+
+    <!-- Icon Request Email Subject. Set Empty to Use Deafult Subject. -->
+    <string name="request_email_subject"></string>
+    <string name="premium_request_email_subject"></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
 
