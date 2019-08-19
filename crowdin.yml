@@ -1,0 +1,5 @@
+files:
+  - source: /library/src/main/res/values/dashboard_strings.xml
+    translation: /library/src/main/res/values-%android_code%/dashboard_strings.xml
+  - source: /library/src/main/res/values/dashboard_faqs.xml
+    translation: /library/src/main/res/values-%android_code%/dashboard_faqs.xml
