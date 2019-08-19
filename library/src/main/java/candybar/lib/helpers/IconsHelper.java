@@ -202,6 +202,7 @@ public class IconsHelper {
         String fileName = name.toLowerCase().replaceAll(" ", "_") + ".png";
         File file = new File(directory, fileName);
         try {
+            Thread.sleep(2);
             Bitmap bitmap = getRightIcon(drawable);
 
             if (files.contains(file.toString())) {
