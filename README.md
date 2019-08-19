@@ -7,6 +7,31 @@ Improved Version of Original [CandyBar Dashboard](https://github.com/danimahardh
 
 This is the Library of CandyBar. It is only used for Development Purpose. Use the Sample for making Icon Pack, Get it From [Here](https://github.com/zixpo/candybar-sample).
 
+# Features
+- License Checker
+- Apply: 26 Launchers
+- Icon Picker: See all Icons
+- Icon Request
+  - Regular Request: Free to Request
+  - Premium Request: Pay to Request
+- Cloud Based Wallpaper
+  - Preview Wallpaper
+  - Apply Wallpaper
+  - Download Wallpaper
+- Settings
+  - Clear Cache
+  - Switch to Dark Theme
+  - Restore Purchases: Restore Premium Request after Reinstalling
+- Frequently Asked Questions with Search
+- About
+- Donation
+- Changelog: Shown on every update
+- Muzei Live Wallpaper
+- Localization: Supports many Languages
+- Support for OneSignal Notifications
+- Check for Update
+- Control your Dashboard Remotely with Config JSON
+
 # License
 ```
 Copyright (c) 2014-2016 Dani Mahardhika
