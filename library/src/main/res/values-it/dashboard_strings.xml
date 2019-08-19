@@ -34,20 +34,33 @@
     <string name="ok">OK</string>
     <string name="install">Installa</string>
     <string name="donate">Dona</string>
+    <string name="update">Aggiornamento</string>
+
     <string name="search_noresult">Nessun risultato per \"%s\"</string>
     <string name="search_faqs">Domande o risposte</string>
     <string name="search_icon">Nome Icona</string>
+
+    <!-- Update -->
+    <string name="update_available">Aggiornamento disponibile!</string>
+    <string name="no_update_available">Stai usando l\'ultima versione!</string>
+
     <!-- Changelog -->
     <string name="changelog_version">Versione</string>
     <!-- InAppBilling -->
     <string name="billing_load_product_failed">Impossibile caricare i prodotti acquistati InApp</string>
     <!-- License -->
-    <string name="license_checking">Cerco Licenza …</string>
-    <string name="license_check">Licenza Trovata!</string>
-    <string name="license_check_success">Check di licenza superato, grazie per aver scaricato l\'app dal Play Store.</string>
-    <string name="license_check_failed">Ricerca Licenza fallita, non hai scaricato l\'app dal PlayStore.
-Non puoi usare l\'app.</string>
-    <string name="license_check_retry">Impossibile cercare la Licenza, riprova tra poco.</string>
+    <string name="license_checking">Controllo licenza in corso...</string>
+    <string name="license_check">Controllo licenza</string>
+    <string name="license_check_success">Controllo di licenza superato. Grazie per aver scaricato l\'app dal Play Store.</string>
+    <string name="license_check_failed">Controllo licenza fallito, non hai scaricato l\'app dal PlayStore. 
+Scaricala da lì per utilizzarla.</string>
+    <string name="license_check_retry">Impossibile controllare la licenza. Per favore, riprova tra qualche momento.</string>
+
+    <!-- Playstore Installation Check -->
+    <string name="playstore_check">Playstore Check</string>
+    <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store. Divertiti.</string>
+    <string name="playstore_check_failed">Sembra che tu abbia installato questo icon pack al di fuori del Play Store, dunque non potrai utilizzarlo.</string>
+
     <!-- Share -->
     <string name="share_app_title">Hey! Ti consiglio questa applicazione %s</string>
     <string name="share_app_body">Guarda %1$s, questo icon pack è fantastico! %2$s</string>
@@ -110,15 +123,25 @@ Non puoi usare l\'app.</string>
     <string name="request_not_requested">Non richiesta</string>
     <string name="request_already_requested">Richiesta già effettuata</string>
     <string name="request_building">Caricamento richiesta …</string>
+    <string name="request_fetching_data">Fetching Latest Data...</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>
     <string name="request_requested">Per favore, controlla la tua richiesta di icone.
 Stai provando hai selezionato icone già richieste.</string>
     <string name="request_email_client">Scegli con quale applicazione mail vuoi inviare la tua richiesta</string>
+    <string name="connection_error_long">Impossibile caricare i dati dal server. Per favore, controlla la tua connessione internet.</string>
     <string name="request_limit">E\' possibile inviare  %d  app con la richiesta free.</string>
     <string name="request_used">Hai richiesto %d icone</string>
     <string name="request_limit_buy">Puoi acquistare la funzione Premium per richiedere più icone.</string>
     <string name="request_limit_reset">Il limite delle icone richieste verrà azzerato ad ogni aggiornamento.</string>
+
+    <!-- Regular Request --> <!-- New -->
+    <string name="regular_request">Richiesta icone standard</string>
+    <string name="regular_request_desc">Fai la tua richiesta icone e lo sviluppatore proverà ad includere ciò che hai richiesto.</string>
+    <string name="regular_request_count">\n%d richieste totali</string>
+    <string name="regular_request_used">\n%d richieste usate</string>
+    <string name="regular_request_available">\n%d richieste disponibili</string>
+
     <!-- Premium Request -->
     <string name="premium_request">Richiesta Icone Premium</string>
     <string name="premium_request_no_internet">Assicurati che il tuo dispositivo sia collegato ad internet prima di inviare una richiesta premium</string>
@@ -195,6 +218,8 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="intent_email_not_supported_message">hai selezionato un\'applicazione non supportate, per favore, seleziona un\'altra app</string>
     <!-- About -->
     <string name="about_contributors_title">Collaboratori</string>
+    <string name="about_privacy_policy_title">Privacy Policy</string>
+    <string name="about_terms_and_conditions_title">Termini e Condizioni</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Per favore, descrivi che tipo di problema vuoi riportare</string>
     <string name="report_bugs_desc_hint">Descrizione</string>
@@ -210,7 +235,7 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="crash_report_send">" Invia Report"</string>
     <!-- Please don't modify this -->
     <string name="about_dashboard">CandyBar</string>
-    <string name="about_dashboard_dev">Candybar è un progetto Open Source sotto Licenza Apache 2.0 per Android disponibile su GitHub e gratis da usare, sviluppata da Dani Mahardhika.</string>
+    <string name="about_dashboard_dev">CandyBar è un progetto opensource sotto Licenza Apache 2.0 per Android, disponibile su GitHub e gratis da usare, sviluppato da Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Licenze Open Source</string>
     <string name="about_dashboard_contributors">Collaboratori della CandyBar</string>
     <string name="about_dashboard_translator">Traduttori della CandyBar</string>

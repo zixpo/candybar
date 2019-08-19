@@ -67,7 +67,7 @@
 
     <!-- Playstore Installation Check -->
     <string name="playstore_check">Playstore Check</string> <!-- New -->
-    <string name="playstore_check_success">Thanks for Installing the App from Playstore. Please Enjoy.</string>
+    <string name="playstore_check_success">Thanks for Installing the App from Playstore. Please Enjoy.</string> <!-- New -->
     <string name="playstore_check_failed">It Seems Like You Installed this Icon Pack from outside of Playstore.
         You will not be able to use it.</string> <!-- New -->
 
@@ -160,7 +160,7 @@
     <string name="request_limit_buy">You can buy Premium Requests to request more icons.</string>
     <string name="request_limit_reset">Icon request limit will be reset on every update.</string>
 
-    <!-- Normal Request --> <!-- New -->
+    <!-- Regular Request --> <!-- New -->
     <string name="regular_request">Regular Icon Request</string>
     <string name="regular_request_desc">Get Your Icon Requested and Developer will try to Include Your Icons.</string>
     <string name="regular_request_count">Total\n%d request</string>

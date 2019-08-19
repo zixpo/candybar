@@ -8,7 +8,8 @@
 - Now you can set Your Own Email Subject for Icon Requests.
 - Now it Loads Right Icon and Name from ComponentName instead of PackageName.
 - Fix to AndroidManifest.xml.
-- Updated Translators List
+- Updated Translators List.
+- Updated Italian Translations by Ciao Studio.
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin
