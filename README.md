@@ -32,6 +32,9 @@ This is the Library of CandyBar. It is only used for Development Purpose. Use th
 - Check for Update
 - Control your Dashboard Remotely with Config JSON
 
+# Translation
+Help us Translating CandyBar in Many Other Languages. [Translate](https://crowdin.com/project/candybar)
+
 # License
 ```
 Copyright (c) 2014-2016 Dani Mahardhika
