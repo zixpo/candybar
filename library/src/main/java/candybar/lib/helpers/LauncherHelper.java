@@ -5,7 +5,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,6 +34,8 @@ import candybar.lib.R;
 
 public class LauncherHelper {
 
+    private static final String thirdPartyHelperURL = "https://play.google.com/store/apps/details?id=com.momocode.shortcuts";
+
     private static final int UNKNOWN = -1;
     private static final int ACTION = 1;
     private static final int ADW = 2;
@@ -52,16 +53,19 @@ public class LauncherHelper {
     private static final int MINI = 14;
     private static final int NEXT = 15;
     private static final int NOVA = 16;
-    private static final int SMART = 17;
-    private static final int SOLO = 18;
-    private static final int ZENUI = 19;
-    private static final int NOUGAT = 20;
-    private static final int M = 21;
-    private static final int ZERO = 22;
-    private static final int V = 23;
-    private static final int ABC = 24;
-    private static final int EVIE = 25;
-    private static final int FLICK = 26;
+    private static final int PIXEL = 17;
+    private static final int SMART = 18;
+    private static final int SOLO = 19;
+    private static final int ZENUI = 20;
+    private static final int NOUGAT = 21;
+    private static final int M = 22;
+    private static final int ZERO = 23;
+    private static final int V = 24;
+    private static final int ABC = 25;
+    private static final int EVIE = 26;
+    private static final int POCO = 27;
+    private static final int POSIDON = 28;
+    private static final int FLICK = 29;
 
     private static int getLauncherId(String packageName) {
         if (packageName == null) return UNKNOWN;
@@ -105,6 +109,8 @@ public class LauncherHelper {
             case "com.teslacoilsw.launcher":
             case "com.teslacoilsw.launcher.prime":
                 return NOVA;
+            case "com.google.android.apps.nexuslauncher":
+                return PIXEL;
             case "ginlemon.flowerfree":
             case "ginlemon.flowerpro":
             case "ginlemon.flowerpro.special":
@@ -125,6 +131,10 @@ public class LauncherHelper {
                 return ABC;
             case "is.shortcut":
                 return EVIE;
+            case "com.mi.android.globallauncher":
+                return POCO;
+            case "posidon.launcher":
+                return POSIDON;
             case "com.universallauncher.universallauncher":
                 return FLICK;
             default:
@@ -241,12 +251,8 @@ public class LauncherHelper {
                 }
                 break;
             case LGHOME:
-                applyLgHome(context, launcherPackage, launcherName,
-                        "com.lge.launcher2.homesettings.HomeSettingsPrefActivity");
-                break;
             case LGHOME3:
-                applyLgHome(context, launcherPackage, launcherName,
-                        "com.lge.launcher3.homesettings.HomeSettingsPrefActivity");
+                launcherIncompatible(context, launcherName);
                 break;
             case LUCID:
                 try {
@@ -291,6 +297,9 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case PIXEL:
+                launcherIncompatible(context, launcherName);
                 break;
             case SMART:
                 try {
@@ -433,6 +442,21 @@ public class LauncherHelper {
             case EVIE:
                 applyEvie(context, launcherPackage, launcherName);
                 break;
+            case POCO:
+                applyManual(context, launcherPackage, launcherName, "com.miui.home.settings.HomeSettingsActivity");
+                break;
+            case POSIDON:
+                try {
+                    Intent posidon = new Intent(Intent.ACTION_MAIN);
+                    posidon.setComponent(new ComponentName("posidon.launcher", "posidon.launcher.applyicons"));
+                    posidon.putExtra("iconpack", context.getPackageName());
+                    posidon.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(posidon);
+                    ((AppCompatActivity) context).finish();
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
+                break;
             case FLICK:
                 //Todo: fix direct apply for flick launcher
                 try {
@@ -507,42 +531,21 @@ public class LauncherHelper {
                 .show();
     }
 
-    private static void applyLgHome(Context context, String launcherPackage, String launcherName, String activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            new MaterialDialog.Builder(context)
-                    .typeface(
-                            TypefaceHelper.getMedium(context),
-                            TypefaceHelper.getRegular(context))
-                    .title(launcherName)
-                    .content(R.string.apply_lg_home_nougat)
-                    .positiveText(R.string.close)
-                    .show();
-            return;
-        }
-
+    private static void launcherIncompatible(Context context, String launcherName) {
         new MaterialDialog.Builder(context)
                 .typeface(
                         TypefaceHelper.getMedium(context),
                         TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(context.getResources().getString(R.string.apply_manual, launcherName,
-                        context.getResources().getString(R.string.app_name))
-                        + "\n\n" + context.getResources().getString(R.string.apply_lg_home))
-                .positiveText(android.R.string.ok)
+                .content(String.format(context.getResources().getString(R.string.apply_launcher_incompatible), launcherName, launcherName))
+                .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
                     try {
-                        final Intent intent = new Intent(Intent.ACTION_MAIN);
-                        intent.setComponent(new ComponentName(launcherPackage,
-                                activity));
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        context.startActivity(intent);
-                        ((AppCompatActivity) context).finish();
-                    } catch (ActivityNotFoundException | NullPointerException e) {
-                        Toast.makeText(context, R.string.apply_lg_home_not_available,
-                                Toast.LENGTH_LONG).show();
-                    } catch (SecurityException | IllegalArgumentException e) {
-                        Toast.makeText(context, context.getResources().getString(R.string.apply_lg_home_failed),
-                                Toast.LENGTH_LONG).show();
+                        Intent store = new Intent(Intent.ACTION_VIEW, Uri.parse(thirdPartyHelperURL));
+                        context.startActivity(store);
+                    } catch (ActivityNotFoundException e) {
+                        Toast.makeText(context, context.getResources().getString(
+                                R.string.no_browser), Toast.LENGTH_LONG).show();
                     }
                 })
                 .negativeText(android.R.string.cancel)

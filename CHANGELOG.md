@@ -10,6 +10,7 @@
 - Fix to AndroidManifest.xml.
 - Updated Translators List.
 - Updated Italian Translations by Ciao Studio.
+- Added POCO, Posidon, Pixel Launcher. Minor Fixes to Old Launchers.
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin

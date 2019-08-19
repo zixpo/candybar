@@ -125,7 +125,7 @@
     <string name="apply_manual">%1$s doesn\'t support direct apply, you can apply %2$s manually from the launcher settings.</string>
     <string name="apply_manual_evie">Tap and hold on homescreen - Settings - Icon Pack - choose %s.</string>
     <string name="apply_launch_failed">Unable to launch %s settings</string>
-    <string name="apply_launcher_not_installed">%s is not installed. Do you want to open
+    <string name="apply_launcher_not_installed">%s Launcher is not installed. Do you want to open
         Google Play Store to download and install it?</string>
 
     <string name="apply_cmtheme_not_available">CM Theme Manager is not available on this device</string>
@@ -135,6 +135,8 @@
     <string name="apply_lg_home_not_available">LG Home is not available on this device</string>
     <string name="apply_lg_home_failed">Unable to launch LG Home Settings, you can try to apply Icon Pack manually from Settings.</string>
     <string name="apply_lg_home_nougat">LG Home with Android Nougat no longer supports Icon Pack. You need a custom launcher to use Icon Pack.</string>
+
+    <string name="apply_launcher_incompatible">%s Launcher doesn\'t support any Icon Pack. So, You can\'t use Icon Pack with this Launcher. You can try an third-party app to use this Icon Pack in %s Launcher, Do You want to Install it?</string>
 
     <!-- Icons -->
     <string name="icons_load_failed">Unable to load icons</string>
