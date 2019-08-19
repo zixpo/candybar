@@ -36,8 +36,9 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!--<meta-data android:name="android.app.shortcuts"
-              android:resource="@xml/shortcuts" />-->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
 
         <activity
@@ -177,7 +178,7 @@
 
         <provider
             android:name=".services.MuzeiService"
-            android:authorities="CandyBarProvider"
+            android:authorities="${applicationId}.MuzeiArt"
             android:label="@string/muzei_art_source_name"
             android:description="@string/muzei_art_source_desc"
             android:exported="true"

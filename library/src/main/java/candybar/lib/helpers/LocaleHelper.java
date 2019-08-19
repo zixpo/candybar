@@ -107,10 +107,10 @@ public class LocaleHelper {
             String packageName = fullComponentName.replace("/" + activityName, "");
             ComponentName componentName = new ComponentName(packageName, activityName);
 
-
+            /*
             Log.d("CandyBar", "Full Component Name: " + fullComponentName);
             Log.d("CandyBar", "Activity Name: " + activityName);
-            Log.d("CandyBar", "Package Name: " + packageName);
+            Log.d("CandyBar", "Package Name: " + packageName);*/
 
             PackageManager packageManager = context.getPackageManager();
             ActivityInfo info = packageManager.getActivityInfo(componentName, PackageManager.GET_META_DATA);
@@ -119,12 +119,13 @@ public class LocaleHelper {
             Context otherAppContext = context.createPackageContext(packageName, Context.CONTEXT_IGNORE_SECURITY);
             Configuration configuration = new Configuration();
 
+            /*
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 configuration = res.getConfiguration();
                 configuration.setLocale(locale);
                 return otherAppContext.createConfigurationContext(configuration).getString(info.labelRes);
             }
-
+            */
 
             configuration.locale = locale;
             res.updateConfiguration(configuration, context.getResources().getDisplayMetrics());

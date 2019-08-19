@@ -11,6 +11,7 @@
 - Updated Translators List.
 - Updated Italian Translations by Ciao Studio.
 - Added POCO, Posidon, Pixel Launcher. Minor Fixes to Old Launchers.
+- Added Support for Desktop Shortcuts(Sesame Shortcuts too).
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin

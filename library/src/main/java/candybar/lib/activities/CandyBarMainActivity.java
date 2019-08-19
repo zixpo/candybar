@@ -178,6 +178,14 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             onSearchExpanded(false);
         }
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            int position = bundle.getInt(Extras.EXTRA_POSITION, -1);
+            if (position >= 0 && position < 5) {
+                mPosition = mLastPosition = position;
+            }
+        }
+
         IntentHelper.sAction = IntentHelper.getAction(getIntent());
         if (IntentHelper.sAction == IntentHelper.ACTION_DEFAULT) {
             setFragment(getFragment(mPosition));
