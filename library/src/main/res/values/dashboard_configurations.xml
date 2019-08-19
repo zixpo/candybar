@@ -25,6 +25,9 @@
     <string name="request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
 
+    <!-- Show Intro Guides on First Run -->
+    <bool name="show_intro">false</bool>
+
 
     <!-- CONFIG: DEFAULT THEME -->
 

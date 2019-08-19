@@ -497,6 +497,8 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
         mHandler = null;
         mIsResumed = false;
 
-        TapIntroHelper.showWallpaperPreviewIntro(this, mWallpaper.getColor());
+        if (this.getResources().getBoolean(R.bool.show_intro)) {
+            TapIntroHelper.showWallpaperPreviewIntro(this, mWallpaper.getColor());
+        }
     }
 }

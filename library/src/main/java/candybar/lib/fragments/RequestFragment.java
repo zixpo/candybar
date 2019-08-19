@@ -365,7 +365,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         .interpolator(new LinearOutSlowInInterpolator())
                         .start();
 
-                TapIntroHelper.showRequestIntro(getActivity(), mRecyclerView);
+                if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
+                    TapIntroHelper.showRequestIntro(getActivity(), mRecyclerView);
+                }
             } else {
                 mRecyclerView.setAdapter(null);
                 Toast.makeText(getActivity(), R.string.request_appfilter_failed, Toast.LENGTH_LONG).show();

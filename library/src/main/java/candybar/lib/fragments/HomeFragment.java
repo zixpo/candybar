@@ -127,9 +127,11 @@ public class HomeFragment extends Fragment implements HomeListener {
 
     @Override
     public void onHomeIntroInit() {
-        TapIntroHelper.showHomeIntros(getActivity(),
-                mRecyclerView, mManager,
-                ((HomeAdapter) mRecyclerView.getAdapter()).getApplyIndex());
+        if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
+            TapIntroHelper.showHomeIntros(getActivity(),
+                    mRecyclerView, mManager,
+                    ((HomeAdapter) mRecyclerView.getAdapter()).getApplyIndex());
+        }
     }
 
     private void initHome() {

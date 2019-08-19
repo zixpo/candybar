@@ -275,7 +275,9 @@ public class WallpapersFragment extends Fragment {
                         .putExtra("packageName", getActivity().getPackageName()));
 
                 try {
-                    TapIntroHelper.showWallpapersIntro(getActivity(), mRecyclerView);
+                    if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
+                        TapIntroHelper.showWallpapersIntro(getActivity(), mRecyclerView);
+                    }
                 } catch (Exception e) {
                     LogUtil.e(Log.getStackTraceString(e));
                 }

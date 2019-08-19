@@ -37,6 +37,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
+import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.license.LicenseHelper;
@@ -46,6 +47,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 
+import java.io.File;
 import java.util.List;
 
 import candybar.lib.R;
@@ -205,8 +207,11 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             return;
         }
 
-        if (Preferences.get(this).isNewVersion())
+        if (Preferences.get(this).isNewVersion()) {
             ChangelogFragment.showChangelog(mFragManager);
+            File cache = this.getCacheDir();
+            FileHelper.clearDirectory(cache);
+        }
 
         if (mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isLicensed()) {
             finish();

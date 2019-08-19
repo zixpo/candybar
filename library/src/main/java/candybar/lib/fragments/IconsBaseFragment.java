@@ -255,7 +255,9 @@ public class IconsBaseFragment extends Fragment {
 
                 new TabTypefaceChanger().executeOnExecutor(THREAD_POOL_EXECUTOR);
 
-                TapIntroHelper.showIconsIntro(getActivity());
+                if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
+                    TapIntroHelper.showIconsIntro(getActivity());
+                }
             } else {
                 Toast.makeText(getActivity(), R.string.icons_load_failed,
                         Toast.LENGTH_LONG).show();
