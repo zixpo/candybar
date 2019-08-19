@@ -281,14 +281,13 @@
     <string name="crash_report_message">Unfortunately %s has crashed. Choose send report below to help developer fix the issue.</string>
     <string name="crash_report_send">Send Report</string>
 
-    <!-- Please don't modify this -->
+    <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar is open source icon pack dashboard licensed under Apache License 2.0 for
         Android available at GitHub and free to use, developed by Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Open Source Licenses</string>
     <string name="about_dashboard_contributors">CandyBar Contributors</string>
     <string name="about_dashboard_translator">CandyBar Translator</string>
-    <string name="about_dashboard_github_url">https://github.com/zixpo/candybar</string>
 
     <!-- DrawerToggle -->
     <string name="txt_open">Open</string>
