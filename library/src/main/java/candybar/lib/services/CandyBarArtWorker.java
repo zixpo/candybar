@@ -27,8 +27,7 @@ import candybar.lib.preferences.Preferences;
 
 @SuppressLint("NewApi")
 public class CandyBarArtWorker extends Worker {
-    private static final String LOG_TAG = "MuzeiArtWorker";
-    private static final String WORKER_TAG = "CandyBarProvider";
+    private final String WORKER_TAG = this.getApplicationContext().getPackageName() + "." + "ArtProvider";
     private Context mContext = getApplicationContext();
 
     public CandyBarArtWorker(@NonNull Context context, @NonNull WorkerParameters params) {

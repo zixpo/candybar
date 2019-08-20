@@ -1,10 +1,5 @@
 package candybar.lib.services;
 
-/*
-import com.google.android.apps.muzei.api.Artwork;
-import com.google.android.apps.muzei.api.RemoteMuzeiArtSource;
-*/
-
 import com.google.android.apps.muzei.api.provider.MuzeiArtProvider;
 
 /*
@@ -26,76 +21,12 @@ import com.google.android.apps.muzei.api.provider.MuzeiArtProvider;
  */
 
 public class CandyBarMuzeiService extends MuzeiArtProvider {
-    private static String blank;
 
-    public CandyBarMuzeiService(String name) {
-        blank = name;
+    public CandyBarMuzeiService() {
     }
 
-    // Pass true to clear cache and download new images
-    // Pass false to add new images to cache
     @Override
     protected void onLoadRequested(boolean initial) {
         CandyBarArtWorker.enqueueLoad(getContext());
     }
 }
-
-/*
-public abstract class CandyBarMuzeiService extends RemoteMuzeiArtSource {
-
-    public CandyBarMuzeiService(String name) {
-        super(name);
-    }
-
-    @Override
-    public int onStartCommand(@Nullable Intent intent, int flags, int startId) {
-        if (intent == null || intent.getExtras() == null) {
-            return super.onStartCommand(intent, flags, startId);
-        }
-
-        Bundle bundle = intent.getExtras();
-        boolean restart = bundle.getBoolean("restart", false);
-        if (restart) {
-            try {
-                onTryUpdate(UPDATE_REASON_USER_NEXT);
-            } catch (RetryException ignored) {
-            }
-        }
-        return super.onStartCommand(intent, flags, startId);
-    }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        setUserCommands(BUILTIN_COMMAND_ID_NEXT_ARTWORK);
-    }
-
-    @Override
-    protected void onTryUpdate(int reason) throws RetryException {
-        try {
-            if (!URLUtil.isValidUrl(getString(R.string.wallpaper_json)))
-                return;
-
-            Wallpaper wallpaper = MuzeiHelper.getRandomWallpaper(this);
-
-            if (Preferences.get(this).isConnectedAsPreferred()) {
-                if (wallpaper != null) {
-                    Uri uri = Uri.parse(wallpaper.getURL());
-
-                    publishArtwork(new Artwork.Builder()
-                            .title(wallpaper.getName())
-                            .byline(wallpaper.getAuthor())
-                            .imageUri(uri)
-                            .build());
-
-                    scheduleUpdate(System.currentTimeMillis() +
-                            Preferences.get(this).getRotateTime());
-                }
-            }
-
-            Database.get(this).closeDatabase();
-        } catch (Exception ignored) {
-        }
-    }
-}
-*/
