@@ -178,7 +178,7 @@
 
         <provider
             android:name=".services.MuzeiService"
-            android:authorities="${applicationId}.MuzeiArt"
+            android:authorities="${applicationId}.ArtProvider"
             android:label="@string/muzei_art_source_name"
             android:description="@string/muzei_art_source_desc"
             android:exported="true"
@@ -190,6 +190,18 @@
                 android:name="color"
                 android:value="@color/muzei_color" />
         </provider>
+
+        <receiver
+            android:name=".services.ClockWidget"
+            android:label="Clock Widget">
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/analog_clock" />
+        </receiver>
 
         <!-- This is important -->
         <provider

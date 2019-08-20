@@ -15,6 +15,7 @@
 - Added Boolean to Disable Intros.
 - Fix Crash on Pre-Oreo Devices.
 - Better Stability.
+- Added Analog Clock Widget.
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin

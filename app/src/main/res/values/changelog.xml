@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date">August 04, 2019</string>
+    <string name="changelog_date">August 20, 2019</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,29 +10,23 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Added Adaptive Icon Generation for Requests</item>
-        <item>Support for Android P</item>
-        <item>Use of New JSON Format for Wallpaper</item>
-        <item>Added Lawnchair Launcher to Apply Section</item>
-        <item>Added Turkish and Traditional Chinese Languages</item>
-        <item>Support for OneSignal Notifications</item>
-        <item>
-            <![CDATA[
-            Support for <a href="https://github.com/javiersantos/AppUpdater">AppUpdater</a>.
-            ]]>
-        </item>
-        <item>Option to Edit Links of \"Rate and Review\" and \"Share\". Now You can Even Remove Them.</item>
-        <item>
-            <![CDATA[
-            <b>Hope</b> <i>You</i> <u>Like</u> <a href="https://github.com/zipox/candybar">It</a>.
-            ]]>
-        </item>
-        <item>Migrate to AndroidX</item>
-        <item>Improved Adaptive Icon Generation</item>
-        <item>Improved Icon Request App Image Quality</item>
-        <item>Update CandyBar Translators List</item>
-        <item>Added Support for Linking \"Privacy Policy\" and \"Terms and Conditions\"</item>
-        <item>Now shows from where the app installed in request</item>
+        <item>Added Ability to request app from non-mailing apps</item>
+        <item>Added option to Disable Icon Request from JSON stored in Cloud</item>
+        <item>Now shows Request Available, Used even for Regular Requests</item>
+        <item>Option to Close app if installed outside of Playstore</item>
+        <item>Option to Enable/Disable AppUpdater and Checking JSON Before Requesting</item>
+        <item>Uses New Muzei API</item>
+        <item>Now you can set Your Own Email Subject for Icon Requests</item>
+        <item>Now it Loads Right Icon and Name from ComponentName instead of PackageName</item>
+        <item>Fix to AndroidManifest.xml</item>
+        <item>Updated Translators List</item>
+        <item>Updated Italian Translations by Ciao Studio</item>
+        <item>Added POCO, Posidon, Pixel Launcher. Minor Fixes to Old Launchers</item>
+        <item>Added Support for Desktop Shortcuts(Sesame Shortcuts too)</item>
+        <item>Added Boolean to Disable Intros</item>
+        <item>Fix Crash on Pre-Oreo Devices</item>
+        <item>Better Stability</item>
+        <item>Added Analog Clock Widget</item>
     </string-array>
 
 </resources>
