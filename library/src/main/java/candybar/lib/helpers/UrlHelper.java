@@ -53,6 +53,8 @@ public class UrlHelper {
                 return getTintedDrawable(context, R.drawable.ic_toolbar_pinterest, color);
             case TWITTER:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_twitter, color);
+            case TELEGRAM:
+                return getTintedDrawable(context, R.drawable.ic_toolbar_telegram, color);
             default:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_website, color);
         }
@@ -81,6 +83,8 @@ public class UrlHelper {
             return Type.PINTEREST;
         } else if (url.contains("twitter.")) {
             return Type.TWITTER;
+        } else if (url.contains("t.me/") || url.contains("telegram.me/")) {
+            return Type.TELEGRAM;
         } else {
             return Type.UNKNOWN;
         }
@@ -95,6 +99,7 @@ public class UrlHelper {
         INSTAGRAM,
         PINTEREST,
         TWITTER,
+        TELEGRAM,
         UNKNOWN,
         INVALID
     }
