@@ -400,8 +400,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         @Override
         protected Boolean doInBackground(Void... voids) {
             while (!isCancelled()) {
+                Log.e("Crash Finder", "Starting doInBackground() in RequestFragment.java");
                 try {
-                    Thread.sleep(1);
+                    Thread.sleep(2);
                     /*
                     Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getResources().getString(R.string.dev_email), null));
                     */
@@ -414,7 +415,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         intent.setData(Uri.parse("mailto:"));
                     } else {
                         intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("text/plain");
+                        intent.setType("application/zip");
                     }
 
                     List<ResolveInfo> resolveInfos = getActivity().getPackageManager()
@@ -462,10 +463,12 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         files.add(themeResources.toString());
                     }
 
+                    Log.e("Crash Finder", "Completed doInBackground()");
+
                     CandyBarApplication.sZipPath = FileHelper.createZip(files, new File(directory.toString(),
                             RequestHelper.getGeneratedZipName(RequestHelper.ZIP)));
                     return true;
-                } catch (Exception e) {
+                } catch (RuntimeException | InterruptedException e) {
                     LogUtil.e(Log.getStackTraceString(e));
                     return false;
                 }

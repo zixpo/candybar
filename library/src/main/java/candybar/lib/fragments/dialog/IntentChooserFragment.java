@@ -181,7 +181,7 @@ public class IntentChooserFragment extends DialogFragment {
                         intent.setData(Uri.parse("mailto:"));
                     } else {
                         intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("text/plain");
+                        intent.setType("application/zip");
                     }
 
                     List<ResolveInfo> resolveInfos = getActivity().getPackageManager()

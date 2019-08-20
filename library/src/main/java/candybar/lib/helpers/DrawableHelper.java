@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
@@ -59,23 +59,27 @@ public class DrawableHelper {
     public static Drawable getReqIcon(@NonNull Context context, String fullComponentName) {
         PackageManager packageManager = context.getPackageManager();
 
-        // Load Deafult Icons
         int slashIndex = fullComponentName.indexOf("/");
         String activityName = fullComponentName.substring(slashIndex).replace("/", "");
         String packageName = fullComponentName.replace("/" + activityName, "");
         ComponentName componentName = new ComponentName(packageName, activityName);
 
-        Intent intent = new Intent();
-        intent.setComponent(componentName);
-        ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
-        Drawable normalDrawable = resolveInfo.loadIcon(packageManager);
+        Log.e("Crash Finder", "before if DrawableHelper");
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            // Load Adaptive Icons if found
+            Intent intent = new Intent();
+            intent.setComponent(componentName);
+            ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
+            Drawable normalDrawable = resolveInfo.loadIcon(packageManager);
 
-        if (normalDrawable instanceof AdaptiveIconDrawable) return normalDrawable;
+            if (normalDrawable instanceof AdaptiveIconDrawable) return normalDrawable;
+        }
+        Log.e("Crash Finder", "after if DrawableHelper");
 
         try {
             // Get XXXHDPI Icon for Non-Adaptive Icons
-            ApplicationInfo info = packageManager.getApplicationInfo(
-                    packageName, PackageManager.GET_META_DATA);
+            ActivityInfo info = packageManager.getActivityInfo(
+                    componentName, PackageManager.GET_META_DATA);
             Resources resources = packageManager.getResourcesForActivity(componentName);
 
             int density = DisplayMetrics.DENSITY_XXHIGH;
@@ -87,7 +91,6 @@ public class DrawableHelper {
                     resources, info.icon, density, null);
 
             if (drawable != null) return drawable;
-            return normalDrawable;
         } catch (Exception | OutOfMemoryError e) {
             LogUtil.e(Log.getStackTraceString(e));
         }

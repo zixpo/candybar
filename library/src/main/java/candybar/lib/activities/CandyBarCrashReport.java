@@ -64,7 +64,7 @@ public class CandyBarCrashReport extends AppCompatActivity {
                     .negativeText(R.string.close)
                     .onPositive((dialog, which) -> {
                         Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("application/zip");
+                        intent.setType("text/plain");
                         intent.putExtra(Intent.EXTRA_EMAIL,
                                 new String[]{getResources().getString(R.string.dev_email)});
                         intent.putExtra(Intent.EXTRA_SUBJECT, "CandyBar: Crash Report");
