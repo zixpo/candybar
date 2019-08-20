@@ -106,7 +106,7 @@ public class DrawableHelper {
             } else if (drawable instanceof AdaptiveIconDrawable) {
                 AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
                 AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
-                adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground()).setSize(192, 192);
+                adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
                 Bitmap iconBitmap = adaptiveIcon.render();
                 Log.d("CandyBar", "Made Adaptive Icon in High SDK");
                 return iconBitmap;
