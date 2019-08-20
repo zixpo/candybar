@@ -64,7 +64,6 @@ public class DrawableHelper {
         String packageName = fullComponentName.replace("/" + activityName, "");
         ComponentName componentName = new ComponentName(packageName, activityName);
 
-        Log.e("Crash Finder", "before if DrawableHelper");
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             // Load Adaptive Icons if found
             Intent intent = new Intent();
@@ -74,7 +73,6 @@ public class DrawableHelper {
 
             if (normalDrawable instanceof AdaptiveIconDrawable) return normalDrawable;
         }
-        Log.e("Crash Finder", "after if DrawableHelper");
 
         try {
             // Get XXXHDPI Icon for Non-Adaptive Icons
@@ -108,7 +106,7 @@ public class DrawableHelper {
             } else if (drawable instanceof AdaptiveIconDrawable) {
                 AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
                 AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
-                adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
+                adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground()).setSize(192, 192);
                 Bitmap iconBitmap = adaptiveIcon.render();
                 Log.d("CandyBar", "Made Adaptive Icon in High SDK");
                 return iconBitmap;

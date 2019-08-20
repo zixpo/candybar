@@ -95,7 +95,7 @@ dependencies {
     implementation 'me.grantland:autofittextview:0.2.1'
     implementation 'com.github.KeepSafe:TapTargetView:1.9.1'
     implementation 'com.github.javiersantos:AppUpdater:2.7'
-    implementation 'com.github.sarsamurmu:AdaptiveIconBitmap:8de56863e0'
+    implementation 'com.github.sarsamurmu:AdaptiveIconBitmap:57d808db29'
 
     implementation 'com.github.danimahardhika:cafebar:1.3.2'
     implementation('com.github.danimahardhika.android-helpers:core:-SNAPSHOT') {

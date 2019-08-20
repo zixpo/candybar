@@ -30,7 +30,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.robolectric:robolectric:3.3.2'
     testImplementation 'com.squareup.assertj:assertj-android:1.1.1'
-    implementation 'com.github.sarsamurmu:AdaptiveIconBitmap:8de56863e0'
+    implementation 'com.github.sarsamurmu:AdaptiveIconBitmap:57d808db29'
     
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
 }

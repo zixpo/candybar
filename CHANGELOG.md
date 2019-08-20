@@ -13,6 +13,8 @@
 - Added POCO, Posidon, Pixel Launcher. Minor Fixes to Old Launchers.
 - Added Support for Desktop Shortcuts(Sesame Shortcuts too).
 - Added Boolean to Disable Intros.
+- Fix Crash on Pre-Oreo Devices.
+- Better Stability.
 
 # v3.5.0-b5
 - Updated Gradle Distribution and Gradle Plugin

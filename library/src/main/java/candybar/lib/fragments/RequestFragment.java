@@ -400,7 +400,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         @Override
         protected Boolean doInBackground(Void... voids) {
             while (!isCancelled()) {
-                Log.e("Crash Finder", "Starting doInBackground() in RequestFragment.java");
                 try {
                     Thread.sleep(2);
                     /*
@@ -462,8 +461,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     if (themeResources != null) {
                         files.add(themeResources.toString());
                     }
-
-                    Log.e("Crash Finder", "Completed doInBackground()");
 
                     CandyBarApplication.sZipPath = FileHelper.createZip(files, new File(directory.toString(),
                             RequestHelper.getGeneratedZipName(RequestHelper.ZIP)));

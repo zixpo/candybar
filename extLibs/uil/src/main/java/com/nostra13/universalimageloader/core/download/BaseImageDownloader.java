@@ -313,7 +313,7 @@ public class BaseImageDownloader implements ImageDownloader {
         return new ByteArrayInputStream(stream.toByteArray());
     }
 
-    public static Bitmap getRightIcon(Drawable drawable) {
+    private static Bitmap getRightIcon(Drawable drawable) {
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
             Log.d("UIL", "Made Normal Icon in Low SDK");
             return ((BitmapDrawable) drawable).getBitmap();
