@@ -51,7 +51,6 @@ android {
         /*
         manifestPlaceholders = [
           onesignal_app_id: 'ONESIGNAL APP ID',
-                          // ^^^^^ Put Your App ID There
           onesignal_google_project_number: 'REMOTE'
         ]
         */
