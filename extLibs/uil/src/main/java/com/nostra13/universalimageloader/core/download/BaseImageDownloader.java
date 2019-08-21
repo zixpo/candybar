@@ -35,6 +35,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 
+import com.nostra13.universalimageloader.Data;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.ContentLengthInputStream;
 import com.nostra13.universalimageloader.utils.IoUtils;
@@ -278,6 +279,24 @@ public class BaseImageDownloader implements ImageDownloader {
     protected InputStream getStreamFromDrawable(String imageUri, Object extra) {
         String drawableIdString = Scheme.DRAWABLE.crop(imageUri);
         int drawableId = Integer.parseInt(drawableIdString);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Drawable drawable = context.getResources().getDrawable(drawableId, context.getTheme());
+            if (drawable instanceof AdaptiveIconDrawable) {
+                AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
+                AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
+                adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
+                adaptiveIcon.setPath(Data.AdaptiveIconShape);
+                Bitmap iconBitmap = adaptiveIcon.render();
+
+                ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
+                iconBitmap.compress(CompressFormat.PNG, 0, byteOutputStream);
+                byte[] bitmapData = byteOutputStream.toByteArray();
+                ByteArrayInputStream byteInputStream = new ByteArrayInputStream(bitmapData);
+                return byteInputStream;
+            }
+        }
+
         return context.getResources().openRawResource(drawableId);
     }
 

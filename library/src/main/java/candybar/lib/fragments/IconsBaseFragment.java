@@ -33,6 +33,7 @@ import java.util.List;
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.fragments.dialog.IconShapeFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.items.Icon;
@@ -101,6 +102,7 @@ public class IconsBaseFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
+        MenuItem iconShape = menu.findItem(R.id.menu_icon_shape);
 
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
 
@@ -146,6 +148,14 @@ public class IconsBaseFragment extends Fragment {
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
                 return true;
+            }
+        });
+
+        iconShape.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                IconShapeFragment.showIconShapeChooser(getActivity().getSupportFragmentManager());
+                return false;
             }
         });
     }

@@ -123,11 +123,17 @@ public class IconsLoaderTask extends AsyncTask<Void, Void, Boolean> {
                     icon.setTitle(name);
                 }
 
+                String iconDimension = "";
+
+                if (options.outWidth > 0 && options.outHeight > 0) {
+                    iconDimension = String.format(mContext.get().getResources().getString(R.string.home_icon_dimension),
+                            options.outWidth + " x " + options.outHeight);
+                }
+
                 mHome = new Home(
                         icon.getRes(),
                         icon.getTitle(),
-                        String.format(mContext.get().getResources().getString(R.string.home_icon_dimension),
-                                options.outWidth + " x " + options.outHeight),
+                        iconDimension,
                         Home.Type.DIMENSION);
                 CandyBarMainActivity.sHomeIcon = mHome;
                 return true;

@@ -1,3 +1,6 @@
+# Unreleased Version
+- Added Support for Adaptive Icons.
+
 # v3.5.0-b6
 - Added Ability to request app from non-mailing apps.
 - Added option to Disable Icon Request from JSON stored in Cloud.

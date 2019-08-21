@@ -22,6 +22,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.nostra13.universalimageloader.Data;
 import com.nostra13.universalimageloader.cache.disc.DiskCache;
 import com.nostra13.universalimageloader.cache.memory.MemoryCache;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -81,6 +82,10 @@ public class ImageLoader {
     }
 
     protected ImageLoader() {
+    }
+
+    public static void setShape(int shape) {
+        Data.AdaptiveIconShape = shape;
     }
 
     /**

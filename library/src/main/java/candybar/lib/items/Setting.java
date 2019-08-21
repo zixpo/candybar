@@ -82,6 +82,7 @@ public class Setting {
         ICON_REQUEST,
         RESTORE,
         PREMIUM_REQUEST,
+        ICON_SHAPE,
         THEME,
         WALLPAPER,
         LANGUAGE,

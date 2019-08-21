@@ -16,6 +16,7 @@ import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.items.Language;
+import sarsamurmu.adaptiveicon.AdaptiveIcon;
 
 /*
  * CandyBar - Material Dashboard
@@ -43,9 +44,8 @@ public class Preferences {
 
     private static final String KEY_FIRST_RUN = "first_run";
     private static final String KEY_DARK_THEME = "dark_theme";
+    private static final String KEY_ICON_SHAPE = "icon_shape";
     private static final String KEY_APP_VERSION = "app_version";
-    private static final String KEY_ROTATE_TIME = "rotate_time";
-    private static final String KEY_ROTATE_MINUTE = "rotate_minute";
     private static final String KEY_WIFI_ONLY = "wifi_only";
     private static final String KEY_WALLS_DIRECTORY = "wallpaper_directory";
     private static final String KEY_PREMIUM_REQUEST = "premium_request";
@@ -102,6 +102,14 @@ public class Preferences {
 
     public void setFirstRun(boolean bool) {
         getSharedPreferences().edit().putBoolean(KEY_FIRST_RUN, bool).apply();
+    }
+
+    public void setIconShape(int shape) {
+        getSharedPreferences().edit().putInt(KEY_ICON_SHAPE, shape).apply();
+    }
+
+    public int getIconShape() {
+        return getSharedPreferences().getInt(KEY_ICON_SHAPE, AdaptiveIcon.PATH_CIRCLE);
     }
 
     public boolean isTimeToShowHomeIntro() {
@@ -171,28 +179,8 @@ public class Preferences {
         return CandyBarApplication.getConfiguration().getShadowOptions().isTapIntroEnabled();
     }
 
-    public void setRotateTime(int time) {
-        getSharedPreferences().edit().putInt(KEY_ROTATE_TIME, time).apply();
-    }
-
-    public int getRotateTime() {
-        return getSharedPreferences().getInt(KEY_ROTATE_TIME, 3600000);
-    }
-
-    public void setRotateMinute(boolean bool) {
-        getSharedPreferences().edit().putBoolean(KEY_ROTATE_MINUTE, bool).apply();
-    }
-
-    public boolean isRotateMinute() {
-        return getSharedPreferences().getBoolean(KEY_ROTATE_MINUTE, false);
-    }
-
     public boolean isWifiOnly() {
         return getSharedPreferences().getBoolean(KEY_WIFI_ONLY, false);
-    }
-
-    public void setWifiOnly(boolean bool) {
-        getSharedPreferences().edit().putBoolean(KEY_WIFI_ONLY, bool).apply();
     }
 
     public void setWallsDirectory(String directory) {

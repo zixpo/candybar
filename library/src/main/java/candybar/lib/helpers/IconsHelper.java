@@ -29,6 +29,7 @@ import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
+import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AlphanumComparator;
 import candybar.lib.utils.ImageConfig;
 
@@ -157,6 +158,7 @@ public class IconsHelper {
     public static void selectIcon(@NonNull Context context, int action, Icon icon) {
         if (action == IntentHelper.ICON_PICKER) {
             Intent intent = new Intent();
+            ImageLoader.setShape(Preferences.get(context).getIconShape());
             Bitmap bitmap = ImageLoader.getInstance().loadImageSync(
                     "drawable://" + icon.getRes(), ImageConfig.getRawImageOptions().build());
 
@@ -166,6 +168,7 @@ public class IconsHelper {
             ((AppCompatActivity) context).finish();
         } else if (action == IntentHelper.IMAGE_PICKER) {
             Intent intent = new Intent();
+            ImageLoader.setShape(Preferences.get(context).getIconShape());
             Bitmap bitmap = ImageLoader.getInstance().loadImageSync(
                     "drawable://" + icon.getRes(), ImageConfig.getRawImageOptions().build());
             if (bitmap != null) {

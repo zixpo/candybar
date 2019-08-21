@@ -26,6 +26,7 @@ import candybar.lib.R;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.IntentHelper;
 import candybar.lib.items.Icon;
+import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.ImageConfig;
 
 /*
@@ -81,6 +82,8 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.name.setText(mIcons.get(position).getTitle());
+
+        ImageLoader.setShape(Preferences.get(mContext).getIconShape());
 
         ImageLoader.getInstance().displayImage("drawable://" + mIcons.get(position).getRes(),
                 new ImageViewAware(holder.icon), mOptions.build(),

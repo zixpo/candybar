@@ -140,6 +140,7 @@
 
     <!-- Icons -->
     <string name="icons_load_failed">Unable to load icons</string>
+    <string name="icon_shape">Icon Shape</string>
 
     <!-- Request -->
     <string name="request_title">Icon Request</string>

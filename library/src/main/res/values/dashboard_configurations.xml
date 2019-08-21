@@ -6,27 +6,7 @@
     <!-- ======================================================================================= -->
 
     <!-- New -->
-    <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
-    <bool name="enable_non_mail_app_request">false</bool>
-
-    <!-- CandyBar Config JSON Link -->
-    <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
-
-    <!-- Closes app if installed outside of Playstore -->
-    <bool name="playstore_check_enabled">false</bool>
-
-    <!-- Enable Check for Update -->
-    <bool name="enable_check_update">true</bool>
-
-    <!-- Enable JSON Data check before Requesting Icons -->
-    <bool name="json_check_before_request">true</bool>
-
-    <!-- Icon Request Email Subject. Set Empty to Use Deafult Subject. -->
-    <string name="request_email_subject"></string>
-    <string name="premium_request_email_subject"></string>
-
-    <!-- Show Intro Guides on First Run -->
-    <bool name="show_intro">false</bool>
+    <bool name="includes_adaptive_icons">true</bool>
 
 
     <!-- CONFIG: DEFAULT THEME -->
@@ -81,6 +61,17 @@
     * Link to google play store developer
     * If you don't want to show this part, just leave this empty -->
     <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
+
+    <!-- Enable Check for Update -->
+    <bool name="enable_check_update">true</bool>
+
+    <!-- Link Used to Rate and Review Your App. Set Blank to Disable -->
+    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
+    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=thisPackage</string>
+
+    <!-- Link Used for Share Link of Your App. Set Blank to Disable -->
+    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
+    <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
 
     <!-- CONFIG: NAVIGATION VIEW HEADER -->
 
@@ -140,6 +131,9 @@
     * After making 10 icon request user not able to request again -->
     <integer name="icon_request_limit">10</integer>
 
+    <!-- Enable JSON Data check before Requesting Icons -->
+    <bool name="json_check_before_request">true</bool>
+
     <!-- Reset regular icon request limit every update
     * IGNORE if icon request limit is disabled
     * ex: You want to make user only able to make 10 request, set icon request limit (above) to 10
@@ -153,10 +147,17 @@
     * change to true to enable it -->
     <bool name="enable_premium_request">true</bool>
 
+    <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
+    <bool name="enable_non_mail_app_request">false</bool>
+
     <!-- Take a look inside License.java for premium request product -->
 
     <!-- Email that will be used to send icon request and report bugs -->
     <string name="dev_email">your@email.com</string>
+
+    <!-- Icon Request Email Subject. Set Empty to Use Deafult Subject. -->
+    <string name="request_email_subject"></string>
+    <string name="premium_request_email_subject"></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
 
@@ -235,6 +236,12 @@
     * Take a look inside res/xml/contributors.xml to add contributors -->
     <bool name="show_contributors_dialog">true</bool>
 
+    <!-- Privacy Policy Link. Set Blank to Disable -->
+    <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
+
+    <!-- Terms and Conditions link. Set Blank to Disable -->
+    <string name="terms_and_conditions_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
+
     <!-- CONFIG: DONATE -->
 
     <!-- DONATION
@@ -245,18 +252,13 @@
 
     <!-- Take a look inside License.java for donation product -->
 
-    <!-- Link Used to Rate and Review Your App. Set Blank to Disable -->
-    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
-    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=thisPackage</string>
+    <!-- CandyBar Config JSON Link -->
+    <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
 
-    <!-- Link Used for Share Link of Your App. Set Blank to Disable -->
-    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
-    <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
+    <!-- Closes app if installed outside of Playstore -->
+    <bool name="playstore_check_enabled">false</bool>
 
-    <!-- Privacy Policy Link. Set Blank to Disable -->
-    <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
-
-    <!-- Terms and Conditions link. Set Blank to Disable -->
-    <string name="terms_and_conditions_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
+    <!-- Show Intro Guides on First Run -->
+    <bool name="show_intro">false</bool>
 
 </resources>
