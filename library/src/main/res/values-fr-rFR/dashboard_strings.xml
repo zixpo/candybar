@@ -37,6 +37,7 @@
     <string name="ok">OK</string>
     <string name="install">Installer</string>
     <string name="donate">Faire un don</string>
+    <string name="update">Mettre à jour</string>
     <!-- New -->
     <string name="search_noresult">Aucun résultat pour \"%s\"</string>
     <string name="search_faqs">Question ou réponse</string>
@@ -151,7 +152,9 @@ Car vous êtes en train de demander des applications déjà demandées.</string>
     <!-- New -->
     <string name="regular_request">Demande d\'icônes classique</string>
     <string name="regular_request_desc">Faites une demande pour vos icônes. Le développeur essaiera de les inclure.</string>
-    <string name="regular_request_count">Total\n%d demandée(s)</string>
+    <string name="regular_request_count">Total\n%d demande(s)</string>
+    <string name="regular_request_used">Utilisées\n%d demande(s)</string>
+    <string name="regular_request_available">Disponibles\n%d demande(s)</string>
     <!-- Premium Request -->
     <string name="premium_request">Demande d\'icône(s) Premium</string>
     <string name="premium_request_no_internet">Assurez-vous que votre téléphone soit connecté à Internet avant d\'envoyer la demande premium</string>
@@ -229,10 +232,13 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="intent_email_not_supported_message">Sélection d\'un client e-mail non supporté, merci d\'en choisir un autre</string>
     <!-- About -->
     <string name="about_contributors_title">Contributeurs</string>
+    <string name="about_privacy_policy_title">Politique de confidentialité</string>
     <!-- New -->
+    <string name="about_terms_and_conditions_title">Conditions d\'utilisation</string>
     <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Donnez une description du type de problème que vous voulez rencontré</string>
+    <string name="report_bugs_desc_hint">Description</string>
     <string name="report_bugs_desc_empty">Veuillez fournir une description</string>
     <string name="report_bugs_building">Construction de la liste d\'activités …</string>
     <string name="report_bugs_failed">Impossible de construire la liste d\'activités</string>
@@ -244,6 +250,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="crash_report_message">Malheureusement %s a planté. Choisissez Envoyer le rapport ci-dessous pour aider le développeur à régler le problème.</string>
     <string name="crash_report_send">Envoyer le Rapport</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar est un tableau de bord de pack d\'icônes open source pour Android publié sous licence Apache 2.0 sur Github. Il est libre d\'utilisation et développé par Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Licences Open Source</string>
     <string name="about_dashboard_contributors">Contributeurs CandyBar</string>
