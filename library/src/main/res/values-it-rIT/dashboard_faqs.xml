@@ -43,16 +43,16 @@
         <item>Perché l\'icona è presente all\'interno dell\'icon pack ma non si applica automaticamente?</item>
         <item>Che cosa è l\'opzione \"Riporta bug\"?</item>
         <item>Perché il mio launcher è elencato nella descrizione del Play Store ma non appare nella sezione \"Applica\" dell\'app?</item>
-        <item>Non riesco a caricare i wallpapers, vedo solo un\'immagine nera, perchè?</item>
+        <item>Non riesco a caricare gli sfondi, vedo solo un\'immagine nera, perché?</item>
         <item>Muzei: Come caricare solo gli sfondi scaricati?</item>
         <item>Muzei: Non voglio che Muzei continui a scaricare gli sfondi ogni volta che ne cambia uno.</item>
-        <item>Muzei: Come faccio ad usare solo alcuni wallpapers?</item>
-        <item>Perchè l\'app richiede l\'autorizzazione di Lettura &amp; Scrittura della memoria esterna?</item>
-        <item>Perchè è richiesto il permesso per l\'accesso ad internet?</item>
-        <item>Perchè è richiesto il permesso allo stato dell\'accesso alla rete?</item>
-        <item>Perchè è richiesto il permesso per l\'accesso alla rete WiFi?</item>
-        <item>Perchè è richiesto il permesso \"Imposta Wallpaper\"?</item>
-        <item>Perchè è richiesto il permesso alla funzione \"Wake Lock\"?</item>
+        <item>Muzei: Come faccio ad usare solo alcuni sfondi?</item>
+        <item>Perché l\'app richiede l\'autorizzazione di Lettura &amp; Scrittura della memoria esterna?</item>
+        <item>Perché è richiesto il permesso per l\'accesso ad internet?</item>
+        <item>Perché è richiesto il permesso allo stato dell\'accesso alla rete?</item>
+        <item>Perché è richiesto il permesso per l\'accesso alla rete WiFi?</item>
+        <item>Perché è richiesto il permesso \"Imposta Wallpaper\"?</item>
+        <item>Perché è richiesto il permesso alla funzione \"Wake Lock\"?</item>
     </string-array>
     <string-array name="answers">
         <item>Un Launcher è l\'interfaccia utente di Android che permette di modificarne l\'aspetto, aprire le applicazioni e fare tutte le altre operazioni che abitualmente usi sul dispositivo.</item>
@@ -71,7 +71,7 @@ In molti Launcher, se la funzione è presente, basta fare una lunga pressione su
         <item>Basta aprire il menù laterale dell\'app quindi scegliere \"Richiedi Icone\".</item>
         <item>Basta aprire il menù laterale dell\'app quindi scegliere \"Impostazioni\", poi scegliere \"Ripristina Acquisti\".
 Se questo non funziona, probabilmente hai esaurito le \"Richieste Premium\" a tua disposizione.</item>
-        <item>Questo accade perchè hai spostato questa applicazione sull\'SD esterna.
+        <item>Questo accade perché hai spostato questa applicazione sull\'SD esterna.
 Per risolvere basta spostarla sulla memoria interna del tuo dispositivo.</item>
         <item>il problema potrebbe essere dato dal tuo Launcher che non gestisce bene le alte risoluzioni.
 Puoi ovviare a questo problema scalando la dimensione delle icone (115 / 120%) o cambiando il launcher che stai usando.</item>
@@ -79,17 +79,18 @@ Puoi ovviare a questo problema scalando la dimensione delle icone (115 / 120%) o
         <item>Apri le Impostazioni e cerca la voce \"Riporta Bug\"</item>
         <item>Non tutti i Launcher permettono di applicare direttamente l\'icon pack da questa applicazione.
 In questo caso puoi applicare l\'icon pack manualmente dalle impostazioni del launcher che stai usando.</item>
-        <item>Quando imposti un Wallpapers direttamente dall\'applicazione, questo viene scaricato dai server in cloud.
+        <item>Quando imposti uno sfondo direttamente dall\'applicazione, questo viene scaricato dai server in cloud.
 Questo richiede una buona connessione e una buona RAM.
-Lo schermo nero appare perchè il tuo dispositivo non dispone di abbastanza RAM libera.
+Lo schermo nero appare perché il tuo dispositivo non dispone di abbastanza RAM libera.
 Riavviando il tuo dispositivo puoi risolvere questo problema.
-In alternativa puoi scaricare il wallpapers sul tuo dispositivo, quindi dalle galleria puoi applicarlo.</item>
+In alternativa puoi scaricare lo sfondo sul tuo dispositivo, quindi dalle galleria puoi applicarlo.</item>
         <item>Apri Muzei e scegli questo Icon Pack.
-Qui vedrai un\'opzione che ti permetterà di caricare solo i Wallpapers scaricati. (ricorda che prima devi scaricare i Wallpapers dall\'applicazione)</item>
-        <item>Se hai già scaricato un Wallpapers, questo verrà caricato direttamente nella memoria interna del tuo dispositivo.
-            Muzei quindi non scaricherà più i Wallpapers dal Cloud, ma li caricherà direttamente dalla memoria interna del tuo dispositivo.</item>
-        <item>Apri l\'app e scarica i Wallpapers che vuoi usare in Muzei.
-Apri le impostazioni di Muzei quindi scegli l\'opzione per caricare solo i Wallpapers scaricati.</item>
+Qui vedrai un\'opzione che ti permetterà di caricare solo gli sfondi scaricati.
+            Ricorda che prima devi scaricare gli sfondi dall\'applicazione.</item>
+        <item>Se hai già scaricato uno sfondo, questo verrà caricato direttamente nella memoria interna del tuo dispositivo.
+            Muzei quindi non scaricherà più gli sfondi dal cloud, ma li caricherà direttamente dalla memoria interna del tuo dispositivo.</item>
+        <item>Apri l\'app e scarica gli sfondi che vuoi usare in Muzei.
+            Apri le impostazioni di Muzei quindi scegli l\'opzione per caricare solo gli sfondi scaricati.</item>
         <item>È usata per leggere e scrive la cache e memorizzare i dati sulla richiesta di icone.</item>
         <item>È usata per caricare gli sfondi presenti sul cloud e per poterli scaricare.</item>
         <item>Questa funzione serve per verificare se il tuo dispositivo ha una connessione internet attiva oppure no.</item>
