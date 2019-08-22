@@ -63,11 +63,11 @@ Scaricala da lì per utilizzarla.</string>
     <!-- New -->
     <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store. Divertiti.</string>
     <!-- New -->
-    <string name="playstore_check_failed">Sembra che tu abbia installato questo icon pack al di fuori del Play Store, dunque non potrai utilizzarlo.</string>
+    <string name="playstore_check_failed">Sembra che tu abbia installato questo pacchetto icone al di fuori del Play Store, dunque non potrai utilizzarlo.</string>
     <!-- New -->
     <!-- Share -->
     <string name="share_app_title">Hey! Ti consiglio questa applicazione %s</string>
-    <string name="share_app_body">Guarda %1$s, questo icon pack è fantastico! %2$s</string>
+    <string name="share_app_body">Guarda %1$s, questo pacchetto icone è fantastico! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Menù di navigazione</string>
     <string name="tap_intro_home_navigation_desc">Tocca qui oppure fai uno swype verso destra per aprire il menù di navigazione</string>
@@ -98,7 +98,7 @@ Scaricala da lì per utilizzarla.</string>
     <string name="home_rate_and_review">Valuta e Recensisci</string>
     <string name="home_apply_icon_pack">Applica %s</string>
     <string name="home_donate">Dona</string>
-    <string name="home_donate_desc">Supporta lo sviluppatore dell\'icon pack</string>
+    <string name="home_donate_desc">Supporta lo sviluppatore del pacchetto icone</string>
     <string name="home_icons">Icone personalizzate</string>
     <string name="home_icon_dimension">icone grandi %s pixel</string>
     <string name="home_loud_wallpapers">%d sfondi in cloud</string>
@@ -109,16 +109,16 @@ Scaricala da lì per utilizzarla.</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher installati</string>
     <string name="apply_supported">Launcher supportati</string>
-    <string name="apply_manual">%1$s non supporta l\'applicazione dell\'icon pack diretta su questo launcher, puoi però applicare manualmente %2$s dalle impostazioni del launcher.</string>
+    <string name="apply_manual">%1$s non supporta l\'applicazione diretta dei pacchetti icone su questo launcher, puoi però applicare manualmente %2$s dalle impostazioni del launcher.</string>
     <string name="apply_manual_evie">Clicca e tieni premuto sulla schermata home - Impostazioni - icon pack - scegli %s.</string>
     <string name="apply_launch_failed">Impossibile aprire le impostazioni %s </string>
     <string name="apply_launcher_not_installed">%s non è installato. Vuoi aprire il Play Store e installare questa app?</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager non è disponibile su questo dispositivo</string>
-    <string name="apply_cmtheme_failed">impossibile aprire CM Theme Manager, prova ad applicare l\'icon pack manualmente dalle impostazioni del Launcher.</string>
-    <string name="apply_lg_home">Per applicare questo Icon pack apri Settings - Display - Home Screen - Theme</string>
+    <string name="apply_cmtheme_failed">Impossibile aprire CM Theme Manager, prova ad applicare il pacchetto icone manualmente dalle impostazioni del launcher.</string>
+    <string name="apply_lg_home">Per applicare questo pacchetto icone apri Impostazioni - Display - Home Screen - Temi</string>
     <string name="apply_lg_home_not_available">LG Home non è disponibile su questo dispositivo</string>
-    <string name="apply_lg_home_failed">Impossibile aprire le impostazioni di LG Home, prova ad applicare l\'icon pack manualmente dalle impostazioni del Launcher.</string>
-    <string name="apply_lg_home_nougat">LG Home su Android Nougat non supporta piu gli Icon Pack. Scarica un Launcher dal Play Store per utilizzare questa app.</string>
+    <string name="apply_lg_home_failed">Impossibile aprire le impostazioni di LG Home, prova ad applicare il pacchetto icone manualmente dalle impostazioni del launcher.</string>
+    <string name="apply_lg_home_nougat">LG Home su Android Nougat non supporta più i pacchetti icone. Scarica un launcher dal Play Store per utilizzare quest\'app.</string>
     <string name="apply_launcher_incompatible">%s Launcher non supporta nessun icon pack, quindi non puoi usare %2$s con questo launcher. Puoi provare un\'app di terze parti per usare questo pacchetto icone con questo launcher. Vuoi installarlo?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossibile caricare le icone</string>
