@@ -2,6 +2,7 @@ package candybar.lib.fragments;
 
 import android.animation.AnimatorListenerAdapter;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -150,6 +151,11 @@ public class IconsBaseFragment extends Fragment {
                 return true;
             }
         });
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
+                !getActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
+            iconShape.setVisible(false);
+        }
 
         iconShape.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
