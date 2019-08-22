@@ -110,7 +110,7 @@ Scaricala da lì per utilizzarla.</string>
     <string name="apply_installed">Launcher installati</string>
     <string name="apply_supported">Launcher supportati</string>
     <string name="apply_manual">%1$s non supporta l\'applicazione dell\'icon pack diretta su questo launcher, puoi però applicare manualmente %2$s dalle impostazioni del launcher.</string>
-    <string name="apply_manual_evie">Clicca e tieni premuto sulla homescreen - Impostazioni  - icon pack - scegli %s.</string>
+    <string name="apply_manual_evie">Clicca e tieni premuto sulla schermata home - Impostazioni - icon pack - scegli %s.</string>
     <string name="apply_launch_failed">Impossibile aprire le impostazioni %s </string>
     <string name="apply_launcher_not_installed">%s non è installato. Vuoi aprire il Play Store e installare questa app?</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager non è disponibile su questo dispositivo</string>
@@ -119,6 +119,7 @@ Scaricala da lì per utilizzarla.</string>
     <string name="apply_lg_home_not_available">LG Home non è disponibile su questo dispositivo</string>
     <string name="apply_lg_home_failed">Impossibile aprire le impostazioni di LG Home, prova ad applicare l\'icon pack manualmente dalle impostazioni del Launcher.</string>
     <string name="apply_lg_home_nougat">LG Home su Android Nougat non supporta piu gli Icon Pack. Scarica un Launcher dal Play Store per utilizzare questa app.</string>
+    <string name="apply_launcher_incompatible">%s Launcher non supporta nessun icon pack, quindi non puoi usare %2$s con questo launcher. Puoi provare un\'app di terze parti per usare questo pacchetto icone con questo launcher. Vuoi installarlo?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossibile caricare le icone</string>
     <string name="icon_shape">Forma icona</string>
