@@ -136,7 +136,9 @@ No podrás utilizar la aplicación.</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
     <string name="request_requested">Por favor comprueba tu solicitud de nuevo, porque estás solicitando una aplicación que ya ha sido solicitada anteriormente.</string>
     <string name="request_email_client">Elige el cliente de correo que quieras usar para enviar la solicitud del icono</string>
+    <string name="request_app_disabled">Está usando una versión anterior de este paquete de iconos. Las solicitudes solo se pueden realizar en la última versión. Por favor actualice su aplicación a la última versión para solicitar iconos.</string>
     <!-- New -->
+    <string name="connection_error_long">No se pueden cargar datos del servidor. Verifique su conexión de internet.</string>
     <!-- New -->
     <string name="request_limit">Sólo puedes hacer %d solicitud(es) con la solicitud normal.</string>
     <string name="request_used">Has solicitado %d icono(s).</string>
@@ -146,11 +148,17 @@ No podrás utilizar la aplicación.</string>
     <!-- New -->
     <string name="regular_request">Solicitud de icono normal</string>
     <string name="regular_request_desc">Haz tu solicitud de iconos y el desarrollador intentará incluirlos.</string>
+    <string name="regular_request_count">Total\n%d solicitud</string>
+    <string name="regular_request_used">Usado\n%d solicitud</string>
+    <string name="regular_request_available">Disponible\n%d solicitud</string>
     <!-- Premium Request -->
     <string name="premium_request">Solicitud Premium de Iconos</string>
     <string name="premium_request_no_internet">Asegúrate de que tu teléfono está conectado a internet antes de enviar una solicitud premium</string>
     <string name="premium_request_desc">La solicitud premium de iconos es de pago. Puedes obtener tus solicitudes de aplicaciones más rápido usando la solicitud premium de iconos.</string>
     <string name="premium_request_buy">Comprar</string>
+    <string name="premium_request_count">Total\n%d solicitud</string>
+    <string name="premium_request_used">Usado\n%d solicitud</string>
+    <string name="premium_request_available">Disponible\n%d solicitud</string>
     <string name="premium_request_already_purchased">Aún te quedan %d solicitud(es) premium.
 Tienes que usar todas antes de comprar de nuevo un paquete de solicitudes premium.</string>
     <string name="premium_request_limit">Sólo dispones de %d solicitud(es) premium,</string>
