@@ -31,8 +31,10 @@
     <string name="open">Abrir</string>
     <string name="close">Cerrar</string>
     <string name="clear">Limpiar</string>
+    <string name="ok">OK</string>
     <string name="install">Instalar</string>
     <string name="donate">Donar</string>
+    <string name="update">Actualización</string>
     <!-- New -->
     <string name="search_noresult">Ningún resultado encontrado para \"%s\"</string>
     <string name="search_faqs">Pregunta o respuesta</string>
@@ -130,6 +132,8 @@ No podrás utilizar la aplicación.</string>
     <string name="request_limit_reset">El límite de solicitud de iconos se reseteará con cada actualización.</string>
     <!-- Regular Request -->
     <!-- New -->
+    <string name="regular_request">Solicitud de icono normal</string>
+    <string name="regular_request_desc">Haz tu solicitud de iconos y el desarrollador intentará incluirlos.</string>
     <!-- Premium Request -->
     <string name="premium_request">Solicitud Premium de Iconos</string>
     <string name="premium_request_no_internet">Asegúrate de que tu teléfono está conectado a internet antes de enviar una solicitud premium</string>
@@ -202,7 +206,9 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="intent_email_not_supported_message">Has seleccionado un cliente de correo no soportado, por favor selecciona otro cliente de correo</string>
     <!-- About -->
     <string name="about_contributors_title">Ayudantes</string>
+    <string name="about_privacy_policy_title">Política de privacidad</string>
     <!-- New -->
+    <string name="about_terms_and_conditions_title">Terminos y Condiciones</string>
     <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Por favor deja una descripción acerca del problema del que quieres informar</string>
@@ -218,6 +224,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="crash_report_message">Desgraciadamente %s ha fallado. Elige enviar informe a continuación para ayudar al desarrollador a solucionar el problema.</string>
     <string name="crash_report_send">Enviar Informe</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar es un panel de control de iconos de aplicaciones de código abierto bajo la licencia Apache 2.0 para Android, disponible en GitHub, libre para su uso y desarrollado por Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Licencias de Código Abierto</string>
     <string name="about_dashboard_contributors">Ayudantes de CandyBar</string>
