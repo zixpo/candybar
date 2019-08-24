@@ -63,6 +63,8 @@ No podrás utilizar la aplicación.</string>
     <!-- New -->
     <string name="playstore_check_success">Gracias por instalar la aplicación desde la Play Store. Disfruta.</string>
     <!-- New -->
+    <string name="playstore_check_failed">Parece que has instalado este paquete de iconos fuera de la Play Store.
+         No podrás usarlo.</string>
     <!-- New -->
     <!-- Share -->
     <string name="share_app_title">¡Yo! Echa un vistazo a %s</string>
@@ -118,14 +120,17 @@ No podrás utilizar la aplicación.</string>
     <string name="apply_lg_home_not_available">LG Home no está disponible en este dispositivo</string>
     <string name="apply_lg_home_failed">No se pueden iniciar los ajustes de LG Home, puedes intentar establecer el paquete de iconos manualmente desde los ajustes.</string>
     <string name="apply_lg_home_nougat">LG Home con Android Nougat no soporta el paquete de iconos. Necesitas un launcher personalizado para usar el paquete de iconos.</string>
+    <string name="apply_launcher_incompatible">%s Launcher no soporta paquetes de iconos. Por lo tanto, no podrás usar ningún pack de iconos con este launcher. Puede probar una aplicación de terceros para usar este paquete de iconos en %s Launcher. ¿Desea instalarlo?</string>
     <!-- Icons -->
     <string name="icons_load_failed">No se pueden cargar los iconos</string>
+    <string name="icon_shape">Forma de icono</string>
     <!-- Request -->
     <string name="request_title">Solicitud de iconos</string>
     <string name="request_not_selected">Selecciona las aplicaciones para solicitar</string>
     <string name="request_not_requested">No solicitado</string>
     <string name="request_already_requested">Ya solicitado</string>
     <string name="request_building">Preparando la solicitud …</string>
+    <string name="request_fetching_data">Obteniendo los últimos datos...</string>
     <!-- New -->
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
