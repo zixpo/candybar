@@ -38,15 +38,10 @@
     <string name="install">Installer</string>
     <string name="donate">Faire un don</string>
     <string name="update">Mettre à jour</string>
-    <!-- New -->
     <string name="search_noresult">Aucun résultat pour \"%s\"</string>
     <string name="search_faqs">Question ou réponse</string>
     <string name="search_icon">Nom d\'icône</string>
     <!-- Update -->
-    <string name="update_available">Mise à jour disponible !</string>
-    <!-- New -->
-    <string name="no_update_available">Vous utilisez la dernière version !</string>
-    <!-- New -->
     <!-- Changelog -->
     <string name="changelog_version">Version</string>
     <!-- InAppBilling -->
@@ -58,14 +53,7 @@
     <string name="license_check_failed">Échec de la vérification de la licence, vous n\'avez pas téléchargé l\'application depuis le Play Store.
 Vous ne pourrez pas utiliser l\'application</string>
     <string name="license_check_retry">Impossible de vérifier la licence, veuillez réessayer plus tard</string>
-    <!-- Playstore Installation Check -->
-    <string name="playstore_check">Contrôle Play Store</string>
-    <!-- New -->
-    <string name="playstore_check_success">Merci d\'avoir installé l\'application depuis Google Play. Profitez.</string>
-    <!-- New -->
-    <string name="playstore_check_failed">Il semble que vous avez installé ce pack d\'icônes depuis un autre endroit que Google Play.
-        Votre chemin s\'arrête là.</string>
-    <!-- New -->
+    <!-- Play Store Installation Check -->
     <!-- Share -->
     <string name="share_app_title">Salut ! Regarde ça %s</string>
     <string name="share_app_body">Regarde %1$s, ce pack d\'icônes est vraiment sympa ! %2$s</string>
@@ -111,7 +99,6 @@ Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications deman
     <!-- Apply -->
     <string name="apply_installed">Launcher(s) installé(s)</string>
     <string name="apply_supported">Launchers supportés</string>
-    <string name="apply_manual">%1$s ne supporte pas l\'application directe, vous pouvez appliquer %2$s manuellement depuis les paramètres du launcher.</string>
     <string name="apply_manual_evie">Appuyez ici et maintenez sur l\'écran d\'accueil &gt; Paramètres &gt; Pack d\'icônes &gt; Choisir %s.</string>
     <string name="apply_launch_failed">Impossible d\'accéder aux paramètres de %s</string>
     <string name="apply_launcher_not_installed">%s n\'est pas installé. 
@@ -123,7 +110,6 @@ Voulez-vous l\'ouvrir sur le Google Play Store pour le télécharger et l\'insta
     <string name="apply_lg_home_failed">Impossible de lancer LG Home, vous pouvez essayer d\'appliquer le pack d\'icônes manuellement depuis les paramètres.</string>
     <string name="apply_lg_home_nougat">LG Home sur Android Nougat ne supporte plus les packs d\'icônes.
 Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
-    <string name="apply_launcher_incompatible">%s Launcher ne support aucun pack d\'icônes. Alors vous ne pouvez pas utiliser ce pack d\'icônes avec ce launcher. Vous pouvez essayer une application tierce pour utiliser ce pack d\'icônes avec %s Launcher. Voulez-vous l\'installer ?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossible de charger les icônes</string>
     <string name="icon_shape">Forme des icônes</string>
@@ -133,25 +119,17 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <string name="request_not_requested">Non demandée</string>
     <string name="request_already_requested">Déjà demandée</string>
     <string name="request_building">Construction de la demande …</string>
-    <string name="request_fetching_data">Récupération des dernières données...</string>
-    <!-- New -->
     <string name="request_build_failed">Impossible de construire la demande d\'icône(s)</string>
     <string name="request_appfilter_failed">Impossible de lire le fichier appfilter.xml</string>
     <string name="request_requested">Vérifiez votre demande à nouveau.
 Car vous êtes en train de demander des applications déjà demandées.</string>
     <string name="request_email_client">Choisissez la plateforme de messagerie que vous souhaitez utiliser pour envoyer la demande d\'icône(s)</string>
-    <string name="request_app_disabled">Vous utilisez une ancienne version de ce pack d\'icônes, les icônes demandées peuvent être déjà incluses dans la dernière version. Veuillez mettre à jour l\'application pour demander des icônes.</string>
-    <!-- New -->
-    <string name="connection_error_long">Impossible de charger les données du serveur. Veuillez vérifier votre connexion.</string>
-    <!-- New -->
     <string name="request_limit">Vous pouvez seulement faire %d demande(s) en demande classique.</string>
     <string name="request_used">Vous avez demandé %d icône(s).</string>
     <string name="request_limit_buy">Vous pouvez acheter des Demandes Premium pour demander davantage d\'icônes.</string>
     <string name="request_limit_reset">La limite de demande d\'icône(s) sera réinitialisée à chaque mise à jour.</string>
     <!-- Regular Request -->
-    <!-- New -->
     <string name="regular_request">Demande d\'icônes classique</string>
-    <string name="regular_request_desc">Faites une demande pour vos icônes. Le développeur essaiera de les inclure.</string>
     <string name="regular_request_count">Total\n%d demande(s)</string>
     <string name="regular_request_used">Utilisées\n%d demande(s)</string>
     <string name="regular_request_available">Disponibles\n%d demande(s)</string>
@@ -233,9 +211,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <!-- About -->
     <string name="about_contributors_title">Contributeurs</string>
     <string name="about_privacy_policy_title">Politique de confidentialité</string>
-    <!-- New -->
     <string name="about_terms_and_conditions_title">Conditions d\'utilisation</string>
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Donnez une description du type de problème que vous voulez rencontré</string>
     <string name="report_bugs_desc_hint">Description</string>
