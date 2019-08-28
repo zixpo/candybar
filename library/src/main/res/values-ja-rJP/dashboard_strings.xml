@@ -34,13 +34,10 @@
     <string name="clear">クリア</string>
     <string name="install">インストール</string>
     <string name="donate">寄付</string>
-    <!-- New -->
     <string name="search_noresult">「%s」の結果が見つかりませんでした</string>
     <string name="search_faqs">質問または回答</string>
     <string name="search_icon">アイコン名</string>
     <!-- Update -->
-    <!-- New -->
-    <!-- New -->
     <!-- Changelog -->
     <string name="changelog_version">バージョン</string>
     <!-- InAppBilling -->
@@ -52,10 +49,7 @@
     <string name="license_check_failed">ライセンスのチェックに失敗しました。あなたはこのアプリをPlayストアからダウンロードしていません。 
 あなたはこのアプリを利用することはできません。</string>
     <string name="license_check_retry">ライセンスをチェックできません。しばらくしてからもう一度やり直してください。</string>
-    <!-- Playstore Installation Check -->
-    <!-- New -->
-    <!-- New -->
-    <!-- New -->
+    <!-- Play Store Installation Check -->
     <!-- Share -->
     <string name="share_app_title">%sをチェック！</string>
     <string name="share_app_body">%1$sをチェックしよう、このアイコンパックはかなりクール！ %2$s</string>
@@ -101,7 +95,6 @@
     <!-- Apply -->
     <string name="apply_installed">インストールされたランチャー</string>
     <string name="apply_supported">対応しているランチャー</string>
-    <string name="apply_manual">%1$sは直接適用に対応していません。ランチャーの設定から%2$sを手動で適用できます。</string>
     <string name="apply_manual_evie">ホーム画面でタップして長押し - 設定 - アイコンパック - %sを選択。</string>
     <string name="apply_launch_failed">%sの設定を起動できません</string>
     <string name="apply_launcher_not_installed">%sはインストールされていません。
@@ -120,20 +113,16 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="request_not_requested">リクエストしていません</string>
     <string name="request_already_requested">既にリクエストしています</string>
     <string name="request_building">リクエストを構築しています…</string>
-    <!-- New -->
     <string name="request_build_failed">アイコンリクエストを構築できません</string>
     <string name="request_appfilter_failed">appfilter.xmlを読み取れません</string>
     <string name="request_requested">リクエストをもう一度確認してください。
 既にリクエストされているアプリをリクエストしようとしています。</string>
     <string name="request_email_client">アイコンリクエストを送信したいメールクライアントを選択してください</string>
-    <!-- New -->
-    <!-- New -->
     <string name="request_limit">普通のリクエストでは%d件のリクエストのみ作成できます。</string>
     <string name="request_used">あなたは%d個のアイコンをリクエストしています。</string>
     <string name="request_limit_buy">プレミアムリクエストを購入することでさらにアイコンをリクエストすることができます。</string>
     <string name="request_limit_reset">アイコンリクエストの制限数はアップデート毎にリセットされます。</string>
     <!-- Regular Request -->
-    <!-- New -->
     <!-- Premium Request -->
     <string name="premium_request">プレミアムアイコンリクエスト</string>
     <string name="premium_request_no_internet">プレミアムリクエストを送信する前に端末がインターネットに接続されていることを確認してください</string>
@@ -208,8 +197,6 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="intent_email_not_supported_message">非対応のメールクライアントが選択されました。他のメールクライアントを選択してください</string>
     <!-- About -->
     <string name="about_contributors_title">貢献者</string>
-    <!-- New -->
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">報告したい問題についての説明を記入してください</string>
     <string name="report_bugs_desc_hint">説明</string>
