@@ -32,13 +32,10 @@
     <string name="ok">ঠিক আছে </string>
     <string name="install">ইনস্টল করুন </string>
     <string name="donate">অনুদান দিন </string>
-    <!-- New -->
     <string name="search_noresult">\"%s\" এর জন্য কোন ফলাফল পাওয়া যায় নি</string>
     <string name="search_faqs">প্রশ্ন অথবা উত্তর</string>
     <string name="search_icon">আইকনের নাম</string>
     <!-- Update -->
-    <!-- New -->
-    <!-- New -->
     <!-- Changelog -->
     <string name="changelog_version">সংস্করণ</string>
     <!-- InAppBilling -->
@@ -50,10 +47,7 @@
     <string name="license_check_failed">লাইসেন্স পরীক্ষা ব্যর্থ হয়েছে, আপনি প্লে স্টোর থেকে অ্যাপ্লিকেশন ডাউনলোড করেন নি।
 আপনি এটি ব্যবহার করতে পারবেন না।</string>
     <string name="license_check_retry">লাইসেন্সটি চেক করতে অক্ষম, অনুগ্রহ করে কিছুক্ষণ পরে আবার চেষ্টা করুন।</string>
-    <!-- Playstore Installation Check -->
-    <!-- New -->
-    <!-- New -->
-    <!-- New -->
+    <!-- Play Store Installation Check -->
     <!-- Share -->
     <string name="share_app_title">ইয়ো! %s চেক করে দেখুন</string>
     <string name="share_app_body">%1$s চেক করে দেখুন, এই আইকন প্যাকটি অসাধারণ! %2$s</string>
@@ -99,7 +93,6 @@
     <!-- Apply -->
     <string name="apply_installed">ইনস্টল করা লঞ্চার</string>
     <string name="apply_supported">সমর্থিত লঞ্চার</string>
-    <string name="apply_manual">%1$s সরাসরি প্রয়োগ সমর্থন করে না, আপনি লঞ্চার সেটিংস থেকে %2$s ম্যানুয়ালি প্রয়োগ করতে পারেন।</string>
     <string name="apply_manual_evie">হোমস্ক্রীন আলতো চাপুন এবং ধরে রাখুন - সেটিংস - আইকন প্যাক -%s নির্বাচন করুন</string>
     <string name="apply_launch_failed">%s সেটিংস চালু করতে অক্ষম</string>
     <string name="apply_launcher_not_installed">%s ইনস্টল করা নেই। আপনি কি খুলতে চান গুগল প্লে স্টোর? 
@@ -118,20 +111,16 @@
     <string name="request_not_requested">অনুরোধ করা হয়নি</string>
     <string name="request_already_requested">ইতিমধ্যে অনুরোধ জানানো হয়েছে</string>
     <string name="request_building">অনুরোধ তৈরী করা হচ্ছে …</string>
-    <!-- New -->
     <string name="request_build_failed">আইকনের জন্য অনুরোধ জানাতে সক্ষম হয় নি</string>
     <string name="request_appfilter_failed">Appfilter.xml পড়তে অক্ষম</string>
     <string name="request_requested">দয়া করে আবার আপনার অনুরোধ চেক করুন।
 কারণ আপনি ইতিমধ্যে অনুরোধ করা হয়েছিল যে অ্যাপ্লিকেশন অনুরোধ করার চেষ্টা করছেন।</string>
     <string name="request_email_client">আইকন অনুরোধ পাঠাতে আপনি ব্যবহার করতে চান এমন ইমেইল ক্লায়েন্ট নির্বাচন করুন</string>
-    <!-- New -->
-    <!-- New -->
     <string name="request_limit">আপনি শুধুমাত্র নিয়মিত অনুরোধের সাথে %d টি অনুরোধ (গুলি) করতে সক্ষম।</string>
     <string name="request_used">আপনি %d টি আইকন (গুলি) অনুরোধ করেছেন</string>
     <string name="request_limit_buy">আপনি আরো আইকন অনুরোধ পাঠাতে প্রিমিয়াম অনুরোধ কিনতে পারেন।</string>
     <string name="request_limit_reset">প্রতিটি আপডেট এর পর আইকন অনুরোধ সীমা পুনরায় সেট করা হবে</string>
     <!-- Regular Request -->
-    <!-- New -->
     <!-- Premium Request -->
     <string name="premium_request">প্রিমিয়াম আইকন অনুরোধ</string>
     <string name="premium_request_no_internet">একটি প্রিমিয়াম অনুরোধ পাঠানোর আগে আপনার ফোন ইন্টারনেটে সংযুক্ত কিনা নিশ্চিত করুন</string>
@@ -207,8 +196,6 @@
     <string name="intent_email_not_supported_message">একটি অসমর্থিত ইমেল ক্লায়েন্ট নির্বাচিত, দয়া করে অন্য ইমেল ক্লায়েন্ট নির্বাচন করুন</string>
     <!-- About -->
     <string name="about_contributors_title">অবদানকারীগণ</string>
-    <!-- New -->
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">আপনি কোনও ধরনের সমস্যা সম্পর্কে রিপোর্ট করতে চান দয়া করে একটি বিবরণ দিন</string>
     <string name="report_bugs_desc_hint">বর্ণনা</string>
