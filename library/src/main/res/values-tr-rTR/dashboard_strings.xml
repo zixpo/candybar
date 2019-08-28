@@ -37,13 +37,10 @@
     <string name="ok">Tamam</string>
     <string name="install">Yükle</string>
     <string name="donate">Bağış yapın</string>
-    <!-- New -->
     <string name="search_noresult">\"%s\" için sonuç bulunamadı</string>
     <string name="search_faqs">Soru veya cevap</string>
     <string name="search_icon">Simge Adı</string>
     <!-- Update -->
-    <!-- New -->
-    <!-- New -->
     <!-- Changelog -->
     <string name="changelog_version">Versiyon</string>
     <!-- InAppBilling -->
@@ -55,10 +52,7 @@
     <string name="license_check_failed">Lisans kontrolü başarısız oldu, uygulamayı Play Store\'dan indirmelisiniz.
         Maalesef kullanamayacaksınız.</string>
     <string name="license_check_retry">Lisans kontrol edilemiyor, lütfen birkaç dakika sonra tekrar deneyin.</string>
-    <!-- Playstore Installation Check -->
-    <!-- New -->
-    <!-- New -->
-    <!-- New -->
+    <!-- Play Store Installation Check -->
     <!-- Share -->
     <string name="share_app_title">%s göz atın</string>
     <string name="share_app_body">%1$s göz atın, bu simge paketi gerçekten harika! %2$s</string>
@@ -104,7 +98,6 @@
     <!-- Apply -->
     <string name="apply_installed">Yüklü Başlatıcı</string>
     <string name="apply_supported">Desteklenen Başlatıcılar</string>
-    <string name="apply_manual">%1$s doğrudan uygulamayı desteklemiyor, %2$s uygulamasını başlatıcı ayarlarından el ile uygulayabilirsiniz.</string>
     <string name="apply_manual_evie">Ana ekrana dokunun ve basılı tutun - Ayarlar - Simge Paketi - %s\'i seçin.</string>
     <string name="apply_launch_failed">%s ayarları başlatılamıyor</string>
     <string name="apply_launcher_not_installed">%s yüklü değil. İndirmek ve yüklemek için
@@ -123,20 +116,16 @@
     <string name="request_not_requested">İstenmedi</string>
     <string name="request_already_requested">Daha önceden istendi</string>
     <string name="request_building">Simge isteği oluşturuluyor …</string>
-    <!-- New -->
     <string name="request_build_failed">Simge isteği oluşturulamadı</string>
     <string name="request_appfilter_failed">Appfilter.xml okunamadı</string>
     <string name="request_requested">Lütfen isteğinizi tekrar kontrol edin.
         Zaten talep edilen uygulamayı istemeye çalıştığınız için.</string>
     <string name="request_email_client">Simge isteğini göndermek için kullanmak istediğiniz e-posta istemcisini seçin</string>
-    <!-- New -->
-    <!-- New -->
     <string name="request_limit">Normal istekle yalnızca %d istek yapabilirsiniz.</string>
     <string name="request_used">%d simge isteğinde bulundunuz.</string>
     <string name="request_limit_buy">Daha fazla simge istemek için Premium İstekler satın alabilirsiniz.</string>
     <string name="request_limit_reset">Her güncelleme için simge istek limiti sıfırlanacaktır.</string>
     <!-- Regular Request -->
-    <!-- New -->
     <!-- Premium Request -->
     <string name="premium_request">Premium Simge İsteği</string>
     <string name="premium_request_no_internet">Premium bir talep göndermeden önce telefonunuzun internete bağlı olduğundan emin olun.</string>
@@ -211,8 +200,6 @@
     <string name="intent_email_not_supported_message">Desteklenmeyen bir e-posta istemcisi seçildi, lütfen başka bir e-posta istemcisi seçin</string>
     <!-- About -->
     <string name="about_contributors_title">Katkıda Bulunanlar</string>
-    <!-- New -->
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Lütfen bildirmek istediğiniz sorunla ilgili bir açıklama yapın</string>
     <string name="report_bugs_desc_hint">Açıklama</string>
