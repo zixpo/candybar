@@ -4,7 +4,7 @@
 - Fixed error when rebuilding Premium Request.
 - New NavigationView.
 
-# v3.5.0-b6
+# v3.5.0-beta.6
 - Added Ability to request app from non-mailing apps.
 - Added option to Disable Icon Request from JSON stored in Cloud.
 - Now shows Request Available, Used even for Regular Requests.
