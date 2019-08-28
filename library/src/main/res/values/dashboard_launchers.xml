@@ -8,11 +8,11 @@
         <item>ZenUI</item>                                  <!-- 3 -->
         <item>Atom</item>                                   <!-- 4 -->
         <item>Aviate</item>                                 <!-- 5 -->
-        <item>CM Theme Engine</item>                        <!-- 6 -->
+        <item>CM Theme</item>                               <!-- 6 -->
         <item>GO EX</item>                                  <!-- 7 -->
         <item>Holo</item>                                   <!-- 8 -->
         <item>Holo HD</item>                                <!-- 9 -->
-        <item>Lawnchair V2</item>                           <!-- 10 -->
+        <item>Lawnchair 2</item>                            <!-- 10 -->
         <item>LG Home</item>                                <!-- 11 -->
         <item>Lucid</item>                                  <!-- 12 -->
         <item>M</item>                                      <!-- 13 -->
@@ -29,6 +29,7 @@
         <item>Evie</item>                                   <!-- 24 -->
         <item>POCO</item>                                   <!-- 25 -->
         <item>Posidon</item>                                <!-- 26 -->
+        <item>Lawnchair</item>                              <!-- 27 -->
     </string-array>
 
     <array name="launcher_icons">
@@ -42,7 +43,7 @@
         <item>@drawable/ic_launcher_go</item>               <!-- 7 -->
         <item>@drawable/ic_launcher_holo</item>             <!-- 8 -->
         <item>@drawable/ic_launcher_holohd</item>           <!-- 9 -->
-        <item>@drawable/ic_launcher_lawnchair</item>        <!-- 10 -->
+        <item>@drawable/ic_launcher_lawnchair_v2</item>     <!-- 10 -->
         <item>@drawable/ic_launcher_lg</item>               <!-- 11 -->
         <item>@drawable/ic_launcher_lucid</item>            <!-- 12 -->
         <item>@drawable/ic_launcher_m</item>                <!-- 13 -->
@@ -59,6 +60,7 @@
         <item>@drawable/ic_launcher_evie</item>             <!-- 24 -->
         <item>@drawable/ic_launcher_poco</item>             <!-- 25 -->
         <item>@drawable/ic_launcher_posidon</item>          <!-- 26 -->
+        <item>@drawable/ic_launcher_lawnchair</item>        <!-- 27 -->
     </array>
 
     <!-- Launcher Packages -->
@@ -90,6 +92,7 @@
         <item>is.shortcut</item>                            <!-- 24 -->
         <item>com.mi.android.globallauncher</item>          <!-- 25 -->
         <item>posidon.launcher</item>                       <!-- 26 -->
+        <item>ch.deletescape.lawnchair.plah</item>          <!-- 27 -->
     </string-array>
 
     <string-array name="launcher_packages_2">
@@ -120,6 +123,7 @@
         <item>none</item>                                   <!-- 24 -->
         <item>none</item>                                   <!-- 25 -->
         <item>none</item>                                   <!-- 26 -->
+        <item>none</item>                                   <!-- 27 -->
     </string-array>
 
     <string-array name="launcher_packages_3">
@@ -150,6 +154,7 @@
         <item>none</item>                                   <!-- 24 -->
         <item>none</item>                                   <!-- 25 -->
         <item>none</item>                                   <!-- 26 -->
+        <item>none</item>                                   <!-- 27 -->
     </string-array>
 
 </resources>

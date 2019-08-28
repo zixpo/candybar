@@ -169,11 +169,27 @@ public class ApplyFragment extends Fragment {
                             R.array.launcher_packages_2);
                     String[] launcherPackages3 = getResources().getStringArray(
                             R.array.launcher_packages_3);
+                    String[] showableLauncherNames = getResources().getStringArray(
+                            R.array.dashboard_launchers);
 
                     List<Icon> installed = new ArrayList<>();
                     List<Icon> supported = new ArrayList<>();
 
+                    List<String> showable = new ArrayList<>();
+
+                    for (String name : showableLauncherNames) {
+                        String filtered_name = name.toLowerCase().replaceAll(" ", "_");
+                        showable.add(filtered_name);
+                    }
+
                     for (int i = 0; i < launcherNames.length; i++) {
+                        String lowercaseLauncherName = launcherNames[i].toLowerCase().replaceAll(" ", "_");
+
+                        if (!showable.contains(lowercaseLauncherName)) {
+                            Log.d("Launcher Excluded", lowercaseLauncherName);
+                            continue;
+                        }
+
                         boolean isInstalled = isLauncherInstalled(
                                 launcherPackages1[i],
                                 launcherPackages2[i],

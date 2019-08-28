@@ -138,7 +138,7 @@
     <string name="apply_lg_home_failed">Unable to launch LG Home Settings, you can try to apply Icon Pack manually from Settings.</string>
     <string name="apply_lg_home_nougat">LG Home with Android Nougat no longer supports Icon Pack. You need a custom launcher to use Icon Pack.</string>
 
-    <string name="apply_launcher_incompatible">%s Launcher doesn\'t support any icon pack, so you can\'t use %2$s with this launcher. You can try an third-party app to use this icon pack in this launcher. Do you want to install it?</string>
+    <string name="apply_launcher_incompatible">%s Launcher doesn\'t support any icon pack, so you can\'t use this icon pack with this launcher. You can try an third-party app to use this icon pack in %2$s launcher. Do you want to install it?</string>
 
     <!-- Icons -->
     <string name="icons_load_failed">Unable to load icons</string>

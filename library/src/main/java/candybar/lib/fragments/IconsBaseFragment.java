@@ -101,7 +101,7 @@ public class IconsBaseFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.menu_search, menu);
+        inflater.inflate(R.menu.menu_icons_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
         MenuItem iconShape = menu.findItem(R.id.menu_icon_shape);
 
