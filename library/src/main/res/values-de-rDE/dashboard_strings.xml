@@ -31,13 +31,10 @@
     <string name="clear">Löschen</string>
     <string name="install">Installieren</string>
     <string name="donate">Spenden</string>
-    <!-- New -->
     <string name="search_noresult">Keine Ergebnisse für \"%s\" gefunden</string>
     <string name="search_faqs">Frage oder Antwort</string>
     <string name="search_icon">Icon-Name</string>
     <!-- Update -->
-    <!-- New -->
-    <!-- New -->
     <!-- Changelog -->
     <!-- InAppBilling -->
     <string name="billing_load_product_failed">In-App-Käufe können nicht geladen werden</string>
@@ -48,10 +45,7 @@
     <string name="license_check_failed">Lizenzüberprüfung fehlgeschlagen. Du hast die App nicht vom Play Store heruntergeladen.
 Du wirst sie nicht benutzen können.</string>
     <string name="license_check_retry">Lizenz kann nicht überprüft werden. Bitte später erneut versuchen.</string>
-    <!-- Playstore Installation Check -->
-    <!-- New -->
-    <!-- New -->
-    <!-- New -->
+    <!-- Play Store Installation Check -->
     <!-- Share -->
     <string name="share_app_title">Yo! Sieh dir %s an</string>
     <string name="share_app_body">Sieh dir %1$s an. Dieses Icon Pack ist echt cool! %2$s</string>
@@ -97,7 +91,6 @@ Mit Premium Icon-Anfragen kannst du deine gewünschte App schneller erhalten.</s
     <!-- Apply -->
     <string name="apply_installed">Installierte Launcher</string>
     <string name="apply_supported">Unterstützte Launcher</string>
-    <string name="apply_manual">%1$s unterstützt keine Direktanwendung. Du kannst %2$s manuell aus den Launcher-Einstellungen anwenden.</string>
     <string name="apply_manual_evie">Klicke und halte am Startbildschirm - Einstellungen - Icon Pack - %s auswählen.</string>
     <string name="apply_launch_failed">%s-Einstellungen können nicht gestartet werden</string>
     <string name="apply_launcher_not_installed">%s ist nicht installiert. Willst du den 
@@ -116,20 +109,16 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_not_requested">Nicht angefragt</string>
     <string name="request_already_requested">Bereits angefragt</string>
     <string name="request_building">Anfrage erstellen …</string>
-    <!-- New -->
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>
     <string name="request_requested">Bitte überprüfe deine Anfrage.
 Du versuchst gerade eine App anzufragen, die bereits angefragt wurde.</string>
     <string name="request_email_client">Wähle den E-Mail-Klienten aus, mit dem du die Icon-Anfrage senden möchtest</string>
-    <!-- New -->
-    <!-- New -->
     <string name="request_limit">Du kannst nur %d Anfrage(n) ohne die Premium Icon-Anfrage tätigen.</string>
     <string name="request_used">Du hast %d Icon(s) angefragt.</string>
     <string name="request_limit_buy">Du kannst Premium-Anfragen kaufen, um mehr Icons anzufragen.</string>
     <string name="request_limit_reset">Das Limit der Icon-Anfrage wird mit jedem Update zurückgesetzt.</string>
     <!-- Regular Request -->
-    <!-- New -->
     <!-- Premium Request -->
     <string name="premium_request">Premium Icon-Anfrage</string>
     <string name="premium_request_no_internet">Stelle sicher, dass dein Handy mit dem Internet verbunden ist, bevor du eine Premium-Anfrage stellst</string>
@@ -204,8 +193,6 @@ fehlenden Icons erstellt wurde.</string>
     <string name="intent_email_not_supported_message">Nicht unterstützter E-Mail-Klient ausgewählt. Bitte einen anderen Klienten wählen</string>
     <!-- About -->
     <string name="about_contributors_title">Mitwirkende</string>
-    <!-- New -->
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Bitte gib eine Beschreibung des Problems ab, das du melden willst</string>
     <string name="report_bugs_desc_hint">Beschreibung</string>
