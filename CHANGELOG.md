@@ -1,3 +1,8 @@
+# v3.5.0-beta6.2
+- Show you can remove launchers.
+- Fixed Many Small Bugs.
+
+
 # v3.5.0-beta.6.1
 - Added support for Adaptive Icons.
 - Updated Gradle.
