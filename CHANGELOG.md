@@ -1,6 +1,6 @@
-# Unreleased Version
+# v3.5.0-beta.6.1
 - Added support for Adaptive Icons.
-- Updated Gradle Version.
+- Updated Gradle.
 - Fixed error when rebuilding Premium Request.
 - New NavigationView.
 
