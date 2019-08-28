@@ -249,7 +249,7 @@ public class SettingsFragment extends Fragment {
                     List<String> files = new ArrayList<>();
 
                     for (int i = 0; i < requests.size(); i++) {
-                        Drawable drawable = getReqIcon(getActivity(), requests.get(i).getPackageName());
+                        Drawable drawable = getReqIcon(getActivity(), requests.get(i).getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable, requests.get(i).getName());
                         if (icon != null) files.add(icon);
                     }

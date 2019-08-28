@@ -95,8 +95,6 @@ public class LauncherHelper {
                 return LGHOME;
             case "com.lge.launcher3":
                 return LGHOME3;
-            case "ch.deletescape.lawnchair":
-            case "ch.deletescape.lawnchair.plah":
             case "ch.deletescape.lawnchair.ci":
                 return LAWNCHAIR;
             case "com.powerpoint45.launcher":
@@ -247,7 +245,7 @@ public class LauncherHelper {
                     context.startActivity(lawnchair);
                     ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, "ch.deletescape.lawnchair.plah", launcherName);
+                    notInstalledError(context, launcherName);
                 }
                 break;
             case LGHOME:
@@ -549,6 +547,18 @@ public class LauncherHelper {
                     }
                 })
                 .negativeText(android.R.string.cancel)
+                .show();
+    }
+
+    private static void notInstalledError(Context context, String launcherName) {
+        new MaterialDialog.Builder(context)
+                .typeface(
+                        TypefaceHelper.getMedium(context),
+                        TypefaceHelper.getRegular(context))
+                .title(launcherName)
+                .content(String.format(context.getResources().getString(
+                        R.string.apply_launcher_not_installable), launcherName))
+                .positiveText(context.getResources().getString(R.string.close))
                 .show();
     }
 

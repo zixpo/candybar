@@ -41,15 +41,15 @@
     <string name="ok">OK</string>
     <string name="install">Install</string>
     <string name="donate">Donate</string>
-    <string name="update">Update</string> <!-- New -->
+    <string name="update">Update</string>
 
     <string name="search_noresult">No result found for \"%s\"</string>
     <string name="search_faqs">Question or answer</string>
     <string name="search_icon">Icon Name</string>
 
     <!-- Update -->
-    <string name="update_available">Update Available!</string> <!-- New -->
-    <string name="no_update_available">You\'re Using The Latest Version!</string> <!-- New -->
+    <string name="update_available">Update available!</string>
+    <string name="no_update_available">You\'re using the latest version!</string>
 
     <!-- Changelog -->
     <string name="changelog_version">Version</string>
@@ -65,11 +65,11 @@
         You will not be able to use it.</string>
     <string name="license_check_retry">Unable to check license, please try again in a few moments.</string>
 
-    <!-- Playstore Installation Check -->
-    <string name="playstore_check">Playstore Check</string> <!-- New -->
-    <string name="playstore_check_success">Thanks for Installing the App from Playstore. Please Enjoy.</string> <!-- New -->
-    <string name="playstore_check_failed">It Seems Like You Installed this Icon Pack from outside of Playstore.
-        You will not be able to use it.</string> <!-- New -->
+    <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play Store Check</string>
+    <string name="playstore_check_success">Thanks for Installing the App from Play Store. Enjoy.</string>
+    <string name="playstore_check_failed">It seems like you installed this icon pack from outside the Play Store.
+        You will not be able to use it.</string>
 
     <!-- Share -->
     <string name="share_app_title">Yo! Check out %s</string>
@@ -122,11 +122,13 @@
     <string name="apply_installed">Installed Launcher</string>
     <string name="apply_supported">Supported Launchers</string>
 
-    <string name="apply_manual">%1$s doesn\'t support direct apply, you can apply %2$s manually from the launcher settings.</string>
+    <string name="apply_manual">%1$s doesn\'t support direct apply but you can apply %2$s manually from the launcher settings.</string>
     <string name="apply_manual_evie">Tap and hold on homescreen - Settings - Icon Pack - choose %s.</string>
     <string name="apply_launch_failed">Unable to launch %s settings</string>
     <string name="apply_launcher_not_installed">%s Launcher is not installed. Do you want to open
         Google Play Store to download and install it?</string>
+
+    <string name="apply_launcher_not_installable">%s Launcher is not installed. Please try again after installing the launcher.</string>
 
     <string name="apply_cmtheme_not_available">CM Theme Manager is not available on this device</string>
     <string name="apply_cmtheme_failed">Unable to launch CM Theme Manager, you can try to apply Icon Pack manually from Settings.</string>
@@ -136,7 +138,7 @@
     <string name="apply_lg_home_failed">Unable to launch LG Home Settings, you can try to apply Icon Pack manually from Settings.</string>
     <string name="apply_lg_home_nougat">LG Home with Android Nougat no longer supports Icon Pack. You need a custom launcher to use Icon Pack.</string>
 
-    <string name="apply_launcher_incompatible">%s Launcher doesn\'t support any Icon Pack. So, You can\'t use Icon Pack with this Launcher. You can try an third-party app to use this Icon Pack in %s Launcher, Do You want to Install it?</string>
+    <string name="apply_launcher_incompatible">%s Launcher doesn\'t support any icon pack, so you can\'t use %2$s with this launcher. You can try an third-party app to use this icon pack in this launcher. Do you want to install it?</string>
 
     <!-- Icons -->
     <string name="icons_load_failed">Unable to load icons</string>
@@ -149,23 +151,23 @@
     <string name="request_already_requested">Already requested</string>
 
     <string name="request_building">Building request …</string>
-    <string name="request_fetching_data">Fetching Latest Data...</string> <!-- New -->
+    <string name="request_fetching_data">Fetching latest data...</string>
     <string name="request_build_failed">Unable to build icon request</string>
     <string name="request_appfilter_failed">Unable to read appfilter.xml</string>
     <string name="request_requested">Please check your request again.
         Because you are trying to request app that was already requested.</string>
     <string name="request_email_client">Choose the app you want to use to send the icon request</string>
-    <string name="request_app_disabled">You\'re using Older Version of this Icon Pack, The Requested Icons may be included in the Latest Version. Please Update your app to Latest Version to Request Icons.</string> <!-- New -->
-    <string name="connection_error_long">Unable to Load Data from Server, Please Check your Network Connection.</string> <!-- New -->
+    <string name="request_app_disabled">You\'re using an older version of this icon pack. The requested icons may be included in the latest version. Please update your app to latest version to request icons.</string>
+    <string name="connection_error_long">Unable to load data from server. Please, check your network connection.</string>
 
     <string name="request_limit">You are only able to make %d request(s) with regular request.</string>
     <string name="request_used">You have requested %d icon(s).</string>
     <string name="request_limit_buy">You can buy Premium Requests to request more icons.</string>
     <string name="request_limit_reset">Icon request limit will be reset on every update.</string>
 
-    <!-- Regular Request --> <!-- New -->
+    <!-- Regular Request -->
     <string name="regular_request">Regular Icon Request</string>
-    <string name="regular_request_desc">Get Your Icon Requested and Developer will try to Include Your Icons.</string>
+    <string name="regular_request_desc">Get your icon requested and developer will try to include icons you requested.</string>
     <string name="regular_request_count">Total\n%d request</string>
     <string name="regular_request_used">Used\n%d request</string>
     <string name="regular_request_available">Available\n%d request</string>
@@ -263,8 +265,8 @@
 
     <!-- About -->
     <string name="about_contributors_title">Contributors</string>
-    <string name="about_privacy_policy_title">Privacy Policy</string> <!-- New -->
-    <string name="about_terms_and_conditions_title">Terms and Conditions</string> <!-- New -->
+    <string name="about_privacy_policy_title">Privacy Policy</string>
+    <string name="about_terms_and_conditions_title">Terms and Conditions</string>
 
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Please give a description about what kind of problem that you want to report</string>

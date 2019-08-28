@@ -34,6 +34,7 @@
         <item name="tab_indicator">@color/tabIndicator</item>
         <item name="tab_text">@color/tabText</item>
         <item name="tab_text_selected">@color/tabTextSelected</item>
+        <item name="navigation_selected_color">@color/navigationViewSelectedBackground</item>
 
         <item name="md_background_color">@color/cardBackground</item>
         <item name="md_positive_color">@color/colorAccent</item>
@@ -69,6 +70,7 @@
         <item name="tab_indicator">@color/tabIndicatorDark</item>
         <item name="tab_text">@color/tabTextDark</item>
         <item name="tab_text_selected">@color/tabTextSelectedDark</item>
+        <item name="navigation_selected_color">@color/navigationViewSelectedBackgroundDark</item>
 
         <item name="md_background_color">@color/cardBackgroundDark</item>
         <item name="md_positive_color">@color/darkColorAccent</item>

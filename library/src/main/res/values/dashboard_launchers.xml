@@ -12,7 +12,7 @@
         <item>GO EX</item>                                  <!-- 7 -->
         <item>Holo</item>                                   <!-- 8 -->
         <item>Holo HD</item>                                <!-- 9 -->
-        <item>Lawnchair</item>                              <!-- 10 -->
+        <item>Lawnchair V2</item>                           <!-- 10 -->
         <item>LG Home</item>                                <!-- 11 -->
         <item>Lucid</item>                                  <!-- 12 -->
         <item>M</item>                                      <!-- 13 -->
@@ -103,7 +103,7 @@
         <item>none</item>                                   <!-- 7 -->
         <item>none</item>                                   <!-- 8 -->
         <item>none</item>                                   <!-- 9 -->
-        <item>ch.deletescape.lawnchair.plah</item>          <!-- 10 -->
+        <item>none</item>                                   <!-- 10 -->
         <item>com.lge.launcher3</item>                      <!-- 11 -->
         <item>none</item>                                   <!-- 12 -->
         <item>none</item>                                   <!-- 13 -->
@@ -133,7 +133,7 @@
         <item>none</item>                                   <!-- 7 -->
         <item>none</item>                                   <!-- 8 -->
         <item>none</item>                                   <!-- 9 -->
-        <item>ch.deletescape.lawnchair</item>               <!-- 10 -->
+        <item>none</item>                                   <!-- 10 -->
         <item>none</item>                                   <!-- 11 -->
         <item>none</item>                                   <!-- 12 -->
         <item>none</item>                                   <!-- 13 -->

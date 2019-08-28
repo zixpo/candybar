@@ -1,5 +1,8 @@
 # Unreleased Version
-- Added Support for Adaptive Icons.
+- Added support for Adaptive Icons.
+- Updated Gradle Version.
+- Fixed error when rebuilding Premium Request.
+- New NavigationView.
 
 # v3.5.0-b6
 - Added Ability to request app from non-mailing apps.

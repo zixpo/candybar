@@ -36,6 +36,12 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
+    <style name="NavigationViewStyle">
+        <item name="android:textSize">@dimen/text_content_subtitle</item>
+        <item name="android:listPreferredItemHeightSmall">48dp</item>
+        <item name="android:colorControlHighlight">@android:color/transparent</item>
+    </style>
+
     <!-- Splash Screen Theme -->
     <style name="SplashTheme" parent="@style/Theme.AppCompat.Light">
         <item name="windowNoTitle">true</item>
