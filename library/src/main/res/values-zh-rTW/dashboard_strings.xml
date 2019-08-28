@@ -35,13 +35,10 @@
     <string name="ok">確認</string>
     <string name="install">安裝</string>
     <string name="donate">捐贈</string>
-    <!-- New -->
     <string name="search_noresult">未找到 \"%s\"</string>
     <string name="search_faqs">問題或回答</string>
     <string name="search_icon">icon 名稱</string>
     <!-- Update -->
-    <!-- New -->
-    <!-- New -->
     <!-- Changelog -->
     <string name="changelog_version">版本</string>
     <!-- InAppBilling -->
@@ -53,10 +50,7 @@
     <string name="license_check_failed">許可證檢查未通過，您不是從 Play 商店中下載的本 App 。
 您無法使用本 App 。</string>
     <string name="license_check_retry">無法檢查許可證，請稍後重試。</string>
-    <!-- Playstore Installation Check -->
-    <!-- New -->
-    <!-- New -->
-    <!-- New -->
+    <!-- Play Store Installation Check -->
     <!-- Share -->
     <string name="share_app_title">喲！來看看 %s</string>
     <string name="share_app_body">來看看 %1$s，這個 icon pack 超酷的！ %2$s</string>
@@ -101,7 +95,6 @@
     <!-- Apply -->
     <string name="apply_installed">已安裝的啟動器</string>
     <string name="apply_supported">受支援的啟動器</string>
-    <string name="apply_manual">%1$s 不支援直接從 App 中啟用 icon ，你可以從啟動器設定中手動啟用 %2$s。</string>
     <string name="apply_manual_evie">在主螢幕上長按 - 設定 -  icon pack  - 選擇 %s。</string>
     <string name="apply_launch_failed">無法啟動 %s 設定</string>
     <string name="apply_launcher_not_installed">%s 尚未安裝。你想跳轉到 Google Play 商店去下載安裝它嗎？</string>
@@ -119,20 +112,16 @@
     <string name="request_not_requested">未申請</string>
     <string name="request_already_requested">已申請</string>
     <string name="request_building">產生申請文件中……</string>
-    <!-- New -->
     <string name="request_build_failed">無法產生申請文件</string>
     <string name="request_appfilter_failed">無法讀取 appfilter.xml</string>
     <string name="request_requested">請重新檢查您的申請。
 因為您試圖申請的 icon 已被您申請了。</string>
     <string name="request_email_client">選擇您想用來提交 icon 申請的郵件 App</string>
-    <!-- New -->
-    <!-- New -->
     <string name="request_limit">您在常規 icon 申請權狀態下僅能提交 %d 個適配申請。</string>
     <string name="request_used">您已申請適配 %d 個 icon 。</string>
     <string name="request_limit_buy">您可以購買高級 icon 申請權來提交更多個 icon 申請。</string>
     <string name="request_limit_reset">icon 申請限制將在每次更新後重置。</string>
     <!-- Regular Request -->
-    <!-- New -->
     <!-- Premium Request -->
     <string name="premium_request">高級 icon 申請</string>
     <string name="premium_request_no_internet">在提交高級 icon 申請前請確保您的手機已連接到網絡</string>
@@ -205,8 +194,6 @@
     <string name="intent_email_not_supported_message">選擇了一個不支援的郵件 App，請更換另一個郵件 App</string>
     <!-- About -->
     <string name="about_contributors_title">貢獻者</string>
-    <!-- New -->
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">請給予我一些關於你想要報告的問題種類的描述</string>
     <string name="report_bugs_desc_hint">描述</string>
