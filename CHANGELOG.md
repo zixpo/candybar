@@ -3,6 +3,7 @@
 - Updated Gradle.
 - Fixed error when rebuilding Premium Request.
 - New NavigationView.
+- Updated Translations.
 
 # v3.5.0-beta.6
 - Added Ability to request app from non-mailing apps.
