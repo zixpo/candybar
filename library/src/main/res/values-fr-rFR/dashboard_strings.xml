@@ -118,6 +118,7 @@ Voulez-vous l\'ouvrir sur le Google Play Store pour le télécharger et l\'insta
     <string name="apply_lg_home_failed">Impossible de lancer LG Home, vous pouvez essayer d\'appliquer le pack d\'icônes manuellement depuis les paramètres.</string>
     <string name="apply_lg_home_nougat">LG Home sur Android Nougat ne supporte plus les packs d\'icônes.
 Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
+    <string name="apply_launcher_incompatible">%s Launcher ne supporte aucun pack d\'icônes, alors vous ne pouvez pas utiliser ce pack d\'icônes avec ce launcher. Vous pouvez essayer une application tierce pour utiliser ce pack d\'icônes avec %2$s launcher. Voulez-vous l\'installer ?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossible de charger les icônes</string>
     <string name="icon_shape">Forme des icônes</string>
