@@ -105,7 +105,6 @@ Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications deman
     <!-- Apply -->
     <string name="apply_installed">Launcher(s) installé(s)</string>
     <string name="apply_supported">Launchers supportés</string>
-    <string name="apply_manual">%1$s ne supporte pas l\'application directe, vous pouvez appliquer %2$s manuellement depuis les paramètres du launcher.</string>
     <string name="apply_manual_evie">Appuyez ici et maintenez sur l\'écran d\'accueil &gt; Paramètres &gt; Pack d\'icônes &gt; Choisir %s.</string>
     <string name="apply_launch_failed">Impossible d\'accéder aux paramètres de %s</string>
     <string name="apply_launcher_not_installed">%s n\'est pas installé. 
