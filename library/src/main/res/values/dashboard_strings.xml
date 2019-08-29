@@ -122,7 +122,7 @@
     <string name="apply_installed">Installed Launcher</string>
     <string name="apply_supported">Supported Launchers</string>
 
-    <string name="apply_manual">%1$s doesn\'t support direct apply but you can apply %2$s manually from the launcher settings.</string>
+    <string name="apply_manual">%1$s Launcher doesn\'t support direct apply but you can apply %2$s manually from the launcher settings.</string>
     <string name="apply_manual_evie">Tap and hold on homescreen - Settings - Icon Pack - choose %s.</string>
     <string name="apply_launch_failed">Unable to launch %s settings</string>
     <string name="apply_launcher_not_installed">%s Launcher is not installed. Do you want to open

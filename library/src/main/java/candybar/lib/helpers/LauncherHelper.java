@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.widget.Toast;
 
@@ -486,33 +487,49 @@ public class LauncherHelper {
     }
 
     private static void applyManual(Context context, String launcherPackage, String launcherName, String activity) {
-        new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
-                .title(launcherName)
-                .content(context.getResources().getString(R.string.apply_manual,
-                        launcherName,
-                        context.getResources().getString(R.string.app_name)))
-                .positiveText(android.R.string.ok)
-                .onPositive((dialog, which) -> {
-                    try {
-                        final Intent intent = new Intent(Intent.ACTION_MAIN);
-                        intent.setComponent(new ComponentName(launcherPackage,
-                                activity));
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        context.startActivity(intent);
-                        ((AppCompatActivity) context).finish();
-                    } catch (ActivityNotFoundException | NullPointerException e) {
-                        openGooglePlay(context, launcherPackage, launcherName);
-                    } catch (SecurityException | IllegalArgumentException e) {
-                        Toast.makeText(context, String.format(context.getResources().getString(
-                                R.string.apply_launch_failed), launcherName),
-                                Toast.LENGTH_LONG).show();
-                    }
-                })
-                .negativeText(android.R.string.cancel)
-                .show();
+
+        if (isInstalled(context, launcherPackage)) {
+            new MaterialDialog.Builder(context)
+                    .typeface(
+                            TypefaceHelper.getMedium(context),
+                            TypefaceHelper.getRegular(context))
+                    .title(launcherName)
+                    .content(context.getResources().getString(R.string.apply_manual,
+                            launcherName,
+                            context.getResources().getString(R.string.app_name)))
+                    .positiveText(android.R.string.ok)
+                    .onPositive((dialog, which) -> {
+                        try {
+                            final Intent intent = new Intent(Intent.ACTION_MAIN);
+                            intent.setComponent(new ComponentName(launcherPackage,
+                                    activity));
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
+                            ((AppCompatActivity) context).finish();
+                        } catch (ActivityNotFoundException | NullPointerException e) {
+                            openGooglePlay(context, launcherPackage, launcherName);
+                        } catch (SecurityException | IllegalArgumentException e) {
+                            Toast.makeText(context, String.format(context.getResources().getString(
+                                    R.string.apply_launch_failed), launcherName),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .negativeText(android.R.string.cancel)
+                    .show();
+        } else {
+            openGooglePlay(context, launcherPackage, launcherName);
+        }
+    }
+
+    private static boolean isInstalled(Context context, String packageName) {
+        PackageManager packageManager = context.getPackageManager();
+        boolean found = true;
+        try {
+            packageManager.getPackageInfo(packageName, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            found = false;
+        }
+        return found;
     }
 
     private static void applyEvie(Context context, String launcherPackage, String launcherName) {
