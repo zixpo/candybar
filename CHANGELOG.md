@@ -1,5 +1,5 @@
-# v3.5.0-beta6.2
-- Show you can remove launchers.
+# v3.5.0-beta.6.3
+- Now you can exclude launchers.
 - Fixed Many Small Bugs.
 
 
