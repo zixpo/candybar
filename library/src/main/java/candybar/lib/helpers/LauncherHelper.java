@@ -66,7 +66,8 @@ public class LauncherHelper {
     private static final int POCO = 27;
     private static final int POSIDON = 28;
     private static final int LAWNCHAIR = 29;
-    private static final int FLICK = 30;
+    private static final int MICROSOFT = 30;
+    private static final int FLICK = 31;
 
     private static int getLauncherId(String packageName) {
         if (packageName == null) return UNKNOWN;
@@ -136,6 +137,8 @@ public class LauncherHelper {
                 return POCO;
             case "posidon.launcher":
                 return POSIDON;
+            case "com.microsoft.launcher":
+                return MICROSOFT;
             case "com.universallauncher.universallauncher":
                 return FLICK;
             default:
@@ -460,6 +463,9 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case MICROSOFT:
+                applyManual(context, launcherPackage, launcherName, "com.microsoft.launcher.Launcher");
                 break;
             case FLICK:
                 //Todo: fix direct apply for flick launcher

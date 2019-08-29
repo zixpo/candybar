@@ -30,6 +30,7 @@
         <item>POCO</item>                                   <!-- 25 -->
         <item>Posidon</item>                                <!-- 26 -->
         <item>Lawnchair</item>                              <!-- 27 -->
+        <item>Microsoft</item>                              <!-- 28 -->
     </string-array>
 
     <array name="launcher_icons">
@@ -61,6 +62,7 @@
         <item>@drawable/ic_launcher_poco</item>             <!-- 25 -->
         <item>@drawable/ic_launcher_posidon</item>          <!-- 26 -->
         <item>@drawable/ic_launcher_lawnchair</item>        <!-- 27 -->
+        <item>@drawable/ic_launcher_microsoft</item>        <!-- 28 -->
     </array>
 
     <!-- Launcher Packages -->
@@ -93,6 +95,7 @@
         <item>com.mi.android.globallauncher</item>          <!-- 25 -->
         <item>posidon.launcher</item>                       <!-- 26 -->
         <item>ch.deletescape.lawnchair.plah</item>          <!-- 27 -->
+        <item>com.microsoft.launcher</item>                 <!-- 28 -->
     </string-array>
 
     <string-array name="launcher_packages_2">
@@ -124,6 +127,7 @@
         <item>none</item>                                   <!-- 25 -->
         <item>none</item>                                   <!-- 26 -->
         <item>none</item>                                   <!-- 27 -->
+        <item>none</item>                                   <!-- 28 -->
     </string-array>
 
     <string-array name="launcher_packages_3">
@@ -155,6 +159,7 @@
         <item>none</item>                                   <!-- 25 -->
         <item>none</item>                                   <!-- 26 -->
         <item>none</item>                                   <!-- 27 -->
+        <item>none</item>                                   <!-- 28 -->
     </string-array>
 
 </resources>

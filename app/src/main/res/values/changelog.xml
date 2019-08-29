@@ -10,23 +10,9 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Added Ability to request app from non-mailing apps</item>
-        <item>Added option to Disable Icon Request from JSON stored in Cloud</item>
-        <item>Now shows Request Available, Used even for Regular Requests</item>
-        <item>Option to Close app if installed outside of Playstore</item>
-        <item>Option to Enable/Disable AppUpdater and Checking JSON Before Requesting</item>
-        <item>Uses New Muzei API</item>
-        <item>Now you can set Your Own Email Subject for Icon Requests</item>
-        <item>Now it Loads Right Icon and Name from ComponentName instead of PackageName</item>
-        <item>Fix to AndroidManifest.xml</item>
-        <item>Updated Translators List</item>
-        <item>Updated Italian Translations by Ciao Studio</item>
-        <item>Added POCO, Posidon, Pixel Launcher. Minor Fixes to Old Launchers</item>
-        <item>Added Support for Desktop Shortcuts(Sesame Shortcuts too)</item>
-        <item>Added Boolean to Disable Intros</item>
-        <item>Fix Crash on Pre-Oreo Devices</item>
-        <item>Better Stability</item>
-        <item>Added Analog Clock Widget</item>
+        <item>Minor Fixes</item>
+        <item>Added New Launchers</item>
+        <item>Fixed Bugs</item>
     </string-array>
 
 </resources>

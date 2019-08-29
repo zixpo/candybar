@@ -134,9 +134,6 @@
 
     <!-- Take a look inside License.java for premium request product -->
 
-    <!-- Closes app if installed outside of Playstore -->
-    <bool name="playstore_check_enabled">false</bool>
-
     <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
     <bool name="enable_non_mail_app_request">true</bool>
 
@@ -258,5 +255,11 @@
 
     <!-- Terms and Conditions link. Set Blank to Disable -->
     <string name="terms_and_conditions_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
+
+    <!-- Closes app if installed outside of Playstore -->
+    <bool name="playstore_check_enabled">false</bool>
+
+    <!-- Show Intro Guides on First Run -->
+    <bool name="show_intro">false</bool>
 
 </resources>

@@ -51,11 +51,7 @@
 
     <!-- Home description
     - If you don't want to show description, just leave this empty -->
-    <string name="home_description"><![CDATA[
-        Description now supports html formatting, <b>bold description</b>,
-        <i>italic description</i>, <u>underline description</u>,
-        <a href="https://github.com/danimahardhika">link inside description</a>.
-        ]]></string>
+    <string name="home_description">Some Desc</string>
 
     <!-- More apps at Google Play Store
     * Link to google play store developer
@@ -63,7 +59,7 @@
     <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
 
     <!-- Enable Check for Update -->
-    <bool name="enable_check_update">true</bool>
+    <bool name="enable_check_update">false</bool>
 
     <!-- Link Used to Rate and Review Your App. Set Blank to Disable -->
     <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
@@ -132,7 +128,7 @@
     <integer name="icon_request_limit">10</integer>
 
     <!-- Enable JSON Data check before Requesting Icons -->
-    <bool name="json_check_before_request">true</bool>
+    <bool name="json_check_before_request">false</bool>
 
     <!-- Reset regular icon request limit every update
     * IGNORE if icon request limit is disabled
@@ -145,7 +141,7 @@
     <!-- Enable or disable premium request
     * default: false
     * change to true to enable it -->
-    <bool name="enable_premium_request">true</bool>
+    <bool name="enable_premium_request">false</bool>
 
     <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
     <bool name="enable_non_mail_app_request">false</bool>
@@ -170,7 +166,7 @@
     * just put your wallpaper app package name here
     * example: com.dm.wallpaper.board.demo
     * <string name="wallpaper_json">com.dm.wallpaper.board.demo</string> -->
-    <string name="wallpaper_json">https://drive.google.com/uc?id=0B0f4ypHfNKm5YXFvQ201ZmJjMGM</string>
+    <string name="wallpaper_json"></string>
 
     <!-- Allow to download wallpaper
     * If disabled user only able to apply wallpaper from dashboard -->
@@ -216,11 +212,7 @@
     <string name="about_title">CandyBar Material Dashboard</string>
 
     <!-- About description below title -->
-    <string name="about_desc"><![CDATA[
-        About description now supports html formatting, <b>bold description</b>,
-        <i>italic description</i>, <u>underline description</u>,
-        <a href="https://github.com/danimahardhika">link inside description</a>.
-        ]]></string>
+    <string name="about_desc">Some Desc</string>
 
     <!-- Social link inside about
     * Supported link:
@@ -234,13 +226,13 @@
 
     <!-- Contributors dialog
     * Take a look inside res/xml/contributors.xml to add contributors -->
-    <bool name="show_contributors_dialog">true</bool>
+    <bool name="show_contributors_dialog">false</bool>
 
     <!-- Privacy Policy Link. Set Blank to Disable -->
-    <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
+    <string name="privacy_policy_link"></string>
 
     <!-- Terms and Conditions link. Set Blank to Disable -->
-    <string name="terms_and_conditions_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
+    <string name="terms_and_conditions_link"></string>
 
     <!-- CONFIG: DONATE -->
 
@@ -248,12 +240,12 @@
     * Show support development option in navigation view
     * default: true
     * change to false to disable it -->
-    <bool name="enable_donation">true</bool>
+    <bool name="enable_donation">false</bool>
 
     <!-- Take a look inside License.java for donation product -->
 
     <!-- CandyBar Config JSON Link -->
-    <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
+    <string name="config_json"></string>
     <bool name="includes_adaptive_icons">false</bool>
 
     <!-- Closes app if installed outside of Playstore -->
