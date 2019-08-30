@@ -42,6 +42,8 @@
     <string name="search_faqs">Domande o risposte</string>
     <string name="search_icon">Nome Icona</string>
     <!-- Update -->
+    <string name="update_available">Aggiornamento disponibile!</string>
+    <string name="no_update_available">Stai utilizzando la versione più recente!</string>
     <!-- Changelog -->
     <string name="changelog_version">Versione</string>
     <!-- InAppBilling -->
@@ -54,6 +56,9 @@
 Scaricala da lì per utilizzarla.</string>
     <string name="license_check_retry">Impossibile controllare la licenza. Per favore, riprova tra qualche momento.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play Store Check</string>
+    <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store. Divertiti.</string>
+    <string name="playstore_check_failed">Sembra che tu abbia installato questo pacchetto icone al di fuori del Play Store, dunque non potrai utilizzarlo.</string>
     <!-- Share -->
     <string name="share_app_title">Hey! Ti consiglio questa applicazione %s</string>
     <string name="share_app_body">Guarda %1$s, questo pacchetto icone è fantastico! %2$s</string>
@@ -98,15 +103,18 @@ Scaricala da lì per utilizzarla.</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher installati</string>
     <string name="apply_supported">Launcher supportati</string>
+    <string name="apply_manual">%1$s Launcher non supporta l\'applicazione diretta dei pacchetti icone su questo launcher, puoi però applicare manualmente %2$s dalle impostazioni del launcher.</string>
     <string name="apply_manual_evie">Clicca e tieni premuto sulla schermata home - Impostazioni - icon pack - scegli %s.</string>
     <string name="apply_launch_failed">Impossibile aprire le impostazioni %s </string>
     <string name="apply_launcher_not_installed">%s non è installato. Vuoi aprire il Play Store e installare questa app?</string>
+    <string name="apply_launcher_not_installable">%s Launcher non è installato. Riprova dopo l\'installazione del launcher.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager non è disponibile su questo dispositivo</string>
     <string name="apply_cmtheme_failed">Impossibile aprire CM Theme Manager, prova ad applicare il pacchetto icone manualmente dalle impostazioni del launcher.</string>
     <string name="apply_lg_home">Per applicare questo pacchetto icone apri Impostazioni - Display - Home Screen - Temi</string>
     <string name="apply_lg_home_not_available">LG Home non è disponibile su questo dispositivo</string>
     <string name="apply_lg_home_failed">Impossibile aprire le impostazioni di LG Home, prova ad applicare il pacchetto icone manualmente dalle impostazioni del launcher.</string>
     <string name="apply_lg_home_nougat">LG Home su Android Nougat non supporta più i pacchetti icone. Scarica un launcher dal Play Store per utilizzare quest\'app.</string>
+    <string name="apply_launcher_incompatible">%s Launcher non supporta nessun pacchetto icone, quindi non puoi usare questo pacchetto icone con questo launcher. Puoi provare un\'app di terze parti per usare questo pacchetto icone con %2$s Launcher. Vuoi installarlo?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossibile caricare le icone</string>
     <string name="icon_shape">Forma icona</string>
@@ -116,17 +124,21 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_not_requested">Non richiesta</string>
     <string name="request_already_requested">Richiesta già effettuata</string>
     <string name="request_building">Caricamento richiesta …</string>
+    <string name="request_fetching_data">Recupero dati più recenti...</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>
     <string name="request_requested">Per favore, controlla la tua richiesta di icone.
 Stai provando hai selezionato icone già richieste.</string>
     <string name="request_email_client">Scegli con quale applicazione mail vuoi inviare la tua richiesta</string>
+    <string name="request_app_disabled">Stai usando una versione più vecchia di questo pacchetto icone. Le icone richieste possono essere incluse nell\'ultima versione. Aggiorna l\'app all\'ultima versione per richiedere icone.</string>
+    <string name="connection_error_long">Impossibile caricare i dati dal server. Per favore, controlla la tua connessione internet.</string>
     <string name="request_limit">E\' possibile inviare  %d  app con la richiesta free.</string>
     <string name="request_used">Hai richiesto %d icone</string>
     <string name="request_limit_buy">Puoi acquistare la funzione Premium per richiedere più icone.</string>
     <string name="request_limit_reset">Il limite delle icone richieste verrà azzerato ad ogni aggiornamento.</string>
     <!-- Regular Request -->
     <string name="regular_request">Richiesta icone standard</string>
+    <string name="regular_request_desc">Fai la tua richiesta icone e lo sviluppatore proverà ad includere ciò che hai richiesto.</string>
     <string name="regular_request_count">\n%d richieste totali</string>
     <string name="regular_request_used">\n%d richieste usate</string>
     <string name="regular_request_available">\n%d richieste disponibili</string>
