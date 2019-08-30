@@ -42,6 +42,8 @@
     <string name="search_faqs">Pregunta o respuesta</string>
     <string name="search_icon">Nombre del icono</string>
     <!-- Update -->
+    <string name="update_available">Actualización disponible!</string>
+    <string name="no_update_available">Estas usando la ultima versión!</string>
     <!-- Changelog -->
     <string name="changelog_version">Versión</string>
     <!-- InAppBilling -->
@@ -54,6 +56,9 @@
 No podrás utilizar la aplicación.</string>
     <string name="license_check_retry">No se puede comprobar la licencia, por favor inténtalo en unos minutos.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Comprobación de Play Store</string>
+    <string name="playstore_check_success">Gracias por instalar la aplicación desde Play Store. Disfruta.</string>
+    <string name="playstore_check_failed">Parece que has instalado este pack de iconos fuera de la Play Store.        You will not be able to use it.</string>
     <!-- Share -->
     <string name="share_app_title">¡Yo! Echa un vistazo a %s</string>
     <string name="share_app_body">Echa un vistazo a %1$s, ¡este paquete de iconos es fantástico! %2$s</string>
@@ -116,16 +121,20 @@ No podrás utilizar la aplicación.</string>
     <string name="request_not_requested">No solicitado</string>
     <string name="request_already_requested">Ya solicitado</string>
     <string name="request_building">Preparando la solicitud …</string>
+    <string name="request_fetching_data">Obteniendo los últimos datos...</string>
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
     <string name="request_requested">Por favor comprueba tu solicitud de nuevo, porque estás solicitando una aplicación que ya ha sido solicitada anteriormente.</string>
     <string name="request_email_client">Elige el cliente de correo que quieras usar para enviar la solicitud del icono</string>
+    <string name="request_app_disabled">Estás utilizando una versión anterior de este pack de iconos. La solicitud de iconos solo se puede hacer en la ultima versión. Actualice su aplicación a la última versión para solicitar iconos.</string>
+    <string name="connection_error_long">No se pueden cargar datos del servidor. Por favor, verifique su conexión de red.</string>
     <string name="request_limit">Sólo puedes hacer %d solicitud(es) con la solicitud normal.</string>
     <string name="request_used">Has solicitado %d icono(s).</string>
     <string name="request_limit_buy">Puedes comprar \"Solicitudes Premium\" para solicitar más iconos.</string>
     <string name="request_limit_reset">El límite de solicitud de iconos se reseteará con cada actualización.</string>
     <!-- Regular Request -->
     <string name="regular_request">Solicitud de icono normal</string>
+    <string name="regular_request_desc">Haz tu solicitud de iconos y el desarrollador intentara incluir los iconos solicitados.</string>
     <string name="regular_request_count">Total\n%d solicitud</string>
     <string name="regular_request_used">Usado\n%d solicitud</string>
     <string name="regular_request_available">Disponible\n%d solicitud</string>
