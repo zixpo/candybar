@@ -58,7 +58,8 @@ No podrás utilizar la aplicación.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Comprobación de Play Store</string>
     <string name="playstore_check_success">Gracias por instalar la aplicación desde Play Store. Disfruta.</string>
-    <string name="playstore_check_failed">Parece que has instalado este pack de iconos fuera de la Play Store.        You will not be able to use it.</string>
+    <string name="playstore_check_failed">Parece que has instalado este pack de iconos fuera de la Play Store.
+        No podrás usarlo.</string>
     <!-- Share -->
     <string name="share_app_title">¡Yo! Echa un vistazo a %s</string>
     <string name="share_app_body">Echa un vistazo a %1$s, ¡este paquete de iconos es fantástico! %2$s</string>
@@ -103,15 +104,18 @@ No podrás utilizar la aplicación.</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher instalado</string>
     <string name="apply_supported">Launchers soportados</string>
+    <string name="apply_manual">%1$s Launcher no soporta aplicarlo directamente pero puedes aplicar %2$s manualmente desde los ajustes del Launcher.</string>
     <string name="apply_manual_evie">Pulsa y mantén en la pantalla de inicio - Ajustes - Paquete de iconos - Elige %s.</string>
     <string name="apply_launch_failed">No se pueden iniciar los ajustes de %s  </string>
     <string name="apply_launcher_not_installed">%s no está instalado. ¿Quieres abrir Google Play Store para descargarlo e instalarlo?</string>
+    <string name="apply_launcher_not_installable">%s Launcher no está instalado. Por favor inténtalo de nuevo despues de instalar el launcher.</string>
     <string name="apply_cmtheme_not_available">El gestor de temas CM no está disponible en este dispositivo</string>
     <string name="apply_cmtheme_failed">No se puede iniciar el gestor de temas CM, puedes probar a establecer el paquete de iconos manualmente desde los ajustes.</string>
     <string name="apply_lg_home">Para establecer este paquete de iconos abre Ajustes - Pantalla - Pantalla de Inicio - Tema</string>
     <string name="apply_lg_home_not_available">LG Home no está disponible en este dispositivo</string>
     <string name="apply_lg_home_failed">No se pueden iniciar los ajustes de LG Home, puedes intentar establecer el paquete de iconos manualmente desde los ajustes.</string>
     <string name="apply_lg_home_nougat">LG Home con Android Nougat no soporta el paquete de iconos. Necesitas un launcher personalizado para usar el paquete de iconos.</string>
+    <string name="apply_launcher_incompatible">%s Launcher no soporta ningún pack de iconos, por lo que no podrás usar este pack de iconos con este launcher. Puede probar una aplicación de terceros para usar este paquete de iconos en %2$s launcher. ¿Quieres instalarlo?</string>
     <!-- Icons -->
     <string name="icons_load_failed">No se pueden cargar los iconos</string>
     <string name="icon_shape">Forma de icono</string>
