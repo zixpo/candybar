@@ -105,6 +105,7 @@ Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications deman
     <!-- Apply -->
     <string name="apply_installed">Launcher(s) installé(s)</string>
     <string name="apply_supported">Launchers supportés</string>
+    <string name="apply_manual">%1$s ne supporte pas l\'application directe, vous pouvez appliquer %2$s manuellement depuis les paramètres du launcher.</string>
     <string name="apply_manual_evie">Appuyez ici et maintenez sur l\'écran d\'accueil &gt; Paramètres &gt; Pack d\'icônes &gt; Choisir %s.</string>
     <string name="apply_launch_failed">Impossible d\'accéder aux paramètres de %s</string>
     <string name="apply_launcher_not_installed">%s n\'est pas installé. 
@@ -117,6 +118,7 @@ Voulez-vous l\'ouvrir sur le Google Play Store pour le télécharger et l\'insta
     <string name="apply_lg_home_failed">Impossible de lancer LG Home, vous pouvez essayer d\'appliquer le pack d\'icônes manuellement depuis les paramètres.</string>
     <string name="apply_lg_home_nougat">LG Home sur Android Nougat ne supporte plus les packs d\'icônes.
 Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
+    <string name="apply_launcher_incompatible">%s Launcher ne supporte aucun pack d\'icônes, alors vous ne pouvez pas utiliser ce pack d\'icônes avec ce launcher. Vous pouvez essayer une application tierce pour utiliser ce pack d\'icônes avec %2$s launcher. Voulez-vous l\'installer ?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossible de charger les icônes</string>
     <string name="icon_shape">Forme des icônes</string>
