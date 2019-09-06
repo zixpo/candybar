@@ -2,12 +2,28 @@
 <resources>
     <version>1</version>
 
-    <category title="Adaptive" />
-    <item drawable="adaptive_icon" />
-    <item drawable="adaptive_icon_alt" />
-    <item drawable="adaptive_icon_alt_2" />
-    <item drawable="adaptive_icon_alt_3" />
-    <item drawable="adaptive_icon_alt_4" />
+    <category title="Shapy" />
+    <item
+        drawable="adaptive_icon"
+        name="Teal" />
+    <item
+        drawable="adaptive_icon_alt"
+        name="Blue" />
+    <item
+        drawable="adaptive_icon_alt_2"
+        name="Pink" />
+    <item
+        drawable="adaptive_icon_alt_3"
+        name="Yellow" />
+    <item
+        drawable="adaptive_icon_alt_4"
+        name="Violet" />
+    <item
+        drawable="adaptive_icon_alt_4"
+        name="eXpLiCiT" />
+    <item
+        drawable="kore"
+        name="" /> <!-- Blank Names are Ignored -->
 
     <category title="Newly Added" />
     <item drawable="accubattery" />

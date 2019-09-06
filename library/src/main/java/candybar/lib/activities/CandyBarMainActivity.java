@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.URLUtil;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -148,6 +149,19 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this,
                 Preferences.get(this).isDarkTheme() ?
                         R.color.navigationBarDark : R.color.navigationBar));
+        if (!Preferences.get(this).isDarkTheme() && (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)) {
+            this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar))
+                    && ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark))) {
+                this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            } else {
+                if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar))) {
+                    this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+                } else if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark))) {
+                    this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                }
+            }
+        }
         registerBroadcastReceiver();
         startService(new Intent(this, CandyBarService.class));
 

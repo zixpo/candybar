@@ -31,10 +31,6 @@ android {
 
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            //def appName = parent.name
-            //def fileName = appName.replace(" ", "_")
-            //def date = new Date();
-            //def formattedDate = date.format('dd-MM-yy-HH-mm')
             outputFileName = "candybar.apk"
         }
     }
@@ -45,7 +41,7 @@ android {
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode 355
         versionName "3.5.0-beta.6.2"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
 
         // Remove '/*' and '*/' below to enable OneSignal
         /*

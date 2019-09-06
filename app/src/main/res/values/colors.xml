@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#1A73E9</color>
-    <color name="colorPrimaryDark">#1366D3</color>
-    <color name="colorAccent">#6E3AFF</color>
+    <!--
+        Blueish #1A73E9
+        Dark #1366D3
+        Accent #6E3AFF
+    -->
+
+    <color name="colorPrimary">#FFF</color>
+    <color name="colorPrimaryDark">#FFF</color>
+    <color name="colorAccent">#1BB96F</color>
 
     <color name="darkColorPrimary">#222222</color>
     <color name="darkColorPrimaryDark">@color/darkColorPrimary</color>
@@ -27,26 +33,27 @@
 
     <color name="navigationViewText">#484848</color>
     <color name="navigationViewTextDark">#FFFFFF</color>
-    <color name="navigationViewTextSelected">#1A73E9</color>
+    <color name="navigationViewTextSelected">#1BB96F</color>
     <color name="navigationViewTextSelectedDark">@color/navigationViewTextSelected</color>
-    <color name="navigationViewSelectedBackground">#2A1A73E9</color>
+    <color name="navigationViewSelectedBackground">#2A1BB96F</color>
     <color name="navigationViewSelectedBackgroundDark">@color/navigationViewSelectedBackground
     </color>
+    <color name="navigationViewRippleColor">#25000000</color>
 
     <!-- Swipe Refresh -->
     <color name="swipeRefresh">@color/colorAccent</color>
 
     <!-- Toolbar -->
-    <color name="toolbarIcon">#FFF</color>
+    <color name="toolbarIcon">#616161</color>
     <color name="toolbarIconDark">#FFFFFFFF</color>
 
     <!-- Tab -->
-    <color name="tabIndicator">#FFF</color>
-    <color name="tabIndicatorDark">@color/colorAccent</color>
-    <color name="tabText">#32FFFFFF</color>
-    <color name="tabTextDark">@color/tabText</color>
-    <color name="tabTextSelected">#FFF</color>
-    <color name="tabTextSelectedDark">@color/colorAccent</color>
+    <color name="tabIndicator">@color/tabTextSelected</color>
+    <color name="tabIndicatorDark">@color/tabTextSelectedDark</color>
+    <color name="tabText">#BDBDBD</color>
+    <color name="tabTextDark">#616161</color>
+    <color name="tabTextSelected">#757575</color>
+    <color name="tabTextSelectedDark">#BDBDBD</color>
 
     <!-- Card -->
     <color name="cardBackground">#FFFFFF</color>

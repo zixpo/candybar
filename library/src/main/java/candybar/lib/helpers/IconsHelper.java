@@ -80,9 +80,10 @@ public class IconsHelper {
                     icons = new ArrayList<>();
                 } else if (parser.getName().equals("item")) {
                     String name = parser.getAttributeValue(null, "drawable");
+                    String customName = parser.getAttributeValue(null, "name");
                     int id = getResourceId(context, name);
                     if (id > 0) {
-                        icons.add(new Icon(name, id));
+                        icons.add(new Icon(name, customName, id));
                     }
                 }
             }

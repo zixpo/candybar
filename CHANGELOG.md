@@ -1,3 +1,11 @@
+# Unreleased Version
+- Enabled Multidex
+- Support for Custom Drawable name, like this:
+```xml
+<item drawable="my_icon" name="Custom Name"/>
+```
+- Fixed Icon Search
+
 # v3.5.0-beta.6.3
 - Now you can exclude launchers.
 - Fixed Many Small Bugs.

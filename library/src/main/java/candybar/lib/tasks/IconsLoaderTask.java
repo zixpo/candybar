@@ -78,7 +78,12 @@ public class IconsLoaderTask extends AsyncTask<Void, Void, Boolean> {
                             for (Icon icon : icons) {
                                 boolean replacer = mContext.get().getResources().getBoolean(
                                         R.bool.enable_icon_name_replacer);
-                                String name = IconsHelper.replaceName(mContext.get(), replacer, icon.getTitle());
+                                String name;
+                                if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
+                                    name = icon.getCustomName();
+                                } else {
+                                    name = IconsHelper.replaceName(mContext.get(), replacer, icon.getTitle());
+                                }
                                 icon.setTitle(name);
                             }
                         }
@@ -119,7 +124,12 @@ public class IconsLoaderTask extends AsyncTask<Void, Void, Boolean> {
                         icon.getRes(), options);
 
                 if (!mContext.get().getResources().getBoolean(R.bool.show_icon_name)) {
-                    String name = IconsHelper.replaceName(mContext.get(), true, icon.getTitle());
+                    String name;
+                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
+                        name = icon.getCustomName();
+                    } else {
+                        name = IconsHelper.replaceName(mContext.get(), true, icon.getTitle());
+                    }
                     icon.setTitle(name);
                 }
 

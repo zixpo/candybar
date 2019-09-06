@@ -3,6 +3,7 @@ package candybar.lib.fragments;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -104,6 +105,12 @@ public class IconsSearchFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_icons_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
+        MenuItem iconShape = menu.findItem(R.id.menu_icon_shape);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
+                !getActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
+            iconShape.setVisible(false);
+        }
 
         mSearchView = (SearchView) search.getActionView();
         mSearchView.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI | EditorInfo.IME_ACTION_SEARCH);
@@ -183,9 +190,14 @@ public class IconsSearchFragment extends Fragment {
                         for (Icon section : CandyBarMainActivity.sSections) {
                             if (getActivity().getResources().getBoolean(R.bool.show_icon_name)) {
                                 for (Icon icon : section.getIcons()) {
-                                    String name = IconsHelper.replaceName(getActivity(),
-                                            getActivity().getResources().getBoolean(R.bool.enable_icon_name_replacer),
-                                            icon.getTitle());
+                                    String name;
+                                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
+                                        name = icon.getCustomName();
+                                    } else {
+                                        name = IconsHelper.replaceName(getActivity(),
+                                                getActivity().getResources().getBoolean(R.bool.enable_icon_name_replacer),
+                                                icon.getTitle());
+                                    }
                                     icon.setTitle(name);
                                 }
                             }

@@ -221,7 +221,12 @@ public class IconsBaseFragment extends Fragment {
                                 for (Icon icon : icons) {
                                     boolean replacer = getActivity().getResources().getBoolean(
                                             R.bool.enable_icon_name_replacer);
-                                    String name = IconsHelper.replaceName(getActivity(), replacer, icon.getTitle());
+                                    String name;
+                                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
+                                        name = icon.getCustomName();
+                                    } else {
+                                        name = IconsHelper.replaceName(getActivity(), replacer, icon.getTitle());
+                                    }
                                     icon.setTitle(name);
                                 }
                             }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#20AC6B</color>
+    <color name="colorPrimary">#1BB96F</color>
     <color name="colorPrimaryDark">#258854</color>
     <color name="colorAccent">#FE9700</color>
 
@@ -31,6 +31,7 @@
     <color name="navigationViewTextSelectedDark">#20AC6B</color>
     <color name="navigationViewSelectedBackground">#00000000</color>
     <color name="navigationViewSelectedBackgroundDark">#00000000</color>
+    <color name="navigationViewRippleColor">#25000000</color>
 
     <!-- Swipe Refresh -->
     <color name="swipeRefresh">#20AC6B</color>

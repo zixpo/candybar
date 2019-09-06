@@ -25,13 +25,15 @@ import java.util.List;
 public class Icon {
 
     private String mTitle;
+    private String mCustomName;
     private int mRes;
     private String mPackageName;
     private List<Icon> mIcons;
 
-    public Icon(String title, int res) {
+    public Icon(String title, String customName, int res) {
         mTitle = title;
         mRes = res;
+        mCustomName = customName;
     }
 
     public Icon(String title, int res, String packageName) {
@@ -51,6 +53,10 @@ public class Icon {
 
     public void setTitle(String title) {
         mTitle = title;
+    }
+
+    public String getCustomName() {
+        return mCustomName;
     }
 
     public int getRes() {

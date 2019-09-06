@@ -1,11 +1,11 @@
 package candybar.lib.applications;
 
-import android.app.Application;
 import android.content.Intent;
 
 import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.multidex.MultiDexApplication;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -44,7 +44,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
  * limitations under the License.
  */
 
-public abstract class CandyBarApplication extends Application implements ApplicationCallback {
+public abstract class CandyBarApplication extends MultiDexApplication implements ApplicationCallback {
 
     private static Configuration mConfiguration;
     private Thread.UncaughtExceptionHandler mHandler;
