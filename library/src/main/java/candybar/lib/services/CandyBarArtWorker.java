@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
+import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
 import androidx.work.Constraints;
@@ -21,6 +22,7 @@ import com.google.android.apps.muzei.api.provider.ProviderContract;
 import java.util.ArrayList;
 import java.util.List;
 
+import candybar.lib.R;
 import candybar.lib.databases.Database;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
