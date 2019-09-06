@@ -50,8 +50,10 @@ public class CandyBarArtWorker extends Worker {
     @NonNull
     public Result doWork() {
         Log.d("CandyBar", "Executing doWork() for Muzei");
-        //if (!URLUtil.isValidUrl(mContext.getString(R.string.wallpaper_json)))
-        //    return Result.failure();
+        if (!URLUtil.isValidUrl(mContext.getString(R.string.wallpaper_json))) {
+            Log.e("CandyBar", "Not a valid Wallpaper JSON URL");
+            return Result.failure();
+        }
 
         List<Wallpaper> wallpapers = Database.get(mContext).getWallpapers();
 
@@ -73,10 +75,10 @@ public class CandyBarArtWorker extends Worker {
                     if (!artworks.contains(artwork)) {
                         artworks.add(artwork);
                     } else {
-                        Log.d("CandyBar Wallpapers", "Already Contains Artwork" + wallpaper.getName());
+                        Log.d("CandyBar", "Already Contains Artwork" + wallpaper.getName());
                     }
                 } else {
-                    Log.d("CandyBar Wallpapers", "Wallpaper is Null");
+                    Log.d("CandyBar", "Wallpaper is Null");
                 }
             }
 
