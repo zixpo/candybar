@@ -80,7 +80,7 @@ Vous ne pourrez pas utiliser l\'application</string>
     <string name="tap_intro_request_premium_desc">Appuyez ici pour acheter un pack de demande d\'icône(s) premium,
 Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications demandées plus rapidement.</string>
     <string name="tap_intro_wallpapers_option">Options du fond d\'écran</string>
-    <string name="tap_intro_wallpapers_option_desc">Appuyez ici et maintenez pour afficher les options du fond d\'écran, %s applique le fond d\'écran.</string>
+    <string name="tap_intro_wallpapers_option_desc">Appuyez ici et maintenez pour afficher les options du fond d\'écran, %s appliquez le fond d\'écran.</string>
     <string name="tap_intro_wallpapers_option_desc_download">Télécharger ou</string>
     <string name="tap_intro_wallpapers_preview">Prévisualiser le fond d\'écran</string>
     <string name="tap_intro_wallpapers_preview_desc">Appuyez ici pour prévisualiser le fond d\'écran en taille réelle</string>
