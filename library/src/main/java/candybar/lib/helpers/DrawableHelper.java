@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
@@ -71,24 +71,26 @@ public class DrawableHelper {
             ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
             Drawable normalDrawable = resolveInfo.loadIcon(packageManager);
 
-            if (normalDrawable instanceof AdaptiveIconDrawable) return normalDrawable;
+            if ((normalDrawable != null) && (normalDrawable instanceof AdaptiveIconDrawable))
+                return normalDrawable;
         }
 
+        // Fallback to legacy icon if AdaptiveIcon not found
         try {
-            // Get XXXHDPI Icon for Non-Adaptive Icons
-            ActivityInfo info = packageManager.getActivityInfo(
-                    componentName, PackageManager.GET_META_DATA);
-            Resources resources = packageManager.getResourcesForActivity(componentName);
-
+            Drawable drawable;
             int density = DisplayMetrics.DENSITY_XXHIGH;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                 density = DisplayMetrics.DENSITY_XXXHIGH;
             }
 
-            Drawable drawable = ResourcesCompat.getDrawableForDensity(
-                    resources, info.icon, density, null);
+            ApplicationInfo appInfo = packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
+            Resources appResources = packageManager.getResourcesForApplication(appInfo);
+
+            drawable = ResourcesCompat.getDrawableForDensity(
+                    appResources, appInfo.icon, density, null);
 
             if (drawable != null) return drawable;
+            Log.e("CandyBar", "DrawableHelper - drawable is null");
         } catch (Exception | OutOfMemoryError e) {
             LogUtil.e(Log.getStackTraceString(e));
         }
