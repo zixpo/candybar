@@ -33,7 +33,7 @@ import candybar.lib.databases.Database;
 import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.utils.ImageConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /*
  * CandyBar - Material Dashboard
@@ -75,7 +75,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity implement
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 
     @Override
