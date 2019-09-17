@@ -35,13 +35,10 @@
     <string name="ok">ठीक</string>
     <string name="install">स्थापित करें</string>
     <string name="donate">दान करें</string>
-    <!-- New -->
     <string name="search_noresult">कोई परिणाम नहीं मिला के लिए \"%s\"</string>
     <string name="search_faqs">प्रश्न या उत्तर</string>
     <string name="search_icon">आइकॉन का नाम</string>
     <!-- Update -->
-    <!-- New -->
-    <!-- New -->
     <!-- Changelog -->
     <string name="changelog_version">संस्करण</string>
     <!-- InAppBilling -->
@@ -53,10 +50,7 @@
     <string name="license_check_failed">अनुज्ञप्ति जांच विफल हुई, आपने प्ले स्टोर से ऐप डाउनलोड नहीं किया है
 आप इसका उपयोग करने में सक्षम नहीं होंगे।</string>
     <string name="license_check_retry">अनुज्ञप्ति की जांच करने में असमर्थ, कृपया कुछ क्षण के बाद पुनः प्रयास करें।</string>
-    <!-- Playstore Installation Check -->
-    <!-- New -->
-    <!-- New -->
-    <!-- New -->
+    <!-- Play Store Installation Check -->
     <!-- Share -->
     <string name="share_app_title">यो! देखे %s</string>
     <string name="share_app_body">यो! देखे %1$s,यह आइकन पैक वास्तव में अच्छा है! %2$s</string>
@@ -102,7 +96,6 @@
     <!-- Apply -->
     <string name="apply_installed">स्थापित लांचर</string>
     <string name="apply_supported">समर्थित लौन्चेर्स</string>
-    <string name="apply_manual">%1$s सीधे लागू करने का समर्थन नहीं करता है, तो आप लॉन्चर सेटिंग से मैन्युअल रूप से %2$s को लागू कर सकते हैं।</string>
     <string name="apply_manual_evie">होमस्क्रीन पर टैप करके रखें - सेटिंग्स - आइकॉन पैक चयन करें %s</string>
     <string name="apply_launch_failed">सेटिंग %s लांच करने में असमर्थ</string>
     <string name="apply_launcher_not_installed">%s  इंस्टॉल नहीं है क्या आप खोलना चाहते हैं
@@ -121,20 +114,16 @@
     <string name="request_not_requested">अनिवेदित</string>
     <string name="request_already_requested">पहले से अनुरोध किया गया</string>
     <string name="request_building">अनुरोध कर रहा है …</string>
-    <!-- New -->
     <string name="request_build_failed">आइकॉन निवदेन करने में असमर्थ</string>
     <string name="request_appfilter_failed">appfilter.xml को पढ़ने में असमर्थ</string>
     <string name="request_requested">कृपया अपना निवदेन फिर से जाँच ले.
 क्युकी आप उन एप्प का पुनः निवदेन कर रहे है जिहें आप पहले निवेदित कर चुके.</string>
     <string name="request_email_client">उस ईमेल क्लाइंट को चुनें, जिससे आप आइकन निवेदन भेजने के लिए उपयोग करना चाहते हैं</string>
-    <!-- New -->
-    <!-- New -->
     <string name="request_limit">आप केवल नियमित अनुरोध के साथ %d अनुरोध (अनुरोधों) करने में सक्षम हैं।</string>
     <string name="request_used">आपने %d आइकन (ओं) का अनुरोध किया है</string>
     <string name="request_limit_buy">आप आइकॉन निवेदन करने के लिए प्रीमियम निवेदन खरीद सकते है </string>
     <string name="request_limit_reset">प्रत्येक निवेदन पर आइकन निवेदन सीमा फिर से गिनी जाएगी</string>
     <!-- Regular Request -->
-    <!-- New -->
     <!-- Premium Request -->
     <string name="premium_request">प्रीमियम आइकॉन निवेदन</string>
     <string name="premium_request_no_internet">एक प्रीमियम निवेदन भेजने से पहले सुनिश्चित करें कि आपका फोन इंटरनेट से कनेक्ट है</string>
@@ -208,8 +197,6 @@
     <string name="intent_email_not_supported_message">एक असमर्थित ईमेल क्लाइंट चयनित, कृपया एक अन्य ईमेल क्लाइंट का चयन करें</string>
     <!-- About -->
     <string name="about_contributors_title">योगदानकर्ता</string>
-    <!-- New -->
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">आप किस प्रकार की समस्या की रिपोर्ट करना चाहते हैं, इसके बारे में विवरण दें</string>
     <string name="report_bugs_desc_hint">विवरण</string>
