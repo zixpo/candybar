@@ -94,7 +94,7 @@ import candybar.lib.utils.listeners.RequestListener;
 import candybar.lib.utils.listeners.SearchListener;
 import candybar.lib.utils.listeners.WallpapersListener;
 import candybar.lib.utils.views.HeaderView;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /*
  * CandyBar - Material Dashboard
@@ -248,7 +248,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     @Override
     protected void attachBaseContext(Context newBase) {
         LocaleHelper.setLocale(newBase);
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 
     @Override
