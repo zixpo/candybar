@@ -249,6 +249,8 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         Preferences.get(mContext).setDarkTheme(!checkBox.isChecked());
                         ((AppCompatActivity) mContext).recreate();
                         break;
+                    case WALLPAPER:
+                        break;
                     case LANGUAGE:
                         LanguagesFragment.showLanguageChooser(((AppCompatActivity) mContext).getSupportFragmentManager());
                         break;

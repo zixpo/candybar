@@ -2,9 +2,7 @@ package candybar.lib.fragments.dialog;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -14,15 +12,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
-
-import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.adapters.IconShapeAdapter;
-import candybar.lib.helpers.IconShapeHelper;
 import candybar.lib.helpers.TypefaceHelper;
-import candybar.lib.items.IconShape;
 import candybar.lib.preferences.Preferences;
 
 /*
@@ -47,7 +39,6 @@ public class IconShapeFragment extends DialogFragment {
 
     private ListView mListView;
     private int mShape;
-    private AsyncTask mAsyncTask;
 
     public static final String TAG = "candybar.dialog.iconshapes";
 
@@ -87,14 +78,10 @@ public class IconShapeFragment extends DialogFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mAsyncTask = new LanguagesLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     @Override
     public void onDestroy() {
-        if (mAsyncTask != null) {
-            mAsyncTask.cancel(true);
-        }
         super.onDestroy();
     }
 
@@ -108,48 +95,5 @@ public class IconShapeFragment extends DialogFragment {
     public void setShape(@NonNull int shape) {
         mShape = shape;
         dismiss();
-    }
-
-    private class LanguagesLoader extends AsyncTask<Void, Void, Boolean> {
-
-        private List<IconShape> iconShapes;
-        private int index = 0;
-
-        @Override
-        protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
-                try {
-                    Thread.sleep(1);
-                    iconShapes = IconShapeHelper.getShapes();
-                    int currentShape = Preferences.get(getActivity()).getIconShape();
-                    for (int i = 0; i < iconShapes.size(); i++) {
-                        int shape = iconShapes.get(i).getShape();
-                        if (shape == currentShape) {
-                            index = i;
-                            break;
-                        }
-                    }
-                    return true;
-                } catch (Exception e) {
-                    LogUtil.e(Log.getStackTraceString(e));
-                    return false;
-                }
-            }
-            return false;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
-            if (getActivity() == null) return;
-            if (getActivity().isFinishing()) return;
-
-            mAsyncTask = null;
-            if (aBoolean) {
-                mListView.setAdapter(new IconShapeAdapter(getActivity(), iconShapes, index));
-            } else {
-                dismiss();
-            }
-        }
     }
 }

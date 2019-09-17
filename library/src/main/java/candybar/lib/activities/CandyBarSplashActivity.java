@@ -6,15 +6,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.TypedValue;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -62,9 +58,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity implement
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
         mConfig = onInit();
-        initBottomText();
 
         mSplashScreenLoader = new SplashScreenLoader(this)
                 .mainActivity(mConfig.getMainActivity())
@@ -93,23 +87,6 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity implement
             mSplashScreenLoader.cancel(true);
         }
         super.onDestroy();
-    }
-
-    private void initBottomText() {
-        TextView splashTitle = findViewById(R.id.splash_title);
-        if (splashTitle != null) {
-            splashTitle.setText(mConfig.getBottomText());
-
-            if (mConfig.getBottomTextColor() != -1) {
-                splashTitle.setTextColor(mConfig.getBottomTextColor());
-            } else {
-                int color = ContextCompat.getColor(this, R.color.splashColor);
-                splashTitle.setTextColor(ColorHelper.getBodyTextColor(color));
-            }
-
-            splashTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, mConfig.getBottomTextSize());
-            splashTitle.setTypeface(mConfig.getBottomTextFont(this));
-        }
     }
 
     private static class SplashScreenLoader extends AsyncTask<Void, Void, Boolean> {

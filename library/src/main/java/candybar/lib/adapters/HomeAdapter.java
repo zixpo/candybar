@@ -751,10 +751,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (viewType == TYPE_HEADER) {
             if (mOrientation == Configuration.ORIENTATION_PORTRAIT) {
                 return true;
-            } else if (mImageStyle.getType() == Home.Style.Type.SQUARE ||
-                    mImageStyle.getType() == Home.Style.Type.LANDSCAPE) {
-                return true;
-            }
+            } else return mImageStyle.getType() == Home.Style.Type.SQUARE ||
+                    mImageStyle.getType() == Home.Style.Type.LANDSCAPE;
         }
         return false;
     }

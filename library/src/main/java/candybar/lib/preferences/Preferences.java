@@ -238,11 +238,7 @@ public class Preferences {
     }
 
     public boolean isRegularRequestLimit() {
-        if (mContext.getResources().getBoolean(R.bool.enable_icon_request_limit)) {
-            return true;
-        } else {
-            return false;
-        }
+        return mContext.getResources().getBoolean(R.bool.enable_icon_request_limit);
     }
 
     public void setRegularRequestUsed(int used) {

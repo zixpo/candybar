@@ -10,9 +10,10 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Minor Fixes</item>
-        <item>Added New Launchers</item>
-        <item>Fixed Bugs</item>
+        <item>Now using MultiDex</item>
+        <item>Support for Android 10</item>
+        <item>Custom Drawable Names</item>
+        <item>Lot of Fixes</item>
     </string-array>
 
 </resources>

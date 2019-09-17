@@ -29,14 +29,14 @@ import candybar.lib.preferences.Preferences;
 
 @SuppressLint("NewApi")
 public class CandyBarArtWorker extends Worker {
-    private final String WORKER_TAG = this.getApplicationContext().getPackageName() + "." + "ArtProvider";
+    private final String WORKER_TAG = this.getApplicationContext().getPackageName() + ".ArtProvider";
     private Context mContext = getApplicationContext();
 
     public CandyBarArtWorker(@NonNull Context context, @NonNull WorkerParameters params) {
         super(context, params);
     }
 
-    static void enqueueLoad(Context context) {
+    public static void enqueueLoad(Context context) {
         WorkManager manager = WorkManager.getInstance(context);
         Constraints constraints = new Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.CONNECTED)

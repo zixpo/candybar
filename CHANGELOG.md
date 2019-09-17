@@ -1,10 +1,12 @@
-# Unreleased Version
-- Enabled Multidex
+# v3.5.0-beta.6.4
+- Enabled MultiDex
 - Support for Custom Drawable name, like this:
 ```xml
 <item drawable="my_icon" name="Custom Name"/>
 ```
 - Fixed Icon Search
+- Support for Android 10
+- Lots of Fixes
 
 # v3.5.0-beta.6.3
 - Now you can exclude launchers.
