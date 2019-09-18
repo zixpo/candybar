@@ -262,4 +262,6 @@
     <!-- Show Intro Guides on First Run -->
     <bool name="show_intro">false</bool>
 
+    <bool name="includes_adaptive_icons">true</bool>
+
 </resources>
