@@ -37,20 +37,43 @@
     <string name="install">Instalar</string>
     <string name="donate">Doar</string>
     <string name="update">Atualizar</string>
+    <string name="search_noresult">Nenhum resultado para \"%s\"</string>
+    <string name="search_faqs">Pergunta ou resposta</string>
+    <string name="search_icon">Nome do ícone</string>
     <!-- Update -->
+    <string name="update_available">Atualização disponível!</string>
+    <string name="no_update_available">Você está usando a versão mais recente!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versão</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Não foi possível carregar os produtos de compra no aplicativo</string>
     <!-- License -->
+    <string name="license_checking">Verificando licença …</string>
+    <string name="license_check">Verificação da Licença</string>
+    <string name="license_check_success">Verificação de licença bem sucedida, obrigado por baixar o aplicativo da Play Store.</string>
+    <string name="license_check_failed">A verificação da licença falhou, você não baixou este app da  Play Store.
+        Você não poderá usar o app.</string>
+    <string name="license_check_retry">Não foi possível verificar a licença, por favor tente novamente em alguns instantes.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Verificação da Play Store</string>
+    <string name="playstore_check_success">Obrigado por instalar o App da Play Store. Aproveite.</string>
+    <string name="playstore_check_failed">Parece que você instalou este pacote de ícones fora da Play Store.
+        Você não será capaz de usá-lo.</string>
     <!-- Share -->
+    <string name="share_app_title">Ei! Confira %s</string>
+    <string name="share_app_body">Confira %1$s, este pacote de ícones é muito legal! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Pesquisar</string>
     <!-- Home -->
     <string name="home_donate">Doar</string>
     <!-- Apply -->
     <!-- Icons -->
+    <string name="icon_shape">Formato dos ícones</string>
     <!-- Request -->
     <string name="request_title">Sugestão de Ícones</string>
+    <string name="request_not_selected">Selecione apps para solicitar</string>
+    <string name="request_not_requested">Não solicitado</string>
+    <string name="request_already_requested">Já solicitado</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
