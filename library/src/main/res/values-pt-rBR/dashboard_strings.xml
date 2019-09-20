@@ -73,7 +73,24 @@
     <string name="tap_intro_request_select">Selecione o app ausente</string>
     <string name="tap_intro_request_select_desc">Toque aqui para selecionar o app ausente para solicitação de ícone</string>
     <string name="tap_intro_request_select_all">Selecione todos os apps ausentes</string>
+    <string name="tap_intro_request_select_all_desc">Toque aqui para selecionar todos os apps ausentes para solicitação de ícone</string>
+    <string name="tap_intro_request_send">Enviar solicitação de ícone</string>
+    <string name="tap_intro_request_send_desc">Toque aqui para enviar apps ausentes selecionados</string>
+    <string name="tap_intro_request_premium">Pedido de ícone Premium</string>
+    <string name="tap_intro_request_premium_desc">Toque aqui para comprar pedido de ícones premium,
+        com pedido de ícones premium, você pode obter seus apps solicitados mais rápido.</string>
+    <string name="tap_intro_wallpapers_option">Opções de papel de parede</string>
+    <string name="tap_intro_wallpapers_option_desc">Toque e segure aqui para mostrar opções de papel de parede, %s aplicar o papel de parede.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">baixar ou</string>
+    <string name="tap_intro_wallpapers_preview">Visualizar o papel de parede</string>
+    <string name="tap_intro_wallpapers_preview_desc">Toque aqui para visualizar o tamanho completo do papel de parede</string>
+    <string name="tap_intro_wallpaper_preview_save">Salvar o papel de parede</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Toque aqui para baixar e salvar o papel de parede em seu dispositivo para que você possa usá-lo mais tarde</string>
+    <string name="tap_intro_wallpaper_preview_apply">Aplicar o papel de parede</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Toque aqui para definir o papel de parede como fundo da tela inicial</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Mais Apps</string>
+    <string name="home_more_apps">Verificar outros apps publicados na Google Play Store</string>
     <string name="home_donate">Doar</string>
     <!-- Apply -->
     <!-- Icons -->
@@ -88,6 +105,8 @@
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
+    <string name="wallpaper_apply">Aplicar o papel de parede</string>
+    <string name="wallpaper_save_to_device">Salvar o papel de parede</string>
     <!-- Preferences -->
     <!-- Permission -->
     <!-- Intent -->
