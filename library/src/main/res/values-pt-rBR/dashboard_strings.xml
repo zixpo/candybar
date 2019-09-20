@@ -74,6 +74,8 @@
     <string name="request_not_selected">Selecione apps para solicitar</string>
     <string name="request_not_requested">Não solicitado</string>
     <string name="request_already_requested">Já solicitado</string>
+    <string name="request_building">Criando solicitação …</string>
+    <string name="request_fetching_data">Buscando dados mais recentes...</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
