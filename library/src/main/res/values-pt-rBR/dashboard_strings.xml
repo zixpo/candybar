@@ -91,7 +91,11 @@
     <!-- Home -->
     <string name="home_more_apps_header">Mais Apps</string>
     <string name="home_more_apps">Verificar outros apps publicados na Google Play Store</string>
+    <string name="home_rate_and_review">Avaliar &amp; Comentar</string>
+    <string name="home_apply_icon_pack">Aplicar %s</string>
     <string name="home_donate">Doar</string>
+    <string name="home_donate_desc">Apoie o desenvolvimento do pacote de ícones</string>
+    <string name="home_icons">Ícones personalizados</string>
     <!-- Apply -->
     <!-- Icons -->
     <string name="icon_shape">Formato dos ícones</string>
