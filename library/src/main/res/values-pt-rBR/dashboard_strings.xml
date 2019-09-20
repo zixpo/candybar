@@ -96,7 +96,14 @@
     <string name="home_donate">Doar</string>
     <string name="home_donate_desc">Apoie o desenvolvimento do pacote de ícones</string>
     <string name="home_icons">Ícones personalizados</string>
+    <string name="home_icon_dimension">%s pixels de dimensão do ícone</string>
+    <string name="home_loud_wallpapers">%d papéis de parede na nuvem</string>
+    <string name="home_muzei">Muzei live wallpaper</string>
+    <string name="home_icon_request_installed_apps">Total\n%d apps instalados</string>
     <!-- Apply -->
+    <string name="apply_installed">Lançador instalado</string>
+    <string name="apply_supported">Lançadores Suportados</string>
+    <string name="apply_manual">%1$s Lançador não suporta a aplicação direta, mas você pode aplicar %2$s manualmente a partir das configurações do lançador.</string>
     <!-- Icons -->
     <string name="icon_shape">Formato dos ícones</string>
     <!-- Request -->
