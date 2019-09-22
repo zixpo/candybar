@@ -100,7 +100,7 @@
     <string name="home_loud_wallpapers">%d papéis de parede na nuvem</string>
     <string name="home_muzei">Muzei live wallpaper</string>
     <string name="home_icon_request_installed_apps">Total\n%d apps instalados</string>
-    <string name="home_icon_request_themed_apps">Personalizados\n%d apps</string>
+    <string name="home_icon_request_themed_apps">Personalizado\n%d apps</string>
     <string name="home_icon_request_missed_apps">Faltando\n%d apps</string>
     <!-- Apply -->
     <string name="apply_installed">Lançador instalado</string>
@@ -113,6 +113,11 @@
     <string name="apply_launcher_not_installable">%s Launcher não está instalado. Por favor, tente novamente após instalar o launcher.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager não está disponível neste dispositivo</string>
     <string name="apply_cmtheme_failed">Não foi possível iniciar o CM Theme Manager, você pode tentar aplicar o Pacote de Ícones manualmente a partir das Configurações.</string>
+    <string name="apply_lg_home">Para aplicar este pacote de ícones, abra as configurações - Tela inicial - Tema</string>
+    <string name="apply_lg_home_not_available">O LG Home não está disponível neste dispositivo</string>
+    <string name="apply_lg_home_failed">Não foi possível iniciar o CM Theme Manager, você pode tentar aplicar o Pacote de Ícones manualmente a partir das Configurações.</string>
+    <string name="apply_lg_home_nougat">O LG Home com Android Nougat não suporta mais pacotes de ícones. Você precisa de um launcher personalizado para usar o pacote de ícones.</string>
+    <string name="apply_launcher_incompatible">%s Launcher não suporta nenhum pacote de ícones, então você não pode usar este pacote de ícones com este launcher. Você pode tentar um app de terceiros para usar este pacote de ícones em %2$s . Deseja instalá-lo?</string>
     <!-- Icons -->
     <string name="icon_shape">Formato dos ícones</string>
     <!-- Request -->
