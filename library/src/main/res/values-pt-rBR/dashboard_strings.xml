@@ -119,6 +119,7 @@
     <string name="apply_lg_home_nougat">O LG Home com Android Nougat não suporta mais pacotes de ícones. Você precisa de um launcher personalizado para usar o pacote de ícones.</string>
     <string name="apply_launcher_incompatible">%s Launcher não suporta nenhum pacote de ícones, então você não pode usar este pacote de ícones com este launcher. Você pode tentar um app de terceiros para usar este pacote de ícones em %2$s . Deseja instalá-lo?</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Não foi possível carregar os ícones</string>
     <string name="icon_shape">Formato dos ícones</string>
     <!-- Request -->
     <string name="request_title">Sugestão de Ícones</string>
@@ -127,6 +128,8 @@
     <string name="request_already_requested">Já solicitado</string>
     <string name="request_building">Criando solicitação …</string>
     <string name="request_fetching_data">Buscando dados mais recentes...</string>
+    <string name="request_build_failed">Não foi possível criar a solicitação do ícone</string>
+    <string name="request_appfilter_failed">Não foi possível ler appfilter.xml</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
