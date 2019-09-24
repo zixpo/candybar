@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -371,7 +372,9 @@ public class TapIntroHelper {
         if (Preferences.get(context).isTimeToShowWallpapersIntro()) {
             AppCompatActivity activity = (AppCompatActivity) context;
 
-            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+                activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            }
 
             new Handler().postDelayed(() -> {
                 int primary = ColorHelper.getAttributeColor(context, R.attr.toolbar_icon);
