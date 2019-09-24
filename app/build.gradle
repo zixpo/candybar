@@ -5,7 +5,7 @@ buildscript {
     maven { url 'https://plugins.gradle.org/m2/' }
   }
   dependencies {
-    classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.3'
+    classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.5'
   }
 }
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
@@ -40,7 +40,7 @@ android {
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode 355
-        versionName "3.5.0-beta.6.2"
+        versionName "3.5.0-beta.6.4"
         multiDexEnabled true
 
         // Remove '/*' and '*/' below to enable OneSignal
@@ -70,5 +70,5 @@ dependencies {
     implementation project (':library')
 
     // Remove '//' below to Enable OneSignal
-    //implementation 'com.onesignal:OneSignal:3.9.1'
+    //implementation 'com.onesignal:OneSignal:3.11.3'
 }

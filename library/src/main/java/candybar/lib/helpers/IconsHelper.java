@@ -18,6 +18,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -146,7 +147,7 @@ public class IconsHelper {
     }
 
     public static String capitalizeWord(String str) {
-        String words[] = str.split("\\s");
+        String[] words = str.split("\\s");
         String capitalizeWord = "";
         for (String w : words) {
             String first = w.substring(0, 1);
@@ -225,6 +226,18 @@ public class IconsHelper {
             return directory.toString() + "/" + fileName;
         } catch (Exception | OutOfMemoryError e) {
             LogUtil.e(Log.getStackTraceString(e));
+        }
+        return null;
+    }
+
+    @Nullable
+    public static byte[] getByteFromDrawable(@Nullable Drawable drawable) {
+        if (drawable != null) {
+            Bitmap bitmap = getRightIcon(drawable);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 0, baos);
+            byte[] data = baos.toByteArray();
+            return data;
         }
         return null;
     }

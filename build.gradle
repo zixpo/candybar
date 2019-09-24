@@ -9,8 +9,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
@@ -30,8 +28,8 @@ allprojects {
     rootProject.ext {
         BuildTools = "29.0.0"
         MinSdk = 15
-        TargetSdk = 28
-        CompileSdk = 28
+        TargetSdk = 29
+        CompileSdk = 29
         SupportLibrary = "27.1.1"
     }
 }

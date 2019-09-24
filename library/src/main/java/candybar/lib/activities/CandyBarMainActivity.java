@@ -1,5 +1,6 @@
 package candybar.lib.activities;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -228,7 +229,22 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         if (mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isLicensed()) {
+            PackageManager pm = getApplicationContext().getPackageManager();
+            ComponentName compName = new ComponentName(getPackageName(), getPackageName() + ".alias.Intent");
+            pm.setComponentEnabledSetting(
+                    compName,
+                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                    PackageManager.DONT_KILL_APP);
             finish();
+        }
+
+        if (Preferences.get(this).isLicensed() || (!mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isPlaystoreCheckEnabled())) {
+            PackageManager pm = getApplicationContext().getPackageManager();
+            ComponentName compName = new ComponentName(getPackageName(), getPackageName() + ".alias.Intent");
+            pm.setComponentEnabledSetting(
+                    compName,
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                    PackageManager.DONT_KILL_APP);
         }
     }
 

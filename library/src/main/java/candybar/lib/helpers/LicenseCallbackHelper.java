@@ -1,6 +1,8 @@
 package candybar.lib.helpers;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.PackageManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -108,6 +110,12 @@ public class LicenseCallbackHelper implements LicenseCallback {
                 ChangelogFragment.showChangelog(((AppCompatActivity) mContext).getSupportFragmentManager());
         } else if (status == LicenseHelper.Status.FAILED) {
             Preferences.get(mContext).setLicensed(false);
+            PackageManager pm = mContext.getPackageManager();
+            ComponentName compName = new ComponentName(mContext.getPackageName(), mContext.getPackageName() + ".alias.Intent");
+            pm.setComponentEnabledSetting(
+                    compName,
+                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                    PackageManager.DONT_KILL_APP);
             ((AppCompatActivity) mContext).finish();
         }
     }

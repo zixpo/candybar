@@ -238,11 +238,7 @@ public class Preferences {
     }
 
     public boolean isRegularRequestLimit() {
-        if (mContext.getResources().getBoolean(R.bool.enable_icon_request_limit)) {
-            return true;
-        } else {
-            return false;
-        }
+        return mContext.getResources().getBoolean(R.bool.enable_icon_request_limit);
     }
 
     public void setRegularRequestUsed(int used) {
@@ -287,6 +283,10 @@ public class Preferences {
 
     public void setAvailableWallpapersCount(int count) {
         getSharedPreferences().edit().putInt(KEY_AVAILABLE_WALLPAPERS_COUNT, count).apply();
+    }
+
+    public boolean isPlaystoreCheckEnabled() {
+        return mContext.getResources().getBoolean(R.bool.playstore_check_enabled);
     }
 
     private int getVersion() {

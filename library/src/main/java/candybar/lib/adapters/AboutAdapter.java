@@ -84,20 +84,11 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         mShowContributors = mContext.getResources().getBoolean(R.bool.show_contributors_dialog);
 
-        if (mContext.getResources().getString(R.string.privacy_policy_link).length() > 0)
-            mShowPrivacyPolicy = true;
-        else
-            mShowPrivacyPolicy = false;
+        mShowPrivacyPolicy = mContext.getResources().getString(R.string.privacy_policy_link).length() > 0;
 
-        if (mContext.getResources().getString(R.string.terms_and_conditions_link).length() > 0)
-            mShowTerms = true;
-        else
-            mShowTerms = false;
+        mShowTerms = mContext.getResources().getString(R.string.terms_and_conditions_link).length() > 0;
 
-        if (mShowContributors || mShowPrivacyPolicy || mShowTerms)
-            mShowExtraInfo = true;
-        else
-            mShowExtraInfo = false;
+        mShowExtraInfo = mShowContributors || mShowPrivacyPolicy || mShowTerms;
 
         if (mShowExtraInfo) {
             mItemCount += 1;

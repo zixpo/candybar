@@ -135,11 +135,11 @@ public class ApplyFragment extends Fragment {
     private boolean isLauncherShouldBeAdded(String packageName) {
         if (("com.dlto.atom.launcher").equals(packageName)) {
             int id = getResources().getIdentifier("appmap", "xml", getActivity().getPackageName());
-            if (id <= 0) return false;
+            return id > 0;
         } else if (("com.lge.launcher2").equals(packageName) ||
                 ("com.lge.launcher3").equals(packageName)) {
             int id = getResources().getIdentifier("theme_resources", "xml", getActivity().getPackageName());
-            if (id <= 0) return false;
+            return id > 0;
         }
         return true;
     }

@@ -38,15 +38,12 @@
     <string name="install">Instalar</string>
     <string name="donate">Donar</string>
     <string name="update">Actualización</string>
-    <!-- New -->
     <string name="search_noresult">Ningún resultado encontrado para \"%s\"</string>
     <string name="search_faqs">Pregunta o respuesta</string>
     <string name="search_icon">Nombre del icono</string>
     <!-- Update -->
     <string name="update_available">Actualización disponible!</string>
-    <!-- New -->
-    <string name="no_update_available">Estás utilizando la última versión!</string>
-    <!-- New -->
+    <string name="no_update_available">Estas usando la ultima versión!</string>
     <!-- Changelog -->
     <string name="changelog_version">Versión</string>
     <!-- InAppBilling -->
@@ -58,14 +55,11 @@
     <string name="license_check_failed">Comprobación fallida de la licencia, no descargaste la aplicación desde Play Store.
 No podrás utilizar la aplicación.</string>
     <string name="license_check_retry">No se puede comprobar la licencia, por favor inténtalo en unos minutos.</string>
-    <!-- Playstore Installation Check -->
+    <!-- Play Store Installation Check -->
     <string name="playstore_check">Comprobación de Play Store</string>
-    <!-- New -->
-    <string name="playstore_check_success">Gracias por instalar la aplicación desde la Play Store. Disfruta.</string>
-    <!-- New -->
-    <string name="playstore_check_failed">Parece que has instalado este paquete de iconos fuera de la Play Store.
-         No podrás usarlo.</string>
-    <!-- New -->
+    <string name="playstore_check_success">Gracias por instalar la aplicación desde Play Store. Disfruta.</string>
+    <string name="playstore_check_failed">Parece que has instalado este pack de iconos fuera de la Play Store.
+        No podrás usarlo.</string>
     <!-- Share -->
     <string name="share_app_title">¡Yo! Echa un vistazo a %s</string>
     <string name="share_app_body">Echa un vistazo a %1$s, ¡este paquete de iconos es fantástico! %2$s</string>
@@ -110,17 +104,18 @@ No podrás utilizar la aplicación.</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher instalado</string>
     <string name="apply_supported">Launchers soportados</string>
-    <string name="apply_manual">%1$s no puede establecer de forma directa, puedes establecer %2$s manualmente desde los ajustes del launcher.</string>
+    <string name="apply_manual">%1$s Launcher no soporta aplicarlo directamente pero puedes aplicar %2$s manualmente desde los ajustes del Launcher.</string>
     <string name="apply_manual_evie">Pulsa y mantén en la pantalla de inicio - Ajustes - Paquete de iconos - Elige %s.</string>
     <string name="apply_launch_failed">No se pueden iniciar los ajustes de %s  </string>
     <string name="apply_launcher_not_installed">%s no está instalado. ¿Quieres abrir Google Play Store para descargarlo e instalarlo?</string>
+    <string name="apply_launcher_not_installable">%s Launcher no está instalado. Por favor inténtalo de nuevo despues de instalar el launcher.</string>
     <string name="apply_cmtheme_not_available">El gestor de temas CM no está disponible en este dispositivo</string>
     <string name="apply_cmtheme_failed">No se puede iniciar el gestor de temas CM, puedes probar a establecer el paquete de iconos manualmente desde los ajustes.</string>
     <string name="apply_lg_home">Para establecer este paquete de iconos abre Ajustes - Pantalla - Pantalla de Inicio - Tema</string>
     <string name="apply_lg_home_not_available">LG Home no está disponible en este dispositivo</string>
     <string name="apply_lg_home_failed">No se pueden iniciar los ajustes de LG Home, puedes intentar establecer el paquete de iconos manualmente desde los ajustes.</string>
     <string name="apply_lg_home_nougat">LG Home con Android Nougat no soporta el paquete de iconos. Necesitas un launcher personalizado para usar el paquete de iconos.</string>
-    <string name="apply_launcher_incompatible">%s Launcher no soporta paquetes de iconos. Por lo tanto, no podrás usar ningún pack de iconos con este launcher. Puede probar una aplicación de terceros para usar este paquete de iconos en %s Launcher. ¿Desea instalarlo?</string>
+    <string name="apply_launcher_incompatible">%s Launcher no soporta ningún pack de iconos, por lo que no podrás usar este pack de iconos con este launcher. Puede probar una aplicación de terceros para usar este paquete de iconos en %2$s launcher. ¿Quieres instalarlo?</string>
     <!-- Icons -->
     <string name="icons_load_failed">No se pueden cargar los iconos</string>
     <string name="icon_shape">Forma de icono</string>
@@ -131,23 +126,19 @@ No podrás utilizar la aplicación.</string>
     <string name="request_already_requested">Ya solicitado</string>
     <string name="request_building">Preparando la solicitud …</string>
     <string name="request_fetching_data">Obteniendo los últimos datos...</string>
-    <!-- New -->
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
     <string name="request_requested">Por favor comprueba tu solicitud de nuevo, porque estás solicitando una aplicación que ya ha sido solicitada anteriormente.</string>
     <string name="request_email_client">Elige el cliente de correo que quieras usar para enviar la solicitud del icono</string>
-    <string name="request_app_disabled">Está usando una versión anterior de este paquete de iconos. Las solicitudes solo se pueden realizar en la última versión. Por favor actualice su aplicación a la última versión para solicitar iconos.</string>
-    <!-- New -->
-    <string name="connection_error_long">No se pueden cargar datos del servidor. Verifique su conexión de internet.</string>
-    <!-- New -->
+    <string name="request_app_disabled">Estás utilizando una versión anterior de este pack de iconos. La solicitud de iconos solo se puede hacer en la ultima versión. Actualice su aplicación a la última versión para solicitar iconos.</string>
+    <string name="connection_error_long">No se pueden cargar datos del servidor. Por favor, verifique su conexión de red.</string>
     <string name="request_limit">Sólo puedes hacer %d solicitud(es) con la solicitud normal.</string>
     <string name="request_used">Has solicitado %d icono(s).</string>
     <string name="request_limit_buy">Puedes comprar \"Solicitudes Premium\" para solicitar más iconos.</string>
     <string name="request_limit_reset">El límite de solicitud de iconos se reseteará con cada actualización.</string>
     <!-- Regular Request -->
-    <!-- New -->
     <string name="regular_request">Solicitud de icono normal</string>
-    <string name="regular_request_desc">Haz tu solicitud de iconos y el desarrollador intentará incluirlos.</string>
+    <string name="regular_request_desc">Haz tu solicitud de iconos y el desarrollador intentara incluir los iconos solicitados.</string>
     <string name="regular_request_count">Total\n%d solicitud</string>
     <string name="regular_request_used">Usado\n%d solicitud</string>
     <string name="regular_request_available">Disponible\n%d solicitud</string>
@@ -227,9 +218,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <!-- About -->
     <string name="about_contributors_title">Ayudantes</string>
     <string name="about_privacy_policy_title">Política de privacidad</string>
-    <!-- New -->
     <string name="about_terms_and_conditions_title">Terminos y Condiciones</string>
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Por favor deja una descripción acerca del problema del que quieres informar</string>
     <string name="report_bugs_desc_hint">Descripción</string>

@@ -87,7 +87,7 @@ public class IconShapeFragment extends DialogFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mAsyncTask = new LanguagesLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mAsyncTask = new IconShapeLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     @Override
@@ -110,7 +110,7 @@ public class IconShapeFragment extends DialogFragment {
         dismiss();
     }
 
-    private class LanguagesLoader extends AsyncTask<Void, Void, Boolean> {
+    private class IconShapeLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<IconShape> iconShapes;
         private int index = 0;

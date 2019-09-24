@@ -55,8 +55,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name=".alias.Intent"
+            android:targetActivity=".activities.MainActivity"
+            android:enabled="false">
+
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.OPENABLE" />
 
@@ -174,7 +182,8 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+
+        </activity-alias>
 
         <provider
             android:name=".services.MuzeiService"

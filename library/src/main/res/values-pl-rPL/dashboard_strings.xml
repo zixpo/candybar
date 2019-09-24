@@ -31,13 +31,10 @@
     <string name="clear">Wyczyść</string>
     <string name="install">Zainstaluj</string>
     <string name="donate">Przekaż pieniądze</string>
-    <!-- New -->
     <string name="search_noresult">Nie znaleziono wyników dla \"%s\"</string>
     <string name="search_faqs">Pytanie lub odpowiedź</string>
     <string name="search_icon">Nazwa ikony</string>
     <!-- Update -->
-    <!-- New -->
-    <!-- New -->
     <!-- Changelog -->
     <string name="changelog_version">Wersja</string>
     <!-- InAppBilling -->
@@ -48,10 +45,7 @@
     <string name="license_check_success">Sprawdzanie licencji powiodło się, dziękujemy za pobranie aplikacji ze sklepu Google Play</string>
     <string name="license_check_failed">Sprawdzanie licencji nie powiodło się, nie pobrałeś aplikacji ze sklepu Google Play. Nie będziesz mógł jej używać.</string>
     <string name="license_check_retry">Sprawdzanie licencji nie powiodło się, spróbuj ponownie za chwilę.</string>
-    <!-- Playstore Installation Check -->
-    <!-- New -->
-    <!-- New -->
-    <!-- New -->
+    <!-- Play Store Installation Check -->
     <!-- Share -->
     <string name="share_app_title">Hej! Wypróbuj %s</string>
     <string name="share_app_body">Wpróbuj %1$s, ta paczka ikon jest super! %2$s</string>
@@ -96,7 +90,6 @@
     <!-- Apply -->
     <string name="apply_installed">Zainstalowane Launchery</string>
     <string name="apply_supported">Wspierane Launchery</string>
-    <string name="apply_manual">%1$s nie wspiera bezpośredniego zastosowania paczki ikon, możesz zastosować %2$s manualnie z ustawień launchera.</string>
     <string name="apply_manual_evie">Przytrzymaj palec na ekranie głównym - Ustawienia - Paczka Ikon - wybierz %s.</string>
     <string name="apply_launcher_not_installed">%s nie jest zainstalowany. Czy chcesz pobrać tę aplikację ze sklepu Google Play?</string>
     <string name="apply_cmtheme_not_available">Menedżer Motywów CM nie jest dostępny na tym urządzeniu</string>
@@ -113,19 +106,15 @@
     <string name="request_not_requested">Nie wysłano prośby</string>
     <string name="request_already_requested">Już wysłano prośbę</string>
     <string name="request_building">Budowanie pliku prośby …</string>
-    <!-- New -->
     <string name="request_build_failed">Budowanie pliku prośby nie powiodło się</string>
     <string name="request_appfilter_failed">Czytanie pliku appfilter.xml nie powiodło się</string>
     <string name="request_requested">Przejrzyj swoją prośbę jeszcze raz. Próbujesz wysłać prośbę o aplikację, która już została zawarta w poprzedniej prośbie.</string>
     <string name="request_email_client">Wybierz aplikację email, przy pomocy której chcesz wysłać prośbę</string>
-    <!-- New -->
-    <!-- New -->
     <string name="request_limit">Możesz wysłać tylko %d próśb z normalnym planem próśb</string>
     <string name="request_used">Wysłałeś prośby o %d ikonę/ikon.</string>
     <string name="request_limit_buy">Możesz kupić płatne prośby by wysłać więcej próśb o ikony.</string>
     <string name="request_limit_reset">Limit ilości próśb o ikony zostanie zresetowany po każdej aktualizacji.</string>
     <!-- Regular Request -->
-    <!-- New -->
     <!-- Premium Request -->
     <string name="premium_request">Płatne Prośby O Ikony</string>
     <string name="premium_request_no_internet">Upewnij się, że twoje urządzenie jest podłączone do internetu przed wysłaniem płatnej prośby o ikony</string>
@@ -194,8 +183,6 @@
     <string name="intent_email_not_supported_message">Wybrałeś niewspieraną aplikację email, użyj innego programu</string>
     <!-- About -->
     <string name="about_contributors_title">Współautorzy</string>
-    <!-- New -->
-    <!-- New -->
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Podaj opis problemu, który chcesz zgłosić</string>
     <string name="report_bugs_desc_hint">Opis</string>
