@@ -257,4 +257,6 @@
     <string name="version_from_playstore">{{appVersion}} R</string>
     <string name="version_outside_playstore">{{appVersion}}</string>
 
+    <bool name="use_flat_card">false</bool>
+
 </resources>

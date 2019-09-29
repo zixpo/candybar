@@ -22,6 +22,8 @@
 
     <dimen name="card_corner_radius">10dp</dimen>
 
+    <dimen name="card_stroke_width">1dp</dimen>
+
     <!-- FAB -->
     <dimen name="fab_margin">0dp</dimen>
     <dimen name="fab_margin_global">20dp</dimen>

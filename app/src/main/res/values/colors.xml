@@ -58,6 +58,8 @@
     <!-- Card -->
     <color name="cardBackground">#FFFFFF</color>
     <color name="cardBackgroundDark">#2C2C2C</color>
+    <color name="cardStroke">#11000000</color>
+    <color name="cardStrokeDark">#11000000</color>
 
     <!-- Ripple -->
     <color name="rippleColor">@color/navigationViewTextSelected</color>

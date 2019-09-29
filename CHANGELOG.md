@@ -1,3 +1,10 @@
+# v3.5.0-beta.6.5
+- Fix Playstore check.
+- New Outline Styled Card.
+- Hide `Reset Tutorial` in Settings if `show_intro` disabled.
+- Minor Fixes.
+- Fix Statusbar Color.
+
 # v3.5.0-beta.6.4
 - Enabled MultiDex
 - Support for Custom Drawable name, like this:

@@ -201,9 +201,11 @@ public class SettingsFragment extends Fragment {
                     "", "", Setting.Type.REPORT_BUGS, -1));
         }
 
-        settings.add(new Setting(-1, "",
-                getActivity().getResources().getString(R.string.pref_others_reset_tutorial),
-                "", "", Setting.Type.RESET_TUTORIAL, -1));
+        if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
+            settings.add(new Setting(-1, "",
+                    getActivity().getResources().getString(R.string.pref_others_reset_tutorial),
+                    "", "", Setting.Type.RESET_TUTORIAL, -1));
+        }
 
         mRecyclerView.setAdapter(new SettingsAdapter(getActivity(), settings));
     }

@@ -260,6 +260,8 @@
     <bool name="playstore_check_enabled">false</bool>
 
     <!-- Show Intro Guides on First Run -->
-    <bool name="show_intro">false</bool>
+    <bool name="show_intro">true</bool>
+
+    <bool name="use_flat_card">true</bool>
 
 </resources>

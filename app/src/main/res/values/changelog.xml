@@ -10,10 +10,11 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Now using MultiDex</item>
-        <item>Support for Android 10</item>
-        <item>Custom Drawable Names</item>
-        <item>Lot of Fixes</item>
+        <item>Fix Playstore check.</item>
+        <item>New Outline Styled Card.</item>
+        <item>Hide `Reset Tutorial` in Settings if `show_intro` disabled.</item>
+        <item>Minor Fixes.</item>
+        <item>Fix Statusbar Color.</item>
     </string-array>
 
 </resources>

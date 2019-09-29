@@ -51,6 +51,8 @@
     <!-- Card -->
     <color name="cardBackground">#FFFFFF</color>
     <color name="cardBackgroundDark">#222222</color>
+    <color name="cardStroke">#1D000000</color>
+    <color name="cardStrokeDark">#1D000000</color>
 
     <!-- Ripple -->
     <color name="rippleColor">#4D000000</color>

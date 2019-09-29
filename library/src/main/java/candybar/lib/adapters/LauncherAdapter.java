@@ -12,12 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.danimahardhika.android.helpers.core.ColorHelper;
+import com.google.android.material.card.MaterialCardView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
@@ -145,7 +145,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<LauncherAdapter.ViewHo
                 name = itemView.findViewById(R.id.name);
                 container = itemView.findViewById(R.id.container);
 
-                CardView card = itemView.findViewById(R.id.card);
+                MaterialCardView card = itemView.findViewById(R.id.card);
                 if (CandyBarApplication.getConfiguration().getApplyGrid() == CandyBarApplication.GridStyle.FLAT) {
                     if (card.getLayoutParams() instanceof GridLayoutManager.LayoutParams) {
                         card.setRadius(0f);
@@ -159,6 +159,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<LauncherAdapter.ViewHo
                         }
                     }
                 }
+
                 if (!Preferences.get(mContext).isCardShadowEnabled()) {
                     if (card != null) card.setCardElevation(0);
                 }

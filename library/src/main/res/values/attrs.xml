@@ -2,6 +2,7 @@
 <resources>
 
     <attr name="card_background" format="color" />
+    <attr name="card_stroke" format="color" />
     <attr name="ripple_color" format="color" />
 
     <attr name="ripple_accent" format="color" />

@@ -26,6 +26,7 @@
         <item name="android:listDivider">@color/dividerList</item>
 
         <item name="card_background">@color/cardBackground</item>
+        <item name="card_stroke">@color/cardStroke</item>
         <item name="ripple_color">@color/rippleColor</item>
         <item name="ripple_accent">@color/rippleAccent</item>
         <item name="main_background">@color/mainBackground</item>
@@ -62,6 +63,7 @@
         <item name="android:listDivider">@color/dividerListDark</item>
 
         <item name="card_background">@color/cardBackgroundDark</item>
+        <item name="card_stroke">@color/cardStrokeDark</item>
         <item name="ripple_color">@color/rippleColorDark</item>
         <item name="main_background">@color/mainBackgroundDark</item>
         <item name="ripple_accent">@color/rippleAccentDark</item>

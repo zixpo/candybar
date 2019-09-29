@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +26,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.google.android.material.card.MaterialCardView;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -203,7 +203,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 recyclerView.setAdapter(new AboutSocialAdapter(mContext, urls));
             }
 
-            CardView card = itemView.findViewById(R.id.card);
+            MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getAboutStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT &&
                     card != null) {
                 if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
@@ -217,6 +217,18 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                         params.setMarginEnd(margin);
                     }
                 }
+            }
+
+            if (mContext.getResources().getBoolean(R.bool.use_flat_card) && card != null) {
+                card.setStrokeWidth(mContext.getResources().getDimensionPixelSize(R.dimen.card_stroke_width));
+                card.setCardElevation(0);
+                card.setUseCompatPadding(false);
+                int marginTop = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_top);
+                int marginLeft = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_left);
+                int marginRight = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_right);
+                int marginBottom = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_bottom);
+                StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
+                params.setMargins(marginLeft, marginTop, marginRight, marginBottom);
             }
 
             if (!Preferences.get(mContext).isCardShadowEnabled()) {
@@ -241,7 +253,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             LinearLayout termsHolder = itemView.findViewById(R.id.terms);
             TextView termsTitle = itemView.findViewById(R.id.terms_title);
 
-            CardView card = itemView.findViewById(R.id.card);
+            MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getAboutStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT &&
                     card != null) {
                 if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
@@ -255,6 +267,18 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                         params.setMarginEnd(margin);
                     }
                 }
+            }
+
+            if (mContext.getResources().getBoolean(R.bool.use_flat_card) && card != null) {
+                card.setStrokeWidth(mContext.getResources().getDimensionPixelSize(R.dimen.card_stroke_width));
+                card.setCardElevation(0);
+                card.setUseCompatPadding(false);
+                int marginTop = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_top);
+                int marginLeft = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_left);
+                int marginRight = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_right);
+                int marginBottom = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_bottom);
+                StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
+                params.setMargins(marginLeft, marginTop, marginRight, marginBottom);
             }
 
             if (!Preferences.get(mContext).isCardShadowEnabled()) {
@@ -316,7 +340,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             TextView contributors = itemView.findViewById(R.id.about_dashboard_contributors);
             TextView translator = itemView.findViewById(R.id.about_dashboard_translator);
 
-            CardView card = itemView.findViewById(R.id.card);
+            MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getAboutStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT &&
                     card != null) {
                 if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
@@ -330,6 +354,18 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                         params.setMarginEnd(margin);
                     }
                 }
+            }
+
+            if (mContext.getResources().getBoolean(R.bool.use_flat_card) && card != null) {
+                card.setStrokeWidth(mContext.getResources().getDimensionPixelSize(R.dimen.card_stroke_width));
+                card.setCardElevation(0);
+                card.setUseCompatPadding(false);
+                int marginTop = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_top);
+                int marginLeft = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_left);
+                int marginRight = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_right);
+                int marginBottom = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin_bottom);
+                StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
+                params.setMargins(marginLeft, marginTop, marginRight, marginBottom);
             }
 
             if (!Preferences.get(mContext).isCardShadowEnabled()) {

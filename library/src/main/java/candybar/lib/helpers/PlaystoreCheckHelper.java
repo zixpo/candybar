@@ -15,6 +15,8 @@ import candybar.lib.preferences.Preferences;
 public class PlaystoreCheckHelper {
 
     public Context mContext;
+    private static String contentString;
+    private static boolean checkPassed;
 
     public PlaystoreCheckHelper(Context context) {
         mContext = context;
@@ -24,8 +26,6 @@ public class PlaystoreCheckHelper {
         if (mContext.getResources().getBoolean(R.bool.playstore_check_enabled)) {
             PackageManager pm = mContext.getPackageManager();
             String installerPackage = pm.getInstallerPackageName(mContext.getPackageName());
-            String contentString;
-            boolean checkPassed;
 
             if (installerPackage == null || !installerPackage.contentEquals("com.android.vending")) {
                 ComponentName compName = new ComponentName(mContext.getPackageName(), mContext.getPackageName() + ".alias.Intent");
@@ -40,18 +40,26 @@ public class PlaystoreCheckHelper {
                 checkPassed = true;
             }
 
-            new MaterialDialog.Builder(mContext)
-                    .typeface(
-                            TypefaceHelper.getMedium(mContext),
-                            TypefaceHelper.getRegular(mContext))
-                    .title(R.string.playstore_check)
-                    .content(contentString)
-                    .positiveText(R.string.close)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .onPositive((dialog, which) -> onPlaystoreChecked(checkPassed))
-                    .show();
+            if (!checkPassed) {
+                showDialog(mContext);
+            } else if (Preferences.get(mContext).isFirstRun()) {
+                showDialog(mContext);
+            }
         }
+    }
+
+    private void showDialog(Context context) {
+        new MaterialDialog.Builder(mContext)
+                .typeface(
+                        TypefaceHelper.getMedium(mContext),
+                        TypefaceHelper.getRegular(mContext))
+                .title(R.string.playstore_check)
+                .content(contentString)
+                .positiveText(R.string.close)
+                .cancelable(false)
+                .canceledOnTouchOutside(false)
+                .onPositive((dialog, which) -> onPlaystoreChecked(checkPassed))
+                .show();
     }
 
     private void onPlaystoreChecked(boolean success) {
