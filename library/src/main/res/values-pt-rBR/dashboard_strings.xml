@@ -198,9 +198,32 @@
     <string name="pref_premium_request_restore_empty">Você não tem nenhum pacote comprado</string>
     <string name="pref_premium_request_rebuild">Recriar solicitação de ícone Premium</string>
     <string name="pref_premium_request_rebuild_desc">Colete todos os dados de solicitação de ícone premium para reenviá-los</string>
+    <string name="pref_theme_header">Tema</string>
+    <string name="pref_theme_dark">Tema Escuro</string>
+    <string name="pref_theme_dark_desc">Usar cor escura para o tema do aplicativo</string>
+    <string name="pref_wallpaper_header">Papel de Parede</string>
+    <string name="pref_wallpaper_location">Local para salvar o Papel de Parede</string>
+    <string name="pref_language_header">Linguagem</string>
+    <string name="pref_others_header">Outros</string>
+    <string name="pref_others_report_bugs">Reportar Erros</string>
+    <string name="pref_others_changelog">Changelog</string>
+    <string name="pref_others_reset_tutorial">Reiniciar Tutorial</string>
+    <string name="pref_others_reset_tutorial_reset">Tutorial Reinicializado</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Permissão de armazenamento necessária para salvar o papel de parede</string>
     <!-- Intent -->
+    <string name="app_client">Escolher Aplicativo</string>
+    <string name="no_email_app">Nenhum aplicativo para enviar e-mail</string>
+    <string name="no_browser">Nenhum aplicativo para abrir url</string>
+    <string name="intent_email_failed">Não foi possível exibir o aplicativo de e-mail</string>
+    <string name="intent_email_supported">Suportado</string>
+    <string name="intent_email_recommended">Recomendado</string>
+    <string name="intent_email_not_supported">Não Suportado</string>
+    <string name="intent_email_not_supported_message">Selecionado um cliente de e-mail não suportado, selecione outro cliente de e-mail</string>
     <!-- About -->
+    <string name="about_contributors_title">Contribuidores</string>
+    <string name="about_privacy_policy_title">Política de Privacidade</string>
+    <string name="about_terms_and_conditions_title">Termos e Condições</string>
     <!-- Report Bugs -->
     <!-- Support Development -->
     <!-- Crash Report -->
