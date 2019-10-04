@@ -137,12 +137,36 @@
     <string name="connection_error_long">Não foi possível carregar dados do servidor. Por favor, verifique sua conexão de rede.</string>
     <string name="request_limit">Você só pode fazer %d pedido(s) com solicitação regular.</string>
     <string name="request_used">Você solicitou %d ícone(s).</string>
+    <string name="request_limit_buy">Você pode comprar pedidos Premium para solicitar mais ícones.</string>
+    <string name="request_limit_reset">O limite de solicitação de ícone será redefinido em cada atualização.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Pedido de ícone regular</string>
+    <string name="regular_request_desc">Obtenha seu ícone solicitado e o desenvolvedor tentará incluir ícones que você solicitou.</string>
+    <string name="regular_request_count">Total\n%d pedido(s)</string>
+    <string name="regular_request_used">Usado\n%d pedido(s)</string>
+    <string name="regular_request_available">Disponível\n%d pedido(s)</string>
     <!-- Premium Request -->
+    <string name="premium_request">Pedido de ícone Premium</string>
+    <string name="premium_request_no_internet">Certifique-se de que seu telefone está conectado à internet antes de enviar uma solicitação Premium</string>
+    <string name="premium_request_desc">Pedido de ícone Premium é pago para solicitar. Você pode obter seus aplicativos solicitados mais rapidamente usando a solicitação de ícone Premium.</string>
+    <string name="premium_request_buy">Comprar</string>
+    <string name="premium_request_count">Total\n%d pedido(s)</string>
+    <string name="premium_request_used">Usado\n%d pedido(s)</string>
+    <string name="premium_request_available">Disponível\n%d pedido(s)</string>
+    <string name="premium_request_already_purchased">Você ainda tem %d pedido premium.
+        Você precisa usar todos eles antes de comprar um pacote de solicitação premium novamente.</string>
+    <string name="premium_request_limit">Você só tem %d pedido(s) premium,</string>
+    <string name="premium_request_limit1">mas você selecionou %d app(s).
+        \n\nVocê precisa usar todas as suas solicitações premium antes de usar o pedido regular novamente.</string>
+    <string name="premium_request_consume_failed">Não foi possível usar a solicitação Premium, certifique-se de que você tem uma conexão estável com a internet e tente novamente.
+        Vá para configurações para recriar as solicitações Premium.</string>
+    <string name="premium_request_rebuilding">Recriando pedido Premium …</string>
+    <string name="premium_request_rebuilding_empty">Você não fez uma solicitação Premium</string>
     <!-- Wallpapers -->
     <string name="wallpaper_apply">Aplicar o papel de parede</string>
     <string name="wallpaper_save_to_device">Salvar o papel de parede</string>
     <!-- Preferences -->
+    <string name="pref_premium_request_header">Pedido de ícone Premium</string>
     <!-- Permission -->
     <!-- Intent -->
     <!-- About -->
