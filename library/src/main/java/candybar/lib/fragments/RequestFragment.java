@@ -580,8 +580,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 if (appVersionCode < disabledReqBelow) canRequest = false;
                 String[] disabledReqOns = disabledReqOn.split("[\\s,]");
                 for (String version : disabledReqOns) {
-                    //Log.d("Disabled Versions", version);
-                    //Log.d("Disabled Version Length", version.length() + "");
+                    //LogUtil.d("Disabled Versions", version);
+                    //LogUtil.d("Disabled Version Length", version.length() + "");
                     if ((appVersionCode + "").contentEquals(version)) canRequest = false;
                 }
 

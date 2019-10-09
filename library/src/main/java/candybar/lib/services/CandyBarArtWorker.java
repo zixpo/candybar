@@ -3,7 +3,6 @@ package candybar.lib.services;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
-import android.util.Log;
 import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
@@ -15,6 +14,7 @@ import androidx.work.WorkRequest;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.apps.muzei.api.provider.Artwork;
 import com.google.android.apps.muzei.api.provider.ProviderClient;
 import com.google.android.apps.muzei.api.provider.ProviderContract;
@@ -51,9 +51,9 @@ public class CandyBarArtWorker extends Worker {
     @Override
     @NonNull
     public Result doWork() {
-        Log.d("CandyBar", "Executing doWork() for Muzei");
+        LogUtil.d("Executing doWork() for Muzei");
         if (!URLUtil.isValidUrl(mContext.getString(R.string.wallpaper_json))) {
-            Log.e("CandyBar", "Not a valid Wallpaper JSON URL");
+            LogUtil.e("Not a valid Wallpaper JSON URL");
             return Result.failure();
         }
 
@@ -77,14 +77,14 @@ public class CandyBarArtWorker extends Worker {
                     if (!artworks.contains(artwork)) {
                         artworks.add(artwork);
                     } else {
-                        Log.d("CandyBar", "Already Contains Artwork" + wallpaper.getName());
+                        LogUtil.d("Already Contains Artwork" + wallpaper.getName());
                     }
                 } else {
-                    Log.d("CandyBar", "Wallpaper is Null");
+                    LogUtil.d("Wallpaper is Null");
                 }
             }
 
-            Log.d("CandyBar", "Closing Database - Muzei");
+            LogUtil.d("Closing Database - Muzei");
             Database.get(mContext).closeDatabase();
 
             providerClient.setArtwork(artworks);

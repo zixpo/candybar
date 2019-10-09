@@ -186,7 +186,7 @@ public class ApplyFragment extends Fragment {
                         String lowercaseLauncherName = launcherNames[i].toLowerCase().replaceAll(" ", "_");
 
                         if (!showable.contains(lowercaseLauncherName)) {
-                            Log.d("Launcher Excluded", lowercaseLauncherName);
+                            LogUtil.d("Launcher Excluded: " + lowercaseLauncherName);
                             continue;
                         }
 

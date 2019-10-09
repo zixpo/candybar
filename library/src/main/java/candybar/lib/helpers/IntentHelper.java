@@ -40,14 +40,14 @@ public class IntentHelper {
     public static int getAction(@Nullable Intent intent) {
         /*
         if (intent != null) {
-            Log.d("CandyBar Intent", "Action - " + intent.getAction());
-            Log.d("CandyBar Intent", "Data - " + intent.getData());
-            Log.d("CandyBar Intent", "Data String - " + intent.getDataString());
-            Log.d("CandyBar Intent", "Package - " + intent.getPackage());
-            Log.d("CandyBar Intent", "Scheme - " + intent.getScheme());
-            Log.d("CandyBar Intent", "Type - " + intent.getType());
+            LogUtil.d("CandyBar Intent", "Action - " + intent.getAction());
+            LogUtil.d("CandyBar Intent", "Data - " + intent.getData());
+            LogUtil.d("CandyBar Intent", "Data String - " + intent.getDataString());
+            LogUtil.d("CandyBar Intent", "Package - " + intent.getPackage());
+            LogUtil.d("CandyBar Intent", "Scheme - " + intent.getScheme());
+            LogUtil.d("CandyBar Intent", "Type - " + intent.getType());
         } else {
-            Log.d("CandyBar Intent", "Got Null Intent");
+            LogUtil.d("CandyBar Intent", "Got Null Intent");
         }*/
 
         if (intent == null) return ACTION_DEFAULT;

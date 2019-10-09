@@ -62,7 +62,7 @@ public class JsonHelper {
             Map map = (Map) object;
             return Wallpaper.Builder()
                     .name((String) map.get(jsonStructure.getName()))
-                    .author((String) map.get(jsonStructure.getAuthor()))
+                    .author(getAuthor(map))
                     .url((String) map.get(jsonStructure.getUrl()))
                     .thumbUrl(getThumbUrl(map))
                     .build();
@@ -78,5 +78,14 @@ public class JsonHelper {
         String thumbUrl = (String) map.get(jsonStructure.getThumbUrl());
         if (thumbUrl == null) return url;
         return thumbUrl;
+    }
+
+    public static String getAuthor(@NonNull Map map) {
+        JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
+        String defaultAuthorName = "";
+
+        String authorName = (String) map.get(jsonStructure.getAuthor());
+        if (authorName == null) return defaultAuthorName;
+        return authorName;
     }
 }

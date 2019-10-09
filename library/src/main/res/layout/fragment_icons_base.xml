@@ -21,7 +21,8 @@
         app:tabTextColor="?attr/tab_text"
         app:tabIndicatorHeight="3dp"
         app:tabPadding="@dimen/content_padding"
-        app:tabMode="scrollable" />
+        app:tabMode="scrollable"
+        app:tabRippleColor="?colorAccent" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"

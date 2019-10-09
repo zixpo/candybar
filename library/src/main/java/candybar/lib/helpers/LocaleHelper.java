@@ -108,9 +108,9 @@ public class LocaleHelper {
             ComponentName componentName = new ComponentName(packageName, activityName);
 
             /*
-            Log.d("CandyBar", "Full Component Name: " + fullComponentName);
-            Log.d("CandyBar", "Activity Name: " + activityName);
-            Log.d("CandyBar", "Package Name: " + packageName);*/
+            LogUtil.d("CandyBar", "Full Component Name: " + fullComponentName);
+            LogUtil.d("CandyBar", "Activity Name: " + activityName);
+            LogUtil.d("CandyBar", "Package Name: " + packageName);*/
 
             PackageManager packageManager = context.getPackageManager();
             ActivityInfo info = packageManager.getActivityInfo(componentName, PackageManager.GET_META_DATA);

@@ -440,7 +440,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                             @Override
                             public void onFailed(AppUpdaterError error) {
-                                Log.d("AppUpdater Error", "Something went wrong");
+                                LogUtil.e("Something went wrong with AppUpdater");
                             }
                         }).start();
             }

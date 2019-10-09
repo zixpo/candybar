@@ -90,7 +90,7 @@ public class DrawableHelper {
                     appResources, appInfo.icon, density, null);
 
             if (drawable != null) return drawable;
-            Log.e("CandyBar", "DrawableHelper - drawable is null");
+            LogUtil.e("DrawableHelper - drawable is null");
         } catch (Exception | OutOfMemoryError e) {
             LogUtil.e(Log.getStackTraceString(e));
         }
@@ -99,18 +99,18 @@ public class DrawableHelper {
 
     public static Bitmap getRightIcon(Drawable drawable) {
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
-            Log.d("CandyBar", "Made Normal Icon in Low SDK");
+            LogUtil.d("Made Normal Icon in Low SDK");
             return ((BitmapDrawable) drawable).getBitmap();
         } else {
             if (drawable instanceof BitmapDrawable) {
-                Log.d("CandyBar", "Made Normal Icon in High SDK");
+                LogUtil.d("Made Normal Icon in High SDK");
                 return ((BitmapDrawable) drawable).getBitmap();
             } else if (drawable instanceof AdaptiveIconDrawable) {
                 AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
                 AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
                 adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
                 Bitmap iconBitmap = adaptiveIcon.render();
-                Log.d("CandyBar", "Made Adaptive Icon in High SDK");
+                LogUtil.d("Made Adaptive Icon in High SDK");
                 return iconBitmap;
             }
         }

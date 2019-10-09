@@ -155,7 +155,7 @@
     * just put your wallpaper app package name here
     * example: com.dm.wallpaper.board.demo
     * <string name="wallpaper_json">com.dm.wallpaper.board.demo</string> -->
-    <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/wallpapers.json</string>
+    <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/walls_alt.json</string>
 
     <!-- Allow to download wallpaper
     * If disabled user only able to apply wallpaper from dashboard -->
