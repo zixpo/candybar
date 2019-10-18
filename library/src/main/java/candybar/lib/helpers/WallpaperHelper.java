@@ -85,10 +85,6 @@ public class WallpaperHelper {
     public static File getDefaultWallpapersDirectory(@NonNull Context context) {
         try {
             if (Preferences.get(context).getWallsDirectory().length() == 0) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    return new File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES) + "/" +
-                            context.getResources().getString(R.string.app_name));
-                }
                 return new File(Environment.getExternalStoragePublicDirectory(
                         Environment.DIRECTORY_PICTURES) + "/" +
                         context.getResources().getString(R.string.app_name));

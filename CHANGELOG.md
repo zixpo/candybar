@@ -1,3 +1,6 @@
+# v3.5.0-beta.6.6
+- Fix wallpaper download bug with Android 10.
+
 # v3.5.0-beta.6.5
 - Fix Playstore check.
 - New Outline Styled Card.

@@ -4,6 +4,7 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
 import android.util.Log;
 import android.webkit.URLUtil;
 
@@ -58,13 +59,13 @@ public class WallpaperDownloader {
         String fileName = mWallpaper.getName() + "." + WallpaperHelper.getFormat(mWallpaper.getMimeType());
         File directory = WallpaperHelper.getDefaultWallpapersDirectory(mContext);
         File target = new File(directory, fileName);
-        if (!directory.exists()) {
+        /*if (!directory.exists()) {
             if (!directory.mkdirs()) {
                 LogUtil.e("Unable to create directory " + directory.toString());
                 showCafeBar(R.string.wallpaper_download_failed);
                 return;
             }
-        }
+        }*/
 
         if (WallpaperHelper.isWallpaperSaved(mContext, mWallpaper)) {
             CafeBar.builder(mContext)
@@ -102,7 +103,10 @@ public class WallpaperDownloader {
         request.setTitle(fileName);
         request.setDescription(mContext.getResources().getString(R.string.wallpaper_downloading));
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationUri(Uri.fromFile(target));
+        //request.setDestinationUri(Uri.fromFile(target));
+        request.setDestinationInExternalPublicDir(
+                Environment.DIRECTORY_PICTURES,
+                "/" + mContext.getResources().getString(R.string.app_name) + "/" + fileName);
 
         DownloadManager downloadManager = (DownloadManager) mContext.getSystemService(Context.DOWNLOAD_SERVICE);
 

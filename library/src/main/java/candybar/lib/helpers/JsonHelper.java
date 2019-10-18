@@ -74,13 +74,17 @@ public class JsonHelper {
         JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
         String url = (String) map.get(jsonStructure.getUrl());
         if (jsonStructure.getThumbUrl() == null) return url;
+        String[] thumbUrlSelectors = {"thumb", "thumbnail", "thumbUrl", "url-thumb", "urlThumb"};
 
         String thumbUrl = (String) map.get(jsonStructure.getThumbUrl());
+        for (String selector : thumbUrlSelectors) {
+            if (thumbUrl == null) thumbUrl = (String) map.get(selector);
+        }
         if (thumbUrl == null) return url;
         return thumbUrl;
     }
 
-    public static String getAuthor(@NonNull Map map) {
+    private static String getAuthor(@NonNull Map map) {
         JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
         String defaultAuthorName = "";
 
