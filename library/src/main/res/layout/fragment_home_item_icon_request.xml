@@ -35,11 +35,23 @@
             android:text="@string/navigation_view_request"
             fontPath="fonts/Font-Medium.ttf" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="visible" />
+
         <LinearLayout
+            android:id="@+id/dataContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="@dimen/content_margin">
+            android:layout_marginTop="@dimen/content_margin"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/installed_apps"

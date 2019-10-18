@@ -101,8 +101,6 @@ public class WallpaperDownloader {
         request.setMimeType(mWallpaper.getMimeType());
         request.setTitle(fileName);
         request.setDescription(mContext.getResources().getString(R.string.wallpaper_downloading));
-        request.allowScanningByMediaScanner();
-        request.setVisibleInDownloadsUi(false);
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationUri(Uri.fromFile(target));
 

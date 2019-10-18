@@ -106,7 +106,6 @@ public class IconsBaseFragment extends Fragment {
         MenuItem iconShape = menu.findItem(R.id.menu_icon_shape);
 
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
-
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
                 FragmentManager fm = getActivity().getSupportFragmentManager();
@@ -143,7 +142,7 @@ public class IconsBaseFragment extends Fragment {
                             }
                         }).start();
 
-                return false;
+                return true;
             }
 
             @Override
@@ -157,12 +156,9 @@ public class IconsBaseFragment extends Fragment {
             iconShape.setVisible(false);
         }
 
-        iconShape.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                IconShapeFragment.showIconShapeChooser(getActivity().getSupportFragmentManager());
-                return false;
-            }
+        iconShape.setOnMenuItemClickListener(menuItem -> {
+            IconShapeFragment.showIconShapeChooser(getActivity().getSupportFragmentManager());
+            return false;
         });
     }
 

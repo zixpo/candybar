@@ -99,18 +99,15 @@ public class DrawableHelper {
 
     public static Bitmap getRightIcon(Drawable drawable) {
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
-            LogUtil.d("Made Normal Icon in Low SDK");
             return ((BitmapDrawable) drawable).getBitmap();
         } else {
             if (drawable instanceof BitmapDrawable) {
-                LogUtil.d("Made Normal Icon in High SDK");
                 return ((BitmapDrawable) drawable).getBitmap();
             } else if (drawable instanceof AdaptiveIconDrawable) {
                 AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
                 AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
                 adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
                 Bitmap iconBitmap = adaptiveIcon.render();
-                LogUtil.d("Made Adaptive Icon in High SDK");
                 return iconBitmap;
             }
         }

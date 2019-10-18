@@ -32,7 +32,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.webkit.MimeTypeMap;
 
 import com.nostra13.universalimageloader.Data;
@@ -334,18 +333,15 @@ public class BaseImageDownloader implements ImageDownloader {
 
     private static Bitmap getRightIcon(Drawable drawable) {
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
-            Log.d("UIL", "Made Normal Icon in Low SDK");
             return ((BitmapDrawable) drawable).getBitmap();
         } else {
             if (drawable instanceof BitmapDrawable) {
-                Log.d("UIL", "Made Normal Icon in High SDK");
                 return ((BitmapDrawable) drawable).getBitmap();
             } else if (drawable instanceof AdaptiveIconDrawable) {
                 AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
                 AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
                 adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
                 Bitmap iconBitmap = adaptiveIcon.render();
-                Log.d("UIL", "Made Adaptive Icon in High SDK");
                 return iconBitmap;
             }
         }

@@ -53,6 +53,7 @@ public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
 
     private final WeakReference<Context> mContext;
     private Extras.Error mError;
+    public static boolean isLoading;
 
     private IconRequestTask(Context context) {
         mContext = new WeakReference<>(context);
@@ -63,6 +64,7 @@ public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
     }
 
     public static AsyncTask start(@NonNull Context context, @NonNull Executor executor) {
+        isLoading = true;
         return new IconRequestTask(context).executeOnExecutor(executor);
     }
 
@@ -143,6 +145,8 @@ public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
         if (((AppCompatActivity) mContext.get()).isFinishing()) return;
 
         if (aBoolean) {
+            isLoading = false;
+
             FragmentManager fm = ((AppCompatActivity) mContext.get()).getSupportFragmentManager();
             if (fm == null) return;
 

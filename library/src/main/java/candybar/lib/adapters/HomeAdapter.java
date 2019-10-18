@@ -52,6 +52,7 @@ import candybar.lib.helpers.ViewHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.tasks.IconRequestTask;
 import candybar.lib.utils.ImageConfig;
 import candybar.lib.utils.views.HeaderView;
 import me.grantland.widget.AutofitTextView;
@@ -215,6 +216,14 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
 
             if (mHomes.get(finalPosition).getType() == Home.Type.ICONS) {
+                if (mHomes.get(finalPosition).isLoading() && CandyBarMainActivity.sIconsCount == 0) {
+                    contentViewHolder.progressBar.setVisibility(View.VISIBLE);
+                    contentViewHolder.autoFitTitle.setVisibility(View.GONE);
+                } else {
+                    contentViewHolder.progressBar.setVisibility(View.GONE);
+                    contentViewHolder.autoFitTitle.setVisibility(View.VISIBLE);
+                }
+
                 contentViewHolder.autoFitTitle.setSingleLine(true);
                 contentViewHolder.autoFitTitle.setMaxLines(1);
                 contentViewHolder.autoFitTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX,
@@ -237,6 +246,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
         } else if (holder.getItemViewType() == TYPE_ICON_REQUEST) {
             IconRequestViewHolder iconRequestViewHolder = (IconRequestViewHolder) holder;
+            if (IconRequestTask.isLoading) {
+                iconRequestViewHolder.dataContainer.setVisibility(View.GONE);
+                iconRequestViewHolder.progressBar.setVisibility(View.VISIBLE);
+            } else {
+                iconRequestViewHolder.dataContainer.setVisibility(View.VISIBLE);
+                iconRequestViewHolder.progressBar.setVisibility(View.GONE);
+            }
 
             int installed = CandyBarMainActivity.sInstalledAppsCount;
             int missed = CandyBarMainActivity.sMissedApps == null ?
@@ -452,12 +468,14 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private final TextView subtitle;
         private final AutofitTextView autoFitTitle;
         private final LinearLayout container;
+        private final ProgressBar progressBar;
 
         ContentViewHolder(View itemView) {
             super(itemView);
             container = itemView.findViewById(R.id.container);
             autoFitTitle = itemView.findViewById(R.id.title);
             subtitle = itemView.findViewById(R.id.subtitle);
+            progressBar = itemView.findViewById(R.id.progressBar);
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {
@@ -532,6 +550,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private final TextView missedApps;
         private final LinearLayout container;
         private final ProgressBar progress;
+        private final ProgressBar progressBar;
+        private final LinearLayout dataContainer;
 
         IconRequestViewHolder(View itemView) {
             super(itemView);
@@ -541,6 +561,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             themedApps = itemView.findViewById(R.id.themed_apps);
             progress = itemView.findViewById(R.id.progress);
             container = itemView.findViewById(R.id.container);
+            progressBar = itemView.findViewById(R.id.progressBar);
+            dataContainer = itemView.findViewById(R.id.dataContainer);
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {

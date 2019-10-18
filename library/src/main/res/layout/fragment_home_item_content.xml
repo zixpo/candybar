@@ -24,6 +24,14 @@
         android:background="?attr/selectableItemBackground"
         android:theme="@style/RippleStyle">
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:visibility="gone" />
+
         <me.grantland.widget.AutofitTextView
             android:id="@+id/title"
             android:layout_width="match_parent"

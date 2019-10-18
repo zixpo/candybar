@@ -186,11 +186,13 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             if (urls.length == 0) {
                 recyclerView.setVisibility(View.GONE);
 
-                subtitle.setPadding(
-                        subtitle.getPaddingLeft(),
-                        subtitle.getPaddingTop(),
-                        subtitle.getPaddingRight(),
-                        subtitle.getPaddingBottom() + mContext.getResources().getDimensionPixelSize(R.dimen.content_margin));
+                if (subtitle != null) {
+                    subtitle.setPadding(
+                            subtitle.getPaddingLeft(),
+                            subtitle.getPaddingTop(),
+                            subtitle.getPaddingRight(),
+                            subtitle.getPaddingBottom() + mContext.getResources().getDimensionPixelSize(R.dimen.content_margin));
+                }
             } else {
                 if (recyclerView.getLayoutParams() instanceof LinearLayout.LayoutParams) {
                     LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) recyclerView.getLayoutParams();

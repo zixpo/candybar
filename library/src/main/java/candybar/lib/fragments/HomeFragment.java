@@ -98,6 +98,7 @@ public class HomeFragment extends Fragment implements HomeListener {
                 int index = adapter.getIconsIndex();
                 if (index >= 0 && index < adapter.getItemCount()) {
                     adapter.getItem(index).setTitle(String.valueOf(CandyBarMainActivity.sIconsCount));
+                    adapter.getItem(index).setLoading(false);
                     adapter.notifyItemChanged(index);
                 }
             }
@@ -143,7 +144,8 @@ public class HomeFragment extends Fragment implements HomeListener {
                     String.format(getActivity().getResources().getString(R.string.home_apply_icon_pack),
                             getActivity().getResources().getString(R.string.app_name)),
                     "",
-                    Home.Type.APPLY));
+                    Home.Type.APPLY,
+                    false));
         }
 
         if (getActivity().getResources().getBoolean(R.bool.enable_donation)) {
@@ -151,7 +153,8 @@ public class HomeFragment extends Fragment implements HomeListener {
                     R.drawable.ic_toolbar_donate,
                     getActivity().getResources().getString(R.string.home_donate),
                     getActivity().getResources().getString(R.string.home_donate_desc),
-                    Home.Type.DONATE));
+                    Home.Type.DONATE,
+                    false));
         }
 
         homes.add(new Home(
@@ -160,7 +163,8 @@ public class HomeFragment extends Fragment implements HomeListener {
                         String.valueOf(CandyBarMainActivity.sIconsCount) :
                         String.valueOf(CandyBarApplication.getConfiguration().getCustomIconsCount()),
                 getActivity().getResources().getString(R.string.home_icons),
-                Home.Type.ICONS));
+                Home.Type.ICONS,
+                true));
 
         if (CandyBarMainActivity.sHomeIcon != null) {
             homes.add(CandyBarMainActivity.sHomeIcon);

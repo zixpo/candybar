@@ -29,12 +29,14 @@ public class Home {
     private String mTitle;
     private final String mSubtitle;
     private final Home.Type mType;
+    private boolean mLoading;
 
-    public Home(@DrawableRes int icon, String title, String subtitle, @NonNull Home.Type type) {
+    public Home(@DrawableRes int icon, String title, String subtitle, @NonNull Home.Type type, boolean loading) {
         mIcon = icon;
         mTitle = title;
         mSubtitle = subtitle;
         mType = type;
+        mLoading = loading;
     }
 
     @DrawableRes
@@ -54,8 +56,16 @@ public class Home {
         return mType;
     }
 
+    public boolean isLoading() {
+        return mLoading;
+    }
+
     public void setTitle(String title) {
         mTitle = title;
+    }
+
+    public void setLoading(boolean loading) {
+        mLoading = loading;
     }
 
     public enum Type {

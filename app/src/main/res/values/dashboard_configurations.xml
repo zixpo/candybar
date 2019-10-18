@@ -60,6 +60,9 @@
     * If you don't want to show this part, just leave this empty -->
     <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
 
+    <!-- If you want to use flat cards instead -->
+    <bool name="use_flat_card">true</bool>
+
     <!-- CONFIG: NAVIGATION VIEW HEADER -->
 
     <!-- Navigation view header image
@@ -125,7 +128,7 @@
     <bool name="reset_icon_request_limit">true</bool>
 
     <!-- Enable JSON Data check before Requesting Icons -->
-    <bool name="json_check_before_request">false</bool>
+    <bool name="json_check_before_request">true</bool>
 
     <!-- Enable or disable premium request
     * default: false
@@ -248,7 +251,7 @@
     <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
 
     <!-- CandyBar Config JSON Link -->
-    <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config.json</string>
+    <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config_alt.json</string>
 
     <!-- Privacy Policy Link. Set Blank to Disable -->
     <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
@@ -261,7 +264,5 @@
 
     <!-- Show Intro Guides on First Run -->
     <bool name="show_intro">false</bool>
-
-    <bool name="use_flat_card">true</bool>
 
 </resources>

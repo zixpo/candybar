@@ -144,7 +144,8 @@ public class IconsLoaderTask extends AsyncTask<Void, Void, Boolean> {
                         icon.getRes(),
                         icon.getTitle(),
                         iconDimension,
-                        Home.Type.DIMENSION);
+                        Home.Type.DIMENSION,
+                        false);
                 CandyBarMainActivity.sHomeIcon = mHome;
                 return true;
             } catch (Exception e) {
