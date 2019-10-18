@@ -46,7 +46,6 @@ public class Preferences {
     private static final String KEY_DARK_THEME = "dark_theme";
     private static final String KEY_ICON_SHAPE = "icon_shape";
     private static final String KEY_APP_VERSION = "app_version";
-    private static final String KEY_ICON_NUM = "icon_number";
     private static final String KEY_WIFI_ONLY = "wifi_only";
     private static final String KEY_WALLS_DIRECTORY = "wallpaper_directory";
     private static final String KEY_PREMIUM_REQUEST = "premium_request";
@@ -111,14 +110,6 @@ public class Preferences {
 
     public int getIconShape() {
         return getSharedPreferences().getInt(KEY_ICON_SHAPE, AdaptiveIcon.PATH_CIRCLE);
-    }
-
-    public void setIconNumber(int num) {
-        getSharedPreferences().edit().putInt(KEY_ICON_NUM, num).apply();
-    }
-
-    public int getIconNumber(int num) {
-        return getSharedPreferences().getInt(KEY_ICON_NUM, num);
     }
 
     public boolean isTimeToShowHomeIntro() {

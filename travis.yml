@@ -1,0 +1,35 @@
+sudo: false
+install: true
+language: android
+jdk: oraclejdk8
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-29.0.0
+    - android-29
+    - extra-android-support
+    - extra-google-google_play_services
+    - extra-android-m2repository
+    - extra-google-m2repository
+
+  licenses:
+    - '.+'
+
+branches:
+  only:
+    - master
+
+before_install:
+  - chmod +x gradlew
+  - ./gradlew dependencies || true
+
+script:
+  # Build App
+  - ./gradlew clean :app:assembleRelease --stacktrace
+
+after_script:
+  - chmod +x sign-apk.sh
+  - bash ./sign-apk.sh
+  - chmod +x send-to-telegram.sh
+  - bash ./send-to-telegram.sh
