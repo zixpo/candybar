@@ -1,5 +1,7 @@
 # v3.5.0-beta.6.6
-- Fix wallpaper download bug with Android 10.
+- Fix wallpaper download issue with Android 10.
+- Show Loader while icon are being loaded.
+- Minor Fixes
 
 # v3.5.0-beta.6.5
 - Fix Playstore check.
