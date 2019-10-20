@@ -144,7 +144,7 @@ public class LauncherHelper {
             case "com.universallauncher.universallauncher":
                 return FLICK;
             case "com.blackberry.blackberrylauncher":
-                return FLICK;
+                return BLACKBERRY;
             default:
                 return UNKNOWN;
         }
