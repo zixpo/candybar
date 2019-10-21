@@ -1,14 +1,17 @@
 package candybar.lib.helpers;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.danimahardhika.android.helpers.core.FileHelper;
+
+import java.io.File;
 
 import candybar.lib.R;
+import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.fragments.dialog.ChangelogFragment;
 import candybar.lib.preferences.Preferences;
 
@@ -18,59 +21,73 @@ public class PlaystoreCheckHelper {
     private static String contentString;
     private static boolean checkPassed;
 
+    /*private boolean isTest = true, testPass = true;*/
+
     public PlaystoreCheckHelper(Context context) {
         mContext = context;
     }
 
     public void run() {
+        /*if (isTest) {
+            if (testPass) {
+                contentString = mContext.getResources().getString(R.string.playstore_check_success);
+                checkPassed = true;
+            } else {
+                contentString = mContext.getResources().getString(R.string.playstore_check_failed);
+                checkPassed = false;
+            }
+            onPlaystoreChecked(checkPassed);
+            return;
+        }*/
         if (mContext.getResources().getBoolean(R.bool.playstore_check_enabled)) {
             PackageManager pm = mContext.getPackageManager();
             String installerPackage = pm.getInstallerPackageName(mContext.getPackageName());
 
             if (installerPackage == null || !installerPackage.contentEquals("com.android.vending")) {
-                ComponentName compName = new ComponentName(mContext.getPackageName(), mContext.getPackageName() + ".alias.Intent");
-                pm.setComponentEnabledSetting(
-                        compName,
-                        PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                        PackageManager.DONT_KILL_APP);
+                CandyBarMainActivity.toggleIntent(mContext, false);
                 contentString = mContext.getResources().getString(R.string.playstore_check_failed);
                 checkPassed = false;
             } else {
+                CandyBarMainActivity.toggleIntent(mContext, true);
                 contentString = mContext.getResources().getString(R.string.playstore_check_success);
                 checkPassed = true;
             }
 
-            if (!checkPassed) {
-                showDialog(mContext);
-            } else if (Preferences.get(mContext).isFirstRun()) {
-                showDialog(mContext);
-            }
+            onPlaystoreChecked(checkPassed);
         }
     }
 
-    private void showDialog(Context context) {
-        new MaterialDialog.Builder(mContext)
+    private void doIfNewVersion() {
+        if (Preferences.get(mContext).isNewVersion()) {
+            ChangelogFragment.showChangelog(((AppCompatActivity) mContext).getSupportFragmentManager());
+            File cache = mContext.getCacheDir();
+            FileHelper.clearDirectory(cache);
+        }
+    }
+
+    private void onPlaystoreChecked(boolean success) {
+        MaterialDialog.Builder dialog = new MaterialDialog.Builder(mContext)
                 .typeface(
                         TypefaceHelper.getMedium(mContext),
                         TypefaceHelper.getRegular(mContext))
                 .title(R.string.playstore_check)
                 .content(contentString)
                 .positiveText(R.string.close)
+                .onPositive((dial, which) -> {
+                    Preferences.get(mContext).setFirstRun(false);
+                    doIfNewVersion();
+                })
                 .cancelable(false)
-                .canceledOnTouchOutside(false)
-                .onPositive((dialog, which) -> onPlaystoreChecked(checkPassed))
-                .show();
-    }
+                .canceledOnTouchOutside(false);
 
-    private void onPlaystoreChecked(boolean success) {
         if (success) {
-            Preferences.get(mContext).setFirstRun(false);
-            Preferences.get(mContext).setLicensed(true);
-            if (Preferences.get(mContext).isNewVersion())
-                ChangelogFragment.showChangelog(((AppCompatActivity) mContext).getSupportFragmentManager());
+            if (Preferences.get(mContext).isFirstRun()) {
+                dialog.show();
+            } else {
+                doIfNewVersion();
+            }
         } else {
-            Preferences.get(mContext).setLicensed(false);
-            ((AppCompatActivity) mContext).finish();
+            dialog.onPositive((dial, which) -> ((AppCompatActivity) mContext).finish()).show();
         }
     }
 }

@@ -228,28 +228,36 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             return;
         }
 
-        if (!Preferences.get(this).isPlaystoreCheckEnabled() && !mConfig.isLicenseCheckerEnabled() && Preferences.get(this).isNewVersion()) {
-            ChangelogFragment.showChangelog(mFragManager);
-            File cache = this.getCacheDir();
-            FileHelper.clearDirectory(cache);
+        if (!Preferences.get(this).isPlaystoreCheckEnabled() && !mConfig.isLicenseCheckerEnabled()) {
+            if (Preferences.get(this).isNewVersion()) {
+                ChangelogFragment.showChangelog(mFragManager);
+                File cache = this.getCacheDir();
+                FileHelper.clearDirectory(cache);
+            }
         }
 
         if (mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isLicensed()) {
-            PackageManager pm = getApplicationContext().getPackageManager();
-            ComponentName compName = new ComponentName(getPackageName(), getPackageName() + ".alias.Intent");
-            pm.setComponentEnabledSetting(
-                    compName,
-                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                    PackageManager.DONT_KILL_APP);
+            toggleIntent(this, false);
             finish();
         }
 
         if (Preferences.get(this).isLicensed() || (!mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isPlaystoreCheckEnabled())) {
-            PackageManager pm = getApplicationContext().getPackageManager();
-            ComponentName compName = new ComponentName(getPackageName(), getPackageName() + ".alias.Intent");
+            toggleIntent(this, true);
+        }
+    }
+
+    public static void toggleIntent(Context mContext, boolean enable) {
+        PackageManager pm = mContext.getPackageManager();
+        ComponentName compName = new ComponentName(mContext.getPackageName(), mContext.getPackageName() + ".alias.Intent");
+        if (enable) {
             pm.setComponentEnabledSetting(
                     compName,
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                    PackageManager.DONT_KILL_APP);
+        } else {
+            pm.setComponentEnabledSetting(
+                    compName,
+                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                     PackageManager.DONT_KILL_APP);
         }
     }
