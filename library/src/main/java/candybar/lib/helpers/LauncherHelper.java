@@ -472,28 +472,27 @@ public class LauncherHelper {
                 applyManual(context, launcherPackage, launcherName, "com.microsoft.launcher.Launcher");
                 break;
             case FLICK:
-                //Todo: fix direct apply for flick launcher
                 try {
-                    final Intent flick = context.getPackageManager().getLaunchIntentForPackage(
-                            "com.universallauncher.universallauncher");
-                    final Intent flickAction = new Intent("com.android.launcher3.FLICK_ICON_PACK_APPLIER");
-                    flickAction.putExtra("com.android.launcher3.extra.ICON_THEME_PACKAGE", context.getPackageName());
+                    final Intent flick = context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher");
+                    final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
+                    flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
+                    flickAction.setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
                     flick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(flickAction);
                     context.startActivity(flick);
+                    ((AppCompatActivity) context).finish();
                     ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
             case BLACKBERRY:
-                applyManual(context, launcherPackage, launcherName, "com.blackberry.blackberrylauncher");
+                applyManual(context, launcherPackage, launcherName, "com.blackberry.blackberrylauncher.MainActivity");
                 break;
         }
     }
 
     private static void applyManual(Context context, String launcherPackage, String launcherName, String activity) {
-
         if (isInstalled(context, launcherPackage)) {
             new MaterialDialog.Builder(context)
                     .typeface(

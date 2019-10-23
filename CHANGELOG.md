@@ -1,3 +1,12 @@
+# v3.5.0-beta.6.7 - Unreleased
+- Fixed Icon Request Limit not resetting after update.
+- Updated Gradle Versions.
+- Fixed Crash on Tablets.
+- Added Better Support for OnePlus Launcher.
+- Added BlackBerry Launcher.
+- Added Flick Launcher.
+
+
 # v3.5.0-beta.6.6
 - Fix wallpaper download issue with Android 10.
 - Show Loader while icon are being loaded.

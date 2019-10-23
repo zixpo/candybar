@@ -171,9 +171,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             }
 
             if (Preferences.get(mContext).isRegularRequestLimit()) {
-                //HeaderViewHolder.regContent.setVisibility(View.GONE);
-                //HeaderViewHolder.regContainer.setVisibility(View.VISIBLE);
-
                 int total = mContext.getResources().getInteger(R.integer.icon_request_limit);
                 int used = Preferences.get(mContext).getRegularRequestUsed();
                 int available = total - used;

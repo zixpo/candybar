@@ -35,21 +35,10 @@ public class IntentHelper {
     private static final String ACTION_TURBO_PICK_ICON = "com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON";
     private static final String ACTION_LAWNCHAIR_ICONPACK = "ch.deletescape.lawnchair.ICONPACK";
     private static final String ACTION_NOVA_LAUNCHER = "com.novalauncher.THEME";
+    private static final String ACTION_ONEPLUS_PICK_ICON = "net.oneplus.launcher.icons.ACTION_PICK_ICON";
     private static final String ACTION_PLUS_HOME = "jp.co.a_tm.android.launcher.icons.ACTION_PICK_ICON";
 
     public static int getAction(@Nullable Intent intent) {
-        /*
-        if (intent != null) {
-            LogUtil.d("CandyBar Intent", "Action - " + intent.getAction());
-            LogUtil.d("CandyBar Intent", "Data - " + intent.getData());
-            LogUtil.d("CandyBar Intent", "Data String - " + intent.getDataString());
-            LogUtil.d("CandyBar Intent", "Package - " + intent.getPackage());
-            LogUtil.d("CandyBar Intent", "Scheme - " + intent.getScheme());
-            LogUtil.d("CandyBar Intent", "Type - " + intent.getType());
-        } else {
-            LogUtil.d("CandyBar Intent", "Got Null Intent");
-        }*/
-
         if (intent == null) return ACTION_DEFAULT;
         String action = intent.getAction();
         if (action != null) {
@@ -58,6 +47,7 @@ public class IntentHelper {
                 case ACTION_TURBO_PICK_ICON:
                 case ACTION_LAWNCHAIR_ICONPACK:
                 case ACTION_NOVA_LAUNCHER:
+                case ACTION_ONEPLUS_PICK_ICON:
                 case ACTION_PLUS_HOME:
                     return ICON_PICKER;
                 case Intent.ACTION_PICK:
