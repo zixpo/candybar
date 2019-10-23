@@ -69,6 +69,7 @@ public class LauncherHelper {
     private static final int LAWNCHAIR = 29;
     private static final int MICROSOFT = 30;
     private static final int FLICK = 31;
+    private static final int BLACKBERRY = 32;
 
     private static int getLauncherId(String packageName) {
         if (packageName == null) return UNKNOWN;
@@ -142,6 +143,8 @@ public class LauncherHelper {
                 return MICROSOFT;
             case "com.universallauncher.universallauncher":
                 return FLICK;
+            case "com.blackberry.blackberrylauncher":
+                return BLACKBERRY;
             default:
                 return UNKNOWN;
         }
@@ -482,6 +485,9 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case BLACKBERRY:
+                applyManual(context, launcherPackage, launcherName, "com.blackberry.blackberrylauncher");
                 break;
         }
     }
