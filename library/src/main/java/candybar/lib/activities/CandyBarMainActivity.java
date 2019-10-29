@@ -150,11 +150,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this,
                 Preferences.get(this).isDarkTheme() ?
                         R.color.navigationBarDark : R.color.navigationBar));
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            this.getWindow().setStatusBarColor(ContextCompat.getColor(this,
-                    Preferences.get(this).isDarkTheme() ?
-                            R.color.darkColorPrimaryDark : R.color.colorPrimaryDark));
-        }*/
         if (!Preferences.get(this).isDarkTheme() && (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)) {
             this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
