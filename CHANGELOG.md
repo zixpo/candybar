@@ -1,4 +1,4 @@
-# v3.5.0-beta.6.7 - Unreleased
+# v3.5.0-beta.6.7
 - Fixed Icon Request Limit not resetting after update.
 - Updated Gradle Versions.
 - Fixed Crash on Tablets.
