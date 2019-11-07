@@ -152,7 +152,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                         R.color.navigationBarDark : R.color.navigationBar));
         if (!Preferences.get(this).isDarkTheme() && (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)) {
             this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
             if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar))
                     && ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark))) {
                 this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
@@ -163,6 +162,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 }
             }
+            this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         }
         registerBroadcastReceiver();
         startService(new Intent(this, CandyBarService.class));
