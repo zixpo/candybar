@@ -7,8 +7,19 @@
     <string name="navigation_view_apply">लागू गर्नुहोस्</string>
     <string name="navigation_view_icons">आइकोनहरु</string>
     <string name="navigation_view_request">आइकोन अनुरोध</string>
+    <string name="navigation_view_wallpapers">वालपेपरहरु</string>
+    <string name="navigation_view_settings">सेटिंग</string>
+    <string name="navigation_view_faqs">बारम्बार सोधिने प्रश्नहरू</string>
     <string name="navigation_view_about">बारेमा</string>
+    <string name="navigation_view_donate">विकासमा समर्थन</string>
     <!-- Muzei -->
+    <string name="muzei_settings">मुजेइ सेटिंग्स</string>
+    <string name="minute">मिनेट</string>
+    <string name="hour">घण्टा</string>
+    <string name="save_setting">सुरछित गर्नुहोस्</string>
+    <string name="muzei_refresh_duration">ताजा अवधि</string>
+    <string name="muzei_wifi_only">वाइफाइबाट मात्र ताजा गर्नुहोस्</string>
+    <string name="muzei_downloaded_only">डाउनलोड गरिएका वालपेपर मात्र लोड गर्नुहोस्</string>
     <!-- Menu -->
     <!-- Dialog -->
     <!-- Update -->
