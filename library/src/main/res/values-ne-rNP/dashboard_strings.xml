@@ -51,7 +51,12 @@
     <!-- License -->
     <string name="license_checking">लाइसेन्स जाँच गरिदैछ</string>
     <string name="license_check">लाइसेन्स जाँच</string>
+    <string name="license_check_success">लाइसेन्स जाँच सफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भाको रछ धन्यबाद !  </string>
+    <string name="license_check_failed">लाइसेन्स जाँच बिफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भाको रन छ,   कृपया खरिद गर्नुहोला धन्यवाद ।</string>
+    <string name="license_check_retry">लाइसेन्स जाँच गर्न असमर्थ छौ, केहि क्षणमा फेरि प्रयास गर्नुहोस्।</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">प्ले स्टोर जाँच गर्दै छौ</string>
+    <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। आइकोन प्याकको मज्जा गर्नुहोस्</string>
     <!-- Share -->
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">खोज्नुहोस्</string>
