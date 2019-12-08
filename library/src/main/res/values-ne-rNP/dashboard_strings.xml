@@ -20,8 +20,23 @@
     <string name="muzei_refresh_duration">ताजा अवधि</string>
     <string name="muzei_wifi_only">वाइफाइबाट मात्र ताजा गर्नुहोस्</string>
     <string name="muzei_downloaded_only">डाउनलोड गरिएका वालपेपर मात्र लोड गर्नुहोस्</string>
+    <string name="muzei_settings_ignored">आइकन प्याकले वालपेपरहरू समावेश गर्दैन, सेटि बेवास्ताको उपेक्षा गरियो</string>
+    <string name="muzei_settings_saved">सेटिंग्स समावेस गरियो</string>
     <!-- Menu -->
+    <string name="menu_search">खोज्नुहोस्</string>
+    <string name="menu_save">आफ्नो उपकरणमा समावेस गर्नुहोस्</string>
+    <string name="menu_select_all">सबै समावेश गर्नुहोस्</string>
+    <string name="menu_wallpaper_crop">वालपेपर क्रोप गर्नुहोस्</string>
+    <string name="menu_apply_homescreen">गृह पृष्ठ</string>
+    <string name="menu_apply_lockscreen">लोक स्क्रीन</string>
+    <string name="menu_apply_homescreen_lockscreen">गृह पृष्ठ र लोक स्क्रीन</string>
     <!-- Dialog -->
+    <string name="open">खोल्नुहोस्</string>
+    <string name="close">बन्द गर्नुहोस्</string>
+    <string name="clear">क्लेअर गर्नुहोस्</string>
+    <string name="ok">ठीक छ</string>
+    <string name="install">स्थापना गर्नुहोस्</string>
+    <string name="donate">सहयोग गर्नुहोस्</string>
     <!-- Update -->
     <!-- Changelog -->
     <!-- InAppBilling -->
@@ -29,7 +44,9 @@
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">खोज्नुहोस्</string>
     <!-- Home -->
+    <string name="home_donate">सहयोग गर्नुहोस्</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
@@ -46,4 +63,6 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">खोल्नुहोस्</string>
+    <string name="txt_close">बन्द गर्नुहोस्</string>
 </resources>
