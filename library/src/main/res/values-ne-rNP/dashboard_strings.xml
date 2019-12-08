@@ -37,10 +37,20 @@
     <string name="ok">ठीक छ</string>
     <string name="install">स्थापना गर्नुहोस्</string>
     <string name="donate">सहयोग गर्नुहोस्</string>
+    <string name="update">अद्यावधिक गर्नुहोस्</string>
+    <string name="search_noresult">\"%s\" को लागी कुनै परिणाम भेटिएन</string>
+    <string name="search_faqs">प्रश्न वा उत्तर</string>
+    <string name="search_icon">आइकनको नाम</string>
     <!-- Update -->
+    <string name="update_available">अद्यावधिक उपलब्ध कि !</string>
+    <string name="no_update_available">तपाईं भर्खरैको संस्करण प्रयोग गर्दै हुनुहुन्छ !</string>
     <!-- Changelog -->
+    <string name="changelog_version">संस्करण</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">खरीद गरिएको उत्पादनहरू लोड गर्न असमर्थ</string>
     <!-- License -->
+    <string name="license_checking">लाइसेन्स जाँच गरिदैछ</string>
+    <string name="license_check">लाइसेन्स जाँच</string>
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
