@@ -57,7 +57,10 @@
     <!-- Play Store Installation Check -->
     <string name="playstore_check">प्ले स्टोर जाँच गर्दै छौ</string>
     <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। आइकोन प्याकको मज्जा गर्नुहोस्</string>
+    <string name="playstore_check_failed">तपाईंले प्ले स्टोर भन्दा बहिर बाट डाउनलोड गरेको जस्तो लाग्यो, तपाईंले प्रयोग गर्न सक्नु हुँदैन</string>
     <!-- Share -->
+    <string name="share_app_title">एस ! चेक आउट गर्नुहोस्</string>
+    <string name="share_app_body">एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ</string>
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">खोज्नुहोस्</string>
     <!-- Home -->
