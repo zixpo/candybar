@@ -131,6 +131,8 @@
     <string name="pref_data_cache">क्यास सफा गर्नुहोस्</string>
     <string name="pref_data_cache_size">क्यास साइज: %s</string>
     <string name="pref_data_cache_cleared">क्यास सफा गरियो</string>
+    <string name="pref_data_request">आइकन अनुरोध डेटा हटाउनुहोस्</string>
+    <string name="pref_data_request_desc">छुटेका एप्सको अनुरोध पठाइ सकेपछी, त्यस डेटालाई हटाउनुहोस्।</string>
     <string name="pref_data_request_clear_dialog">के तपाइँ साँच्चिकै आइकन अनुरोध डेटा हटाउन चाहानुहुन्छ?</string>
     <string name="pref_data_request_cleared">आइकन अनुरोध डेटा हटाइयो</string>
     <string name="pref_premium_request_header">प्रीमियम आइकन अनुरोध</string>
