@@ -181,6 +181,7 @@
     <string name="crash_report_send">रिपोर्ट पठाउनुहोस्</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">क्यान्डीबार</string>
+    <string name="about_dashboard_dev">क्यान्डीबार डनी महरधिकाले बनाएको एक प्रकारको ओपेन सोर्स आइकन प्याक ड्यास्बोर्ड हो, जस्लाई अपाचे लाईसेन्स २.० अन्तर्गत एन्ड्रोएड को लागि बनाइएको छ जुन GitHub सित्तैमा उपलव्ध छ।</string>
     <string name="about_open_source_licenses">खुल्ला-स्रोत इजाजतपत्रहरू</string>
     <string name="about_dashboard_contributors">क्यान्डीबार योगदानकर्ताहरू</string>
     <string name="about_dashboard_translator">क्यान्डीबार अनुवादकहरु</string>
