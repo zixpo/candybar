@@ -71,7 +71,10 @@
     <string name="tap_intro_request_select">समावेस नगरिएका एपहरु चयन गर्नुहोस्</string>
     <string name="tap_intro_request_select_desc">आइकन अनुरोध को लागी छुटेको एपहरु छनौट गर्न यहाँ ट्याप गर्नुहोस्</string>
     <string name="tap_intro_request_select_all">समावेस नगरिएका सबै एपहरु चयन गर्नुहोस्</string>
+    <string name="tap_intro_request_select_all_desc">छुटेका सबै एप्लीकेशनहरु को आइकन अनुरोध गर्नको लागि यहाँ ट्याप गर्नुहोस्।</string>
     <string name="tap_intro_request_send">आइकन अनुरोध पठाउनुहोस्</string>
+    <string name="tap_intro_request_send_desc">चयनित छुटेका एपहरु पठाउन यहाँ ट्याप गर्नुहोस्</string>
+    <string name="tap_intro_request_premium">प्रीमियम आइकन अनुरोध</string>
     <string name="tap_intro_wallpapers_option">वालपेपर सेटिङ्गहरू</string>
     <string name="tap_intro_wallpapers_option_desc_download">डाउनलोड वा</string>
     <string name="tap_intro_wallpapers_preview">वालपेपर पूर्वावलोकन</string>
@@ -79,7 +82,7 @@
     <string name="tap_intro_wallpaper_preview_apply">वालपेपर लागू गर्नुहोस्</string>
     <!-- Home -->
     <string name="home_more_apps_header">थप एपहरु</string>
-    <string name="home_rate_and_review">रेटिङ र समीक्षा</string>
+    <string name="home_rate_and_review">रेटिङ र समीक्षा गर्नुहोस्</string>
     <string name="home_apply_icon_pack">%s लाई लागू गर्नुहोस्</string>
     <string name="home_donate">सहयोग गर्नुहोस्</string>
     <string name="home_icons">कस्टम आईकनहरू</string>
