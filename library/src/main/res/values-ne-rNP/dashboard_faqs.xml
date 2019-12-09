@@ -45,18 +45,17 @@
         <item>मेरो एन्सटल गरेको लन्चर गुगल प्ले वर्णनमा सूचीबद्ध छ, तर किन यो लागू सेक्सनमा समावेश गरिएको छैन?</item>
         <item>वालपेपर लागू गर्न सकिँदैन, किन केवल कालो स्क्रिन देखाउँदैछ?</item>
         <item>Muzei: डाउनलोड गरिएका वालपेपर मात्र कसरी लोड गर्ने?</item>
-        <item>Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes?</item>
-        <item>Muzei: I only want to use specific wallpapers?</item>
-        <item>Why are Read &amp; Write External Storage permission needed?</item>
-        <item>Why is Internet permission needed?</item>
-        <item>Why is Access Network State permission needed?</item>
-        <item>Why is Access Wifi State permission needed?</item>
-        <item>Why is Set Wallpaper permission needed?</item>
-        <item>Why is Wake Lock Permission needed?</item>
+        <item>Muzei: म प्रत्येक पटक वालपेपर परिवर्तन हुँदा वालपेपर डाउनलोड गरी राख्न चाहन्न?</item>
+        <item>Muzei: म केवल विशिष्ट वालपेपर मात्र प्रयोग गर्न चाहन्छु?</item>
+        <item>किन बाहिरी स्टोरेज को रिड र राइट अनुमतीको आवश्यकता पर्दछ?</item>
+        <item>ईन्टरनेट अनुमती किन चहिएको हो?</item>
+        <item>किन Access Network State प्रयोगको अनुमति आवश्यक छ?</item>
+        <item>किन Wifi State प्रयोगको अनुमति आवश्यक छ?</item>
+        <item>किन Set Wallpaper प्रयोगको अनुमति आवश्यक छ?</item>
+        <item>किन Wake Lock प्रयोगको अनुमति आवश्यक छ?</item>
     </string-array>
     <string-array name="answers">
-        <item>Launcher is the part of the Android user interface that lets users customize the home screen,
-            launch mobile apps, make phone calls, and perform other tasks on Android devices.</item>
+        <item>लन्चर एन्ड्रोइड युजर ईन्टरफेसको अंश हो जसले प्रयोगकर्ताहरूलाई होम स्क्रिन आफ्नो अनुकुल गर्न, मोबाइल मा रहेका एपहरु वोपन गर्न, फोन कल गर्न, र एन्ड्रोइड उपकरणहरूमा भएका अन्य कार्यहरू गर्न मद्दत पुर्‍याउँछ।</item>
         <item>A set of graphics that will change the look of your app drawer icons</item>
         <item>You will need a launcher that supports custom icon packs.
             Supported launchers are listed in the Play store description.
@@ -92,10 +91,10 @@
         <item>Open Dashboard, download wallpapers that you want to use in Muzei.
             Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
         <item>It is used to write &amp; read cache, and collect the icon request data.</item>
-        <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
+        <item>क्लाउड आधारित वालपेपर लोड र डाउनलोड गर्नको लागि यसको आवश्यकता हुन्छ।</item>
         <item>It is used to check if your phone has an internet connection or not.</item>
         <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
         <item>It is used to apply wallpapers directly from the dashboard app.</item>
-        <item>यो Muzei लाईभ वालपेपरले प्रयोग गरीरहेको छ</item>
+        <item>यो Muzei लाईभ वालपेपरले प्रयोग गरीरहेको हुन्छ।</item>
     </string-array>
 </resources>
