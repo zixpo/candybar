@@ -71,6 +71,7 @@
     <string name="tap_intro_request_select">समावेस नगरिएका एपहरु चयन गर्नुहोस्</string>
     <string name="tap_intro_request_select_desc">आइकन अनुरोध को लागी छुटेको एपहरु छनौट गर्न यहाँ ट्याप गर्नुहोस्</string>
     <string name="tap_intro_request_select_all">समावेस नगरिएका सबै एपहरु चयन गर्नुहोस्</string>
+    <string name="tap_intro_request_send">आइकन अनुरोध पठाउनुहोस्</string>
     <string name="tap_intro_wallpapers_option">वालपेपर सेटिङ्गहरू</string>
     <string name="tap_intro_wallpapers_option_desc_download">डाउनलोड वा</string>
     <string name="tap_intro_wallpapers_preview">वालपेपर पूर्वावलोकन</string>
@@ -81,9 +82,10 @@
     <string name="home_apply_icon_pack">%s लाई लागू गर्नुहोस्</string>
     <string name="home_donate">सहयोग गर्नुहोस्</string>
     <string name="home_icons">कस्टम आईकनहरू</string>
+    <string name="home_loud_wallpapers">%d क्लाउड वालपेपर</string>
     <string name="home_muzei">Muzei लाईभ वालपेपरहरु</string>
     <string name="home_icon_request_installed_apps">कुल \n%d स्थापित एप्सहरु छन</string>
-    <string name="home_icon_request_themed_apps">थीम भएका \n%d एप्सहरु</string>
+    <string name="home_icon_request_themed_apps">थीम भएका \n%d एप्सहरु छन</string>
     <!-- Apply -->
     <string name="apply_installed">स्थापित लन्चरहरु</string>
     <string name="apply_supported">समर्थित लन्चरहरु</string>
@@ -123,14 +125,23 @@
     <string name="pref_data_cache">क्यास सफा गर्नुहोस्</string>
     <string name="pref_data_cache_size">क्यास साइज: %s</string>
     <string name="pref_data_cache_cleared">क्यास सफा गरियो</string>
+    <string name="pref_data_request_clear_dialog">के तपाइँ साँच्चिकै आइकन अनुरोध डेटा मेटाउन चाहानुहुन्छ?</string>
+    <string name="pref_data_request_cleared">आइकन अनुरोध डेटा हटाइयो</string>
     <string name="pref_premium_request_header">प्रीमियम आइकन अनुरोध</string>
+    <string name="pref_premium_request_restore">खरीदहरू पुनर्स्थापित गर्नुहोस्</string>
+    <string name="pref_theme_header">थीम</string>
+    <string name="pref_theme_dark">डार्क थीम</string>
     <string name="pref_wallpaper_header">वालपेपर</string>
     <string name="pref_language_header">भाषा</string>
     <string name="pref_others_header">अन्य</string>
     <string name="pref_others_report_bugs">बग प्रतिवेदन गर्नुहोस्</string>
+    <string name="pref_others_changelog">एपमा बदलाव</string>
+    <string name="pref_others_reset_tutorial">ट्यूटोरियल रिसेट गर्नुहोस्</string>
+    <string name="pref_others_reset_tutorial_reset">ट्यूटोरियल रिसेट</string>
     <!-- Permission -->
     <!-- Intent -->
     <string name="app_client">एप छनोट गर्नुहोस्</string>
+    <string name="no_email_app">ईमेल पठाउन कुनै एप छैन</string>
     <string name="intent_email_supported">समर्थित छ</string>
     <string name="intent_email_recommended">सिफारिस गरिएको</string>
     <string name="intent_email_not_supported">समर्थित छैन</string>
