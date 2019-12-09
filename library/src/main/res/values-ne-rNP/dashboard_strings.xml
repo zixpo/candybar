@@ -109,9 +109,11 @@
     <string name="apply_launcher_not_installable">%s लन्चर इन्टल गरिएको छैन, कृपया लन्चर इन्टल गरीसकेपछी कोसीस गर्नुहोला।</string>
     <string name="apply_cmtheme_not_available">तपाईंको फोनमा CM थिम मनेजर उपलव्ध छैन।  </string>
     <string name="apply_cmtheme_failed">CM थिम मनजर सुरु गर्न सकिएन, तर सेटिङबाट आइकन प्याक एप्लाई गर्न सकिनेछ।</string>
+    <string name="apply_lg_home">यो आइकन प्याक एप्लाई गर्नको लागि सेटिङ खोलेर - डिसप्ले - होम स्क्रिन - थिम मा जानुहोस्</string>
     <string name="apply_lg_home_not_available">तपाईंको फोनमा LG होम उपलव्ध छैन।</string>
     <string name="apply_lg_home_failed">LG होम सेटिंग्स लन्च गर्न सकिएन, तपाईं सेटिंग्सबाट म्यानुअल रूपमा आईकन प्याक लागू गर्न सक्नुहुनेछ।</string>
     <string name="apply_lg_home_nougat">एंड्रॉइड नोगट मा LG होमले अब आइकन पैक का समर्थन गर्दैन। आइकन प्याक उपयोग गर्न को लागि तपाईंले अब अनुकुल लन्चरको सहायता लुनुहोस्।</string>
+    <string name="apply_launcher_incompatible">%s लन्चरले कुनैपनी आइकन प्याकलाई सपोर्ट गर्दैन, त्यसैले तपाईं यो लन्चरमा यस् आइकन प्याकलाई प्रयोग गर्न सक्नुहुन्न। तपाईंले %2$s लन्चर प्रयोग गरेमा यो आइकन प्याक प्रयोग गर्न सक्नु हुनेछ। के तपाईं यो लन्चर इन्सटल गर्न चाहनुहुन्छ?</string>
     <!-- Icons -->
     <string name="icons_load_failed">आइकन लोड गर्न असमर्थ</string>
     <string name="icon_shape">आइकनको आकार</string>
