@@ -156,6 +156,7 @@
     <string name="about_terms_and_conditions_title">नियम र शर्तहरू</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc_hint">विवरण</string>
+    <string name="report_bugs_desc_empty">कृपया विवरण दिनुहोस्</string>
     <string name="report_bugs_building">गतिविधि सूची बनाउदै…</string>
     <string name="report_bugs_failed">गतिविधि सूची बनाउन सकिएन</string>
     <string name="report_bugs_send">रिपोर्ट पठाउनुहोस्</string>
@@ -163,6 +164,7 @@
     <string name="donation_success">सहयोगको लागि धन्यवाद, यो कुनै राम्रो काममा प्रयोग गरिनेछ।</string>
     <!-- Crash Report -->
     <string name="crash_report">क्र्यास रिपोर्ट</string>
+    <string name="crash_report_message">दुर्भाग्यवस %s क्र्यास भएको छ। निर्माणकर्तालाई क्र्यास सुल्झाउन मद्दत गर्नको लागि तल रिपोर्ट पठाउन छनौट गर्नुहोस्।</string>
     <string name="crash_report_send">रिपोर्ट पठाउनुहोस्</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">क्यान्डीबार</string>
