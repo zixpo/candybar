@@ -62,10 +62,13 @@
     <string name="share_app_title">एस ! चेक आउट गर्नुहोस्</string>
     <string name="share_app_body">एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">नेभिगेसन ड्रअर</string>
+    <string name="tap_intro_home_apply">आइकन प्याक लागू गर्नुहोस्</string>
     <string name="tap_intro_icons_search">खोज्नुहोस्</string>
     <string name="tap_intro_wallpapers_option">वालपेपर सेटिङ्गहरू</string>
     <string name="tap_intro_wallpapers_preview">जीवन्त वालपेपर</string>
     <string name="tap_intro_wallpaper_preview_save">वालपेपर save गर्नुहोस्</string>
+    <string name="tap_intro_wallpaper_preview_apply">वालपेपर लागू गर्नुहोस्</string>
     <!-- Home -->
     <string name="home_donate">सहयोग गर्नुहोस्</string>
     <!-- Apply -->
@@ -76,6 +79,7 @@
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
+    <string name="wallpaper_apply">वालपेपर लागू गर्नुहोस्</string>
     <string name="wallpaper_save_to_device">वालपेपर save गर्नुहोस्</string>
     <!-- Preferences -->
     <string name="pref_wallpaper_header">वालपेपर</string>
