@@ -129,6 +129,7 @@
     <string name="pref_data_request_cleared">आइकन अनुरोध डेटा हटाइयो</string>
     <string name="pref_premium_request_header">प्रीमियम आइकन अनुरोध</string>
     <string name="pref_premium_request_restore">खरीदहरू पुनर्स्थापित गर्नुहोस्</string>
+    <string name="pref_premium_request_restore_desc">आइकन प्याक पुन: इन्सटल गरिसके पछी प्रीमियम अनुरोध प्याकेज पुनर्स्थापित गर्नुहोस्</string>
     <string name="pref_premium_request_restore_success">प्रीमियम अनुरोध पुनर्स्थापित भयो</string>
     <string name="pref_theme_header">थीम</string>
     <string name="pref_theme_dark">डार्क थीम</string>
@@ -155,6 +156,7 @@
     <string name="about_privacy_policy_title">गोपनीयता नीति</string>
     <string name="about_terms_and_conditions_title">नियम र शर्तहरू</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">कृपया तपाईंले रिपोर्ट गर्न कस्तो प्रकारको समस्याको बारेमा विवरण दिन चाहनुहुन्छ</string>
     <string name="report_bugs_desc_hint">विवरण</string>
     <string name="report_bugs_desc_empty">कृपया विवरण दिनुहोस्</string>
     <string name="report_bugs_building">गतिविधि सूची बनाउदै…</string>
