@@ -77,8 +77,10 @@
     <string name="tap_intro_request_premium">प्रीमियम आइकन अनुरोध</string>
     <string name="tap_intro_request_premium_desc">प्रीमियम आइकन खरीद गर्न यहाँ ट्याप गर्नुहोस्, प्रीमियम आइकन खरीद गर्दा तपाईंले आइकनहरु छिटो प्राप्त गर्न सक्नु हुनेछ।</string>
     <string name="tap_intro_wallpapers_option">वालपेपर सेटिङ्गहरू</string>
+    <string name="tap_intro_wallpapers_option_desc">%s वालपेपर विकल्पहरू देखाउन र लागू गर्न, यहाँ ट्याप गरेर होल्ड गर्नुहोस्।</string>
     <string name="tap_intro_wallpapers_option_desc_download">डाउनलोड वा</string>
     <string name="tap_intro_wallpapers_preview">वालपेपर पूर्वावलोकन</string>
+    <string name="tap_intro_wallpapers_preview_desc">वालपेपरको पूर्ण आकार पूर्वावलोकन गर्न यहाँ ट्याप गर्नुहोस्</string>
     <string name="tap_intro_wallpaper_preview_save">वालपेपर save गर्नुहोस्</string>
     <string name="tap_intro_wallpaper_preview_save_desc">तपाईंको आफ्नो फोनमा वालपेपर डाउनलोड गर्न र राख्न यहाँ ट्याप गर्नुहोस् ताकि तपाईं यसलाई पछि प्रयोग गर्न सक्नुहुनेछ</string>
     <string name="tap_intro_wallpaper_preview_apply">वालपेपर लागू गर्नुहोस्</string>
@@ -89,6 +91,7 @@
     <string name="home_rate_and_review">रेटिङ र समीक्षा गर्नुहोस्</string>
     <string name="home_apply_icon_pack">%s लाई लागू गर्नुहोस्</string>
     <string name="home_donate">सहयोग गर्नुहोस्</string>
+    <string name="home_donate_desc">आइकन प्याक विकासको लागि समर्थन</string>
     <string name="home_icons">कस्टम आईकनहरू</string>
     <string name="home_loud_wallpapers">%d क्लाउड वालपेपर</string>
     <string name="home_muzei">Muzei लाईभ वालपेपरहरु</string>
