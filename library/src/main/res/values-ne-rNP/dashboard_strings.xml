@@ -125,13 +125,16 @@
     <string name="pref_data_cache">क्यास सफा गर्नुहोस्</string>
     <string name="pref_data_cache_size">क्यास साइज: %s</string>
     <string name="pref_data_cache_cleared">क्यास सफा गरियो</string>
-    <string name="pref_data_request_clear_dialog">के तपाइँ साँच्चिकै आइकन अनुरोध डेटा मेटाउन चाहानुहुन्छ?</string>
+    <string name="pref_data_request_clear_dialog">के तपाइँ साँच्चिकै आइकन अनुरोध डेटा हटाउन चाहानुहुन्छ?</string>
     <string name="pref_data_request_cleared">आइकन अनुरोध डेटा हटाइयो</string>
     <string name="pref_premium_request_header">प्रीमियम आइकन अनुरोध</string>
     <string name="pref_premium_request_restore">खरीदहरू पुनर्स्थापित गर्नुहोस्</string>
+    <string name="pref_premium_request_restore_success">प्रीमियम अनुरोध पुनर्स्थापित भयो</string>
     <string name="pref_theme_header">थीम</string>
     <string name="pref_theme_dark">डार्क थीम</string>
+    <string name="pref_theme_dark_desc">एप्लीकेसन थिमका लागि गाढा रङ प्रयोग गर्नुहोस्</string>
     <string name="pref_wallpaper_header">वालपेपर</string>
+    <string name="pref_wallpaper_location">वालपेपर राख्न वा शेभ गर्ने स्थान</string>
     <string name="pref_language_header">भाषा</string>
     <string name="pref_others_header">अन्य</string>
     <string name="pref_others_report_bugs">बग प्रतिवेदन गर्नुहोस्</string>
@@ -142,6 +145,8 @@
     <!-- Intent -->
     <string name="app_client">एप छनोट गर्नुहोस्</string>
     <string name="no_email_app">ईमेल पठाउन कुनै एप छैन</string>
+    <string name="no_browser">url खोल्न कुनै एप छैन</string>
+    <string name="intent_email_failed">ईमेल एप्लीकेसन देखाउन असमर्थ</string>
     <string name="intent_email_supported">समर्थित छ</string>
     <string name="intent_email_recommended">सिफारिस गरिएको</string>
     <string name="intent_email_not_supported">समर्थित छैन</string>
@@ -150,6 +155,7 @@
     <string name="about_privacy_policy_title">गोपनीयता नीति</string>
     <string name="about_terms_and_conditions_title">नियम र शर्तहरू</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc_hint">विवरण</string>
     <string name="report_bugs_send">रिपोर्ट पठाउनुहोस्</string>
     <!-- Support Development -->
     <!-- Crash Report -->
