@@ -13,7 +13,7 @@
     <string name="navigation_view_about">बारेमा</string>
     <string name="navigation_view_donate">विकासमा समर्थन</string>
     <!-- Muzei -->
-    <string name="muzei_settings">मुजेइ सेटिंग्स</string>
+    <string name="muzei_settings">Muzei सेटिंग्स</string>
     <string name="minute">मिनेट</string>
     <string name="hour">घण्टा</string>
     <string name="save_setting">सुरछित गर्नुहोस्</string>
@@ -63,23 +63,46 @@
     <string name="share_app_body">एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ</string>
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">खोज्नुहोस्</string>
+    <string name="tap_intro_wallpapers_option">वालपेपर सेटिङ्गहरू</string>
+    <string name="tap_intro_wallpapers_preview">जीवन्त वालपेपर</string>
+    <string name="tap_intro_wallpaper_preview_save">वालपेपर save गर्नुहोस्</string>
     <!-- Home -->
     <string name="home_donate">सहयोग गर्नुहोस्</string>
     <!-- Apply -->
     <!-- Icons -->
+    <string name="icon_shape">आइकनको आकार</string>
     <!-- Request -->
     <string name="request_title">आइकोन अनुरोध</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
+    <string name="wallpaper_save_to_device">वालपेपर save गर्नुहोस्</string>
     <!-- Preferences -->
+    <string name="pref_wallpaper_header">वालपेपर</string>
+    <string name="pref_language_header">भाषा</string>
+    <string name="pref_others_header">अन्य</string>
+    <string name="pref_others_report_bugs">बग प्रतिवेदन गर्नुहोस्</string>
     <!-- Permission -->
     <!-- Intent -->
+    <string name="app_client">एप छनोट गर्नुहोस्</string>
+    <string name="intent_email_supported">समर्थित छ</string>
+    <string name="intent_email_recommended">सिफारिस गरिएको</string>
+    <string name="intent_email_not_supported">समर्थित छैन</string>
     <!-- About -->
+    <string name="about_contributors_title">योगदानकर्ताहरू</string>
+    <string name="about_privacy_policy_title">गोपनीयता नीति</string>
+    <string name="about_terms_and_conditions_title">नियम र शर्तहरू</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_send">रिपोर्ट पठाउनुहोस्</string>
     <!-- Support Development -->
     <!-- Crash Report -->
+    <string name="crash_report">क्र्यास रिपोर्ट</string>
+    <string name="crash_report_send">रिपोर्ट पठाउनुहोस्</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">क्यान्डीबार</string>
+    <string name="about_open_source_licenses">खुल्ला-स्रोत इजाजतपत्रहरू</string>
+    <string name="about_dashboard_contributors">क्यान्डीबार योगदानकर्ताहरू</string>
+    <string name="about_dashboard_translator">क्यान्डीबार अनुवादक</string>
     <!-- DrawerToggle -->
     <string name="txt_open">खोल्नुहोस्</string>
     <string name="txt_close">बन्द गर्नुहोस्</string>
