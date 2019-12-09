@@ -137,8 +137,8 @@
     <string name="pref_wallpaper_location">वालपेपर राख्न वा शेभ गर्ने स्थान</string>
     <string name="pref_language_header">भाषा</string>
     <string name="pref_others_header">अन्य</string>
-    <string name="pref_others_report_bugs">बग प्रतिवेदन गर्नुहोस्</string>
-    <string name="pref_others_changelog">एपमा बदलाव</string>
+    <string name="pref_others_report_bugs">बग रिपोर्ट गर्नुहोस्</string>
+    <string name="pref_others_changelog">परिवर्तन लग</string>
     <string name="pref_others_reset_tutorial">ट्यूटोरियल रिसेट गर्नुहोस्</string>
     <string name="pref_others_reset_tutorial_reset">ट्यूटोरियल रिसेट</string>
     <!-- Permission -->
@@ -156,6 +156,8 @@
     <string name="about_terms_and_conditions_title">नियम र शर्तहरू</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc_hint">विवरण</string>
+    <string name="report_bugs_building">गतिविधि सूची बनाउदै…</string>
+    <string name="report_bugs_failed">गतिविधि सूची बनाउन सकिएन</string>
     <string name="report_bugs_send">रिपोर्ट पठाउनुहोस्</string>
     <!-- Support Development -->
     <!-- Crash Report -->
@@ -165,7 +167,7 @@
     <string name="about_dashboard">क्यान्डीबार</string>
     <string name="about_open_source_licenses">खुल्ला-स्रोत इजाजतपत्रहरू</string>
     <string name="about_dashboard_contributors">क्यान्डीबार योगदानकर्ताहरू</string>
-    <string name="about_dashboard_translator">क्यान्डीबार अनुवादक</string>
+    <string name="about_dashboard_translator">क्यान्डीबार अनुवादकहरु</string>
     <!-- DrawerToggle -->
     <string name="txt_open">खोल्नुहोस्</string>
     <string name="txt_close">बन्द गर्नुहोस्</string>
