@@ -131,6 +131,8 @@
     <string name="pref_premium_request_restore">खरीदहरू पुनर्स्थापित गर्नुहोस्</string>
     <string name="pref_premium_request_restore_desc">आइकन प्याक पुन: इन्सटल गरिसके पछी प्रीमियम अनुरोध प्याकेज पुनर्स्थापित गर्नुहोस्</string>
     <string name="pref_premium_request_restore_success">प्रीमियम अनुरोध पुनर्स्थापित भयो</string>
+    <string name="pref_premium_request_restore_empty">तपाईंसँग कुनै खरीद गरिएको प्याकेज छैन</string>
+    <string name="pref_premium_request_rebuild">प्रीमियम आइकन अनुरोध पुन: निर्माण गर्नुहोस्</string>
     <string name="pref_theme_header">थीम</string>
     <string name="pref_theme_dark">डार्क थीम</string>
     <string name="pref_theme_dark_desc">एप्लीकेसन थिमका लागि गाढा रङ प्रयोग गर्नुहोस्</string>
