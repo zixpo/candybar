@@ -110,6 +110,7 @@
     <string name="apply_lg_home_nougat">एंड्रॉइड नोगैट के साथ LG होम अब आइकन पैक का समर्थन नहीं करता है। आइकॉन पैक का उपयोग करने के लिए आपको कस्टम लॉन्चर की आवश्यकता है</string>
     <!-- Icons -->
     <string name="icons_load_failed">आइकॉन लोड करने में असमर्थ</string>
+    <string name="icon_shape">आईकन का आकार</string>
     <!-- Request -->
     <string name="request_title">आइकन अनुरोध</string>
     <string name="request_not_selected">अनुरोध के लिए आइकॉन चुने</string>
