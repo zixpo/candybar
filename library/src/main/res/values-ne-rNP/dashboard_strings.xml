@@ -130,6 +130,7 @@
     <string name="request_email_client">तपाईंले चाहेको एपको आइकन परिवर्तन गर्न र् अनुरोध पठाउनको लागि छनोट गर्नुहोस्</string>
     <string name="request_app_disabled">तपाईं यो आइकन प्याकको पुरानो संस्करण प्रयोग गर्दै हुनुहुन्छ। अनुरोध गरिएको आइकनहरू नयाँ संस्करणमा समावेश हुन सक्छ। आइकन अनुरोध गर्न कृपया नौलो संस्करणमा अपडेट गर्नुहोस्।</string>
     <string name="connection_error_long">सर्भरबाट डाटा लोड गर्न सकिएन। कृपया तपाईंको नेटवर्क जाँच्नुहोस्।</string>
+    <string name="request_limit">तपाईं मात्र नियमित अनुरोधमा केवल %d अनुरोध (हरू) बनाउन सक्नु हुनेछ।</string>
     <string name="request_used">तपाईंले %d आइकन अनुरोध गर्नु भयो</string>
     <string name="request_limit_buy">तपाइँ धेरै आइकनहरू अनुरोध गर्न प्रिमियम प्यकेज खरीद गर्न सक्नुहुन्छ।</string>
     <string name="request_limit_reset">आइकन अनुरोध सीमा प्रत्येक अपडेटमा रिसेट हुनेछ।</string>
@@ -142,13 +143,18 @@
     <!-- Premium Request -->
     <string name="premium_request">प्रीमियम आइकन अनुरोध</string>
     <string name="premium_request_no_internet">निश्चित गर्नुहोस् कि तपाईंको फोन प्रीमियम अनुरोध पठाउनु अघि इन्टरनेटमा जडित छ</string>
+    <string name="premium_request_desc">प्रीमियम आइकन अनुरोध गर्न भुक्तान गर्नु पर्ने हुन्छ। तपाईं आफ्ना अनुरोधित एपहरु प्रिमियम आईकन अनुरोध प्रयोग गरेर छिटो प्राप्त गर्न सक्नुहुनेछ।</string>
     <string name="premium_request_buy">किन्नुहोस्</string>
     <string name="premium_request_count">कुल \n%d अनुरोध</string>
     <string name="premium_request_used">\n%d अनुरोध प्रयोग गरियो</string>
     <string name="premium_request_available">\n%d अनुरोध बाँकी उप्लव्ध</string>
+    <string name="premium_request_already_purchased">तपाईंसँग अझै %d प्रीमियम अनुरोध छ।  प्रीमियम अनुरोध प्याकेज फेरि खरीद गर्नु अघि यी सबै प्रयोग गर्नु आवश्यक छ।</string>
     <string name="premium_request_limit">तपाईंले केवल %d प्रीमियम अनुरोध गर्नु भएको छ</string>
-    <string name="premium_request_rebuilding">प्रीमियम अनुरोध बनाउदै …</string>
+    <string name="premium_request_limit1">\n\n तपाईंले फेरि नियमित अनुरोध प्रयोग गर्नु अघि तपाईंको सबै प्रीमियम अनुरोधहरू प्रयोग गर्नु आवश्यक छ। तर तपाईंले %d एपहरु चयन गर्नुभयो</string>
+    <string name="premium_request_consume_failed">प्रिमियम अनुरोध प्रयोग गर्न सकिएन, तपाईंसँग स्थिर ईन्टरनेट छ या छैन निश्चित गर्नुहोस् र फेरि प्रयास गर्नुहोस्। प्रीमियम अनुरोध गर्न सेटिंग्समा जानुहोस् र प्रीमियम अनुरोधहरू पुन: निर्माण गर्नुहोस्।</string>
+    <string name="premium_request_rebuilding">प्रीमियम अनुरोध…</string>
     <string name="premium_request_rebuilding_empty">तपाईंले कुनै प्रीमियम अनुरोध गर्नु भएको छैन</string>
+    <string name="premium_request_exist">तपाईंसँग अझै पनि प्रीमियम आइकन अनुरोध गर्ने प्याकेज रहेको छ। सेटिंग्स खोल्नुहोस्, र यसलाई पुनर्स्थापना गर्न \"खरीदहरू पुनर्स्थापना गर्नुहोस्\" छनौट गर्नुहोस्।</string>
     <string name="premium_request_required">आइकन अनुरोध गर्न तपाईंले प्रिमियम आइकन अनुरोध प्याकेज खरीद गर्नु पर्छ</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">नयाँ वालपेपर</string>
@@ -166,6 +172,7 @@
     <!-- Preferences -->
     <string name="pref_data_header">डेटा &amp; क्यास</string>
     <string name="pref_data_cache">क्यास सफा गर्नुहोस्</string>
+    <string name="pref_data_cache_desc">तपाईंको स्टोरेजबाट एमेज क्यास हटाउनुहोस् जुन यस एपबाट एमेज छान्दा, छुटेका एपहरुलाई अनुरोध गर्दा, र क्लाउड वालपेपर थम्बनेलहरू लोड गर्दा सिर्जना भएको हुन्छ ।</string>
     <string name="pref_data_cache_size">क्यास साइज: %s</string>
     <string name="pref_data_cache_clear_dialog">के तपाईं साच्चिकै क्यास मेमोरी हटाउन चाहनुहुछ?</string>
     <string name="pref_data_cache_cleared">क्यास सफा गरियो</string>
