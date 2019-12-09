@@ -160,6 +160,7 @@
     <string name="report_bugs_failed">गतिविधि सूची बनाउन सकिएन</string>
     <string name="report_bugs_send">रिपोर्ट पठाउनुहोस्</string>
     <!-- Support Development -->
+    <string name="donation_success">सहयोगको लागि धन्यवाद, यो कुनै राम्रो काममा प्रयोग गरिनेछ।</string>
     <!-- Crash Report -->
     <string name="crash_report">क्र्यास रिपोर्ट</string>
     <string name="crash_report_send">रिपोर्ट पठाउनुहोस्</string>
