@@ -42,25 +42,25 @@
     <string name="search_faqs">प्रश्न वा उत्तर</string>
     <string name="search_icon">आइकनको नाम</string>
     <!-- Update -->
-    <string name="update_available">अद्यावधिक उपलब्ध कि !</string>
+    <string name="update_available">अपडेट उपलब्ध छ!</string>
     <string name="no_update_available">तपाईं भर्खरैको संस्करण प्रयोग गर्दै हुनुहुन्छ !</string>
     <!-- Changelog -->
     <string name="changelog_version">संस्करण</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">खरीद गरिएको उत्पादनहरू लोड गर्न असमर्थ</string>
+    <string name="billing_load_product_failed">खरीद गरिने InApp उत्पादनहरू लोड गर्न असमर्थ</string>
     <!-- License -->
-    <string name="license_checking">लाइसेन्स जाँच गरिदैछ</string>
+    <string name="license_checking">लाइसेन्स जाँच गरिदैछ…</string>
     <string name="license_check">लाइसेन्स जाँच</string>
     <string name="license_check_success">लाइसेन्स जाँच सफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भाको रछ धन्यबाद !  </string>
     <string name="license_check_failed">लाइसेन्स जाँच बिफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भाको रन छ,   कृपया खरिद गर्नुहोला धन्यवाद ।</string>
     <string name="license_check_retry">लाइसेन्स जाँच गर्न असमर्थ छौ, केहि क्षणमा फेरि प्रयास गर्नुहोस्।</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">प्ले स्टोर जाँच गर्दै छौ</string>
-    <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। आइकोन प्याकको मज्जा गर्नुहोस्</string>
+    <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। आइकोन प्याकको मज्जा लिनुहोस्।</string>
     <string name="playstore_check_failed">तपाईंले प्ले स्टोर भन्दा बहिर बाट डाउनलोड गरेको जस्तो लाग्यो, तपाईंले प्रयोग गर्न सक्नु हुँदैन</string>
     <!-- Share -->
-    <string name="share_app_title">एस ! चेक आउट गर्नुहोस्</string>
-    <string name="share_app_body">एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ</string>
+    <string name="share_app_title">%s चेक आउट</string>
+    <string name="share_app_body">%1$s एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">नेभिगेसन ड्रअर</string>
     <string name="tap_intro_home_navigation_desc">नेभिगेशन ड्रयर खोल्न यहाँ ट्याप गर्नुहोस् वा स्क्रिनको बायाँ छेउबाट स्वाइप गर्नुहोस्</string>
@@ -82,6 +82,8 @@
     <string name="home_donate">सहयोग गर्नुहोस्</string>
     <string name="home_icons">कस्टम आईकनहरू</string>
     <string name="home_muzei">Muzei लाईभ वालपेपरहरु</string>
+    <string name="home_icon_request_installed_apps">कुल \n%d स्थापित एप्सहरु छन</string>
+    <string name="home_icon_request_themed_apps">थीम भएका \n%d एप्सहरु</string>
     <!-- Apply -->
     <string name="apply_installed">स्थापित लन्चरहरु</string>
     <string name="apply_supported">समर्थित लन्चरहरु</string>
