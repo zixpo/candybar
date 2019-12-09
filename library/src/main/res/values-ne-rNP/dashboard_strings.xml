@@ -79,6 +79,7 @@
     <string name="tap_intro_wallpaper_preview_apply">वालपेपर लागू गर्नुहोस्</string>
     <!-- Home -->
     <string name="home_more_apps_header">थप एपहरु</string>
+    <string name="home_rate_and_review">रेटिङ र समीक्षा</string>
     <string name="home_apply_icon_pack">%s लाई लागू गर्नुहोस्</string>
     <string name="home_donate">सहयोग गर्नुहोस्</string>
     <string name="home_icons">कस्टम आईकनहरू</string>
@@ -86,9 +87,11 @@
     <string name="home_muzei">Muzei लाईभ वालपेपरहरु</string>
     <string name="home_icon_request_installed_apps">कुल \n%d स्थापित एप्सहरु छन</string>
     <string name="home_icon_request_themed_apps">थीम भएका \n%d एप्सहरु छन</string>
+    <string name="home_icon_request_missed_apps">छुटेका\n%d एप्सहरु</string>
     <!-- Apply -->
     <string name="apply_installed">स्थापित लन्चरहरु</string>
     <string name="apply_supported">समर्थित लन्चरहरु</string>
+    <string name="apply_lg_home_nougat">एंड्रॉइड नोगैट मा LG होमले अब आइकन पैक का समर्थन गर्दैन। आइकन प्याक उपयोग गर्न को लागि तपाईंले अब अनुकुल लन्चरको सहायता लुनुहोस्।</string>
     <!-- Icons -->
     <string name="icons_load_failed">आइकन लोड गर्न असमर्थ</string>
     <string name="icon_shape">आइकनको आकार</string>
@@ -133,6 +136,7 @@
     <string name="pref_premium_request_restore_success">प्रीमियम अनुरोध पुनर्स्थापित भयो</string>
     <string name="pref_premium_request_restore_empty">तपाईंसँग कुनै खरीद गरिएको प्याकेज छैन</string>
     <string name="pref_premium_request_rebuild">प्रीमियम आइकन अनुरोध पुन: निर्माण गर्नुहोस्</string>
+    <string name="pref_premium_request_rebuild_desc">सबै प्रीमियम आइकन अनुरोध डेटा पठाउनको लागि संकलन गर्नुहोस्</string>
     <string name="pref_theme_header">थीम</string>
     <string name="pref_theme_dark">डार्क थीम</string>
     <string name="pref_theme_dark_desc">एप्लीकेसन थिमका लागि गाढा रङ प्रयोग गर्नुहोस्</string>
