@@ -131,13 +131,25 @@
     <string name="request_app_disabled">तपाईं यो आइकन प्याकको पुरानो संस्करण प्रयोग गर्दै हुनुहुन्छ। अनुरोध गरिएको आइकनहरू नयाँ संस्करणमा समावेश हुन सक्छ। आइकन अनुरोध गर्न कृपया नौलो संस्करणमा अपडेट गर्नुहोस्।</string>
     <string name="connection_error_long">सर्भरबाट डाटा लोड गर्न सकिएन। कृपया तपाईंको नेटवर्क जाँच्नुहोस्।</string>
     <string name="request_used">तपाईंले %d आइकन अनुरोध गर्नु भयो</string>
+    <string name="request_limit_buy">तपाइँ धेरै आइकनहरू अनुरोध गर्न प्रिमियम प्यकेज खरीद गर्न सक्नुहुन्छ।</string>
     <string name="request_limit_reset">आइकन अनुरोध सीमा प्रत्येक अपडेटमा रिसेट हुनेछ।</string>
     <!-- Regular Request -->
     <string name="regular_request">नियमित आइकन अनुरोध</string>
+    <string name="regular_request_desc">तपाइँको आइकन अनुरोध गर्नुहोस् र विकासकर्ताले तपाइँले अनुरोध गर्नुभएको आईकनहरू समावेश गर्ने प्रयास गर्नेछ।</string>
+    <string name="regular_request_count">कुल \n%d अनुरोध</string>
+    <string name="regular_request_used">\n%d अनुरोध प्रयोग गरियो</string>
+    <string name="regular_request_available">\n%d अनुरोध बाँकी उप्लव्ध</string>
     <!-- Premium Request -->
     <string name="premium_request">प्रीमियम आइकन अनुरोध</string>
+    <string name="premium_request_no_internet">निश्चित गर्नुहोस् कि तपाईंको फोन प्रीमियम अनुरोध पठाउनु अघि इन्टरनेटमा जडित छ</string>
     <string name="premium_request_buy">किन्नुहोस्</string>
+    <string name="premium_request_count">कुल \n%d अनुरोध</string>
+    <string name="premium_request_used">\n%d अनुरोध प्रयोग गरियो</string>
+    <string name="premium_request_available">\n%d अनुरोध बाँकी उप्लव्ध</string>
+    <string name="premium_request_limit">तपाईंले केवल %d प्रीमियम अनुरोध गर्नु भएको छ</string>
+    <string name="premium_request_rebuilding">प्रीमियम अनुरोध बनाउदै …</string>
     <string name="premium_request_rebuilding_empty">तपाईंले कुनै प्रीमियम अनुरोध गर्नु भएको छैन</string>
+    <string name="premium_request_required">आइकन अनुरोध गर्न तपाईंले प्रिमियम आइकन अनुरोध प्याकेज खरीद गर्नु पर्छ</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">नयाँ वालपेपर</string>
     <string name="wallpaper_already_downloaded">वालपेपर पहिले नै डाउनलोड भाईसकेको छ</string>
