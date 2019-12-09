@@ -194,7 +194,7 @@
     <string name="pref_wallpaper_location">वालपेपर राख्न वा शेभ गर्ने स्थान</string>
     <string name="pref_language_header">भाषा</string>
     <string name="pref_others_header">अन्य</string>
-    <string name="pref_others_report_bugs">बग रिपोर्ट गर्नुहोस्</string>
+    <string name="pref_others_report_bugs">बग रिपोर्ट</string>
     <string name="pref_others_changelog">परिवर्तन लग</string>
     <string name="pref_others_reset_tutorial">ट्यूटोरियल रिसेट गर्नुहोस्</string>
     <string name="pref_others_reset_tutorial_reset">ट्यूटोरियल रिसेट</string>
