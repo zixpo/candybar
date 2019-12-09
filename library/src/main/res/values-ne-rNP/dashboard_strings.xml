@@ -90,7 +90,16 @@
     <string name="icon_shape">आइकनको आकार</string>
     <!-- Request -->
     <string name="request_title">आइकोन अनुरोध</string>
+    <string name="request_not_selected">अनुरोध गर्न एपहरु चयन गर्नुहोस्</string>
+    <string name="request_not_requested">अनुरोध गरिएको छैन</string>
+    <string name="request_already_requested">पहिले नै अनुरोध गरिएको छ</string>
+    <string name="request_building">अनुरोध निर्माण गरिदैछ…</string>
+    <string name="request_fetching_data">भर्खरैको डाटा ल्याउँदै...</string>
+    <string name="request_build_failed">आइकनको अनुरोध निर्माण गर्न असमर्थ</string>
+    <string name="request_appfilter_failed">appfilter.xml पढ्न असमर्थ</string>
+    <string name="request_limit_reset">आइकन अनुरोध सीमा प्रत्येक अपडेटमा रिसेट हुनेछ।</string>
     <!-- Regular Request -->
+    <string name="regular_request">नियमित आइकन अनुरोध</string>
     <!-- Premium Request -->
     <!-- Wallpapers -->
     <string name="wallpaper_apply">वालपेपर लागू गर्नुहोस्</string>
