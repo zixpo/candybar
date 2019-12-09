@@ -93,6 +93,7 @@
     <string name="home_donate">सहयोग गर्नुहोस्</string>
     <string name="home_donate_desc">आइकन प्याक विकासको लागि समर्थन</string>
     <string name="home_icons">कस्टम आईकनहरू</string>
+    <string name="home_icon_dimension">%s आइकनको पिक्सेल आयाम</string>
     <string name="home_loud_wallpapers">%d क्लाउड वालपेपर</string>
     <string name="home_muzei">Muzei लाईभ वालपेपरहरु</string>
     <string name="home_icon_request_installed_apps">कुल \n%d स्थापित एप्सहरु छन</string>
