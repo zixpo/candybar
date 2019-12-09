@@ -63,18 +63,30 @@
     <string name="share_app_body">एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">नेभिगेसन ड्रअर</string>
+    <string name="tap_intro_home_navigation_desc">नेभिगेशन ड्रयर खोल्न यहाँ ट्याप गर्नुहोस् वा स्क्रिनको बायाँ छेउबाट स्वाइप गर्नुहोस्</string>
     <string name="tap_intro_home_apply">आइकन प्याक लागू गर्नुहोस्</string>
+    <string name="tap_intro_home_apply_desc">%s लागू गर्न यहाँ ट्याप गर्नुहोस्</string>
     <string name="tap_intro_icons_search">खोज्नुहोस्</string>
     <string name="tap_intro_icons_search_desc">आइकन खोज्नलाई यहाँ ट्याप गर्नुहोस्</string>
     <string name="tap_intro_request_select">समावेस नगरिएका एपहरु चयन गर्नुहोस्</string>
+    <string name="tap_intro_request_select_desc">आइकन अनुरोध को लागी छुटेको एपहरु छनौट गर्न यहाँ ट्याप गर्नुहोस्</string>
+    <string name="tap_intro_request_select_all">समावेस नगरिएका सबै एपहरु चयन गर्नुहोस्</string>
     <string name="tap_intro_wallpapers_option">वालपेपर सेटिङ्गहरू</string>
-    <string name="tap_intro_wallpapers_preview">जीवन्त वालपेपर</string>
+    <string name="tap_intro_wallpapers_option_desc_download">डाउनलोड वा</string>
+    <string name="tap_intro_wallpapers_preview">वालपेपर पूर्वावलोकन</string>
     <string name="tap_intro_wallpaper_preview_save">वालपेपर save गर्नुहोस्</string>
     <string name="tap_intro_wallpaper_preview_apply">वालपेपर लागू गर्नुहोस्</string>
     <!-- Home -->
+    <string name="home_more_apps_header">थप एपहरु</string>
+    <string name="home_apply_icon_pack">%s लाई लागू गर्नुहोस्</string>
     <string name="home_donate">सहयोग गर्नुहोस्</string>
+    <string name="home_icons">कस्टम आईकनहरू</string>
+    <string name="home_muzei">Muzei लाईभ वालपेपरहरु</string>
     <!-- Apply -->
+    <string name="apply_installed">स्थापित लन्चरहरु</string>
+    <string name="apply_supported">समर्थित लन्चरहरु</string>
     <!-- Icons -->
+    <string name="icons_load_failed">आइकन लोड गर्न असमर्थ</string>
     <string name="icon_shape">आइकनको आकार</string>
     <!-- Request -->
     <string name="request_title">आइकोन अनुरोध</string>
