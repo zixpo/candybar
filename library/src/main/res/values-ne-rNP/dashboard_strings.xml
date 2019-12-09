@@ -101,10 +101,27 @@
     <!-- Regular Request -->
     <string name="regular_request">नियमित आइकन अनुरोध</string>
     <!-- Premium Request -->
+    <string name="premium_request">प्रीमियम आइकन अनुरोध</string>
+    <string name="premium_request_buy">किन्नुहोस्</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">नयाँ वालपेपर</string>
+    <string name="wallpaper_already_downloaded">वालपेपर पहिले नै डाउनलोड भाईसकेको छ</string>
+    <string name="wallpaper_downloading">वालपेपर डाउनलोड गर्दै…</string>
+    <string name="wallpaper_download_failed">वालपेपर डाउनलोड गर्न असमर्थ</string>
+    <string name="wallpaper_loading">वालपेपर लोड गरिदै…</string>
+    <string name="wallpaper_applying">वालपेपर लागू गरिदै…</string>
+    <string name="wallpaper_applied">वालपेपर लागु गरियो</string>
+    <string name="wallpaper_apply_failed">वालपेपर लागु गर्न सकिएन</string>
+    <string name="wallpaper_apply_cancelled">वालपेपर लागू रद्द गरियो</string>
+    <string name="connection_failed">सर्भरबाट डाटा ल्याउन असमर्थ</string>
     <string name="wallpaper_apply">वालपेपर लागू गर्नुहोस्</string>
     <string name="wallpaper_save_to_device">वालपेपर save गर्नुहोस्</string>
     <!-- Preferences -->
+    <string name="pref_data_header">डेटा &amp; क्यास</string>
+    <string name="pref_data_cache">क्यास सफा गर्नुहोस्</string>
+    <string name="pref_data_cache_size">क्यास साइज: %s</string>
+    <string name="pref_data_cache_cleared">क्यास सफा गरियो</string>
+    <string name="pref_premium_request_header">प्रीमियम आइकन अनुरोध</string>
     <string name="pref_wallpaper_header">वालपेपर</string>
     <string name="pref_language_header">भाषा</string>
     <string name="pref_others_header">अन्य</string>
