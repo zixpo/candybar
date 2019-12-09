@@ -39,6 +39,8 @@
     <string name="search_faqs">प्रश्न या उत्तर</string>
     <string name="search_icon">आइकॉन का नाम</string>
     <!-- Update -->
+    <string name="update_available">अपडेट उपलब्ध है</string>
+    <string name="no_update_available">आप नवीनतम संस्करण का उपयोग कर रहे हैं।</string>
     <!-- Changelog -->
     <string name="changelog_version">संस्करण</string>
     <!-- InAppBilling -->
