@@ -29,7 +29,7 @@
     <string name="menu_wallpaper_crop">वालपेपर क्रोप गर्नुहोस्</string>
     <string name="menu_apply_homescreen">गृह पृष्ठ</string>
     <string name="menu_apply_lockscreen">लोक स्क्रीन</string>
-    <string name="menu_apply_homescreen_lockscreen">गृह पृष्ठ र लोक स्क्रीन</string>
+    <string name="menu_apply_homescreen_lockscreen">गृह पृष्ठ र लक स्क्रीन</string>
     <!-- Dialog -->
     <string name="open">खोल्नुहोस्</string>
     <string name="close">बन्द गर्नुहोस्</string>
