@@ -5,19 +5,19 @@
     <!-- Navigation View -->
     <string name="navigation_view_home">गृह पृष्ठ</string>
     <string name="navigation_view_apply">लागू गर्नुहोस्</string>
-    <string name="navigation_view_icons">आइकोनहरु</string>
-    <string name="navigation_view_request">आइकोन अनुरोध</string>
+    <string name="navigation_view_icons">आइकनहरु</string>
+    <string name="navigation_view_request">आइकन अनुरोध</string>
     <string name="navigation_view_wallpapers">वालपेपरहरु</string>
     <string name="navigation_view_settings">सेटिंग</string>
     <string name="navigation_view_faqs">लगातर सोधिने प्रश्नहरू</string>
-    <string name="navigation_view_about">बारेमा</string>
+    <string name="navigation_view_about">एपको बारेमा</string>
     <string name="navigation_view_donate">विकासमा समर्थन</string>
     <!-- Muzei -->
     <string name="muzei_settings">Muzei सेटिंग्स</string>
     <string name="minute">मिनेट</string>
     <string name="hour">घण्टा</string>
     <string name="save_setting">सुरछित गर्नुहोस्</string>
-    <string name="muzei_refresh_duration">ताजा अवधि</string>
+    <string name="muzei_refresh_duration">ताजा गर्ने अवधि</string>
     <string name="muzei_wifi_only">वाइफाइबाट मात्र ताजा गर्नुहोस्</string>
     <string name="muzei_downloaded_only">डाउनलोड गरिएका वालपेपर मात्र लोड गर्नुहोस्</string>
     <string name="muzei_settings_ignored">आइकन प्याकले वालपेपरहरू समावेश गर्दैन, सेटि बेवास्ताको उपेक्षा गरियो</string>
@@ -35,7 +35,7 @@
     <string name="close">बन्द गर्नुहोस्</string>
     <string name="clear">क्लेअर गर्नुहोस्</string>
     <string name="ok">ठीक छ</string>
-    <string name="install">स्थापना गर्नुहोस्</string>
+    <string name="install">इन्स्टल गर्नुहोस्</string>
     <string name="donate">सहयोग गर्नुहोस्</string>
     <string name="update">अद्यावधिक गर्नुहोस्</string>
     <string name="search_noresult">\"%s\" को लागी कुनै परिणाम भेटिएन</string>
@@ -52,15 +52,15 @@
     <string name="license_checking">लाइसेन्स जाँच गरिदैछ…</string>
     <string name="license_check">लाइसेन्स जाँच</string>
     <string name="license_check_success">लाइसेन्स जाँच सफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भाको रछ धन्यबाद !  </string>
-    <string name="license_check_failed">लाइसेन्स जाँच बिफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भाको रन छ,   कृपया खरिद गर्नुहोला धन्यवाद ।</string>
+    <string name="license_check_failed">लाइसेन्स जाँच बिफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भाको रन छ,  कृपया खरिद गर्नुहोला धन्यवाद ।</string>
     <string name="license_check_retry">लाइसेन्स जाँच गर्न असमर्थ छौ, केहि क्षणमा फेरि प्रयास गर्नुहोस्।</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">प्ले स्टोर जाँच गर्दै छौ</string>
-    <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। आइकोन प्याकको मज्जा लिनुहोस्।</string>
-    <string name="playstore_check_failed">तपाईंले प्ले स्टोर भन्दा बहिर बाट डाउनलोड गरेको जस्तो लाग्यो, तपाईंले प्रयोग गर्न सक्नु हुँदैन</string>
+    <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। आइकन प्याकको मज्जा लिनुहोस्।</string>
+    <string name="playstore_check_failed">तपाईंले प्ले स्टोर भन्दा बहिर बाट डाउनलोड गरेको जस्तो लाग्यो, तपाईंले यस आइकनलाई प्रयोग गर्न सक्नु हुँदैन</string>
     <!-- Share -->
     <string name="share_app_title">%s चेक आउट</string>
-    <string name="share_app_body">%1$s एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ %2$s</string>
+    <string name="share_app_body">चेक आउट %1$s एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">नेभिगेसन ड्रअर</string>
     <string name="tap_intro_home_navigation_desc">नेभिगेशन ड्रयर खोल्न यहाँ ट्याप गर्नुहोस् वा स्क्रिनको बायाँ छेउबाट स्वाइप गर्नुहोस्</string>
@@ -81,8 +81,8 @@
     <string name="tap_intro_wallpapers_option_desc_download">डाउनलोड वा</string>
     <string name="tap_intro_wallpapers_preview">वालपेपर पूर्वावलोकन</string>
     <string name="tap_intro_wallpapers_preview_desc">वालपेपरको पूर्ण आकार पूर्वावलोकन गर्न यहाँ ट्याप गर्नुहोस्</string>
-    <string name="tap_intro_wallpaper_preview_save">वालपेपर save गर्नुहोस्</string>
-    <string name="tap_intro_wallpaper_preview_save_desc">तपाईंको आफ्नो फोनमा वालपेपर डाउनलोड गर्न र राख्न यहाँ ट्याप गर्नुहोस् ताकि तपाईं यसलाई पछि प्रयोग गर्न सक्नुहुनेछ</string>
+    <string name="tap_intro_wallpaper_preview_save">वालपेपर समावेस गर्नुहोस्</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">तपाईंको आफ्नो फोनमा वालपेपर डाउनलोड गर्न र राख्न यहाँ ट्याप गर्नुहोस् किनकी तपाईं यसलाई पछि प्रयोग गर्न सक्नुहुनेछ</string>
     <string name="tap_intro_wallpaper_preview_apply">वालपेपर लागू गर्नुहोस्</string>
     <string name="tap_intro_wallpaper_preview_apply_desc">होम स्क्रिनको पृष्ठभूमिमा वालपेपर सेट गर्न यहाँ ट्याप गर्नुहोस्</string>
     <!-- Home -->
@@ -91,8 +91,8 @@
     <string name="home_rate_and_review">रेटिङ र समीक्षा गर्नुहोस्</string>
     <string name="home_apply_icon_pack">%s लाई लागू गर्नुहोस्</string>
     <string name="home_donate">सहयोग गर्नुहोस्</string>
-    <string name="home_donate_desc">आइकन प्याक विकासको लागि समर्थन</string>
-    <string name="home_icons">कस्टम आईकनहरू</string>
+    <string name="home_donate_desc">आइकन प्याक विकासको लागि समर्थन गर्नुहोस्</string>
+    <string name="home_icons">बैकल्पिक आईकनहरू</string>
     <string name="home_icon_dimension">%s आइकनको पिक्सेल आयाम</string>
     <string name="home_loud_wallpapers">%d क्लाउड वालपेपर</string>
     <string name="home_muzei">Muzei लाईभ वालपेपरहरु</string>
@@ -101,7 +101,7 @@
     <string name="home_icon_request_missed_apps">छुटेका\n%d एप्सहरु</string>
     <!-- Apply -->
     <string name="apply_installed">स्थापित लन्चरहरु</string>
-    <string name="apply_supported">समर्थित लन्चरहरु</string>
+    <string name="apply_supported">समर्थन गर्ने लन्चरहरु</string>
     <string name="apply_manual">%1$s लन्चरबाट सिधै लागु गर्न सकिएन, तर लन्चरको सेटिङ बाट %2$s म्यानुअली लागु गर्न सकिनेछ।</string>
     <string name="apply_manual_evie">%s चयन गर्नलाई ट्याप गरेर र होमस्क्रीनमा होल्ड गर्नुहोस् - सेटिहरू - आइकन प्याक</string>
     <string name="apply_launch_failed">%s सेटिंग्स सुरू गर्न असमर्थ</string>
@@ -112,24 +112,24 @@
     <string name="apply_lg_home">यो आइकन प्याक एप्लाई गर्नको लागि सेटिङ खोलेर - डिसप्ले - होम स्क्रिन - थिम मा जानुहोस्</string>
     <string name="apply_lg_home_not_available">तपाईंको फोनमा LG होम उपलव्ध छैन।</string>
     <string name="apply_lg_home_failed">LG होम सेटिंग्स लन्च गर्न सकिएन, तपाईं सेटिंग्सबाट म्यानुअल रूपमा आईकन प्याक लागू गर्न सक्नुहुनेछ।</string>
-    <string name="apply_lg_home_nougat">एंड्रॉइड नोगट मा LG होमले अब आइकन पैक का समर्थन गर्दैन। आइकन प्याक उपयोग गर्न को लागि तपाईंले अब अनुकुल लन्चरको सहायता लुनुहोस्।</string>
-    <string name="apply_launcher_incompatible">%s लन्चरले कुनैपनी आइकन प्याकलाई सपोर्ट गर्दैन, त्यसैले तपाईं यो लन्चरमा यस् आइकन प्याकलाई प्रयोग गर्न सक्नुहुन्न। तपाईंले %2$s लन्चर प्रयोग गरेमा यो आइकन प्याक प्रयोग गर्न सक्नु हुनेछ। के तपाईं यो लन्चर इन्सटल गर्न चाहनुहुन्छ?</string>
+    <string name="apply_lg_home_nougat">एंड्रॉइड नोगट मा LG होमले अब आइकन प्याकलाई समर्थन गर्दैन। आइकन प्याक उपयोग गर्न को लागि तपाईंले अब अनुकुल लन्चरको सहायता लिनुहोस्।</string>
+    <string name="apply_launcher_incompatible">%s लन्चरले कुनैपनी आइकन प्याकलाई समर्थन गर्दैन, त्यसैले तपाईं यो लन्चरमा यस् आइकन प्याकलाई प्रयोग गर्न सक्नुहुन्न। तपाईंले %2$s लन्चर प्रयोग गरेमा यो आइकन प्याक प्रयोग गर्न सक्नु हुनेछ। के तपाईं यो लन्चर इन्सटल गर्न चाहनुहुन्छ?</string>
     <!-- Icons -->
     <string name="icons_load_failed">आइकन लोड गर्न असमर्थ</string>
     <string name="icon_shape">आइकनको आकार</string>
     <!-- Request -->
-    <string name="request_title">आइकोन अनुरोध</string>
+    <string name="request_title">आइकन अनुरोध</string>
     <string name="request_not_selected">अनुरोध गर्न एपहरु चयन गर्नुहोस्</string>
     <string name="request_not_requested">अनुरोध गरिएको छैन</string>
-    <string name="request_already_requested">पहिले नै अनुरोध गरिएको छ</string>
+    <string name="request_already_requested">पहिले नै अनुरोध गरिएका</string>
     <string name="request_building">अनुरोध निर्माण गरिदैछ…</string>
     <string name="request_fetching_data">भर्खरैको डाटा ल्याउँदै...</string>
-    <string name="request_build_failed">आइकनको अनुरोध निर्माण गर्न असमर्थ</string>
-    <string name="request_appfilter_failed">appfilter.xml पढ्न असमर्थ</string>
-    <string name="request_requested">कृपया तपाइँको अनुरोध फेरि जाँच गर्नुहोस्। किनभने तपाईं एप अनुरोध गर्न को लागी कोशिश गर्दै हुनुहुन्छ जुन पहिले नै अनुरोध गरिएको थियो।</string>
+    <string name="request_build_failed">आइकनको अनुरोध निर्माण गर्न सकिएन</string>
+    <string name="request_appfilter_failed">appfilter.xml पढ्न सकिएन</string>
+    <string name="request_requested">कृपया तपाइँको अनुरोध फेरि जाँच गर्नुहोस्। किनभने तपाईं एप अनुरोध गर्नको लागी कोशिश गर्दै हुनुहुन्छ जुन पहिले नै अनुरोध गरिएको थियो।</string>
     <string name="request_email_client">तपाईंले चाहेको एपको आइकन परिवर्तन गर्न र् अनुरोध पठाउनको लागि छनोट गर्नुहोस्</string>
     <string name="request_app_disabled">तपाईं यो आइकन प्याकको पुरानो संस्करण प्रयोग गर्दै हुनुहुन्छ। अनुरोध गरिएको आइकनहरू नयाँ संस्करणमा समावेश हुन सक्छ। आइकन अनुरोध गर्न कृपया नौलो संस्करणमा अपडेट गर्नुहोस्।</string>
-    <string name="connection_error_long">सर्भरबाट डाटा लोड गर्न सकिएन। कृपया तपाईंको नेटवर्क जाँच्नुहोस्।</string>
+    <string name="connection_error_long">सर्भरबाट डाटा लोड गर्न सकिएन। कृपया तपाईंको नेटवर्क एक पटक जाँच्नुहोस्।</string>
     <string name="request_limit">तपाईं मात्र नियमित अनुरोधमा केवल %d अनुरोध (हरू) बनाउन सक्नु हुनेछ।</string>
     <string name="request_used">तपाईंले %d आइकन अनुरोध गर्नु भयो</string>
     <string name="request_limit_buy">तपाइँ धेरै आइकनहरू अनुरोध गर्न प्रिमियम प्यकेज खरीद गर्न सक्नुहुन्छ।</string>
@@ -143,12 +143,12 @@
     <!-- Premium Request -->
     <string name="premium_request">प्रीमियम आइकन अनुरोध</string>
     <string name="premium_request_no_internet">निश्चित गर्नुहोस् कि तपाईंको फोन प्रीमियम अनुरोध पठाउनु अघि इन्टरनेटमा जडित छ</string>
-    <string name="premium_request_desc">प्रीमियम आइकन अनुरोध गर्न भुक्तान गर्नु पर्ने हुन्छ। तपाईं आफ्ना अनुरोधित एपहरु प्रिमियम आईकन अनुरोध प्रयोग गरेर छिटो प्राप्त गर्न सक्नुहुनेछ।</string>
+    <string name="premium_request_desc">प्रीमियम आइकन अनुरोध गर्न भुक्तान गर्नुपर्ने हुन्छ। तपाईं आफ्ना अनुरोधित एपहरु प्रिमियम आईकन अनुरोध प्रयोग गरेर छिटो प्राप्त गर्न सक्नुहुनेछ।</string>
     <string name="premium_request_buy">किन्नुहोस्</string>
     <string name="premium_request_count">कुल \n%d अनुरोध</string>
     <string name="premium_request_used">\n%d अनुरोध प्रयोग गरियो</string>
     <string name="premium_request_available">\n%d अनुरोध बाँकी उप्लव्ध</string>
-    <string name="premium_request_already_purchased">तपाईंसँग अझै %d प्रीमियम अनुरोध छ।  प्रीमियम अनुरोध प्याकेज फेरि खरीद गर्नु अघि यी सबै प्रयोग गर्नु आवश्यक छ।</string>
+    <string name="premium_request_already_purchased">तपाईंसँग अझै %d प्रीमियम अनुरोध बाँकी छ।  प्रीमियम अनुरोध प्याकेज फेरि खरीद गर्नु अघि यी सबै प्रयोग गर्नु आवश्यक छ।</string>
     <string name="premium_request_limit">तपाईंले केवल %d प्रीमियम अनुरोध गर्नु भएको छ</string>
     <string name="premium_request_limit1">\n\n तपाईंले फेरि नियमित अनुरोध प्रयोग गर्नु अघि तपाईंको सबै प्रीमियम अनुरोधहरू प्रयोग गर्नु आवश्यक छ। तर तपाईंले %d एपहरु चयन गर्नुभयो</string>
     <string name="premium_request_consume_failed">प्रिमियम अनुरोध प्रयोग गर्न सकिएन, तपाईंसँग स्थिर ईन्टरनेट छ या छैन निश्चित गर्नुहोस् र फेरि प्रयास गर्नुहोस्। प्रीमियम अनुरोध गर्न सेटिंग्समा जानुहोस् र प्रीमियम अनुरोधहरू पुन: निर्माण गर्नुहोस्।</string>
@@ -160,15 +160,15 @@
     <string name="wallpaper_new_added">नयाँ वालपेपर</string>
     <string name="wallpaper_already_downloaded">वालपेपर पहिले नै डाउनलोड भाईसकेको छ</string>
     <string name="wallpaper_downloading">वालपेपर डाउनलोड गर्दै…</string>
-    <string name="wallpaper_download_failed">वालपेपर डाउनलोड गर्न असमर्थ</string>
+    <string name="wallpaper_download_failed">वालपेपर डाउनलोड गर्न सकिएन</string>
     <string name="wallpaper_loading">वालपेपर लोड गरिदै…</string>
     <string name="wallpaper_applying">वालपेपर लागू गरिदै…</string>
     <string name="wallpaper_applied">वालपेपर लागु गरियो</string>
     <string name="wallpaper_apply_failed">वालपेपर लागु गर्न सकिएन</string>
     <string name="wallpaper_apply_cancelled">वालपेपर लागू रद्द गरियो</string>
-    <string name="connection_failed">सर्भरबाट डाटा ल्याउन असमर्थ</string>
+    <string name="connection_failed">सर्भरबाट डाटा ल्याउन सकिएन</string>
     <string name="wallpaper_apply">वालपेपर लागू गर्नुहोस्</string>
-    <string name="wallpaper_save_to_device">वालपेपर save गर्नुहोस्</string>
+    <string name="wallpaper_save_to_device">वालपेपर समावेस गर्नुहोस्</string>
     <!-- Preferences -->
     <string name="pref_data_header">डेटा &amp; क्यास</string>
     <string name="pref_data_cache">क्यास सफा गर्नुहोस्</string>
