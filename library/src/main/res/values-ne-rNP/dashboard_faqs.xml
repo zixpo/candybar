@@ -73,13 +73,12 @@
         <item>\"रिपोर्ट बगहरू\" आइकन प्याकमा सम्बन्धित बगहरू रिपोर्ट गर्न प्रयोग गरिन्छ तर ड्याशबोर्ड सम्बन्धित बगहरू रिपोर्ट गर्न को लागि चाँही होइन।</item>
         <item>प्रत्येक लन्चरले प्रत्यक्ष समर्थन गर्दैन, र ती मध्ये केही ड्यासबोर्डबाट सीधा प्रबेश गर्न सकिदैन।
 तपाईं यो आइकन प्याकलाई तपाईंको फोनमा भएको कुनै लन्चरको सेटिंग्सबाट मैन्युअल्ली लागू गर्न सक्नुहुनेछ।</item>
-        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
-      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
-      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
-      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
-            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
-        <item>Open muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>जब तपाईं एपबाट सिधा \"वालपेपर सेट गर्नुहोस्\" गर्नुहुन्छ भने, यो क्यासमा डाउनलोड हुनेछ, त्यसो भए ड्यासबोर्ड एपले यसलाई लागू गर्न प्रयास गर्नेछ। लागू हुन केहि समय लिने छ र छोटो समय को लागी केही मात्रामा र्याम मेमोरी को आवश्यक पर्नेछ।
+तपाईंको फोनमा वालपेपर प्रशोधन गर्न पर्याप्त र्याम छैन भने \"कालो स्क्रिन\" को समस्या देखा पर्न सक्छ।
+फोन पुन: सुरु गर्नाले यो समस्याको समाधान हुनेछ। पुनः सुरु गर्नाले, तपाईंको फोनमा धेरै र्याम उपलब्ध हुनेछ।
+वैकल्पिक रूपमा, तपाईं ग्यालरीबाट डाउनलोड गरिएको वालपेपर, त्यहाँबाट वालपेपरको रूपमा सेट गर्न सक्नुहुनेछ।</item>
+        <item>Muzei खोल्नुहोस, आइकन प्याक चयन गरेर, सेटिंग्स मा जानुहोस। तपाईंले डाउनलोड गरेका वालपेपरलाई लोड गर्ने विकल्प देख्नुहुनेछ।
+पहिले तपाईंले ड्यासबोर्डबाट वालपेपर डाउनलोड गर्नु पर्नेछ।</item>
         <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
             Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
         <item>Open Dashboard, download wallpapers that you want to use in Muzei.
