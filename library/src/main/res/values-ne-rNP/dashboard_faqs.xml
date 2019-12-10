@@ -79,14 +79,14 @@
 वैकल्पिक रूपमा, तपाईं ग्यालरीबाट डाउनलोड गरिएको वालपेपर, त्यहाँबाट वालपेपरको रूपमा सेट गर्न सक्नुहुनेछ।</item>
         <item>Muzei खोल्नुहोस, आइकन प्याक चयन गरेर, सेटिंग्स मा जानुहोस। तपाईंले डाउनलोड गरेका वालपेपरलाई लोड गर्ने विकल्प देख्नुहुनेछ।
 पहिले तपाईंले ड्यासबोर्डबाट वालपेपर डाउनलोड गर्नु पर्नेछ।</item>
-        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
-            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
-        <item>Open Dashboard, download wallpapers that you want to use in Muzei.
-            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
-        <item>It is used to write &amp; read cache, and collect the icon request data.</item>
+        <item>यदि वालपेपर पहिले नै डाउनलोड गरिएको छ भने, त्यो तपाईंको फोन मेमोरीबाट स्वत लोड हुनेछ।
+वालपेपर परिवर्तन हुँदा Muzei ले यसलाई डाउनलोड गर्न चाँही छोड्दैन। पहिले तपाईंले ड्यासबोर्डबाट वालपेपर डाउनलोड गर्नु पर्नेछ।</item>
+        <item>ड्यासबोर्ड खोल्नुहोस्, जुन तपाईं वालपेपर Muzei मा प्रयोग गर्न चाहानुहुन्छ त्यसलाई डाउनलोड गर्नुहोस।
+Muzei सेटिंग्स खोल्नुहोस्, त्यसपछी डाउनलोड गरिएका वालपेपर मात्र चयन गर्नुहोस।</item>
+        <item>यो क्यास मेमोरी रिड राइट गर्न, र आइकनको अनुरोध डाटा संकलन प्रयोग गर्न चाहिन्छ।</item>
         <item>क्लाउड आधारित वालपेपर लोड र डाउनलोड गर्नको लागि यसको आवश्यकता हुन्छ।</item>
-        <item>It is used to check if your phone has an internet connection or not.</item>
-        <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
+        <item>यो तपाईंको फोनसँग इन्टरनेट जोडिएको छ वा छैन जाँच्न प्रयोग गरिन्छ।</item>
+        <item>यो Muzei बाट क्लाउड वालपेपर लोड गर्नको लागि, तपाईको फोनसँग वाइफाइ इन्टरनेट जोडिएको छ कि छैन जाँच्न प्रयोग गरिन्छ।</item>
         <item>It is used to apply wallpapers directly from the dashboard app.</item>
         <item>यो Muzei लाईभ वालपेपरले प्रयोग गरीरहेको हुन्छ।</item>
     </string-array>
