@@ -40,7 +40,8 @@
         <item>एप्लीकेशन रिइन्सटल पछि म कसरी बाँकी प्रिमियम अनुरोधहरू पुनर्स्थापना गर्न सक्छु?</item>
         <item>फोन रेस्टार्ट गर्दा, आइकन किन लागु भएन, डिफल्ट आइकन लागु भयो?</item>
         <item>मेरो फोनमा आइकन किन धमिलो र फाटेको जस्तो देखिएको छ?</item>
-        <item>मैले सबै समावेश गरिएका आइकनहरुमा आइकन देखे, तर किन ड्रयरमा एपको वास्तविक आइकन परिवर्तन हुँदैन?</item>
+        <item>मैले सबै समावेश गरिएका आइकनहरुमा आइकन देखे, 
+तर किन ड्रयरमा एपको वास्तविक आइकन परिवर्तन हुँदैन?</item>
         <item>\"बग रिपोर्ट\" भनेको के हो?</item>
         <item>मेरो एन्सटल गरेको लन्चर गुगल प्ले वर्णनमा सूचीबद्ध छ, तर किन यो लागू सेक्सनमा समावेश गरिएको छैन?</item>
         <item>वालपेपर लागू गर्न सकिँदैन, किन केवल कालो स्क्रिन देखाउँदैछ?</item>
@@ -70,8 +71,8 @@
 वैकल्पिक रूपमा तपाईं आफ्नो फोनमा भएको लन्चर परिवर्तन गर्न सक्नु हुनेछ।</item>
         <item>सेटिंग्स खोल्नुहोस्, तल स्क्रोल गर्नुहोस्, त्यसपछि \"बग रिपोर्ट\" छनौट गर्नुहोस्।</item>
         <item>\"रिपोर्ट बगहरू\" आइकन प्याकमा सम्बन्धित बगहरू रिपोर्ट गर्न प्रयोग गरिन्छ तर ड्याशबोर्ड सम्बन्धित बगहरू रिपोर्ट गर्न को लागि चाँही होइन।</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually from the individual launcher settings.</item>
+        <item>प्रत्येक लन्चरले प्रत्यक्ष समर्थन गर्दैन, र ती मध्ये केही ड्यासबोर्डबाट सीधा प्रबेश गर्न सकिदैन।
+तपाईं यो आइकन प्याकलाई तपाईंको फोनमा भएको कुनै लन्चरको सेटिंग्सबाट मैन्युअल्ली लागू गर्न सक्नुहुनेछ।</item>
         <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
       	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
       	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
