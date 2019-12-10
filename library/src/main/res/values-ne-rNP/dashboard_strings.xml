@@ -202,9 +202,9 @@
     <string name="permission_storage_denied">वालपेपर राख्नको लागि स्टोरेजको अनुमती चाहिन्छ</string>
     <!-- Intent -->
     <string name="app_client">एप छनोट गर्नुहोस्</string>
-    <string name="no_email_app">ईमेल पठाउन कुनै एप छैन</string>
+    <string name="no_email_app">ईमेल पठाउनको लागि कुनै एप छैन</string>
     <string name="no_browser">url खोल्न कुनै एप छैन</string>
-    <string name="intent_email_failed">ईमेल एप्लीकेसन देखाउन असमर्थ</string>
+    <string name="intent_email_failed">ईमेल एप्लीकेसन देखाउन सकिएन</string>
     <string name="intent_email_supported">समर्थित छ</string>
     <string name="intent_email_recommended">सिफारिस गरिएको</string>
     <string name="intent_email_not_supported">सपोर्ट गर्दैन</string>
@@ -228,7 +228,7 @@
     <string name="crash_report_send">रिपोर्ट पठाउनुहोस्</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">क्यान्डीबार</string>
-    <string name="about_dashboard_dev">क्यान्डीबार डनी महरधिकाले बनाएको एक प्रकारको ओपेन सोर्स आइकन प्याक ड्यास्बोर्ड हो, जस्लाई अपाचे लाईसेन्स २.० अन्तर्गत एन्ड्रोएड को लागि बनाइएको छ जुन GitHub सित्तैमा उपलव्ध छ।</string>
+    <string name="about_dashboard_dev">क्यान्डीबार डनी महरधिकाले बनाएको एक प्रकारको ओपेन सोर्स आइकन प्याक ड्यास्बोर्ड हो, जस्लाई अपाचे लाईसेन्स २.० अन्तर्गत एन्ड्रोएड को लागि बनाइएको छ जुन GitHub मा सित्तैमा उपलव्ध छ।</string>
     <string name="about_open_source_licenses">खुल्ला-स्रोत इजाजतपत्रहरू</string>
     <string name="about_dashboard_contributors">क्यान्डीबार योगदानकर्ताहरू</string>
     <string name="about_dashboard_translator">क्यान्डीबार अनुवादकहरु</string>
