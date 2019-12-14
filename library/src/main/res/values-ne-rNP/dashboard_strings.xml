@@ -121,7 +121,7 @@
     <string name="request_title">आइकन अनुरोध</string>
     <string name="request_not_selected">अनुरोध गर्न एपहरु चयन गर्नुहोस्</string>
     <string name="request_not_requested">अनुरोध गरिएको छैन</string>
-    <string name="request_already_requested">पहिले नै अनुरोध गरिएका</string>
+    <string name="request_already_requested">पहिले नै अनुरोध गरीसकेको </string>
     <string name="request_building">अनुरोध निर्माण गरिदैछ…</string>
     <string name="request_fetching_data">भर्खरैको डाटा ल्याउँदै...</string>
     <string name="request_build_failed">आइकनको अनुरोध निर्माण गर्न सकिएन</string>
@@ -136,14 +136,14 @@
     <string name="request_limit_reset">आइकन अनुरोध सीमा प्रत्येक अपडेटमा रिसेट हुनेछ।</string>
     <!-- Regular Request -->
     <string name="regular_request">नियमित आइकन अनुरोध</string>
-    <string name="regular_request_desc">तपाइँको आइकन अनुरोध गर्नुहोस् र विकासकर्ताले तपाइँले अनुरोध गर्नुभएको आईकनहरू समावेश गर्ने प्रयास गर्नेछ।</string>
+    <string name="regular_request_desc">तपाइँको आइकन अनुरोध, विकासकर्ताले अनुरोध गरिएका आईकनहरू छिटो भन्दा छिटो समावेश गर्ने प्रयास गर्नेछ।</string>
     <string name="regular_request_count">कुल \n%d अनुरोध</string>
     <string name="regular_request_used">\n%d अनुरोध प्रयोग गरियो</string>
     <string name="regular_request_available">\n%d अनुरोध बाँकी उप्लव्ध</string>
     <!-- Premium Request -->
     <string name="premium_request">प्रीमियम आइकन अनुरोध</string>
     <string name="premium_request_no_internet">निश्चित गर्नुहोस् कि तपाईंको फोन प्रीमियम अनुरोध पठाउनु अघि इन्टरनेटमा जडित छ</string>
-    <string name="premium_request_desc">प्रीमियम आइकन अनुरोध गर्न भुक्तान गर्नुपर्ने हुन्छ। तपाईं आफ्ना अनुरोधित एपहरु प्रिमियम आईकन अनुरोध प्रयोग गरेर छिटो प्राप्त गर्न सक्नुहुनेछ।</string>
+    <string name="premium_request_desc">प्रीमियम आइकन अनुरोध गर्न भुक्तान गर्नुपर्ने हुन्छ। तपाईं आफ्ना अनुरोधित एपहरु प्रिमियम आईकन अनुरोध प्रयोग गरेर छिटो पाउन सक्नुहुनेछ।</string>
     <string name="premium_request_buy">किन्नुहोस्</string>
     <string name="premium_request_count">कुल \n%d अनुरोध</string>
     <string name="premium_request_used">\n%d अनुरोध प्रयोग गरियो</string>
@@ -170,8 +170,8 @@
     <string name="wallpaper_apply">वालपेपर लागू गर्नुहोस्</string>
     <string name="wallpaper_save_to_device">वालपेपर समावेस गर्नुहोस्</string>
     <!-- Preferences -->
-    <string name="pref_data_header">डेटा &amp; क्यास</string>
-    <string name="pref_data_cache">क्यास सफा गर्नुहोस्</string>
+    <string name="pref_data_header">डेटा र क्यास</string>
+    <string name="pref_data_cache">क्यास मेटाउनुहोस्</string>
     <string name="pref_data_cache_desc">तपाईंको स्टोरेजबाट एमेज क्यास हटाउनुहोस् जुन यस एपबाट एमेज छान्दा, छुटेका एपहरुलाई अनुरोध गर्दा, र क्लाउड वालपेपर थम्बनेलहरू लोड गर्दा सिर्जना भएको हुन्छ ।</string>
     <string name="pref_data_cache_size">क्यास साइज: %s</string>
     <string name="pref_data_cache_clear_dialog">के तपाईं साच्चिकै क्यास मेमोरी हटाउन चाहनुहुछ?</string>
