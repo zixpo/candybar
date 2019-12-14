@@ -100,7 +100,7 @@
     <string name="home_icon_request_themed_apps">थीम भएका \n%d एप्सहरु छन</string>
     <string name="home_icon_request_missed_apps">छुटेका\n%d एप्सहरु</string>
     <!-- Apply -->
-    <string name="apply_installed">स्थापित लन्चरहरु</string>
+    <string name="apply_installed">स्थापित लन्चर (हरु)</string>
     <string name="apply_supported">समर्थन गर्ने लन्चरहरु</string>
     <string name="apply_manual">%1$s लन्चरबाट सिधै लागु गर्न सकिएन, तर लन्चरको सेटिङ बाट %2$s म्यानुअली लागु गर्न सकिनेछ।</string>
     <string name="apply_manual_evie">%s चयन गर्नलाई ट्याप गरेर र होमस्क्रीनमा होल्ड गर्नुहोस् - सेटिहरू - आइकन प्याक</string>
@@ -144,7 +144,7 @@
     <string name="premium_request">प्रीमियम आइकन अनुरोध</string>
     <string name="premium_request_no_internet">निश्चित गर्नुहोस् कि तपाईंको फोन प्रीमियम अनुरोध पठाउनु अघि इन्टरनेटमा जडित छ</string>
     <string name="premium_request_desc">प्रीमियम आइकन अनुरोध गर्न भुक्तान गर्नुपर्ने हुन्छ। तपाईं आफ्ना अनुरोधित एपहरु प्रिमियम आईकन अनुरोध प्रयोग गरेर छिटो पाउन सक्नुहुनेछ।</string>
-    <string name="premium_request_buy">किन्नुहोस्</string>
+    <string name="premium_request_buy">खरिद गर्नुहोस्</string>
     <string name="premium_request_count">कुल \n%d अनुरोध</string>
     <string name="premium_request_used">\n%d अनुरोध प्रयोग गरियो</string>
     <string name="premium_request_available">\n%d अनुरोध बाँकी उप्लव्ध</string>
