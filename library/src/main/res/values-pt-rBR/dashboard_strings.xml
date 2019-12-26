@@ -225,9 +225,25 @@
     <string name="about_privacy_policy_title">Política de Privacidade</string>
     <string name="about_terms_and_conditions_title">Termos e Condições</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Por favor, forneça uma descrição sobre que tipo de problema você deseja reportar</string>
+    <string name="report_bugs_desc_hint">Descrição</string>
+    <string name="report_bugs_desc_empty">Por favor, adicione uma descrição</string>
+    <string name="report_bugs_building">Construindo lista de atividades …</string>
+    <string name="report_bugs_failed">Não foi possível construir a lista de atividades</string>
+    <string name="report_bugs_send">Enviar Relatório</string>
     <!-- Support Development -->
+    <string name="donation_success">Obrigado por fazer uma doação. Eu a usarei para o bem.</string>
     <!-- Crash Report -->
+    <string name="crash_report">Relatório de falha</string>
+    <string name="crash_report_message">Infelizmente %s teve um erro. Escolha enviar o relatório abaixo para ajudar o desenvolvedor a corrigir o problema.</string>
+    <string name="crash_report_send">Enviar Relatório</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar é um pacote de ícones de código aberto, licenciado sob a Licença Apache 2.0 para
+        Android disponível no GitHub e gratuito para uso, desenvolvido por Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Licenças Open Source</string>
+    <string name="about_dashboard_contributors">Contribuidores CandyBar</string>
+    <string name="about_dashboard_translator">Tradutor CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Abrir</string>
     <string name="txt_close">Fechar</string>
