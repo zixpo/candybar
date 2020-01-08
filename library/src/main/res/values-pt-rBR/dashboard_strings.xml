@@ -130,19 +130,120 @@
     <string name="request_fetching_data">Buscando dados mais recentes...</string>
     <string name="request_build_failed">Não foi possível criar a solicitação do ícone</string>
     <string name="request_appfilter_failed">Não foi possível ler appfilter.xml</string>
+    <string name="request_requested">Por favor, verifique seu pedido novamente.
+        Porque você está tentando solicitar o aplicativo que já foi solicitado.</string>
+    <string name="request_email_client">Escolha o aplicativo que você deseja usar para enviar a solicitação de ícone</string>
+    <string name="request_app_disabled">Você está usando uma versão antiga deste pacote de ícones. Os ícones solicitados podem ser incluídos na versão mais recente. Por favor, atualize seu aplicativo para a versão mais recente para solicitar ícones.</string>
+    <string name="connection_error_long">Não foi possível carregar dados do servidor. Por favor, verifique sua conexão de rede.</string>
+    <string name="request_limit">Você só pode fazer %d pedido(s) com solicitação regular.</string>
+    <string name="request_used">Você solicitou %d ícone(s).</string>
+    <string name="request_limit_buy">Você pode comprar pedidos Premium para solicitar mais ícones.</string>
+    <string name="request_limit_reset">O limite de solicitação de ícone será redefinido em cada atualização.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Pedido de ícone regular</string>
+    <string name="regular_request_desc">Obtenha seu ícone solicitado e o desenvolvedor tentará incluir ícones que você solicitou.</string>
+    <string name="regular_request_count">Total\n%d pedido(s)</string>
+    <string name="regular_request_used">Usado\n%d pedido(s)</string>
+    <string name="regular_request_available">Disponível\n%d pedido(s)</string>
     <!-- Premium Request -->
+    <string name="premium_request">Pedido de ícone Premium</string>
+    <string name="premium_request_no_internet">Certifique-se de que seu telefone está conectado à internet antes de enviar uma solicitação Premium</string>
+    <string name="premium_request_desc">Pedido de ícone Premium é pago para solicitar. Você pode obter seus aplicativos solicitados mais rapidamente usando a solicitação de ícone Premium.</string>
+    <string name="premium_request_buy">Comprar</string>
+    <string name="premium_request_count">Total\n%d pedido(s)</string>
+    <string name="premium_request_used">Usado\n%d pedido(s)</string>
+    <string name="premium_request_available">Disponível\n%d pedido(s)</string>
+    <string name="premium_request_already_purchased">Você ainda tem %d pedido premium.
+        Você precisa usar todos eles antes de comprar um pacote de solicitação premium novamente.</string>
+    <string name="premium_request_limit">Você só tem %d pedido(s) premium,</string>
+    <string name="premium_request_limit1">mas você selecionou %d app(s).
+        \n\nVocê precisa usar todas as suas solicitações premium antes de usar o pedido regular novamente.</string>
+    <string name="premium_request_consume_failed">Não foi possível usar a solicitação Premium, certifique-se de que você tem uma conexão estável com a internet e tente novamente.
+        Vá para configurações para recriar as solicitações Premium.</string>
+    <string name="premium_request_rebuilding">Recriando pedido Premium …</string>
+    <string name="premium_request_rebuilding_empty">Você não fez uma solicitação Premium</string>
+    <string name="premium_request_exist">Você ainda tem um pacote de pedido de ícone Premium.
+        Abra as Configurações, escolha \"Restaurar Compras\" para restaurá-lo.</string>
+    <string name="premium_request_required">Você precisa comprar um pacote de solicitação de ícone premium para fazer pedidos de ícones</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Novo Papel de Parede</string>
+    <string name="wallpaper_already_downloaded">Papel de Parede já foi baixado</string>
+    <string name="wallpaper_downloading">Baixando papel de parede …</string>
+    <string name="wallpaper_download_failed">Não foi possível baixar o papel de parede</string>
+    <string name="wallpaper_loading">Carregando papel de parede …</string>
+    <string name="wallpaper_applying">Aplicando papel de parede …</string>
+    <string name="wallpaper_applied">Papel de parede aplicado</string>
+    <string name="wallpaper_apply_failed">Não foi possível aplicar o papel de parede</string>
+    <string name="wallpaper_apply_cancelled">Aplicação do papel de parede cancelada</string>
+    <string name="connection_failed">Não foi possível buscar dados do servidor</string>
     <string name="wallpaper_apply">Aplicar o papel de parede</string>
     <string name="wallpaper_save_to_device">Salvar o papel de parede</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Dados &amp; Cache</string>
+    <string name="pref_data_cache">Limpar Cache</string>
+    <string name="pref_data_cache_desc">Remova o cache de imagens do seu armazenamento, criado ao escolher uma imagem
+	    deste aplicativo, solicitando apps ausentes e depois de carregar o papel de parede em nuvem.</string>
+    <string name="pref_data_cache_size">Tamanho do Cache: %s</string>
+    <string name="pref_data_cache_clear_dialog">Você realmente deseja limpar o cache?</string>
+    <string name="pref_data_cache_cleared">Cache apagado</string>
+    <string name="pref_data_request">Limpar dados de solicitação de ícone</string>
+    <string name="pref_data_request_desc">Remover dados de solicitação de ícone, criado após solicitar
+        apps ausentes da solicitação de ícone.</string>
+    <string name="pref_data_request_clear_dialog">Você tem certeza que deseja limpar os dados do aplicativo?</string>
+    <string name="pref_data_request_cleared">Dados da solicitação de ícone apagados</string>
+    <string name="pref_premium_request_header">Pedido de ícone Premium</string>
+    <string name="pref_premium_request_restore">Restaurar Compras</string>
+    <string name="pref_premium_request_restore_desc">Restaurar pacote de solicitação premium após reinstalar o pacote de ícones</string>
+    <string name="pref_premium_request_restore_success">Pedido Premium Restaurado</string>
+    <string name="pref_premium_request_restore_empty">Você não tem nenhum pacote comprado</string>
+    <string name="pref_premium_request_rebuild">Recriar solicitação de ícone Premium</string>
+    <string name="pref_premium_request_rebuild_desc">Colete todos os dados de solicitação de ícone premium para reenviá-los</string>
+    <string name="pref_theme_header">Tema</string>
+    <string name="pref_theme_dark">Tema Escuro</string>
+    <string name="pref_theme_dark_desc">Usar cor escura para o tema do aplicativo</string>
+    <string name="pref_wallpaper_header">Papel de Parede</string>
+    <string name="pref_wallpaper_location">Local para salvar o Papel de Parede</string>
+    <string name="pref_language_header">Linguagem</string>
+    <string name="pref_others_header">Outros</string>
+    <string name="pref_others_report_bugs">Reportar Erros</string>
+    <string name="pref_others_changelog">Changelog</string>
+    <string name="pref_others_reset_tutorial">Reiniciar Tutorial</string>
+    <string name="pref_others_reset_tutorial_reset">Tutorial Reinicializado</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Permissão de armazenamento necessária para salvar o papel de parede</string>
     <!-- Intent -->
+    <string name="app_client">Escolher Aplicativo</string>
+    <string name="no_email_app">Nenhum aplicativo para enviar e-mail</string>
+    <string name="no_browser">Nenhum aplicativo para abrir url</string>
+    <string name="intent_email_failed">Não foi possível exibir o aplicativo de e-mail</string>
+    <string name="intent_email_supported">Suportado</string>
+    <string name="intent_email_recommended">Recomendado</string>
+    <string name="intent_email_not_supported">Não Suportado</string>
+    <string name="intent_email_not_supported_message">Selecionado um cliente de e-mail não suportado, selecione outro cliente de e-mail</string>
     <!-- About -->
+    <string name="about_contributors_title">Contribuidores</string>
+    <string name="about_privacy_policy_title">Política de Privacidade</string>
+    <string name="about_terms_and_conditions_title">Termos e Condições</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Por favor, forneça uma descrição sobre que tipo de problema você deseja reportar</string>
+    <string name="report_bugs_desc_hint">Descrição</string>
+    <string name="report_bugs_desc_empty">Por favor, adicione uma descrição</string>
+    <string name="report_bugs_building">Construindo lista de atividades …</string>
+    <string name="report_bugs_failed">Não foi possível construir a lista de atividades</string>
+    <string name="report_bugs_send">Enviar Relatório</string>
     <!-- Support Development -->
+    <string name="donation_success">Obrigado por fazer uma doação. Eu a usarei para o bem.</string>
     <!-- Crash Report -->
+    <string name="crash_report">Relatório de falha</string>
+    <string name="crash_report_message">Infelizmente %s teve um erro. Escolha enviar o relatório abaixo para ajudar o desenvolvedor a corrigir o problema.</string>
+    <string name="crash_report_send">Enviar Relatório</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar é um pacote de ícones de código aberto, licenciado sob a Licença Apache 2.0 para
+        Android disponível no GitHub e gratuito para uso, desenvolvido por Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Licenças Open Source</string>
+    <string name="about_dashboard_contributors">Contribuidores CandyBar</string>
+    <string name="about_dashboard_translator">Tradutor CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Abrir</string>
     <string name="txt_close">Fechar</string>
