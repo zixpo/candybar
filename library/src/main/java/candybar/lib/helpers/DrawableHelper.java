@@ -104,11 +104,9 @@ public class DrawableHelper {
             if (drawable instanceof BitmapDrawable) {
                 return ((BitmapDrawable) drawable).getBitmap();
             } else if (drawable instanceof AdaptiveIconDrawable) {
-                AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
-                AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
-                adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
-                Bitmap iconBitmap = adaptiveIcon.render();
-                return iconBitmap;
+                return new AdaptiveIcon()
+                        .setDrawable((AdaptiveIconDrawable) drawable)
+                        .render();
             }
         }
         return null;

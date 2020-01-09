@@ -18,7 +18,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.xmlpull.v1.XmlPullParser;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -218,26 +217,12 @@ public class IconsHelper {
             }
 
             FileOutputStream outStream = new FileOutputStream(file);
-            // Disabled Because of OutOfMemory
-            //bitmap = Bitmap.createScaledBitmap(bitmap, 192, 192, false);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             outStream.flush();
             outStream.close();
             return directory.toString() + "/" + fileName;
         } catch (Exception | OutOfMemoryError e) {
             LogUtil.e(Log.getStackTraceString(e));
-        }
-        return null;
-    }
-
-    @Nullable
-    public static byte[] getByteFromDrawable(@Nullable Drawable drawable) {
-        if (drawable != null) {
-            Bitmap bitmap = getRightIcon(drawable);
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 0, baos);
-            byte[] data = baos.toByteArray();
-            return data;
         }
         return null;
     }
