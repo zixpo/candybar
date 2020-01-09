@@ -11,7 +11,6 @@ import com.danimahardhika.android.helpers.core.FileHelper;
 import java.io.File;
 
 import candybar.lib.R;
-import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.fragments.dialog.ChangelogFragment;
 import candybar.lib.preferences.Preferences;
 
@@ -27,6 +26,15 @@ public class PlaystoreCheckHelper {
         mContext = context;
     }
 
+    public static Boolean fromPlaystore(Context context) {
+        PackageManager pm = context.getPackageManager();
+        String installerPackage = pm.getInstallerPackageName(context.getPackageName());
+
+        if (installerPackage != null && installerPackage.contentEquals("com.android.vending"))
+            return true;
+        return false;
+    }
+
     public void run() {
         /*if (isTest) {
             if (testPass) {
@@ -40,17 +48,12 @@ public class PlaystoreCheckHelper {
             return;
         }*/
         if (mContext.getResources().getBoolean(R.bool.playstore_check_enabled)) {
-            PackageManager pm = mContext.getPackageManager();
-            String installerPackage = pm.getInstallerPackageName(mContext.getPackageName());
-
-            if (installerPackage == null || !installerPackage.contentEquals("com.android.vending")) {
-                CandyBarMainActivity.toggleIntent(mContext, false);
-                contentString = mContext.getResources().getString(R.string.playstore_check_failed);
-                checkPassed = false;
-            } else {
-                CandyBarMainActivity.toggleIntent(mContext, true);
+            if (fromPlaystore(mContext)) {
                 contentString = mContext.getResources().getString(R.string.playstore_check_success);
                 checkPassed = true;
+            } else {
+                contentString = mContext.getResources().getString(R.string.playstore_check_failed);
+                checkPassed = false;
             }
 
             onPlaystoreChecked(checkPassed);

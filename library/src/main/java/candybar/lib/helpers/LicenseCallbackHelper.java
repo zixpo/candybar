@@ -13,7 +13,6 @@ import com.danimahardhika.android.helpers.license.LicenseHelper;
 import java.io.File;
 
 import candybar.lib.R;
-import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.fragments.dialog.ChangelogFragment;
 import candybar.lib.preferences.Preferences;
 
@@ -107,7 +106,6 @@ public class LicenseCallbackHelper implements LicenseCallback {
     private void onLicenseChecked(LicenseHelper.Status status) {
         Preferences.get(mContext).setFirstRun(false);
         if (status == LicenseHelper.Status.SUCCESS) {
-            CandyBarMainActivity.toggleIntent(mContext, true);
             Preferences.get(mContext).setLicensed(true);
 
             if (Preferences.get(mContext).isNewVersion()) {
@@ -117,7 +115,6 @@ public class LicenseCallbackHelper implements LicenseCallback {
             }
         } else if (status == LicenseHelper.Status.FAILED) {
             Preferences.get(mContext).setLicensed(false);
-            CandyBarMainActivity.toggleIntent(mContext, false);
             ((AppCompatActivity) mContext).finish();
         }
     }

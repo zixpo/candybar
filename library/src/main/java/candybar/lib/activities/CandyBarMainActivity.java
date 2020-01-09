@@ -1,6 +1,5 @@
 package candybar.lib.activities;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -238,28 +237,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         if (mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isLicensed()) {
-            toggleIntent(this, false);
             finish();
-        }
-
-        if (Preferences.get(this).isLicensed() || (!mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isPlaystoreCheckEnabled())) {
-            toggleIntent(this, true);
-        }
-    }
-
-    public static void toggleIntent(Context mContext, boolean enable) {
-        PackageManager pm = mContext.getPackageManager();
-        ComponentName compName = new ComponentName(mContext.getPackageName(), mContext.getPackageName() + ".alias.Intent");
-        if (enable) {
-            pm.setComponentEnabledSetting(
-                    compName,
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
-                    PackageManager.DONT_KILL_APP);
-        } else {
-            pm.setComponentEnabledSetting(
-                    compName,
-                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                    PackageManager.DONT_KILL_APP);
         }
     }
 
