@@ -16,8 +16,11 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -28,6 +31,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -93,6 +98,58 @@ public class RequestHelper {
             return file;
         } catch (IOException e) {
             LogUtil.e(Log.getStackTraceString(e));
+        }
+        return null;
+    }
+
+    public static String buildComponentsJson(@NonNull List<Request> requests) {
+        StringBuilder sb = new StringBuilder();
+        boolean isFirst = true;
+
+        sb.append("{ \"components\": [\n");
+        for (Request request : requests) {
+            if (!isFirst) sb.append(",\n");
+            sb.append(String.format("{ \"name\": \"%s\", \"pkg\": \"%s\", \"componentInfo\": \"%s\", \"drawable\": \"%s\" }",
+                    request.getName(),
+                    request.getPackageName(),
+                    request.getActivity(),
+                    request.getName().toLowerCase().replace(" ", "_")));
+            isFirst = false;
+        }
+        sb.append("]}");
+
+        return sb.toString();
+    }
+
+    public static File getZipFile(List<String> files, String filepath, String filename) {
+        // Modified from https://github.com/danimahardhika/android-helpers/blob/master/core/src/main/java/com/danimahardhika/android/helpers/core/FileHelper.java
+        try {
+            final int BUFFER = 2048;
+            final File file = new File(filepath, filename);
+            BufferedInputStream origin;
+            FileOutputStream dest = new FileOutputStream(file);
+            ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(
+                    dest));
+
+            byte[] data = new byte[BUFFER];
+            for (int i = 0; i < files.size(); i++) {
+                FileInputStream fi = new FileInputStream(files.get(i));
+                origin = new BufferedInputStream(fi, BUFFER);
+
+                ZipEntry entry = new ZipEntry(files.get(i).substring(
+                        files.get(i).lastIndexOf("/") + 1));
+                out.putNextEntry(entry);
+                int count;
+
+                while ((count = origin.read(data, 0, BUFFER)) != -1) {
+                    out.write(data, 0, count);
+                }
+                origin.close();
+            }
+
+            out.close();
+            return file;
+        } catch (Exception ignored) {
         }
         return null;
     }
@@ -360,7 +417,7 @@ public class RequestHelper {
                             "\t<item component=\"ComponentInfo{" + request.getActivity() +
                             "}\" drawable=\"" +
                             request.getName().toLowerCase().replace(" ", "_") +
-                            "\" />" +
+                            "\"/>" +
                             "\n\n";
                 case APPMAP:
                     String packageName = "" + request.getPackageName() + "/";
@@ -369,14 +426,14 @@ public class RequestHelper {
                             "\n" +
                             "\t<item class=\"" + className + "\" name=\"" +
                             request.getName().toLowerCase().replace(" ", "_") +
-                            "\" />" +
+                            "\"/>" +
                             "\n\n";
                 case THEME_RESOURCES:
                     return "\t<!-- " + request.getName() + " -->" +
                             "\n" +
                             "\t<AppIcon name=\"" + request.getActivity() + "\" image=\"" +
                             request.getName().toLowerCase().replace(" ", "_") +
-                            "\" />" +
+                            "\"/>" +
                             "\n\n";
                 default:
                     return "";

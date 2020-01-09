@@ -155,6 +155,9 @@
     <string name="request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
 
+    <!-- Icon Request with Arctic Manager. Leave empty to disable Arctic Manager. -->
+    <string name="arctic_manager_api_key"></string>
+
     <!-- CONFIG: CLOUD WALLPAPERS -->
 
     <!-- Wallpaper json link

@@ -86,6 +86,7 @@ dependencies {
 
     implementation 'io.github.inflationx:calligraphy3:3.1.1'
     implementation 'io.github.inflationx:viewpump:2.0.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.3.0'
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
     implementation 'com.github.pluscubed:recycler-fast-scroll:0.3.2@aar'

@@ -65,6 +65,11 @@ import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.InAppBillingProcessor;
 import candybar.lib.utils.listeners.InAppBillingListener;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
@@ -378,20 +383,23 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private class RequestLoader extends AsyncTask<Void, Void, Boolean> {
 
         private MaterialDialog dialog;
+        private String apiKey = getResources().getString(R.string.arctic_manager_api_key);
+        private boolean isArctic = apiKey.length() > 0;
+        private String errorMessage;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
 
-            MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-            builder.typeface(
-                    TypefaceHelper.getMedium(getActivity()),
-                    TypefaceHelper.getRegular(getActivity()));
-            builder.content(R.string.request_building);
-            builder.cancelable(false);
-            builder.canceledOnTouchOutside(false);
-            builder.progress(true, 0);
-            builder.progressIndeterminateStyle(true);
+            MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity())
+                    .typeface(
+                            TypefaceHelper.getMedium(getActivity()),
+                            TypefaceHelper.getRegular(getActivity()))
+                    .content(R.string.request_building)
+                    .cancelable(false)
+                    .canceledOnTouchOutside(false)
+                    .progress(true, 0)
+                    .progressIndeterminateStyle(true);
 
             dialog = builder.build();
             dialog.show();
@@ -403,64 +411,90 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 try {
                     Thread.sleep(2);
 
-                    boolean nonMailingAppSend = getResources().getBoolean(R.bool.enable_non_mail_app_request);
-                    Intent intent;
-
-                    if (!nonMailingAppSend) {
-                        intent = new Intent(Intent.ACTION_SENDTO);
-                        intent.setData(Uri.parse("mailto:"));
-                    } else {
-                        intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("application/zip");
-                    }
-
-                    List<ResolveInfo> resolveInfos = getActivity().getPackageManager()
-                            .queryIntentActivities(intent, 0);
-                    if (resolveInfos.size() == 0) {
-                        noEmailClientError = true;
-                        return false;
-                    }
-
-                    if (Preferences.get(getActivity()).isPremiumRequest()) {
-                        TransactionDetails details = InAppBillingProcessor.get(getActivity())
-                                .getProcessor().getPurchaseTransactionDetails(
-                                        Preferences.get(getActivity()).getPremiumRequestProductId());
-                        if (details == null) return false;
-
-                        CandyBarApplication.sRequestProperty = new Request.Property(null,
-                                details.purchaseInfo.purchaseData.orderId,
-                                details.purchaseInfo.purchaseData.productId);
-                    }
-
                     RequestFragment.sSelectedRequests = mAdapter.getSelectedItems();
                     List<Request> requests = mAdapter.getSelectedApps();
-                    File appFilter = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.APPFILTER);
-                    File appMap = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.APPMAP);
-                    File themeResources = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.THEME_RESOURCES);
 
                     File directory = getActivity().getCacheDir();
                     List<String> files = new ArrayList<>();
 
                     for (Request request : requests) {
                         Drawable drawable = getReqIcon(getActivity(), request.getActivity());
-                        String icon = IconsHelper.saveIcon(files, directory, drawable, request.getName());
+                        String icon = IconsHelper.saveIcon(files, directory, drawable, isArctic ? request.getPackageName() : request.getName());
                         if (icon != null) files.add(icon);
                     }
 
-                    if (appFilter != null) {
-                        files.add(appFilter.toString());
-                    }
+                    if (isArctic) {
+                        RequestBody okRequestBody = new MultipartBody.Builder()
+                                .setType(MultipartBody.FORM)
+                                .addFormDataPart("apps", RequestHelper.buildComponentsJson(requests))
+                                .addFormDataPart("archive", "icons.zip", RequestBody.create(RequestHelper.getZipFile(files, directory.toString(), "icons.zip"), MediaType.parse("application/zip")))
+                                .build();
 
-                    if (appMap != null) {
-                        files.add(appMap.toString());
-                    }
+                        okhttp3.Request okRequest = new okhttp3.Request.Builder()
+                                .url("http://arcticmanager.com/v1/request")
+                                .addHeader("TokenID", apiKey)
+                                .addHeader("Accept", "application/json")
+                                .addHeader("User-Agent", "afollestad/icon-request")
+                                .post(okRequestBody)
+                                .build();
 
-                    if (themeResources != null) {
-                        files.add(themeResources.toString());
-                    }
+                        OkHttpClient okHttpClient = new OkHttpClient();
 
-                    CandyBarApplication.sZipPath = FileHelper.createZip(files, new File(directory.toString(),
-                            RequestHelper.getGeneratedZipName(RequestHelper.ZIP)));
+                        try {
+                            Response response = okHttpClient.newCall(okRequest).execute();
+                            boolean success = response.code() > 199 && response.code() < 300;
+                            if (!success) {
+                                JSONObject responseJson = new JSONObject(response.body().string());
+                                errorMessage = responseJson.getString("error");
+                                return false;
+                            }
+                        } catch (IOException | JSONException ignoredException) {
+                            LogUtil.d("ARCTIC_MANAGER: Error");
+                            return false;
+                        }
+                    } else {
+                        boolean nonMailingAppSend = getResources().getBoolean(R.bool.enable_non_mail_app_request);
+                        Intent intent;
+
+                        if (!nonMailingAppSend) {
+                            intent = new Intent(Intent.ACTION_SENDTO);
+                            intent.setData(Uri.parse("mailto:"));
+                        } else {
+                            intent = new Intent(Intent.ACTION_SEND);
+                            intent.setType("application/zip");
+                        }
+
+                        List<ResolveInfo> resolveInfos = getActivity().getPackageManager()
+                                .queryIntentActivities(intent, 0);
+                        if (resolveInfos.size() == 0) {
+                            noEmailClientError = true;
+                            return false;
+                        }
+
+                        if (Preferences.get(getActivity()).isPremiumRequest()) {
+                            TransactionDetails details = InAppBillingProcessor.get(getActivity())
+                                    .getProcessor().getPurchaseTransactionDetails(
+                                            Preferences.get(getActivity()).getPremiumRequestProductId());
+                            if (details == null) return false;
+
+                            CandyBarApplication.sRequestProperty = new Request.Property(null,
+                                    details.purchaseInfo.purchaseData.orderId,
+                                    details.purchaseInfo.purchaseData.productId);
+                        }
+
+                        File appFilter = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.APPFILTER);
+                        File appMap = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.APPMAP);
+                        File themeResources = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.THEME_RESOURCES);
+
+                        if (appFilter != null) files.add(appFilter.toString());
+
+                        if (appMap != null) files.add(appMap.toString());
+
+                        if (themeResources != null) files.add(themeResources.toString());
+
+                        CandyBarApplication.sZipPath = FileHelper.createZip(files, new File(directory.toString(),
+                                RequestHelper.getGeneratedZipName(RequestHelper.ZIP)));
+                    }
                     return true;
                 } catch (RuntimeException | InterruptedException e) {
                     LogUtil.e(Log.getStackTraceString(e));
@@ -480,13 +514,25 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             dialog.dismiss();
 
             if (aBoolean) {
-                IntentChooserFragment.showIntentChooserDialog(getActivity().getSupportFragmentManager(),
-                        IntentChooserFragment.ICON_REQUEST);
-
+                if (!isArctic) {
+                    IntentChooserFragment.showIntentChooserDialog(getActivity().getSupportFragmentManager(),
+                            IntentChooserFragment.ICON_REQUEST);
+                }
                 mAdapter.resetSelectedItems();
                 if (mMenuItem != null) mMenuItem.setIcon(R.drawable.ic_toolbar_select_all);
             } else {
-                if (noEmailClientError) {
+                if (isArctic) {
+                    new MaterialDialog.Builder(getActivity())
+                            .typeface(
+                                    TypefaceHelper.getMedium(getActivity()),
+                                    TypefaceHelper.getRegular(getActivity()))
+                            .content(R.string.request_arctic_manager_error, "\"" + errorMessage + "\"")
+                            .cancelable(true)
+                            .canceledOnTouchOutside(false)
+                            .positiveText(R.string.close)
+                            .build()
+                            .show();
+                } else if (noEmailClientError) {
                     Toast.makeText(getActivity(), R.string.no_email_app,
                             Toast.LENGTH_LONG).show();
                 } else {
@@ -507,17 +553,17 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            MaterialDialog.Builder fetchDataDialogBuilder = new MaterialDialog.Builder(getActivity());
-            fetchDataDialogBuilder.typeface(
-                    TypefaceHelper.getMedium(getActivity()),
-                    TypefaceHelper.getRegular(getActivity()));
-            fetchDataDialogBuilder.content(R.string.request_fetching_data);
-            fetchDataDialogBuilder.cancelable(false);
-            fetchDataDialogBuilder.canceledOnTouchOutside(false);
-            fetchDataDialogBuilder.progress(true, 0);
-            fetchDataDialogBuilder.progressIndeterminateStyle(true);
+            fetchingDataDialog = new MaterialDialog.Builder(getActivity())
+                    .typeface(
+                            TypefaceHelper.getMedium(getActivity()),
+                            TypefaceHelper.getRegular(getActivity()))
+                    .content(R.string.request_fetching_data)
+                    .cancelable(false)
+                    .canceledOnTouchOutside(false)
+                    .progress(true, 0)
+                    .progressIndeterminateStyle(true)
+                    .build();
 
-            fetchingDataDialog = fetchDataDialogBuilder.build();
             fetchingDataDialog.show();
         }
 
@@ -541,7 +587,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
                 return true;
             } catch (Exception ex) {
-                Log.e("CandyBar", "Error Loading ConfigJson", ex);
+                LogUtil.e("Error Loading ConfigJson \n" + Log.getStackTraceString(ex));
                 return false;
             } finally {
                 if (bufferedReader != null) {
@@ -557,7 +603,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         @Override
         protected void onPostExecute(Boolean resBoolean) {
             if (resBoolean) {
-                // Load Data
                 try {
                     updateUrl = configJson.getString("url");
 
@@ -576,35 +621,32 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     e.printStackTrace();
                 }
 
-                // Checks If Request can be Done or Not
                 if (appVersionCode < disabledReqBelow) canRequest = false;
                 String[] disabledReqOns = disabledReqOn.split("[\\s,]");
                 for (String version : disabledReqOns) {
-                    //LogUtil.d("Disabled Versions", version);
-                    //LogUtil.d("Disabled Version Length", version.length() + "");
                     if ((appVersionCode + "").contentEquals(version)) canRequest = false;
                 }
 
-                // Icon Request
                 fetchingDataDialog.dismiss();
 
                 if (!canRequest) {
-                    MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-                    builder.typeface(
-                            TypefaceHelper.getMedium(getActivity()),
-                            TypefaceHelper.getRegular(getActivity()));
-                    builder.content(R.string.request_app_disabled);
-                    builder.negativeText(R.string.close);
-                    builder.positiveText(R.string.update);
-                    builder.onPositive(((dialog, which) -> {
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
-                        intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
-                        getActivity().startActivity(intent);
-                    }));
-                    builder.cancelable(false);
-                    builder.canceledOnTouchOutside(false);
-                    MaterialDialog requestNotPermittedDialog = builder.build();
-                    requestNotPermittedDialog.show();
+                    new MaterialDialog.Builder(getActivity())
+                            .typeface(
+                                    TypefaceHelper.getMedium(getActivity()),
+                                    TypefaceHelper.getRegular(getActivity()))
+                            .content(R.string.request_app_disabled)
+                            .negativeText(R.string.close)
+                            .positiveText(R.string.update)
+                            .onPositive(((dialog, which) -> {
+                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
+                                intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+                                getActivity().startActivity(intent);
+                            }))
+                            .cancelable(false)
+                            .canceledOnTouchOutside(false)
+                            .build()
+                            .show();
+
                     mAdapter.resetSelectedItems();
                     if (mMenuItem != null) mMenuItem.setIcon(R.drawable.ic_toolbar_select_all);
                 } else {
@@ -614,16 +656,15 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             } else {
                 fetchingDataDialog.dismiss();
 
-                MaterialDialog.Builder errorDialogBuilder = new MaterialDialog.Builder(getActivity());
-                errorDialogBuilder.typeface(
-                        TypefaceHelper.getMedium(getActivity()),
-                        TypefaceHelper.getRegular(getActivity()));
-                errorDialogBuilder.content(R.string.connection_error_long);
-                errorDialogBuilder.canceledOnTouchOutside(false);
-                errorDialogBuilder.positiveText(R.string.close);
-
-                MaterialDialog errorDialog = errorDialogBuilder.build();
-                errorDialog.show();
+                new MaterialDialog.Builder(getActivity())
+                        .typeface(
+                                TypefaceHelper.getMedium(getActivity()),
+                                TypefaceHelper.getRegular(getActivity()))
+                        .content(R.string.connection_error_long)
+                        .canceledOnTouchOutside(false)
+                        .positiveText(R.string.close)
+                        .build()
+                        .show();
             }
         }
     }
