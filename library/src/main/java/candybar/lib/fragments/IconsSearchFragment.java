@@ -68,6 +68,7 @@ public class IconsSearchFragment extends Fragment {
     private RecyclerFastScroller mFastScroll;
     private TextView mSearchResult;
     private SearchView mSearchView;
+    private Fragment mFragment = this;
 
     private IconsAdapter mAdapter;
     private AsyncTask mAsyncTask;
@@ -245,7 +246,7 @@ public class IconsSearchFragment extends Fragment {
 
             mAsyncTask = null;
             if (aBoolean) {
-                mAdapter = new IconsAdapter(getActivity(), icons, true);
+                mAdapter = new IconsAdapter(getActivity(), icons, true, mFragment);
                 mRecyclerView.setAdapter(mAdapter);
                 mSearchView.requestFocus();
                 SoftKeyboardHelper.openKeyboard(getActivity());

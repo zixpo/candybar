@@ -196,7 +196,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
             ImageLoader.getInstance().displayImage("package://" + mRequests.get(finalPosition).getActivity(),
                     new ImageViewAware(contentViewHolder.icon), mOptions.build(),
-                    new ImageSize(114, 114), null, null);
+                    new ImageSize(272, 272), null, null);
 
             contentViewHolder.title.setText(mRequests.get(finalPosition).getName());
 

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
@@ -53,11 +54,13 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     private final List<Icon> mIcons;
     private List<Icon> mIconsAll;
     private final DisplayImageOptions.Builder mOptions;
+    private final Fragment mFragment;
 
     private final boolean mIsShowIconName;
 
-    public IconsAdapter(@NonNull Context context, @NonNull List<Icon> icons, boolean search) {
+    public IconsAdapter(@NonNull Context context, @NonNull List<Icon> icons, boolean search, Fragment fragment) {
         mContext = context;
+        mFragment = fragment;
         mIcons = icons;
         mIsShowIconName = mContext.getResources().getBoolean(R.bool.show_icon_name);
         if (search) {
@@ -87,7 +90,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
 
         ImageLoader.getInstance().displayImage("drawable://" + mIcons.get(position).getRes(),
                 new ImageViewAware(holder.icon), mOptions.build(),
-                new ImageSize(144, 144), null, null);
+                new ImageSize(272, 272), null, null);
     }
 
     @Override

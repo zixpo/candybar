@@ -90,7 +90,7 @@ public class IconsFragment extends Fragment {
         setFastScrollColor(mFastScroll);
         mFastScroll.attachRecyclerView(mRecyclerView);
 
-        IconsAdapter adapter = new IconsAdapter(getActivity(), mIcons, false);
+        IconsAdapter adapter = new IconsAdapter(getActivity(), mIcons, false, this);
         mRecyclerView.setAdapter(adapter);
     }
 

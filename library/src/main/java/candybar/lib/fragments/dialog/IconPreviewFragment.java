@@ -1,6 +1,10 @@
 package candybar.lib.fragments.dialog;
 
 import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.drawable.AdaptiveIconDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,12 +17,17 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.bumptech.glide.Glide;
 import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.io.ByteArrayOutputStream;
 
 import candybar.lib.R;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.TypefaceHelper;
+import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.ImageConfig;
+import sarsamurmu.adaptiveicon.AdaptiveIcon;
 
 /*
  * CandyBar - Material Dashboard
@@ -84,13 +93,14 @@ public class IconPreviewFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_icon_preview, false);
-        builder.typeface(
-                TypefaceHelper.getMedium(getActivity()),
-                TypefaceHelper.getRegular(getActivity()));
-        builder.positiveText(R.string.close);
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+                .customView(R.layout.fragment_icon_preview, false)
+                .typeface(
+                        TypefaceHelper.getMedium(getActivity()),
+                        TypefaceHelper.getRegular(getActivity()))
+                .positiveText(R.string.close)
+                .build();
+
         dialog.show();
 
         mName = (TextView) dialog.findViewById(R.id.name);
@@ -113,6 +123,26 @@ public class IconPreviewFragment extends DialogFragment {
         }
 
         mName.setText(mIconName);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Drawable drawable = getActivity().getDrawable(mIconId);
+
+            if (drawable instanceof AdaptiveIconDrawable) {
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                new AdaptiveIcon()
+                        .setDrawable((AdaptiveIconDrawable) drawable)
+                        .setPath(Preferences.get(getActivity()).getIconShape())
+                        .setSize(512)
+                        .render()
+                        .compress(Bitmap.CompressFormat.PNG, 100, stream);
+
+                Glide.with(this)
+                        .load(stream.toByteArray())
+                        .into(mIcon);
+                return;
+            }
+        }
+
         ImageLoader.getInstance().displayImage("drawable://" + mIconId, mIcon,
                 ImageConfig.getDefaultImageOptions(false));
     }

@@ -282,11 +282,11 @@ public class BaseImageDownloader implements ImageDownloader {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Drawable drawable = context.getResources().getDrawable(drawableId, context.getTheme());
             if (drawable instanceof AdaptiveIconDrawable) {
-                AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
-                AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
-                adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
-                adaptiveIcon.setPath(Data.AdaptiveIconShape);
-                Bitmap iconBitmap = adaptiveIcon.render();
+                Bitmap iconBitmap = new AdaptiveIcon()
+                        .setDrawable((AdaptiveIconDrawable) drawable)
+                        .setPath(Data.AdaptiveIconShape)
+                        .setSize(272)
+                        .render();
 
                 ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
                 iconBitmap.compress(CompressFormat.PNG, 0, byteOutputStream);
@@ -320,14 +320,11 @@ public class BaseImageDownloader implements ImageDownloader {
         Intent intent = new Intent();
         intent.setComponent(new ComponentName(packageName, activityName));
         ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
-        //Drawable drawable = packageManager.getActivityIcon(packageName);
         Drawable drawable = resolveInfo.loadIcon(packageManager);
         resBitmap = getRightIcon(drawable);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         resBitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
-        // Quality only for format JPEG
         resBitmap.recycle();
-        // Recycle bitmap
         return new ByteArrayInputStream(stream.toByteArray());
     }
 
@@ -338,11 +335,10 @@ public class BaseImageDownloader implements ImageDownloader {
             if (drawable instanceof BitmapDrawable) {
                 return ((BitmapDrawable) drawable).getBitmap();
             } else if (drawable instanceof AdaptiveIconDrawable) {
-                AdaptiveIconDrawable adaptiveID = ((AdaptiveIconDrawable) drawable);
-                AdaptiveIcon adaptiveIcon = new AdaptiveIcon();
-                adaptiveIcon.setDrawables(adaptiveID.getForeground(), adaptiveID.getBackground());
-                Bitmap iconBitmap = adaptiveIcon.render();
-                return iconBitmap;
+                return new AdaptiveIcon()
+                        .setDrawable((AdaptiveIconDrawable) drawable)
+                        .setSize(272)
+                        .render();
             }
         }
         return null;
