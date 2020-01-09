@@ -1,3 +1,12 @@
+# v3.6.0
+- Better icon generation for requests.
+- Improved icon preview.
+- Added support for [Arctic Manager](https://arcticmanager.com).
+- Updated Gradle plugin.
+- Removed app lock.
+- Updated translations.
+- Minor Fixes.
+
 # v3.5.0-beta.6.7
 - Fixed Icon Request Limit not resetting after update.
 - Updated Gradle Versions.

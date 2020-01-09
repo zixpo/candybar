@@ -36,8 +36,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 356
-        versionName "3.5.0-beta.6.6"
+        versionCode 360
+        versionName "3.6.0"
         vectorDrawables.useSupportLibrary true
         multiDexEnabled true
     }
@@ -93,7 +93,6 @@ dependencies {
     implementation 'com.mikhaellopez:circularimageview:3.0.2'
     implementation 'com.anjlab.android.iab.v3:library:1.0.44'
     implementation 'com.github.chrisbanes:PhotoView:1.3.1'
-    implementation 'com.github.danimahardhika:DrawMe:4a672e78fc'
     implementation 'org.sufficientlysecure:html-textview:3.5'
     implementation 'me.grantland:autofittextview:0.2.1'
     implementation 'com.github.KeepSafe:TapTargetView:1.9.1'
@@ -106,11 +105,12 @@ dependencies {
 
     implementation 'com.github.danimahardhika:cafebar:1.3.2'
     implementation('com.github.danimahardhika.android-helpers:core:-SNAPSHOT') {
-        changing = true
+        transitive = true
     }
     implementation 'com.github.danimahardhika.android-helpers:animation:0.1.0'
     implementation 'com.github.danimahardhika.android-helpers:license:0.1.0'
     implementation 'com.github.danimahardhika.android-helpers:permission:0.1.0'
+    implementation 'com.github.danimahardhika:DrawMe:4a672e78fc'
 }
 
 configurations.all {
