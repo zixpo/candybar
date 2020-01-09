@@ -3,37 +3,38 @@
 [![JitPack Version](https://jitpack.io/v/zixpo/candybar.svg)](https://jitpack.io/#zixpo/candybar)
 [![Build Status](https://api.travis-ci.com/zixpo/candybar.svg?branch=master)](https://travis-ci.com/zixpo/candybar)
 
-Improved Version of Original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
+Improved version of original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
 
-This is the Library of CandyBar. It is only used for Development Purpose. Use the Sample for making Icon Pack, Get it From [Here](https://github.com/zixpo/candybar-sample).
+This is the library of CandyBar. It is only used for development purpose. Use the sample for making Icon Pack, Get it from [here](https://github.com/zixpo/candybar-sample).
 
 # Features
-- License Checker
-- Apply: 26 Launchers
-- Icon Picker: See all Icons
-- Icon Request
-  - Regular Request: Free to Request
-  - Premium Request: Pay to Request
-- Cloud Based Wallpaper
-  - Preview Wallpaper
-  - Apply Wallpaper
-  - Download Wallpaper
+- License checker
+- Apply: 26 launchers
+- Icon picker: See all icons
+- Icon request
+  - Regular request: Free to request
+  - Premium request: Pay to request
+  - Support for [Arctic Request Manager](https://arcticmanager.com)
+- Cloud based wallpaper
+  - Preview wallpaper
+  - Apply wallpaper
+  - Download wallpaper
 - Settings
-  - Clear Cache
-  - Switch to Dark Theme
-  - Restore Purchases: Restore Premium Request after Reinstalling
-- Frequently Asked Questions with Search
+  - Clear cache
+  - Switch to dark theme
+  - Restore purchases: Restore premium request after reinstalling
+- Frequently asked questions with Search
 - About
 - Donation
 - Changelog: Shown on every update
-- Muzei Live Wallpaper
-- Localization: Supports many Languages
-- Support for OneSignal Notifications
-- Check for Update
-- Control your Dashboard Remotely with Config JSON
+- Muzei live wallpaper
+- Localization: Supports many languages
+- Support for OneSignal notifications
+- Check for update
+- Control your dashboard remotely with config JSON
 
 # Translation
-Help us Translating CandyBar in Many Other Languages. [Translate](https://crowdin.com/project/candybar)
+Help us translating CandyBar in many other languages. [Translate](https://crowdin.com/project/candybar)
 
 # License
 ```
