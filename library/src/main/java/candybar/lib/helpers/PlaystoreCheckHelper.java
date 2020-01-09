@@ -30,9 +30,7 @@ public class PlaystoreCheckHelper {
         PackageManager pm = context.getPackageManager();
         String installerPackage = pm.getInstallerPackageName(context.getPackageName());
 
-        if (installerPackage != null && installerPackage.contentEquals("com.android.vending"))
-            return true;
-        return false;
+        return installerPackage != null && installerPackage.contentEquals("com.android.vending");
     }
 
     public void run() {

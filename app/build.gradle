@@ -12,10 +12,6 @@ apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 */
 apply plugin: 'com.android.application'
 
-repositories {
-    maven { url 'https://maven.google.com' }
-}
-
 android {
     signingConfigs {
         release {
@@ -70,5 +66,5 @@ dependencies {
     implementation project (':library')
 
     // Remove '//' below to Enable OneSignal
-    //implementation 'com.onesignal:OneSignal:3.11.3'
+    //implementation 'com.onesignal:OneSignal:3.12.4'
 }

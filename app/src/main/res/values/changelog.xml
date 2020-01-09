@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date">October 20, 2019</string>
+    <string name="changelog_date">January 9, 2020</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,11 +10,13 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Fix Playstore check.</item>
-        <item>New Outline Styled Card.</item>
-        <item>Hide `Reset Tutorial` in Settings if `show_intro` disabled.</item>
+        <item>Better icon generation for requests.</item>
+        <item>Improved icon preview.</item>
+        <item>Added support for [Arctic Manager](https://arcticmanager.com).</item>
+        <item>Updated Gradle plugin.</item>
+        <item>Removed app lock.</item>
+        <item>Updated translations.</item>
         <item>Minor Fixes.</item>
-        <item>Fix Statusbar Color.</item>
     </string-array>
 
 </resources>

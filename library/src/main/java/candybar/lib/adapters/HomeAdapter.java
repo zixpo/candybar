@@ -415,21 +415,22 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         .withListener(new AppUpdaterUtils.UpdateListener() {
                             @Override
                             public void onSuccess(Update update, Boolean isUpdateAvailable) {
-                                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-                                builder.typeface(
-                                        TypefaceHelper.getMedium(mContext),
-                                        TypefaceHelper.getRegular(mContext));
-                                builder.customView(R.layout.fragment_update, false);
+                                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext)
+                                        .typeface(
+                                                TypefaceHelper.getMedium(mContext),
+                                                TypefaceHelper.getRegular(mContext))
+                                        .customView(R.layout.fragment_update, false);
 
                                 if (isUpdateAvailable) {
-                                    builder.positiveText(R.string.update);
-                                    builder.negativeText(R.string.close);
-                                    builder.onPositive((dialog, which) -> {
-                                        String downloadUrl = update.getUrlToDownload().toString();
-                                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(downloadUrl));
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
-                                        mContext.startActivity(intent);
-                                    });
+                                    builder
+                                            .positiveText(R.string.update)
+                                            .negativeText(R.string.close)
+                                            .onPositive((dialog, which) -> {
+                                                String downloadUrl = update.getUrlToDownload().toString();
+                                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(downloadUrl));
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+                                                mContext.startActivity(intent);
+                                            });
                                 } else {
                                     builder.positiveText(R.string.close);
                                 }
@@ -456,7 +457,14 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                             @Override
                             public void onFailed(AppUpdaterError error) {
-                                LogUtil.e("Something went wrong with AppUpdater");
+                                new MaterialDialog.Builder(mContext)
+                                        .typeface(
+                                                TypefaceHelper.getMedium(mContext),
+                                                TypefaceHelper.getRegular(mContext))
+                                        .content(R.string.connection_error_long)
+                                        .positiveText(R.string.close)
+                                        .build()
+                                        .show();
                             }
                         }).start();
             }

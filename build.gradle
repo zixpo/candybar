@@ -24,7 +24,6 @@ allprojects {
         }
     }
 
-    //NOTE: This is important
     rootProject.ext {
         BuildTools = "29.0.0"
         MinSdk = 15
