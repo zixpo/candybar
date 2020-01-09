@@ -47,7 +47,7 @@ public class LauncherHelper {
     private static final int GO = 7;
     private static final int HOLO = 8;
     private static final int HOLOHD = 9;
-    private static final int LAWNCHAIR_V2 = 10;
+    private static final int LAWNCHAIR = 10;
     private static final int LGHOME = 11;
     private static final int LGHOME3 = 12;
     private static final int LUCID = 13;
@@ -66,10 +66,9 @@ public class LauncherHelper {
     private static final int EVIE = 26;
     private static final int POCO = 27;
     private static final int POSIDON = 28;
-    private static final int LAWNCHAIR = 29;
-    private static final int MICROSOFT = 30;
-    private static final int FLICK = 31;
-    private static final int BLACKBERRY = 32;
+    private static final int MICROSOFT = 29;
+    private static final int FLICK = 30;
+    private static final int BLACKBERRY = 31;
 
     private static int getLauncherId(String packageName) {
         if (packageName == null) return UNKNOWN;
@@ -100,7 +99,6 @@ public class LauncherHelper {
             case "com.lge.launcher3":
                 return LGHOME3;
             case "ch.deletescape.lawnchair.ci":
-                return LAWNCHAIR_V2;
             case "ch.deletescape.lawnchair.plah":
                 return LAWNCHAIR;
             case "com.powerpoint45.launcher":
@@ -248,18 +246,15 @@ public class LauncherHelper {
             case HOLOHD:
                 applyManual(context, launcherPackage, launcherName, "com.mobint.hololauncher.SettingsActivity");
                 break;
-            case LAWNCHAIR_V2:
+            case LAWNCHAIR:
                 try {
                     final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
                     lawnchair.putExtra("packageName", context.getPackageName());
                     context.startActivity(lawnchair);
                     ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
-                    notInstalledError(context, launcherName);
+                    openGooglePlay(context, launcherPackage, launcherName);
                 }
-                break;
-            case LAWNCHAIR:
-                applyManual(context, launcherPackage, launcherName, "ch.deletescape.lawnchair.settings.ui.SettingsActivity");
                 break;
             case LGHOME:
             case LGHOME3:
@@ -569,7 +564,7 @@ public class LauncherHelper {
                         TypefaceHelper.getMedium(context),
                         TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(String.format(context.getResources().getString(R.string.apply_launcher_incompatible), launcherName, launcherName))
+                .content(R.string.apply_launcher_incompatible, launcherName, launcherName)
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
                     try {
@@ -590,8 +585,7 @@ public class LauncherHelper {
                         TypefaceHelper.getMedium(context),
                         TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(String.format(context.getResources().getString(
-                        R.string.apply_launcher_not_installable), launcherName))
+                .content(R.string.apply_launcher_not_installable, launcherName)
                 .positiveText(context.getResources().getString(R.string.close))
                 .show();
     }
@@ -602,8 +596,7 @@ public class LauncherHelper {
                         TypefaceHelper.getMedium(context),
                         TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(String.format(context.getResources().getString(
-                        R.string.apply_launcher_not_installed), launcherName))
+                .content(R.string.apply_launcher_not_installed, launcherName)
                 .positiveText(context.getResources().getString(R.string.install))
                 .onPositive((dialog, which) -> {
                     try {
