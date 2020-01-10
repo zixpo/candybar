@@ -431,7 +431,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                                 .build();
 
                         okhttp3.Request okRequest = new okhttp3.Request.Builder()
-                                .url("http://arcticmanager.com/v1/request")
+                                .url("https://arcticmanager.com/v1/request")
                                 .addHeader("TokenID", apiKey)
                                 .addHeader("Accept", "application/json")
                                 .addHeader("User-Agent", "afollestad/icon-request")
