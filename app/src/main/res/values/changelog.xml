@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date">January 9, 2020</string>
+    <string name="changelog_date">January 10, 2020</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -12,7 +12,7 @@
     <string-array name="changelog">
         <item>Better icon generation for requests.</item>
         <item>Improved icon preview.</item>
-        <item>Added support for [Arctic Manager](https://arcticmanager.com).</item>
+        <item><![CDATA[Added support for <a href="https://arcticmanager.com">Arctic Manager</a>.]]></item>
         <item>Updated Gradle plugin.</item>
         <item>Removed app lock.</item>
         <item>Updated translations.</item>
