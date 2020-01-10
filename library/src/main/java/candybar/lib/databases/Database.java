@@ -124,9 +124,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        /*
-         * Need to clear shared preferences with version 3.4.0
-         */
+        // Need to clear shared preferences with version 3.4.0
         if (newVersion == 9) {
             Preferences.get(mContext).clearPreferences();
         }

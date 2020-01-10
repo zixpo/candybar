@@ -391,7 +391,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity())
+            dialog = new MaterialDialog.Builder(getActivity())
                     .typeface(
                             TypefaceHelper.getMedium(getActivity()),
                             TypefaceHelper.getRegular(getActivity()))
@@ -399,9 +399,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     .cancelable(false)
                     .canceledOnTouchOutside(false)
                     .progress(true, 0)
-                    .progressIndeterminateStyle(true);
+                    .progressIndeterminateStyle(true)
+                    .build();
 
-            dialog = builder.build();
             dialog.show();
         }
 
@@ -514,7 +514,12 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             dialog.dismiss();
 
             if (aBoolean) {
-                if (!isArctic) {
+                if (isArctic) {
+                    Toast.makeText(getActivity(), R.string.request_arctic_success, Toast.LENGTH_LONG).show();
+
+                    Preferences.get(getActivity()).setRegularRequestUsed(Preferences.get(getActivity()).getRegularRequestUsed() + RequestFragment.sSelectedRequests.size());
+                    refreshIconRequest();
+                } else {
                     IntentChooserFragment.showIntentChooserDialog(getActivity().getSupportFragmentManager(),
                             IntentChooserFragment.ICON_REQUEST);
                 }
@@ -526,7 +531,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                             .typeface(
                                     TypefaceHelper.getMedium(getActivity()),
                                     TypefaceHelper.getRegular(getActivity()))
-                            .content(R.string.request_arctic_manager_error, "\"" + errorMessage + "\"")
+                            .content(R.string.request_arctic_error, "\"" + errorMessage + "\"")
                             .cancelable(true)
                             .canceledOnTouchOutside(false)
                             .positiveText(R.string.close)
@@ -546,14 +551,14 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     public class checkConfigBeforeRequest extends AsyncTask<Void, Void, Boolean> {
 
-        MaterialDialog fetchingDataDialog;
+        MaterialDialog dialog;
         private JSONObject configJson;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
 
-            fetchingDataDialog = new MaterialDialog.Builder(getActivity())
+            dialog = new MaterialDialog.Builder(getActivity())
                     .typeface(
                             TypefaceHelper.getMedium(getActivity()),
                             TypefaceHelper.getRegular(getActivity()))
@@ -564,13 +569,13 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     .progressIndeterminateStyle(true)
                     .build();
 
-            fetchingDataDialog.show();
+            dialog.show();
         }
 
         @Override
         protected Boolean doInBackground(Void... params) {
             String str = getActivity().getResources().getString(R.string.config_json);
-            URLConnection urlConn = null;
+            URLConnection urlConn;
             BufferedReader bufferedReader = null;
             try {
                 URL url = new URL(str);
@@ -594,7 +599,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     try {
                         bufferedReader.close();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        LogUtil.e(Log.getStackTraceString(e));
                     }
                 }
             }
@@ -618,7 +623,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     PackageInfo pInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
                     appVersionCode = pInfo.versionCode;
                 } catch (PackageManager.NameNotFoundException e) {
-                    e.printStackTrace();
+                    LogUtil.e(Log.getStackTraceString(e));
                 }
 
                 if (appVersionCode < disabledReqBelow) canRequest = false;
@@ -627,7 +632,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     if ((appVersionCode + "").contentEquals(version)) canRequest = false;
                 }
 
-                fetchingDataDialog.dismiss();
+                dialog.dismiss();
 
                 if (!canRequest) {
                     new MaterialDialog.Builder(getActivity())
@@ -654,7 +659,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 }
 
             } else {
-                fetchingDataDialog.dismiss();
+                dialog.dismiss();
 
                 new MaterialDialog.Builder(getActivity())
                         .typeface(

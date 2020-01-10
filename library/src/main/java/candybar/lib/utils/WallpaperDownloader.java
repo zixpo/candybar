@@ -59,13 +59,6 @@ public class WallpaperDownloader {
         String fileName = mWallpaper.getName() + "." + WallpaperHelper.getFormat(mWallpaper.getMimeType());
         File directory = WallpaperHelper.getDefaultWallpapersDirectory(mContext);
         File target = new File(directory, fileName);
-        /*if (!directory.exists()) {
-            if (!directory.mkdirs()) {
-                LogUtil.e("Unable to create directory " + directory.toString());
-                showCafeBar(R.string.wallpaper_download_failed);
-                return;
-            }
-        }*/
 
         if (WallpaperHelper.isWallpaperSaved(mContext, mWallpaper)) {
             CafeBar.builder(mContext)
