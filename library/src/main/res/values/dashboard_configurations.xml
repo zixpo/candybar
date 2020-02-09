@@ -262,4 +262,6 @@
 
     <bool name="use_flat_card">false</bool>
 
+    <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
+
 </resources>

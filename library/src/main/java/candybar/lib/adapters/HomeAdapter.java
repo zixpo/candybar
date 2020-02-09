@@ -216,7 +216,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
 
             if (mHomes.get(finalPosition).getType() == Home.Type.ICONS) {
-                if (mHomes.get(finalPosition).isLoading() && CandyBarMainActivity.sIconsCount == 0) {
+                if (mHomes.get(finalPosition).isLoading() && CandyBarMainActivity.sIconsCount == 0 && CandyBarApplication.getConfiguration().isAutomaticIconsCountEnabled()) {
                     contentViewHolder.progressBar.setVisibility(View.VISIBLE);
                     contentViewHolder.autoFitTitle.setVisibility(View.GONE);
                 } else {

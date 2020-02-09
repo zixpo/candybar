@@ -90,7 +90,7 @@ public class RequestHelper {
             writer.append(xmlType.getHeader()).append("\n\n");
 
             for (Request request : requests) {
-                writer.append(xmlType.getContent(request));
+                writer.append(xmlType.getContent(context, request));
             }
             writer.append(xmlType.getFooter());
             writer.flush();
@@ -409,15 +409,14 @@ public class RequestHelper {
             return footer;
         }
 
-        private String getContent(@NonNull Request request) {
+        private String getContent(@NonNull Context context, @NonNull Request request) {
             switch (this) {
                 case APPFILTER:
                     return "\t<!-- " + request.getName() + " -->" +
                             "\n" +
-                            "\t<item component=\"ComponentInfo{" + request.getActivity() +
-                            "}\" drawable=\"" +
-                            request.getName().toLowerCase().replace(" ", "_") +
-                            "\"/>" +
+                            "\t" + context.getString(R.string.appfilter_item)
+                            .replace("{{component}}", request.getActivity())
+                            .replace("{{drawable}}", request.getName().toLowerCase().replace(" ", "_")) +
                             "\n\n";
                 case APPMAP:
                     String packageName = "" + request.getPackageName() + "/";

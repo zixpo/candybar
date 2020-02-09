@@ -149,26 +149,20 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this,
                 Preferences.get(this).isDarkTheme() ?
                         R.color.navigationBarDark : R.color.navigationBar));
-        if (!Preferences.get(this).isDarkTheme() && (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)) {
-            this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar))
-                    && ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark))) {
-                this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-            } else {
-                if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar))) {
-                    this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-                } else if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark))) {
-                    this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-                }
-            }
-            this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        }
-        if (Build.VERSION.SDK_INT >= 21) {
-            if (!(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !Preferences.get(this).isDarkTheme()) {
+            int flags = 0;
+            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)))
+                flags = flags | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)))
+                flags = flags | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            if (flags != 0) {
                 this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                this.getWindow().getDecorView().setSystemUiVisibility(flags);
+                this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
             }
-            this.getWindow().setStatusBarColor(ContextCompat.getColor(this, Preferences.get(this).isDarkTheme() ? R.color.darkColorPrimaryDark : R.color.colorPrimaryDark));
         }
+
         registerBroadcastReceiver();
         startService(new Intent(this, CandyBarService.class));
 

@@ -36,6 +36,7 @@
         <item name="tab_text">@color/tabText</item>
         <item name="tab_text_selected">@color/tabTextSelected</item>
         <item name="navigation_selected_color">@color/navigationViewSelectedBackground</item>
+        <item name="navigation_header_background">@color/navigationViewHeaderBackground</item>
 
         <item name="md_background_color">@color/cardBackground</item>
         <item name="md_positive_color">@color/colorAccent</item>
@@ -73,6 +74,7 @@
         <item name="tab_text">@color/tabTextDark</item>
         <item name="tab_text_selected">@color/tabTextSelectedDark</item>
         <item name="navigation_selected_color">@color/navigationViewSelectedBackgroundDark</item>
+        <item name="navigation_header_background">@color/navigationViewHeaderBackgroundDark</item>
 
         <item name="md_background_color">@color/cardBackgroundDark</item>
         <item name="md_positive_color">@color/darkColorAccent</item>
@@ -91,7 +93,6 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <!--<item name="android:windowBackground">@color/splashColor</item>-->
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 

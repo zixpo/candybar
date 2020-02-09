@@ -148,7 +148,7 @@
     <string name="premium_request_email_subject"></string>
 
     <!-- Icon Request with Arctic Manager. Leave empty to disable Arctic Manager. -->
-    <string name="arctic_manager_api_key">f2a96282-31d0-42b7-b802-5487f2931113</string>
+    <string name="arctic_manager_api_key"><!--f2a96282-31d0-42b7-b802-5487f2931113--></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
 

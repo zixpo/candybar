@@ -28,6 +28,8 @@
     <color name="splashColor">#FFFFFF</color>
 
     <!-- Navigation View -->
+    <color name="navigationViewHeaderBackground">#00000000</color>
+    <color name="navigationViewHeaderBackgroundDark">#00000000</color>
     <color name="navigationViewTitle">#FFFFFF</color>
     <color name="navigationViewTitleBack">#33000000</color>
 

@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date">January 10, 2020</string>
+    <string name="changelog_date">February 09, 2020</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,13 +10,11 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Better icon generation for requests.</item>
-        <item>Improved icon preview.</item>
-        <item><![CDATA[Added support for <a href="https://arcticmanager.com">Arctic Manager</a>.]]></item>
-        <item>Updated Gradle plugin.</item>
-        <item>Removed app lock.</item>
-        <item>Updated translations.</item>
-        <item>Minor Fixes.</item>
+        <item>Support for customizing background color of navigation view header.</item>
+        <item>Fixed white status bar showing on pre Android Oreo devices.</item>
+        <item>Fixed proguard error.</item>
+        <item>Fixed icons being count even when automatic icon counting is disabled.</item>
+        <item>Now app names in icon request are normalized, Ex. `ů` is normalized to `u`.</item>
     </string-array>
 
 </resources>

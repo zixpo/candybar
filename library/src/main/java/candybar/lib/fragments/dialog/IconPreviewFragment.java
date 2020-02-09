@@ -132,7 +132,7 @@ public class IconPreviewFragment extends DialogFragment {
                 new AdaptiveIcon()
                         .setDrawable((AdaptiveIconDrawable) drawable)
                         .setPath(Preferences.get(getActivity()).getIconShape())
-                        .setSize(512)
+                        .setSize(272)
                         .render()
                         .compress(Bitmap.CompressFormat.PNG, 100, stream);
 

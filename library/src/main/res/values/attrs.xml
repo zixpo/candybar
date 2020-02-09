@@ -16,6 +16,7 @@
     <attr name="tab_text_selected" format="color" />
 
     <attr name="navigation_selected_color" format="color" />
+    <attr name="navigation_header_background" format="color" />
 
     <declare-styleable name="HeaderView">
         <attr name="widthRatio" format="integer" />

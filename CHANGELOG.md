@@ -1,3 +1,10 @@
+# v3.6.2
+- Support for customizing background color of navigation view header.
+- Fixed white status bar showing on pre Android Oreo devices.
+- Fixed proguard error.
+- Fixed icons being count even when automatic icon counting is disabled.
+- Now app names in icon request are normalized, Ex. `ů` is normalized to `u`.
+
 # v3.6.0
 - Better icon generation for requests.
 - Improved icon preview.
