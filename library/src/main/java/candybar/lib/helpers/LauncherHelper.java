@@ -468,14 +468,10 @@ public class LauncherHelper {
                 break;
             case FLICK:
                 try {
-                    final Intent flick = context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher");
                     final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
                     flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
-                    flickAction.setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
-                    flick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.sendBroadcast(flickAction);
-                    context.startActivity(flick);
-                    ((AppCompatActivity) context).finish();
+                    flickAction.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(flickAction);
                     ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
