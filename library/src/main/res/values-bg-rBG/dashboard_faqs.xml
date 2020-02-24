@@ -50,7 +50,41 @@
         <item>Защо е необходимо разрешение за интернет?</item>
         <item>Защо е необходимо разрешение за състояние на мрежата ?</item>
         <item>Защо е необходимо разрешение за достъп до Wifi ?</item>
-        <item>Why is Set Wallpaper permission needed?</item>
-        <item>Why is Wake Lock Permission needed?</item>
+        <item>Защо е необходимо разрешение за задаване на Wallpaper?</item>
+        <item>Защо е необходимо разрешение за Wake Lock?</item>
+    </string-array>
+    <string-array name="answers">
+        <item>Лаунчер е частта от потребителския интерфейс на Андроид, която позволява на потребителите да персонализират началния екран, да стартират мобилни приложения, да извършват телефонни обаждания и да изпълняват други задачи на устройства с Андроид.</item>
+        <item>Набор графики, които ще променят външния вид на иконите на чекмеджето на приложението ви</item>
+        <item>Ще ви е необходим лаунчер, който поддържа персонализирани пакети с икони.  Поддържаните лаунчери са изброени в описанието на приложението в Google Play магазина.  Ако се объркате кой лаунчер трябва да използвате, просто отидете в секцията \"Прилагане\", след което инсталирайте желания лаунчер.</item>
+        <item>Можете да отворите чекмеджето за навигация и след това да отворите „Прилагане“.  Изберете вашия лаунчер от списъка.  Ако вашият лаунчер не е посочен там, но този пакет с икони е съвместим с него (вижте в описанието на приложението в  Google Play магазин за поддържаните лаунчери), можете да приложите пакета с икони ръчно от настройките на лаунчера.</item>
+        <item>Можете да отворите чекмеджето за навигация и след това да отворите категорията „Икони“</item>
+        <item>Просто докоснете иконата.  Ще се появи диалогов прозорец за преглед с по-голямо изображение и пълно име на иконата.</item>
+        <item>Зависи кой лаунчер  използвате.  Не всеки лаунчер поддържа редактиране на икони.  Най-често можете да редактирате икона, като докоснете и задържите иконата.</item>
+        <item>Можете да отворите чекмеджето за навигация, след което да отворите „Заявка за икони“.</item>
+        <item>Можете да отворите чекмеджето за навигация, след което да отворите „Настройки“, да изберете „Възстановяване на покупките“.  Ако сте имали останали Платени заявки преди преинсталиране, те ще бъдат възстановени.</item>
+        <item>Това се случва, защото  пакета с икони е бил преместен на SD картата, трябва да го инсталирате във вътрешната памет.</item>
+        <item>Проблемът може да дойде от лаунчера, който  използвате, ако в настройките е зададена твърде голяма разделителна способност.  Можете да го поправите, като увеличите размера на иконата до 115 - 120%.  Като алтернатива можете да смените лаунчера.</item>
+        <item>Отворете настройките, превъртете надолу и след това изберете „Съобщи за грешки“.</item>
+        <item>\"Report Bugs\" is used to report bugs related to the icon pack, not the dashboard.</item>
+        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
+      	    You can apply this icon pack manually from the individual launcher settings.</item>
+        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
+      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
+      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
+      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
+            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
+        <item>Open muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
+            You will need to download wallpapers from the dashboard first.</item>
+        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
+            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
+        <item>Open Dashboard, download wallpapers that you want to use in Muzei.
+            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
+        <item>It is used to write &amp; read cache, and collect the icon request data.</item>
+        <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
+        <item>It is used to check if your phone has an internet connection or not.</item>
+        <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
+        <item>It is used to apply wallpapers directly from the dashboard app.</item>
+        <item>It is used by Muzei Live Wallpaper</item>
     </string-array>
 </resources>
