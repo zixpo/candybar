@@ -145,12 +145,16 @@ Du versuchst gerade eine App anzufragen, die bereits angefragt wurde.</string>
     <string name="regular_request">Reguläre Symbolanfrage</string>
     <string name="regular_request_desc">Fordere dein Icon an und der Entwickler wird versuchen, Icons einzubinden, die Du angefordert hast.</string>
     <string name="regular_request_count">Insgesamt\n%d Anfragen</string>
+    <string name="regular_request_used">\n%d Anfragen genutzt</string>
+    <string name="regular_request_available">Verfügbare\n%d Anfragen</string>
     <!-- Premium Request -->
     <string name="premium_request">Premium Icon-Anfrage</string>
     <string name="premium_request_no_internet">Stelle sicher, dass dein Handy mit dem Internet verbunden ist, bevor du eine Premium-Anfrage stellst</string>
     <string name="premium_request_desc">Um Premium Icon-Anfragen zu stellen, musst du bezahlen. Du kannst deine angefragten Apps schneller erhalten, wenn du die Premium Icon-Anfrage benutzt.</string>
     <string name="premium_request_buy">Kaufen</string>
     <string name="premium_request_count">Insgesamt\n%d Anfragen</string>
+    <string name="premium_request_used">\n%d Anfragen genutzt</string>
+    <string name="premium_request_available">Verfügbare\n%d Anfragen</string>
     <string name="premium_request_already_purchased">Du hast noch %d Premium-Anfrage(n).
 Benutze zuerst diese, bevor du ein weiteres Premium-Anfrage-Paket kaufst.</string>
     <string name="premium_request_limit">Du hast nur %d Premium-Anfrage(n),</string>
@@ -220,6 +224,8 @@ fehlenden Icons erstellt wurde.</string>
     <string name="intent_email_not_supported_message">Nicht unterstützter E-Mail-Klient ausgewählt. Bitte einen anderen Klienten wählen</string>
     <!-- About -->
     <string name="about_contributors_title">Mitwirkende</string>
+    <string name="about_privacy_policy_title">Datenschutzerklärung</string>
+    <string name="about_terms_and_conditions_title">Allgemeine Geschäftsbedingungen</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Bitte gib eine Beschreibung des Problems ab, das du melden willst</string>
     <string name="report_bugs_desc_hint">Beschreibung</string>
@@ -234,6 +240,7 @@ fehlenden Icons erstellt wurde.</string>
     <string name="crash_report_message">Leider ist %s abgestürzt. Wähle unterhalb \"Bericht senden\", um den Entwickler bei der Behebung des Fehlers zu helfen.</string>
     <string name="crash_report_send">Bericht senden</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar ist ein Open Source Icon Pack Dashboard, das unter Apache License 2.0 lizensiert ist. 
 Für Android bei GitHub verfügbar und kostenlos zur Benutzung freigegeben, entwickelt von Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Open-Source-Lizenzen</string>
