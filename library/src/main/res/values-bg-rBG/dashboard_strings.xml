@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="splash_screen_title">CandyBar табло за управление</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Начало</string>
+    <string name="navigation_view_apply">Приложи</string>
+    <string name="navigation_view_icons">Икони</string>
+    <string name="navigation_view_request">Заявка за икони</string>
+    <string name="navigation_view_wallpapers">Тапети</string>
+    <string name="navigation_view_settings">Настройки</string>
+    <string name="navigation_view_faqs">Често задавани въпроси</string>
+    <string name="navigation_view_about">Относно</string>
+    <string name="navigation_view_donate">Подкрепи разработването</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei Настройки</string>
+    <string name="minute">Минута</string>
+    <string name="hour">Час</string>
+    <string name="save_setting">Запази</string>
+    <string name="muzei_refresh_duration">Продължителност на опресняване</string>
+    <string name="muzei_wifi_only">Опресняване само през Wifi</string>
+    <string name="muzei_downloaded_only">Зареди само изтеглените Тапети</string>
+    <string name="muzei_settings_ignored">Пакета с икони не съдържа Тапети,настройките се игнорират.</string>
+    <string name="muzei_settings_saved">Настройките са запазени</string>
     <!-- Menu -->
+    <string name="menu_search">Търсене</string>
+    <string name="menu_save">Запази в телефона</string>
+    <string name="menu_select_all">Избери всички</string>
+    <string name="menu_wallpaper_crop">Изрежи Тапета</string>
+    <string name="menu_apply_homescreen">Начален екран</string>
+    <string name="menu_apply_lockscreen">Екран за заключване</string>
+    <string name="menu_apply_homescreen_lockscreen">Начален екран и екран за заключване</string>
     <!-- Dialog -->
+    <string name="open">Отвори</string>
+    <string name="close">Затвори</string>
+    <string name="clear">Изчисти</string>
+    <string name="ok">Ок</string>
+    <string name="install">Инсталирай</string>
+    <string name="donate">Дари</string>
+    <string name="update">Актуализация</string>
+    <string name="search_noresult">Няма намерени резултати</string>
     <!-- Update -->
     <!-- Changelog -->
     <!-- InAppBilling -->
@@ -11,10 +45,13 @@
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Търсене</string>
     <!-- Home -->
+    <string name="home_donate">Дари</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Заявка за икони</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -27,4 +64,6 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Отвори</string>
+    <string name="txt_close">Затвори</string>
 </resources>
