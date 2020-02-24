@@ -27,4 +27,31 @@
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
     </string-array>
+    <string-array name="questions">
+        <item>Какво е лаунчер?</item>
+        <item>Какво е пакет с икони?</item>
+        <item>Как да използвате пакет с икони?</item>
+        <item>Как да приложите пакета с икони?</item>
+        <item>Как да видя всички включени икони?</item>
+        <item>Не мога да видя пълното име на иконата</item>
+        <item>Как мога да заменя икона с алтернативна икона?</item>
+        <item>Как мога да направя заявка за икона?</item>
+        <item>Как мога да възстановя Платената Заявка след преинсталиране на приложението?</item>
+        <item>After restarting my phone, the icon pack is not applied, it restore to defaults?</item>
+        <item>Why do the icons looks jaggy or pixelated on my phone?</item>
+        <item>I can see the icon included in all icons,
+            but why isn\'t the actual icon on app drawer changed?</item>
+        <item>What is the \"report bugs\" option?</item>
+        <item>My launcher is listed in the google play description, but why isn\'t it included in apply section?</item>
+        <item>Wallpaper can\'t be applied, just showing black screen?</item>
+        <item>Muzei: How to load downloaded wallpapers only?</item>
+        <item>Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes?</item>
+        <item>Muzei: I only want to use specific wallpapers?</item>
+        <item>Why are Read &amp; Write External Storage permission needed?</item>
+        <item>Why is Internet permission needed?</item>
+        <item>Why is Access Network State permission needed?</item>
+        <item>Why is Access Wifi State permission needed?</item>
+        <item>Why is Set Wallpaper permission needed?</item>
+        <item>Why is Wake Lock Permission needed?</item>
+    </string-array>
 </resources>
