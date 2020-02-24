@@ -37,20 +37,19 @@
         <item>Как мога да заменя икона с алтернативна икона?</item>
         <item>Как мога да направя заявка за икона?</item>
         <item>Как мога да възстановя Платената Заявка след преинсталиране на приложението?</item>
-        <item>After restarting my phone, the icon pack is not applied, it restore to defaults?</item>
-        <item>Why do the icons looks jaggy or pixelated on my phone?</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed?</item>
-        <item>What is the \"report bugs\" option?</item>
-        <item>My launcher is listed in the google play description, but why isn\'t it included in apply section?</item>
-        <item>Wallpaper can\'t be applied, just showing black screen?</item>
-        <item>Muzei: How to load downloaded wallpapers only?</item>
-        <item>Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes?</item>
-        <item>Muzei: I only want to use specific wallpapers?</item>
-        <item>Why are Read &amp; Write External Storage permission needed?</item>
-        <item>Why is Internet permission needed?</item>
-        <item>Why is Access Network State permission needed?</item>
-        <item>Why is Access Wifi State permission needed?</item>
+        <item>След рестартиране на телефонът ми, пакетът с икони не се прилага, той се възстановява по подразбиране. Какво да правя?</item>
+        <item>Защо иконите изглеждат размазани или пикселирани на моя телефон?</item>
+        <item>Виждам иконата, включена във всички икони, но защо не е променена действителната икона в чекмеджето на приложението?</item>
+        <item>Каква е опцията \"доклад за грешки\"?</item>
+        <item>Моят лаунчер е посочен в описанието на приложението в Google, но защо не е включен в раздела за прилагане?</item>
+        <item>Тапетът не може да се приложи, показва само черен екран?</item>
+        <item>Muzei: Как да зареждате само изтеглени тапети?</item>
+        <item>Muzei: Не искам да продължа да тегля тапети всеки път, когато тапетът се промени?</item>
+        <item>Muzei: Искам да използвам само конкретни тапети?</item>
+        <item>Защо са необходими разрешение за четене и запис на външно съхранение?</item>
+        <item>Защо е необходимо разрешение за интернет?</item>
+        <item>Защо е необходимо разрешение за състояние на мрежата ?</item>
+        <item>Защо е необходимо разрешение за достъп до Wifi ?</item>
         <item>Why is Set Wallpaper permission needed?</item>
         <item>Why is Wake Lock Permission needed?</item>
     </string-array>
