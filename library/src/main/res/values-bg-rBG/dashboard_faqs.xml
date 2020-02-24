@@ -72,11 +72,11 @@
         <item>Отворете muzei, изберете този пакет с икони, настройки.  Ще видите опция за зареждане само на изтеглени тапети.  Първо ще трябва да изтеглите тапети от таблото за управление.</item>
         <item>Ако тапетът вече е изтеглен, той ще се зареди автоматично от паметта на вашия телефон.  Muzei няма да продължи да го изтегля, когато тапетът се промени.  Първо ще трябва да изтеглите тапети от таблото за управление.</item>
         <item>Отворете таблото за управление, изтеглете тапети, които искате да използвате в Muzei.  Отворете настройките на Muzei, след това изберете- Зареди свалените тапети.</item>
-        <item>It is used to write &amp; read cache, and collect the icon request data.</item>
-        <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
-        <item>It is used to check if your phone has an internet connection or not.</item>
-        <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
-        <item>It is used to apply wallpapers directly from the dashboard app.</item>
-        <item>It is used by Muzei Live Wallpaper</item>
+        <item>Използва се за писане и четене на кеш и събиране на данни за заявките за икони.</item>
+        <item>Използва се за зареждане на тапети, базирани на облак, и изтеглянето им.</item>
+        <item>Използва се за проверка дали телефонът ви има интернет връзка или не.</item>
+        <item>Използва се за проверка дали телефонът ви има интернет връзка към wifi или не, за да зареди облачни тапети от Muzei.</item>
+        <item>Използва се за прилагане на тапети директно от приложението на таблото.</item>
+        <item>Използва се от Muzei Live Wallpaper</item>
     </string-array>
 </resources>
