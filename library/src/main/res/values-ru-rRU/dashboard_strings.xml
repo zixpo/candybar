@@ -55,6 +55,7 @@
     <string name="license_check_retry">Не удалось проверить лицензию, please try again in a few moments.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Проверьте Плей маркет</string>
+    <string name="playstore_check_success">Спасибо, что установили приложение с Play Store.</string>
     <!-- Share -->
     <string name="share_app_title">Ёу! Зацени %s</string>
     <string name="share_app_body">Зацени %1$s, это набор иконок на самом деле крутой! %2$s</string>
