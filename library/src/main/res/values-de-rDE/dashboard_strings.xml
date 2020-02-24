@@ -116,29 +116,41 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="apply_lg_home_not_available">LG Home ist auf diesem Gerät nicht verfügbar</string>
     <string name="apply_lg_home_failed">LG Home kann nicht gestartet werden. Du kannst versuchen das Icon Pack manuell aus den Einstellungen anzuwenden.</string>
     <string name="apply_lg_home_nougat">LG Home unterstützt unter Android Nougat keine Icon Packs mehr. Du brauchst einen alternativen Launcher, um Icon Packs zu benutzen.</string>
+    <string name="apply_launcher_incompatible">%s Launcher unterstützt keine Icon Packs, daher kannst du dieses Icon Pack nicht verwenden. Du kannst jedoch versuchen mit Hilfe einer externen App %2$s mit diesem Launcher zu verwenden. Möchtest du es ausprobieren?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Icons können nicht geladen werden</string>
+    <string name="icon_shape">Symbolform</string>
     <!-- Request -->
     <string name="request_title">Icon-Anfrage</string>
     <string name="request_not_selected">Wähle Apps aus, um eine Anfrage zu senden</string>
     <string name="request_not_requested">Nicht angefragt</string>
     <string name="request_already_requested">Bereits angefragt</string>
     <string name="request_building">Anfrage erstellen …</string>
+    <string name="request_arctic_sending">Sende Request an Arctic Manager...</string>
+    <string name="request_arctic_error">Fehler beim Senden des Requests an Arctic Manager. Die Fehlermeldung ist %s</string>
+    <string name="request_arctic_success">Request erfolgreich an Arctic Manager gesendet</string>
+    <string name="request_fetching_data">Rufe neueste Daten ab...</string>
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>
     <string name="request_requested">Bitte überprüfe deine Anfrage.
 Du versuchst gerade eine App anzufragen, die bereits angefragt wurde.</string>
     <string name="request_email_client">Wähle den E-Mail-Klienten aus, mit dem du die Icon-Anfrage senden möchtest</string>
+    <string name="request_app_disabled">Sie verwenden eine ältere Version dieses Symbolpakets. Die angeforderten Icons könnten in der neuesten Version enthalten sein. Bitte aktualisieren Sie Ihre App auf die neueste Version, um Symbole anzufordern.</string>
+    <string name="connection_error_long">Daten konnten nicht vom Server heruntergeladen werden. Bitte überprüfen Sie Ihre Internetverbindung.</string>
     <string name="request_limit">Du kannst nur %d Anfrage(n) ohne die Premium Icon-Anfrage tätigen.</string>
     <string name="request_used">Du hast %d Icon(s) angefragt.</string>
     <string name="request_limit_buy">Du kannst Premium-Anfragen kaufen, um mehr Icons anzufragen.</string>
     <string name="request_limit_reset">Das Limit der Icon-Anfrage wird mit jedem Update zurückgesetzt.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Reguläre Symbolanfrage</string>
+    <string name="regular_request_desc">Fordere dein Icon an und der Entwickler wird versuchen, Icons einzubinden, die Du angefordert hast.</string>
+    <string name="regular_request_count">Insgesamt\n%d Anfragen</string>
     <!-- Premium Request -->
     <string name="premium_request">Premium Icon-Anfrage</string>
     <string name="premium_request_no_internet">Stelle sicher, dass dein Handy mit dem Internet verbunden ist, bevor du eine Premium-Anfrage stellst</string>
     <string name="premium_request_desc">Um Premium Icon-Anfragen zu stellen, musst du bezahlen. Du kannst deine angefragten Apps schneller erhalten, wenn du die Premium Icon-Anfrage benutzt.</string>
     <string name="premium_request_buy">Kaufen</string>
+    <string name="premium_request_count">Insgesamt\n%d Anfragen</string>
     <string name="premium_request_already_purchased">Du hast noch %d Premium-Anfrage(n).
 Benutze zuerst diese, bevor du ein weiteres Premium-Anfrage-Paket kaufst.</string>
     <string name="premium_request_limit">Du hast nur %d Premium-Anfrage(n),</string>
