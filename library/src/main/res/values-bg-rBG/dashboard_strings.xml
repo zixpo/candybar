@@ -38,9 +38,15 @@
     <string name="donate">Дари</string>
     <string name="update">Актуализация</string>
     <string name="search_noresult">Няма намерени резултати</string>
+    <string name="search_faqs">Въпроси и отговори</string>
+    <string name="search_icon">Име на иконите</string>
     <!-- Update -->
+    <string name="update_available">Налична актуализация!</string>
+    <string name="no_update_available">Използвате последната версия!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Версия</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">InApp Purchase продукти не могат да се заредят</string>
     <!-- License -->
     <!-- Play Store Installation Check -->
     <!-- Share -->
