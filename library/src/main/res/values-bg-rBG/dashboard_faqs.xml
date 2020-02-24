@@ -66,20 +66,12 @@
         <item>Това се случва, защото  пакета с икони е бил преместен на SD картата, трябва да го инсталирате във вътрешната памет.</item>
         <item>Проблемът може да дойде от лаунчера, който  използвате, ако в настройките е зададена твърде голяма разделителна способност.  Можете да го поправите, като увеличите размера на иконата до 115 - 120%.  Като алтернатива можете да смените лаунчера.</item>
         <item>Отворете настройките, превъртете надолу и след това изберете „Съобщи за грешки“.</item>
-        <item>\"Report Bugs\" is used to report bugs related to the icon pack, not the dashboard.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually from the individual launcher settings.</item>
-        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
-      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
-      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
-      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
-            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
-        <item>Open muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
-        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
-            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
-        <item>Open Dashboard, download wallpapers that you want to use in Muzei.
-            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
+        <item>\"Докладвай Грешки\" се използва за докладване на грешки, свързани с пакета с икони, а не с таблото за управление.</item>
+        <item>Не всички лаунчери поддържат директно прилагане,някои от тях не могат да бъдат достъпни директно от таблото за управление.  Можете да приложите ръчно този пакет с икони от отделните настройки на лаунчера,който използвате.</item>
+        <item>Когато \"Зададете Тапет\" директно от приложението, той ще бъде изтеглен в кеша, след което приложението на таблото ще се опита да го приложи.  Задаването на тапета ще отнеме известно време, и също така се нуждае от огромно количество оперативна памет за кратък период от време.  Възможно е да се появят грешки в „Черен екран“, защото телефонът ви няма достатъчно свободна RAM памет, за да обработи тапета.  Рестартирането на телефона ви ще отстрани този проблем.  След рестартиране телефонът ви ще има на разположение повече RAM памет.  Освен това можете да отворите изтегления тапет от вашата Галерия и да го зададете като тапет от там.</item>
+        <item>Отворете muzei, изберете този пакет с икони, настройки.  Ще видите опция за зареждане само на изтеглени тапети.  Първо ще трябва да изтеглите тапети от таблото за управление.</item>
+        <item>Ако тапетът вече е изтеглен, той ще се зареди автоматично от паметта на вашия телефон.  Muzei няма да продължи да го изтегля, когато тапетът се промени.  Първо ще трябва да изтеглите тапети от таблото за управление.</item>
+        <item>Отворете таблото за управление, изтеглете тапети, които искате да използвате в Muzei.  Отворете настройките на Muzei, след това изберете- Зареди свалените тапети.</item>
         <item>It is used to write &amp; read cache, and collect the icon request data.</item>
         <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
         <item>It is used to check if your phone has an internet connection or not.</item>
