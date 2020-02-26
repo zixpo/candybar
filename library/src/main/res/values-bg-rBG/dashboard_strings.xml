@@ -48,7 +48,13 @@
     <!-- InAppBilling -->
     <string name="billing_load_product_failed">InApp Purchase продукти не могат да се заредят</string>
     <!-- License -->
+    <string name="license_checking">Проверка на лиценз ...</string>
+    <string name="license_check">Проверка на лиценз</string>
+    <string name="license_check_success"> Проверката на лиценза е успешна, благодаря, че изтеглихте приложението от Play Store.</string>
+    <string name="license_check_failed">Проверката на лиценза не бе успешна, не сте изтеглили приложението от Play Store.  Няма да можете да го използвате.</string>
+    <string name="license_check_retry">Лицензът не може да се провери, моля, опитайте отново след няколко минути.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play Store Проверка</string>
     <!-- Share -->
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Търсене</string>
