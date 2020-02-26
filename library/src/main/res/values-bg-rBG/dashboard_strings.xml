@@ -68,15 +68,47 @@
     <string name="tap_intro_icons_search">Търсене</string>
     <string name="tap_intro_icons_search_desc">Докоснете тук, за да търсите икона</string>
     <string name="tap_intro_request_select">Изберете липсващото приложение</string>
+    <string name="tap_intro_request_select_desc">Докоснете тук, за да изберете липсващото приложение, за заявка за икони</string>
+    <string name="tap_intro_request_select_all">Изберете всички липсващи икони</string>
+    <string name="tap_intro_request_select_all_desc">Докоснете тук, за да изберете всички липсващи приложения за заявка за икони</string>
+    <string name="tap_intro_request_send">Изпратете заявката за икони</string>
+    <string name="tap_intro_request_send_desc">Докоснете тук, за да изпратите избраните липсващи приложения</string>
+    <string name="tap_intro_request_premium">Платена заявка за икони</string>
+    <string name="tap_intro_request_premium_desc">Докоснете тук, за да купите платена заявка за  икони, с платената заявка за  икони можете да получите заявените приложения по-бързо.</string>
+    <string name="tap_intro_wallpapers_option">Опции за тапет</string>
+    <string name="tap_intro_wallpapers_option_desc">Докоснете и задръжте тук, за да покажете опции за тапет, приложите тапет.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">изтегляне или</string>
+    <string name="tap_intro_wallpapers_preview">Визуализация тапет</string>
+    <string name="tap_intro_wallpapers_preview_desc">Докоснете тук, за да визуализирате пълния размер на тапета</string>
+    <string name="tap_intro_wallpaper_preview_save">Запазване на тапет</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Докоснете тук, за да изтеглите и запазите тапет на устройството си, за да можете да го използвате по-късно</string>
+    <string name="tap_intro_wallpaper_preview_apply">Приложи тапет</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Докоснете тук, за да зададете тапета като фон на началния екран</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Още приложения</string>
+    <string name="home_more_apps">Вижте други приложения, публикувани в Google Play Store</string>
+    <string name="home_rate_and_review">Оценка и преглед</string>
+    <string name="home_apply_icon_pack">Приложи</string>
     <string name="home_donate">Дари</string>
+    <string name="home_donate_desc">Подкрепи разработването на пакета с икони</string>
+    <string name="home_icons">Персонализирани икони</string>
+    <string name="home_icon_dimension">Размер на иконата в пиксели</string>
+    <string name="home_loud_wallpapers">онлайн тапети</string>
+    <string name="home_muzei">Мuzei динамичен тапет</string>
+    <string name="home_icon_request_installed_apps">Общо\инсталирани приложения</string>
+    <string name="home_icon_request_themed_apps">Покрити приложения</string>
+    <string name="home_icon_request_missed_apps">Липсващи приложения</string>
     <!-- Apply -->
+    <string name="apply_installed">Инсталиран Лаунчер</string>
+    <string name="apply_supported">Поддържани Лаунчери</string>
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">Заявка за икони</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
+    <string name="wallpaper_apply">Приложи тапет</string>
+    <string name="wallpaper_save_to_device">Запазване на тапет</string>
     <!-- Preferences -->
     <!-- Permission -->
     <!-- Intent -->
