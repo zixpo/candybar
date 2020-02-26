@@ -55,6 +55,8 @@
     <string name="license_check_retry">Лицензът не може да се провери, моля, опитайте отново след няколко минути.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Проверка</string>
+    <string name="playstore_check_success">Благодаря,че инсталирахте приложението от Play Store.</string>
+    <string name="playstore_check_failed">Изглежда, че сте инсталирали този пакет с икони извън Play Store.  Няма да можете да го използвате.</string>
     <!-- Share -->
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Търсене</string>
