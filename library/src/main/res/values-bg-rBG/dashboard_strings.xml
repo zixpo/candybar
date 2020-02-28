@@ -110,6 +110,8 @@
     <string name="apply_cmtheme_failed">Ако не можете да стартирате CM Theme Manager, можете да опитате да приложите Пакета с икони ръчно от настройките.</string>
     <string name="apply_lg_home">За да приложите този Пакет с икони отворете Настройки - Дисплей - Начален екран - Тема</string>
     <string name="apply_lg_home_not_available">LG Home не е наличен на това устройство</string>
+    <string name="apply_lg_home_failed">Ако не можете да стартирате LG Home Settings, можете да опитате да приложите Пакета с икони ръчно от настройките.</string>
+    <string name="apply_lg_home_nougat">LG Home с Android Nougat вече не поддържа Пакети с икони.  Имате нужда от друг Лаунчер, за да използвате Пакета с икони.</string>
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">Заявка за икони</string>
