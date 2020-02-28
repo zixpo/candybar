@@ -101,6 +101,15 @@
     <!-- Apply -->
     <string name="apply_installed">Инсталиран Лаунчер</string>
     <string name="apply_supported">Поддържани Лаунчери</string>
+    <string name="apply_manual">% 1 $ s Лаунчера не поддържа директно прилагане, но можете да приложите% 2 $ s ръчно от настройките на лаунчера.</string>
+    <string name="apply_manual_evie">Чукнете и задръжте на началния екран - Настройки - Пакет икони - изберете% s.</string>
+    <string name="apply_launch_failed">Настройките не могат да се стартират</string>
+    <string name="apply_launcher_not_installed">Лаунчера не е инсталиран.  Искате ли да отворите Google Play Store, за да го изтеглите и инсталирате?</string>
+    <string name="apply_launcher_not_installable">Лаунчера не е инсталиран.  Моля, опитайте отново, след като инсталирате лаунчера.</string>
+    <string name="apply_cmtheme_not_available">CM Theme Manager не е наличен на това устройство</string>
+    <string name="apply_cmtheme_failed">Ако не можете да стартирате CM Theme Manager, можете да опитате да приложите Пакета с икони ръчно от настройките.</string>
+    <string name="apply_lg_home">За да приложите този Пакет с икони отворете Настройки - Дисплей - Начален екран - Тема</string>
+    <string name="apply_lg_home_not_available">LG Home не е наличен на това устройство</string>
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">Заявка за икони</string>
