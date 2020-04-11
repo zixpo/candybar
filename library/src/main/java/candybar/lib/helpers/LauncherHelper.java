@@ -454,7 +454,7 @@ public class LauncherHelper {
             case POSIDON:
                 try {
                     Intent posidon = new Intent(Intent.ACTION_MAIN);
-                    posidon.setComponent(new ComponentName("posidon.launcher", "posidon.launcher.applyicons"));
+                    posidon.setComponent(new ComponentName("posidon.launcher", "posidon.launcher.external.ApplyIcons"));
                     posidon.putExtra("iconpack", context.getPackageName());
                     posidon.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(posidon);
