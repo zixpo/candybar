@@ -249,4 +249,5 @@ Für Android bei GitHub verfügbar und kostenlos zur Benutzung freigegeben, entw
     <!-- DrawerToggle -->
     <string name="txt_open">Öffnen</string>
     <string name="txt_close">Schließen</string>
+    <string name="txt_new">Neu</string>
 </resources>
