@@ -426,7 +426,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     if (isArctic) {
                         RequestBody okRequestBody = new MultipartBody.Builder()
                                 .setType(MultipartBody.FORM)
-                                .addFormDataPart("apps", RequestHelper.buildComponentsJson(requests))
+                                .addFormDataPart("apps", RequestHelper.buildJsonForArctic(requests))
                                 .addFormDataPart("archive", "icons.zip", RequestBody.create(RequestHelper.getZipFile(files, directory.toString(), "icons.zip"), MediaType.parse("application/zip")))
                                 .build();
 

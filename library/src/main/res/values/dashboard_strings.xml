@@ -299,4 +299,6 @@
     <string name="txt_open">Open</string>
     <string name="txt_close">Close</string>
 
+    <string name="txt_new">New</string>
+
 </resources>

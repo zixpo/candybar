@@ -148,6 +148,9 @@
 
     <!-- Take a look inside License.java for premium request product -->
 
+    <!-- Hide missing app count -->
+    <bool name="hide_missing_app_count">false</bool>
+
     <!-- Email that will be used to send icon request and report bugs -->
     <string name="dev_email">your@email.com</string>
 

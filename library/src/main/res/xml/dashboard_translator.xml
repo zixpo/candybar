@@ -116,8 +116,8 @@
     <contributor
         name="Pasha Puma"
         contribution="Russian"
-        image="https://lh3.googleusercontent.com/-8jz_GggdcGs/AAAAAAAAAAI/AAAAAAAAD1A/zzMA6PhAGjY/s300-p-rw-no/photo.jpg"
-        link="https://plus.google.com/u/1/+pashapuma" />
+        image="https://crowdin-static.downloads.crowdin.com/avatar/13956153/large/ff5f2a3d1f87aed0716187648300301f.png"
+        link="https://twitter.com/pashapuma1" />
 
     <contributor
         name="jara2105"
@@ -141,5 +141,15 @@
         contribution="Traditional Chinese"
         image="https://avatars3.githubusercontent.com/u/9370547?s=400&amp;v=4"
         link="https://github.com/maple3142" />
+
+    <contributor
+        name="Omar Mostafa"
+        contribution="Arabic"
+        image="https://crowdin-static.downloads.crowdin.com/avatar/12926745/large/1fe2a860924747bbfbd0719e57abe9cc.jpg" />
+
+    <contributor
+        name="Dhanu Saud"
+        contribution="Nepali"
+        image="https://crowdin-static.downloads.crowdin.com/avatar/14049345/large/1686a6cceb98d8a6c316f74ca6a2a5dd.jpeg" />
 
 </resources>

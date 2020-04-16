@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
+import android.util.Base64;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -19,6 +21,7 @@ import org.xmlpull.v1.XmlPullParser;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -41,6 +44,9 @@ import candybar.lib.databases.Database;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.listeners.RequestListener;
+
+import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.DrawableHelper.getRightIcon;
 
 /*
  * CandyBar - Material Dashboard
@@ -102,7 +108,7 @@ public class RequestHelper {
         return null;
     }
 
-    public static String buildComponentsJson(@NonNull List<Request> requests) {
+    public static String buildJsonForArctic(@NonNull List<Request> requests) {
         StringBuilder sb = new StringBuilder();
         boolean isFirst = true;
 
@@ -114,6 +120,32 @@ public class RequestHelper {
                     request.getPackageName(),
                     request.getActivity(),
                     request.getName().toLowerCase().replace(" ", "_")));
+            isFirst = false;
+        }
+        sb.append("]}");
+
+        return sb.toString();
+    }
+
+    public static String buildJsonForMyAP(@NonNull Context context, @NonNull List<Request> requests) {
+        StringBuilder sb = new StringBuilder();
+        boolean isFirst = true;
+
+        sb.append("{ \"projectUID\": \"ENTER UID\",");
+        sb.append("\"icons\" : [");
+        for (Request request : requests) {
+            Bitmap appBitmap = getRightIcon(getReqIcon(context, request.getActivity()));
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            appBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+            String base64Icon = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
+
+            if (!isFirst) sb.append(",\n");
+            sb.append(String.format(
+                    "\"name\": \"" + request.getName() + "\"," +
+                            "\"packageName\": \"" + request.getPackageName() + "\"," +
+                            "\"imageStr\": \"" + base64Icon + "\"," +
+                            "\"activities\": [\"" + request.getActivity() + "\"]"
+            ));
             isFirst = false;
         }
         sb.append("]}");

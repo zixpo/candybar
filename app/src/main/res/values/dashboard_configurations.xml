@@ -140,6 +140,9 @@
     <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
     <bool name="enable_non_mail_app_request">true</bool>
 
+    <!-- Hide missing app count -->
+    <bool name="hide_missing_app_count">false</bool>
+
     <!-- Email that will be used to send icon request and report bugs -->
     <string name="dev_email">sarsamurmu05@gmail.com</string>
 

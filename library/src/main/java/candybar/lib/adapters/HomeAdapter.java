@@ -246,7 +246,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
         } else if (holder.getItemViewType() == TYPE_ICON_REQUEST) {
             IconRequestViewHolder iconRequestViewHolder = (IconRequestViewHolder) holder;
-            if (IconRequestTask.isLoading) {
+            if (mContext.getResources().getBoolean(R.bool.hide_missing_app_count)) {
+                iconRequestViewHolder.dataContainer.setVisibility(View.GONE);
+                iconRequestViewHolder.progressBar.setVisibility(View.GONE);
+            } else if (IconRequestTask.isLoading) {
                 iconRequestViewHolder.dataContainer.setVisibility(View.GONE);
                 iconRequestViewHolder.progressBar.setVisibility(View.VISIBLE);
             } else {

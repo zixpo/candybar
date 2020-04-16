@@ -1,3 +1,10 @@
+# v3.6.3
+- Updated Gradle Plugin.
+- Option to hide missing app count.
+- Fixed new wallpaper count badge.
+- Updated translations.
+- Added new translations.
+
 # v3.6.2
 - Support for customizing background color of navigation view header.
 - Fixed white status bar showing on pre Android Oreo devices.

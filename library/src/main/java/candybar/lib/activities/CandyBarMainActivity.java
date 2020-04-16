@@ -29,7 +29,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -519,11 +518,11 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     TextView counter = container.findViewById(R.id.counter);
                     if (counter == null) return;
 
-                    ViewCompat.setBackground(counter, DrawableHelper.getTintedDrawable(this,
-                            R.drawable.ic_toolbar_circle, accent));
-                    counter.setTextColor(ColorHelper.getTitleTextColor(accent));
+                    /*ViewCompat.setBackground(counter, DrawableHelper.getTintedDrawable(this,
+                            R.drawable.ic_toolbar_circle, accent));*/
+                    //counter.setTextColor(ColorHelper.getTitleTextColor(accent));
                     int newItem = (size - offlineSize);
-                    counter.setText(String.valueOf(newItem > 99 ? "99+" : newItem));
+                    counter.setText(String.valueOf(this.getResources().getString(R.string.txt_new) + " " + (newItem > 99 ? "99+" : newItem)));
                     container.setVisibility(View.VISIBLE);
                     return;
                 }

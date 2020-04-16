@@ -3,9 +3,11 @@
 [![JitPack Version](https://jitpack.io/v/zixpo/candybar.svg)](https://jitpack.io/#zixpo/candybar)
 [![Build Status](https://api.travis-ci.com/zixpo/candybar.svg?branch=master)](https://travis-ci.com/zixpo/candybar)
 
-Improved version of original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
+Improved version of the original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
 
-This is the library of CandyBar. It is only used for development purpose. Use the sample for making Icon Pack, Get it from [here](https://github.com/zixpo/candybar-sample).
+Check out [Blueprint Dashboard](https://github.com/jahirfiquitiva/blueprint/). It's modular and uses the new build features. Maybe you just like it :D
+
+This is the library of CandyBar Dashboard. It is only used for development purpose. Use the sample for making Icon Pack, Get it from [here](https://github.com/zixpo/candybar-sample).
 
 # Features
 - License checker

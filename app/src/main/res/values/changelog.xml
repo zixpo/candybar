@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date">February 09, 2020</string>
+    <string name="changelog_date">April 16, 2020</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,11 +10,11 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Support for customizing background color of navigation view header.</item>
-        <item>Fixed white status bar showing on pre Android Oreo devices.</item>
-        <item>Fixed proguard error.</item>
-        <item>Fixed icons being count even when automatic icon counting is disabled.</item>
-        <item>Now app names in icon request are normalized, Ex. `ů` is normalized to `u`.</item>
+        <item>Updated Gradle Plugin.</item>
+        <item>Option to hide missing app count.</item>
+        <item>Fixed new wallpaper count badge.</item>
+        <item>Updated translations.</item>
+        <item>Added new translations.</item>
     </string-array>
 
 </resources>
