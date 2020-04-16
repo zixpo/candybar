@@ -249,4 +249,5 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <!-- DrawerToggle -->
     <string name="txt_open">Ouvrir</string>
     <string name="txt_close">Fermer</string>
+    <string name="txt_new">Nouveau</string>
 </resources>
