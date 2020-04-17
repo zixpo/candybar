@@ -237,4 +237,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">فتح</string>
     <string name="txt_close">إغلاق</string>
+    <string name="txt_new">جديد</string>
 </resources>
