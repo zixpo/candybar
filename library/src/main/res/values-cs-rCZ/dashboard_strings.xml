@@ -46,6 +46,7 @@
     <string name="premium_request_desc">Prémiové žádosti jsou zpoplatněné, využitím téhle možnosti můžete získat požadavek dříve jak u standardních žádostí.</string>
     <string name="premium_request_buy">Zakoupit</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Nová tapeta</string>
     <!-- Preferences -->
     <string name="pref_theme_header">Vzhled</string>
     <string name="pref_theme_dark">Tmavý</string>
