@@ -14,8 +14,14 @@
     <string name="save_setting">Uložit</string>
     <!-- Menu -->
     <string name="menu_save">Uložit do zařízení</string>
+    <string name="menu_select_all">Vybrat vše</string>
     <string name="menu_wallpaper_crop">Oříznout tapetu</string>
+    <string name="menu_apply_homescreen">Domovská obrazovka</string>
+    <string name="menu_apply_lockscreen">Zamykací obrazovka</string>
     <!-- Dialog -->
+    <string name="ok">OK</string>
+    <string name="install">Instalovat</string>
+    <string name="donate">Podpořit</string>
     <!-- Update -->
     <string name="update_available">Je k dispozici nová aktualizace!</string>
     <string name="no_update_available">Používáte nejnovější verzi!</string>
@@ -28,6 +34,7 @@
     <!-- Tap Intro -->
     <!-- Home -->
     <string name="home_more_apps_header">Další aplikace</string>
+    <string name="home_donate">Podpořit</string>
     <string name="home_icon_request_installed_apps">Celkem\n%d nainstalovaných aplikací</string>
     <string name="home_icon_request_missed_apps">Chybějící\n%d aplikace</string>
     <!-- Apply -->
@@ -36,11 +43,20 @@
     <string name="request_title">Žádost o ikonky</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
+    <string name="premium_request_desc">Prémiové žádosti jsou zpoplatněné, využitím téhle možnosti můžete získat požadavek dříve jak u standardních žádostí.</string>
+    <string name="premium_request_buy">Zakoupit</string>
     <!-- Wallpapers -->
     <!-- Preferences -->
+    <string name="pref_theme_header">Vzhled</string>
+    <string name="pref_theme_dark">Tmavý</string>
+    <string name="pref_language_header">Jazyky</string>
+    <string name="pref_others_header">Ostatní</string>
     <!-- Permission -->
     <!-- Intent -->
+    <string name="intent_email_recommended">Doporučeno</string>
     <!-- About -->
+    <string name="about_privacy_policy_title">Ochrana osobních údajů</string>
+    <string name="about_terms_and_conditions_title">Obchodní podmínky</string>
     <!-- Report Bugs -->
     <!-- Support Development -->
     <!-- Crash Report -->
