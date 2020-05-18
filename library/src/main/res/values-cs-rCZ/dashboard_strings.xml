@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Domů</string>
+    <string name="navigation_view_apply">Aplikovat</string>
+    <string name="navigation_view_icons">Ikonky</string>
+    <string name="navigation_view_request">Žádost o ikonky</string>
+    <string name="navigation_view_wallpapers">Tapety</string>
+    <string name="navigation_view_settings">Nastavení</string>
+    <string name="navigation_view_faqs">Časté otázky</string>
+    <string name="navigation_view_about">O aplikaci</string>
+    <string name="navigation_view_donate">Podpora vývojáře</string>
     <!-- Muzei -->
+    <string name="save_setting">Uložit</string>
     <!-- Menu -->
+    <string name="menu_save">Uložit do zařízení</string>
+    <string name="menu_wallpaper_crop">Oříznout tapetu</string>
     <!-- Dialog -->
     <!-- Update -->
+    <string name="update_available">Je k dispozici nová aktualizace!</string>
+    <string name="no_update_available">Používáte nejnovější verzi!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Verze</string>
     <!-- InAppBilling -->
     <!-- License -->
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
     <!-- Home -->
+    <string name="home_more_apps_header">Další aplikace</string>
+    <string name="home_icon_request_installed_apps">Celkem\n%d nainstalovaných aplikací</string>
+    <string name="home_icon_request_missed_apps">Chybějící\n%d aplikace</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Žádost o ikonky</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
