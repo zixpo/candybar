@@ -28,14 +28,14 @@
         <!-- Why is Wake Lock Permission needed? -->
     </string-array>
     <string-array name="questions">
-        <item>What is a launcher?</item>
-        <item>What is an icon pack?</item>
-        <item>How do i use an icon pack?</item>
-        <item>How do i apply an icon pack?</item>
+        <item>Co je to Launcher?</item>
+        <item>Co je to balíček ikon?</item>
+        <item>Jak mohu používat balíček ikon?</item>
+        <item>Jak mohu aplikovat balíček ikon?</item>
         <item>How do i see all icons included?</item>
         <item>I can\'t see a complete icon name</item>
-        <item>How can i replace icons with an alternate icon?</item>
-        <item>How do i request an icon?</item>
+        <item>Jak nahradit ikonu, ikonou alternativní?</item>
+        <item>Jak mám vytvořit požadavek na další ikony?</item>
         <item>How can i restore remaining Premium Requests after reinstalling the app?</item>
         <item>After restarting my phone, the icon pack is not applied, it restore to defaults?</item>
         <item>Why do the icons looks jaggy or pixelated on my phone?</item>
