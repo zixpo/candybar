@@ -11,8 +11,14 @@
     <string name="navigation_view_about">O aplikaci</string>
     <string name="navigation_view_donate">Podpora vývojáře</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Nastavení Muzei</string>
+    <string name="minute">Minut</string>
+    <string name="hour">Hodin</string>
     <string name="save_setting">Uložit</string>
+    <string name="muzei_downloaded_only">Načíst pouze stažené tapety</string>
+    <string name="muzei_settings_saved">Nastavení bylo uloženo</string>
     <!-- Menu -->
+    <string name="menu_search">Hledat</string>
     <string name="menu_save">Uložit do zařízení</string>
     <string name="menu_select_all">Vybrat vše</string>
     <string name="menu_wallpaper_crop">Oříznout tapetu</string>
@@ -22,16 +28,22 @@
     <string name="ok">OK</string>
     <string name="install">Instalovat</string>
     <string name="donate">Podpořit</string>
+    <string name="search_icon">Název ikony</string>
     <!-- Update -->
     <string name="update_available">Je k dispozici nová aktualizace!</string>
     <string name="no_update_available">Používáte nejnovější verzi!</string>
     <!-- Changelog -->
     <string name="changelog_version">Verze</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Nelze načíst produkty zakoupené v aplikaci</string>
     <!-- License -->
+    <string name="license_checking">Kontrolování licence…</string>
+    <string name="license_check_success">Kontrola licence byla úspěšná, děkujeme za stažení aplikace z Google Play.</string>
+    <string name="license_check_retry">Nelze zkontrolovat licenci, zkuste to prosím znovu za pár okamžiků.</string>
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Hledat</string>
     <!-- Home -->
     <string name="home_more_apps_header">Další aplikace</string>
     <string name="home_donate">Podpořit</string>
