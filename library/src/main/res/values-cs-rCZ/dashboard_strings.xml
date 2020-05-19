@@ -102,6 +102,7 @@
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
+    <string name="premium_request">Prémiový požadavek</string>
     <string name="premium_request_desc">Prémiové žádosti jsou zpoplatněné, využitím téhle možnosti můžete získat požadavek dříve jak u standardních žádostí.</string>
     <string name="premium_request_buy">Zakoupit</string>
     <!-- Wallpapers -->
@@ -120,13 +121,25 @@
     <string name="pref_data_cache_size">Velikost mezipaměti: %s</string>
     <string name="pref_data_cache_clear_dialog">Opravdu chcete vymazat mezipaměť?</string>
     <string name="pref_data_cache_cleared">Mezipaměť vymazána</string>
+    <string name="pref_premium_request_header">Prémiový požadavek</string>
+    <string name="pref_premium_request_restore">Obnovit nákupy</string>
+    <string name="pref_premium_request_restore_success">Prémiový požadavek obnoven</string>
+    <string name="pref_premium_request_restore_empty">Nemáte žádné zakoupené balíčky</string>
+    <string name="pref_premium_request_rebuild">Znovu sestavit žádost o prémiové ikony</string>
     <string name="pref_theme_header">Vzhled</string>
     <string name="pref_theme_dark">Tmavý</string>
+    <string name="pref_theme_dark_desc">Použít tmavý vzhled aplikace</string>
+    <string name="pref_wallpaper_header">Tapety</string>
+    <string name="pref_wallpaper_location">Umístění uložení tapet</string>
     <string name="pref_language_header">Jazyky</string>
     <string name="pref_others_header">Ostatní</string>
+    <string name="pref_others_report_bugs">Ohlásit chybu</string>
+    <string name="pref_others_changelog">Seznam změn</string>
     <!-- Permission -->
     <!-- Intent -->
+    <string name="intent_email_supported">Podporováno</string>
     <string name="intent_email_recommended">Doporučeno</string>
+    <string name="intent_email_not_supported">Nepodporováno</string>
     <!-- About -->
     <string name="about_privacy_policy_title">Ochrana osobních údajů</string>
     <string name="about_terms_and_conditions_title">Obchodní podmínky</string>
