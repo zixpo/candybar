@@ -151,10 +151,15 @@
     <!-- Report Bugs -->
     <string name="report_bugs_desc_hint">Popis</string>
     <string name="report_bugs_desc_empty">Zadejte, prosím, popis</string>
+    <string name="report_bugs_send">Odeslat hlášení</string>
     <!-- Support Development -->
+    <string name="donation_success">Srdečně děkuji za tenhle dar.</string>
     <!-- Crash Report -->
+    <string name="crash_report">Hlášení o pádu</string>
+    <string name="crash_report_send">Odeslat hlášení</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_open_source_licenses">Open Source licence</string>
     <string name="about_dashboard_translator">Překladatelé CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Otevřít</string>
