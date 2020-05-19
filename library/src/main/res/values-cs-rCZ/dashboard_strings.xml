@@ -96,17 +96,30 @@
     <string name="icon_shape">Tvar ikon</string>
     <!-- Request -->
     <string name="request_title">Žádost o ikonky</string>
+    <string name="request_not_requested">Zatím nepožádáno</string>
+    <string name="request_already_requested">Již požádáno</string>
     <string name="request_building">Připravuji požadavek…</string>
+    <string name="request_build_failed">Nelze sestavit požadavek</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <string name="premium_request_desc">Prémiové žádosti jsou zpoplatněné, využitím téhle možnosti můžete získat požadavek dříve jak u standardních žádostí.</string>
     <string name="premium_request_buy">Zakoupit</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Nová tapeta</string>
+    <string name="wallpaper_downloading">Stahování tapety …</string>
+    <string name="wallpaper_download_failed">Nelze stáhnout tapetu</string>
+    <string name="wallpaper_loading">Načítání tapety …</string>
+    <string name="wallpaper_applying">Aplikuji tapetu…</string>
+    <string name="wallpaper_applied">Tapeta aplikována</string>
+    <string name="wallpaper_apply_failed">Nelze použít tapetu</string>
+    <string name="wallpaper_apply_cancelled">Použití tapety bylo zrušeno</string>
     <string name="wallpaper_apply">Použití tapetu</string>
     <string name="wallpaper_save_to_device">Uložit tapetu</string>
     <!-- Preferences -->
     <string name="pref_data_cache">Vymazat mezipaměť</string>
+    <string name="pref_data_cache_size">Velikost mezipaměti: %s</string>
+    <string name="pref_data_cache_clear_dialog">Opravdu chcete vymazat mezipaměť?</string>
+    <string name="pref_data_cache_cleared">Mezipaměť vymazána</string>
     <string name="pref_theme_header">Vzhled</string>
     <string name="pref_theme_dark">Tmavý</string>
     <string name="pref_language_header">Jazyky</string>
@@ -123,7 +136,10 @@
     <!-- Support Development -->
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_translator">Překladatelé CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Otevřít</string>
     <string name="txt_close">Zavřít</string>
+    <string name="txt_new">Novinka</string>
 </resources>
