@@ -107,6 +107,7 @@
     <string name="premium_request_buy">Zakoupit</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Nová tapeta</string>
+    <string name="wallpaper_already_downloaded">Tapeta je již stažena</string>
     <string name="wallpaper_downloading">Stahování tapety …</string>
     <string name="wallpaper_download_failed">Nelze stáhnout tapetu</string>
     <string name="wallpaper_loading">Načítání tapety …</string>
@@ -114,9 +115,11 @@
     <string name="wallpaper_applied">Tapeta aplikována</string>
     <string name="wallpaper_apply_failed">Nelze použít tapetu</string>
     <string name="wallpaper_apply_cancelled">Použití tapety bylo zrušeno</string>
+    <string name="connection_failed">Nelze načíst data ze serveru</string>
     <string name="wallpaper_apply">Použití tapetu</string>
     <string name="wallpaper_save_to_device">Uložit tapetu</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Data &amp; mezipaměť</string>
     <string name="pref_data_cache">Vymazat mezipaměť</string>
     <string name="pref_data_cache_size">Velikost mezipaměti: %s</string>
     <string name="pref_data_cache_clear_dialog">Opravdu chcete vymazat mezipaměť?</string>
@@ -135,6 +138,8 @@
     <string name="pref_others_header">Ostatní</string>
     <string name="pref_others_report_bugs">Ohlásit chybu</string>
     <string name="pref_others_changelog">Seznam změn</string>
+    <string name="pref_others_reset_tutorial">Obnovit tutorial</string>
+    <string name="pref_others_reset_tutorial_reset">Tutorial obnoven</string>
     <!-- Permission -->
     <!-- Intent -->
     <string name="intent_email_supported">Podporováno</string>
