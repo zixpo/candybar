@@ -25,6 +25,9 @@
     <string name="menu_apply_homescreen">Domovská obrazovka</string>
     <string name="menu_apply_lockscreen">Zamykací obrazovka</string>
     <!-- Dialog -->
+    <string name="open">Otevřít</string>
+    <string name="close">Zavřít</string>
+    <string name="clear">Vyčistit</string>
     <string name="ok">OK</string>
     <string name="install">Instalovat</string>
     <string name="donate">Podpořit</string>
@@ -44,6 +47,12 @@
     <!-- Share -->
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Hledat</string>
+    <string name="tap_intro_request_select_all">Vybrat všechny chybějící aplikace</string>
+    <string name="tap_intro_request_send">Odeslat žádost</string>
+    <string name="tap_intro_request_premium">Premium požadavek</string>
+    <string name="tap_intro_wallpapers_preview">Náhled tapety</string>
+    <string name="tap_intro_wallpaper_preview_save">Uložit tapetu</string>
+    <string name="tap_intro_wallpaper_preview_apply">Použití tapetu</string>
     <!-- Home -->
     <string name="home_more_apps_header">Další aplikace</string>
     <string name="home_donate">Podpořit</string>
@@ -51,15 +60,21 @@
     <string name="home_icon_request_missed_apps">Chybějící\n%d aplikace</string>
     <!-- Apply -->
     <!-- Icons -->
+    <string name="icons_load_failed">Ikony nelze načíst</string>
+    <string name="icon_shape">Tvar ikon</string>
     <!-- Request -->
     <string name="request_title">Žádost o ikonky</string>
+    <string name="request_building">Připravuji požadavek…</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <string name="premium_request_desc">Prémiové žádosti jsou zpoplatněné, využitím téhle možnosti můžete získat požadavek dříve jak u standardních žádostí.</string>
     <string name="premium_request_buy">Zakoupit</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Nová tapeta</string>
+    <string name="wallpaper_apply">Použití tapetu</string>
+    <string name="wallpaper_save_to_device">Uložit tapetu</string>
     <!-- Preferences -->
+    <string name="pref_data_cache">Vymazat mezipaměť</string>
     <string name="pref_theme_header">Vzhled</string>
     <string name="pref_theme_dark">Tmavý</string>
     <string name="pref_language_header">Jazyky</string>
@@ -75,4 +90,6 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Otevřít</string>
+    <string name="txt_close">Zavřít</string>
 </resources>
