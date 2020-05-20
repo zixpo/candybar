@@ -91,6 +91,7 @@
     <string name="home_apply_icon_pack">Použít %s</string>
     <string name="home_donate">Podpořit</string>
     <string name="home_donate_desc">Podpořte vývoj tohoto balíčku</string>
+    <string name="home_icon_dimension">Rozměr ikony: %s pixelů</string>
     <string name="home_muzei">Muzei živá tapeta</string>
     <string name="home_icon_request_installed_apps">Celkem\n%d nainstalovaných aplikací</string>
     <string name="home_icon_request_themed_apps">%d \naktivních ikon</string>
@@ -99,9 +100,13 @@
     <string name="apply_installed">Nainstalovaný Launcher</string>
     <string name="apply_supported">Podporované Launchery</string>
     <string name="apply_manual_evie">Podržte na domovské obrazovce prst- Nastavení - sada ikon - vyberte %s.</string>
+    <string name="apply_launch_failed">Nelze spustit nastavení %s</string>
     <string name="apply_launcher_not_installed">%s Launcher není nainstalován. Chcete otevřít
         Obchod Google Play pro jeho stažení a instalaci?</string>
     <string name="apply_launcher_not_installable">%s Launcher není nainstalován. Zkuste to prosím znovu po instalaci spouštěče.</string>
+    <string name="apply_cmtheme_not_available">CM Theme Manager není na tomto zařízení k dispozici</string>
+    <string name="apply_cmtheme_failed">Nelze spustit CM Theme Manager, můžete zkusit aplikovat balíček ikon ručně v nastavení.</string>
+    <string name="apply_lg_home">Pro aplikování tohoto balíčku ikon: Nastavení - Zobrazení - Domovská obrazovka - Témata</string>
     <!-- Icons -->
     <string name="icons_load_failed">Ikony nelze načíst</string>
     <string name="icon_shape">Tvar ikon</string>
