@@ -16,6 +16,8 @@
     <string name="minute">Minut</string>
     <string name="hour">Hodin</string>
     <string name="save_setting">Uložit</string>
+    <string name="muzei_refresh_duration">Rychlost aktualizace</string>
+    <string name="muzei_wifi_only">Aktualizovat pouze na WiFi</string>
     <string name="muzei_downloaded_only">Načíst pouze stažené tapety</string>
     <string name="muzei_settings_ignored">Balíček ikon neobsahuje tapety, nastavení ignorováno.</string>
     <string name="muzei_settings_saved">Nastavení bylo uloženo</string>
@@ -91,7 +93,9 @@
     <string name="home_apply_icon_pack">Použít %s</string>
     <string name="home_donate">Podpořit</string>
     <string name="home_donate_desc">Podpořte vývoj tohoto balíčku</string>
+    <string name="home_icons">Custom ikony</string>
     <string name="home_icon_dimension">Rozměr ikony: %s pixelů</string>
+    <string name="home_loud_wallpapers">%d tapet na cloudu</string>
     <string name="home_muzei">Muzei živá tapeta</string>
     <string name="home_icon_request_installed_apps">Celkem\n%d nainstalovaných aplikací</string>
     <string name="home_icon_request_themed_apps">%d \naktivních ikon</string>
@@ -107,6 +111,9 @@
     <string name="apply_cmtheme_not_available">CM Theme Manager není na tomto zařízení k dispozici</string>
     <string name="apply_cmtheme_failed">Nelze spustit CM Theme Manager, můžete zkusit aplikovat balíček ikon ručně v nastavení.</string>
     <string name="apply_lg_home">Pro aplikování tohoto balíčku ikon: Nastavení - Zobrazení - Domovská obrazovka - Témata</string>
+    <string name="apply_lg_home_not_available">LG Home není k dispozici</string>
+    <string name="apply_lg_home_failed">Nelze spustit LG Home Settings, můžete zkusit aplikovat balíček ikon ručně v nastavení.</string>
+    <string name="apply_lg_home_nougat">LG Home při Android Nougat již nepodporuje Custom ikony, použijte jiný Launcher.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Ikony nelze načíst</string>
     <string name="icon_shape">Tvar ikon</string>
@@ -126,10 +133,21 @@
     <string name="request_limit_buy">Pro více požadavků si můžete koupit prémium požadavek.</string>
     <string name="request_limit_reset">Bezplatný požadavek na další aplikace se obnoví při další aktualizaci.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Standardní požadavek</string>
+    <string name="regular_request_count">Celkem \n%d žádostí</string>
+    <string name="regular_request_used">Nárokováno \n%d žádostí</string>
+    <string name="regular_request_available">K dispozici je \n%d žádostí</string>
     <!-- Premium Request -->
     <string name="premium_request">Prémiový požadavek</string>
+    <string name="premium_request_no_internet">Před odesláním prémiové žádosti se ujistěte, že váš telefon je připojen k internetu</string>
     <string name="premium_request_desc">Prémiové žádosti jsou zpoplatněné, využitím téhle možnosti můžete získat požadavek dříve jak u standardních žádostí.</string>
     <string name="premium_request_buy">Zakoupit</string>
+    <string name="premium_request_count">Celkem \n%d žádostí</string>
+    <string name="premium_request_used">Nárokováno \n%d žádostí</string>
+    <string name="premium_request_available">K dispozici je \n%d žádostí</string>
+    <string name="premium_request_already_purchased">Stále máte %d prémiových požadavků.
+        Před nákupem balíčku s prémiovým požadavkem musíte všechny použít.</string>
+    <string name="premium_request_limit">Máte pouze %d prémiových žádostí,</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Nová tapeta</string>
     <string name="wallpaper_already_downloaded">Tapeta je již stažena</string>
@@ -149,6 +167,9 @@
     <string name="pref_data_cache_size">Velikost mezipaměti: %s</string>
     <string name="pref_data_cache_clear_dialog">Opravdu chcete vymazat mezipaměť?</string>
     <string name="pref_data_cache_cleared">Mezipaměť vymazána</string>
+    <string name="pref_data_request">Vymazat data požadavků</string>
+    <string name="pref_data_request_clear_dialog">Opravdu chcete smazat data již nárokovaných ikon?</string>
+    <string name="pref_data_request_cleared">Data požadavků vymazána</string>
     <string name="pref_premium_request_header">Prémiový požadavek</string>
     <string name="pref_premium_request_restore">Obnovit nákupy</string>
     <string name="pref_premium_request_restore_success">Prémiový požadavek obnoven</string>
@@ -167,13 +188,19 @@
     <string name="pref_others_reset_tutorial_reset">Tutorial obnoven</string>
     <!-- Permission -->
     <!-- Intent -->
+    <string name="app_client">Vyberte aplikaci</string>
+    <string name="no_email_app">Žádná aplikace k odeslání</string>
+    <string name="intent_email_failed">Nelze zobrazit e-mailovou aplikaci</string>
     <string name="intent_email_supported">Podporováno</string>
     <string name="intent_email_recommended">Doporučeno</string>
     <string name="intent_email_not_supported">Nepodporováno</string>
+    <string name="intent_email_not_supported_message">Vybrán nepodporovaný email klient, vyberte jiný</string>
     <!-- About -->
+    <string name="about_contributors_title">Podporovatelé</string>
     <string name="about_privacy_policy_title">Ochrana osobních údajů</string>
     <string name="about_terms_and_conditions_title">Obchodní podmínky</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Popište, jaký problém chcete nahlásit</string>
     <string name="report_bugs_desc_hint">Popis</string>
     <string name="report_bugs_desc_empty">Zadejte, prosím, popis</string>
     <string name="report_bugs_send">Odeslat hlášení</string>
@@ -181,10 +208,13 @@
     <string name="donation_success">Srdečně děkuji za tenhle dar.</string>
     <!-- Crash Report -->
     <string name="crash_report">Hlášení o pádu</string>
+    <string name="crash_report_message">Bohužel %s neodpovídá. Pokud chcete, aby vývojář vyřešil problém, odešlete níže uvedenou zprávu.</string>
     <string name="crash_report_send">Odeslat hlášení</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar je vyvíjen jako open source projekt pro Android, který je licencován pod Apache License 2.0. Je k dispozici na GitHub pro volné použití, autor Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Open Source licence</string>
+    <string name="about_dashboard_contributors">Podporovatelé CandyBar</string>
     <string name="about_dashboard_translator">Překladatelé CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Otevřít</string>
