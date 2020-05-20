@@ -61,6 +61,7 @@
     <string name="share_app_body">Podívejte se na %1$s, tento balíček ikon je opravdu skvělý! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Navigační panel</string>
+    <string name="tap_intro_home_navigation_desc">Klepnutím sem nebo přejetím z levého okraje obrazovky otevřete navigační panel</string>
     <string name="tap_intro_home_apply">Použít tuhle sadu ikon</string>
     <string name="tap_intro_home_apply_desc">Aktivujte kliknutím sem %s</string>
     <string name="tap_intro_icons_search">Hledat</string>
@@ -72,7 +73,10 @@
     <string name="tap_intro_request_send">Odeslat žádost</string>
     <string name="tap_intro_request_send_desc">Kliknutím zde odešlete chybějící aplikace</string>
     <string name="tap_intro_request_premium">Premium požadavek</string>
+    <string name="tap_intro_request_premium_desc">Klepnutím sem můžete zakoupit prémium požadavek,
+        to znamená že můžete rychleji získat požadované aplikace.</string>
     <string name="tap_intro_wallpapers_option">Možnosti tapet</string>
+    <string name="tap_intro_wallpapers_option_desc">Podržením zobrazíte možnosti pro tapetu %s.</string>
     <string name="tap_intro_wallpapers_option_desc_download">stáhnout nebo</string>
     <string name="tap_intro_wallpapers_preview">Náhled tapety</string>
     <string name="tap_intro_wallpapers_preview_desc">Klepnutím sem zobrazíte plnou velikost tapety</string>
