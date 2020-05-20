@@ -81,7 +81,9 @@
     <string name="tap_intro_wallpapers_preview">Náhled tapety</string>
     <string name="tap_intro_wallpapers_preview_desc">Klepnutím sem zobrazíte plnou velikost tapety</string>
     <string name="tap_intro_wallpaper_preview_save">Uložit tapetu</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Klepnutím sem stáhnete a uložte tapetu do vašeho zařízení, abyste ji mohli použít později</string>
     <string name="tap_intro_wallpaper_preview_apply">Použití tapetu</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Klepnutím sem nastavíte tapetu jako pozadí domovské obrazovky</string>
     <!-- Home -->
     <string name="home_more_apps_header">Další aplikace</string>
     <string name="home_more_apps">Zkontrolovat ostatní aplikace publikované v Google Play Store</string>
@@ -91,19 +93,33 @@
     <string name="home_donate_desc">Podpořte vývoj tohoto balíčku</string>
     <string name="home_muzei">Muzei živá tapeta</string>
     <string name="home_icon_request_installed_apps">Celkem\n%d nainstalovaných aplikací</string>
+    <string name="home_icon_request_themed_apps">%d \naktivních ikon</string>
     <string name="home_icon_request_missed_apps">Chybějící\n%d aplikace</string>
     <!-- Apply -->
     <string name="apply_installed">Nainstalovaný Launcher</string>
     <string name="apply_supported">Podporované Launchery</string>
+    <string name="apply_manual_evie">Podržte na domovské obrazovce prst- Nastavení - sada ikon - vyberte %s.</string>
+    <string name="apply_launcher_not_installed">%s Launcher není nainstalován. Chcete otevřít
+        Obchod Google Play pro jeho stažení a instalaci?</string>
+    <string name="apply_launcher_not_installable">%s Launcher není nainstalován. Zkuste to prosím znovu po instalaci spouštěče.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Ikony nelze načíst</string>
     <string name="icon_shape">Tvar ikon</string>
     <!-- Request -->
     <string name="request_title">Žádost o ikonky</string>
+    <string name="request_not_selected">Vyberte aplikace, o které chcete požádat</string>
     <string name="request_not_requested">Zatím nepožádáno</string>
     <string name="request_already_requested">Již požádáno</string>
     <string name="request_building">Připravuji požadavek…</string>
+    <string name="request_arctic_success">Požadavek byl úspěšně odeslán Arctic Manager</string>
+    <string name="request_fetching_data">Načítání nejnovějších dat...</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
+    <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
+    <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
+    <string name="request_limit">Zdarma můžete zažádat pouze o %d aplikací.</string>
+    <string name="request_used">Z toho máte již o %d aplikací požádáno.</string>
+    <string name="request_limit_buy">Pro více požadavků si můžete koupit prémium požadavek.</string>
+    <string name="request_limit_reset">Bezplatný požadavek na další aplikace se obnoví při další aktualizaci.</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <string name="premium_request">Prémiový požadavek</string>
