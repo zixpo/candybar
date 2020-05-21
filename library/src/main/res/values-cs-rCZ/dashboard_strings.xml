@@ -115,6 +115,7 @@
     <string name="apply_lg_home_not_available">LG Home není k dispozici</string>
     <string name="apply_lg_home_failed">Nelze spustit LG Home Settings, můžete zkusit aplikovat balíček ikon ručně v nastavení.</string>
     <string name="apply_lg_home_nougat">LG Home při Android Nougat již nepodporuje Custom ikony, použijte jiný Launcher.</string>
+    <string name="apply_launcher_incompatible">%s Launcher nepodporuje žádný balíček ikon. Zkuste tenhle %2$s a aktivuje tento balíček.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Ikony nelze načíst</string>
     <string name="icon_shape">Tvar ikon</string>
@@ -141,6 +142,7 @@
     <string name="request_limit_reset">Bezplatný požadavek na další aplikace se obnoví při další aktualizaci.</string>
     <!-- Regular Request -->
     <string name="regular_request">Standardní požadavek</string>
+    <string name="regular_request_desc">Vývojář se pokusí zahrnout vaše požadavky v nadcházejících aktualizacích.</string>
     <string name="regular_request_count">Celkem \n%d žádostí</string>
     <string name="regular_request_used">Nárokováno \n%d žádostí</string>
     <string name="regular_request_available">K dispozici je \n%d žádostí</string>
@@ -159,6 +161,7 @@
         \n\nJe třeba použít všechny své prémiové požadavky, než budete znovu používat pravidelnou žádost zdarma.</string>
     <string name="premium_request_consume_failed">Nelze použít Premium Request, ujistěte se, že máte stabilní připojení k Internetu a zkuste to znovu.
         Přejděte do Nastavení pro obnovení prémiových požadavků.</string>
+    <string name="premium_request_rebuilding">Obnova prémium požadavků…</string>
     <string name="premium_request_rebuilding_empty">Nepodali jste prémiovou žádost</string>
     <string name="premium_request_exist">Stále máte balíček požadavků na prémiové ikony.
         Otevřete nastavení, vyberte \"Obnovit nákupy\" pro jeho obnovení.</string>
@@ -179,6 +182,7 @@
     <!-- Preferences -->
     <string name="pref_data_header">Data &amp; mezipaměť</string>
     <string name="pref_data_cache">Vymazat mezipaměť</string>
+    <string name="pref_data_cache_desc">Smazat data obrázků která se použila pro vytvoření požadavků.</string>
     <string name="pref_data_cache_size">Velikost mezipaměti: %s</string>
     <string name="pref_data_cache_clear_dialog">Opravdu chcete vymazat mezipaměť?</string>
     <string name="pref_data_cache_cleared">Mezipaměť vymazána</string>
@@ -191,6 +195,7 @@
     <string name="pref_premium_request_restore_success">Prémiový požadavek obnoven</string>
     <string name="pref_premium_request_restore_empty">Nemáte žádné zakoupené balíčky</string>
     <string name="pref_premium_request_rebuild">Znovu sestavit žádost o prémiové ikony</string>
+    <string name="pref_premium_request_rebuild_desc">Získat všechna potřebná data k odeslání prémium požadavků</string>
     <string name="pref_theme_header">Vzhled</string>
     <string name="pref_theme_dark">Tmavý</string>
     <string name="pref_theme_dark_desc">Použít tmavý vzhled aplikace</string>
