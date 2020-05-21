@@ -103,6 +103,7 @@
     <!-- Apply -->
     <string name="apply_installed">Nainstalovaný Launcher</string>
     <string name="apply_supported">Podporované Launchery</string>
+    <string name="apply_manual">%1$s Launcher nepodporuje přímé aktivování, ale můžete aktualizovat %2$s manuálně v nastavení Launcheru.</string>
     <string name="apply_manual_evie">Podržte na domovské obrazovce prst- Nastavení - sada ikon - vyberte %s.</string>
     <string name="apply_launch_failed">Nelze spustit nastavení %s</string>
     <string name="apply_launcher_not_installed">%s Launcher není nainstalován. Chcete otevřít
@@ -123,10 +124,16 @@
     <string name="request_not_requested">Zatím nepožádáno</string>
     <string name="request_already_requested">Již požádáno</string>
     <string name="request_building">Připravuji požadavek…</string>
+    <string name="request_arctic_sending">Odesílání požadavku Artic Manager...</string>
+    <string name="request_arctic_error">Při odesílání požadavku do Artic Manager došlo k chybě. Chyba je %s</string>
     <string name="request_arctic_success">Požadavek byl úspěšně odeslán Arctic Manager</string>
     <string name="request_fetching_data">Načítání nejnovějších dat...</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
+    <string name="request_requested">Prosím zkontrolujte svůj požadavek znovu.
+        Protože se pokoušíte požádat o aplikaci, o kterou jste již požádali.</string>
+    <string name="request_email_client">Vyberte aplikaci, kterou chcete použít k odeslání žádosti o ikonu</string>
+    <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon prosím aktualizujte aplikaci na nejnovější verzi.</string>
     <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
     <string name="request_limit">Zdarma můžete zažádat pouze o %d aplikací.</string>
     <string name="request_used">Z toho máte již o %d aplikací požádáno.</string>
@@ -148,6 +155,14 @@
     <string name="premium_request_already_purchased">Stále máte %d prémiových požadavků.
         Před nákupem balíčku s prémiovým požadavkem musíte všechny použít.</string>
     <string name="premium_request_limit">Máte pouze %d prémiových žádostí,</string>
+    <string name="premium_request_limit1">ale vybrali jste %d aplikací.
+        \n\nJe třeba použít všechny své prémiové požadavky, než budete znovu používat pravidelnou žádost zdarma.</string>
+    <string name="premium_request_consume_failed">Nelze použít Premium Request, ujistěte se, že máte stabilní připojení k Internetu a zkuste to znovu.
+        Přejděte do Nastavení pro obnovení prémiových požadavků.</string>
+    <string name="premium_request_rebuilding_empty">Nepodali jste prémiovou žádost</string>
+    <string name="premium_request_exist">Stále máte balíček požadavků na prémiové ikony.
+        Otevřete nastavení, vyberte \"Obnovit nákupy\" pro jeho obnovení.</string>
+    <string name="premium_request_required">Pro požadavky na ikonu je třeba zakoupit balíček s prémiovými ikonami</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Nová tapeta</string>
     <string name="wallpaper_already_downloaded">Tapeta je již stažena</string>
@@ -172,6 +187,7 @@
     <string name="pref_data_request_cleared">Data požadavků vymazána</string>
     <string name="pref_premium_request_header">Prémiový požadavek</string>
     <string name="pref_premium_request_restore">Obnovit nákupy</string>
+    <string name="pref_premium_request_restore_desc">Obnovit balíček prémiových požadavků po přeinstalaci balíčku ikon</string>
     <string name="pref_premium_request_restore_success">Prémiový požadavek obnoven</string>
     <string name="pref_premium_request_restore_empty">Nemáte žádné zakoupené balíčky</string>
     <string name="pref_premium_request_rebuild">Znovu sestavit žádost o prémiové ikony</string>
@@ -187,9 +203,11 @@
     <string name="pref_others_reset_tutorial">Obnovit tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial obnoven</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Pro uložení tapety je třeba udělit oprávnění k úložišti</string>
     <!-- Intent -->
     <string name="app_client">Vyberte aplikaci</string>
     <string name="no_email_app">Žádná aplikace k odeslání</string>
+    <string name="no_browser">Nebyla nalezena aplikace umožňující otevření souboru</string>
     <string name="intent_email_failed">Nelze zobrazit e-mailovou aplikaci</string>
     <string name="intent_email_supported">Podporováno</string>
     <string name="intent_email_recommended">Doporučeno</string>
@@ -203,6 +221,8 @@
     <string name="report_bugs_desc">Popište, jaký problém chcete nahlásit</string>
     <string name="report_bugs_desc_hint">Popis</string>
     <string name="report_bugs_desc_empty">Zadejte, prosím, popis</string>
+    <string name="report_bugs_building">Vytváření seznamu aktivit …</string>
+    <string name="report_bugs_failed">Nelze sestavit seznam aktivit</string>
     <string name="report_bugs_send">Odeslat hlášení</string>
     <!-- Support Development -->
     <string name="donation_success">Srdečně děkuji za tenhle dar.</string>
