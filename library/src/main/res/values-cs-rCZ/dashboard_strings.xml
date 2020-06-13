@@ -72,70 +72,70 @@
     <string name="tap_intro_request_select">Vybrat chybějící aplikace</string>
     <string name="tap_intro_request_select_desc">Kliknutím zde vyberete chybějící aplikace pro požadavek dalších ikon</string>
     <string name="tap_intro_request_select_all">Vybrat všechny chybějící aplikace</string>
-    <string name="tap_intro_request_select_all_desc">Kliknutím zde vyberete všechny chybějící aplikace pro požadavek na další ikony</string>
-    <string name="tap_intro_request_send">Odeslat žádost</string>
-    <string name="tap_intro_request_send_desc">Kliknutím zde odešlete chybějící aplikace</string>
-    <string name="tap_intro_request_premium">Premium požadavek</string>
-    <string name="tap_intro_request_premium_desc">Klepnutím sem můžete zakoupit prémium požadavek,
-        to znamená že můžete rychleji získat požadované aplikace.</string>
-    <string name="tap_intro_wallpapers_option">Možnosti tapet</string>
-    <string name="tap_intro_wallpapers_option_desc">Podržením zobrazíte možnosti pro tapetu %s.</string>
+    <string name="tap_intro_request_select_all_desc">Klepnutím sem vyberete všechny chybějící aplikace pro požadavek na další ikony</string>
+    <string name="tap_intro_request_send">Poslat požadavek na ikonu</string>
+    <string name="tap_intro_request_send_desc">Klepnutím sem odešlete chybějící aplikace</string>
+    <string name="tap_intro_request_premium">Prémiový požadavek na ikony</string>
+    <string name="tap_intro_request_premium_desc">Klepnutím sem zakoupíte balíček prémiových ikon,
+        to znamená že můžete rychleji získat ikony pro požadované aplikace.</string>
+    <string name="tap_intro_wallpapers_option">Možnosti tapety</string>
+    <string name="tap_intro_wallpapers_option_desc">Klepnutím a podržením zobrazíte možnosti pro tapetu %s.</string>
     <string name="tap_intro_wallpapers_option_desc_download">stáhnout nebo</string>
     <string name="tap_intro_wallpapers_preview">Náhled tapety</string>
     <string name="tap_intro_wallpapers_preview_desc">Klepnutím sem zobrazíte plnou velikost tapety</string>
     <string name="tap_intro_wallpaper_preview_save">Uložit tapetu</string>
-    <string name="tap_intro_wallpaper_preview_save_desc">Klepnutím sem stáhnete a uložte tapetu do vašeho zařízení, abyste ji mohli použít později</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Klepnutím sem stáhněte a uložte tapetu do zařízení, takže ji můžete použít později</string>
     <string name="tap_intro_wallpaper_preview_apply">Použití tapetu</string>
     <string name="tap_intro_wallpaper_preview_apply_desc">Klepnutím sem nastavíte tapetu jako pozadí domovské obrazovky</string>
     <!-- Home -->
     <string name="home_more_apps_header">Další aplikace</string>
-    <string name="home_more_apps">Zkontrolovat ostatní aplikace publikované v Google Play Store</string>
-    <string name="home_rate_and_review">Ohodnotit &amp;</string>
+    <string name="home_more_apps">Zkontrolovat ostatní aplikace zveřejněné v Obchodu Play</string>
+    <string name="home_rate_and_review">Ohodnotit</string>
     <string name="home_apply_icon_pack">Použít %s</string>
     <string name="home_donate">Přispět</string>
-    <string name="home_donate_desc">Podpořte vývoj tohoto balíčku</string>
-    <string name="home_icons">Custom ikony</string>
+    <string name="home_donate_desc">Podpořte vývoj pro tento balíček ikon</string>
+    <string name="home_icons">Vlastní ikony</string>
     <string name="home_icon_dimension">Rozměr ikony: %s pixelů</string>
-    <string name="home_loud_wallpapers">%d tapet na cloudu</string>
-    <string name="home_muzei">Muzei živá tapeta</string>
-    <string name="home_icon_request_installed_apps">Celkem\n%d nainstalovaných aplikací</string>
-    <string name="home_icon_request_themed_apps">%d \naktivních ikon</string>
-    <string name="home_icon_request_missed_apps">Chybějící\n%d aplikace</string>
+    <string name="home_loud_wallpapers">Tapety v cloudu: %d</string>
+    <string name="home_muzei">Živé tapety Muzei</string>
+    <string name="home_icon_request_installed_apps">Celkem nainstalovaných aplikací: %d</string>
+    <string name="home_icon_request_themed_apps">Aktivní ikony: %d</string>
+    <string name="home_icon_request_missed_apps">Chybějící aplikace: %d</string>
     <!-- Apply -->
-    <string name="apply_installed">Nainstalovaný Launcher</string>
-    <string name="apply_supported">Podporované Launchery</string>
-    <string name="apply_manual">%1$s Launcher nepodporuje přímé aktivování, ale můžete aktualizovat %2$s manuálně v nastavení Launcheru.</string>
-    <string name="apply_manual_evie">Podržte na domovské obrazovce prst- Nastavení - sada ikon - vyberte %s.</string>
+    <string name="apply_installed">Nainstalovaný spouštěč</string>
+    <string name="apply_supported">Podporované spouštěče</string>
+    <string name="apply_manual">Spouštěč %1$s nepodporuje přímé aktivování, ale můžete aktualizovat %2$s ručně v nastavení spouštěče.</string>
+    <string name="apply_manual_evie">Podržte prst na domovské obrazovce - Nastavení –⁠ Balíček ikon –⁠ vyberte %s.</string>
     <string name="apply_launch_failed">Nelze spustit nastavení %s</string>
-    <string name="apply_launcher_not_installed">%s Launcher není nainstalován. Chcete otevřít
-        Obchod Google Play pro jeho stažení a instalaci?</string>
-    <string name="apply_launcher_not_installable">%s Launcher není nainstalován. Zkuste to prosím znovu po instalaci spouštěče.</string>
+    <string name="apply_launcher_not_installed">Spouštěč %s není nainstalován. Chcete otevřít
+        Obchod Play pro jeho stažení a instalaci?</string>
+    <string name="apply_launcher_not_installable">Spouštěč %s není nainstalován. Zkuste to prosím znovu po instalaci spouštěče.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager není na tomto zařízení k dispozici</string>
-    <string name="apply_cmtheme_failed">Nelze spustit CM Theme Manager, můžete zkusit aplikovat balíček ikon ručně v nastavení.</string>
-    <string name="apply_lg_home">Pro aplikování tohoto balíčku ikon: Nastavení - Zobrazení - Domovská obrazovka - Témata</string>
+    <string name="apply_cmtheme_failed">Nelze spustit CM Theme Manager, můžete zkusit ručně použít balíček ikon v nastavení.</string>
+    <string name="apply_lg_home">Pro použití tohoto balíčku ikon otevřete: Nastavení –⁠ Obrazovka –⁠ Domovská obrazovka –⁠ Motivy</string>
     <string name="apply_lg_home_not_available">LG Home není k dispozici</string>
-    <string name="apply_lg_home_failed">Nelze spustit LG Home Settings, můžete zkusit aplikovat balíček ikon ručně v nastavení.</string>
-    <string name="apply_lg_home_nougat">LG Home při Android Nougat již nepodporuje Custom ikony, použijte jiný Launcher.</string>
-    <string name="apply_launcher_incompatible">%s Launcher nepodporuje žádný balíček ikon. Zkuste tenhle %2$s a aktivuje tento balíček.</string>
+    <string name="apply_lg_home_failed">Nelze otevřít nastavení LG Home, můžete zkusit ručně použít balíček ikon v nastavení.</string>
+    <string name="apply_lg_home_nougat">LG Home s Android Nougat již nepodporuje vlastní ikony. K použití balíčku ikon potřebujete vlastní spouštěč.</string>
+    <string name="apply_launcher_incompatible">Spouštěč %s nepodporuje žádný balíček ikon, takže tento balíček ikon nemůžete s tímto spouštěčem použít. Můžete zkusit aplikaci třetí strany použít tento balíček ikon ve spouštěči %2$s. Chcete nainstalovat?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Ikony nelze načíst</string>
     <string name="icon_shape">Tvar ikon</string>
     <!-- Request -->
     <string name="request_title">Žádost o ikony</string>
     <string name="request_not_selected">Vyberte aplikace, o které chcete požádat</string>
-    <string name="request_not_requested">Zatím nepožádáno</string>
+    <string name="request_not_requested">Nepožádáno</string>
     <string name="request_already_requested">Již požádáno</string>
     <string name="request_building">Připravuji požadavek…</string>
-    <string name="request_arctic_sending">Odesílání požadavku Artic Manager...</string>
+    <string name="request_arctic_sending">Odesílání požadavku do Artic Manager...</string>
     <string name="request_arctic_error">Při odesílání požadavku do Artic Manager došlo k chybě. Chyba je %s</string>
-    <string name="request_arctic_success">Požadavek byl úspěšně odeslán Arctic Manager</string>
+    <string name="request_arctic_success">Požadavek byl úspěšně odeslán do Arctic Manager</string>
     <string name="request_fetching_data">Načítání nejnovějších dat...</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
     <string name="request_requested">Prosím zkontrolujte svůj požadavek znovu.
         Protože se pokoušíte požádat o aplikaci, o kterou jste již požádali.</string>
     <string name="request_email_client">Vyberte aplikaci, kterou chcete použít k odeslání žádosti o ikonu</string>
-    <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon prosím aktualizujte aplikaci na nejnovější verzi.</string>
+    <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon aktualizujte aplikaci na nejnovější verzi.</string>
     <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
     <string name="request_limit">Zdarma můžete zažádat pouze o %d aplikací.</string>
     <string name="request_used">Z toho máte již o %d aplikací požádáno.</string>
