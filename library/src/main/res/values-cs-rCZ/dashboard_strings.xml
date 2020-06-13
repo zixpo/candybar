@@ -137,33 +137,33 @@
     <string name="request_email_client">Vyberte aplikaci, kterou chcete použít k odeslání žádosti o ikonu</string>
     <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon aktualizujte aplikaci na nejnovější verzi.</string>
     <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
-    <string name="request_limit">Zdarma můžete zažádat pouze o %d aplikací.</string>
-    <string name="request_used">Z toho máte již o %d aplikací požádáno.</string>
+    <string name="request_limit">Počet ikon, o které můžete zdarma požádat: %d.</string>
+    <string name="request_used">Počet ikon, o které jste již požádali: %d.</string>
     <string name="request_limit_buy">Pro více požadavků si můžete koupit prémium požadavek.</string>
     <string name="request_limit_reset">Bezplatný požadavek na další aplikace se obnoví při další aktualizaci.</string>
     <!-- Regular Request -->
-    <string name="regular_request">Standardní požadavek</string>
+    <string name="regular_request">Standardní požadavek na ikony</string>
     <string name="regular_request_desc">Vývojář se pokusí zahrnout vaše požadavky v nadcházejících aktualizacích.</string>
-    <string name="regular_request_count">Celkem \n%d žádostí</string>
-    <string name="regular_request_used">Nárokováno \n%d žádostí</string>
-    <string name="regular_request_available">K dispozici je \n%d žádostí</string>
+    <string name="regular_request_count">Celkem požadavků: %d</string>
+    <string name="regular_request_used">Nárokováno požadavků: %d</string>
+    <string name="regular_request_available">Dostupných požadavků: %d</string>
     <!-- Premium Request -->
-    <string name="premium_request">Prémiový požadavek</string>
-    <string name="premium_request_no_internet">Před odesláním prémiové žádosti se ujistěte, že váš telefon je připojen k internetu</string>
-    <string name="premium_request_desc">Prémiové žádosti jsou zpoplatněné, využitím téhle možnosti můžete získat požadavek dříve jak u standardních žádostí.</string>
+    <string name="premium_request">Prémiový požadavek na ikony</string>
+    <string name="premium_request_no_internet">Před odesláním prémiového požadavku se ujistěte, že je váš telefon připojen k Internetu</string>
+    <string name="premium_request_desc">Prémiové požadavky jsou zpoplatněny, využitím této možnosti můžete získat požadavek dříve, jak u standardních požadavků.</string>
     <string name="premium_request_buy">Zakoupit</string>
-    <string name="premium_request_count">Celkem \n%d žádostí</string>
-    <string name="premium_request_used">Nárokováno \n%d žádostí</string>
-    <string name="premium_request_available">K dispozici je \n%d žádostí</string>
+    <string name="premium_request_count">Celkem požadavků: %d</string>
+    <string name="premium_request_used">Nárokováno požadavků: %d</string>
+    <string name="premium_request_available">Dostupných požadavků: %d</string>
     <string name="premium_request_already_purchased">Stále máte %d prémiových požadavků.
         Před nákupem balíčku s prémiovým požadavkem musíte všechny použít.</string>
-    <string name="premium_request_limit">Máte pouze %d prémiových žádostí,</string>
+    <string name="premium_request_limit">Zbývající počet prémiových požadavků je %d,</string>
     <string name="premium_request_limit1">ale vybrali jste %d aplikací.
-        \n\nJe třeba použít všechny své prémiové požadavky, než budete znovu používat pravidelnou žádost zdarma.</string>
-    <string name="premium_request_consume_failed">Nelze použít Premium Request, ujistěte se, že máte stabilní připojení k Internetu a zkuste to znovu.
+        \n\nJe třeba použít všechny své prémiové požadavky, než budete znovu používat pravidelný požadavek zdarma.</string>
+    <string name="premium_request_consume_failed">Nelze použít prémiový požadavek, ujistěte se, že máte stabilní připojení k Internetu a zkuste to znovu.
         Přejděte do Nastavení pro obnovení prémiových požadavků.</string>
-    <string name="premium_request_rebuilding">Obnova prémium požadavků…</string>
-    <string name="premium_request_rebuilding_empty">Nepodali jste prémiovou žádost</string>
+    <string name="premium_request_rebuilding">Obnova prémiového požadavku…</string>
+    <string name="premium_request_rebuilding_empty">Nevytvořili jste prémiový požadavek</string>
     <string name="premium_request_exist">Stále máte balíček požadavků na prémiové ikony.
         Otevřete nastavení, vyberte \"Obnovit nákupy\" pro jeho obnovení.</string>
     <string name="premium_request_required">Pro požadavky na ikonu je třeba zakoupit balíček s prémiovými ikonami</string>
@@ -191,7 +191,7 @@
     <string name="pref_data_request_desc">Odebrat data ikonek která byla využita pro vytvoření požadavku.</string>
     <string name="pref_data_request_clear_dialog">Opravdu chcete smazat data již nárokovaných ikon?</string>
     <string name="pref_data_request_cleared">Data požadavků vymazána</string>
-    <string name="pref_premium_request_header">Prémiový požadavek</string>
+    <string name="pref_premium_request_header">Prémiový požadavek na ikony</string>
     <string name="pref_premium_request_restore">Obnovit nákupy</string>
     <string name="pref_premium_request_restore_desc">Obnovit balíček prémiových požadavků po přeinstalaci balíčku ikon</string>
     <string name="pref_premium_request_restore_success">Prémiový požadavek obnoven</string>
