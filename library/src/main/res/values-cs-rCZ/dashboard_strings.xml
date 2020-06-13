@@ -234,16 +234,16 @@
     <string name="report_bugs_failed">Nelze vytvořit seznam aktivit</string>
     <string name="report_bugs_send">Odeslat hlášení</string>
     <!-- Support Development -->
-    <string name="donation_success">Srdečně děkuji za tenhle dar.</string>
+    <string name="donation_success">Děkujeme vám za poskytnutí daru. Používám ho pro dobrou věc.</string>
     <!-- Crash Report -->
-    <string name="crash_report">Hlášení o pádu</string>
+    <string name="crash_report">Zpráva o selhání</string>
     <string name="crash_report_message">Bohužel %s neodpovídá. Pokud chcete, aby vývojář vyřešil problém, odešlete níže uvedenou zprávu.</string>
     <string name="crash_report_send">Odeslat hlášení</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar je vyvíjen jako open source projekt pro Android, který je licencován pod Apache License 2.0. Je k dispozici na GitHub pro volné použití, autor Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Open Source licence</string>
-    <string name="about_dashboard_contributors">Podporovatelé CandyBar</string>
+    <string name="about_dashboard_contributors">Přispěvatelé CandyBar</string>
     <string name="about_dashboard_translator">Překladatelé CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Otevřít</string>
