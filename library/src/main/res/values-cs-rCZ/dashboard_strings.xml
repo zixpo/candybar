@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="splash_screen_title">Material Dashboard CandyBar</string>
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Domů</string>
-    <string name="navigation_view_apply">Aplikovat</string>
-    <string name="navigation_view_icons">Ikonky</string>
-    <string name="navigation_view_request">Žádost o ikonky</string>
+    <string name="navigation_view_apply">Použít</string>
+    <string name="navigation_view_icons">Ikony</string>
+    <string name="navigation_view_request">Žádost o ikony</string>
     <string name="navigation_view_wallpapers">Tapety</string>
     <string name="navigation_view_settings">Nastavení</string>
-    <string name="navigation_view_faqs">Časté otázky</string>
+    <string name="navigation_view_faqs">FAQ</string>
     <string name="navigation_view_about">O aplikaci</string>
     <string name="navigation_view_donate">Podpora vývojáře</string>
     <!-- Muzei -->
     <string name="muzei_settings">Nastavení Muzei</string>
-    <string name="minute">Minut</string>
-    <string name="hour">Hodin</string>
+    <string name="minute">Minuta</string>
+    <string name="hour">Hodina</string>
     <string name="save_setting">Uložit</string>
     <string name="muzei_refresh_duration">Rychlost aktualizace</string>
     <string name="muzei_wifi_only">Aktualizovat pouze na WiFi</string>
     <string name="muzei_downloaded_only">Načíst pouze stažené tapety</string>
     <string name="muzei_settings_ignored">Balíček ikon neobsahuje tapety, nastavení ignorováno.</string>
-    <string name="muzei_settings_saved">Nastavení bylo uloženo</string>
+    <string name="muzei_settings_saved">Nastavení uložena</string>
     <!-- Menu -->
     <string name="menu_search">Hledat</string>
     <string name="menu_save">Uložit do zařízení</string>
@@ -28,38 +28,39 @@
     <string name="menu_wallpaper_crop">Oříznout tapetu</string>
     <string name="menu_apply_homescreen">Domovská obrazovka</string>
     <string name="menu_apply_lockscreen">Zamykací obrazovka</string>
-    <string name="menu_apply_homescreen_lockscreen">Domovská obrazovka &amp; zamykací obrazovka</string>
+    <string name="menu_apply_homescreen_lockscreen">Domovská a zamykací obrazovka</string>
     <!-- Dialog -->
     <string name="open">Otevřít</string>
     <string name="close">Zavřít</string>
     <string name="clear">Vyčistit</string>
     <string name="ok">OK</string>
     <string name="install">Instalovat</string>
-    <string name="donate">Podpořit</string>
-    <string name="update">Aktualizace</string>
+    <string name="donate">Přispět</string>
+    <string name="update">Aktualizovat</string>
     <string name="search_noresult">Nebyly nalezeny žádné výsledky pro \"%s\"</string>
     <string name="search_faqs">Otázky nebo odpovědi</string>
     <string name="search_icon">Název ikony</string>
     <!-- Update -->
-    <string name="update_available">Je k dispozici nová aktualizace!</string>
+    <string name="update_available">Aktualizace k dispozici!</string>
     <string name="no_update_available">Používáte nejnovější verzi!</string>
     <!-- Changelog -->
     <string name="changelog_version">Verze</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">Nelze načíst produkty zakoupené v aplikaci</string>
+    <string name="billing_load_product_failed">Nelze načíst produkty s nákupem v aplikaci</string>
     <!-- License -->
     <string name="license_checking">Kontrolování licence…</string>
     <string name="license_check">Kontrola licence</string>
-    <string name="license_check_success">Kontrola licence byla úspěšná, děkujeme za stažení aplikace z Google Play.</string>
-    <string name="license_check_failed">Kontrola licence selhala, tuto aplikaci jste nestáhli z obchodu Google Play. Aplikaci nebude možné používat.</string>
+    <string name="license_check_success">Kontrola licence byla úspěšná, děkujeme za stažení aplikace z Obchodu Play.</string>
+    <string name="license_check_failed">Kontrola licence selhala, tuto aplikaci jste nestáhli z Obchodu Play.
+        Aplikaci nebude možné používat.</string>
     <string name="license_check_retry">Nelze zkontrolovat licenci, zkuste to prosím znovu za pár okamžiků.</string>
     <!-- Play Store Installation Check -->
-    <string name="playstore_check">Kontrola Google Play</string>
-    <string name="playstore_check_success">Děkujeme za instalaci aplikace z Google Play. Užijte si to.</string>
-    <string name="playstore_check_failed">Vypadá to, že jste nainstalovali tento balíček ikon mimo Google Play.
+    <string name="playstore_check">Kontrola Obchodu Play</string>
+    <string name="playstore_check_success">Děkujeme za instalaci aplikace z Obchodu Play. Užijte si to.</string>
+    <string name="playstore_check_failed">Vypadá to, že jste nainstalovali tento balíček ikon mimo Obchod Play.
         Nebudete jej moci používat.</string>
     <!-- Share -->
-    <string name="share_app_title">Čekuj %s</string>
+    <string name="share_app_title">Jo! Podívejte se na %s</string>
     <string name="share_app_body">Podívejte se na %1$s, tento balíček ikon je opravdu skvělý! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Navigační panel</string>
@@ -91,7 +92,7 @@
     <string name="home_more_apps">Zkontrolovat ostatní aplikace publikované v Google Play Store</string>
     <string name="home_rate_and_review">Ohodnotit &amp;</string>
     <string name="home_apply_icon_pack">Použít %s</string>
-    <string name="home_donate">Podpořit</string>
+    <string name="home_donate">Přispět</string>
     <string name="home_donate_desc">Podpořte vývoj tohoto balíčku</string>
     <string name="home_icons">Custom ikony</string>
     <string name="home_icon_dimension">Rozměr ikony: %s pixelů</string>
@@ -120,7 +121,7 @@
     <string name="icons_load_failed">Ikony nelze načíst</string>
     <string name="icon_shape">Tvar ikon</string>
     <!-- Request -->
-    <string name="request_title">Žádost o ikonky</string>
+    <string name="request_title">Žádost o ikony</string>
     <string name="request_not_selected">Vyberte aplikace, o které chcete požádat</string>
     <string name="request_not_requested">Zatím nepožádáno</string>
     <string name="request_already_requested">Již požádáno</string>
