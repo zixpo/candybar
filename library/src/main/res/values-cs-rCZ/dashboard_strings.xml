@@ -164,9 +164,9 @@
         Přejděte do Nastavení pro obnovení prémiových požadavků.</string>
     <string name="premium_request_rebuilding">Obnova prémiového požadavku…</string>
     <string name="premium_request_rebuilding_empty">Nevytvořili jste prémiový požadavek</string>
-    <string name="premium_request_exist">Stále máte balíček požadavků na prémiové ikony.
+    <string name="premium_request_exist">Stále máte prémiový požadavek na balíček ikon.
         Otevřete nastavení, vyberte \"Obnovit nákupy\" pro jeho obnovení.</string>
-    <string name="premium_request_required">Pro požadavky na ikonu je třeba zakoupit balíček s prémiovými ikonami</string>
+    <string name="premium_request_required">Pro požadavky na ikonu je třeba zakoupit prémiový požadavek na ikony</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Nová tapeta</string>
     <string name="wallpaper_already_downloaded">Tapeta je již stažena</string>
@@ -183,13 +183,15 @@
     <!-- Preferences -->
     <string name="pref_data_header">Data &amp; mezipaměť</string>
     <string name="pref_data_cache">Vymazat mezipaměť</string>
-    <string name="pref_data_cache_desc">Smazat data obrázků která se použila pro vytvoření požadavků.</string>
+    <string name="pref_data_cache_desc">Odstranit mezipaměť obrázků z úložiště, které bylo vytvořeno při výběru obrázku
+	    z této aplikace, požadavku o chybějící aplikace a po načtení miniatur tapet z cloudu.</string>
     <string name="pref_data_cache_size">Velikost mezipaměti: %s</string>
     <string name="pref_data_cache_clear_dialog">Opravdu chcete vymazat mezipaměť?</string>
     <string name="pref_data_cache_cleared">Mezipaměť vymazána</string>
     <string name="pref_data_request">Vymazat data požadavků</string>
-    <string name="pref_data_request_desc">Odebrat data ikonek která byla využita pro vytvoření požadavku.</string>
-    <string name="pref_data_request_clear_dialog">Opravdu chcete smazat data již nárokovaných ikon?</string>
+    <string name="pref_data_request_desc">Odebrat data ikon, která byla použita pro vytvoření požadavku
+        chybějících aplikací.</string>
+    <string name="pref_data_request_clear_dialog">Opravdu chcete smazat data již požadovaných ikon?</string>
     <string name="pref_data_request_cleared">Data požadavků vymazána</string>
     <string name="pref_premium_request_header">Prémiový požadavek na ikony</string>
     <string name="pref_premium_request_restore">Obnovit nákupy</string>
@@ -197,39 +199,39 @@
     <string name="pref_premium_request_restore_success">Prémiový požadavek obnoven</string>
     <string name="pref_premium_request_restore_empty">Nemáte žádné zakoupené balíčky</string>
     <string name="pref_premium_request_rebuild">Znovu sestavit žádost o prémiové ikony</string>
-    <string name="pref_premium_request_rebuild_desc">Získat všechna potřebná data k odeslání prémium požadavků</string>
+    <string name="pref_premium_request_rebuild_desc">Získat všechna potřebná data k odeslání prémiového požadavků</string>
     <string name="pref_theme_header">Vzhled</string>
     <string name="pref_theme_dark">Tmavý</string>
     <string name="pref_theme_dark_desc">Použít tmavý vzhled aplikace</string>
     <string name="pref_wallpaper_header">Tapety</string>
     <string name="pref_wallpaper_location">Umístění uložení tapet</string>
-    <string name="pref_language_header">Jazyky</string>
+    <string name="pref_language_header">Jazyk</string>
     <string name="pref_others_header">Ostatní</string>
-    <string name="pref_others_report_bugs">Ohlásit chybu</string>
+    <string name="pref_others_report_bugs">Nahlásit chybu</string>
     <string name="pref_others_changelog">Seznam změn</string>
-    <string name="pref_others_reset_tutorial">Obnovit tutorial</string>
-    <string name="pref_others_reset_tutorial_reset">Tutorial obnoven</string>
+    <string name="pref_others_reset_tutorial">Resetovat návody</string>
+    <string name="pref_others_reset_tutorial_reset">Reset návodů</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Pro uložení tapety je třeba udělit oprávnění k úložišti</string>
     <!-- Intent -->
-    <string name="app_client">Vyberte aplikaci</string>
-    <string name="no_email_app">Žádná aplikace k odeslání</string>
-    <string name="no_browser">Nebyla nalezena aplikace umožňující otevření souboru</string>
+    <string name="app_client">Vybrat aplikaci</string>
+    <string name="no_email_app">Nebyla nalezena aplikace umožňující zaslání e-mailu</string>
+    <string name="no_browser">Nebyla nalezena aplikace umožňující otevřít URL</string>
     <string name="intent_email_failed">Nelze zobrazit e-mailovou aplikaci</string>
     <string name="intent_email_supported">Podporováno</string>
     <string name="intent_email_recommended">Doporučeno</string>
     <string name="intent_email_not_supported">Nepodporováno</string>
-    <string name="intent_email_not_supported_message">Vybrán nepodporovaný email klient, vyberte jiný</string>
+    <string name="intent_email_not_supported_message">Vybrali jste nepodporovaného e-mailového klienta, vyberte jiného e-mailového klienta</string>
     <!-- About -->
-    <string name="about_contributors_title">Podporovatelé</string>
+    <string name="about_contributors_title">Přispěvatelé</string>
     <string name="about_privacy_policy_title">Ochrana osobních údajů</string>
-    <string name="about_terms_and_conditions_title">Obchodní podmínky</string>
+    <string name="about_terms_and_conditions_title">Pravidla a podmínky</string>
     <!-- Report Bugs -->
-    <string name="report_bugs_desc">Popište, jaký problém chcete nahlásit</string>
+    <string name="report_bugs_desc">Uveďte, jaký druh problému chcete nahlásit</string>
     <string name="report_bugs_desc_hint">Popis</string>
-    <string name="report_bugs_desc_empty">Zadejte, prosím, popis</string>
+    <string name="report_bugs_desc_empty">Uveďte prosím popis</string>
     <string name="report_bugs_building">Vytváření seznamu aktivit …</string>
-    <string name="report_bugs_failed">Nelze sestavit seznam aktivit</string>
+    <string name="report_bugs_failed">Nelze vytvořit seznam aktivit</string>
     <string name="report_bugs_send">Odeslat hlášení</string>
     <!-- Support Development -->
     <string name="donation_success">Srdečně děkuji za tenhle dar.</string>
