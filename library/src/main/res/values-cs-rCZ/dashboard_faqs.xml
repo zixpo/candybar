@@ -92,10 +92,10 @@
         <item>Otevřete hlavní panel, stáhněte si tapety, které chcete použít v Muzei.
             Otevřete nastavení Muzei, poté vyberte \"Načíst pouze stažené tapety\".</item>
         <item>Používá se pro zápis a čtení mezipaměti a shromažďování údajů o žádost o ikony.</item>
-        <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
-        <item>It is used to check if your phone has an internet connection or not.</item>
-        <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
-        <item>It is used to apply wallpapers directly from the dashboard app.</item>
-        <item>It is used by Muzei Live Wallpaper</item>
+        <item>Používá se k načtení tapet z cloudu a jejich stažení.</item>
+        <item>Používá se ke kontrole, zda je váš telefon připojen k Internetu nebo ne.</item>
+        <item>Používá se ke kontrole, zda je váš telefon připojen k Wi-Fi nebo ne, k načtení cloudových tapet z Muzei.</item>
+        <item>Používá se k použití tapet přímo z hlavního panelu aplikace.</item>
+        <item>Toto oprávnění je požadováno Živou tapetou Muzei</item>
     </string-array>
 </resources>
