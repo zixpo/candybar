@@ -73,24 +73,24 @@
         <item>Můžete otevřít navigační panel, poté otevřít \"Nastavení\" a vybrat \"Obnovit nákupy\".
             Pokud jste před opětovnou instalací měli zbývající prémiové požadavky, budou obnoveny.</item>
         <item>K tomu došlo, protože sada ikon byla přesunuta na SD kartu. Měli byste ji nainstalovat do vnitřního úložiště.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115 - 120%.
-       	    Alternatively you might change your launcher.</item>
-        <item>Open settings, scroll down, then choose \"Report Bugs\".</item>
-        <item>\"Report Bugs\" is used to report bugs related to the icon pack, not the dashboard.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually from the individual launcher settings.</item>
-        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
-      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
-      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
-      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
-            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
-        <item>Open muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
-        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
-            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
-        <item>Open Dashboard, download wallpapers that you want to use in Muzei.
-            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
+        <item>Problém může pocházet ze spouštěče, který jste použili při zpracování rozlišení velkých ikon.
+       	    Můžete to opravit zvýšením velikosti ikony na 115 – 120%.
+       	    Případně můžete změnit spouštěč.</item>
+        <item>Otevřete nastavení, přesuňte se dolů a vyberte \"Nahlásit chyby\".</item>
+        <item>\"Nahlásit chyby\" se používá k hlášení chyb souvisejících s balíčkem ikon, ne s hlavním panelem.</item>
+        <item>Ne každý spouštěč podporuje přímé použití a některé z nich nemohou být přístupné přímo z hlavního panelu.
+      	    Tento balíček ikon můžete použít ručně z jednotlivých nastavení spouštěče.</item>
+        <item>Když \"Nastavíte tapetu\" přímo z aplikace, bude stažena do mezipaměti,
+      	    pak se ji aplikace v hlavním panelu pokusí použít. Aplikaci bude nějakou dobu trvat a také bude potřebovat obrovské množství RAM po krátkou dobu.
+      	    Chyba \"Černá obrazovka\" se může objevit, protože váš telefon nemá dostatek volné RAM ke zpracování tapety.
+      	    Restartování telefonu tento problém vyřeší. Po restartu bude mít váš telefon k dispozici více RAM.
+            Staženou tapetu můžete také otevřít v galerii a odtud ji nastavit.</item>
+        <item>Otevřete Muzei, vyberte tuto sadu ikon. Uvidíte možnost \"načíst pouze stažené tapety\".
+            Nejprve si budete muset stáhnout tapety z hlavního panelu.</item>
+        <item>Pokud je tapeta již stažena, automaticky se načte z paměti telefonu.
+            Muzei nebude nic stahovat, když se změní tapeta. Nejprve si budete muset stáhnout tapety z hlavního panelu.</item>
+        <item>Otevřete hlavní panel, stáhněte si tapety, které chcete použít v Muzei.
+            Otevřete nastavení Muzei, poté vyberte \"Načíst pouze stažené tapety\".</item>
         <item>Používá se pro zápis a čtení mezipaměti a shromažďování údajů o žádost o ikony.</item>
         <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
         <item>It is used to check if your phone has an internet connection or not.</item>
