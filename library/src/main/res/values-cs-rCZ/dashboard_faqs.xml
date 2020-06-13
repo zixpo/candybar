@@ -37,17 +37,18 @@
         <item>Jak můžu nahradit stávající ikony ikonou alternativní?</item>
         <item>Jak mám vytvořit požadavek na další ikony?</item>
         <item>Jak můžu obnovit zbývající prémiové požadavky po reinstalaci aplikace?</item>
-        <item>Po restartu zařízení se zobrazují výchozí ikony a né tyhle.</item>
-        <item>Proč jsou ikony rozpixelované nebo jinak deformované?</item>
-        <item>Proč ikona která je součástí téhle aplikace a je zobrazená v seznamu všech aplikací se nezobrazuje v Launcheru?</item>
-        <item>Co se skrývá pod možností \"nahlásit bug\" ?</item>
-        <item>Můj Launcher je obsažen v popisu na Google Play Store, ale zde již ne.</item>
-        <item>Tapeta se neaplikovala, zobrazuje se pouze černá obrazovka.</item>
+        <item>Po restartování telefonu se balíček ikon neaplikuje, použijí se ikony výchozí?</item>
+        <item>Proč vypadají ikony v mém telefonu zubaté nebo jinak deformované?</item>
+        <item>Vidím ikonu obsaženou ve všech ikonách,
+            ale proč se nezmění skutečná ikona v seznamu aplikací?</item>
+        <item>Co se skrývá pod možností \"nahlásit chybu\"?</item>
+        <item>Můj spouštěč je uveden v popisu Obchodu Play, ale proč není zahrnut v sekci \"použít\"?</item>
+        <item>Tapetu nelze použít, pouze zobrazuje černou obrazovku?</item>
         <item>Muzei: Jak načíst pouze stažené tapety?</item>
         <item>Muzei: Nechci stahovat tapety pokaždé, když se tapeta změní?</item>
         <item>Muzei: Chci použít pouze konkrétní tapety?</item>
         <item>Proč je zapotřebí oprávnění ke čtení a zápisu do externího úložiště?</item>
-        <item>Proč je vyžadováno internetové připojení?</item>
+        <item>Proč je vyžadováno připojení k Internetu?</item>
         <item>Proč je vyžadováno oprávnění přístupu k sítí?</item>
         <item>Proč je vyžadováno oprávnění přístupu k Wi-Fi?</item>
         <item>Proč je vyžadováno oprávnění k nastavení tapety?</item>
