@@ -248,5 +248,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">Otevřít</string>
     <string name="txt_close">Zavřít</string>
-    <string name="txt_new">Novinka</string>
+    <string name="txt_new">Nový</string>
 </resources>
