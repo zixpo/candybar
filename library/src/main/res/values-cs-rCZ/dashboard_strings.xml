@@ -53,7 +53,7 @@
     <string name="license_check_success">Kontrola licence byla úspěšná, děkujeme za stažení aplikace z Obchodu Play.</string>
     <string name="license_check_failed">Kontrola licence selhala, tuto aplikaci jste nestáhli z Obchodu Play.
         Aplikaci nebude možné používat.</string>
-    <string name="license_check_retry">Nelze zkontrolovat licenci, zkuste to prosím znovu za pár okamžiků.</string>
+    <string name="license_check_retry">Nelze zkontrolovat licenci, zkuste to znovu za chvíli.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Kontrola Obchodu Play</string>
     <string name="playstore_check_success">Děkujeme za instalaci aplikace z Obchodu Play. Užijte si to.</string>
@@ -65,12 +65,12 @@
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Navigační panel</string>
     <string name="tap_intro_home_navigation_desc">Klepnutím sem nebo přejetím z levého okraje obrazovky otevřete navigační panel</string>
-    <string name="tap_intro_home_apply">Použít tuhle sadu ikon</string>
-    <string name="tap_intro_home_apply_desc">Aktivujte kliknutím sem %s</string>
+    <string name="tap_intro_home_apply">Použít balíček ikon</string>
+    <string name="tap_intro_home_apply_desc">Klepnutím sem použijete %s</string>
     <string name="tap_intro_icons_search">Hledat</string>
     <string name="tap_intro_icons_search_desc">Klepnutím sem vyhledejte ikony</string>
     <string name="tap_intro_request_select">Vybrat chybějící aplikace</string>
-    <string name="tap_intro_request_select_desc">Kliknutím zde vyberete chybějící aplikace pro požadavek dalších ikon</string>
+    <string name="tap_intro_request_select_desc">Klepnutím sem vyberete chybějící aplikace pro požadavek na další ikony</string>
     <string name="tap_intro_request_select_all">Vybrat všechny chybějící aplikace</string>
     <string name="tap_intro_request_select_all_desc">Klepnutím sem vyberete všechny chybějící aplikace pro požadavek na další ikony</string>
     <string name="tap_intro_request_send">Poslat požadavek na ikonu</string>
@@ -105,8 +105,8 @@
     <string name="apply_installed">Nainstalovaný spouštěč</string>
     <string name="apply_supported">Podporované spouštěče</string>
     <string name="apply_manual">Spouštěč %1$s nepodporuje přímé aktivování, ale můžete aktualizovat %2$s ručně v nastavení spouštěče.</string>
-    <string name="apply_manual_evie">Podržte prst na domovské obrazovce - Nastavení –⁠ Balíček ikon –⁠ vyberte %s.</string>
-    <string name="apply_launch_failed">Nelze spustit nastavení %s</string>
+    <string name="apply_manual_evie">Podržte prst na domovské obrazovce –⁠ Nastavení –⁠ Balíček ikon –⁠ vyberte %s.</string>
+    <string name="apply_launch_failed">Nelze otevřít nastavení %s</string>
     <string name="apply_launcher_not_installed">Spouštěč %s není nainstalován. Chcete otevřít
         Obchod Play pro jeho stažení a instalaci?</string>
     <string name="apply_launcher_not_installable">Spouštěč %s není nainstalován. Zkuste to prosím znovu po instalaci spouštěče.</string>
@@ -132,8 +132,8 @@
     <string name="request_fetching_data">Načítání nejnovějších dat...</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
-    <string name="request_requested">Prosím zkontrolujte svůj požadavek znovu.
-        Protože se pokoušíte požádat o aplikaci, o kterou jste již požádali.</string>
+    <string name="request_requested">Zkontrolujte prosím znovu svůj požadavek.
+        Protože se pokoušíte požádat o aplikaci, která již byla vyžádána.</string>
     <string name="request_email_client">Vyberte aplikaci, kterou chcete použít k odeslání žádosti o ikonu</string>
     <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon aktualizujte aplikaci na nejnovější verzi.</string>
     <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
