@@ -99,7 +99,7 @@
     <string name="home_icon_request_themed_apps">له أيقونة\n%d تطبيق(ات)</string>
     <string name="home_icon_request_missed_apps">مفقود\n%d تطبيق(ات)</string>
     <!-- Apply -->
-    <string name="apply_installed">المشغل المثبت</string>
+    <string name="apply_installed">المشغلات المثبتة</string>
     <string name="apply_supported">المشغلات المدعومة</string>
     <string name="apply_manual">المشغل %1$s لا يدعم التطبيق المباشر ولكن بإمكانك تطبيق %2$s يدوياً من إعدادات المشغل.</string>
     <string name="apply_manual_evie">اضغط مطولاً على الشاشة الرئيسية - الإعدادات - حزمة الأيقونات - اختر %s.</string>
@@ -237,4 +237,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">فتح</string>
     <string name="txt_close">إغلاق</string>
+    <string name="txt_new">جديد</string>
 </resources>

@@ -249,4 +249,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">Abrir</string>
     <string name="txt_close">Fechar</string>
+    <string name="txt_new">Novo</string>
 </resources>
