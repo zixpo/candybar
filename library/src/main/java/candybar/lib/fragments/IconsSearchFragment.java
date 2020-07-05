@@ -28,7 +28,6 @@ import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,8 +40,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.AlphanumComparator;
-
-import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
+import me.zhanghai.android.fastscroll.FastScrollerBuilder;
 
 /*
  * CandyBar - Material Dashboard
@@ -65,10 +63,10 @@ import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 public class IconsSearchFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private RecyclerFastScroller mFastScroll;
     private TextView mSearchResult;
     private SearchView mSearchView;
     private Fragment mFragment = this;
+    private List<Icon> mIcons = new ArrayList<>();
 
     private IconsAdapter mAdapter;
     private AsyncTask mAsyncTask;
@@ -81,7 +79,6 @@ public class IconsSearchFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_icons_search, container, false);
         mRecyclerView = view.findViewById(R.id.icons_grid);
-        mFastScroll = view.findViewById(R.id.fastscroll);
         mSearchResult = view.findViewById(R.id.search_result);
         return view;
     }
@@ -95,8 +92,18 @@ public class IconsSearchFragment extends Fragment {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
                 getActivity().getResources().getInteger(R.integer.icons_column_count)));
-        mFastScroll.attachRecyclerView(mRecyclerView);
-        setFastScrollColor(mFastScroll);
+
+        new FastScrollerBuilder(mRecyclerView)
+                .useMd2Style()
+                .setPopupTextProvider(position -> {
+                    Icon icon = mIcons.get(position);
+                    String name = icon.getTitle();
+                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
+                        name = icon.getCustomName();
+                    }
+                    return name.substring(0, 1);
+                })
+                .build();
 
         mAsyncTask = new IconsLoader().execute();
     }
@@ -246,6 +253,7 @@ public class IconsSearchFragment extends Fragment {
 
             mAsyncTask = null;
             if (aBoolean) {
+                mIcons = icons;
                 mAdapter = new IconsAdapter(getActivity(), icons, true, mFragment);
                 mRecyclerView.setAdapter(mAdapter);
                 mSearchView.requestFocus();

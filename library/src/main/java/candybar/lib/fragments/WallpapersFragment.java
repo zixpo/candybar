@@ -30,7 +30,6 @@ import com.danimahardhika.android.helpers.core.ListHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 import com.rafakob.drawme.DrawMeButton;
 
 import java.io.InputStream;
@@ -48,8 +47,6 @@ import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.listeners.WallpapersListener;
-
-import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -74,7 +71,6 @@ public class WallpapersFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private SwipeRefreshLayout mSwipe;
     private ProgressBar mProgress;
-    private RecyclerFastScroller mFastScroll;
     private DrawMeButton mPopupBubble;
 
     private AsyncTask mAsyncTask;
@@ -87,7 +83,6 @@ public class WallpapersFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.wallpapers_grid);
         mSwipe = view.findViewById(R.id.swipe);
         mProgress = view.findViewById(R.id.progress);
-        mFastScroll = view.findViewById(R.id.fastscroll);
         mPopupBubble = view.findViewById(R.id.popup_bubble);
 
         if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
@@ -118,9 +113,6 @@ public class WallpapersFragment extends Fragment {
             int padding = getActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
             mRecyclerView.setPadding(padding, padding, 0, 0);
         }
-
-        setFastScrollColor(mFastScroll);
-        mFastScroll.attachRecyclerView(mRecyclerView);
 
         mSwipe.setOnRefreshListener(() -> {
             if (mProgress.getVisibility() == View.GONE)

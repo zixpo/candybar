@@ -10,13 +10,12 @@
         android:id="@+id/request_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false" />
-
-    <com.pluscubed.recyclerfastscroll.RecyclerFastScroller
-        android:id="@+id/fastscroll"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="end" />
+        android:clipToPadding="false"
+        app:fastScrollEnabled="true"
+        app:fastScrollHorizontalThumbDrawable="@drawable/scrollbar_thumb"
+        app:fastScrollHorizontalTrackDrawable="@drawable/scrollbar_track"
+        app:fastScrollVerticalThumbDrawable="@drawable/scrollbar_thumb"
+        app:fastScrollVerticalTrackDrawable="@drawable/scrollbar_track" />
 
     <ProgressBar
         android:id="@+id/progress"
