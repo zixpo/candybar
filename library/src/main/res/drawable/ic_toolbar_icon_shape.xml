@@ -1,15 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+
+    <path android:pathData="M0 0h24v24H0V0z" />
     <path
-        android:fillColor="?attr/toolbar_icon"
-        android:pathData="M11.15,3.4L7.43,9.48c-0.41,0.66 0.07,1.52 0.85,1.52h7.43c0.78,0 1.26,-0.86 0.85,-1.52L12.85,3.4c-0.39,-0.64 -1.31,-0.64 -1.7,0z" />
-    <path
-        android:fillColor="?attr/toolbar_icon"
-        android:pathData="M17.5,17.5m-4.5,0a4.5,4.5 0,1 1,9 0a4.5,4.5 0,1 1,-9 0" />
-    <path
-        android:fillColor="?attr/toolbar_icon"
-        android:pathData="M4,21.5h6c0.55,0 1,-0.45 1,-1v-6c0,-0.55 -0.45,-1 -1,-1H4c-0.55,0 -1,0.45 -1,1v6c0,0.55 0.45,1 1,1z" />
+        android:fillColor="#FF000000"
+        android:pathData="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.87L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z" />
 </vector>
