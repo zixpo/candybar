@@ -47,10 +47,13 @@ public class IconsFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerFastScroller mFastScroll;
+    private IconsAdapter mAdapter;
 
     private List<Icon> mIcons;
 
     private static final String INDEX = "index";
+
+    private static final List<IconsAdapter> iconsAdapters = new ArrayList<>();
 
     @Nullable
     @Override
@@ -90,8 +93,15 @@ public class IconsFragment extends Fragment {
         setFastScrollColor(mFastScroll);
         mFastScroll.attachRecyclerView(mRecyclerView);
 
-        IconsAdapter adapter = new IconsAdapter(getActivity(), mIcons, false, this);
-        mRecyclerView.setAdapter(adapter);
+        mAdapter = new IconsAdapter(getActivity(), mIcons, false, this);
+        mRecyclerView.setAdapter(mAdapter);
+        iconsAdapters.add(mAdapter);
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAdapter != null) iconsAdapters.remove(mAdapter);
+        super.onDestroy();
     }
 
     @Override
@@ -99,5 +109,11 @@ public class IconsFragment extends Fragment {
         super.onConfigurationChanged(newConfig);
         ViewHelper.resetSpanCount(mRecyclerView,
                 getActivity().getResources().getInteger(R.integer.icons_column_count));
+    }
+
+    public static void reloadIcons() {
+        for (IconsAdapter adapter : iconsAdapters) {
+            adapter.reloadIcons();
+        }
     }
 }

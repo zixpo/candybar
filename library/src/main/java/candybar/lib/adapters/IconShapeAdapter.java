@@ -13,10 +13,11 @@ import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.fragments.dialog.IconShapeFragment;
+import candybar.lib.fragments.dialog.IconShapeChooserFragment;
 import candybar.lib.items.IconShape;
 
 /*
@@ -38,15 +39,16 @@ import candybar.lib.items.IconShape;
  */
 
 public class IconShapeAdapter extends BaseAdapter {
-
     private Context mContext;
     private List<IconShape> mShapes;
     private int mSelectedIndex;
+    private List<ViewHolder> mHolders;
 
     public IconShapeAdapter(@NonNull Context context, @NonNull List<IconShape> shapes, int selectedIndex) {
         mContext = context;
         mShapes = shapes;
         mSelectedIndex = selectedIndex;
+        mHolders = new ArrayList<>();
     }
 
     @Override
@@ -67,10 +69,12 @@ public class IconShapeAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         IconShapeAdapter.ViewHolder holder;
+
         if (view == null) {
             view = View.inflate(mContext, R.layout.fragment_inapp_dialog_item_list, null);
             holder = new IconShapeAdapter.ViewHolder(view);
             view.setTag(holder);
+            mHolders.add(holder);
         } else {
             holder = (IconShapeAdapter.ViewHolder) view.getTag();
         }
@@ -79,21 +83,26 @@ public class IconShapeAdapter extends BaseAdapter {
         holder.name.setText(mShapes.get(position).getName());
 
         holder.container.setOnClickListener(v -> {
+            for (ViewHolder aHolder : mHolders) {
+                if (aHolder != holder) aHolder.radio.setChecked(false);
+            }
+            holder.radio.setChecked(true);
+
             FragmentManager fm = ((AppCompatActivity) mContext).getSupportFragmentManager();
             if (fm == null) return;
 
-            Fragment fragment = fm.findFragmentByTag(IconShapeFragment.TAG);
+            Fragment fragment = fm.findFragmentByTag(IconShapeChooserFragment.TAG);
             if (fragment == null) return;
 
-            if (fragment instanceof IconShapeFragment) {
-                ((IconShapeFragment) fragment).setShape(mShapes.get(position).getShape());
+            if (fragment instanceof IconShapeChooserFragment) {
+                ((IconShapeChooserFragment) fragment).setShape(mShapes.get(position).getShape());
             }
         });
+
         return view;
     }
 
     private class ViewHolder {
-
         private final AppCompatRadioButton radio;
         private final TextView name;
         private final LinearLayout container;

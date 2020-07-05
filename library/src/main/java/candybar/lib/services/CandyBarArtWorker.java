@@ -62,7 +62,7 @@ public class CandyBarArtWorker extends Worker {
         ProviderClient providerClient = ProviderContract.getProviderClient(getApplicationContext(), WORKER_TAG);
 
         if (Preferences.get(getApplicationContext()).isConnectedAsPreferred()) {
-            ArrayList artworks = new ArrayList<Artwork>();
+            ArrayList<Artwork> artworks = new ArrayList<>();
 
             for (Wallpaper wallpaper : wallpapers) {
                 if (wallpaper != null) {

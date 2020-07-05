@@ -251,7 +251,7 @@ public class IconsSearchFragment extends Fragment {
                 mSearchView.requestFocus();
                 SoftKeyboardHelper.openKeyboard(getActivity());
             } else {
-                //Unable to load all icons
+                // Unable to load all icons
                 Toast.makeText(getActivity(), R.string.icons_load_failed,
                         Toast.LENGTH_LONG).show();
             }

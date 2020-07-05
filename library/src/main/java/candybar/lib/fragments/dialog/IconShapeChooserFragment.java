@@ -2,9 +2,7 @@ package candybar.lib.fragments.dialog;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -14,12 +12,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.adapters.IconShapeAdapter;
+import candybar.lib.fragments.IconsFragment;
 import candybar.lib.helpers.IconShapeHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.IconShape;
@@ -43,16 +41,16 @@ import candybar.lib.preferences.Preferences;
  * limitations under the License.
  */
 
-public class IconShapeFragment extends DialogFragment {
+public class IconShapeChooserFragment extends DialogFragment {
 
     private ListView mListView;
     private int mShape;
-    private AsyncTask mAsyncTask;
+    // private AsyncTask mAsyncTask;
 
     public static final String TAG = "candybar.dialog.iconshapes";
 
-    private static IconShapeFragment newInstance() {
-        return new IconShapeFragment();
+    private static IconShapeChooserFragment newInstance() {
+        return new IconShapeChooserFragment();
     }
 
     public static void showIconShapeChooser(@NonNull FragmentManager fm) {
@@ -63,7 +61,7 @@ public class IconShapeFragment extends DialogFragment {
         }
 
         try {
-            DialogFragment dialog = IconShapeFragment.newInstance();
+            DialogFragment dialog = IconShapeChooserFragment.newInstance();
             dialog.show(ft, TAG);
         } catch (IllegalArgumentException | IllegalStateException ignored) {
         }
@@ -87,31 +85,46 @@ public class IconShapeFragment extends DialogFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mAsyncTask = new IconShapeLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        // mAsyncTask = new IconShapeLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+        List<IconShape> iconShapes = IconShapeHelper.getShapes();
+        int currentShape = Preferences.get(getActivity()).getIconShape();
+        int currentShapeIndex = 0;
+
+        for (int i = 0; i < iconShapes.size(); i++) {
+            int shape = iconShapes.get(i).getShape();
+            if (shape == currentShape) {
+                currentShapeIndex = i;
+                break;
+            }
+        }
+
+        mListView.setAdapter(new IconShapeAdapter(getActivity(), iconShapes, currentShapeIndex));
     }
 
-    @Override
+    /*@Override
     public void onDestroy() {
         if (mAsyncTask != null) {
             mAsyncTask.cancel(true);
         }
         super.onDestroy();
-    }
+    }*/
 
     @Override
     public void onDismiss(DialogInterface dialog) {
         Preferences.get(getActivity()).setIconShape(mShape);
-        getActivity().recreate();
+        IconsFragment.reloadIcons();
+        // getActivity().recreate();
         super.onDismiss(dialog);
     }
 
-    public void setShape(@NonNull int shape) {
+    public void setShape(int shape) {
         mShape = shape;
-        dismiss();
+        // mAsyncTask = new IconShapeLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        // dismiss();
     }
 
-    private class IconShapeLoader extends AsyncTask<Void, Void, Boolean> {
-
+    /*private class IconShapeLoader extends AsyncTask<Void, Void, Boolean> {
         private List<IconShape> iconShapes;
         private int index = 0;
 
@@ -151,5 +164,5 @@ public class IconShapeFragment extends DialogFragment {
                 dismiss();
             }
         }
-    }
+    }*/
 }
