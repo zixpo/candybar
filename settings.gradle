@@ -1,1 +1,1 @@
-include ':app', ':library', ':extLibs:PreLollipopTransitions', ':extLibs:uil'
+include ':app', ':library', ':extLibs:PreLollipopTransitions'

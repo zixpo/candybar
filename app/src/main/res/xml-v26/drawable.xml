@@ -120,6 +120,52 @@
     <item drawable="actiondash" />
     <item drawable="actions_service" />
 
+    <item
+        drawable="action_launcher"
+        name="Tako" />
+    <item
+        drawable="actiondash"
+        name="Tako" />
+    <item
+        drawable="actions_service"
+        name="Tako" />
+    <item
+        drawable="accubattery"
+        name="Tako" />
+    <item
+        drawable="accuweather"
+        name="Tako" />
+    <item
+        drawable="acorns"
+        name="Tako" />
+    <item
+        drawable="action_launcher"
+        name="Tako" />
+    <item
+        drawable="actiondash"
+        name="Tako" />
+    <item
+        drawable="actions_service"
+        name="Tako" />
+    <item
+        drawable="accubattery"
+        name="Tako" />
+    <item
+        drawable="accuweather"
+        name="Tako" />
+    <item
+        drawable="acorns"
+        name="Tako" />
+    <item
+        drawable="action_launcher"
+        name="Tako" />
+    <item
+        drawable="actiondash"
+        name="Tako" />
+    <item
+        drawable="actions_service"
+        name="Tako" />
+
 
     <category title="All Apps" />
     <item drawable="icon_1" />

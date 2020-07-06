@@ -1,3 +1,14 @@
+# v3.7.0
+- Added Czech language
+- Updated translations
+- Updated Gradle
+- Improved Adaptive Icon support
+- Bumped minSdk to 21. Now the minimum supported Android version is 5.0 (Lollipop)
+- Minor design refreshment
+- Rewrite to use Glide instead of UIL
+- Improved fast scrollbar for icons section
+- Removed UIL completely
+
 # v3.6.3
 - Updated Gradle Plugin.
 - Option to hide missing app count.
