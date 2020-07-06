@@ -28,6 +28,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -92,7 +93,7 @@ public class RequestHelper {
 
             File file = new File(context.getCacheDir().toString(), xmlType.getFileName());
             Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(file), "UTF8"));
+                    new FileOutputStream(file), StandardCharsets.UTF_8));
             writer.append(xmlType.getHeader()).append("\n\n");
 
             for (Request request : requests) {

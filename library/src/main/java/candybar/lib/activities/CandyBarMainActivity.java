@@ -517,7 +517,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     if (counter == null) return;
 
                     int newItem = (size - offlineSize);
-                    counter.setText(String.valueOf(this.getResources().getString(R.string.txt_new) + " " + (newItem > 99 ? "99+" : newItem)));
+                    counter.setText(this.getResources().getString(R.string.txt_new) + " " + (newItem > 99 ? "99+" : newItem));
                     container.setVisibility(View.VISIBLE);
                     return;
                 }

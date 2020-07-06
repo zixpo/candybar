@@ -137,7 +137,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     private void resetDatabase(SQLiteDatabase db, int oldVersion) {
-        Cursor cursor = db.rawQuery("SELECT name FROM sqlite_master WHERE type=\'table\'", null);
+        Cursor cursor = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
         List<String> tables = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do {
