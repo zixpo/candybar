@@ -25,7 +25,6 @@ import com.danimahardhika.android.helpers.core.WindowHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.cafebar.CafeBar;
 import com.danimahardhika.cafebar.CafeBarTheme;
-import com.nostra13.universalimageloader.core.assist.ImageSize;
 
 import java.lang.ref.WeakReference;
 import java.util.Locale;
@@ -34,6 +33,7 @@ import java.util.concurrent.Executor;
 import candybar.lib.R;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
+import candybar.lib.items.ImageSize;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 
@@ -173,7 +173,7 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                 if (mRectF != null && Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
                     Point point = WindowHelper.getScreenSize(mContext.get());
                     int height = point.y - WindowHelper.getStatusBarHeight(mContext.get()) - WindowHelper.getNavigationBarHeight(mContext.get());
-                    float heightFactor = (float) imageSize.getHeight() / (float) height;
+                    float heightFactor = (float) imageSize.height / (float) height;
                     mRectF = WallpaperHelper.getScaledRectF(mRectF, heightFactor, 1f);
                 }
 
@@ -181,13 +181,13 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                     /*
                      * Create a center crop rectF if wallpaper applied from grid, not opening the preview first
                      */
-                    float widthScaleFactor = (float) imageSize.getHeight() / (float) mWallpaper.getDimensions().getHeight();
+                    float widthScaleFactor = (float) imageSize.height / (float) mWallpaper.getDimensions().height;
 
-                    float side = ((float) mWallpaper.getDimensions().getWidth() * widthScaleFactor - (float) imageSize.getWidth()) / 2f;
+                    float side = ((float) mWallpaper.getDimensions().width * widthScaleFactor - (float) imageSize.width) / 2f;
                     float leftRectF = 0f - side;
-                    float rightRectF = (float) mWallpaper.getDimensions().getWidth() * widthScaleFactor - side;
+                    float rightRectF = (float) mWallpaper.getDimensions().width * widthScaleFactor - side;
                     float topRectF = 0f;
-                    float bottomRectF = (float) imageSize.getHeight();
+                    float bottomRectF = (float) imageSize.height;
                     mRectF = new RectF(leftRectF, topRectF, rightRectF, bottomRectF);
                     LogUtil.d("created center crop rectF: " + mRectF);
                 }
@@ -195,7 +195,7 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                 ImageSize adjustedSize = imageSize;
                 RectF adjustedRectF = mRectF;
 
-                float scaleFactor = (float) mWallpaper.getDimensions().getHeight() / (float) imageSize.getHeight();
+                float scaleFactor = (float) mWallpaper.getDimensions().height / (float) imageSize.height;
                 if (scaleFactor > 1f) {
                     /*
                      * Applying original wallpaper size caused a problem (wallpaper zoomed in)
@@ -212,21 +212,21 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                     /*
                      * Adjust wallpaper size to match screen resolution:
                      */
-                    float widthScaleFactor = (float) imageSize.getHeight() / (float) mWallpaper.getDimensions().getHeight();
-                    int adjustedWidth = Float.valueOf((float) mWallpaper.getDimensions().getWidth() * widthScaleFactor).intValue();
-                    adjustedSize = new ImageSize(adjustedWidth, imageSize.getHeight());
+                    float widthScaleFactor = (float) imageSize.height / (float) mWallpaper.getDimensions().height;
+                    int adjustedWidth = Float.valueOf((float) mWallpaper.getDimensions().width * widthScaleFactor).intValue();
+                    adjustedSize = new ImageSize(adjustedWidth, imageSize.height);
 
                     if (adjustedRectF != null) {
                         /*
                          * If wallpaper crop enabled, original wallpaper size should be loaded first
                          */
-                        adjustedSize = new ImageSize(mWallpaper.getDimensions().getWidth(), mWallpaper.getDimensions().getHeight());
+                        adjustedSize = new ImageSize(mWallpaper.getDimensions().width, mWallpaper.getDimensions().height);
                         adjustedRectF = WallpaperHelper.getScaledRectF(mRectF, scaleFactor, scaleFactor);
                         LogUtil.d("adjusted rectF: " + adjustedRectF);
                     }
 
                     LogUtil.d(String.format(Locale.getDefault(), "adjusted bitmap: %d x %d",
-                            adjustedSize.getWidth(), adjustedSize.getHeight()));
+                            adjustedSize.width, adjustedSize.height));
                 }
 
                 int call = 1;
@@ -270,8 +270,8 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                                 ImageSize targetSize = WallpaperHelper.getTargetSize(mContext.get());
 
                                 int targetWidth = Double.valueOf(
-                                        ((double) loadedBitmap.getHeight() / (double) targetSize.getHeight())
-                                                * (double) targetSize.getWidth()).intValue();
+                                        ((double) loadedBitmap.getHeight() / (double) targetSize.height)
+                                                * (double) targetSize.width).intValue();
 
                                 bitmap = Bitmap.createBitmap(
                                         targetWidth,
@@ -285,11 +285,11 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                                 Canvas canvas = new Canvas(bitmap);
                                 canvas.drawBitmap(loadedBitmap, null, adjustedRectF, paint);
 
-                                float scale = (float) targetSize.getHeight() / (float) bitmap.getHeight();
+                                float scale = (float) targetSize.height / (float) bitmap.getHeight();
                                 if (scale < 1f) {
                                     LogUtil.d("bitmap size is bigger than screen resolution, resizing bitmap");
                                     int resizedWidth = Float.valueOf((float) bitmap.getWidth() * scale).intValue();
-                                    bitmap = Bitmap.createScaledBitmap(bitmap, resizedWidth, targetSize.getHeight(), true);
+                                    bitmap = Bitmap.createScaledBitmap(bitmap, resizedWidth, targetSize.height, true);
                                 }
                             }
 
@@ -333,8 +333,8 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                              */
 
                             double scale = 1 - (0.1 * call);
-                            int scaledWidth = Double.valueOf(adjustedSize.getWidth() * scale).intValue();
-                            int scaledHeight = Double.valueOf(adjustedSize.getHeight() * scale).intValue();
+                            int scaledWidth = Double.valueOf(adjustedSize.width * scale).intValue();
+                            int scaledHeight = Double.valueOf(adjustedSize.height * scale).intValue();
 
                             adjustedRectF = WallpaperHelper.getScaledRectF(adjustedRectF,
                                     (float) scale, (float) scale);

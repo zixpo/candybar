@@ -14,13 +14,13 @@ import androidx.annotation.Nullable;
 
 import com.danimahardhika.android.helpers.core.TimeHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.nostra13.universalimageloader.core.assist.ImageSize;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
 import candybar.lib.helpers.JsonHelper;
+import candybar.lib.items.ImageSize;
 import candybar.lib.items.Request;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
@@ -401,8 +401,8 @@ public class Database extends SQLiteOpenHelper {
         }
 
         if (wallpaper.getDimensions() != null) {
-            values.put(KEY_WIDTH, wallpaper.getDimensions().getWidth());
-            values.put(KEY_HEIGHT, wallpaper.getDimensions().getHeight());
+            values.put(KEY_WIDTH, wallpaper.getDimensions().width);
+            values.put(KEY_HEIGHT, wallpaper.getDimensions().height);
         }
 
         if (wallpaper.getColor() != 0) {

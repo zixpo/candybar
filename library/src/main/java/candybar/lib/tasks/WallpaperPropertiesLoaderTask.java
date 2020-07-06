@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.nostra13.universalimageloader.core.assist.ImageSize;
 
 import java.io.File;
 import java.io.InputStream;
@@ -21,6 +20,7 @@ import java.net.URL;
 import java.util.concurrent.Executor;
 
 import candybar.lib.databases.Database;
+import candybar.lib.items.ImageSize;
 import candybar.lib.items.Wallpaper;
 
 /*

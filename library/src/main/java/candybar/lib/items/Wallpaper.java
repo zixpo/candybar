@@ -1,7 +1,5 @@
 package candybar.lib.items;
 
-import com.nostra13.universalimageloader.core.assist.ImageSize;
-
 /*
  * CandyBar - Material Dashboard
  *

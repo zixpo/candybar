@@ -68,7 +68,6 @@ android {
 
 dependencies {
     implementation project (':extLibs:PreLollipopTransitions')
-    implementation project (':extLibs:uil')
 
     api 'androidx.annotation:annotation:1.1.0'
     api 'androidx.appcompat:appcompat:1.1.0'
