@@ -1,6 +1,7 @@
 package candybar.lib.fragments;
 
 import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,10 +24,10 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.animation.AnimationHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.tabs.TabLayout;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.Collections;
 import java.util.List;
@@ -182,7 +183,8 @@ public class IconsBaseFragment extends Fragment {
         if (mGetIcons != null) {
             mGetIcons.cancel(true);
         }
-        ImageLoader.getInstance().getMemoryCache().clear();
+        Activity activity = getActivity();
+        if (activity != null) Glide.get(activity).clearMemory();
         super.onDestroy();
     }
 

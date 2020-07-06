@@ -20,15 +20,13 @@ import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageSize;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
-import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +35,6 @@ import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.utils.ImageConfig;
 import candybar.lib.utils.listeners.RequestListener;
 
 /*
@@ -63,7 +60,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private final Context mContext;
     private final List<Request> mRequests;
     private SparseBooleanArray mSelectedItems;
-    private final DisplayImageOptions.Builder mOptions;
 
     private final int mTextColorSecondary;
     private final int mTextColorAccent;
@@ -88,13 +84,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         mShowShadow = (spanCount == 1);
         mShowPremiumRequest = Preferences.get(mContext).isPremiumRequestEnabled();
         mShowRegularRequest = Preferences.get(mContext).isRegularRequestLimit();
-
-        mOptions = ImageConfig.getRawDefaultImageOptions();
-        mOptions.resetViewBeforeLoading(true);
-        mOptions.cacheInMemory(true);
-        mOptions.cacheOnDisk(false);
-        mOptions.showImageOnFail(R.drawable.ic_app_default);
-        mOptions.displayer(new FadeInBitmapDisplayer(700));
     }
 
     @Override
@@ -194,9 +183,12 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             int finalPosition = mShowPremiumRequest ? position - 1 : position;
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
 
-            ImageLoader.getInstance().displayImage("package://" + mRequests.get(finalPosition).getActivity(),
-                    new ImageViewAware(contentViewHolder.icon), mOptions.build(),
-                    new ImageSize(272, 272), null, null);
+            Glide.with(mContext)
+                    .load("package://" + mRequests.get(finalPosition).getActivity())
+                    .override(272)
+                    .transition(DrawableTransitionOptions.withCrossFade(300))
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(contentViewHolder.icon);
 
             contentViewHolder.title.setText(mRequests.get(finalPosition).getName());
 

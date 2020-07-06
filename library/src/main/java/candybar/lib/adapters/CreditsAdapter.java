@@ -17,20 +17,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageSize;
-import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
-import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 
 import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.items.Credit;
-import candybar.lib.utils.ImageConfig;
 
 /*
  * CandyBar - Material Dashboard
@@ -54,24 +51,15 @@ public class CreditsAdapter extends BaseAdapter {
 
     private final Context mContext;
     private final List<Credit> mCredits;
-    private final DisplayImageOptions.Builder mOptions;
+    private final Drawable mPlaceholder;
 
     public CreditsAdapter(@NonNull Context context, @NonNull List<Credit> credits) {
         mContext = context;
         mCredits = credits;
 
         int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorSecondary);
-        Drawable drawable = DrawableHelper.getTintedDrawable(
+        mPlaceholder = DrawableHelper.getTintedDrawable(
                 mContext, R.drawable.ic_toolbar_default_profile, color);
-
-        mOptions = ImageConfig.getRawDefaultImageOptions();
-        mOptions.resetViewBeforeLoading(true);
-        mOptions.cacheInMemory(true);
-        mOptions.cacheOnDisk(true);
-        mOptions.showImageForEmptyUri(drawable);
-        mOptions.showImageOnFail(drawable);
-        mOptions.showImageOnLoading(drawable);
-        mOptions.displayer(new CircleBitmapDisplayer());
     }
 
     @Override
@@ -120,9 +108,17 @@ public class CreditsAdapter extends BaseAdapter {
             holder.subtitle.setVisibility(View.VISIBLE);
         }
 
-        ImageLoader.getInstance().displayImage(credit.getImage(),
-                new ImageViewAware(holder.image), mOptions.build(),
-                new ImageSize(144, 144), null, null);
+        Glide.with(mContext)
+                .load(credit.getImage())
+                .override(144)
+                .optionalCenterInside()
+                .circleCrop()
+                .placeholder(mPlaceholder)
+                .transition(DrawableTransitionOptions.withCrossFade(300))
+                .skipMemoryCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                .into(holder.image);
+
         return view;
     }
 

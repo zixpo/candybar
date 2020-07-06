@@ -1,6 +1,10 @@
 package candybar.lib.utils;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
@@ -31,7 +35,37 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
     public void loadData(@NonNull Priority priority, @NonNull DataCallback<? super Bitmap> callback) {
         if (mModel.startsWith("drawable://")) {
             callback.onDataReady(getDrawable(mModel));
+        } else if (mModel.startsWith("package://")) {
+            callback.onDataReady(getPackage(mModel));
         }
+    }
+
+    @Nullable
+    private Bitmap getPackage(String uri) {
+        PackageManager packageManager = mContext.getPackageManager();
+        String componentName = uri.replaceFirst("package://", "");
+
+        int slashIndex = componentName.indexOf("/");
+        String activityName = componentName.substring(slashIndex).replace("/", "");
+        String packageName = componentName.replace("/" + activityName, "");
+
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName(packageName, activityName));
+        ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
+
+        Drawable drawable = resolveInfo.loadIcon(packageManager);
+        if (drawable != null) {
+            if (drawable instanceof BitmapDrawable) return ((BitmapDrawable) drawable).getBitmap();
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && drawable instanceof AdaptiveIconDrawable) {
+                return new AdaptiveIcon()
+                        .setDrawable((AdaptiveIconDrawable) drawable)
+                        .setPath(AdaptiveIcon.PATH_CIRCLE)
+                        .render();
+            }
+        }
+
+        return null;
     }
 
     @Nullable
@@ -68,6 +102,7 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
     @NonNull
     @Override
     public DataSource getDataSource() {
-        return DataSource.MEMORY_CACHE;
+        // Because transitions do not work with local resources
+        return DataSource.REMOTE;
     }
 }

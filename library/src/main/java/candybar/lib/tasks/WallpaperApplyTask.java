@@ -18,12 +18,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.WindowHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.cafebar.CafeBar;
 import com.danimahardhika.cafebar.CafeBarTheme;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 
 import java.lang.ref.WeakReference;
@@ -35,7 +36,6 @@ import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.utils.ImageConfig;
 
 /*
  * CandyBar - Material Dashboard
@@ -105,7 +105,6 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                     .positiveColor(color)
                     .positiveText(android.R.string.cancel)
                     .onPositive((dialog, which) -> {
-                        ImageLoader.getInstance().stop();
                         cancel(true);
                     });
 
@@ -235,8 +234,14 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                     /*
                      * Load the bitmap first
                      */
-                    Bitmap loadedBitmap = ImageLoader.getInstance().loadImageSync(
-                            mWallpaper.getURL(), adjustedSize, ImageConfig.getWallpaperOptions());
+                    Bitmap loadedBitmap = Glide.with(mContext.get())
+                            .asBitmap()
+                            .load(mWallpaper.getURL())
+                            .skipMemoryCache(true)
+                            .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                            .submit()
+                            .get();
+
                     if (loadedBitmap != null) {
                         try {
                             /*

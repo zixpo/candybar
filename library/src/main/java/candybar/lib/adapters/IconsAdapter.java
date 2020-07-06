@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 
 import java.util.ArrayList;
@@ -48,7 +49,6 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     private final Context mContext;
     private final List<Icon> mIcons;
     private List<Icon> mIconsAll;
-    // private final DisplayImageOptions.Builder mOptions;
     private final Fragment mFragment;
     private final List<ViewHolder> mViewHolders;
 
@@ -65,12 +65,6 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
             mIconsAll = new ArrayList<>();
             mIconsAll.addAll(mIcons);
         }
-
-        /*mOptions = ImageConfig.getRawDefaultImageOptions();
-        mOptions.resetViewBeforeLoading(true);
-        mOptions.cacheInMemory(true);
-        mOptions.cacheOnDisk(false);
-        mOptions.displayer(new FadeInBitmapDisplayer(700));*/
     }
 
     @Override
@@ -85,13 +79,6 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         holder.name.setText(mIcons.get(position).getTitle());
         mViewHolders.add(holder);
         loadIconInto(holder.icon, position);
-
-        // TODO: Remove
-        /*ImageLoader.setShape(Preferences.get(mContext).getIconShape());
-
-        ImageLoader.getInstance().displayImage("drawable://" + mIcons.get(position).getRes(),
-                new ImageViewAware(holder.icon), mOptions.build(),
-                new ImageSize(272, 272), null, null);*/
     }
 
     @Override
@@ -104,6 +91,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         Glide.with(mFragment)
                 .load("drawable://" + mIcons.get(position).getRes())
                 .skipMemoryCache(true)
+                .transition(DrawableTransitionOptions.withCrossFade(300))
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(imageView);
     }

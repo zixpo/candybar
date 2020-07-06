@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.multidex.MultiDexApplication;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -22,7 +21,6 @@ import candybar.lib.databases.Database;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.utils.ImageConfig;
 import candybar.lib.utils.JsonStructure;
 import io.github.inflationx.calligraphy3.CalligraphyConfig;
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor;
@@ -66,9 +64,6 @@ public abstract class CandyBarApplication extends MultiDexApplication implements
         super.onCreate();
         Database.get(this).openDatabase();
 
-        if (!ImageLoader.getInstance().isInited())
-            ImageLoader.getInstance().init(ImageConfig.getImageLoaderConfiguration(this));
-
         ViewPump.init(ViewPump.builder()
                 .addInterceptor(new CalligraphyInterceptor(
                         new CalligraphyConfig.Builder()
@@ -77,7 +72,7 @@ public abstract class CandyBarApplication extends MultiDexApplication implements
                                 .build()))
                 .build());
 
-        //Enable or disable logging
+        // Enable or disable logging
         LogUtil.setLoggingTag(getString(R.string.app_name));
         LogUtil.setLoggingEnabled(true);
 

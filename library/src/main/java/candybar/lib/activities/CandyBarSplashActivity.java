@@ -11,8 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
@@ -176,9 +177,12 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity implement
                         if (list.size() > 0 && list.get(0) instanceof Map) {
                             Map map = (Map) list.get(0);
                             String thumbUrl = JsonHelper.getThumbUrl(map);
-                            ImageLoader.getInstance().loadImageSync(thumbUrl,
-                                    ImageConfig.getThumbnailSize(),
-                                    ImageConfig.getDefaultImageOptions(true));
+
+                            Glide.with(context.get())
+                                    .load(thumbUrl)
+                                    .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                                    .override(ImageConfig.getThumbnailSize())
+                                    .preload();
                         }
                     }
                     return true;

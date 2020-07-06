@@ -9,8 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
 
 import java.io.File;
@@ -124,9 +124,17 @@ public class WallpaperPropertiesLoaderTask extends AsyncTask<Void, Void, Boolean
         super.onPostExecute(aBoolean);
         if (aBoolean && mContext.get() != null && !((AppCompatActivity) mContext.get()).isFinishing()) {
             if (mWallpaper.getSize() <= 0) {
-                File target = ImageLoader.getInstance().getDiskCache().get(mWallpaper.getURL());
-                if (target.exists()) {
-                    mWallpaper.setSize((int) target.length());
+                try {
+                    File target = Glide.with(mContext.get())
+                            .asFile()
+                            .load(mWallpaper.getURL())
+                            .onlyRetrieveFromCache(true)
+                            .submit()
+                            .get();
+                    if (target != null && target.exists()) {
+                        mWallpaper.setSize((int) target.length());
+                    }
+                } catch (Exception ignored) {
                 }
             }
         }

@@ -35,6 +35,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.FileHelper;
@@ -43,9 +45,6 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.license.LicenseHelper;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.google.android.material.navigation.NavigationView;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageSize;
-import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 
 import java.io.File;
 import java.util.List;
@@ -86,7 +85,6 @@ import candybar.lib.services.CandyBarWallpapersService;
 import candybar.lib.tasks.IconRequestTask;
 import candybar.lib.tasks.IconsLoaderTask;
 import candybar.lib.utils.Extras;
-import candybar.lib.utils.ImageConfig;
 import candybar.lib.utils.InAppBillingProcessor;
 import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
@@ -518,9 +516,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     TextView counter = container.findViewById(R.id.counter);
                     if (counter == null) return;
 
-                    /*ViewCompat.setBackground(counter, DrawableHelper.getTintedDrawable(this,
-                            R.drawable.ic_toolbar_circle, accent));*/
-                    //counter.setTextColor(ColorHelper.getTitleTextColor(accent));
                     int newItem = (size - offlineSize);
                     counter.setText(String.valueOf(this.getResources().getString(R.string.txt_new) + " " + (newItem > 99 ? "99+" : newItem)));
                     container.setVisibility(View.VISIBLE);
@@ -636,6 +631,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
         // FIX ANDROIDX
         // NavigationViewHelper.hideScrollBar(mNavigationView);
+        mNavigationView.setVerticalScrollBarEnabled(false);
     }
 
     private void initNavigationViewHeader() {
@@ -677,8 +673,14 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             imageUrl = "drawable://" + DrawableHelper.getResourceId(this, imageUrl);
         }
 
-        ImageLoader.getInstance().displayImage(imageUrl, new ImageViewAware(image),
-                ImageConfig.getDefaultImageOptions(true), new ImageSize(720, 720), null, null);
+        Glide.with(this)
+                .load(imageUrl)
+                .override(720)
+                .optionalCenterInside()
+                .diskCacheStrategy(imageUrl.contains("drawable://")
+                        ? DiskCacheStrategy.NONE
+                        : DiskCacheStrategy.RESOURCE)
+                .into(image);
     }
 
     private void registerBroadcastReceiver() {

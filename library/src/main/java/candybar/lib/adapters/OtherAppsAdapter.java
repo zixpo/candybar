@@ -15,15 +15,16 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
-import candybar.lib.utils.ImageConfig;
 
 /*
  * CandyBar - Material Dashboard
@@ -85,8 +86,15 @@ public class OtherAppsAdapter extends BaseAdapter {
             uri = "drawable://" + DrawableHelper.getResourceId(mContext, uri);
         }
 
-        ImageLoader.getInstance().displayImage(
-                uri, holder.image, ImageConfig.getDefaultImageOptions(true));
+        Glide.with(mContext)
+                .load(uri)
+                .transition(DrawableTransitionOptions.withCrossFade(300))
+                .skipMemoryCache(true)
+                .diskCacheStrategy(uri.contains("drawable://")
+                        ? DiskCacheStrategy.NONE
+                        : DiskCacheStrategy.RESOURCE)
+                .into(holder.image);
+
         holder.title.setText(otherApp.getTitle());
 
         if (otherApp.getDescription() == null || otherApp.getDescription().length() == 0) {

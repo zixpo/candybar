@@ -12,14 +12,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.google.android.material.card.MaterialCardView;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
 import java.util.List;
 
@@ -28,7 +34,6 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.LauncherHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.utils.ImageConfig;
 
 /*
  * CandyBar - Material Dashboard
@@ -80,22 +85,21 @@ public class LauncherAdapter extends RecyclerView.Adapter<LauncherAdapter.ViewHo
             holder.name.setText(mLaunchers.get(position).getTitle());
         } else if (holder.holderId == TYPE_CONTENT) {
             holder.name.setText(mLaunchers.get(position).getTitle());
-            ImageLoader.getInstance().displayImage("drawable://" + mLaunchers.get(position).getRes(),
-                    holder.icon, ImageConfig.getDefaultImageOptions(false),
-                    new SimpleImageLoadingListener() {
 
+            Glide.with(mContext)
+                    .asBitmap()
+                    .load("drawable://" + mLaunchers.get(position).getRes())
+                    .transition(BitmapTransitionOptions.withCrossFade(300))
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .listener(new RequestListener<Bitmap>() {
                         @Override
-                        public void onLoadingStarted(String imageUri, View view) {
-                            super.onLoadingStarted(imageUri, view);
-                            int color = ColorHelper.getAttributeColor(
-                                    mContext, R.attr.card_background);
-                            holder.name.setBackgroundColor(color);
-                            holder.name.setTextColor(ColorHelper.getTitleTextColor(color));
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+                            return false;
                         }
 
                         @Override
-                        public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                            super.onLoadingComplete(imageUri, view, loadedImage);
+                        public boolean onResourceReady(Bitmap loadedImage, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
                             if (CandyBarApplication.getConfiguration().isColoredApplyCard()) {
                                 Palette.from(loadedImage).generate(palette -> {
                                     int defaultColor = ColorHelper.getAttributeColor(
@@ -110,8 +114,16 @@ public class LauncherAdapter extends RecyclerView.Adapter<LauncherAdapter.ViewHo
                                     holder.name.setTextColor(text);
                                 });
                             }
+
+                            return false;
                         }
-                    });
+                    })
+                    .into(holder.icon);
+
+            int color = ColorHelper.getAttributeColor(
+                    mContext, R.attr.card_background);
+            holder.name.setBackgroundColor(color);
+            holder.name.setTextColor(ColorHelper.getTitleTextColor(color));
         }
     }
 
