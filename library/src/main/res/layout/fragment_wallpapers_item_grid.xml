@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card"
-    tools:ignore="MissingPrefix"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginRight="@dimen/card_margin_right"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginEnd="@dimen/card_margin_right"
     android:layout_marginBottom="@dimen/card_margin_bottom"
-    android:foreground="?attr/selectableItemBackground"
-    android:theme="@style/RippleStyle"
-    app:cardBackgroundColor="?attr/card_background"
-    app:cardElevation="@dimen/card_elevation"
-    app:cardUseCompatPadding="@bool/card_use_compat_padding"
-    app:cardCornerRadius="@dimen/card_corner_radius">
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:clipToPadding="false">
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/content_margin"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/card_corner_radius">
 
         <candybar.lib.utils.views.HeaderView
             android:id="@+id/image"
@@ -30,35 +25,40 @@
             app:widthRatio="1"
             app:heightRatio="1" />
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="@dimen/text_content_title"
-            android:layout_marginLeft="@dimen/content_margin"
-            android:layout_marginStart="@dimen/content_margin"
-            android:layout_marginRight="@dimen/content_margin"
-            android:layout_marginEnd="@dimen/content_margin"
-            android:layout_marginTop="@dimen/content_margin"
-            android:maxLines="1"
-            android:ellipsize="end"
-            fontPath="fonts/Font-Medium.ttf" />
+    </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textSize="@dimen/text_content"
-            android:layout_marginLeft="@dimen/content_margin"
-            android:layout_marginStart="@dimen/content_margin"
-            android:layout_marginRight="@dimen/content_margin"
-            android:layout_marginEnd="@dimen/content_margin"
-            android:maxLines="1"
-            android:ellipsize="end"
-            fontPath="fonts/Font-Regular.ttf" />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="@dimen/text_content_title"
+        android:layout_marginLeft="@dimen/content_margin"
+        android:layout_marginStart="@dimen/content_margin"
+        android:layout_marginRight="@dimen/content_margin"
+        android:layout_marginEnd="@dimen/content_margin"
+        android:layout_marginTop="6dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        fontPath="fonts/Font-Medium.ttf" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="@dimen/text_content"
+        android:layout_marginLeft="@dimen/content_margin"
+        android:layout_marginStart="@dimen/content_margin"
+        android:layout_marginRight="@dimen/content_margin"
+        android:layout_marginEnd="@dimen/content_margin"
+        android:layout_marginBottom="@dimen/content_margin"
+        android:maxLines="1"
+        android:ellipsize="end"
+        fontPath="fonts/Font-Regular.ttf" />
 
-</com.google.android.material.card.MaterialCardView>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="10dp" />
+
+</LinearLayout>

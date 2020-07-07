@@ -178,11 +178,6 @@
     * If disabled user only able to apply wallpaper from dashboard -->
     <bool name="enable_wallpaper_download">true</bool>
 
-    <!-- Auto generated color for wallpaper card
-    * default: true
-    * change to false to disable it -->
-    <bool name="card_wallpaper_auto_generated_color">true</bool>
-
     <!-- Wallpaper name and author below wallpaper
     * Show or hide name and author below wallpaper
     * Show -> true

@@ -25,7 +25,6 @@ public class CandyBar extends CandyBarApplication {
     @NonNull
     @Override
     public Configuration onInit() {
-        // Sample configuration
         Configuration configuration = new Configuration();
 
         configuration.setGenerateAppFilter(true);

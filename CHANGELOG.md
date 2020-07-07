@@ -10,6 +10,7 @@
 - Removed UIL completely
 - Properly fix icon name in Icon Requests
 - Redesign Apply section
+- Redesign Wallpaper section
 
 # v3.6.3
 - Updated Gradle Plugin.

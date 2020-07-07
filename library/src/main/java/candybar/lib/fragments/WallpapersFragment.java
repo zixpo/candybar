@@ -113,11 +113,6 @@ public class WallpapersFragment extends Fragment {
 
         new FastScrollerBuilder(mRecyclerView).useMd2Style().build();
 
-        if (CandyBarApplication.getConfiguration().getWallpapersGrid() == CandyBarApplication.GridStyle.FLAT) {
-            int padding = getActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
-            mRecyclerView.setPadding(padding, padding, 0, 0);
-        }
-
         mSwipe.setOnRefreshListener(() -> {
             if (mProgress.getVisibility() == View.GONE)
                 mAsyncTask = new WallpapersLoader(true).execute();
