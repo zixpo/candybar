@@ -52,10 +52,8 @@ public class LocaleHelper {
             LocaleList.setDefault(new LocaleList(locale));
             configuration.setLocales(new LocaleList(locale));
             configuration.setLocale(locale);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            configuration.setLocale(locale);
         } else {
-            configuration.locale = locale;
+            configuration.setLocale(locale);
         }
 
         //Todo:
