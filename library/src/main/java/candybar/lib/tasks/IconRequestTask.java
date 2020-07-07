@@ -15,7 +15,6 @@ import androidx.fragment.app.FragmentManager;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.lang.ref.WeakReference;
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -113,8 +112,6 @@ public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
                             if (name == null) {
                                 name = app.activityInfo.loadLabel(packageManager).toString();
                             }
-
-                            name = Normalizer.normalize(name, Normalizer.Form.NFD).replace("[^\\p{ASCII}]", "");
 
                             boolean requested = Database.get(mContext.get()).isRequested(activity);
                             Request request = Request.Builder()

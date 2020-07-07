@@ -229,7 +229,7 @@ public class IconsHelper {
 
     @Nullable
     public static String saveIcon(List<String> files, File directory, Drawable drawable, String name) {
-        String fileName = name.toLowerCase().replaceAll(" ", "_") + ".png";
+        String fileName = name + ".png";
         File file = new File(directory, fileName);
         try {
             Thread.sleep(2);

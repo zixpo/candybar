@@ -8,6 +8,7 @@
 - Rewrite to use Glide instead of UIL
 - Improved fast scrollbar for icons section
 - Removed UIL completely
+- Properly fix icon name in Icon Requests
 
 # v3.6.3
 - Updated Gradle Plugin.
