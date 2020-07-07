@@ -73,8 +73,7 @@ public class ApplyFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
-                getActivity().getResources().getInteger(R.integer.apply_column_count)));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
 
         if (CandyBarApplication.getConfiguration().getApplyGrid() == CandyBarApplication.GridStyle.FLAT) {
             int padding = getActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
@@ -87,7 +86,6 @@ public class ApplyFragment extends Fragment {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        resetSpanSizeLookUp();
     }
 
     @Override
@@ -96,26 +94,6 @@ public class ApplyFragment extends Fragment {
             mAsyncTask.cancel(true);
         }
         super.onDestroy();
-    }
-
-    private void resetSpanSizeLookUp() {
-        int column = getActivity().getResources().getInteger(R.integer.apply_column_count);
-        LauncherAdapter adapter = (LauncherAdapter) mRecyclerView.getAdapter();
-        GridLayoutManager manager = (GridLayoutManager) mRecyclerView.getLayoutManager();
-
-        try {
-            manager.setSpanCount(column);
-
-            manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-                @Override
-                public int getSpanSize(int position) {
-                    if (position == adapter.getFirstHeaderPosition() || position == adapter.getLastHeaderPosition())
-                        return column;
-                    return 1;
-                }
-            });
-        } catch (Exception ignored) {
-        }
     }
 
     private boolean isPackageInstalled(String pkg) {
@@ -265,7 +243,6 @@ public class ApplyFragment extends Fragment {
             mAsyncTask = null;
             if (aBoolean) {
                 mRecyclerView.setAdapter(new LauncherAdapter(getActivity(), launchers));
-                resetSpanSizeLookUp();
             }
         }
     }

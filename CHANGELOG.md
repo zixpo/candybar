@@ -9,6 +9,7 @@
 - Improved fast scrollbar for icons section
 - Removed UIL completely
 - Properly fix icon name in Icon Requests
+- Redesign Apply section
 
 # v3.6.3
 - Updated Gradle Plugin.
