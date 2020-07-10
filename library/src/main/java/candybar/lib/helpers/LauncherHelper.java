@@ -69,6 +69,8 @@ public class LauncherHelper {
     private static final int MICROSOFT = 29;
     private static final int FLICK = 30;
     private static final int BLACKBERRY = 31;
+    private static final int SQUARE = 32;
+    private static final int NIAGARA = 33;
 
     private static int getLauncherId(String packageName) {
         if (packageName == null) return UNKNOWN;
@@ -105,6 +107,8 @@ public class LauncherHelper {
                 return LUCID;
             case "com.jiubang.go.mini.launcher":
                 return MINI;
+            case "bitpit.launcher":
+                return NIAGARA;
             case "com.gtp.nextlauncher":
             case "com.gtp.nextlauncher.trial":
                 return NEXT;
@@ -119,6 +123,8 @@ public class LauncherHelper {
                 return SMART;
             case "home.solo.launcher.free":
                 return SOLO;
+            case "com.ss.squarehome2":
+                return SQUARE;
             case "com.asus.launcher":
                 return ZENUI;
             case "me.craftsapp.nlauncher":
@@ -274,6 +280,15 @@ public class LauncherHelper {
                 applyManual(context, launcherPackage, launcherName,
                         "com.jiubang.go.mini.launcher.setting.MiniLauncherSettingActivity");
                 break;
+            case NIAGARA:
+                try {
+                    final Intent niagara = new Intent("bitpit.launcher.APPLY_ICONS");
+                    niagara.putExtra("packageName", context.getPackageName());
+                    context.startActivity(niagara);
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
+                break;
             case NEXT:
                 try {
                     Intent next = context.getPackageManager().getLaunchIntentForPackage("com.gtp.nextlauncher");
@@ -330,6 +345,16 @@ public class LauncherHelper {
                     context.sendBroadcast(soloAction);
                     context.startActivity(solo);
                     ((AppCompatActivity) context).finish();
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
+                break;
+            case SQUARE:
+                try {
+                    final Intent square = new Intent("com.ss.squarehome2.ACTION_APPLY_ICONPACK");
+                    square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
+                    square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
+                    context.startActivity(square);
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }

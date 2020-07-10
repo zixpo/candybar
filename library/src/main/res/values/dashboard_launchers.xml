@@ -32,6 +32,8 @@
         <item>Microsoft</item>                              <!-- 27 -->
         <item>BlackBerry</item>                             <!-- 28 -->
         <item>Flick</item>                                  <!-- 29 -->
+        <item>Square</item>                                 <!-- 30 -->
+        <item>Niagara</item>                                <!-- 31 -->
     </string-array>
 
     <array name="launcher_icons">
@@ -65,6 +67,8 @@
         <item>@drawable/ic_launcher_microsoft</item>        <!-- 27 -->
         <item>@drawable/ic_launcher_blackberry</item>       <!-- 28 -->
         <item>@drawable/ic_launcher_flick</item>            <!-- 29 -->
+        <item>@drawable/ic_launcher_square</item>           <!-- 30 -->
+        <item>@drawable/ic_launcher_niagara</item>          <!-- 31 -->
     </array>
 
     <!-- Launcher Packages -->
@@ -99,6 +103,8 @@
         <item>com.microsoft.launcher</item>                 <!-- 27 -->
         <item>com.blackberry.blackberrylauncher</item>      <!-- 28 -->
         <item>com.universallauncher.universallauncher</item><!-- 29 -->
+        <item>com.ss.squarehome2</item>                     <!-- 30 -->
+        <item>bitpit.launcher</item>                        <!-- 31 -->
     </string-array>
 
     <string-array name="launcher_packages_2">
@@ -132,6 +138,8 @@
         <item>none</item>                                   <!-- 27 -->
         <item>none</item>                                   <!-- 28 -->
         <item>none</item>                                   <!-- 29 -->
+        <item>none</item>                                   <!-- 30 -->
+        <item>none</item>                                   <!-- 31 -->
     </string-array>
 
     <string-array name="launcher_packages_3">
@@ -165,6 +173,8 @@
         <item>none</item>                                   <!-- 27 -->
         <item>none</item>                                   <!-- 28 -->
         <item>none</item>                                   <!-- 29 -->
+        <item>none</item>                                   <!-- 30 -->
+        <item>none</item>                                   <!-- 31 -->
     </string-array>
 
 </resources>
