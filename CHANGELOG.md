@@ -12,6 +12,7 @@
 - Redesigned Apply section
 - Redesigned Wallpaper section
 - Added Niagara and Square launcher
+- Fixed Microsoft launcher apply behaviour
 
 # v3.6.3
 - Updated Gradle Plugin.

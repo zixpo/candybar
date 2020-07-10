@@ -23,6 +23,7 @@
         <item>Redesigned Apply section</item>
         <item>Redesigned Wallpaper section</item>
         <item>Added Niagara and Square launcher</item>
+        <item>Fixed Microsoft launcher apply behaviour</item>
     </string-array>
 
 </resources>
