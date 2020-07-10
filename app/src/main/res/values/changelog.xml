@@ -10,11 +10,19 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Updated Gradle Plugin.</item>
-        <item>Option to hide missing app count.</item>
-        <item>Fixed new wallpaper count badge.</item>
-        <item>Updated translations.</item>
-        <item>Added new translations.</item>
+        <item>Added Czech language</item>
+        <item>Updated translations</item>
+        <item>Updated Gradle</item>
+        <item>Improved Adaptive Icon support</item>
+        <item>Bumped minSdk to 21. Now the minimum supported Android version is 5.0 (Lollipop)</item>
+        <item>Minor design refreshment</item>
+        <item>Migrated to Glide</item>
+        <item>Improved fast scrollbar for icons section</item>
+        <item>Removed UIL completely</item>
+        <item>Now properly fixes icon name in Icon Requests</item>
+        <item>Redesigned Apply section</item>
+        <item>Redesigned Wallpaper section</item>
+        <item>Added Niagara and Square launcher</item>
     </string-array>
 
 </resources>

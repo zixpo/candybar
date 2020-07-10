@@ -5,12 +5,13 @@
 - Improved Adaptive Icon support
 - Bumped minSdk to 21. Now the minimum supported Android version is 5.0 (Lollipop)
 - Minor design refreshment
-- Rewrite to use Glide instead of UIL
+- Migrated to Glide
 - Improved fast scrollbar for icons section
 - Removed UIL completely
-- Properly fix icon name in Icon Requests
-- Redesign Apply section
-- Redesign Wallpaper section
+- Now properly fixes icon name in Icon Requests
+- Redesigned Apply section
+- Redesigned Wallpaper section
+- Added Niagara and Square launcher
 
 # v3.6.3
 - Updated Gradle Plugin.

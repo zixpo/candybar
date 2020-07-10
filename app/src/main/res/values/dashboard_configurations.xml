@@ -48,7 +48,7 @@
     - If you don't want to show description, just leave this empty -->
     <string name="home_description">
         <![CDATA[
-        CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>Many Features</i>. Again in <u>Development</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
+        CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
         ]]>
     </string>
 
@@ -193,13 +193,13 @@
     *
     * If you want to use solid color, you can put hex color code here
     * ex: <string name="navigation_view_header">#000000</string> -->
-    <string name="about_image">https://drive.google.com/uc?id=0B0f4ypHfNKm5VHVjbXZNSS1TUUU</string>
+    <string name="about_image">https://source.unsplash.com/_8WAobqAJog/1400x0</string>
 
     <!-- About profile image
     * If you want to use image from url, just put the url here
     * If you want to use image stored in project (drawable folder)
     * just put image name here without the extension (ex: about_profile_image.png -> about_profile_image) -->
-    <string name="about_profile_image">https://avatars2.githubusercontent.com/u/44255990?s=460</string>
+    <string name="about_profile_image">about_image</string>
 
     <!-- About title above description -->
     <string name="about_title">CandyBar \nMaterial Dashboard</string>
@@ -207,7 +207,7 @@
     <!-- About description below title -->
     <string name="about_desc">
         <![CDATA[
-        CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>Many Features</i>. Again in <u>Development</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
+        CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
         ]]>
     </string>
 
