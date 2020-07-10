@@ -3,10 +3,10 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $TRAVIS_BUILD_D
 jarsigner -verify candybar.apk
 
 if [ "$TRAVIS_TAG" ]; then
-  $ANDROID_HOME/build-tools/29.0.0/zipalign -f 4 candybar.apk candybar-${TRAVIS_TAG}.apk
+  $ANDROID_HOME/build-tools/29.0.2/zipalign -f 4 candybar.apk candybar-${TRAVIS_TAG}.apk
 else
   TIME=`date +%d%m%Y-%H%M`
-  $ANDROID_HOME/build-tools/29.0.0/zipalign -f 4 candybar.apk candybar-${TIME}.apk
+  $ANDROID_HOME/build-tools/29.0.2/zipalign -f 4 candybar.apk candybar-${TIME}.apk
 fi
 
 rm candybar.apk
