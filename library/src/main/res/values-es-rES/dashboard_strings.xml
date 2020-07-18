@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="splash_screen_title">CandyBar Material Dashboard</string>
+    <string name="splash_screen_title">Panel de Material de CandyBar</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Inicio</string>
     <string name="navigation_view_apply">Establecer</string>
@@ -243,4 +243,5 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Abrir</string>
     <string name="txt_close">Cerrar</string>
+    <string name="txt_new">Nuevo</string>
 </resources>
