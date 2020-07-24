@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date">April 16, 2020</string>
+    <string name="changelog_date">July 24, 2020</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,20 +10,7 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Added Czech language</item>
-        <item>Updated translations</item>
-        <item>Updated Gradle</item>
-        <item>Improved Adaptive Icon support</item>
-        <item>Bumped minSdk to 21. Now the minimum supported Android version is 5.0 (Lollipop)</item>
-        <item>Minor design refreshment</item>
-        <item>Migrated to Glide</item>
-        <item>Improved fast scrollbar for icons section</item>
-        <item>Removed UIL completely</item>
-        <item>Now properly fixes icon name in Icon Requests</item>
-        <item>Redesigned Apply section</item>
-        <item>Redesigned Wallpaper section</item>
-        <item>Added Niagara and Square launcher</item>
-        <item>Fixed Microsoft launcher apply behaviour</item>
+        <item>Fix icon name generation</item>
     </string-array>
 
 </resources>

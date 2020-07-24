@@ -23,7 +23,6 @@ android {
     }
 
     compileSdkVersion rootProject.ext.CompileSdk
-    buildToolsVersion rootProject.ext.BuildTools
 
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
@@ -35,8 +34,8 @@ android {
         applicationId "com.candybar.dev"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 370
-        versionName "3.7.0"
+        versionCode 371
+        versionName "3.7.1"
         multiDexEnabled true
 
         // Remove '/*' and '*/' below to enable OneSignal

@@ -146,7 +146,7 @@
     <!-- Email that will be used to send icon request and report bugs -->
     <string name="dev_email">sarsamurmu05@gmail.com</string>
 
-    <!-- Icon Request Email Subject. Set Empty to Use Deafult Subject. -->
+    <!-- Icon Request Email Subject. Set Empty to Use Default Subject. -->
     <string name="request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
 

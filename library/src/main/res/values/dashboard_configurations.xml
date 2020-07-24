@@ -69,6 +69,8 @@
     <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
     <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
 
+    <bool name="use_flat_card">false</bool>
+
     <!-- CONFIG: NAVIGATION VIEW HEADER -->
 
     <!-- Navigation view header image
@@ -257,8 +259,6 @@
 
     <string name="version_from_playstore">{{appVersion}} R</string>
     <string name="version_outside_playstore">{{appVersion}}</string>
-
-    <bool name="use_flat_card">false</bool>
 
     <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
 

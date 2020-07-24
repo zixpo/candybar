@@ -1,3 +1,6 @@
+# v3.7.2
+- Fix icon name generation
+
 # v3.7.0
 - Added Czech language
 - Updated translations
