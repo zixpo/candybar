@@ -122,52 +122,53 @@
 
     <item
         drawable="action_launcher"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="actiondash"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="actions_service"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="accubattery"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="accuweather"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="acorns"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="action_launcher"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="actiondash"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="actions_service"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="accubattery"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="accuweather"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="acorns"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="action_launcher"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="actiondash"
-        name="Tako" />
+        name="Rope" />
     <item
         drawable="actions_service"
-        name="Tako" />
+        name="Rope" />
 
 
     <category title="All Apps" />
+    <item drawable="_1_app" />
     <item drawable="icon_1" />
     <item drawable="icon_2" />
     <item drawable="icon_3" />

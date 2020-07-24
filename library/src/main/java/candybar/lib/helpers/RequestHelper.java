@@ -83,9 +83,12 @@ public class RequestHelper {
 
     public static String fixNameForRequest(String name) {
         String normalized = name.toLowerCase();
-        normalized = Normalizer.normalize(normalized, Normalizer.Form.NFD).replace("[^\\p{ASCII}]", "");
-        normalized = normalized.replaceAll("[^a-zA-Z0-9]", "_");
-        if (Character.isDigit(normalized.charAt(0))) normalized = "a_" + normalized;
+        normalized = Normalizer
+                .normalize(normalized, Normalizer.Form.NFD)
+                .replaceAll("[\\p{InCombiningDiacriticalMarks}\\p{IsLm}\\p{IsSk}]+", "")
+                .replaceAll("[.\"']", "")
+                .replaceAll("[ \\[\\]{}()=!/\\\\&,?°|<>;:#~+*-]", "_");
+        if (Character.isDigit(normalized.charAt(0))) normalized = "_" + normalized;
         normalized = normalized.replaceAll("_+", "_");
         return normalized;
     }
