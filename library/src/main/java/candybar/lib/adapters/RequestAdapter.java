@@ -27,6 +27,8 @@ import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,8 +87,9 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         mShowRegularRequest = Preferences.get(mContext).isRegularRequestLimit();
     }
 
+    @NotNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         if (viewType == TYPE_HEADER) {
             View view = LayoutInflater.from(mContext).inflate(
                     R.layout.fragment_request_item_header, parent, false);
@@ -112,7 +115,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     @Override
-    public void onViewRecycled(RecyclerView.ViewHolder holder) {
+    public void onViewRecycled(@NotNull RecyclerView.ViewHolder holder) {
         super.onViewRecycled(holder);
         if (holder.getItemViewType() == TYPE_CONTENT) {
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
@@ -176,6 +179,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 HeaderViewHolder.regProgress.setMax(total);
                 HeaderViewHolder.regProgress.setProgress(available);
             } else {
+                HeaderViewHolder.regWholeContainer.setVisibility(View.GONE);
+            }
+
+            if (!mContext.getResources().getBoolean(R.bool.enable_icon_request)) {
                 HeaderViewHolder.regWholeContainer.setVisibility(View.GONE);
             }
         } else if (holder.getItemViewType() == TYPE_CONTENT) {
