@@ -34,8 +34,8 @@ android {
         applicationId "com.candybar.dev"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 371
-        versionName "3.7.1"
+        versionCode rootProject.ext.VersionCode
+        versionName rootProject.ext.VersionName
         multiDexEnabled true
 
         // Remove '/*' and '*/' below to enable OneSignal
