@@ -260,7 +260,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 }
 
                 if ((getActivity().getResources().getBoolean(R.bool.json_check_before_request)) && (getActivity().getResources().getString(R.string.config_json).length() != 0)) {
-                    mAsyncTask = new checkConfigBeforeRequest().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                    mAsyncTask = new CheckConfigBeforeRequest().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 } else {
                     mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 }
@@ -543,7 +543,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public class checkConfigBeforeRequest extends AsyncTask<Void, Void, Boolean> {
+    public class CheckConfigBeforeRequest extends AsyncTask<Void, Void, Boolean> {
 
         MaterialDialog dialog;
         private JSONObject configJson;

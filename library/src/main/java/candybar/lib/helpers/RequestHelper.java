@@ -82,14 +82,21 @@ public class RequestHelper {
     }
 
     public static String fixNameForRequest(String name) {
-        String normalized = name.toLowerCase();
-        normalized = Normalizer
-                .normalize(normalized, Normalizer.Form.NFD)
-                .replaceAll("[\\p{InCombiningDiacriticalMarks}\\p{IsLm}\\p{IsSk}]+", "")
+        String normalized = Normalizer.normalize(name.toLowerCase(), Normalizer.Form.NFD);
+
+        try {
+            // This code causes crash on some android devices
+            normalized = normalized.replaceAll("[\\p{InCombiningDiacriticalMarks}\\p{IsLm}\\p{IsSk}]+", "");
+        } catch (Exception ignored) {
+        }
+
+        normalized = normalized
                 .replaceAll("[.\"']", "")
                 .replaceAll("[ \\[\\]{}()=!/\\\\&,?°|<>;:#~+*-]", "_");
+
         if (Character.isDigit(normalized.charAt(0))) normalized = "_" + normalized;
         normalized = normalized.replaceAll("_+", "_");
+
         return normalized;
     }
 
