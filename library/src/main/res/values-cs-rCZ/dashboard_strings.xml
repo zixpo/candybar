@@ -2,7 +2,7 @@
 <resources>
     <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
-    <string name="navigation_view_home">Domů</string>
+    <string name="navigation_view_home">Přehled</string>
     <string name="navigation_view_apply">Použít</string>
     <string name="navigation_view_icons">Ikony</string>
     <string name="navigation_view_request">Žádost o ikony</string>
