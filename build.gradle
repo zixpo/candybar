@@ -23,8 +23,8 @@ allprojects {
     }
 
     rootProject.ext {
-        VersionCode = 373
-        VersionName = "3.7.3"
+        VersionCode = 374
+        VersionName = "3.7.4"
 
         MinSdk = 21
         TargetSdk = 29

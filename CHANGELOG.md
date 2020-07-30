@@ -1,3 +1,8 @@
+# v3.7.4
+- Updated translations
+- Fix unable to disable regular icon request
+- Fix error when building icon requests on some devices
+
 # v3.7.2
 - Fix icon name generation
 
