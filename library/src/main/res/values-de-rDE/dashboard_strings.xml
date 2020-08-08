@@ -27,7 +27,7 @@
     <string name="menu_select_all">Alles auswählen</string>
     <string name="menu_wallpaper_crop">Hintergrundbild zuschneiden</string>
     <string name="menu_apply_homescreen">Startbildschirm</string>
-    <string name="menu_apply_lockscreen">Speerbildschirm</string>
+    <string name="menu_apply_lockscreen">Sperrbildschirm</string>
     <string name="menu_apply_homescreen_lockscreen">Hauptbildschirm &amp; Sperrbildschirm</string>
     <!-- Dialog -->
     <string name="open">Öffnen</string>
