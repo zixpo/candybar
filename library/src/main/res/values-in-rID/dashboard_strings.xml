@@ -38,10 +38,19 @@
     <string name="donate">Donasi</string>
     <string name="update">Pembaruan</string>
     <string name="search_noresult">Tidak ada hasil ditemukan untuk \"%s\"</string>
+    <string name="search_faqs">Pertanyaan atau jawaban</string>
+    <string name="search_icon">Nama Ikon</string>
     <!-- Update -->
+    <string name="update_available">Pembaruan tersedia!</string>
+    <string name="no_update_available">Anda telah menggunakan versi terbaru!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versi</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Tidak dapat memuat produk Pembelian Dalam Aplikasi</string>
     <!-- License -->
+    <string name="license_checking">Memeriksa lisensi…</string>
+    <string name="license_check">Pemeriksaan Lisensi</string>
+    <string name="license_check_success">Pemeriksaan lisensi berhasil, terima kasih telah mengunduh aplikasi ini dari Play Store.</string>
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
