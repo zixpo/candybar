@@ -83,10 +83,10 @@ lalu aplikasi dashboard akan mencoba menerapkan. Menerapkannya membutuhkan waktu
 Eror \"Layar Hitam\" mungkin terjadi karena RAM pada perangkat tidak memiliki ruang bebas yang cukup untuk memproses wallpaper.
 Mulai ulang telepon anda akan menyelesaikan masalah ini. Setelah memulai ulang, telepon anda akan memiliki lebih banyak ruang RAM yang tersedia.
 Alternatif lainnya, anda dapat membuka wallpaper yang sudah di unduh melalui Galeri dan mengatur wallpaper dari sana.</item>
-        <item>Open muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
-        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
-            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
+        <item>Buka muzei, pilih paket ikon ini, pengaturan. Anda akan melihat opsi untuk memuat wallpaper yang sudah diunduh saja.
+Pertama kali anda harus mengunduh wallpaper dari dashboard.</item>
+        <item>Jika sebuah wallpaper sudah di unduh, itu akan di muat dari memori telepon anda secara otomatis.
+Muzei tidak akan terus mengunduh ketika wallpaper berubah. Pertama kali anda harus mengunduh wallpaper dari dashboard.</item>
         <item>Open Dashboard, download wallpapers that you want to use in Muzei.
             Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
         <item>It is used to write &amp; read cache, and collect the icon request data.</item>
