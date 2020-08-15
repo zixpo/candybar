@@ -8,7 +8,17 @@
     <string name="navigation_view_request">Pesan ikon</string>
     <string name="navigation_view_wallpapers">Wallpaper</string>
     <string name="navigation_view_settings">Pengaturan</string>
+    <string name="navigation_view_faqs">FAQs</string>
+    <string name="navigation_view_about">Tentang</string>
+    <string name="navigation_view_donate">Dukung Pengembangan</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Pengaturan Muzei</string>
+    <string name="minute">Menit</string>
+    <string name="hour">Jam</string>
+    <string name="save_setting">Simpan</string>
+    <string name="muzei_refresh_duration">Durasi menyegarkan</string>
+    <string name="muzei_wifi_only">Segarkan dari Wifi saja</string>
+    <string name="muzei_downloaded_only">Muat Wallpaper terunduh Saja</string>
     <!-- Menu -->
     <!-- Dialog -->
     <!-- Update -->
