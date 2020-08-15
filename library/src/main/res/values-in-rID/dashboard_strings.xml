@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Beranda</string>
     <string name="navigation_view_apply">Terapkan</string>
     <string name="navigation_view_icons">Ikon</string>
+    <string name="navigation_view_request">Pesan ikon</string>
+    <string name="navigation_view_wallpapers">Wallpaper</string>
+    <string name="navigation_view_settings">Pengaturan</string>
     <!-- Muzei -->
     <!-- Menu -->
     <!-- Dialog -->
@@ -18,6 +22,7 @@
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Pesan ikon</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
