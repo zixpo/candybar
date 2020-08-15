@@ -55,10 +55,10 @@
     </string-array>
     <string-array name="answers">
         <item>Peluncur adalah bagian dari antar muka Android yang memungkinkan pengguna dapat menyesuaikan layar beranda, menjalankan aplikasi seluler, membuat panggilan telepon, dan melakukan aktivitas lain pada perangkat Android.</item>
-        <item>A set of graphics that will change the look of your app drawer icons</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play store description.
-            If you are confused which launchers should be used, just go to the \"Apply\" section, then install from there.</item>
+        <item>Seperangkat set grafis dapat mengubah tampilan ikon laci aplikasi anda</item>
+        <item>Anda akan membutuhkan sebuah peluncur yang mendukung kostum paket ikon.
+Peluncur yang di dukung terdaftar pada deskripsi Play store.
+Jika anda bingung peluncur mana yang sedang anda gunakan, pergi saja ke menu \"Terapkan\", lalu instal dari sana.</item>
         <item>You can open the navigation drawer then open \"Apply\". Choose your launcher from the list.
             If your launcher is not listed there but this icon pack is compatible with it
             (see on Google Play Store description for supported launchers),
