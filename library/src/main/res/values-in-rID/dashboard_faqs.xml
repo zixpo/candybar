@@ -47,10 +47,10 @@
         <item>Muzei: Saya tidak ingin terus mengunduh wallpaper setiap kali wallpaper berubah?</item>
         <item>Muzei: Saya hanya ingin menggunakan wallpaper yang spesifik?</item>
         <item>Mengapa izin Membaca &amp; Menulis Penyimpanan Eksternal diperlukan?</item>
-        <item>Mengapa izin koneksi internet diperlukan?</item>
-        <item>Why is Access Network State permission needed?</item>
-        <item>Why is Access Wifi State permission needed?</item>
-        <item>Why is Set Wallpaper permission needed?</item>
-        <item>Why is Wake Lock Permission needed?</item>
+        <item>Mengapa izin Internet diperlukan?</item>
+        <item>Mengapa izin Akses Status Jaringan diperlukan?</item>
+        <item>Mengapa izin Akses Status Wifi diperlukan?</item>
+        <item>Mengapa izin Mengatur Wallpaper diperlukan?</item>
+        <item>Mengapa izin Terjaga diperlukan?</item>
     </string-array>
 </resources>
