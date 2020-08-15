@@ -51,7 +51,14 @@
     <string name="license_checking">Memeriksa lisensi…</string>
     <string name="license_check">Pemeriksaan Lisensi</string>
     <string name="license_check_success">Pemeriksaan lisensi berhasil, terima kasih telah mengunduh aplikasi ini dari Play Store.</string>
+    <string name="license_check_failed">Pemeriksaan lisensi gagal, anda tidak mengunduh aplikasi ini dari Play Store.
+Anda tidak akan dapat menggunakan aplikasi ini.</string>
+    <string name="license_check_retry">Tidak dapat memeriksa lisensi, cobalah beberapa saat lagi.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Pemeriksaan Play Store</string>
+    <string name="playstore_check_success">Terima kasih telah menginstal aplikasi dari Play Store. Enjoy.</string>
+    <string name="playstore_check_failed">Sepertinya anda menginstal paket ikon ini di luar Play Store.
+Anda tidak dapat menggunakan aplikasi ini.</string>
     <!-- Share -->
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Cari</string>
