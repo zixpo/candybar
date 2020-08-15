@@ -68,9 +68,9 @@ anda dapat menerapkan paket ikon secara manual melalui pengaturan peluncur anda.
         <item>Itu tergantung peluncur mana yang anda gunakan. Tidak setiap peluncur mendukung modifikasi ikon.
 Kebanyakan anda dapat mengedit sebuah ikon dengan menyentuh &amp; menahan ikon atau menyentuhnya secara double.</item>
         <item>Anda dapat membuka panel navigasi lalu buka \"Pesan Ikon\".</item>
-        <item>You can open navigation drawer then open \"Settings\", choose \"Restore Purchases\".
-            If you had remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to SD Card, you should install it in internal memory.</item>
+        <item>Anda dapat membuka panel navigasi lalu buka \"Pengaturan\", pilih \"Pulihkan pembelian\".
+Jika anda memiliki Pesanan Premium sebelum instal ulang, mereka akan dipulihkan.</item>
+        <item>Ini terjadi karena paket ikon ini telah di pindah ke Kartu SD, anda harus menginstalnya di memori internal.</item>
         <item>The problem might come from the launcher that you used when handling big icon resolution.
        	    You can fix it by increasing the icon size to 115 - 120%.
        	    Alternatively you might change your launcher.</item>
