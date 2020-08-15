@@ -78,11 +78,11 @@ Alternatif lainnya mungkin coba ganti peluncur anda.</item>
         <item>\"Laporkan Masalah\" itu digunakan untuk melaporkan masalah terkait paket ikon, dan bukan terkait dashboard.</item>
         <item>Tidak setiap peluncur mendukung terapkan langsung, dan beberapa diantaranya tidak dapat di akses secara langsung dari dashboard.
 Anda dapat terapkan paket ikon secara manual melalui pengaturan peluncur masing-masing.</item>
-        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
-      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
-      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
-      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
-            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
+        <item>Ketika anda \"Mengatur Wallpaper\" secara langsung dari aplikasi, tindakan ini akan mengunduh ke bagian cache,
+lalu aplikasi dashboard akan mencoba menerapkan. Menerapkannya membutuhkan waktu beberapa saat dan juga membutuhkan jumlah RAM yang besar untuk proses lebih cepat.
+Eror \"Layar Hitam\" mungkin terjadi karena RAM pada perangkat tidak memiliki ruang bebas yang cukup untuk memproses wallpaper.
+Mulai ulang telepon anda akan menyelesaikan masalah ini. Setelah memulai ulang, telepon anda akan memiliki lebih banyak ruang RAM yang tersedia.
+Alternatif lainnya, anda dapat membuka wallpaper yang sudah di unduh melalui Galeri dan mengatur wallpaper dari sana.</item>
         <item>Open muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
             You will need to download wallpapers from the dashboard first.</item>
         <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
