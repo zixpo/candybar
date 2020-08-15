@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Beranda</string>
+    <string name="navigation_view_apply">Terapkan</string>
+    <string name="navigation_view_icons">Ikon</string>
     <!-- Muzei -->
     <!-- Menu -->
     <!-- Dialog -->
