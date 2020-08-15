@@ -60,7 +60,12 @@ Anda tidak akan dapat menggunakan aplikasi ini.</string>
     <string name="playstore_check_failed">Sepertinya anda menginstal paket ikon ini di luar Play Store.
 Anda tidak dapat menggunakan aplikasi ini.</string>
     <!-- Share -->
+    <string name="share_app_title">Hei! Lihatlah %s</string>
+    <string name="share_app_body">Lihatlah %1$s, paket ikon ini sangat keren! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Panel navigasi</string>
+    <string name="tap_intro_home_navigation_desc">Sentuh disini atau usap dari tepi kiri layar untuk membuka panel navigasi</string>
+    <string name="tap_intro_home_apply">Terapkan paket ikon</string>
     <string name="tap_intro_icons_search">Cari</string>
     <!-- Home -->
     <string name="home_donate">Donasi</string>
@@ -68,6 +73,12 @@ Anda tidak dapat menggunakan aplikasi ini.</string>
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">Pesan ikon</string>
+    <string name="request_building">Membuat pesanan…</string>
+    <string name="request_arctic_sending">Mengirim pesanan ke Arctic Manager...</string>
+    <string name="request_arctic_error">Terjadi kesalahan ketika mengirim pesanan ke Arctic Manager. Kesalahan %s</string>
+    <string name="request_arctic_success">Berhasil kirim pesanan ke Arctic Manager</string>
+    <string name="request_fetching_data">Mengambil data terbaru...</string>
+    <string name="request_build_failed">Tidak dapat membuat pesanan ikon</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
