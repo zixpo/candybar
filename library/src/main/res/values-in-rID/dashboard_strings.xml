@@ -19,8 +19,25 @@
     <string name="muzei_refresh_duration">Durasi menyegarkan</string>
     <string name="muzei_wifi_only">Segarkan dari Wifi saja</string>
     <string name="muzei_downloaded_only">Muat Wallpaper terunduh Saja</string>
+    <string name="muzei_settings_ignored">Paket Ikon tidak menyertakan wallpaper, pengaturan di abaikan.</string>
+    <string name="muzei_settings_saved">Pengaturan Tersimpan</string>
     <!-- Menu -->
+    <string name="menu_search">Cari</string>
+    <string name="menu_save">Simpan ke Perangkat</string>
+    <string name="menu_select_all">Pilih Semua</string>
+    <string name="menu_wallpaper_crop">Potong Wallpaper</string>
+    <string name="menu_apply_homescreen">Layar Beranda</string>
+    <string name="menu_apply_lockscreen">Layar Kunci</string>
+    <string name="menu_apply_homescreen_lockscreen">Layar Beranda &amp; Layar Kunci</string>
     <!-- Dialog -->
+    <string name="open">Buka</string>
+    <string name="close">Tutup</string>
+    <string name="clear">Bersihkan</string>
+    <string name="ok">OK</string>
+    <string name="install">Instal</string>
+    <string name="donate">Donasi</string>
+    <string name="update">Pembaruan</string>
+    <string name="search_noresult">Tidak ada hasil ditemukan untuk \"%s\"</string>
     <!-- Update -->
     <!-- Changelog -->
     <!-- InAppBilling -->
@@ -28,7 +45,9 @@
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Cari</string>
     <!-- Home -->
+    <string name="home_donate">Donasi</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
@@ -45,4 +64,6 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Buka</string>
+    <string name="txt_close">Tutup</string>
 </resources>
