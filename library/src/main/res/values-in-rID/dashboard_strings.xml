@@ -119,7 +119,15 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="wallpaper_already_downloaded">Wallpaper sudah terunduh</string>
     <string name="wallpaper_downloading">Mengunduh wallpaper…</string>
     <string name="wallpaper_download_failed">Tidak dapat mengunduh wallpaper</string>
+    <string name="wallpaper_loading">Memuat wallpaper…</string>
+    <string name="wallpaper_applying">Menerapkan wallpaper…</string>
+    <string name="wallpaper_applied">Wallpaper diterapkan</string>
+    <string name="wallpaper_apply_failed">Tidak dapat menerapkan wallpaper</string>
+    <string name="wallpaper_apply_cancelled">Penerapan wallpaper dibatalkan</string>
+    <string name="connection_failed">Tidak dapat mengambil data dari server</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Data &amp; Cache</string>
+    <string name="pref_data_cache">Bersihkan Cache</string>
     <string name="pref_premium_request_header">Pesanan Ikon Premium</string>
     <!-- Permission -->
     <!-- Intent -->
