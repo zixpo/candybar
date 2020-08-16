@@ -76,8 +76,24 @@ Anda tidak dapat menggunakan aplikasi ini.</string>
     <string name="tap_intro_request_send">Kirim permintaan ikon</string>
     <string name="tap_intro_request_send_desc">Sentuh disini untuk memilih aplikasi terlewat</string>
     <string name="tap_intro_request_premium">Pesanan Ikon Premium</string>
+    <string name="tap_intro_request_premium_desc">Sentuh disini untuk membeli paket pemesanan ikon premium,
+dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.</string>
+    <string name="tap_intro_wallpapers_option">Opsi wallpaper</string>
+    <string name="tap_intro_wallpapers_option_desc">Sentuh dan tahan disini untuk menampilkan opsi, %s terapkan wallpaper.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">unduh atau</string>
+    <string name="tap_intro_wallpapers_preview">Pratinjau wallpaper</string>
+    <string name="tap_intro_wallpapers_preview_desc">Sentuh di sini untuk melihat pratinjau ukuran asli wallpaper</string>
+    <string name="tap_intro_wallpaper_preview_save">Simpan wallpaper</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Sentuh di sini untuk mengunduh dan menyimpan wallpaper ke penyimpanan perangkat agar anda bisa menggunakannya nanti</string>
+    <string name="tap_intro_wallpaper_preview_apply">Terapkan wallpaper</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Sentuh di sini untuk menetapkan wallpaper sebagai latar belakang layar beranda</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Aplikasi lainnya</string>
+    <string name="home_more_apps">Lihat aplikasi lainnya yang diterbitkan di Play Store</string>
+    <string name="home_rate_and_review">Nilai &amp; Berikan ulasan</string>
+    <string name="home_apply_icon_pack">Terapkan %s</string>
     <string name="home_donate">Donasi</string>
+    <string name="home_donate_desc">Dukung pengembangan paket ikon</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
@@ -134,6 +150,8 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="wallpaper_apply_failed">Tidak dapat menerapkan wallpaper</string>
     <string name="wallpaper_apply_cancelled">Penerapan wallpaper dibatalkan</string>
     <string name="connection_failed">Tidak dapat mengambil data dari server</string>
+    <string name="wallpaper_apply">Terapkan wallpaper</string>
+    <string name="wallpaper_save_to_device">Simpan wallpaper</string>
     <!-- Preferences -->
     <string name="pref_data_header">Data &amp; Cache</string>
     <string name="pref_data_cache">Bersihkan Cache</string>
