@@ -94,7 +94,17 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="home_apply_icon_pack">Terapkan %s</string>
     <string name="home_donate">Donasi</string>
     <string name="home_donate_desc">Dukung pengembangan paket ikon</string>
+    <string name="home_icons">Kostum ikon</string>
+    <string name="home_icon_dimension">%s dimensi pixel ikon</string>
+    <string name="home_loud_wallpapers">%d Wallpaper berbasis cloud</string>
+    <string name="home_muzei">Muzei live wallpaper</string>
+    <string name="home_icon_request_installed_apps">Total\n%d aplikasi terpasang</string>
+    <string name="home_icon_request_themed_apps">Aplikasi\n%d bertema</string>
+    <string name="home_icon_request_missed_apps">Aplikasi\n%d terlewat</string>
     <!-- Apply -->
+    <string name="apply_installed">Peluncur terpasang</string>
+    <string name="apply_supported">Peluncur yang didukung</string>
+    <string name="apply_manual">%1$s Peluncur tidak mendukung terapkan langsung tetapi anda bisa menerapkan %2$s manual dari menu pengaturan peluncur.</string>
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">Pesan ikon</string>
