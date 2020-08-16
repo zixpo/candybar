@@ -195,10 +195,20 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="pref_premium_request_restore_success">Pesanan Premium Dipulihkan</string>
     <string name="pref_premium_request_restore_empty">Anda tidak memiliki paket pembelian apa pun</string>
     <string name="pref_premium_request_rebuild">Buat Ulang Pesanan Ikon Premium</string>
-    <string name="pref_premium_request_rebuild_desc">Kumpulkan semua data permintaan ikon premium untuk mengirim ulang</string>
+    <string name="pref_premium_request_rebuild_desc">Kumpulkan semua data permintaan ikon premium untuk mengirimnya ulang</string>
     <string name="pref_theme_header">Tema</string>
     <string name="pref_theme_dark">Tema Gelap</string>
+    <string name="pref_theme_dark_desc">Gunakan warna gelap untuk tema aplikasi</string>
+    <string name="pref_wallpaper_header">Wallpaper</string>
+    <string name="pref_wallpaper_location">Lokasi penyimpanan Wallpaper</string>
+    <string name="pref_language_header">Bahasa</string>
+    <string name="pref_others_header">Lainnya</string>
+    <string name="pref_others_report_bugs">Laporkan Masalah</string>
+    <string name="pref_others_changelog">Catatan perubahan</string>
+    <string name="pref_others_reset_tutorial">Atur ulang Tutorial</string>
+    <string name="pref_others_reset_tutorial_reset">Tutorial sudah di Atur ulang</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Izin penyimpanan diperlukan untuk menyimpan wallpaper</string>
     <!-- Intent -->
     <!-- About -->
     <!-- Report Bugs -->
