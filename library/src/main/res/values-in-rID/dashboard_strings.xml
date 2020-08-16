@@ -115,9 +115,14 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="apply_lg_home_not_available">Beranda LG tidak tersedia di perangkat ini</string>
     <string name="apply_lg_home_failed">Tidak dapat membuka Pengaturan Beranda LG, anda dapat mencoba menerapkan Paket Ikon secara manual dari Pengaturan.</string>
     <string name="apply_lg_home_nougat">Beranda LG dengan Android Nougat tidak lagi mendukung Paket ikon, Anda membutuhkan sebuah peluncur kostum untuk menggunakan Paket Ikon.</string>
+    <string name="apply_launcher_incompatible">%s Peluncur tidak mendukung paket ikon apapun, jadi anda tidak dapat menggunakan paket ikon dengan peluncur ini. Anda bisa mencoba sebuah aplikasi pihak ketiga agar dapat menggunakan paket ikon ini pada Peluncur %2$s. Apakah anda ingin menginstalnya?</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Tidak dapat memuat ikon</string>
+    <string name="icon_shape">Bentuk Ikon</string>
     <!-- Request -->
     <string name="request_title">Pesan ikon</string>
+    <string name="request_not_selected">Pilih aplikasi untuk memesan</string>
+    <string name="request_not_requested">Tidak dipesan</string>
     <string name="request_building">Membuat pesanan…</string>
     <string name="request_arctic_sending">Mengirim pesanan ke Arctic Manager...</string>
     <string name="request_arctic_error">Terjadi kesalahan ketika mengirim pesanan ke Arctic Manager. Kesalahan %s</string>
