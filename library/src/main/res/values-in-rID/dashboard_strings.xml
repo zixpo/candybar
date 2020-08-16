@@ -8,7 +8,7 @@
     <string name="navigation_view_request">Pesan ikon</string>
     <string name="navigation_view_wallpapers">Wallpaper</string>
     <string name="navigation_view_settings">Pengaturan</string>
-    <string name="navigation_view_faqs">FAQs</string>
+    <string name="navigation_view_faqs">Tanya Jawab</string>
     <string name="navigation_view_about">Tentang</string>
     <string name="navigation_view_donate">Dukung Pengembangan</string>
     <!-- Muzei -->
@@ -128,6 +128,12 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Data &amp; Cache</string>
     <string name="pref_data_cache">Bersihkan Cache</string>
+    <string name="pref_data_cache_desc">Bersihkan cache gambar dari penyimpanan anda, yang dibuat ketika memilih sebuah gambar dari aplikasi ini, pemesanan ikon aplikasi yang tidak disertakan, dan setelah memuat gambar thumbnails berbasis cloud.</string>
+    <string name="pref_data_cache_size">Ukuran Chace: %s</string>
+    <string name="pref_data_cache_clear_dialog">Apakan anda yakin ingin membersihkan cache?</string>
+    <string name="pref_data_cache_cleared">Cache telah dibersihkan</string>
+    <string name="pref_data_request">Bersihkan data Permintaan Ikon</string>
+    <string name="pref_data_request_desc">Hapus data permintaan ikon, yang dibuat setelah memesan ikon aplikasi yang tidak disertakan dari pesanan ikon.</string>
     <string name="pref_premium_request_header">Pesanan Ikon Premium</string>
     <!-- Permission -->
     <!-- Intent -->
