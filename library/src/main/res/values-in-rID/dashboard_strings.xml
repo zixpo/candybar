@@ -110,6 +110,11 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="apply_launcher_not_installed">%s Peluncur tidak terpasang. Apakah anda ingin membuka Google Play Store untuk mengunduh dan menginstalnya?</string>
     <string name="apply_launcher_not_installable">%s Peluncur tidak terpasang. Silakan coba lagi setelah menginstal peluncur.</string>
     <string name="apply_cmtheme_not_available">Pengelola Tema CM tidak tersedia pada perangkat ini</string>
+    <string name="apply_cmtheme_failed">Tidak dapat membuka Pengelola Tema CM, anda dapat mencoba menerapkan Paket Ikon secara manual dari Pengaturan.</string>
+    <string name="apply_lg_home">Untuk menerapkan Paket Ikon buka pengaturan - Layar - Layar beranda - Tema</string>
+    <string name="apply_lg_home_not_available">Beranda LG tidak tersedia di perangkat ini</string>
+    <string name="apply_lg_home_failed">Tidak dapat membuka Pengaturan Beranda LG, anda dapat mencoba menerapkan Paket Ikon secara manual dari Pengaturan.</string>
+    <string name="apply_lg_home_nougat">Beranda LG dengan Android Nougat tidak lagi mendukung Paket ikon, Anda membutuhkan sebuah peluncur kostum untuk menggunakan Paket Ikon.</string>
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">Pesan ikon</string>
