@@ -93,11 +93,21 @@ Anda tidak dapat menggunakan aplikasi ini.</string>
     <string name="regular_request_desc">Dapatkan ikon pesanan anda dan pengembang akan mencoba untuk menyertakan ikon yang anda pesan.</string>
     <string name="regular_request_count">Total\n%dPesanan</string>
     <string name="regular_request_used">Terpakai\n%d pesanan</string>
+    <string name="regular_request_available">Tersedia\n%d pesanan</string>
     <!-- Premium Request -->
+    <string name="premium_request">Pesanan Ikon Premium</string>
+    <string name="premium_request_no_internet">Pastikan telepon anda terhubung ke internet sebelum mengirim sebuah pesanan premium</string>
+    <string name="premium_request_desc">Pesanan ikon premium adalah pemesanan berbayar. Anda bisa mendapat aplikasi pesanan yang dipesan lebih cepat dengan menggunakan Pesanan ikon premium.</string>
+    <string name="premium_request_buy">Beli</string>
     <string name="premium_request_count">Total\n%dPesanan</string>
     <string name="premium_request_used">Terpakai\n%d pesanan</string>
+    <string name="premium_request_available">Tersedia\n%d pesanan</string>
+    <string name="premium_request_already_purchased">Anda masih memiliki %d pesanan premium.
+Anda harus menggunakan semuanya sebelum membeli paket pesanan premium lagi.</string>
+    <string name="premium_request_limit">Anda hanya memiliki %d pesanan premium,</string>
     <!-- Wallpapers -->
     <!-- Preferences -->
+    <string name="pref_premium_request_header">Pesanan Ikon Premium</string>
     <!-- Permission -->
     <!-- Intent -->
     <!-- About -->
