@@ -210,7 +210,18 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Izin penyimpanan diperlukan untuk menyimpan wallpaper</string>
     <!-- Intent -->
+    <string name="app_client">Pilih Aplikasi</string>
+    <string name="no_email_app">Tidak ada aplikasi untuk kirim email</string>
+    <string name="no_browser">Tidak ada aplikasi untuk membuka url</string>
+    <string name="intent_email_failed">Tidak dapat menampilkan aplikasi email</string>
+    <string name="intent_email_supported">Didukung</string>
+    <string name="intent_email_recommended">Direkomendasikan</string>
+    <string name="intent_email_not_supported">Tidak Didukung</string>
+    <string name="intent_email_not_supported_message">Klien email yang dipilih tidak didukung, silakan pilih klien email yang lainnya</string>
     <!-- About -->
+    <string name="about_contributors_title">Kontributor</string>
+    <string name="about_privacy_policy_title">Kebijakan Privasi</string>
+    <string name="about_terms_and_conditions_title">Syarat dan Ketentuan</string>
     <!-- Report Bugs -->
     <!-- Support Development -->
     <!-- Crash Report -->
