@@ -223,8 +223,16 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="about_privacy_policy_title">Kebijakan Privasi</string>
     <string name="about_terms_and_conditions_title">Syarat dan Ketentuan</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Mohon berikan penjelasan tentang masalah jenis apa yang anda ingin laporkan</string>
+    <string name="report_bugs_desc_hint">Deskripsi</string>
+    <string name="report_bugs_desc_empty">Harap berikan deskripsi</string>
+    <string name="report_bugs_building">Membuat daftar aktivitas…</string>
+    <string name="report_bugs_failed">Tidak dapat membuat daftar aktivitas</string>
+    <string name="report_bugs_send">Kirim Laporan</string>
     <!-- Support Development -->
+    <string name="donation_success">Terima kasih atas donasi yang anda berikan. Saya akan menggunakannya untuk kebaikan.</string>
     <!-- Crash Report -->
+    <string name="crash_report_send">Kirim Laporan</string>
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
     <string name="txt_open">Buka</string>
