@@ -237,7 +237,12 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="crash_report_send">Kirim Laporan</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar merupakan dashboard paket ikon sumber terbuka di bawah lisensi Apache License 2.0 untuk Android tersedia di GitHub dan bebas untuk digunakan, Dikembangkan oleh Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Lisensi Sumber Terbuka</string>
+    <string name="about_dashboard_contributors">Kontributor CandyBar</string>
+    <string name="about_dashboard_translator">Penerjemah CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Buka</string>
     <string name="txt_close">Tutup</string>
+    <string name="txt_new">Baru</string>
 </resources>
