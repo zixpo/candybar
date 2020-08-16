@@ -232,8 +232,11 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <!-- Support Development -->
     <string name="donation_success">Terima kasih atas donasi yang anda berikan. Saya akan menggunakannya untuk kebaikan.</string>
     <!-- Crash Report -->
+    <string name="crash_report">Laporkan Kerusakan</string>
+    <string name="crash_report_message">Sayangnya %s terjadi kerusakan, Pilih kirim laporan di bawah untuk membantu pengembang perbaiki persoalan tersebut.</string>
     <string name="crash_report_send">Kirim Laporan</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Buka</string>
     <string name="txt_close">Tutup</string>
