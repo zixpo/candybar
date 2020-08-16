@@ -123,6 +123,7 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="request_title">Pesan ikon</string>
     <string name="request_not_selected">Pilih aplikasi untuk memesan</string>
     <string name="request_not_requested">Tidak dipesan</string>
+    <string name="request_already_requested">Sudah dipesan</string>
     <string name="request_building">Membuat pesanan…</string>
     <string name="request_arctic_sending">Mengirim pesanan ke Arctic Manager...</string>
     <string name="request_arctic_error">Terjadi kesalahan ketika mengirim pesanan ke Arctic Manager. Kesalahan %s</string>
@@ -186,7 +187,17 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="pref_data_cache_cleared">Cache telah dibersihkan</string>
     <string name="pref_data_request">Bersihkan data Permintaan Ikon</string>
     <string name="pref_data_request_desc">Hapus data permintaan ikon, yang dibuat setelah memesan ikon aplikasi yang tidak disertakan dari pesanan ikon.</string>
+    <string name="pref_data_request_clear_dialog">Apakah Anda yakin ingin membersihkan data pemesanan?</string>
+    <string name="pref_data_request_cleared">Data pemesanan ikon telah dibersihkan</string>
     <string name="pref_premium_request_header">Pesanan Ikon Premium</string>
+    <string name="pref_premium_request_restore">Pulihkan Pembelian</string>
+    <string name="pref_premium_request_restore_desc">Pulihkan paket pesanan premium setelah menginstal ulang paket ikon</string>
+    <string name="pref_premium_request_restore_success">Pesanan Premium Dipulihkan</string>
+    <string name="pref_premium_request_restore_empty">Anda tidak memiliki paket pembelian apa pun</string>
+    <string name="pref_premium_request_rebuild">Buat Ulang Pesanan Ikon Premium</string>
+    <string name="pref_premium_request_rebuild_desc">Kumpulkan semua data permintaan ikon premium untuk mengirim ulang</string>
+    <string name="pref_theme_header">Tema</string>
+    <string name="pref_theme_dark">Tema Gelap</string>
     <!-- Permission -->
     <!-- Intent -->
     <!-- About -->
