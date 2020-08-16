@@ -105,7 +105,20 @@ Anda tidak dapat menggunakan aplikasi ini.</string>
     <string name="premium_request_already_purchased">Anda masih memiliki %d pesanan premium.
 Anda harus menggunakan semuanya sebelum membeli paket pesanan premium lagi.</string>
     <string name="premium_request_limit">Anda hanya memiliki %d pesanan premium,</string>
+    <string name="premium_request_limit1">tapi anda memilih %d aplikasi.
+\n\nAnda harus menggunakan semua pesanan premium sebelum menggunakan pesanan reguler lagi.</string>
+    <string name="premium_request_consume_failed">Tidak dapat menggunakan Pesanan Premium, pastikan anda memiliki koneksi internet yang stabil dan coba lagi.
+Pergi ke Pengaturan untuk membuat ulang Pesanan Premium.</string>
+    <string name="premium_request_rebuilding">Membuat ulang Pesanan Premium…</string>
+    <string name="premium_request_rebuilding_empty">Anda belum membuat sebuah Pesanan Premium</string>
+    <string name="premium_request_exist">Anda masih memiliki paket permintaan ikon premium.
+Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
+    <string name="premium_request_required">Anda perlu membeli paket permintaan ikon premium untuk membuat pesanan ikon</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Wallpaper baru</string>
+    <string name="wallpaper_already_downloaded">Wallpaper sudah terunduh</string>
+    <string name="wallpaper_downloading">Mengunduh wallpaper…</string>
+    <string name="wallpaper_download_failed">Tidak dapat mengunduh wallpaper</string>
     <!-- Preferences -->
     <string name="pref_premium_request_header">Pesanan Ikon Premium</string>
     <!-- Permission -->
