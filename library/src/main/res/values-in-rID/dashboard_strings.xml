@@ -84,9 +84,18 @@ Anda tidak dapat menggunakan aplikasi ini.</string>
     <string name="request_email_client">Pilih aplikasi yang ingin anda gunakan untuk kirim pesanan ikon</string>
     <string name="request_app_disabled">Anda sedang menggunakan aplikasi paket ikon versi lawas. Ikon pesanan mungkin disertakan dalam versi terbaru. Silakan perbarui aplikasi anda ke versi terbaru untuk memesan ikon.</string>
     <string name="connection_error_long">Tidak dapat memuat data dari server. Mohon periksa koneksi jaringan anda.</string>
-    <string name="request_limit">Anda hanya bisa membuat %d pesanan dengan permintaan reguler.</string>
+    <string name="request_limit">Anda hanya bisa membuat %d permintaan dengan pesanan reguler.</string>
+    <string name="request_used">Anda telah memesan %d ikon.</string>
+    <string name="request_limit_buy">Anda bisa membeli Pesanan Premium untuk memesan lebih banyak ikon.</string>
+    <string name="request_limit_reset">Batas pemesanan ikon akan di set ulang pada setiap pembaruan.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Pesan ikon Reguler</string>
+    <string name="regular_request_desc">Dapatkan ikon pesanan anda dan pengembang akan mencoba untuk menyertakan ikon yang anda pesan.</string>
+    <string name="regular_request_count">Total\n%dPesanan</string>
+    <string name="regular_request_used">Terpakai\n%d pesanan</string>
     <!-- Premium Request -->
+    <string name="premium_request_count">Total\n%dPesanan</string>
+    <string name="premium_request_used">Terpakai\n%d pesanan</string>
     <!-- Wallpapers -->
     <!-- Preferences -->
     <!-- Permission -->
