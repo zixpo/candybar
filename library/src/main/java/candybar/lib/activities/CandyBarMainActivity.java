@@ -395,11 +395,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     public void onRequestBuilt(Intent intent, int type) {
-        if (intent == null) {
-            Toast.makeText(this, "Icon Request: Intent is null", Toast.LENGTH_LONG).show();
-            return;
-        }
-
         if (type == IntentChooserFragment.ICON_REQUEST) {
             if (RequestFragment.sSelectedRequests == null)
                 return;
@@ -430,12 +425,15 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             }
         }
 
-        try {
-            startActivity(intent);
-        } catch (IllegalArgumentException e) {
-            startActivity(Intent.createChooser(intent,
-                    getResources().getString(R.string.app_client)));
+        if (intent != null) {
+            try {
+                startActivity(intent);
+            } catch (IllegalArgumentException e) {
+                startActivity(Intent.createChooser(intent,
+                        getResources().getString(R.string.app_client)));
+            }
         }
+
         CandyBarApplication.sRequestProperty = null;
         CandyBarApplication.sZipPath = null;
     }

@@ -300,8 +300,7 @@ public class Preferences {
     public boolean isNewVersion() {
         int version = 0;
         try {
-            version = mContext.getPackageManager().getPackageInfo(
-                    mContext.getPackageName(), 0).versionCode;
+            version = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0).versionCode;
         } catch (PackageManager.NameNotFoundException ignored) {
         }
         if (version > getVersion()) {

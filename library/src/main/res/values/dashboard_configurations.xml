@@ -153,15 +153,33 @@
     <!-- Hide missing app count -->
     <bool name="hide_missing_app_count">false</bool>
 
-    <!-- Email that will be used to send icon request and report bugs -->
+    <!--
+        These are deprecated and are only used for fallbacks
+    -->
     <string name="dev_email">your@email.com</string>
-
-    <!-- Icon Request Email Subject. Set Empty to Use Deafult Subject. -->
     <string name="request_email_subject"></string>
+    <string name="arctic_manager_api_key"></string>
+
+    <!-- These are the new things that made previous options deprecated -->
+    <!-- Email to use when sending icon requests.
+        Regular request email address will be used to send bug reports.
+        You can leave "premium_request_email" empty to use the regular request's email to send premium icon requests. -->
+    <string name="regular_request_email"></string>
+    <string name="premium_request_email"></string>
+
+    <!-- Icon request email subjects. Leave empty to use default Subject. -->
+    <string name="regular_request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
 
-    <!-- Icon Request with Arctic Manager. Leave empty to disable Arctic Manager. -->
-    <string name="arctic_manager_api_key"></string>
+    <!-- API keys for Arctic Manager.
+        You can leave "premium_request_arctic_api_key" empty to use the regular request's arctic api key to send premium icon requests. -->
+    <string name="regular_request_arctic_api_key"></string>
+    <string name="premium_request_arctic_api_key"></string>
+
+    <!-- Method to use for icon request. Value can be "email" or "arctic".
+        You can leave "premium_request_method" empty to use the regular request's method to send premium icon requests. -->
+    <string name="regular_request_method"></string>
+    <string name="premium_request_method"></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
 

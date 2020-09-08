@@ -175,10 +175,17 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
             }
         }
 
-        String subject = "Rebuild Premium Request " + mContext.get().getResources().getString(R.string.app_name);
+        String subject = mContext.get().getResources().getString(R.string.premium_request_email_subject);
+        if (subject.length() == 0)
+            subject = mContext.get().getResources().getString(R.string.app_name) + " Premium Icon Request";
+        subject = "Rebuilt: " + subject;
 
-        intent.putExtra(Intent.EXTRA_EMAIL,
-                new String[]{mContext.get().getResources().getString(R.string.dev_email)});
+        String emailAddress = mContext.get().getResources().getString(R.string.premium_request_email);
+        // Fallback to dev_email
+        if (emailAddress.length() == 0)
+            emailAddress = mContext.get().getResources().getString(R.string.dev_email);
+
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, emailBody);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |

@@ -206,22 +206,26 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         }
 
         String appName = mContext.get().getResources().getString(R.string.app_name);
-        String regRequestSubject = appName + " Icon Request";
-        String premRequestSubject = appName + " Premium Icon Request";
 
-        if (mContext.get().getResources().getString(R.string.request_email_subject).length() > 0) {
-            regRequestSubject = mContext.get().getResources().getString(R.string.request_email_subject);
-        }
+        String regularRequestSubject = mContext.get().getResources().getString(R.string.regular_request_email_subject);
+        // Fallback to request_email_subject
+        if (regularRequestSubject.length() == 0)
+            regularRequestSubject = mContext.get().getResources().getString(R.string.request_email_subject);
+        if (regularRequestSubject.length() == 0) regularRequestSubject = appName + " Icon Request";
 
-        if (mContext.get().getResources().getString(R.string.premium_request_email_subject).length() > 0) {
-            premRequestSubject = mContext.get().getResources().getString(R.string.premium_request_email_subject);
-        }
+        String premiumRequestSubject = mContext.get().getResources().getString(R.string.premium_request_email_subject);
+        if (premiumRequestSubject.length() == 0)
+            premiumRequestSubject = appName + " Premium Icon Request";
 
-        String subject = Preferences.get(mContext.get()).isPremiumRequest() ?
-                premRequestSubject : regRequestSubject;
+        String subject = Preferences.get(mContext.get()).isPremiumRequest() ? premiumRequestSubject : regularRequestSubject;
+        String emailAddress = Preferences.get(mContext.get()).isPremiumRequest()
+                ? mContext.get().getResources().getString(R.string.premium_request_email)
+                : mContext.get().getResources().getString(R.string.regular_request_email);
+        // Fallback to dev_email
+        if (emailAddress.length() == 0)
+            emailAddress = mContext.get().getResources().getString(R.string.dev_email);
 
-        intent.putExtra(Intent.EXTRA_EMAIL,
-                new String[]{mContext.get().getResources().getString(R.string.dev_email)});
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, emailBody);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |

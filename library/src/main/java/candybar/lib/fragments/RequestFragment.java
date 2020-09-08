@@ -64,11 +64,7 @@ import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.InAppBillingProcessor;
 import candybar.lib.utils.listeners.InAppBillingListener;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import candybar.lib.utils.listeners.RequestListener;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
 
@@ -376,13 +372,21 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private class RequestLoader extends AsyncTask<Void, Void, Boolean> {
 
         private MaterialDialog dialog;
-        private String apiKey = getResources().getString(R.string.arctic_manager_api_key);
-        private boolean isArctic = apiKey.length() > 0;
+        private boolean isArctic;
+        private String arcticApiKey;
         private String errorMessage;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+
+            if (Preferences.get(getActivity()).isPremiumRequest()) {
+                isArctic = RequestHelper.isPremiumArcticEnabled(getActivity());
+                arcticApiKey = RequestHelper.getPremiumArcticApiKey(getActivity());
+            } else {
+                isArctic = RequestHelper.isRegularArcticEnabled(getActivity());
+                arcticApiKey = RequestHelper.getRegularArcticApiKey(getActivity());
+            }
 
             dialog = new MaterialDialog.Builder(getActivity())
                     .typeface(
@@ -418,34 +422,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     }
 
                     if (isArctic) {
-                        RequestBody okRequestBody = new MultipartBody.Builder()
-                                .setType(MultipartBody.FORM)
-                                .addFormDataPart("apps", RequestHelper.buildJsonForArctic(requests))
-                                .addFormDataPart("archive", "icons.zip", RequestBody.create(RequestHelper.getZipFile(files, directory.toString(), "icons.zip"), MediaType.parse("application/zip")))
-                                .build();
-
-                        okhttp3.Request okRequest = new okhttp3.Request.Builder()
-                                .url("https://arcticmanager.com/v1/request")
-                                .addHeader("TokenID", apiKey)
-                                .addHeader("Accept", "application/json")
-                                .addHeader("User-Agent", "afollestad/icon-request")
-                                .post(okRequestBody)
-                                .build();
-
-                        OkHttpClient okHttpClient = new OkHttpClient();
-
-                        try {
-                            Response response = okHttpClient.newCall(okRequest).execute();
-                            boolean success = response.code() > 199 && response.code() < 300;
-                            if (!success) {
-                                JSONObject responseJson = new JSONObject(response.body().string());
-                                errorMessage = responseJson.getString("error");
-                                return false;
-                            }
-                        } catch (IOException | JSONException ignoredException) {
-                            LogUtil.d("ARCTIC_MANAGER: Error");
-                            return false;
-                        }
+                        errorMessage = RequestHelper.sendArcticRequest(requests, files, directory, arcticApiKey);
+                        return errorMessage == null;
                     } else {
                         boolean nonMailingAppSend = getResources().getBoolean(R.bool.enable_non_mail_app_request);
                         Intent intent;
@@ -504,15 +482,14 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
-            mAsyncTask = null;
             dialog.dismiss();
+            mAsyncTask = null;
+            dialog = null;
 
             if (aBoolean) {
                 if (isArctic) {
                     Toast.makeText(getActivity(), R.string.request_arctic_success, Toast.LENGTH_LONG).show();
-
-                    Preferences.get(getActivity()).setRegularRequestUsed(Preferences.get(getActivity()).getRegularRequestUsed() + RequestFragment.sSelectedRequests.size());
-                    refreshIconRequest();
+                    ((RequestListener) getActivity()).onRequestBuilt(null, IntentChooserFragment.ICON_REQUEST);
                 } else {
                     IntentChooserFragment.showIntentChooserDialog(getActivity().getSupportFragmentManager(),
                             IntentChooserFragment.ICON_REQUEST);
@@ -539,7 +516,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                             Toast.LENGTH_LONG).show();
                 }
             }
-
         }
     }
 
@@ -601,6 +577,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         @Override
         protected void onPostExecute(Boolean resBoolean) {
+            dialog.dismiss();
+            dialog = null;
+
             if (resBoolean) {
                 try {
                     updateUrl = configJson.getString("url");
@@ -625,8 +604,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 for (String version : disabledReqOns) {
                     if ((appVersionCode + "").contentEquals(version)) canRequest = false;
                 }
-
-                dialog.dismiss();
 
                 if (!canRequest) {
                     new MaterialDialog.Builder(getActivity())
@@ -653,8 +630,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 }
 
             } else {
-                dialog.dismiss();
-
                 new MaterialDialog.Builder(getActivity())
                         .typeface(
                                 TypefaceHelper.getMedium(getActivity()),

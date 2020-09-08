@@ -16,6 +16,8 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.TimeHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.BufferedInputStream;
@@ -172,6 +174,73 @@ public class RequestHelper {
         sb.append("]}");
 
         return sb.toString();
+    }
+
+    public static String getRegularArcticApiKey(Context context) {
+        String arcticApiKey = context.getResources().getString(R.string.regular_request_arctic_api_key);
+        // Fallback to arctic_manager_api_key
+        if (arcticApiKey.length() == 0)
+            arcticApiKey = context.getResources().getString(R.string.arctic_manager_api_key);
+
+        return arcticApiKey;
+    }
+
+    public static boolean isRegularArcticEnabled(Context context) {
+        return context.getResources().getString(R.string.regular_request_method).length() > 0
+                ? context.getResources().getString(R.string.regular_request_method).contentEquals("arctic")
+                // Use fallback method to check if arctic is enabled
+                : getRegularArcticApiKey(context).length() > 0;
+    }
+
+    public static String getPremiumArcticApiKey(Context context) {
+        String arcticApiKey = context.getResources().getString(R.string.premium_request_arctic_api_key);
+        // Fallback to regular request's api key
+        if (arcticApiKey.length() == 0) arcticApiKey = getRegularArcticApiKey(context);
+
+        return arcticApiKey;
+    }
+
+    public static boolean isPremiumArcticEnabled(Context context) {
+        return context.getResources().getString(R.string.premium_request_method).length() > 0
+                ? context.getResources().getString(R.string.premium_request_method).contentEquals("arctic")
+                // Fallback to regular request's method
+                : context.getResources().getString(R.string.regular_request_method).length() > 0
+                ? context.getResources().getString(R.string.regular_request_method).contentEquals("arctic")
+                // Use fallback method to check if arctic is enabled
+                : getRegularArcticApiKey(context).length() > 0;
+    }
+
+    public static String sendArcticRequest(List<Request> requests, List<String> iconFiles, File directory, String apiKey) {
+        okhttp3.RequestBody okRequestBody = new okhttp3.MultipartBody.Builder()
+                .setType(okhttp3.MultipartBody.FORM)
+                .addFormDataPart("apps", buildJsonForArctic(requests))
+                .addFormDataPart("archive", "icons.zip", okhttp3.RequestBody.create(
+                        getZipFile(iconFiles, directory.toString(), "icons.zip"),
+                        okhttp3.MediaType.parse("application/zip")))
+                .build();
+
+        okhttp3.Request okRequest = new okhttp3.Request.Builder()
+                .url("https://arcticmanager.com/v1/request")
+                .addHeader("TokenID", apiKey)
+                .addHeader("Accept", "application/json")
+                .addHeader("User-Agent", "afollestad/icon-request")
+                .post(okRequestBody)
+                .build();
+
+        okhttp3.OkHttpClient okHttpClient = new okhttp3.OkHttpClient();
+
+        try {
+            okhttp3.Response response = okHttpClient.newCall(okRequest).execute();
+            boolean success = response.code() > 199 && response.code() < 300;
+            if (!success) {
+                JSONObject responseJson = new JSONObject(response.body().string());
+                return responseJson.getString("error");
+            }
+        } catch (IOException | JSONException ignoredException) {
+            LogUtil.d("ARCTIC_MANAGER: Error");
+            return "";
+        }
+        return null;
     }
 
     public static File getZipFile(List<String> files, String filepath, String filename) {

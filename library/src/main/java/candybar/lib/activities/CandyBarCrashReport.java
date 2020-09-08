@@ -55,6 +55,11 @@ public class CandyBarCrashReport extends AppCompatActivity {
             String deviceInfo = DeviceHelper.getDeviceInfoForCrashReport(this);
 
             String message = getResources().getString(R.string.crash_report_message, getResources().getString(R.string.app_name));
+            String emailAddress = getResources().getString(R.string.regular_request_email).length() > 0
+                    ? getResources().getString(R.string.regular_request_email)
+                    // Fallback to dev_email
+                    : getResources().getString(R.string.dev_email);
+
             new MaterialDialog.Builder(this)
                     .title(R.string.crash_report)
                     .content(message)
@@ -65,8 +70,7 @@ public class CandyBarCrashReport extends AppCompatActivity {
                     .onPositive((dialog, which) -> {
                         Intent intent = new Intent(Intent.ACTION_SEND);
                         intent.setType("text/plain");
-                        intent.putExtra(Intent.EXTRA_EMAIL,
-                                new String[]{getResources().getString(R.string.dev_email)});
+                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
                         intent.putExtra(Intent.EXTRA_SUBJECT, "CandyBar: Crash Report");
 
                         intent = prepareUri(deviceInfo, stackTrace, intent);

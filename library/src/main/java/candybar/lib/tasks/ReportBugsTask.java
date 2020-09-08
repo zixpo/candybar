@@ -128,10 +128,14 @@ public class ReportBugsTask extends AsyncTask<Void, Void, Boolean> {
 
         mDialog.dismiss();
         if (aBoolean) {
+            String emailAddress = mContext.get().getString(R.string.regular_request_email);
+            // Fallback to dev_email
+            if (emailAddress.length() == 0)
+                emailAddress = mContext.get().getString(R.string.dev_email);
+
             final Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("application/zip");
-            intent.putExtra(Intent.EXTRA_EMAIL,
-                    new String[]{mContext.get().getResources().getString(R.string.dev_email)});
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
             intent.putExtra(Intent.EXTRA_SUBJECT,
                     "Report Bugs " + (mContext.get().getString(
                             R.string.app_name)));
