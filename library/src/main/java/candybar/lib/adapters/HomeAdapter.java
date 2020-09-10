@@ -444,10 +444,9 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                 ListView mChangelogList = (ListView) dialog.findViewById(R.id.changelog_list);
 
                                 if (isUpdateAvailable) {
-                                    changelogVersion.setText(
-                                            mContext.getResources().getString(R.string.update_available) + "\n" +
-                                                    mContext.getResources().getString(R.string.changelog_version) + " " +
-                                                    update.getLatestVersion());
+                                    changelogVersion.setText(mContext.getResources().getString(R.string.update_available) + "\n" +
+                                            mContext.getResources().getString(R.string.changelog_version) + " " +
+                                            update.getLatestVersion());
                                     String[] changelog = update.getReleaseNotes().split("\n");
                                     mChangelogList.setAdapter(new ChangelogAdapter(mContext, changelog));
                                 } else {

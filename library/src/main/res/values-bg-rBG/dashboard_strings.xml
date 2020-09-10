@@ -37,7 +37,7 @@
     <string name="install">Инсталирай</string>
     <string name="donate">Дари</string>
     <string name="update">Актуализация</string>
-    <string name="search_noresult">Няма намерени резултати</string>
+    <string name="search_noresult">Няма намерени резултати за \"%s\"</string>
     <string name="search_faqs">Въпроси и отговори</string>
     <string name="search_icon">Име на иконите</string>
     <!-- Update -->
@@ -58,13 +58,13 @@
     <string name="playstore_check_success">Благодаря,че инсталирахте приложението от Play Store.</string>
     <string name="playstore_check_failed">Изглежда, че сте инсталирали този пакет с икони извън Play Store.  Няма да можете да го използвате.</string>
     <!-- Share -->
-    <string name="share_app_title">Хей! </string>
-    <string name="share_app_body">Вижте, този пакет с икони е наистина готин!</string>
+    <string name="share_app_title">Йо! Вижте %s</string>
+    <string name="share_app_body">Вижте %1$s, този пакет с икони е наистина страхотен! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Навигационно чекмедже</string>
     <string name="tap_intro_home_navigation_desc">Докоснете тук или прекарайте пръст от левия ръб на екрана, за да отворите навигационното чекмедже</string>
     <string name="tap_intro_home_apply">Прилагане на пакета с икони</string>
-    <string name="tap_intro_home_apply_desc">Докоснете тук, за да приложите</string>
+    <string name="tap_intro_home_apply_desc">Докоснете тук, за да приложите %s</string>
     <string name="tap_intro_icons_search">Търсене</string>
     <string name="tap_intro_icons_search_desc">Докоснете тук, за да търсите икона</string>
     <string name="tap_intro_request_select">Изберете липсващото приложение</string>
@@ -76,7 +76,7 @@
     <string name="tap_intro_request_premium">Платена заявка за икони</string>
     <string name="tap_intro_request_premium_desc">Докоснете тук, за да купите платена заявка за  икони, с платената заявка за  икони можете да получите заявените приложения по-бързо.</string>
     <string name="tap_intro_wallpapers_option">Опции за тапет</string>
-    <string name="tap_intro_wallpapers_option_desc">Докоснете и задръжте тук, за да покажете опции за тапет, приложите тапет.</string>
+    <string name="tap_intro_wallpapers_option_desc">Докоснете и задръжте тук, за да се покажат опциите за тапет, %s приложи тапет.</string>
     <string name="tap_intro_wallpapers_option_desc_download">изтегляне или</string>
     <string name="tap_intro_wallpapers_preview">Визуализация тапет</string>
     <string name="tap_intro_wallpapers_preview_desc">Докоснете тук, за да визуализирате пълния размер на тапета</string>
@@ -88,24 +88,24 @@
     <string name="home_more_apps_header">Още приложения</string>
     <string name="home_more_apps">Вижте други приложения, публикувани в Google Play Store</string>
     <string name="home_rate_and_review">Оценка и преглед</string>
-    <string name="home_apply_icon_pack">Приложи</string>
+    <string name="home_apply_icon_pack">Приложете %s</string>
     <string name="home_donate">Дари</string>
     <string name="home_donate_desc">Подкрепи разработването на пакета с икони</string>
     <string name="home_icons">Персонализирани икони</string>
-    <string name="home_icon_dimension">Размер на иконата в пиксели</string>
-    <string name="home_loud_wallpapers">онлайн тапети</string>
+    <string name="home_icon_dimension">Размери на иконата %s пиксела</string>
+    <string name="home_loud_wallpapers">%d онлайн тапети</string>
     <string name="home_muzei">Мuzei динамичен тапет</string>
-    <string name="home_icon_request_installed_apps">Общо\инсталирани приложения</string>
-    <string name="home_icon_request_themed_apps">Покрити приложения</string>
-    <string name="home_icon_request_missed_apps">Липсващи приложения</string>
+    <string name="home_icon_request_installed_apps">Общо\n%d инсталирани приложения</string>
+    <string name="home_icon_request_themed_apps">Покрити\n%d приложения</string>
+    <string name="home_icon_request_missed_apps">Липсващи\n%d приложения</string>
     <!-- Apply -->
     <string name="apply_installed">Инсталиран Лаунчер</string>
     <string name="apply_supported">Поддържани Лаунчери</string>
-    <string name="apply_manual">% 1 $ s Лаунчера не поддържа директно прилагане, но можете да приложите% 2 $ s ръчно от настройките на лаунчера.</string>
-    <string name="apply_manual_evie">Чукнете и задръжте на началния екран - Настройки - Пакет икони - изберете% s.</string>
-    <string name="apply_launch_failed">Настройките не могат да се стартират</string>
-    <string name="apply_launcher_not_installed">Лаунчера не е инсталиран.  Искате ли да отворите Google Play Store, за да го изтеглите и инсталирате?</string>
-    <string name="apply_launcher_not_installable">Лаунчера не е инсталиран.  Моля, опитайте отново, след като инсталирате лаунчера.</string>
+    <string name="apply_manual">%1$s Лаунчера не поддържа директно прилагане, но можете да приложите %2$s ръчно от настройките на лаунчера.</string>
+    <string name="apply_manual_evie">Чукнете и задръжте на началния екран - Настройки - Пакет икони - изберете %s.</string>
+    <string name="apply_launch_failed">Настройките на %s не могат да бъдат стартирани</string>
+    <string name="apply_launcher_not_installed">%s Launcher не е инсталиран. Искате ли да отворите Google Play Store, за да го изтеглите и инсталирате?</string>
+    <string name="apply_launcher_not_installable">%s Launcher не е инсталиран. Моля, опитайте отново, след като инсталирате стартера.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager не е наличен на това устройство</string>
     <string name="apply_cmtheme_failed">Ако не можете да стартирате CM Theme Manager, можете да опитате да приложите Пакета с икони ръчно от настройките.</string>
     <string name="apply_lg_home">За да приложите този Пакет с икони отворете Настройки - Дисплей - Начален екран - Тема</string>
