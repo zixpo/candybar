@@ -395,7 +395,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.rate) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext.getResources().getString(R.string.rate_and_review_link).replaceAll("thisPackage", mContext.getPackageName())));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext.getResources().getString(R.string.rate_and_review_link)
+                        .replaceAll("\\{\\{packageName}}", mContext.getPackageName())));
                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                 mContext.startActivity(intent);
             } else if (id == R.id.share) {
@@ -407,7 +408,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 intent.putExtra(Intent.EXTRA_TEXT,
                         mContext.getResources().getString(R.string.share_app_body,
                                 mContext.getResources().getString(R.string.app_name),
-                                "\n" + mContext.getResources().getString(R.string.share_link).replaceAll("thisPackage", mContext.getPackageName())));
+                                "\n" + mContext.getResources().getString(R.string.share_link)
+                                        .replaceAll("\\{\\{packageName}}", mContext.getPackageName())));
                 mContext.startActivity(Intent.createChooser(intent,
                         mContext.getResources().getString(R.string.app_client)));
             } else if (id == R.id.update) {

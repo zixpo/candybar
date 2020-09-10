@@ -22,8 +22,8 @@
         CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
         ]]>
     </string>
-    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=thisPackage</string>
-    <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
+    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
+    <string name="share_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
     <bool name="enable_check_update">true</bool>
     <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
     <bool name="use_flat_card">true</bool>
