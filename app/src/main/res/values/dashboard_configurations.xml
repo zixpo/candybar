@@ -6,219 +6,66 @@
     <!-- ======================================================================================= -->
 
     <!-- CONFIG: DEFAULT THEME -->
-
-    <!-- Use dark theme as default theme -->
     <bool name="use_dark_theme">false</bool>
 
     <!-- CONFIG: MUZEI -->
-
-    <!-- Muzei art source name -->
     <string name="muzei_art_source_name">CandyBar</string>
-
-    <!-- Muzei art source description -->
     <string name="muzei_art_source_desc">Pleasing Wallpaper from CandyBar</string>
-
-    <!-- Muzei base color -->
     <color name="muzei_color">#0082B4</color>
 
     <!-- CONFIG: HOME -->
-
-    <!-- Home title must be defined -->
     <string name="home_title">CandyBar</string>
-
-    <!-- Home image
-    * If you want to use image from url, just put the url here
-    * If you want to use image stored in project (drawable folder)
-    * just put image name here without the extension (ex: home_image.png -> home_image)
-    *
-    * If you want to use solid color, you can put hex color code here
-    * ex: <string name="navigation_view_header">#000000</string> -->
     <string name="home_image">home_image</string>
-
-    <!-- Home image style
-    * Available choices:
-    * card_square
-    * card_landscape
-    * landscape
-    * square
-    -->
     <string name="home_image_style">card_landscape</string>
-
-    <!-- Home description
-    - If you don't want to show description, just leave this empty -->
     <string name="home_description">
         <![CDATA[
         CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
         ]]>
     </string>
-
-    <!-- Enable Check for Update -->
+    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=thisPackage</string>
+    <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
     <bool name="enable_check_update">true</bool>
-
-    <!-- More apps at Google Play Store
-    * Link to google play store developer
-    * If you don't want to show this part, just leave this empty -->
     <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
-
-    <!-- If you want to use flat cards instead -->
     <bool name="use_flat_card">true</bool>
 
     <!-- CONFIG: NAVIGATION VIEW HEADER -->
-
-    <!-- Navigation view header image
-    * If you want to use image from url, just put the url here
-    * If you want to use image stored in project (drawable folder)
-    * just put image name here without the extension
-    * (ex: navigation_view_header.png -> navigation_view_header)
-    *
-    * If you want to use solid color, you can put hex color code here
-    * ex: <string name="navigation_view_header">#000000</string> -->
     <string name="navigation_view_header">nav_head</string>
-
-    <!-- Navigation view header text
-    * Leave empty if you don't want to show any text -->
     <string name="navigation_view_header_title">CandyBar</string>
-
-    <!-- CONFIG: APPLY -->
-    <!-- Enable or disable apply section -->
     <bool name="enable_apply">true</bool>
 
     <!-- CONFIG: ICONS -->
-
-    <!-- Sort
-    * Enable or disable icons sort
-    * Disabling this will improve icons section performance, icons will load faster
-    * You can use CandyBar drawable.xml builder to sort icons
-    * Enable -> true
-    * Disable -> false -->
     <bool name="enable_icons_sort">true</bool>
-
-    <!-- Icon picker icon name text below icon
-    * default: true
-    * Change to false to disable it -->
     <bool name="show_icon_name">true</bool>
 
-    <!-- Icons section will read icons from drawable.xml same as Nova Launcher
-    * Put drawable.xml inside xml folder -->
-
     <!-- CONFIG: ICON REQUEST -->
-
-    <!-- Enable or disable regular icon request
-    * default: true
-    * change to false to disable it -->
     <bool name="enable_icon_request">true</bool>
-
-    <!-- Enable regular icon request limit
-    * default: false
-    * change to true to enable it -->
     <bool name="enable_icon_request_limit">true</bool>
-
-    <!-- Limit regular icon request
-    * IGNORE if icon request limit is disabled
-    * ex: If you set icon request limit to 10, user only able to make 10 icon request in all time
-    * After making 10 icon request user not able to request again -->
     <integer name="icon_request_limit">1000</integer>
-
-    <!-- Reset regular icon request limit every update
-    * IGNORE if icon request limit is disabled
-    * ex: You want to make user only able to make 10 request, set icon request limit (above) to 10
-    * but you also want user able to make 10 request again after update, then enable this option
-    * default: false
-    * change to true to enable it -->
     <bool name="reset_icon_request_limit">true</bool>
-
-    <!-- Enable JSON Data check before Requesting Icons -->
     <bool name="json_check_before_request">false</bool>
-
-    <!-- Enable or disable premium request
-    * default: false
-    * change to true to enable it -->
     <bool name="enable_premium_request">true</bool>
-
-    <!-- Take a look inside License.java for premium request product -->
-
-    <!-- If you set it to true, your user can even choose non-mailing app for requesting Icons -->
     <bool name="enable_non_mail_app_request">true</bool>
-
-    <!-- Hide missing app count -->
     <bool name="hide_missing_app_count">false</bool>
-
-    <!-- Email that will be used to send icon request and report bugs -->
     <string name="dev_email">sarsamurmu05@gmail.com</string>
-
-    <!-- Icon Request Email Subject. Set Empty to Use Default Subject. -->
     <string name="request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
-
-    <!-- Icon Request with Arctic Manager. Leave empty to disable Arctic Manager. -->
     <string name="arctic_manager_api_key"><!--f2a96282-31d0-42b7-b802-5487f2931113--></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
-
-    <!-- Wallpaper json link
-    * If your icon pack doesn't contains any wallpaper, just leave this empty
-    * <string name="wallpaper_json"></string>
-    *
-    * If you want to separate wallpaper app from icon pack and keep wallpapers section shown in navigation drawer,
-    * but instead open wallpapers section pressing it will open your wallpaper app
-    * just put your wallpaper app package name here
-    * example: com.dm.wallpaper.board.demo
-    * <string name="wallpaper_json">com.dm.wallpaper.board.demo</string> -->
     <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/walls_alt.json</string>
-
-    <!-- Allow to download wallpaper
-    * If disabled user only able to apply wallpaper from dashboard -->
     <bool name="enable_wallpaper_download">true</bool>
-
-    <!-- Wallpaper name and author below wallpaper
-    * Show or hide name and author below wallpaper
-    * Show -> true
-    * Hide -> false -->
     <bool name="wallpaper_show_name_author">true</bool>
-
-    <!-- Wallpapers grid preview style
-    * Available choices:
-    * square
-    * landscape
-    * portrait
-    -->
     <string name="wallpaper_grid_preview_style">square</string>
 
     <!-- CONFIG: ABOUT -->
-
-    <!-- About header image
-    * If you want to use image from url, just put the url here
-    * If you want to use image stored in project (drawable folder)
-    * just put image name here without the extension (ex: about_image.png -> about_image)
-    *
-    * If you want to use solid color, you can put hex color code here
-    * ex: <string name="navigation_view_header">#000000</string> -->
     <string name="about_image">https://source.unsplash.com/_8WAobqAJog/1400x0</string>
-
-    <!-- About profile image
-    * If you want to use image from url, just put the url here
-    * If you want to use image stored in project (drawable folder)
-    * just put image name here without the extension (ex: about_profile_image.png -> about_profile_image) -->
     <string name="about_profile_image">about_image</string>
-
-    <!-- About title above description -->
     <string name="about_title">CandyBar \nMaterial Dashboard</string>
-
-    <!-- About description below title -->
     <string name="about_desc">
         <![CDATA[
         CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>. Get it <a href="https://github.com/zixpo/candybar">Here</a>.
         ]]>
     </string>
-
-    <!-- Social link inside about
-    * Supported link:
-    * Email, Behance, Dribbble, Facebook, Github, Instagram, Pinterest, Twitter
-    * The link will be marked as regular website if doesn't listed above
-    *
-    * If you don't want to show social link, just set about_social_links to empty
-    * ex:
-    * <string-array name="about_social_links"></string-array>-->
     <string-array name="about_social_links">
         <item>https://www.instagram.com/_u/yourusername</item>
         <item>https://twitter.com/</item>
@@ -228,44 +75,17 @@
         <item>your@email.com</item>
         <item>https://t.me/yourname</item>
     </string-array>
-
-    <!-- Contributors dialog
-    * Take a look inside res/xml/contributors.xml to add contributors -->
     <bool name="show_contributors_dialog">true</bool>
-
-    <!-- CONFIG: DONATE -->
-
-    <!-- DONATION
-    * Show support development option in navigation view
-    * default: true
-    * change to false to disable it -->
-    <bool name="enable_donation">true</bool>
-
-    <!-- Take a look inside License.java for donation product -->
-
-    <!-- Link Used to Rate and Review Your App. Set Blank to Disable -->
-    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
-    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=thisPackage</string>
-
-    <!-- Link Used for Share Link of Your App. Set Blank to Disable -->
-    <!-- You can Use Keyword "thisPackage", it will be replaced with your app's package name -->
-    <string name="share_link">https://play.google.com/store/apps/details?id=thisPackage</string>
-
-    <!-- CandyBar Config JSON Link -->
-    <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config_alt.json</string>
-
-    <!-- Privacy Policy Link. Set Blank to Disable -->
     <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
-
-    <!-- Terms and Conditions link. Set Blank to Disable -->
     <string name="terms_and_conditions_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
 
-    <!-- Closes app if installed outside of Playstore -->
+    <!-- CONFIG: DONATE -->
+    <bool name="enable_donation">true</bool>
+
+    <!-- CONFIG: MISC -->
     <bool name="playstore_check_enabled">false</bool>
-
-    <!-- Show Intro Guides on First Run -->
+    <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config_alt.json</string>
     <bool name="show_intro">false</bool>
-
     <bool name="includes_adaptive_icons">true</bool>
 
 </resources>
