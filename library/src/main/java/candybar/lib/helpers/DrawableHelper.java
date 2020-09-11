@@ -1,6 +1,5 @@
 package candybar.lib.helpers;
 
-import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -43,7 +42,6 @@ import sarsamurmu.adaptiveicon.AdaptiveIcon;
  * limitations under the License.
  */
 
-@SuppressLint("NewApi")
 public class DrawableHelper {
 
     public static Drawable getAppIcon(@NonNull Context context, ResolveInfo info) {
@@ -55,26 +53,25 @@ public class DrawableHelper {
     }
 
     @Nullable
-    public static Drawable getReqIcon(@NonNull Context context, String fullComponentName) {
+    public static Drawable getReqIcon(@NonNull Context context, String componentNameStr) {
         PackageManager packageManager = context.getPackageManager();
 
-        int slashIndex = fullComponentName.indexOf("/");
-        String activityName = fullComponentName.substring(slashIndex).replace("/", "");
-        String packageName = fullComponentName.replace("/" + activityName, "");
+        int slashIndex = componentNameStr.indexOf("/");
+        String packageName = componentNameStr.substring(0, slashIndex);
+        String activityName = componentNameStr.substring(slashIndex + 1);
         ComponentName componentName = new ComponentName(packageName, activityName);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            // Load Adaptive Icons if found
+            // Load Adaptive icon if found
             Intent intent = new Intent();
             intent.setComponent(componentName);
             ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
             Drawable normalDrawable = resolveInfo.loadIcon(packageManager);
 
-            if ((normalDrawable != null) && (normalDrawable instanceof AdaptiveIconDrawable))
-                return normalDrawable;
+            if (normalDrawable instanceof AdaptiveIconDrawable) return normalDrawable;
         }
 
-        // Fallback to legacy icon if AdaptiveIcon not found
+        // Fallback to legacy icon if AdaptiveIcon is not found
         try {
             Drawable drawable;
             int density = DisplayMetrics.DENSITY_XXXHIGH;

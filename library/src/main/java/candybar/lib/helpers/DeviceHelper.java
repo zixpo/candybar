@@ -47,9 +47,9 @@ public class DeviceHelper {
         }
 
         if (installerPackage == null || !installerPackage.contentEquals("com.android.vending")) {
-            appVersion = context.getResources().getString(R.string.version_outside_playstore).replace("{{appVersion}}", appVersion);
+            appVersion = context.getResources().getString(R.string.version_outside_playstore).replaceAll("\\{\\{appVersion}}", appVersion);
         } else {
-            appVersion = context.getResources().getString(R.string.version_from_playstore).replace("{{appVersion}}", appVersion);
+            appVersion = context.getResources().getString(R.string.version_from_playstore).replaceAll("\\{\\{appVersion}}", appVersion);
         }
 
         sb.append("Manufacturer : ").append(Build.MANUFACTURER)

@@ -46,8 +46,8 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
         String componentName = uri.replaceFirst("package://", "");
 
         int slashIndex = componentName.indexOf("/");
-        String activityName = componentName.substring(slashIndex).replace("/", "");
-        String packageName = componentName.replace("/" + activityName, "");
+        String packageName = componentName.substring(0, slashIndex);
+        String activityName = componentName.substring(slashIndex + 1);
 
         Intent intent = new Intent();
         intent.setComponent(new ComponentName(packageName, activityName));

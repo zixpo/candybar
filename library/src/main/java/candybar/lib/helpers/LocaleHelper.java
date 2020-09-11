@@ -98,11 +98,11 @@ public class LocaleHelper {
     }
 
     @Nullable
-    public static String getOtherAppLocaleName(@NonNull Context context, @NonNull Locale locale, @NonNull String fullComponentName) {
+    public static String getOtherAppLocaleName(@NonNull Context context, @NonNull Locale locale, @NonNull String componentNameStr) {
         try {
-            int slashIndex = fullComponentName.indexOf("/");
-            String activityName = fullComponentName.substring(slashIndex).replace("/", "");
-            String packageName = fullComponentName.replace("/" + activityName, "");
+            int slashIndex = componentNameStr.indexOf("/");
+            String packageName = componentNameStr.substring(0, slashIndex);
+            String activityName = componentNameStr.substring(slashIndex + 1);
             ComponentName componentName = new ComponentName(packageName, activityName);
 
             PackageManager packageManager = context.getPackageManager();
