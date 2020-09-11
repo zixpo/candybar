@@ -48,6 +48,7 @@
     <string name="search_icon">Icon Name</string>
 
     <!-- Update -->
+    <string name="checking_for_update">Checking for update …</string>
     <string name="update_available">Update available!</string>
     <string name="no_update_available">You\'re using the latest version!</string>
 
@@ -162,6 +163,7 @@
     <string name="request_email_client">Choose the app you want to use to send the icon request</string>
     <string name="request_app_disabled">You\'re using an older version of this icon pack. The requested icons may be included in the latest version. Please update your app to latest version to request icons.</string>
     <string name="connection_error_long">Unable to load data from server. Please, check your network connection.</string>
+    <string name="unable_to_load_config">An error occurred while fetching/reading data from the server.</string>
 
     <string name="request_limit">You are only able to make %d request(s) with regular request.</string>
     <string name="request_used">You have requested %d icon(s).</string>

@@ -537,8 +537,8 @@ public class RequestHelper {
                     return "\t<!-- " + request.getName() + " -->" +
                             "\n" +
                             "\t" + context.getString(R.string.appfilter_item)
-                            .replaceAll("\\{\\{component}}", request.getActivity())
-                            .replaceAll("\\{\\{drawable}}", fixNameForRequest(request.getName())) +
+                            .replaceAll("\\{\\{component\\}\\}", request.getActivity())
+                            .replaceAll("\\{\\{drawable\\}\\}", fixNameForRequest(request.getName())) +
                             "\n\n";
                 case APPMAP:
                     String packageName = "" + request.getPackageName() + "/";

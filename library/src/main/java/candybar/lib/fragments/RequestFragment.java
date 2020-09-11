@@ -2,13 +2,13 @@ package candybar.lib.fragments;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -39,7 +39,6 @@ import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -98,10 +97,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private AsyncTask mAsyncTask;
 
     public static List<Integer> sSelectedRequests;
-
-    private static boolean canRequest = true;
-    private static int appVersionCode = 0, disabledReqBelow = 0;
-    private static String disabledReqOn = "0", updateUrl = "";
 
     private boolean noEmailClientError = false;
 
@@ -256,7 +251,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 }
 
                 if ((getActivity().getResources().getBoolean(R.bool.json_check_before_request)) && (getActivity().getResources().getString(R.string.config_json).length() != 0)) {
-                    mAsyncTask = new CheckConfigBeforeRequest().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                    mAsyncTask = new CheckConfig().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 } else {
                     mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 }
@@ -519,10 +514,11 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public class CheckConfigBeforeRequest extends AsyncTask<Void, Void, Boolean> {
+    public class CheckConfig extends AsyncTask<Void, Void, Boolean> {
 
-        MaterialDialog dialog;
-        private JSONObject configJson;
+        private MaterialDialog dialog;
+        private boolean canRequest = true;
+        private String updateUrl;
 
         @Override
         protected void onPreExecute() {
@@ -544,26 +540,37 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            String str = getActivity().getResources().getString(R.string.config_json);
-            URLConnection urlConn;
+            String configJsonUrl = getActivity().getResources().getString(R.string.config_json);
+            URLConnection urlConnection;
             BufferedReader bufferedReader = null;
-            try {
-                URL url = new URL(str);
-                urlConn = url.openConnection();
-                bufferedReader = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
 
-                StringBuffer stringBuffer = new StringBuffer();
+            try {
+                urlConnection = new URL(configJsonUrl).openConnection();
+                bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+
                 String line;
+                StringBuilder stringBuilder = new StringBuilder();
                 while ((line = bufferedReader.readLine()) != null) {
-                    stringBuffer.append(line);
+                    stringBuilder.append(line);
                 }
 
-                configJson = new JSONObject(stringBuffer.toString());
+                JSONObject configJson = new JSONObject(stringBuilder.toString());
+                updateUrl = configJson.getString("url");
+
+                JSONObject disableRequestObj = configJson.getJSONObject("disableRequest");
+                long disableRequestBelow = disableRequestObj.optLong("below", 0);
+                String disableRequestOn = disableRequestObj.optString("on", "");
+                PackageInfo packageInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
+                long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
+
+                if ((appVersionCode < disableRequestBelow) ||
+                        disableRequestOn.matches(".*\\b" + appVersionCode + "\\b.*")) {
+                    canRequest = false;
+                }
 
                 return true;
             } catch (Exception ex) {
-                LogUtil.e("Error Loading ConfigJson \n" + Log.getStackTraceString(ex));
-                return false;
+                LogUtil.e("Error loading Configuration JSON " + Log.getStackTraceString(ex));
             } finally {
                 if (bufferedReader != null) {
                     try {
@@ -573,38 +580,16 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     }
                 }
             }
+
+            return false;
         }
 
         @Override
-        protected void onPostExecute(Boolean resBoolean) {
+        protected void onPostExecute(Boolean aBoolean) {
             dialog.dismiss();
             dialog = null;
 
-            if (resBoolean) {
-                try {
-                    updateUrl = configJson.getString("url");
-
-                    JSONObject disabledRequest = configJson.getJSONObject("disableRequest");
-
-                    disabledReqBelow = disabledRequest.getInt("below");
-                    disabledReqOn = disabledRequest.getString("on");
-                } catch (JSONException e) {
-                    LogUtil.e(Log.getStackTraceString(e));
-                }
-
-                try {
-                    PackageInfo pInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
-                    appVersionCode = pInfo.versionCode;
-                } catch (PackageManager.NameNotFoundException e) {
-                    LogUtil.e(Log.getStackTraceString(e));
-                }
-
-                if (appVersionCode < disabledReqBelow) canRequest = false;
-                String[] disabledReqOns = disabledReqOn.split("[\\s,]");
-                for (String version : disabledReqOns) {
-                    if ((appVersionCode + "").contentEquals(version)) canRequest = false;
-                }
-
+            if (aBoolean) {
                 if (!canRequest) {
                     new MaterialDialog.Builder(getActivity())
                             .typeface(
@@ -628,13 +613,12 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 } else {
                     mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 }
-
             } else {
                 new MaterialDialog.Builder(getActivity())
                         .typeface(
                                 TypefaceHelper.getMedium(getActivity()),
                                 TypefaceHelper.getRegular(getActivity()))
-                        .content(R.string.connection_error_long)
+                        .content(R.string.unable_to_load_config)
                         .canceledOnTouchOutside(false)
                         .positiveText(R.string.close)
                         .build()
