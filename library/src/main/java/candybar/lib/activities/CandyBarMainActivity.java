@@ -50,8 +50,6 @@ import java.io.File;
 import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.activities.callbacks.ActivityCallback;
-import candybar.lib.activities.configurations.ActivityConfiguration;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.fragments.AboutFragment;
@@ -113,7 +111,7 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 public abstract class CandyBarMainActivity extends AppCompatActivity implements
         ActivityCompat.OnRequestPermissionsResultCallback, RequestListener, InAppBillingListener,
-        SearchListener, WallpapersListener, ActivityCallback {
+        SearchListener, WallpapersListener {
 
     private TextView mToolbarTitle;
     private DrawerLayout mDrawerLayout;
@@ -135,6 +133,9 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     public static int sIconsCount;
 
     private ActivityConfiguration mConfig;
+
+    @NonNull
+    public abstract ActivityConfiguration onInit();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -805,6 +806,66 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 mPosition = mLastPosition = 0;
                 mFragmentTag = Extras.TAG_HOME;
                 return new HomeFragment();
+        }
+    }
+
+    public static class ActivityConfiguration {
+
+        private boolean mIsLicenseCheckerEnabled;
+        private byte[] mRandomString;
+        private String mLicenseKey;
+        private String[] mDonationProductsId;
+        private String[] mPremiumRequestProductsId;
+        private int[] mPremiumRequestProductsCount;
+
+        public ActivityConfiguration setLicenseCheckerEnabled(boolean enabled) {
+            mIsLicenseCheckerEnabled = enabled;
+            return this;
+        }
+
+        public ActivityConfiguration setRandomString(@NonNull byte[] randomString) {
+            mRandomString = randomString;
+            return this;
+        }
+
+        public ActivityConfiguration setLicenseKey(@NonNull String licenseKey) {
+            mLicenseKey = licenseKey;
+            return this;
+        }
+
+        public ActivityConfiguration setDonationProductsId(@NonNull String[] productsId) {
+            mDonationProductsId = productsId;
+            return this;
+        }
+
+        public ActivityConfiguration setPremiumRequestProducts(@NonNull String[] ids, @NonNull int[] counts) {
+            mPremiumRequestProductsId = ids;
+            mPremiumRequestProductsCount = counts;
+            return this;
+        }
+
+        public boolean isLicenseCheckerEnabled() {
+            return mIsLicenseCheckerEnabled;
+        }
+
+        public byte[] getRandomString() {
+            return mRandomString;
+        }
+
+        public String getLicenseKey() {
+            return mLicenseKey;
+        }
+
+        public String[] getDonationProductsId() {
+            return mDonationProductsId;
+        }
+
+        public String[] getPremiumRequestProductsId() {
+            return mPremiumRequestProductsId;
+        }
+
+        public int[] getPremiumRequestProductsCount() {
+            return mPremiumRequestProductsCount;
         }
     }
 }

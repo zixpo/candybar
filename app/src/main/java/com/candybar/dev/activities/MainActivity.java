@@ -5,7 +5,6 @@ import androidx.annotation.NonNull;
 import com.candybar.dev.licenses.License;
 
 import candybar.lib.activities.CandyBarMainActivity;
-import candybar.lib.activities.configurations.ActivityConfiguration;
 
 public class MainActivity extends CandyBarMainActivity {
 

@@ -15,6 +15,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
@@ -23,8 +25,6 @@ import java.util.List;
 import java.util.Map;
 
 import candybar.lib.R;
-import candybar.lib.activities.callbacks.SplashScreenCallback;
-import candybar.lib.activities.configurations.SplashScreenConfiguration;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.JsonHelper;
@@ -50,19 +50,20 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
  * limitations under the License.
  */
 
-public abstract class CandyBarSplashActivity extends AppCompatActivity implements SplashScreenCallback {
+public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
     private AsyncTask mSplashScreenLoader;
     private AsyncTask mCloudWallpapersLoader;
-    private SplashScreenConfiguration mConfig;
+
+    @NotNull
+    abstract protected Class<?> getMainActivity();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mConfig = onInit();
 
         mSplashScreenLoader = new SplashScreenLoader(this)
-                .mainActivity(mConfig.getMainActivity())
+                .mainActivity(getMainActivity())
                 .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
         mCloudWallpapersLoader = new CloudWallpapersLoader(this).execute();
