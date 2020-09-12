@@ -218,8 +218,8 @@ public class SettingsFragment extends Fragment {
     private class PremiumRequestRebuilder extends AsyncTask<Void, Void, Boolean> {
 
         private MaterialDialog dialog;
-        private boolean isArctic = RequestHelper.isPremiumArcticEnabled(getActivity());
-        private String arcticApiKey = RequestHelper.getPremiumArcticApiKey(getActivity());
+        private final boolean isArctic = RequestHelper.isPremiumArcticEnabled(getActivity());
+        private final String arcticApiKey = RequestHelper.getPremiumArcticApiKey(getActivity());
         private List<Request> requests;
         private String errorMessage = "";
 

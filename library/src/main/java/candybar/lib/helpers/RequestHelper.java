@@ -163,12 +163,10 @@ public class RequestHelper {
             String base64Icon = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
 
             if (!isFirst) sb.append(",\n");
-            sb.append(String.format(
-                    "\"name\": \"" + request.getName() + "\"," +
-                            "\"packageName\": \"" + request.getPackageName() + "\"," +
-                            "\"imageStr\": \"" + base64Icon + "\"," +
-                            "\"activities\": [\"" + request.getActivity() + "\"]"
-            ));
+            sb.append("\"name\": \"" + request.getName() + "\"," +
+                    "\"packageName\": \"" + request.getPackageName() + "\"," +
+                    "\"imageStr\": \"" + base64Icon + "\"," +
+                    "\"activities\": [\"" + request.getActivity() + "\"]");
             isFirst = false;
         }
         sb.append("]}");

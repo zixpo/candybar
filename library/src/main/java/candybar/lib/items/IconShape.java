@@ -20,8 +20,8 @@ package candybar.lib.items;
 
 public class IconShape {
 
-    private String mName;
-    private int mShape;
+    private final String mName;
+    private final int mShape;
 
     public IconShape(String name, int locale) {
         mName = name;

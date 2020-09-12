@@ -80,7 +80,7 @@ public class Icon {
     public boolean equals(Object object) {
         boolean res = false;
         boolean title = false;
-        if (object != null && object instanceof Icon) {
+        if (object instanceof Icon) {
             res = mRes == ((Icon) object).getRes();
             title = mTitle.equals(((Icon) object).getTitle());
         }

@@ -25,7 +25,6 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.permission.PermissionHelper;
 import com.google.android.material.card.MaterialCardView;
 import com.kogitune.activitytransition.ActivityTransitionLauncher;
@@ -82,7 +81,6 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         if (mIsShowName) {
-            LogUtil.e("SHOW NAMES");
             view = LayoutInflater.from(mContext).inflate(
                     R.layout.fragment_wallpapers_item_grid, parent, false);
         } else {

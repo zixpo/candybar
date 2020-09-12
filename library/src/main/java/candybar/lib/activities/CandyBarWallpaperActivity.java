@@ -169,7 +169,6 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                 transition.addListener(new Transition.TransitionListener() {
                     @Override
                     public void onTransitionStart(Transition transition) {
-
                     }
 
                     @Override
@@ -184,19 +183,17 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
                     @Override
                     public void onTransitionCancel(Transition transition) {
-
                     }
 
                     @Override
                     public void onTransitionPause(Transition transition) {
-
                     }
 
                     @Override
                     public void onTransitionResume(Transition transition) {
-
                     }
                 });
+
                 return;
             }
         }
@@ -476,9 +473,6 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
                             return true;
                         }
-
-                        onWallpaperLoaded();
-
                         return false;
                     }
                 })

@@ -30,7 +30,7 @@ import candybar.lib.preferences.Preferences;
 @SuppressLint("NewApi")
 public class CandyBarArtWorker extends Worker {
     private final String WORKER_TAG = this.getApplicationContext().getPackageName() + ".ArtProvider";
-    private Context mContext = getApplicationContext();
+    private final Context mContext = getApplicationContext();
 
     public CandyBarArtWorker(@NonNull Context context, @NonNull WorkerParameters params) {
         super(context, params);

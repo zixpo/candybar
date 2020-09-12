@@ -91,7 +91,7 @@ public class Wallpaper {
     @Override
     public boolean equals(Object object) {
         boolean equals = false;
-        if (object != null && object instanceof Wallpaper) {
+        if (object instanceof Wallpaper) {
             equals = mAuthor.equals(((Wallpaper) object).getAuthor()) &&
                     mUrl.equals(((Wallpaper) object).getURL()) &&
                     mThumbUrl.equals(((Wallpaper) object).getThumbUrl());
