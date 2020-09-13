@@ -118,6 +118,10 @@
     <!-- Shows icon's name below the icon, in "Icons" section -->
     <bool name="show_icon_name">true</bool>
 
+    <!-- Enable if your icon pack includes adaptive icons.
+        When enabled, the dashboard shows an Icon Shape changer button -->
+    <bool name="includes_adaptive_icons">false</bool>
+
     <!-- Icons section will read icons from drawable.xml same as Nova Launcher
         Put drawable.xml inside the "xml" folder -->
 
@@ -168,14 +172,14 @@
         If you want to hide the information then you should enable this -->
     <bool name="hide_missing_app_count">false</bool>
 
-    <!--
-        These are deprecated and are only used for fallbacks
-    -->
-    <string name="dev_email">your@email.com</string>
-    <string name="request_email_subject"></string>
-    <string name="arctic_manager_api_key"></string>
+    <!-- Method to use for icon request. Value can be "email" or "arctic".
+        `email` -> Sends icon requests using email
+        `arctic` -> Sends icon requests using Arctic Manager
 
-    <!-- These are the new things that made previous options deprecated -->
+        You can leave "premium_request_method" empty to use the regular request's method to send premium icon requests. -->
+    <string name="regular_request_method"></string>
+    <string name="premium_request_method"></string>
+
     <!-- Email to use when sending icon requests.
         Regular request email address will be used to send bug reports.
         You can leave "premium_request_email" empty to use the regular request's email to send premium icon requests. -->
@@ -190,11 +194,6 @@
         You can leave "premium_request_arctic_api_key" empty to use the regular request's arctic api key to send premium icon requests. -->
     <string name="regular_request_arctic_api_key"></string>
     <string name="premium_request_arctic_api_key"></string>
-
-    <!-- Method to use for icon request. Value can be "email" or "arctic".
-        You can leave "premium_request_method" empty to use the regular request's method to send premium icon requests. -->
-    <string name="regular_request_method"></string>
-    <string name="premium_request_method"></string>
 
 
     <!--
@@ -308,10 +307,15 @@
     <bool name="show_intro">false</bool>
 
     <!-- These are not documented. As you can guess, these are not for general use -->
-    <bool name="includes_adaptive_icons">false</bool>
     <string name="version_from_playstore">{{appVersion}} R</string>
     <string name="version_outside_playstore">{{appVersion}}</string>
-
     <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
+
+    <!-- These are deprecated and replaced with other items. These are only here so that things don't break. -->
+    <!-- TODO: Remove them in v3.10.0 -->
+    <!-- TODO: Add default values to request options when removing these options -->
+    <string name="dev_email">your@email.com</string>
+    <string name="request_email_subject"></string>
+    <string name="arctic_manager_api_key"></string>
 
 </resources>
