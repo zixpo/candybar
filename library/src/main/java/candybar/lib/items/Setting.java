@@ -1,7 +1,6 @@
 package candybar.lib.items;
 
 import androidx.annotation.DrawableRes;
-import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 
 /*
@@ -30,17 +29,15 @@ public class Setting {
     private final String mContent;
     private String mFooter;
     private final Setting.Type mType;
-    private final int mCheckState;
 
     public Setting(@DrawableRes int icon, String title, String subtitle, String content, String footer,
-                   @NonNull Setting.Type type, @IntRange(from = -1, to = 1) int checkState) {
+                   @NonNull Setting.Type type) {
         mIcon = icon;
         mTitle = title;
         mSubtitle = subtitle;
         mContent = content;
         mFooter = footer;
         mType = type;
-        mCheckState = checkState;
     }
 
     @DrawableRes
@@ -68,10 +65,6 @@ public class Setting {
         return mType;
     }
 
-    public int getCheckState() {
-        return mCheckState;
-    }
-
     public void setFooter(String footer) {
         mFooter = footer;
     }
@@ -82,7 +75,6 @@ public class Setting {
         ICON_REQUEST,
         RESTORE,
         PREMIUM_REQUEST,
-        ICON_SHAPE,
         THEME,
         WALLPAPER,
         LANGUAGE,

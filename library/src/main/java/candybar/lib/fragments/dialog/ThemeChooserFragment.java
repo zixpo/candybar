@@ -16,11 +16,10 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.adapters.IconShapeAdapter;
-import candybar.lib.fragments.IconsFragment;
-import candybar.lib.helpers.IconShapeHelper;
+import candybar.lib.adapters.ThemeAdapter;
+import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
-import candybar.lib.items.IconShape;
+import candybar.lib.items.Theme;
 import candybar.lib.preferences.Preferences;
 
 /*
@@ -41,18 +40,18 @@ import candybar.lib.preferences.Preferences;
  * limitations under the License.
  */
 
-public class IconShapeChooserFragment extends DialogFragment {
+public class ThemeChooserFragment extends DialogFragment {
 
     private ListView mListView;
-    private int mShape;
+    private int mTheme;
 
-    public static final String TAG = "candybar.dialog.iconshapes";
+    public static final String TAG = "candybar.dialog.theme";
 
-    private static IconShapeChooserFragment newInstance() {
-        return new IconShapeChooserFragment();
+    private static ThemeChooserFragment newInstance() {
+        return new ThemeChooserFragment();
     }
 
-    public static void showIconShapeChooser(@NonNull FragmentManager fm) {
+    public static void showThemeChooser(@NonNull FragmentManager fm) {
         FragmentTransaction ft = fm.beginTransaction();
         Fragment prev = fm.findFragmentByTag(TAG);
         if (prev != null) {
@@ -60,7 +59,7 @@ public class IconShapeChooserFragment extends DialogFragment {
         }
 
         try {
-            DialogFragment dialog = IconShapeChooserFragment.newInstance();
+            DialogFragment dialog = ThemeChooserFragment.newInstance();
             dialog.show(ft, TAG);
         } catch (IllegalArgumentException | IllegalStateException ignored) {
         }
@@ -69,12 +68,13 @@ public class IconShapeChooserFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_languages, false);
-        builder.typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()));
-        builder.title(R.string.icon_shape);
-        builder.negativeText(R.string.close);
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+                .customView(R.layout.fragment_languages, false)
+                .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
+                .title(R.string.pref_theme_header)
+                .negativeText(R.string.close)
+                .build();
+
         dialog.show();
 
         mListView = (ListView) dialog.findViewById(R.id.listview);
@@ -85,29 +85,30 @@ public class IconShapeChooserFragment extends DialogFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        List<IconShape> iconShapes = IconShapeHelper.getShapes();
-        int currentShape = Preferences.get(getActivity()).getIconShape();
-        int currentShapeIndex = 0;
+        List<Theme> themes = ThemeHelper.getThemes();
+        int currentTheme = Preferences.get(getActivity()).getTheme();
+        int currentThemeIndex = 0;
 
-        for (int i = 0; i < iconShapes.size(); i++) {
-            int shape = iconShapes.get(i).getShape();
-            if (shape == currentShape) {
-                currentShapeIndex = i;
+        for (int i = 0; i < themes.size(); i++) {
+            int shape = themes.get(i).getTheme();
+            if (shape == currentTheme) {
+                currentThemeIndex = i;
                 break;
             }
         }
 
-        mListView.setAdapter(new IconShapeAdapter(getActivity(), iconShapes, currentShapeIndex));
+        mListView.setAdapter(new ThemeAdapter(getActivity(), themes, currentThemeIndex));
     }
 
     @Override
     public void onDismiss(DialogInterface dialog) {
-        Preferences.get(getActivity()).setIconShape(mShape);
-        IconsFragment.reloadIcons();
+        Preferences.get(getActivity()).setTheme(mTheme);
+        getActivity().recreate();
         super.onDismiss(dialog);
     }
 
-    public void setShape(int shape) {
-        mShape = shape;
+    public void setTheme(int theme) {
+        mTheme = theme;
+        dismiss();
     }
 }

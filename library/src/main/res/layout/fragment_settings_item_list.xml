@@ -72,16 +72,6 @@
 
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/content_margin"
-            android:layout_marginStart="@dimen/content_margin"
-            android:clickable="false"
-            android:background="@android:color/transparent"
-            android:theme="@style/CheckBoxStyle" />
-
     </LinearLayout>
 
 </LinearLayout>

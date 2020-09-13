@@ -33,6 +33,7 @@ import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
+import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Language;
@@ -123,14 +124,14 @@ public class SettingsFragment extends Fragment {
 
         settings.add(new Setting(R.drawable.ic_toolbar_storage,
                 getActivity().getResources().getString(R.string.pref_data_header),
-                "", "", "", Setting.Type.HEADER, -1));
+                "", "", "", Setting.Type.HEADER));
 
         settings.add(new Setting(-1, "",
                 getActivity().getResources().getString(R.string.pref_data_cache),
                 getActivity().getResources().getString(R.string.pref_data_cache_desc),
                 String.format(getActivity().getResources().getString(R.string.pref_data_cache_size),
                         formatter.format(cache) + " MB"),
-                Setting.Type.CACHE, -1));
+                Setting.Type.CACHE));
 
         if (getActivity().getResources().getBoolean(R.bool.enable_icon_request) ||
                 Preferences.get(getActivity()).isPremiumRequestEnabled() &&
@@ -138,74 +139,73 @@ public class SettingsFragment extends Fragment {
             settings.add(new Setting(-1, "",
                     getActivity().getResources().getString(R.string.pref_data_request),
                     getActivity().getResources().getString(R.string.pref_data_request_desc),
-                    "", Setting.Type.ICON_REQUEST, -1));
+                    "", Setting.Type.ICON_REQUEST));
         }
 
         if (Preferences.get(getActivity()).isPremiumRequestEnabled()) {
             settings.add(new Setting(R.drawable.ic_toolbar_premium_request,
                     getActivity().getResources().getString(R.string.pref_premium_request_header),
-                    "", "", "", Setting.Type.HEADER, -1));
+                    "", "", "", Setting.Type.HEADER));
 
             settings.add(new Setting(-1, "",
                     getActivity().getResources().getString(R.string.pref_premium_request_restore),
                     getActivity().getResources().getString(R.string.pref_premium_request_restore_desc),
-                    "", Setting.Type.RESTORE, -1));
+                    "", Setting.Type.RESTORE));
 
             settings.add(new Setting(-1, "",
                     getActivity().getResources().getString(R.string.pref_premium_request_rebuild),
                     getActivity().getResources().getString(R.string.pref_premium_request_rebuild_desc),
-                    "", Setting.Type.PREMIUM_REQUEST, -1));
+                    "", Setting.Type.PREMIUM_REQUEST));
         }
 
         if (CandyBarApplication.getConfiguration().isDashboardThemingEnabled()) {
             settings.add(new Setting(R.drawable.ic_toolbar_theme,
                     getActivity().getResources().getString(R.string.pref_theme_header),
-                    "", "", "", Setting.Type.HEADER, -1));
+                    "", "", "", Setting.Type.HEADER));
 
             settings.add(new Setting(-1, "",
-                    getActivity().getResources().getString(R.string.pref_theme_dark),
-                    getActivity().getResources().getString(R.string.pref_theme_dark_desc),
-                    "", Setting.Type.THEME, Preferences.get(getActivity()).isDarkTheme() ? 1 : 0));
+                    ThemeHelper.getCurrentThemeName(getActivity()),
+                    "", "", Setting.Type.THEME));
         }
 
         if (WallpaperHelper.getWallpaperType(getActivity()) == WallpaperHelper.CLOUD_WALLPAPERS) {
             settings.add(new Setting(R.drawable.ic_toolbar_wallpapers,
                     getActivity().getResources().getString(R.string.pref_wallpaper_header),
-                    "", "", "", Setting.Type.HEADER, -1));
+                    "", "", "", Setting.Type.HEADER));
 
             settings.add(new Setting(-1, "",
                     getActivity().getResources().getString(R.string.pref_wallpaper_location),
                     WallpaperHelper.getDefaultWallpapersDirectory(getActivity()).toString(), "",
-                    Setting.Type.WALLPAPER, -1));
+                    Setting.Type.WALLPAPER));
         }
 
         settings.add(new Setting(R.drawable.ic_toolbar_language,
                 getActivity().getResources().getString(R.string.pref_language_header),
-                "", "", "", Setting.Type.HEADER, -1));
+                "", "", "", Setting.Type.HEADER));
 
         Language language = LocaleHelper.getCurrentLanguage(getActivity());
         settings.add(new Setting(-1, "",
                 language.getName(),
-                "", "", Setting.Type.LANGUAGE, -1));
+                "", "", Setting.Type.LANGUAGE));
 
         settings.add(new Setting(R.drawable.ic_toolbar_others,
                 getActivity().getResources().getString(R.string.pref_others_header),
-                "", "", "", Setting.Type.HEADER, -1));
+                "", "", "", Setting.Type.HEADER));
 
         settings.add(new Setting(-1, "",
                 getActivity().getResources().getString(R.string.pref_others_changelog),
-                "", "", Setting.Type.CHANGELOG, -1));
+                "", "", Setting.Type.CHANGELOG));
 
         if (getActivity().getResources().getBoolean(R.bool.enable_apply)) {
             settings.add(new Setting(-1, "",
                     getActivity().getResources().getString(R.string.pref_others_report_bugs),
-                    "", "", Setting.Type.REPORT_BUGS, -1));
+                    "", "", Setting.Type.REPORT_BUGS));
         }
 
         if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
             settings.add(new Setting(-1, "",
                     getActivity().getResources().getString(R.string.pref_others_reset_tutorial),
-                    "", "", Setting.Type.RESET_TUTORIAL, -1));
+                    "", "", Setting.Type.RESET_TUTORIAL));
         }
 
         mRecyclerView.setAdapter(new SettingsAdapter(getActivity(), settings));

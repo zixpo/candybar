@@ -70,6 +70,7 @@ import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
 import candybar.lib.helpers.PlaystoreCheckHelper;
 import candybar.lib.helpers.RequestHelper;
+import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
@@ -125,6 +126,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     private LicenseHelper mLicenseHelper;
 
     private boolean mIsMenuVisible = true;
+    private boolean prevIsDarkTheme;
 
     public static List<Request> sMissedApps;
     public static List<Icon> sSections;
@@ -139,16 +141,17 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.setTheme(Preferences.get(this).isDarkTheme() ?
+        prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
+        super.setTheme(ThemeHelper.isDarkTheme(this) ?
                 R.style.AppThemeDark : R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ColorHelper.setupStatusBarIconColor(this);
         ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this,
-                Preferences.get(this).isDarkTheme() ?
+                ThemeHelper.isDarkTheme(this) ?
                         R.color.navigationBarDark : R.color.navigationBar));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !Preferences.get(this).isDarkTheme()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !ThemeHelper.isDarkTheme(this)) {
             int flags = 0;
             if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)))
                 flags = flags | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
@@ -177,7 +180,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         Toolbar toolbar = findViewById(R.id.toolbar);
         mToolbarTitle = findViewById(R.id.toolbar_title);
 
-        toolbar.setPopupTheme(Preferences.get(this).isDarkTheme() ?
+        toolbar.setPopupTheme(ThemeHelper.isDarkTheme(this) ?
                 R.style.AppThemeDark : R.style.AppTheme);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -244,6 +247,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         super.onConfigurationChanged(newConfig);
         LocaleHelper.setLocale(this);
         if (mIsMenuVisible) mDrawerToggle.onConfigurationChanged(newConfig);
+        if (prevIsDarkTheme != ThemeHelper.isDarkTheme(this)) this.recreate();
     }
 
     @Override
@@ -602,13 +606,13 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         NavigationViewHelper.initWallpapers(mNavigationView);
 
         ColorStateList itemStateList = ContextCompat.getColorStateList(this,
-                Preferences.get(this).isDarkTheme() ?
+                ThemeHelper.isDarkTheme(this) ?
                         R.color.navigation_view_item_highlight_dark :
                         R.color.navigation_view_item_highlight);
         mNavigationView.setItemTextColor(itemStateList);
         mNavigationView.setItemIconTintList(itemStateList);
         Drawable background = ContextCompat.getDrawable(this,
-                Preferences.get(this).isDarkTheme() ?
+                ThemeHelper.isDarkTheme(this) ?
                         R.drawable.navigation_view_item_background_dark :
                         R.drawable.navigation_view_item_background);
         mNavigationView.setItemBackground(background);

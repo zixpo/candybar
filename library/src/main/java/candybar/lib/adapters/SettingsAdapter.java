@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +32,7 @@ import candybar.lib.databases.Database;
 import candybar.lib.fragments.SettingsFragment;
 import candybar.lib.fragments.dialog.ChangelogFragment;
 import candybar.lib.fragments.dialog.LanguagesFragment;
+import candybar.lib.fragments.dialog.ThemeChooserFragment;
 import candybar.lib.helpers.ReportBugsHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Setting;
@@ -109,13 +109,6 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     contentViewHolder.footer.setText(setting.getFooter());
                     contentViewHolder.footer.setVisibility(View.VISIBLE);
                 }
-
-                if (setting.getCheckState() >= 0) {
-                    contentViewHolder.checkBox.setVisibility(View.VISIBLE);
-                    contentViewHolder.checkBox.setChecked(setting.getCheckState() == 1);
-                } else {
-                    contentViewHolder.checkBox.setVisibility(View.GONE);
-                }
             } else {
                 contentViewHolder.container.setVisibility(View.GONE);
                 contentViewHolder.title.setVisibility(View.VISIBLE);
@@ -154,7 +147,6 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private final TextView content;
         private final TextView footer;
         private final LinearLayout container;
-        private final AppCompatCheckBox checkBox;
         private final View divider;
 
         ContentViewHolder(View itemView) {
@@ -163,7 +155,6 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             subtitle = itemView.findViewById(R.id.subtitle);
             content = itemView.findViewById(R.id.content);
             footer = itemView.findViewById(R.id.footer);
-            checkBox = itemView.findViewById(R.id.checkbox);
             divider = itemView.findViewById(R.id.divider);
             container = itemView.findViewById(R.id.container);
 
@@ -246,8 +237,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         }
                         break;
                     case THEME:
-                        Preferences.get(mContext).setDarkTheme(!checkBox.isChecked());
-                        ((AppCompatActivity) mContext).recreate();
+                        ThemeChooserFragment.showThemeChooser(((AppCompatActivity) mContext).getSupportFragmentManager());
                         break;
                     case WALLPAPER:
                         break;

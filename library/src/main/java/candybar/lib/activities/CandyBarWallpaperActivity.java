@@ -50,6 +50,7 @@ import candybar.lib.adapters.WallpapersAdapter;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.TapIntroHelper;
+import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.items.PopupItem;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
@@ -102,7 +103,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.setTheme(Preferences.get(this).isDarkTheme() ?
+        super.setTheme(ThemeHelper.isDarkTheme(this) ?
                 R.style.WallpaperThemeDark : R.style.WallpaperTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wallpaper);
