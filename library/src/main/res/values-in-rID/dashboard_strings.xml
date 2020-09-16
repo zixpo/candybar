@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Beranda</string>
@@ -56,9 +56,6 @@ Anda tidak akan dapat menggunakan aplikasi ini.</string>
     <string name="license_check_retry">Tidak dapat memeriksa lisensi, cobalah beberapa saat lagi.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Pemeriksaan Play Store</string>
-    <string name="playstore_check_success">Terima kasih telah menginstal aplikasi dari Play Store. Enjoy.</string>
-    <string name="playstore_check_failed">Sepertinya anda menginstal paket ikon ini di luar Play Store.
-Anda tidak dapat menggunakan aplikasi ini.</string>
     <!-- Share -->
     <string name="share_app_title">Hei! Lihatlah %s</string>
     <string name="share_app_body">Lihatlah %1$s, paket ikon ini sangat keren! %2$s</string>
@@ -128,7 +125,6 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="request_arctic_sending">Mengirim pesanan ke Arctic Manager...</string>
     <string name="request_arctic_error">Terjadi kesalahan ketika mengirim pesanan ke Arctic Manager. Kesalahan %s</string>
     <string name="request_arctic_success">Berhasil kirim pesanan ke Arctic Manager</string>
-    <string name="request_fetching_data">Mengambil data terbaru...</string>
     <string name="request_build_failed">Tidak dapat membuat pesanan ikon</string>
     <string name="request_appfilter_failed">Tidak dapat membaca appfilter.xml</string>
     <string name="request_requested">Mohon periksa kembali pesanan anda.</string>
