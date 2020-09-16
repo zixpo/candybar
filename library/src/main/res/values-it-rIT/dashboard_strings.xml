@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Home</string>
@@ -56,8 +56,6 @@ Scaricala da lì per utilizzarla.</string>
     <string name="license_check_retry">Impossibile controllare la licenza. Per favore, riprova tra qualche momento.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Check</string>
-    <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store. Divertiti.</string>
-    <string name="playstore_check_failed">Sembra che tu abbia installato questo pacchetto icone al di fuori del Play Store, dunque non potrai utilizzarlo.</string>
     <!-- Share -->
     <string name="share_app_title">Hey! Ti consiglio questa applicazione %s</string>
     <string name="share_app_body">Guarda %1$s, questo pacchetto icone è fantastico! %2$s</string>
@@ -126,7 +124,6 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_arctic_sending">Invio della richiesta a Arctic Manager...</string>
     <string name="request_arctic_error">Si è verificato un errore durante l\'invio della richiesta a Arctic Manager. L\'errore è %s</string>
     <string name="request_arctic_success">Richiesta inviata con successo a Arctic Manager</string>
-    <string name="request_fetching_data">Recupero dati più recenti...</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>
     <string name="request_requested">Per favore, controlla la tua richiesta di icone.
