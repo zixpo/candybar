@@ -1,3 +1,16 @@
+# v3.8.0
+- Rewrote configuration JSON checkers
+- Added option to use different email, method or Arctic API key
+  for regular and premium icon requests
+- Fixed Flick Launcher applier
+- Added support for auto light-dark mode
+- Fixed issues with icon requests
+- Fixed the wallpaper loading issue
+- Updated translations
+- Improved documentation comments
+- Improved wiki documentation
+- Lots of minor fixes
+
 # v3.7.4
 - Updated translations
 - Fix unable to disable regular icon request
