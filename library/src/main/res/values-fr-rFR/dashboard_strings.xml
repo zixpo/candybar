@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">Tableau de bord CandyBar</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Accueil</string>
@@ -56,9 +56,6 @@ Vous ne pourrez pas utiliser l\'application</string>
     <string name="license_check_retry">Impossible de vérifier la licence, veuillez réessayer plus tard</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Contrôle Play Store</string>
-    <string name="playstore_check_success">Merci d\'avoir installé l\'application depuis Google Play. Profitez.</string>
-    <string name="playstore_check_failed">Il semble que vous avez installé ce pack d\'icônes depuis un autre endroit que Google Play.
-        Votre chemin s\'arrête là.</string>
     <!-- Share -->
     <string name="share_app_title">Salut ! Regarde ça %s</string>
     <string name="share_app_body">Regarde %1$s, ce pack d\'icônes est vraiment sympa ! %2$s</string>
@@ -130,7 +127,6 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <string name="request_arctic_sending">Envoi de la demande à Artic Manager...</string>
     <string name="request_arctic_error">Échec de l\'envoi de la demande à Artic Manager. L\'erreur est %s</string>
     <string name="request_arctic_success">Demande envoyée avec succès à Artic Manager</string>
-    <string name="request_fetching_data">Récupération des dernières données...</string>
     <string name="request_build_failed">Impossible de construire la demande d\'icône(s)</string>
     <string name="request_appfilter_failed">Impossible de lire le fichier appfilter.xml</string>
     <string name="request_requested">Vérifiez votre demande à nouveau.
