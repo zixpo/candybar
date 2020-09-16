@@ -44,13 +44,16 @@ import io.github.inflationx.viewpump.ViewPump;
  * limitations under the License.
  */
 
-public abstract class CandyBarApplication extends MultiDexApplication implements ApplicationCallback {
+public abstract class CandyBarApplication extends MultiDexApplication {
 
     private static Configuration mConfiguration;
     private Thread.UncaughtExceptionHandler mHandler;
 
     public static Request.Property sRequestProperty;
     public static String sZipPath = null;
+
+    @NonNull
+    public abstract Configuration onInit();
 
     public static Configuration getConfiguration() {
         if (mConfiguration == null) {

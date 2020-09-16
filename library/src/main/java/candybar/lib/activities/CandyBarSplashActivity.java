@@ -56,7 +56,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
     private AsyncTask mCloudWallpapersLoader;
 
     @NotNull
-    abstract protected Class<?> getMainActivity();
+    public abstract Class<?> getMainActivity();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
