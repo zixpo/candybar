@@ -41,6 +41,7 @@
     <string name="search_faqs">سؤال أم جواب</string>
     <string name="search_icon">اسم الأيقونة</string>
     <!-- Update -->
+    <string name="checking_for_update">جار التحقق من وجود تحديث …</string>
     <string name="update_available">هناك تحديث متوفر!</string>
     <string name="no_update_available">أنت تستخدم أحدث إصدار!</string>
     <!-- Changelog -->
@@ -55,6 +56,7 @@
     <string name="license_check_retry">تعذر التحقق من الترخيص، يرجى المحاولة مرة أخرى بعد لحظات قليلة.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">التحقق من متجر Play</string>
+    <string name="playstore_check_success">شكراً لك لتثبيتك التطبيق من متجر Google Play. استمتع.</string>
     <!-- Share -->
     <string name="share_app_title">مرحباً! تفقد %s</string>
     <string name="share_app_body">تفقد %1$s، حزمة الأيقونات هذه رائعة جداً! %2$s</string>
