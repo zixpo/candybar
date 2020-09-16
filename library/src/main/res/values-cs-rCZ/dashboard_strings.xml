@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Přehled</string>
@@ -56,9 +56,6 @@
     <string name="license_check_retry">Nelze zkontrolovat licenci, zkuste to znovu za chvíli.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Kontrola Obchodu Play</string>
-    <string name="playstore_check_success">Děkujeme za instalaci aplikace z Obchodu Play. Užijte si to.</string>
-    <string name="playstore_check_failed">Vypadá to, že jste nainstalovali tento balíček ikon mimo Obchod Play.
-        Nebudete jej moci používat.</string>
     <!-- Share -->
     <string name="share_app_title">Jo! Podívejte se na %s</string>
     <string name="share_app_body">Podívejte se na %1$s, tento balíček ikon je opravdu skvělý! %2$s</string>
@@ -129,7 +126,6 @@
     <string name="request_arctic_sending">Odesílání požadavku do Artic Manager...</string>
     <string name="request_arctic_error">Při odesílání požadavku do Artic Manager došlo k chybě. Chyba je %s</string>
     <string name="request_arctic_success">Požadavek byl úspěšně odeslán do Arctic Manager</string>
-    <string name="request_fetching_data">Načítání nejnovějších dat...</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
     <string name="request_requested">Zkontrolujte prosím znovu svůj požadavek.
