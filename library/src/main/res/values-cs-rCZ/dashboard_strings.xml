@@ -41,6 +41,7 @@
     <string name="search_faqs">Otázky nebo odpovědi</string>
     <string name="search_icon">Název ikony</string>
     <!-- Update -->
+    <string name="checking_for_update">Kontrola aktualizací…</string>
     <string name="update_available">Aktualizace k dispozici!</string>
     <string name="no_update_available">Používáte nejnovější verzi!</string>
     <!-- Changelog -->
@@ -56,6 +57,9 @@
     <string name="license_check_retry">Nelze zkontrolovat licenci, zkuste to znovu za chvíli.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Kontrola Obchodu Play</string>
+    <string name="playstore_check_success">Děkujeme za instalaci aplikace z Obchodu Play. Užijte si to. Užívejte si.</string>
+    <string name="playstore_check_failed">Vypadá to, že jste nainstalovali tento balíček ikon mimo Obchod Play.
+        Nebudete jej moci používat.</string>
     <!-- Share -->
     <string name="share_app_title">Jo! Podívejte se na %s</string>
     <string name="share_app_body">Podívejte se na %1$s, tento balíček ikon je opravdu skvělý! %2$s</string>
@@ -126,6 +130,7 @@
     <string name="request_arctic_sending">Odesílání požadavku do Artic Manager...</string>
     <string name="request_arctic_error">Při odesílání požadavku do Artic Manager došlo k chybě. Chyba je %s</string>
     <string name="request_arctic_success">Požadavek byl úspěšně odeslán do Arctic Manager</string>
+    <string name="request_fetching_data">Načítání nejnovějších dat…</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
     <string name="request_requested">Zkontrolujte prosím znovu svůj požadavek.
@@ -133,6 +138,7 @@
     <string name="request_email_client">Vyberte aplikaci, kterou chcete použít k odeslání žádosti o ikonu</string>
     <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon aktualizujte aplikaci na nejnovější verzi.</string>
     <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
+    <string name="unable_to_load_config">Při načítání/čtení dat ze serveru došlo k chybě.</string>
     <string name="request_limit">Počet ikon, o které můžete zdarma požádat: %d.</string>
     <string name="request_used">Počet ikon, o které jste již požádali: %d.</string>
     <string name="request_limit_buy">Pro více požadavků na ikony si můžete zakoupit prémiový požadavek.</string>
