@@ -245,9 +245,12 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        if (prevIsDarkTheme != ThemeHelper.isDarkTheme(this)) {
+            recreate();
+            return;
+        }
         LocaleHelper.setLocale(this);
         if (mIsMenuVisible) mDrawerToggle.onConfigurationChanged(newConfig);
-        if (prevIsDarkTheme != ThemeHelper.isDarkTheme(this)) this.recreate();
     }
 
     @Override

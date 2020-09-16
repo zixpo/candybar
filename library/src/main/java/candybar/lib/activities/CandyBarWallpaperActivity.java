@@ -101,8 +101,11 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     private PhotoViewAttacher mAttacher;
     private ExitActivityTransition mExitTransition;
 
+    private boolean prevIsDarkTheme;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
         super.setTheme(ThemeHelper.isDarkTheme(this) ?
                 R.style.WallpaperThemeDark : R.style.WallpaperTheme);
         super.onCreate(savedInstanceState);
@@ -213,6 +216,10 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        if (prevIsDarkTheme != ThemeHelper.isDarkTheme(this)) {
+            recreate();
+            return;
+        }
         LocaleHelper.setLocale(this);
         resetBottomBarPadding();
     }
@@ -451,8 +458,6 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                                     CandyBarWallpaperActivity.this, R.attr.colorAccent));
                         }
 
-                        onWallpaperLoaded();
-
                         return true;
                     }
 
@@ -471,9 +476,10 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
                                 onWallpaperLoaded();
                             });
-
-                            return true;
+                        } else {
+                            onWallpaperLoaded();
                         }
+
                         return false;
                     }
                 })
