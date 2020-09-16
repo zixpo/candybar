@@ -57,6 +57,9 @@ Anda tidak akan dapat menggunakan aplikasi ini.</string>
     <string name="license_check_retry">Tidak dapat memeriksa lisensi, cobalah beberapa saat lagi.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Pemeriksaan Play Store</string>
+    <string name="playstore_check_success">Terimakasih telah menginstal aplikasi dari Google Play Store. Enjoy.</string>
+    <string name="playstore_check_failed">Sepertinya anda menginstal paket ikon ini di luar Google Play Store.
+Anda tidak dapat menggunakan aplikasi ini.</string>
     <!-- Share -->
     <string name="share_app_title">Hei! Lihatlah %s</string>
     <string name="share_app_body">Lihatlah %1$s, paket ikon ini sangat keren! %2$s</string>
@@ -126,12 +129,14 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="request_arctic_sending">Mengirim pesanan ke Arctic Manager...</string>
     <string name="request_arctic_error">Terjadi kesalahan ketika mengirim pesanan ke Arctic Manager. Kesalahan %s</string>
     <string name="request_arctic_success">Berhasil kirim pesanan ke Arctic Manager</string>
+    <string name="request_fetching_data">Mengambil data terbaru…</string>
     <string name="request_build_failed">Tidak dapat membuat pesanan ikon</string>
     <string name="request_appfilter_failed">Tidak dapat membaca appfilter.xml</string>
     <string name="request_requested">Mohon periksa kembali pesanan anda.</string>
     <string name="request_email_client">Pilih aplikasi yang ingin anda gunakan untuk kirim pesanan ikon</string>
     <string name="request_app_disabled">Anda sedang menggunakan aplikasi paket ikon versi lawas. Ikon pesanan mungkin disertakan dalam versi terbaru. Silakan perbarui aplikasi anda ke versi terbaru untuk memesan ikon.</string>
     <string name="connection_error_long">Tidak dapat memuat data dari server. Mohon periksa koneksi jaringan anda.</string>
+    <string name="unable_to_load_config">Terjadi galat saat mengambil/membaca data dari server.</string>
     <string name="request_limit">Anda hanya bisa membuat %d permintaan dengan pesanan reguler.</string>
     <string name="request_used">Anda telah memesan %d ikon.</string>
     <string name="request_limit_buy">Anda bisa membeli Pesanan Premium untuk memesan lebih banyak ikon.</string>
