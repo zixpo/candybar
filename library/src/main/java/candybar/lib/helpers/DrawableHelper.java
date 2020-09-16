@@ -62,25 +62,23 @@ public class DrawableHelper {
         ComponentName componentName = new ComponentName(packageName, activityName);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            // Load Adaptive icon if found
+            // Load Adaptive icon if possible
             Intent intent = new Intent();
             intent.setComponent(componentName);
             ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
-            Drawable normalDrawable = resolveInfo.loadIcon(packageManager);
-
-            if (normalDrawable instanceof AdaptiveIconDrawable) return normalDrawable;
+            if (resolveInfo != null) {
+                Drawable adaptiveDrawable = resolveInfo.loadIcon(packageManager);
+                if (adaptiveDrawable instanceof AdaptiveIconDrawable) return adaptiveDrawable;
+            }
         }
 
         // Fallback to legacy icon if AdaptiveIcon is not found
         try {
-            Drawable drawable;
-            int density = DisplayMetrics.DENSITY_XXXHIGH;
-
             ApplicationInfo appInfo = packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
             Resources appResources = packageManager.getResourcesForApplication(appInfo);
 
-            drawable = ResourcesCompat.getDrawableForDensity(
-                    appResources, appInfo.icon, density, null);
+            Drawable drawable = ResourcesCompat.getDrawableForDensity(appResources, appInfo.icon,
+                    DisplayMetrics.DENSITY_XXXHIGH, null);
 
             if (drawable != null) return drawable;
             LogUtil.e("DrawableHelper - drawable is null");
