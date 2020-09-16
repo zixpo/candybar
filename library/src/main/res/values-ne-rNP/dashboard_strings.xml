@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">क्यान्डीबार मटेरियल ड्यासबोर्ड</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">गृह पृष्ठ</string>
@@ -55,8 +55,6 @@
     <string name="license_check_retry">लाइसेन्स जाँच गर्न असमर्थ छौ, केहि क्षणमा फेरि प्रयास गर्नुहोस्।</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">प्ले स्टोर जाँच गर्दै छौ</string>
-    <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। आइकन प्याकको मज्जा लिनुहोस्।</string>
-    <string name="playstore_check_failed">तपाईंले प्ले स्टोर भन्दा बहिर बाट डाउनलोड गरेको जस्तो लाग्यो, तपाईंले यस आइकनलाई प्रयोग गर्न सक्नु हुँदैन</string>
     <!-- Share -->
     <string name="share_app_title">%s चेक आउट</string>
     <string name="share_app_body">चेक आउट %1$s एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ %2$s</string>
@@ -125,7 +123,6 @@
     <string name="request_arctic_sending">Arctic Manager लाई अनुरोध पठाउदै..</string>
     <string name="request_arctic_error">Arctic Manager लाई अनुरोध पठाउदै गर्दा समस्या देखियो । समस्या चाँही  %s हो ।</string>
     <string name="request_arctic_success">Arctic Manager लाई सफलतापूर्वक अनुरोध पठाईयो ।</string>
-    <string name="request_fetching_data">भर्खरैको डाटा ल्याउँदै...</string>
     <string name="request_build_failed">आइकनको अनुरोध निर्माण गर्न सकिएन</string>
     <string name="request_appfilter_failed">appfilter.xml पढ्न सकिएन</string>
     <string name="request_requested">कृपया तपाइँको अनुरोध फेरि जाँच गर्नुहोस्। किनभने तपाईं एप अनुरोध गर्नको लागी कोशिश गर्दै हुनुहुन्छ जुन पहिले नै अनुरोध गरिएको थियो।</string>
