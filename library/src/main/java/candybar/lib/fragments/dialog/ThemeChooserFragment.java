@@ -43,7 +43,8 @@ import candybar.lib.preferences.Preferences;
 public class ThemeChooserFragment extends DialogFragment {
 
     private ListView mListView;
-    private int mTheme;
+    private int mChosenTheme;
+    private int mCurrentTheme;
 
     public static final String TAG = "candybar.dialog.theme";
 
@@ -85,13 +86,15 @@ public class ThemeChooserFragment extends DialogFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        mCurrentTheme = Preferences.get(getActivity()).getTheme();
+        mChosenTheme = mCurrentTheme;
+
         List<Theme> themes = ThemeHelper.getThemes();
-        int currentTheme = Preferences.get(getActivity()).getTheme();
         int currentThemeIndex = 0;
 
         for (int i = 0; i < themes.size(); i++) {
             int shape = themes.get(i).getTheme();
-            if (shape == currentTheme) {
+            if (shape == mCurrentTheme) {
                 currentThemeIndex = i;
                 break;
             }
@@ -102,13 +105,15 @@ public class ThemeChooserFragment extends DialogFragment {
 
     @Override
     public void onDismiss(DialogInterface dialog) {
-        Preferences.get(getActivity()).setTheme(mTheme);
-        getActivity().recreate();
+        if (mChosenTheme != mCurrentTheme) {
+            Preferences.get(getActivity()).setTheme(mChosenTheme);
+            getActivity().recreate();
+        }
         super.onDismiss(dialog);
     }
 
     public void setTheme(int theme) {
-        mTheme = theme;
+        mChosenTheme = theme;
         dismiss();
     }
 }
