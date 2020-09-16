@@ -41,6 +41,7 @@
     <string name="search_faqs">Pertanyaan atau jawaban</string>
     <string name="search_icon">Nama Ikon</string>
     <!-- Update -->
+    <string name="checking_for_update">Mengecek pembaruan…</string>
     <string name="update_available">Pembaruan tersedia!</string>
     <string name="no_update_available">Anda telah menggunakan versi terbaru!</string>
     <!-- Changelog -->
