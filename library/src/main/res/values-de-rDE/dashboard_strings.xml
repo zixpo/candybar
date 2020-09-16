@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Startseite</string>
@@ -56,9 +56,6 @@ Du wirst sie nicht benutzen können.</string>
     <string name="license_check_retry">Lizenz kann nicht überprüft werden. Bitte später erneut versuchen.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Überprüfung</string>
-    <string name="playstore_check_success">Vielen Dank, dass du die App aus dem Play Store installiert hast. Viel Spaß damit.</string>
-    <string name="playstore_check_failed">Es scheint als hättest du die App von außerhalb des Play Stores installiert.
-Du wirst nicht in der der Lage sein sie zu nutzen.</string>
     <!-- Share -->
     <string name="share_app_title">Yo! Sieh dir %s an</string>
     <string name="share_app_body">Sieh dir %1$s an. Dieses Icon Pack ist echt cool! %2$s</string>
@@ -129,7 +126,6 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_arctic_sending">Sende Request an Arctic Manager...</string>
     <string name="request_arctic_error">Fehler beim Senden des Requests an Arctic Manager. Die Fehlermeldung ist %s</string>
     <string name="request_arctic_success">Request erfolgreich an Arctic Manager gesendet</string>
-    <string name="request_fetching_data">Rufe neueste Daten ab...</string>
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>
     <string name="request_requested">Bitte überprüfe deine Anfrage.
