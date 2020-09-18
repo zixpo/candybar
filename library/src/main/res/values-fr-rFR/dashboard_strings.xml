@@ -41,6 +41,7 @@
     <string name="search_faqs">Question ou réponse</string>
     <string name="search_icon">Nom d\'icône</string>
     <!-- Update -->
+    <string name="checking_for_update">Vérification de mise à jour...</string>
     <string name="update_available">Mise à jour disponible !</string>
     <string name="no_update_available">Vous utilisez la dernière version !</string>
     <!-- Changelog -->
@@ -56,6 +57,9 @@ Vous ne pourrez pas utiliser l\'application</string>
     <string name="license_check_retry">Impossible de vérifier la licence, veuillez réessayer plus tard</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Contrôle Play Store</string>
+    <string name="playstore_check_success">Merci d\'avoir installé l\'application depuis Google Play. Profitez.</string>
+    <string name="playstore_check_failed">Il semble que vous avez installé ce pack d\'icônes en dehors du Google Play Store.
+        Vous ne pourrez pas l\'utiliser.</string>
     <!-- Share -->
     <string name="share_app_title">Salut ! Regarde ça %s</string>
     <string name="share_app_body">Regarde %1$s, ce pack d\'icônes est vraiment sympa ! %2$s</string>
@@ -127,6 +131,7 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <string name="request_arctic_sending">Envoi de la demande à Artic Manager...</string>
     <string name="request_arctic_error">Échec de l\'envoi de la demande à Artic Manager. L\'erreur est %s</string>
     <string name="request_arctic_success">Demande envoyée avec succès à Artic Manager</string>
+    <string name="request_fetching_data">Récupération des dernières données...</string>
     <string name="request_build_failed">Impossible de construire la demande d\'icône(s)</string>
     <string name="request_appfilter_failed">Impossible de lire le fichier appfilter.xml</string>
     <string name="request_requested">Vérifiez votre demande à nouveau.
@@ -134,6 +139,7 @@ Car vous êtes en train de demander des applications déjà demandées.</string>
     <string name="request_email_client">Choisissez la plateforme de messagerie que vous souhaitez utiliser pour envoyer la demande d\'icône(s)</string>
     <string name="request_app_disabled">Vous utilisez une ancienne version de ce pack d\'icônes, les icônes demandées peuvent être déjà incluses dans la dernière version. Veuillez mettre à jour l\'application pour demander des icônes.</string>
     <string name="connection_error_long">Impossible de charger les données du serveur. Veuillez vérifier votre connexion.</string>
+    <string name="unable_to_load_config">Une erreur s\'est produite lors de la récupération/lecture des données du serveur.</string>
     <string name="request_limit">Vous pouvez seulement faire %d demande(s) en demande classique.</string>
     <string name="request_used">Vous avez demandé %d icône(s).</string>
     <string name="request_limit_buy">Vous pouvez acheter des Demandes Premium pour demander davantage d\'icônes.</string>
