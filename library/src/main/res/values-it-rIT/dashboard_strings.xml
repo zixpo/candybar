@@ -41,6 +41,7 @@
     <string name="search_faqs">Domande o risposte</string>
     <string name="search_icon">Nome Icona</string>
     <!-- Update -->
+    <string name="checking_for_update">Controllo aggiornamento…</string>
     <string name="update_available">Aggiornamento disponibile!</string>
     <string name="no_update_available">Stai utilizzando la versione più recente!</string>
     <!-- Changelog -->
@@ -56,6 +57,8 @@ Scaricala da lì per utilizzarla.</string>
     <string name="license_check_retry">Impossibile controllare la licenza. Per favore, riprova tra qualche momento.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Check</string>
+    <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store. Divertiti.</string>
+    <string name="playstore_check_failed">Sembra che tu abbia installato questo pacchetto icone al di fuori del Play Store, dunque non potrai utilizzarlo.</string>
     <!-- Share -->
     <string name="share_app_title">Hey! Ti consiglio questa applicazione %s</string>
     <string name="share_app_body">Guarda %1$s, questo pacchetto icone è fantastico! %2$s</string>
