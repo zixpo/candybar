@@ -127,6 +127,7 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_arctic_sending">Invio della richiesta a Arctic Manager...</string>
     <string name="request_arctic_error">Si è verificato un errore durante l\'invio della richiesta a Arctic Manager. L\'errore è %s</string>
     <string name="request_arctic_success">Richiesta inviata con successo a Arctic Manager</string>
+    <string name="request_fetching_data">Recupero dati più recenti…</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>
     <string name="request_requested">Per favore, controlla la tua richiesta di icone.
@@ -134,6 +135,7 @@ Stai provando hai selezionato icone già richieste.</string>
     <string name="request_email_client">Scegli con quale applicazione mail vuoi inviare la tua richiesta</string>
     <string name="request_app_disabled">Stai usando una versione più vecchia di questo pacchetto icone. Le icone richieste possono essere incluse nell\'ultima versione. Aggiorna l\'app all\'ultima versione per richiedere icone.</string>
     <string name="connection_error_long">Impossibile caricare i dati dal server. Per favore, controlla la tua connessione internet.</string>
+    <string name="unable_to_load_config">Si è verificato un errore durante l\'acquisizione di informazioni dal server.</string>
     <string name="request_limit">E\' possibile inviare  %d  app con la richiesta free.</string>
     <string name="request_used">Hai richiesto %d icone</string>
     <string name="request_limit_buy">Puoi acquistare la funzione Premium per richiedere più icone.</string>
