@@ -38,6 +38,7 @@ import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import org.json.JSONObject;
 
@@ -66,6 +67,7 @@ import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -89,6 +91,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     private RecyclerView mRecyclerView;
     private FloatingActionButton mFab;
+    private RecyclerFastScroller mFastScroll;
     private ProgressBar mProgress;
 
     private MenuItem mMenuItem;
@@ -107,6 +110,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_request, container, false);
         mRecyclerView = view.findViewById(R.id.request_list);
         mFab = view.findViewById(R.id.fab);
+        mFastScroll = view.findViewById(R.id.fastscroll);
         mProgress = view.findViewById(R.id.progress);
 
         if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
@@ -142,6 +146,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 getActivity().getResources().getInteger(R.integer.request_column_count),
                 StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(mManager);
+
+        setFastScrollColor(mFastScroll);
+        mFastScroll.attachRecyclerView(mRecyclerView);
 
         mAsyncTask = new MissingAppsLoader().execute();
     }

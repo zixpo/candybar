@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.danimahardhika.android.helpers.core.ViewHelper;
+import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,8 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.IconsAdapter;
 import candybar.lib.items.Icon;
-import me.zhanghai.android.fastscroll.FastScrollerBuilder;
+
+import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -44,6 +46,7 @@ import me.zhanghai.android.fastscroll.FastScrollerBuilder;
 public class IconsFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
+    private RecyclerFastScroller mFastScroll;
     private IconsAdapter mAdapter;
 
     private List<Icon> mIcons;
@@ -58,6 +61,7 @@ public class IconsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_icons, container, false);
         mRecyclerView = view.findViewById(R.id.icons_grid);
+        mFastScroll = view.findViewById(R.id.fastscroll);
         return view;
     }
 
@@ -87,17 +91,8 @@ public class IconsFragment extends Fragment {
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
                 getActivity().getResources().getInteger(R.integer.icons_column_count)));
 
-        new FastScrollerBuilder(mRecyclerView)
-                .useMd2Style()
-                .setPopupTextProvider(position -> {
-                    Icon icon = mIcons.get(position);
-                    String name = icon.getTitle();
-                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
-                        name = icon.getCustomName();
-                    }
-                    return name.substring(0, 1);
-                })
-                .build();
+        setFastScrollColor(mFastScroll);
+        mFastScroll.attachRecyclerView(mRecyclerView);
 
         mAdapter = new IconsAdapter(getActivity(), mIcons, false, this);
         mRecyclerView.setAdapter(mAdapter);

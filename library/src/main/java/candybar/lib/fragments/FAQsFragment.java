@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,8 @@ import candybar.lib.R;
 import candybar.lib.adapters.FAQsAdapter;
 import candybar.lib.items.FAQs;
 import candybar.lib.preferences.Preferences;
+
+import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -55,6 +58,7 @@ public class FAQsFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private TextView mSearchResult;
+    private RecyclerFastScroller mFastScroll;
 
     private FAQsAdapter mAdapter;
     private AsyncTask mAsyncTask;
@@ -66,6 +70,7 @@ public class FAQsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_faqs, container, false);
         mRecyclerView = view.findViewById(R.id.faqs_list);
         mSearchResult = view.findViewById(R.id.search_result);
+        mFastScroll = view.findViewById(R.id.fastscroll);
 
         if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
@@ -81,6 +86,9 @@ public class FAQsFragment extends Fragment {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        setFastScrollColor(mFastScroll);
+        mFastScroll.attachRecyclerView(mRecyclerView);
 
         mAsyncTask = new FAQsLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }

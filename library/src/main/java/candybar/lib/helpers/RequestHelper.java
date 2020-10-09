@@ -94,7 +94,8 @@ public class RequestHelper {
 
         normalized = normalized
                 .replaceAll("[.\"']", "")
-                .replaceAll("[ \\[\\]{}()=!/\\\\&,?°|<>;:#~+*-]", "_");
+                .replaceAll("[ \\[\\]{}()=!/\\\\,?°|<>;:#~+*-]", "_")
+                .replaceAll("&", "_and_");
 
         if (Character.isDigit(normalized.charAt(0))) normalized = "_" + normalized;
         normalized = normalized.replaceAll("_+", "_");

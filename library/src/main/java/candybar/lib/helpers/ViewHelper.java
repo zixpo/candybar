@@ -9,7 +9,9 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
+import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.WindowHelper;
+import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.Locale;
 
@@ -73,16 +75,24 @@ public class ViewHelper {
         view.setLayoutParams(params);
     }
 
+    public static void setFastScrollColor(@Nullable RecyclerFastScroller fastScroll) {
+        if (fastScroll == null) return;
+
+        int accent = ColorHelper.getAttributeColor(fastScroll.getContext(), R.attr.colorAccent);
+        fastScroll.setBarColor(ColorHelper.setColorAlpha(accent, 0.8f));
+        fastScroll.setHandleNormalColor(accent);
+        fastScroll.setHandlePressedColor(ColorHelper.getDarkerColor(accent, 0.7f));
+    }
+
     public static Point getWallpaperViewRatio(String viewStyle) {
         switch (viewStyle.toLowerCase(Locale.getDefault())) {
+            default:
             case "square":
                 return new Point(1, 1);
             case "landscape":
                 return new Point(16, 9);
             case "portrait":
                 return new Point(4, 5);
-            default:
-                return new Point(1, 1);
         }
     }
 
@@ -90,14 +100,13 @@ public class ViewHelper {
         switch (viewStyle.toLowerCase(Locale.getDefault())) {
             case "card_square":
                 return new Home.Style(new Point(1, 1), Home.Style.Type.CARD_SQUARE);
+            default:
             case "card_landscape":
                 return new Home.Style(new Point(16, 9), Home.Style.Type.CARD_LANDSCAPE);
             case "square":
                 return new Home.Style(new Point(1, 1), Home.Style.Type.SQUARE);
             case "landscape":
                 return new Home.Style(new Point(16, 9), Home.Style.Type.LANDSCAPE);
-            default:
-                return new Home.Style(new Point(16, 9), Home.Style.Type.CARD_LANDSCAPE);
         }
     }
 }
