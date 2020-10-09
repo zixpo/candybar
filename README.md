@@ -1,17 +1,17 @@
 # CandyBar
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f92c02522d2e425ca7e0e039caf3dae3)](https://app.codacy.com/app/zixpo/candybar?utm_source=github.com&utm_medium=referral&utm_content=zixpo/candybar&utm_campaign=Badge_Grade_Dashboard)
-[![JitPack Version](https://jitpack.io/v/zixpo/candybar.svg)](https://jitpack.io/#zixpo/candybar)
-[![Build Status](https://api.travis-ci.com/zixpo/candybar.svg?branch=master)](https://travis-ci.com/zixpo/candybar)
+[![JitPack](https://img.shields.io/jitpack/v/github/zixpo/candybar?color=4c1&label=JitPack&style=flat-square)](https://jitpack.io/#zixpo/candybar)
+[![Build Status](https://img.shields.io/travis/com/zixpo/candybar?style=flat-square)](https://travis-ci.com/zixpo/candybar)
+[![License](https://img.shields.io/github/license/zixpo/candybar?style=flat-square)](/LICENSE)
 
 Improved version of the original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
 
-Check out [Blueprint Dashboard](https://github.com/jahirfiquitiva/blueprint/). It's modular and uses the new build features. You may like it :D
+Check out [Blueprint Dashboard](https://github.com/jahirfiquitiva/blueprint/). It's modular and uses new build features. You may like it :D
 
-This is the library of CandyBar Dashboard. It is only used for development purpose. Use the sample for making Icon Pack, Get it from [here](https://github.com/zixpo/candybar-sample).
+This is the library of CandyBar Dashboard. It is only used for development purpose. Use the sample implementation for making icon packs, get it from [here](https://github.com/zixpo/candybar-sample).
 
 # Features
 - License checker
-- Apply: 26 launchers
+- Apply: 32 launchers
 - Icon picker: See all icons
 - Icon request
   - Regular request: Free to request
@@ -23,8 +23,8 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
   - Download wallpaper
 - Settings
   - Clear cache
-  - Switch to dark theme
-  - Restore purchases: Restore premium request after reinstalling
+  - Switch themes - Auto/Light/Dark
+  - Restore purchases: Restore premium requests after reinstalling
 - Frequently asked questions with Search
 - About
 - Donation
@@ -32,15 +32,15 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
 - Muzei live wallpaper
 - Localization: Supports many languages
 - Support for OneSignal notifications
-- Check for update
-- Control your dashboard remotely with config JSON
+- Check for updates
+- Control your dashboard remotely with configuration JSON
 
 # Translation
-Help us translating CandyBar in many other languages. [Translate](https://crowdin.com/project/candybar)
+Help us translate CandyBar in many other languages. [Translate CandyBar](https://crowdin.com/project/candybar).
 
 # License
 ```
-Copyright (c) 2014-2016 Dani Mahardhika
+Copyright (c) 2014-2020 Dani Mahardhika
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
