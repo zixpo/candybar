@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+// apply plugin: 'com.github.dcendents.android-maven'
 
-group = 'com.github.zixpo'
+// group = 'com.github.zixpo'
 
 /*
  * CandyBar - Material Dashboard
