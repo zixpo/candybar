@@ -15,9 +15,6 @@
  *
  */
 apply plugin: 'com.android.library'
-// apply plugin: 'com.github.dcendents.android-maven'
-
-// group = 'com.github.zixpo'
 
 android {
     compileSdkVersion rootProject.ext.CompileSdk
