@@ -15,7 +15,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.adapters.OtherAppsAdapter;
+import candybar.lib.adapters.dialog.OtherAppsAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.TypefaceHelper;
 

@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import candybar.lib.R;
-import candybar.lib.adapters.ChangelogAdapter;
+import candybar.lib.adapters.dialog.ChangelogAdapter;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.utils.listeners.HomeListener;
 

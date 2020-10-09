@@ -1,4 +1,4 @@
-package candybar.lib.adapters;
+package candybar.lib.adapters.dialog;
 
 import android.content.Context;
 import android.view.View;
@@ -13,12 +13,11 @@ import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.fragments.dialog.ThemeChooserFragment;
-import candybar.lib.items.Theme;
+import candybar.lib.fragments.dialog.LanguagesFragment;
+import candybar.lib.items.Language;
 
 /*
  * CandyBar - Material Dashboard
@@ -38,27 +37,26 @@ import candybar.lib.items.Theme;
  * limitations under the License.
  */
 
-public class ThemeAdapter extends BaseAdapter {
-    private Context mContext;
-    private List<Theme> mThemes;
-    private int mSelectedIndex;
-    private List<ViewHolder> mHolders;
+public class LanguagesAdapter extends BaseAdapter {
 
-    public ThemeAdapter(@NonNull Context context, @NonNull List<Theme> themes, int selectedIndex) {
+    private Context mContext;
+    private List<Language> mLanguages;
+    private int mSelectedIndex;
+
+    public LanguagesAdapter(@NonNull Context context, @NonNull List<Language> languages, int selectedIndex) {
         mContext = context;
-        mThemes = themes;
+        mLanguages = languages;
         mSelectedIndex = selectedIndex;
-        mHolders = new ArrayList<>();
     }
 
     @Override
     public int getCount() {
-        return mThemes.size();
+        return mLanguages.size();
     }
 
     @Override
-    public Theme getItem(int position) {
-        return mThemes.get(position);
+    public Language getItem(int position) {
+        return mLanguages.get(position);
     }
 
     @Override
@@ -68,41 +66,34 @@ public class ThemeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        ThemeAdapter.ViewHolder holder;
-
+        LanguagesAdapter.ViewHolder holder;
         if (view == null) {
             view = View.inflate(mContext, R.layout.fragment_inapp_dialog_item_list, null);
-            holder = new ThemeAdapter.ViewHolder(view);
+            holder = new LanguagesAdapter.ViewHolder(view);
             view.setTag(holder);
-            mHolders.add(holder);
         } else {
-            holder = (ThemeAdapter.ViewHolder) view.getTag();
+            holder = (LanguagesAdapter.ViewHolder) view.getTag();
         }
 
         holder.radio.setChecked(mSelectedIndex == position);
-        holder.name.setText(mThemes.get(position).getName());
+        holder.name.setText(mLanguages.get(position).getName());
 
         holder.container.setOnClickListener(v -> {
-            for (ViewHolder aHolder : mHolders) {
-                if (aHolder != holder) aHolder.radio.setChecked(false);
-            }
-            holder.radio.setChecked(true);
-
             FragmentManager fm = ((AppCompatActivity) mContext).getSupportFragmentManager();
             if (fm == null) return;
 
-            Fragment fragment = fm.findFragmentByTag(ThemeChooserFragment.TAG);
+            Fragment fragment = fm.findFragmentByTag(LanguagesFragment.TAG);
             if (fragment == null) return;
 
-            if (fragment instanceof ThemeChooserFragment) {
-                ((ThemeChooserFragment) fragment).setTheme(mThemes.get(position).getTheme());
+            if (fragment instanceof LanguagesFragment) {
+                ((LanguagesFragment) fragment).setLanguage(mLanguages.get(position).getLocale());
             }
         });
-
         return view;
     }
 
     private class ViewHolder {
+
         private final AppCompatRadioButton radio;
         private final TextView name;
         private final LinearLayout container;

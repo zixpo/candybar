@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Locale;
 
 import candybar.lib.R;
-import candybar.lib.adapters.LanguagesAdapter;
+import candybar.lib.adapters.dialog.LanguagesAdapter;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Language;

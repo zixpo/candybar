@@ -22,7 +22,7 @@ import com.anjlab.android.iab.v3.SkuDetails;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import candybar.lib.R;
-import candybar.lib.adapters.InAppBillingAdapter;
+import candybar.lib.adapters.dialog.InAppBillingAdapter;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.preferences.Preferences;

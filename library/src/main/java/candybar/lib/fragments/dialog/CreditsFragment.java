@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.adapters.CreditsAdapter;
+import candybar.lib.adapters.dialog.CreditsAdapter;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Credit;
 

@@ -1,4 +1,4 @@
-package candybar.lib.adapters;
+package candybar.lib.adapters.dialog;
 
 import android.content.ComponentName;
 import android.content.Context;

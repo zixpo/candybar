@@ -1,4 +1,4 @@
-package candybar.lib.adapters;
+package candybar.lib.adapters.dialog;
 
 import android.content.Context;
 import android.view.View;
@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.fragments.dialog.IconShapeChooserFragment;
-import candybar.lib.items.IconShape;
+import candybar.lib.fragments.dialog.ThemeChooserFragment;
+import candybar.lib.items.Theme;
 
 /*
  * CandyBar - Material Dashboard
@@ -38,27 +38,27 @@ import candybar.lib.items.IconShape;
  * limitations under the License.
  */
 
-public class IconShapeAdapter extends BaseAdapter {
+public class ThemeAdapter extends BaseAdapter {
     private Context mContext;
-    private List<IconShape> mShapes;
+    private List<Theme> mThemes;
     private int mSelectedIndex;
     private List<ViewHolder> mHolders;
 
-    public IconShapeAdapter(@NonNull Context context, @NonNull List<IconShape> shapes, int selectedIndex) {
+    public ThemeAdapter(@NonNull Context context, @NonNull List<Theme> themes, int selectedIndex) {
         mContext = context;
-        mShapes = shapes;
+        mThemes = themes;
         mSelectedIndex = selectedIndex;
         mHolders = new ArrayList<>();
     }
 
     @Override
     public int getCount() {
-        return mShapes.size();
+        return mThemes.size();
     }
 
     @Override
-    public IconShape getItem(int position) {
-        return mShapes.get(position);
+    public Theme getItem(int position) {
+        return mThemes.get(position);
     }
 
     @Override
@@ -68,19 +68,19 @@ public class IconShapeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        IconShapeAdapter.ViewHolder holder;
+        ThemeAdapter.ViewHolder holder;
 
         if (view == null) {
             view = View.inflate(mContext, R.layout.fragment_inapp_dialog_item_list, null);
-            holder = new IconShapeAdapter.ViewHolder(view);
+            holder = new ThemeAdapter.ViewHolder(view);
             view.setTag(holder);
             mHolders.add(holder);
         } else {
-            holder = (IconShapeAdapter.ViewHolder) view.getTag();
+            holder = (ThemeAdapter.ViewHolder) view.getTag();
         }
 
         holder.radio.setChecked(mSelectedIndex == position);
-        holder.name.setText(mShapes.get(position).getName());
+        holder.name.setText(mThemes.get(position).getName());
 
         holder.container.setOnClickListener(v -> {
             for (ViewHolder aHolder : mHolders) {
@@ -91,11 +91,11 @@ public class IconShapeAdapter extends BaseAdapter {
             FragmentManager fm = ((AppCompatActivity) mContext).getSupportFragmentManager();
             if (fm == null) return;
 
-            Fragment fragment = fm.findFragmentByTag(IconShapeChooserFragment.TAG);
+            Fragment fragment = fm.findFragmentByTag(ThemeChooserFragment.TAG);
             if (fragment == null) return;
 
-            if (fragment instanceof IconShapeChooserFragment) {
-                ((IconShapeChooserFragment) fragment).setShape(mShapes.get(position).getShape());
+            if (fragment instanceof ThemeChooserFragment) {
+                ((ThemeChooserFragment) fragment).setTheme(mThemes.get(position).getTheme());
             }
         });
 

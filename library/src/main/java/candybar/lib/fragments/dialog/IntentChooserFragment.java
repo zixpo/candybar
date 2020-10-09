@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.adapters.IntentAdapter;
+import candybar.lib.adapters.dialog.IntentAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.RequestFragment;
 import candybar.lib.helpers.TypefaceHelper;
