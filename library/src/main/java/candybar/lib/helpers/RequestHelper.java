@@ -30,7 +30,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -115,8 +114,9 @@ public class RequestHelper {
             }
 
             File file = new File(context.getCacheDir().toString(), xmlType.getFileName());
+            String UTF8 = "UTF8";
             Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(file), StandardCharsets.UTF_8));
+                    new FileOutputStream(file), UTF8));
             writer.append(xmlType.getHeader()).append("\n\n");
 
             for (Request request : requests) {

@@ -2,6 +2,7 @@ package candybar.lib.adapters;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -283,7 +284,9 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
                     StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
-                    params.setMarginEnd(margin);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        params.setMarginEnd(margin);
+                    }
                 }
             }
 
@@ -368,7 +371,9 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
                     StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
-                    params.setMarginEnd(margin);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        params.setMarginEnd(margin);
+                    }
                 }
             }
 

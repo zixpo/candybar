@@ -61,7 +61,7 @@ android {
 }
 
 dependencies {
-    implementation project (':library')
+    implementation project(':library')
 
     // Remove '//' below to Enable OneSignal
     //implementation 'com.onesignal:OneSignal:3.12.4'

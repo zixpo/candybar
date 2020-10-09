@@ -17,16 +17,14 @@ allprojects {
         google()
         maven { url "https://jitpack.io" }
         maven { url 'https://maven.google.com' }
-        flatDir {
-            dirs 'libs'
-        }
+        flatDir { dirs 'libs' }
     }
 
     rootProject.ext {
         VersionCode = 380
         VersionName = "3.8.0"
 
-        MinSdk = 21
+        MinSdk = 15
         TargetSdk = 29
         CompileSdk = 29
         SupportLibrary = "27.1.1"

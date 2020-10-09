@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -77,8 +78,15 @@ public class DrawableHelper {
             ApplicationInfo appInfo = packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
             Resources appResources = packageManager.getResourcesForApplication(appInfo);
 
+            int density = DisplayMetrics.DENSITY_XHIGH;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                density = DisplayMetrics.DENSITY_XXHIGH;
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                density = DisplayMetrics.DENSITY_XXXHIGH;
+            }
             Drawable drawable = ResourcesCompat.getDrawableForDensity(appResources, appInfo.icon,
-                    DisplayMetrics.DENSITY_XXXHIGH, null);
+                    density, null);
 
             if (drawable != null) return drawable;
             LogUtil.e("DrawableHelper - drawable is null");

@@ -71,7 +71,9 @@ public class ViewHelper {
             right -= navBar;
 
         params.setMargins(left, top, (right + rightNavBar), (bottom + bottomNavBar));
-        params.setMarginEnd((right + rightNavBar));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            params.setMarginEnd(right + rightNavBar);
+        }
         view.setLayoutParams(params);
     }
 

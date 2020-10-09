@@ -51,8 +51,11 @@ public class LocaleHelper {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             LocaleList.setDefault(new LocaleList(locale));
             configuration.setLocales(new LocaleList(locale));
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            configuration.setLocale(locale);
+        } else {
+            configuration.locale = locale;
         }
-        configuration.setLocale(locale);
 
         //Todo:
         // Find out a solution to use context.createConfigurationContext(configuration);
