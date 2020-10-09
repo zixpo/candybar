@@ -1,3 +1,8 @@
+# v3.8.1
+- Brought back support for Android Jelly Bean
+- Fixed issue with premium request email
+- Minor fixes
+
 # v3.8.0
 - Rewrote configuration JSON checkers
 - Added option to use different email, method or Arctic API key

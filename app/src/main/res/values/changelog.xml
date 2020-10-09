@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">September 16, 2020</string>
+    <string name="changelog_date" translatable="false">October 9, 2020</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,16 +10,9 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Rewrote configuration JSON checkers</item>
-        <item>Added option to use different email, method or Arctic API key for regular and premium icon requests</item>
-        <item>Fixed Flick Launcher applier</item>
-        <item>Added support for auto light-dark mode</item>
-        <item>Fixed issues with icon requests</item>
-        <item>Fixed the wallpaper loading issue</item>
-        <item>Updated translations</item>
-        <item>Improved documentation comments</item>
-        <item>Improved wiki documentation</item>
-        <item>Lots of minor fixes</item>
+        <item>Brought back support for Android Jelly Bean</item>
+        <item>Fixed issue with premium request email</item>
+        <item>Minor fixes</item>
     </string-array>
 
 </resources>
