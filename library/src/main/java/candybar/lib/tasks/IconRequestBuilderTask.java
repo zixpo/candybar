@@ -217,10 +217,13 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         if (premiumRequestSubject.length() == 0)
             premiumRequestSubject = appName + " Premium Icon Request";
 
+        String regularRequestEmail = mContext.get().getResources().getString(R.string.regular_request_email);
+        String premiumRequestEmail = mContext.get().getResources().getString(R.string.premium_request_email);
+        // Fallback to regular request email
+        if (premiumRequestEmail.length() == 0) premiumRequestEmail = regularRequestEmail;
+
         String subject = Preferences.get(mContext.get()).isPremiumRequest() ? premiumRequestSubject : regularRequestSubject;
-        String emailAddress = Preferences.get(mContext.get()).isPremiumRequest()
-                ? mContext.get().getResources().getString(R.string.premium_request_email)
-                : mContext.get().getResources().getString(R.string.regular_request_email);
+        String emailAddress = Preferences.get(mContext.get()).isPremiumRequest() ? premiumRequestEmail : regularRequestEmail;
         // Fallback to dev_email
         if (emailAddress.length() == 0)
             emailAddress = mContext.get().getResources().getString(R.string.dev_email);

@@ -181,6 +181,9 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         subject = "Rebuilt: " + subject;
 
         String emailAddress = mContext.get().getResources().getString(R.string.premium_request_email);
+        // Fallback to regular request email
+        if (emailAddress.length() == 0)
+            emailAddress = mContext.get().getResources().getString(R.string.regular_request_email);
         // Fallback to dev_email
         if (emailAddress.length() == 0)
             emailAddress = mContext.get().getResources().getString(R.string.dev_email);
