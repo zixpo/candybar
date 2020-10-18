@@ -27,4 +27,31 @@
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
     </string-array>
+    <string-array name="questions">
+        <item>லான்ச்சர் என்றால் என்ன?</item>
+        <item>What is an icon pack?</item>
+        <item>How do i use an icon pack?</item>
+        <item>How do i apply an icon pack?</item>
+        <item>How do i see all icons included?</item>
+        <item>I can\'t see a complete icon name</item>
+        <item>How can i replace icons with an alternate icon?</item>
+        <item>How do i request an icon?</item>
+        <item>How can i restore remaining Premium Requests after reinstalling the app?</item>
+        <item>After restarting my phone, the icon pack is not applied, it restore to defaults?</item>
+        <item>Why do the icons looks jaggy or pixelated on my phone?</item>
+        <item>I can see the icon included in all icons,
+            but why isn\'t the actual icon on app drawer changed?</item>
+        <item>What is the \"report bugs\" option?</item>
+        <item>My launcher is listed in the google play description, but why isn\'t it included in apply section?</item>
+        <item>Wallpaper can\'t be applied, just showing black screen?</item>
+        <item>Muzei: How to load downloaded wallpapers only?</item>
+        <item>Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes?</item>
+        <item>Muzei: I only want to use specific wallpapers?</item>
+        <item>Why are Read &amp; Write External Storage permission needed?</item>
+        <item>Why is Internet permission needed?</item>
+        <item>Why is Access Network State permission needed?</item>
+        <item>Why is Access Wifi State permission needed?</item>
+        <item>Why is Set Wallpaper permission needed?</item>
+        <item>Why is Wake Lock Permission needed?</item>
+    </string-array>
 </resources>
