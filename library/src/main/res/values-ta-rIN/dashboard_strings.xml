@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- Navigation View -->
-    <string name="navigation_view_home">ஹோம்</string>
+    <string name="navigation_view_home">முகப்புத் திரை</string>
     <string name="navigation_view_apply">உபயோகி</string>
     <string name="navigation_view_icons">ஐகான்</string>
     <string name="navigation_view_request">ஐகான் கோரிக்கை</string>
@@ -25,9 +25,9 @@
     <string name="menu_save">Save to Device</string>
     <string name="menu_select_all">அனைத்தையும் தெரிவுசெய்</string>
     <string name="menu_wallpaper_crop">Crop Wallpaper</string>
-    <string name="menu_apply_homescreen">ஹோம்ஸ்கிரீன்</string>
+    <string name="menu_apply_homescreen">முகப்புத்திரை</string>
     <string name="menu_apply_lockscreen">லாக்ஸ்கிரீன்</string>
-    <string name="menu_apply_homescreen_lockscreen">ஹோம்ஸ்கிரீன் &amp; லாக்ஸ்கிரீன்</string>
+    <string name="menu_apply_homescreen_lockscreen">முகப்புத்திரை &amp; லாக்ஸ்கிரீன்</string>
     <!-- Dialog -->
     <string name="open">திற</string>
     <string name="close">மூடு</string>
