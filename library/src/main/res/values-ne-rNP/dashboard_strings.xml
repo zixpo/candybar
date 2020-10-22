@@ -41,6 +41,7 @@
     <string name="search_faqs">प्रश्न वा उत्तर</string>
     <string name="search_icon">आइकनको नाम</string>
     <!-- Update -->
+    <string name="checking_for_update">अपडेटको लागि जाँच गरिँदैछ…</string>
     <string name="update_available">अपडेट उपलब्ध छ!</string>
     <string name="no_update_available">तपाईं भर्खरैको संस्करण प्रयोग गर्दै हुनुहुन्छ !</string>
     <!-- Changelog -->
