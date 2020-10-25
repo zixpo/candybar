@@ -17,7 +17,15 @@
     <string name="save_setting">Opslaan</string>
     <string name="muzei_refresh_duration">Verversingsduur</string>
     <string name="muzei_wifi_only">Alleen verversen via wifi</string>
+    <string name="muzei_downloaded_only">Alleen gedownloade achtergronden laden</string>
+    <string name="muzei_settings_ignored">Pictorgrampakket bevat geen achtergronden, instellingen genegeerd.</string>
+    <string name="muzei_settings_saved">Instellingen opgeslagen</string>
     <!-- Menu -->
+    <string name="menu_search">Zoeken</string>
+    <string name="menu_save">Opslaan op apparaat</string>
+    <string name="menu_select_all">Alle selecteren</string>
+    <string name="menu_wallpaper_crop">Achtergrond bijsnijden</string>
+    <string name="menu_apply_homescreen">Thuisscherm</string>
     <!-- Dialog -->
     <!-- Update -->
     <!-- Changelog -->
@@ -26,6 +34,7 @@
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Zoeken</string>
     <!-- Home -->
     <!-- Apply -->
     <!-- Icons -->
