@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Thuis</string>
     <string name="navigation_view_apply">Toepassen</string>
@@ -26,9 +27,25 @@
     <string name="menu_select_all">Alle selecteren</string>
     <string name="menu_wallpaper_crop">Achtergrond bijsnijden</string>
     <string name="menu_apply_homescreen">Thuisscherm</string>
+    <string name="menu_apply_lockscreen">Vergrendelscherm</string>
+    <string name="menu_apply_homescreen_lockscreen">Thuisscherm &amp; vergrendelscherm</string>
     <!-- Dialog -->
+    <string name="open">Openen</string>
+    <string name="close">Sluiten</string>
+    <string name="clear">Wissen</string>
+    <string name="ok">Oké</string>
+    <string name="install">Installeren</string>
+    <string name="donate">Doneren</string>
+    <string name="update">Bijwerken</string>
+    <string name="search_noresult">Geen resultaten voor \"%s\"</string>
+    <string name="search_faqs">Vraag of antwoord</string>
+    <string name="search_icon">Pictorgramnaam</string>
     <!-- Update -->
+    <string name="checking_for_update">Controleren op update…</string>
+    <string name="update_available">Update beschikbaar!</string>
+    <string name="no_update_available">Je gebruikt de laatste versie!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versie</string>
     <!-- InAppBilling -->
     <!-- License -->
     <!-- Play Store Installation Check -->
@@ -36,6 +53,7 @@
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Zoeken</string>
     <!-- Home -->
+    <string name="home_donate">Doneren</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
@@ -52,4 +70,6 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Openen</string>
+    <string name="txt_close">Sluiten</string>
 </resources>
