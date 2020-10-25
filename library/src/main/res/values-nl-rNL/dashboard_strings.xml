@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- Navigation View -->
+    <string name="navigation_view_home">Thuis</string>
+    <string name="navigation_view_apply">Toepassen</string>
+    <string name="navigation_view_icons">Pictogrammen</string>
     <!-- Muzei -->
     <!-- Menu -->
     <!-- Dialog -->
