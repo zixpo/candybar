@@ -4,7 +4,19 @@
     <string name="navigation_view_home">Thuis</string>
     <string name="navigation_view_apply">Toepassen</string>
     <string name="navigation_view_icons">Pictogrammen</string>
+    <string name="navigation_view_request">Pictogramverzoek</string>
+    <string name="navigation_view_wallpapers">Achtergronden</string>
+    <string name="navigation_view_settings">Instellingen</string>
+    <string name="navigation_view_faqs">Veelgestelde vragen</string>
+    <string name="navigation_view_about">Over</string>
+    <string name="navigation_view_donate">Ontwikkeling steunen</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei instellingen</string>
+    <string name="minute">Minuut</string>
+    <string name="hour">Uur</string>
+    <string name="save_setting">Opslaan</string>
+    <string name="muzei_refresh_duration">Verversingsduur</string>
+    <string name="muzei_wifi_only">Alleen verversen via wifi</string>
     <!-- Menu -->
     <!-- Dialog -->
     <!-- Update -->
@@ -18,6 +30,7 @@
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Pictogramverzoek</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
