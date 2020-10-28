@@ -47,7 +47,10 @@
     <!-- Changelog -->
     <string name="changelog_version">Versie</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Kan in-app aankoopproducten niet laden</string>
     <!-- License -->
+    <string name="license_checking">Licentie controleren…</string>
+    <string name="license_check">Licentie controleren</string>
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
