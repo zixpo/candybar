@@ -245,4 +245,5 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Apri</string>
     <string name="txt_close">Chiudi</string>
+    <string name="txt_new">Nuovo</string>
 </resources>
