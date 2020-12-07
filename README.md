@@ -38,6 +38,13 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
 # Translation
 Help us translate CandyBar in many other languages. [Translate CandyBar](https://crowdin.com/project/candybar).
 
+# Support me
+I am doing this work for free, but you can show your appreciation
+and support me by donating. It would keep me motivated to work on
+the dashboard.
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J7WR0M)
+
 # License
 ```
 Copyright (c) 2014-2020 Dani Mahardhika
