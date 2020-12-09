@@ -141,6 +141,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        LocaleHelper.setLocale(this);
+
         prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
         super.setTheme(ThemeHelper.isDarkTheme(this) ?
                 R.style.AppThemeDark : R.style.AppTheme);
