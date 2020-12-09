@@ -213,6 +213,7 @@
     <string name="pref_others_changelog">Seznam změn</string>
     <string name="pref_others_reset_tutorial">Resetovat návody</string>
     <string name="pref_others_reset_tutorial_reset">Reset návodů</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">Pro uložení tapety je třeba udělit oprávnění k úložišti</string>
     <!-- Intent -->
