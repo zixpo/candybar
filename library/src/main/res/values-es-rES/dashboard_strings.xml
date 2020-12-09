@@ -202,6 +202,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="pref_others_changelog">Historial de Cambios</string>
     <string name="pref_others_reset_tutorial">Reiniciar Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial reiniciado</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">El permiso de almacenamiento se necesita para guardar fondos de pantalla</string>
     <!-- Intent -->
