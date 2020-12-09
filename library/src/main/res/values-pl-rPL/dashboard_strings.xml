@@ -169,6 +169,7 @@
     <string name="pref_others_changelog">Lista zmian</string>
     <string name="pref_others_reset_tutorial">Zresetuj poradnik</string>
     <string name="pref_others_reset_tutorial_reset">Poradnik został zresetowany</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">Pozwolenie na dostęp do pamięci wewnętrznej jest wymagane aby zapisać tapetę</string>
     <!-- Intent -->
