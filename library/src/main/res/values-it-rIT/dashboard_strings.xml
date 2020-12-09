@@ -208,6 +208,7 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="pref_others_changelog">Changelog</string>
     <string name="pref_others_reset_tutorial">Resetta il tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial resettato</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">Sono necessari i permessi di memorizzazione per salvare lo sfondo</string>
     <!-- Intent -->
