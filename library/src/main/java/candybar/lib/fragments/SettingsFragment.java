@@ -33,7 +33,6 @@ import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
-import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Language;
@@ -164,7 +163,7 @@ public class SettingsFragment extends Fragment {
                     "", "", "", Setting.Type.HEADER));
 
             settings.add(new Setting(-1, "",
-                    ThemeHelper.getCurrentThemeName(getActivity()),
+                    Preferences.get(getActivity()).getTheme().displayName(getActivity()),
                     "", "", Setting.Type.THEME));
         }
 

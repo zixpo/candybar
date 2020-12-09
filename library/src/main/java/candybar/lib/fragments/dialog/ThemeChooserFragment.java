@@ -13,11 +13,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import java.util.List;
+import java.util.Arrays;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.ThemeAdapter;
-import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Theme;
 import candybar.lib.preferences.Preferences;
@@ -43,8 +42,8 @@ import candybar.lib.preferences.Preferences;
 public class ThemeChooserFragment extends DialogFragment {
 
     private ListView mListView;
-    private int mChosenTheme;
-    private int mCurrentTheme;
+    private Theme mChosenTheme;
+    private Theme mCurrentTheme;
 
     public static final String TAG = "candybar.dialog.theme";
 
@@ -86,21 +85,9 @@ public class ThemeChooserFragment extends DialogFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mCurrentTheme = Preferences.get(getActivity()).getTheme();
-        mChosenTheme = mCurrentTheme;
+        mChosenTheme = mCurrentTheme = Preferences.get(getActivity()).getTheme();
 
-        List<Theme> themes = ThemeHelper.getThemes(getActivity());
-        int currentThemeIndex = 0;
-
-        for (int i = 0; i < themes.size(); i++) {
-            int shape = themes.get(i).getTheme();
-            if (shape == mCurrentTheme) {
-                currentThemeIndex = i;
-                break;
-            }
-        }
-
-        mListView.setAdapter(new ThemeAdapter(getActivity(), themes, currentThemeIndex));
+        mListView.setAdapter(new ThemeAdapter(getActivity(), Arrays.asList(Theme.values()), mCurrentTheme.ordinal()));
     }
 
     @Override
@@ -112,7 +99,7 @@ public class ThemeChooserFragment extends DialogFragment {
         super.onDismiss(dialog);
     }
 
-    public void setTheme(int theme) {
+    public void setTheme(Theme theme) {
         mChosenTheme = theme;
         dismiss();
     }

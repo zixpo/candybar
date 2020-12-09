@@ -8,8 +8,13 @@
     <!--
         CONFIG: DEFAULT THEME
     -->
-    <!-- Use dark theme as the default theme -->
-    <bool name="use_dark_theme">false</bool>
+    <!-- Set the default theme
+        Available choices:
+        - auto
+        - light
+        - dark
+    -->
+    <string name="default_theme">auto</string>
 
 
     <!--

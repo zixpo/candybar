@@ -17,6 +17,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.items.Language;
+import candybar.lib.items.Theme;
 import sarsamurmu.adaptiveicon.AdaptiveIcon;
 
 /*
@@ -153,12 +154,12 @@ public class Preferences {
         getSharedPreferences().edit().putBoolean(KEY_WALLPAPER_PREVIEW_INTRO, bool).apply();
     }
 
-    public int getTheme() {
-        return getSharedPreferences().getInt(KEY_THEME, ThemeHelper.THEME_AUTO);
+    public Theme getTheme() {
+        return Theme.values()[getSharedPreferences().getInt(KEY_THEME, ThemeHelper.getDefaultTheme(mContext).ordinal())];
     }
 
-    public void setTheme(int theme) {
-        getSharedPreferences().edit().putInt(KEY_THEME, theme).apply();
+    public void setTheme(Theme theme) {
+        getSharedPreferences().edit().putInt(KEY_THEME, theme.ordinal()).apply();
     }
 
     public boolean isToolbarShadowEnabled() {

@@ -80,7 +80,7 @@ public class ThemeAdapter extends BaseAdapter {
         }
 
         holder.radio.setChecked(mSelectedIndex == position);
-        holder.name.setText(mThemes.get(position).getName());
+        holder.name.setText(mThemes.get(position).displayName(mContext));
 
         holder.container.setOnClickListener(v -> {
             for (ViewHolder aHolder : mHolders) {
@@ -95,7 +95,7 @@ public class ThemeAdapter extends BaseAdapter {
             if (fragment == null) return;
 
             if (fragment instanceof ThemeChooserFragment) {
-                ((ThemeChooserFragment) fragment).setTheme(mThemes.get(position).getTheme());
+                ((ThemeChooserFragment) fragment).setTheme(mThemes.get(position));
             }
         });
 

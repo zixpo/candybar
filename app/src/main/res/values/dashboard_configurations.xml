@@ -6,7 +6,7 @@
     <!-- ======================================================================================= -->
 
     <!-- CONFIG: DEFAULT THEME -->
-    <bool name="use_dark_theme">false</bool>
+    <string name="default_theme">auto</string>
 
     <!-- CONFIG: MUZEI -->
     <string name="muzei_art_source_name">CandyBar</string>
