@@ -34,6 +34,7 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 
+import candybar.lib.BuildConfig;
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.CreditsFragment;
@@ -386,6 +387,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
             title.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
                     mContext, R.drawable.ic_toolbar_dashboard, color), null, null, null);
+            title.append(" v" + BuildConfig.VERSION_NAME);
 
             color = ConfigurationHelper.getSocialIconColor(mContext,
                     CandyBarApplication.getConfiguration().getSocialIconColor());
