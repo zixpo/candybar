@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Startseite</string>
@@ -41,6 +41,7 @@
     <string name="search_faqs">Frage oder Antwort</string>
     <string name="search_icon">Icon-Name</string>
     <!-- Update -->
+    <string name="checking_for_update">Suche nach Updates…</string>
     <string name="update_available">Aktualisierung verfügbar!</string>
     <string name="no_update_available">Du verwendest die aktuellste Version!</string>
     <!-- Changelog -->
@@ -129,7 +130,7 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_arctic_sending">Sende Request an Arctic Manager...</string>
     <string name="request_arctic_error">Fehler beim Senden des Requests an Arctic Manager. Die Fehlermeldung ist %s</string>
     <string name="request_arctic_success">Request erfolgreich an Arctic Manager gesendet</string>
-    <string name="request_fetching_data">Rufe neueste Daten ab...</string>
+    <string name="request_fetching_data">Rufe neueste Daten ab…</string>
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>
     <string name="request_requested">Bitte überprüfe deine Anfrage.
@@ -137,6 +138,7 @@ Du versuchst gerade eine App anzufragen, die bereits angefragt wurde.</string>
     <string name="request_email_client">Wähle den E-Mail-Klienten aus, mit dem du die Icon-Anfrage senden möchtest</string>
     <string name="request_app_disabled">Sie verwenden eine ältere Version dieses Symbolpakets. Die angeforderten Icons könnten in der neuesten Version enthalten sein. Bitte aktualisieren Sie Ihre App auf die neueste Version, um Symbole anzufordern.</string>
     <string name="connection_error_long">Daten konnten nicht vom Server heruntergeladen werden. Bitte überprüfen Sie Ihre Internetverbindung.</string>
+    <string name="unable_to_load_config">Während des Abrufs der Daten vom Server ist ein Fehler aufgetreten.</string>
     <string name="request_limit">Du kannst nur %d Anfrage(n) ohne die Premium Icon-Anfrage tätigen.</string>
     <string name="request_used">Du hast %d Icon(s) angefragt.</string>
     <string name="request_limit_buy">Du kannst Premium-Anfragen kaufen, um mehr Icons anzufragen.</string>

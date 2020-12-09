@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- Navigation View -->
     <string name="navigation_view_home">Главная</string>
     <string name="navigation_view_apply">Применить</string>
@@ -55,9 +55,6 @@
     <string name="license_check_retry">Не удалось проверить лицензию, please try again in a few moments.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Проверьте Плей маркет</string>
-    <string name="playstore_check_success">Спасибо, что установили приложение с Play Store.</string>
-    <string name="playstore_check_failed">Похоже, вы установили этот пакет значков не из Play Store.
-         Вы не сможете его использовать.</string>
     <!-- Share -->
     <string name="share_app_title">Ёу! Зацени %s</string>
     <string name="share_app_body">Зацени %1$s, это набор иконок на самом деле крутой! %2$s</string>

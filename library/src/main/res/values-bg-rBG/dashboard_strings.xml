@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">CandyBar табло за управление</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Начало</string>
@@ -55,8 +55,6 @@
     <string name="license_check_retry">Лицензът не може да се провери, моля, опитайте отново след няколко минути.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Проверка</string>
-    <string name="playstore_check_success">Благодаря,че инсталирахте приложението от Play Store.</string>
-    <string name="playstore_check_failed">Изглежда, че сте инсталирали този пакет с икони извън Play Store.  Няма да можете да го използвате.</string>
     <!-- Share -->
     <string name="share_app_title">Йо! Вижте %s</string>
     <string name="share_app_body">Вижте %1$s, този пакет с икони е наистина страхотен! %2$s</string>
