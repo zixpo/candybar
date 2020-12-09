@@ -213,6 +213,7 @@ fehlenden Icons erstellt wurde.</string>
     <string name="pref_others_changelog">Änderungsprotokoll</string>
     <string name="pref_others_reset_tutorial">Tutorial zurücksetzen</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial zurückgesetzt</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">Zugang zum Speicher nötig, um das Hintergrundbild zu speichern</string>
     <!-- Intent -->
