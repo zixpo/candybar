@@ -516,7 +516,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     if (fragment != null) fragment.resetWallpapersCount();
                 }
 
-                int accent = ColorHelper.getAttributeColor(this, R.attr.colorAccent);
                 LinearLayout container = (LinearLayout) mNavigationView.getMenu().getItem(4).getActionView();
                 if (container != null) {
                     TextView counter = container.findViewById(R.id.counter);
