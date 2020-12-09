@@ -477,7 +477,7 @@ public class Database extends SQLiteOpenHelper {
 
         List<Wallpaper> wallpapers = new ArrayList<>();
         Cursor cursor = mDatabase.get().mSQLiteDatabase.query(TABLE_WALLPAPERS,
-                null, null, null, null, null, KEY_ADDED_ON + " DESC, " + KEY_ID);
+                null, null, null, null, null, KEY_ADDED_ON + " ASC, " + KEY_ID);
         if (cursor.moveToFirst()) {
             do {
                 int width = cursor.getInt(cursor.getColumnIndex(KEY_WIDTH));
