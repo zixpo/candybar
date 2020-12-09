@@ -37,129 +37,100 @@ public class LauncherHelper {
 
     private static final String thirdPartyHelperURL = "https://play.google.com/store/apps/details?id=com.momocode.shortcuts";
 
-    private static final int UNKNOWN = -1;
-    private static final int ACTION = 1;
-    private static final int ADW = 2;
-    private static final int APEX = 3;
-    private static final int ATOM = 4;
-    private static final int AVIATE = 5;
-    private static final int CMTHEME = 6;
-    private static final int GO = 7;
-    private static final int HOLO = 8;
-    private static final int HOLOHD = 9;
-    private static final int LAWNCHAIR = 10;
-    private static final int LGHOME = 11;
-    private static final int LGHOME3 = 12;
-    private static final int LUCID = 13;
-    private static final int MINI = 14;
-    private static final int NEXT = 15;
-    private static final int NOVA = 16;
-    private static final int PIXEL = 17;
-    private static final int SMART = 18;
-    private static final int SOLO = 19;
-    private static final int ZENUI = 20;
-    private static final int NOUGAT = 21;
-    private static final int M = 22;
-    private static final int ZERO = 23;
-    private static final int V = 24;
-    private static final int ABC = 25;
-    private static final int EVIE = 26;
-    private static final int POCO = 27;
-    private static final int POSIDON = 28;
-    private static final int MICROSOFT = 29;
-    private static final int FLICK = 30;
-    private static final int BLACKBERRY = 31;
-    private static final int SQUARE = 32;
-    private static final int NIAGARA = 33;
+    private enum Launcher {
+        UNKNOWN, ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO, HOLOHD, LAWNCHAIR,
+        LGHOME, LGHOME3, LUCID, MINI, NEXT, NOVA, PIXEL, SMART, SOLO, ZENUI, NOUGAT, M,
+        ZERO, V, ABC, EVIE, POCO, POSIDON, MICROSOFT, FLICK, BLACKBERRY, SQUARE, NIAGARA
+    }
 
-    private static int getLauncherId(String packageName) {
-        if (packageName == null) return UNKNOWN;
+    private static Launcher getLauncher(String packageName) {
+        if (packageName == null) return Launcher.UNKNOWN;
         switch (packageName) {
             case "com.actionlauncher.playstore":
             case "com.chrislacy.actionlauncher.pro":
-                return ACTION;
+                return Launcher.ACTION;
             case "org.adw.launcher":
             case "org.adwfreak.launcher":
-                return ADW;
+                return Launcher.ADW;
             case "com.anddoes.launcher":
             case "com.anddoes.launcher.pro":
-                return APEX;
+                return Launcher.APEX;
             case "com.dlto.atom.launcher":
-                return ATOM;
+                return Launcher.ATOM;
             case "com.tul.aviate":
-                return AVIATE;
+                return Launcher.AVIATE;
             case "org.cyanogenmod.theme.chooser":
-                return CMTHEME;
+                return Launcher.CMTHEME;
             case "com.gau.go.launcherex":
-                return GO;
+                return Launcher.GO;
             case "com.mobint.hololauncher":
-                return HOLO;
+                return Launcher.HOLO;
             case "com.mobint.hololauncher.hd":
-                return HOLOHD;
+                return Launcher.HOLOHD;
             case "com.lge.launcher2":
-                return LGHOME;
+                return Launcher.LGHOME;
             case "com.lge.launcher3":
-                return LGHOME3;
+                return Launcher.LGHOME3;
             case "ch.deletescape.lawnchair.ci":
             case "ch.deletescape.lawnchair.plah":
-                return LAWNCHAIR;
+                return Launcher.LAWNCHAIR;
             case "com.powerpoint45.launcher":
-                return LUCID;
+                return Launcher.LUCID;
             case "com.jiubang.go.mini.launcher":
-                return MINI;
+                return Launcher.MINI;
             case "bitpit.launcher":
-                return NIAGARA;
+                return Launcher.NIAGARA;
             case "com.gtp.nextlauncher":
             case "com.gtp.nextlauncher.trial":
-                return NEXT;
+                return Launcher.NEXT;
             case "com.teslacoilsw.launcher":
             case "com.teslacoilsw.launcher.prime":
-                return NOVA;
+                return Launcher.NOVA;
             case "com.google.android.apps.nexuslauncher":
-                return PIXEL;
+                return Launcher.PIXEL;
             case "ginlemon.flowerfree":
             case "ginlemon.flowerpro":
             case "ginlemon.flowerpro.special":
-                return SMART;
+                return Launcher.SMART;
             case "home.solo.launcher.free":
-                return SOLO;
+                return Launcher.SOLO;
             case "com.ss.squarehome2":
-                return SQUARE;
+                return Launcher.SQUARE;
             case "com.asus.launcher":
-                return ZENUI;
+                return Launcher.ZENUI;
             case "me.craftsapp.nlauncher":
-                return NOUGAT;
+                return Launcher.NOUGAT;
             case "com.uprui.launcher.marshmallow":
-                return M;
+                return Launcher.M;
             case "com.zeroteam.zerolauncher":
-                return ZERO;
+                return Launcher.ZERO;
             case "com.vivid.launcher":
-                return V;
+                return Launcher.V;
             case "com.abclauncher.launcher":
-                return ABC;
+                return Launcher.ABC;
             case "is.shortcut":
-                return EVIE;
+                return Launcher.EVIE;
             case "com.mi.android.globallauncher":
-                return POCO;
+                return Launcher.POCO;
             case "posidon.launcher":
-                return POSIDON;
+                return Launcher.POSIDON;
             case "com.microsoft.launcher":
-                return MICROSOFT;
+                return Launcher.MICROSOFT;
             case "com.universallauncher.universallauncher":
-                return FLICK;
+                return Launcher.FLICK;
             case "com.blackberry.blackberrylauncher":
-                return BLACKBERRY;
+                return Launcher.BLACKBERRY;
             default:
-                return UNKNOWN;
+                return Launcher.UNKNOWN;
         }
     }
 
     public static void apply(@NonNull Context context, String packageName, String launcherName) {
-        applyLauncher(context, packageName, launcherName, getLauncherId(packageName));
+        applyLauncher(context, packageName, launcherName, getLauncher(packageName));
     }
 
-    private static void applyLauncher(@NonNull Context context, String launcherPackage, String launcherName, int id) {
-        switch (id) {
+    private static void applyLauncher(@NonNull Context context, String launcherPackage, String launcherName, Launcher launcher) {
+        switch (launcher) {
             case ABC:
                 try {
                     /*
