@@ -215,6 +215,9 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="pref_others_reset_tutorial">Réinitialiser le didactitciel</string>
     <string name="pref_others_reset_tutorial_reset">Didacticiel réinitialisé</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Auto</string>
+    <string name="theme_name_light">Clair</string>
+    <string name="theme_name_dark">Sombre</string>
     <!-- Permission -->
     <string name="permission_storage_denied">La permission Espace de stockage est requise pour enregistrer le fond d\'écran</string>
     <!-- Intent -->
