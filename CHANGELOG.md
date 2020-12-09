@@ -1,3 +1,14 @@
+# v3.9.0
+- Fix new wallpaper count badge
+- Add Indonesian language
+- Added option to set default theme
+- Now shows CandyBar version in the About section
+- Remove duplicates in icon search, fixed back press behaviour
+- Now sorts wallpapers in ascending order
+- Fixed locale not applying after a relaunch
+- Added configuration to customize email body
+- Updated translations
+
 # v3.8.1
 - Brought back support for Android Jelly Bean
 - Fixed issue with premium request email

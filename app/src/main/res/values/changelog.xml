@@ -10,9 +10,15 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Brought back support for Android Jelly Bean</item>
-        <item>Fixed issue with premium request email</item>
-        <item>Minor fixes</item>
+        <item>Fix new wallpaper count badge</item>
+        <item>Add Indonesian language</item>
+        <item>Added option to set default theme</item>
+        <item>Now shows CandyBar version in the About section</item>
+        <item>Remove duplicates in icon search, fixed back press behaviour</item>
+        <item>Now sorts wallpapers in ascending order</item>
+        <item>Fixed locale not applying after a relaunch</item>
+        <item>Added configuration to customize email body</item>
+        <item>Updated translations</item>
     </string-array>
 
 </resources>
