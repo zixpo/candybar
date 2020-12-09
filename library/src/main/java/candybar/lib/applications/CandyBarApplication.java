@@ -126,6 +126,11 @@ public abstract class CandyBarApplication extends MultiDexApplication {
     }
 
     public static class Configuration {
+        public interface EmailBodyGenerator {
+            String generate(List<Request> requests);
+        }
+
+        private EmailBodyGenerator mEmailBodyGenerator;
 
         private NavigationIcon mNavigationIcon = NavigationIcon.STYLE_1;
         private NavigationViewHeader mNavigationViewHeader = NavigationViewHeader.NORMAL;
@@ -158,6 +163,11 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
         private boolean mIsCrashReportEnabled = true;
         private JsonStructure mWallpaperJsonStructure = new JsonStructure.Builder(null).build();
+
+        public Configuration setEmailBodyGenerator(EmailBodyGenerator emailBodyGenerator) {
+            mEmailBodyGenerator = emailBodyGenerator;
+            return this;
+        }
 
         public Configuration setNavigationIcon(@NonNull NavigationIcon navigationIcon) {
             mNavigationIcon = navigationIcon;
@@ -293,6 +303,10 @@ public abstract class CandyBarApplication extends MultiDexApplication {
         public Configuration setHighQualityPreviewEnabled(boolean highQualityPreviewEnabled) {
             mIsHighQualityPreviewEnabled = highQualityPreviewEnabled;
             return this;
+        }
+
+        public EmailBodyGenerator getEmailBodyGenerator() {
+            return mEmailBodyGenerator;
         }
 
         public NavigationIcon getNavigationIcon() {

@@ -16,11 +16,14 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executor;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.applications.CandyBarApplication.Configuration.EmailBodyGenerator;
 import candybar.lib.databases.Database;
 import candybar.lib.fragments.RequestFragment;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
@@ -29,7 +32,6 @@ import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.listeners.RequestListener;
-
 /*
  * CandyBar - Material Dashboard
  *
@@ -111,6 +113,9 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
                     }
                 }
 
+                List<Request> requestsForGenerator = new ArrayList<>();
+                EmailBodyGenerator emailBodyGenerator = CandyBarApplication.getConfiguration().getEmailBodyGenerator();
+                boolean emailBodyGeneratorEnabled = emailBodyGenerator != null;
                 for (int i = 0; i < RequestFragment.sSelectedRequests.size(); i++) {
                     Request request = CandyBarMainActivity.sMissedApps.get(RequestFragment.sSelectedRequests.get(i));
                     Database.get(mContext.get()).addRequest(null, request);
@@ -126,17 +131,24 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
                     }
 
                     if (CandyBarApplication.getConfiguration().isIncludeIconRequestToEmailBody()) {
-                        stringBuilder.append("\n\n")
-                                .append(request.getName())
-                                .append("\n")
-                                .append(request.getActivity())
-                                .append("\n")
-                                .append("https://play.google.com/store/apps/details?id=")
-                                .append(request.getPackageName());
+                        if (emailBodyGeneratorEnabled) {
+                            requestsForGenerator.add(request);
+                        } else {
+                            stringBuilder.append("\n\n")
+                                    .append(request.getName())
+                                    .append("\n")
+                                    .append(request.getActivity())
+                                    .append("\n")
+                                    .append("https://play.google.com/store/apps/details?id=")
+                                    .append(request.getPackageName());
+                        }
                     }
                 }
 
                 mEmailBody = stringBuilder.toString();
+                if (emailBodyGeneratorEnabled) {
+                    mEmailBody += "\n\n" + emailBodyGenerator.generate(requestsForGenerator);
+                }
                 return true;
             } catch (Exception e) {
                 CandyBarApplication.sRequestProperty = null;
