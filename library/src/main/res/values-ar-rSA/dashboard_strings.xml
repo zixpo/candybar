@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">لوحة معلومات CandyBar بتصميم الماتيريال</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">الرئيسية</string>
@@ -41,6 +41,7 @@
     <string name="search_faqs">سؤال أم جواب</string>
     <string name="search_icon">اسم الأيقونة</string>
     <!-- Update -->
+    <string name="checking_for_update">جار التحقق من وجود تحديث …</string>
     <string name="update_available">هناك تحديث متوفر!</string>
     <string name="no_update_available">أنت تستخدم أحدث إصدار!</string>
     <!-- Changelog -->
@@ -55,8 +56,9 @@
     <string name="license_check_retry">تعذر التحقق من الترخيص، يرجى المحاولة مرة أخرى بعد لحظات قليلة.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">التحقق من متجر Play</string>
-    <string name="playstore_check_success">شكراً لتثبيتك التطبيق من متجر Play. استمتع.</string>
-    <string name="playstore_check_failed">يبدو أنك قمت بتثبيت حزمة الأيقونات هذه من خارج متجر Play. لن تتمكن من استخدامها.</string>
+    <string name="playstore_check_success">شكراً لك لتثبيتك التطبيق من متجر Google Play. استمتع.</string>
+    <string name="playstore_check_failed">يبدو أنك قمت بتثبيت حزمة الأيقونات هذه من خارج متجر Google Play.
+        لذا لن تتمكن من استخدامها.</string>
     <!-- Share -->
     <string name="share_app_title">مرحباً! تفقد %s</string>
     <string name="share_app_body">تفقد %1$s، حزمة الأيقونات هذه رائعة جداً! %2$s</string>
@@ -125,13 +127,14 @@
     <string name="request_arctic_sending">جار إرسال الطلب إلى Arctic Manager...</string>
     <string name="request_arctic_error">حدث خطأ أثناء إرسال الطلب إلى Arctic Manager. الخطأ هو %s</string>
     <string name="request_arctic_success">تم إرسال الطلب بنجاح إلى Arctic Manager</string>
-    <string name="request_fetching_data">جار جلب أحدث البيانات...</string>
+    <string name="request_fetching_data">جار جلب أحدث البيانات …</string>
     <string name="request_build_failed">تعذر بناء طلب الأيقونات</string>
     <string name="request_appfilter_failed">تعذر قراءة appfilter.xml</string>
     <string name="request_requested">يرجى التحقق من طلبك مرة أخرى. لأنك تحاول طلب تطبيق تم طلبه بالفعل.</string>
     <string name="request_email_client">اختر التطبيق الذي تريد استعماله لإرسال طلب الأيقونات</string>
     <string name="request_app_disabled">أنت تستعمل إصداراً أقدم من حزمة الأيقونات هذه. الأيقونات التي قمت بطلبها قد تكون مضمنة في الإصدار الأحدث. يرجى تحديث تطبيقك إلى أحدث إصدار لطلب الأيقونات.</string>
     <string name="connection_error_long">تعذر تحميل البيانات من الخادم. رجاءاً، تحقق من اتصالك بالشبكة.</string>
+    <string name="unable_to_load_config">حدث خطأ أثناء جلب/قراءة البيانات من الخادم.</string>
     <string name="request_limit">يسمح لك بعمل %d طلب(ات) فقط بواسطة الطلب العادي.</string>
     <string name="request_used">لقد قمت بعمل %d طلب(ات) أيقونات.</string>
     <string name="request_limit_buy">يمكنك شراء الطلبات المتميزة لطلب المزيد من الأيقونات.</string>

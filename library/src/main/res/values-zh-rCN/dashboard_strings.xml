@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- Navigation View -->
     <string name="navigation_view_home">主页</string>
     <string name="navigation_view_apply">应用图标</string>
@@ -27,6 +27,7 @@
     <string name="menu_wallpaper_crop">裁剪壁纸</string>
     <string name="menu_apply_homescreen">主屏幕</string>
     <string name="menu_apply_lockscreen">锁屏</string>
+    <string name="menu_apply_homescreen_lockscreen">主屏幕与锁屏界面</string>
     <!-- Dialog -->
     <string name="open">打开</string>
     <string name="close">关闭</string>
@@ -34,10 +35,13 @@
     <string name="ok">确认</string>
     <string name="install">安装</string>
     <string name="donate">捐赠</string>
+    <string name="update">更新</string>
     <string name="search_noresult">未找到 “%s”</string>
     <string name="search_faqs">问题或回答</string>
     <string name="search_icon">图标名称</string>
     <!-- Update -->
+    <string name="checking_for_update">正在检查更新…</string>
+    <string name="update_available">有可用的更新！</string>
     <!-- Changelog -->
     <string name="changelog_version">版本</string>
     <!-- InAppBilling -->
@@ -50,6 +54,8 @@
 您无法使用本程序。</string>
     <string name="license_check_retry">无法检查许可证，请稍后重试。</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play商店检查</string>
+    <string name="playstore_check_success">感谢您从Google Play商店安装应用。祝您愉快！</string>
     <!-- Share -->
     <string name="share_app_title">哟！来看看 %s</string>
     <string name="share_app_body">来看看 %1$s，这个图标包超酷的！%2$s</string>

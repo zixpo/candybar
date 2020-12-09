@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Thuis</string>
+    <string name="navigation_view_apply">Toepassen</string>
+    <string name="navigation_view_icons">Pictogrammen</string>
+    <string name="navigation_view_request">Pictogramverzoek</string>
+    <string name="navigation_view_wallpapers">Achtergronden</string>
+    <string name="navigation_view_settings">Instellingen</string>
+    <string name="navigation_view_faqs">Veelgestelde vragen</string>
+    <string name="navigation_view_about">Over</string>
+    <string name="navigation_view_donate">Ontwikkeling steunen</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei instellingen</string>
+    <string name="minute">Minuut</string>
+    <string name="hour">Uur</string>
+    <string name="save_setting">Opslaan</string>
+    <string name="muzei_refresh_duration">Verversingsduur</string>
+    <string name="muzei_wifi_only">Alleen verversen via wifi</string>
+    <string name="muzei_downloaded_only">Alleen gedownloade achtergronden laden</string>
+    <string name="muzei_settings_ignored">Pictorgrampakket bevat geen achtergronden, instellingen genegeerd.</string>
+    <string name="muzei_settings_saved">Instellingen opgeslagen</string>
     <!-- Menu -->
+    <string name="menu_search">Zoeken</string>
+    <string name="menu_save">Opslaan op apparaat</string>
+    <string name="menu_select_all">Alle selecteren</string>
+    <string name="menu_wallpaper_crop">Achtergrond bijsnijden</string>
+    <string name="menu_apply_homescreen">Thuisscherm</string>
+    <string name="menu_apply_lockscreen">Vergrendelscherm</string>
+    <string name="menu_apply_homescreen_lockscreen">Thuisscherm &amp; vergrendelscherm</string>
     <!-- Dialog -->
+    <string name="open">Openen</string>
+    <string name="close">Sluiten</string>
+    <string name="clear">Wissen</string>
+    <string name="ok">Oké</string>
+    <string name="install">Installeren</string>
+    <string name="donate">Doneren</string>
+    <string name="update">Bijwerken</string>
+    <string name="search_noresult">Geen resultaten voor \"%s\"</string>
+    <string name="search_faqs">Vraag of antwoord</string>
+    <string name="search_icon">Pictorgramnaam</string>
     <!-- Update -->
+    <string name="checking_for_update">Controleren op update…</string>
+    <string name="update_available">Update beschikbaar!</string>
+    <string name="no_update_available">Je gebruikt de laatste versie!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versie</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Kan in-app aankoopproducten niet laden</string>
     <!-- License -->
+    <string name="license_checking">Licentie controleren…</string>
+    <string name="license_check">Licentie controleren</string>
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Zoeken</string>
     <!-- Home -->
+    <string name="home_donate">Doneren</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Pictogramverzoek</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -27,4 +73,6 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Openen</string>
+    <string name="txt_close">Sluiten</string>
 </resources>

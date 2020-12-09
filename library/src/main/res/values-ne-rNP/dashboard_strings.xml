@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">क्यान्डीबार मटेरियल ड्यासबोर्ड</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">गृह पृष्ठ</string>
@@ -41,6 +41,7 @@
     <string name="search_faqs">प्रश्न वा उत्तर</string>
     <string name="search_icon">आइकनको नाम</string>
     <!-- Update -->
+    <string name="checking_for_update">अपडेटको लागि जाँच गरिँदैछ…</string>
     <string name="update_available">अपडेट उपलब्ध छ!</string>
     <string name="no_update_available">तपाईं भर्खरैको संस्करण प्रयोग गर्दै हुनुहुन्छ !</string>
     <!-- Changelog -->
@@ -55,8 +56,8 @@
     <string name="license_check_retry">लाइसेन्स जाँच गर्न असमर्थ छौ, केहि क्षणमा फेरि प्रयास गर्नुहोस्।</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">प्ले स्टोर जाँच गर्दै छौ</string>
-    <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। आइकन प्याकको मज्जा लिनुहोस्।</string>
-    <string name="playstore_check_failed">तपाईंले प्ले स्टोर भन्दा बहिर बाट डाउनलोड गरेको जस्तो लाग्यो, तपाईंले यस आइकनलाई प्रयोग गर्न सक्नु हुँदैन</string>
+    <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। यो एपको आनन्द लिनुहोस्।</string>
+    <string name="playstore_check_failed">तपाईंले प्ले स्टोर भन्दा बहिर बाट डाउनलोड गरेको जस्तो लाग्यो, तसर्थ तपाईंले यस आइकनलाई प्रयोग गर्न सक्नु हुँदैन</string>
     <!-- Share -->
     <string name="share_app_title">%s चेक आउट</string>
     <string name="share_app_body">चेक आउट %1$s एक चोटि प्रयोग गर्नुस् त, यो आइकन प्याक साँच्चिकै राम्रो छ %2$s</string>
@@ -132,6 +133,7 @@
     <string name="request_email_client">तपाईंले चाहेको एपको आइकन परिवर्तन गर्न र् अनुरोध पठाउनको लागि छनोट गर्नुहोस्</string>
     <string name="request_app_disabled">तपाईं यो आइकन प्याकको पुरानो संस्करण प्रयोग गर्दै हुनुहुन्छ। अनुरोध गरिएको आइकनहरू नयाँ संस्करणमा समावेश हुन सक्छ। आइकन अनुरोध गर्न कृपया नौलो संस्करणमा अपडेट गर्नुहोस्।</string>
     <string name="connection_error_long">सर्भरबाट डाटा लोड गर्न सकिएन। कृपया तपाईंको नेटवर्क एक पटक जाँच्नुहोस्।</string>
+    <string name="unable_to_load_config">सर्भरबाट डाटा ल्याउँदा / पढ्दा समस्या देखियो।</string>
     <string name="request_limit">तपाईं मात्र नियमित अनुरोधमा केवल %d अनुरोध (हरू) बनाउन सक्नु हुनेछ।</string>
     <string name="request_used">तपाईंले %d आइकन अनुरोध गर्नु भयो</string>
     <string name="request_limit_buy">तपाइँ धेरै आइकनहरू अनुरोध गर्न प्रिमियम प्यकेज खरीद गर्न सक्नुहुन्छ।</string>
