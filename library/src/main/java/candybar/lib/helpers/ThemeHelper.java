@@ -2,6 +2,7 @@ package candybar.lib.helpers;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,29 +14,28 @@ import candybar.lib.preferences.Preferences;
 
 public class ThemeHelper {
     public static final int THEME_AUTO = 0;
-    private static final String THEME_AUTO_NAME = "Auto";
     public static final int THEME_LIGHT = 1;
-    private static final String THEME_LIGHT_NAME = "Light";
     public static final int THEME_DARK = 2;
-    private static final String THEME_DARK_NAME = "Dark";
 
-    public static List<Theme> getThemes() {
+    public static List<Theme> getThemes(Context context) {
+        Resources resources = context.getResources();
         List<Theme> themes = new ArrayList<>();
-        themes.add(new Theme(THEME_AUTO_NAME, THEME_AUTO));
-        themes.add(new Theme(THEME_LIGHT_NAME, THEME_LIGHT));
-        themes.add(new Theme(THEME_DARK_NAME, THEME_DARK));
+        themes.add(new Theme(resources.getString(R.string.theme_name_auto), THEME_AUTO));
+        themes.add(new Theme(resources.getString(R.string.theme_name_light), THEME_LIGHT));
+        themes.add(new Theme(resources.getString(R.string.theme_name_dark), THEME_DARK));
         return themes;
     }
 
     public static String getCurrentThemeName(Context context) {
+        Resources resources = context.getResources();
         int currentTheme = Preferences.get(context).getTheme();
         switch (currentTheme) {
             case THEME_AUTO:
-                return THEME_AUTO_NAME;
+                return resources.getString(R.string.theme_name_auto);
             case THEME_LIGHT:
-                return THEME_LIGHT_NAME;
+                return resources.getString(R.string.theme_name_light);
             case THEME_DARK:
-                return THEME_DARK_NAME;
+                return resources.getString(R.string.theme_name_dark);
         }
         return "";
     }

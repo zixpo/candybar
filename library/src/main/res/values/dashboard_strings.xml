@@ -254,6 +254,11 @@
     <string name="pref_others_reset_tutorial">Reset Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial Reset</string>
 
+    <!-- Themes -->
+    <string name="theme_name_auto">Auto</string>
+    <string name="theme_name_light">Light</string>
+    <string name="theme_name_dark">Dark</string>
+
     <!-- Permission -->
     <string name="permission_storage_denied">Storage permission needed to save wallpaper</string>
 

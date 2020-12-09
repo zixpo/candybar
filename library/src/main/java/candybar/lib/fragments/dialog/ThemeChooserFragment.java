@@ -89,7 +89,7 @@ public class ThemeChooserFragment extends DialogFragment {
         mCurrentTheme = Preferences.get(getActivity()).getTheme();
         mChosenTheme = mCurrentTheme;
 
-        List<Theme> themes = ThemeHelper.getThemes();
+        List<Theme> themes = ThemeHelper.getThemes(getActivity());
         int currentThemeIndex = 0;
 
         for (int i = 0; i < themes.size(); i++) {
