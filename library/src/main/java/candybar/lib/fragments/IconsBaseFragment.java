@@ -157,23 +157,6 @@ public class IconsBaseFragment extends Fragment {
 
         iconShape.setOnMenuItemClickListener(menuItem -> {
             IconShapeChooserFragment.showIconShapeChooser(getActivity().getSupportFragmentManager());
-            /*List<IconShape> shapes = IconShapeHelper.getShapes();
-            List<String> iconShapes = new ArrayList<>();
-            int currentShape = Preferences.get(getActivity()).getIconShape();
-            int currentShapeIndex = 0;
-            for (int i = 0; i < shapes.size(); i++) {
-                iconShapes.add(shapes.get(i).getName());
-                if (shapes.get(i).getShape() == currentShape) currentShapeIndex = i;
-            }
-            new MaterialDialog.Builder(getActivity())
-                    .title(R.string.icon_shape)
-                    .items(iconShapes)
-                    .itemsCallbackSingleChoice(currentShapeIndex, (dialog, itemView, which, text) -> {
-                        return true;
-                    })
-                    .positiveText(R.string.close)
-                    .show();*/
-
             return false;
         });
     }

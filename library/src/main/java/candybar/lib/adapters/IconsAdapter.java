@@ -18,8 +18,10 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 import candybar.lib.R;
 import candybar.lib.helpers.IconsHelper;
@@ -60,11 +62,6 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         mIcons = icons;
         mIsShowIconName = mContext.getResources().getBoolean(R.bool.show_icon_name);
         mViewHolders = new ArrayList<>();
-
-        if (search) {
-            mIconsAll = new ArrayList<>();
-            mIconsAll.addAll(mIcons);
-        }
     }
 
     @Override
@@ -138,14 +135,39 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     }
 
     public void search(String string) {
+        // Initialize mIconsAll if not initialized
+        // Also remove duplicates
+        if (mIconsAll == null) {
+            mIconsAll = new ArrayList<>();
+            Set<String> addedNames = new HashSet<>();
+            Locale defaultLocale = Locale.getDefault();
+            for (int i = 0; i < mIcons.size(); i++) {
+                Icon icon = mIcons.get(i);
+                String name = icon.getTitle();
+                if (icon.getCustomName() != null && !icon.getCustomName().contentEquals("")) {
+                    name = icon.getCustomName();
+                }
+                name = name.toLowerCase(defaultLocale);
+                if (!addedNames.contains(name)) {
+                    mIconsAll.add(icon);
+                    addedNames.add(name);
+                }
+            }
+        }
+
         String query = string.toLowerCase(Locale.getDefault()).trim();
         mIcons.clear();
         if (query.length() == 0) mIcons.addAll(mIconsAll);
         else {
+            Locale defaultLocale = Locale.getDefault();
             for (int i = 0; i < mIconsAll.size(); i++) {
                 Icon icon = mIconsAll.get(i);
-                String title = icon.getTitle().toLowerCase(Locale.getDefault());
-                if (title.contains(query)) {
+                String name = icon.getTitle();
+                if (icon.getCustomName() != null && !icon.getCustomName().contentEquals("")) {
+                    name = icon.getCustomName();
+                }
+                name = name.toLowerCase(defaultLocale);
+                if (name.contains(query)) {
                     mIcons.add(icon);
                 }
             }

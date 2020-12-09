@@ -129,8 +129,20 @@ public class IconsSearchFragment extends Fragment {
         ViewHelper.setSearchViewCloseIcon(mSearchView, R.drawable.ic_toolbar_close);
         ViewHelper.setSearchViewSearchIcon(mSearchView, null);
 
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item) {
+                return true;
+            }
 
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item) {
+                getActivity().onBackPressed();
+                return true;
+            }
+        });
+
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextChange(String string) {
                 filterSearch(string);
@@ -249,6 +261,7 @@ public class IconsSearchFragment extends Fragment {
             if (aBoolean) {
                 mAdapter = new IconsAdapter(getActivity(), icons, true, mFragment);
                 mRecyclerView.setAdapter(mAdapter);
+                filterSearch("");
                 mSearchView.requestFocus();
                 SoftKeyboardHelper.openKeyboard(getActivity());
             } else {
