@@ -183,6 +183,7 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="pref_others_changelog">更新履歴</string>
     <string name="pref_others_reset_tutorial">チュートリアルをリセット</string>
     <string name="pref_others_reset_tutorial_reset">チュートリアルのリセット</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">壁紙を保存するにはストレージの権限が必要です</string>
     <!-- Intent -->
