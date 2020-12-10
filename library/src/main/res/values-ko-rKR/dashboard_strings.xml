@@ -177,6 +177,7 @@
     <string name="pref_others_changelog">변경 사항</string>
     <string name="pref_others_reset_tutorial">튜토리얼 초기화</string>
     <string name="pref_others_reset_tutorial_reset">튜토리얼 초기화</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">배경화면을 저장하려면 저장소 권한이 필요합니다.</string>
     <!-- Intent -->

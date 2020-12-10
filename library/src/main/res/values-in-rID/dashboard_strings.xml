@@ -209,6 +209,10 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="pref_others_changelog">Catatan perubahan</string>
     <string name="pref_others_reset_tutorial">Atur ulang Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial sudah di Atur ulang</string>
+    <!-- Themes -->
+    <string name="theme_name_auto">Otomatis</string>
+    <string name="theme_name_light">Terang</string>
+    <string name="theme_name_dark">Gelap</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Izin penyimpanan diperlukan untuk menyimpan wallpaper</string>
     <!-- Intent -->

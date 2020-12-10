@@ -186,6 +186,7 @@
     <string name="pref_others_changelog">Değişiklikler</string>
     <string name="pref_others_reset_tutorial">Tanıtımı Sıfırla</string>
     <string name="pref_others_reset_tutorial_reset">Tanıtımı Sıfırla</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">Duvar kağıdını kaydetmek için depolama izni gerekli</string>
     <!-- Intent -->

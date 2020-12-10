@@ -186,6 +186,7 @@
     <string name="pref_others_changelog">更新日志</string>
     <string name="pref_others_reset_tutorial">重置教程</string>
     <string name="pref_others_reset_tutorial_reset">教程已重置</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">需要存储权限以保存壁纸</string>
     <!-- Intent -->

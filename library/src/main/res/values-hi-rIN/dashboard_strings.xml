@@ -186,6 +186,7 @@
     <string name="pref_others_changelog">बदलाव का</string>
     <string name="pref_others_reset_tutorial">ट्यूटोरियल रीसेट करें</string>
     <string name="pref_others_reset_tutorial_reset">ट्यूटोरियल रीसेट करें</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">वॉलपेपर को सहेजने के लिए संग्रहण अनुमति की आवश्यकता है</string>
     <!-- Intent -->

@@ -187,6 +187,7 @@
     <string name="pref_others_changelog">Список изменений</string>
     <string name="pref_others_reset_tutorial">Сбросить обучение</string>
     <string name="pref_others_reset_tutorial_reset">Обучение сброшено</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">Требуется разрешение хранения для сохранения обоев</string>
     <!-- Intent -->

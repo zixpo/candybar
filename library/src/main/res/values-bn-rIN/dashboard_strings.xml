@@ -182,6 +182,7 @@
     <string name="pref_others_changelog">পরিবর্তন সূচী</string>
     <string name="pref_others_reset_tutorial">টিউটোরিয়াল রিসেট করুন</string>
     <string name="pref_others_reset_tutorial_reset">টিউটোরিয়াল রিসেট করা হয়েছে</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">ওয়ালপেপার সংরক্ষণ করার জন্য স্টোরেজ অনুমতি প্রয়োজন</string>
     <!-- Intent -->

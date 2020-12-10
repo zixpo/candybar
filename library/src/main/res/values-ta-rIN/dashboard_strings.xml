@@ -185,6 +185,7 @@
     <string name="pref_others_changelog">சேஞ்ச்லாக்</string>
     <string name="pref_others_reset_tutorial">Reset Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial Reset</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">வால்பேப்பரைச் சேமிக்க சேமிப்பு அனுமதி தேவை</string>
     <!-- Intent -->

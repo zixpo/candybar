@@ -207,6 +207,7 @@
     <string name="pref_others_changelog">Changelog</string>
     <string name="pref_others_reset_tutorial">Reiniciar Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial Reinicializado</string>
+    <!-- Themes -->
     <!-- Permission -->
     <string name="permission_storage_denied">Permissão de armazenamento necessária para salvar o papel de parede</string>
     <!-- Intent -->
