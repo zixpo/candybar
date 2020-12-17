@@ -73,7 +73,11 @@
     <!-- Support Development -->
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_open_source_licenses">Open Source licenties</string>
+    <string name="about_dashboard_contributors">CandyBar bijdragers</string>
+    <string name="about_dashboard_translator">CandyBar vertaler</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Openen</string>
     <string name="txt_close">Sluiten</string>
+    <string name="txt_new">Nieuw</string>
 </resources>
