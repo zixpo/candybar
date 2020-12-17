@@ -5,7 +5,7 @@
     <string name="navigation_view_home">Thuis</string>
     <string name="navigation_view_apply">Toepassen</string>
     <string name="navigation_view_icons">Pictogrammen</string>
-    <string name="navigation_view_request">Pictogramverzoek</string>
+    <string name="navigation_view_request">Pictogramaanvraag</string>
     <string name="navigation_view_wallpapers">Achtergronden</string>
     <string name="navigation_view_settings">Instellingen</string>
     <string name="navigation_view_faqs">Veelgestelde vragen</string>
@@ -57,15 +57,30 @@
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store controle</string>
     <string name="playstore_check_success">Bedankt voor het installeren van de app via Google Play Store. Veel plezier.</string>
+    <string name="playstore_check_failed">Het lijkt erop dat je dit pictogrampakket hebt geïnstalleerd van buiten de Google Play Store. Je kunt het niet gebruiken.</string>
     <!-- Share -->
+    <string name="share_app_title">Yo! Bekijk %s</string>
+    <string name="share_app_body">Bekijk %1$s, dit pictogrampakket is erg cool! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Navigatiemenu</string>
+    <string name="tap_intro_home_navigation_desc">Tik hier of veeg vanuit de linkerkant van het scherm om het navigatiemenu te openen</string>
+    <string name="tap_intro_home_apply">Pictogrampakket toepassen</string>
+    <string name="tap_intro_home_apply_desc">Tik hier om %s toe te passen</string>
     <string name="tap_intro_icons_search">Zoeken</string>
+    <string name="tap_intro_icons_search_desc">Tik hier om een pictogram te zoeken</string>
+    <string name="tap_intro_request_select">Missende apps kiezen</string>
+    <string name="tap_intro_request_select_desc">Tik hier om missende apps te kiezen voor pictogramaanvraag</string>
+    <string name="tap_intro_request_select_all">Alle missende apps kiezen</string>
+    <string name="tap_intro_request_select_all_desc">Tik hier om alle missende apps te kiezen voor pictogramaanvraag</string>
+    <string name="tap_intro_request_send">Pictogramaanvraag versturen</string>
+    <string name="tap_intro_request_send_desc">Tik hier om gekozen missende apps te versturen</string>
+    <string name="tap_intro_request_premium">Premium pictogramaanvraag</string>
     <!-- Home -->
     <string name="home_donate">Doneren</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
-    <string name="request_title">Pictogramverzoek</string>
+    <string name="request_title">Pictogramaanvraag</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
