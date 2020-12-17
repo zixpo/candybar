@@ -51,7 +51,12 @@
     <!-- License -->
     <string name="license_checking">Licentie controleren…</string>
     <string name="license_check">Licentie controleren</string>
+    <string name="license_check_success">Licentiecontrole succesvol. Bedankt voor het downloaden van de app via de Play Store.</string>
+    <string name="license_check_failed">Licentiecontrole mislukt. Je hebt de app niet gedownload van de Play Store. Je kunt het niet gebruiken.</string>
+    <string name="license_check_retry">Kan licentie niet controleren, probeer het over enkele ogenblikken opnieuw.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play Store controle</string>
+    <string name="playstore_check_success">Bedankt voor het installeren van de app via Google Play Store. Veel plezier.</string>
     <!-- Share -->
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Zoeken</string>
@@ -70,9 +75,17 @@
     <!-- Intent -->
     <!-- About -->
     <!-- Report Bugs -->
+    <string name="report_bugs_failed">Kan activiteitenlijst niet bouwen</string>
+    <string name="report_bugs_send">Rapport versturen</string>
     <!-- Support Development -->
+    <string name="donation_success">Bedankt voor de donatie. Ik zal het goed gebruiken.</string>
     <!-- Crash Report -->
+    <string name="crash_report">Foutenrapport</string>
+    <string name="crash_report_message">Helaas is %s vastgelopen. Verstuur onderstaand het rapport om de ontwikkelaar te steunen bij het verhelpen van dit probleem.</string>
+    <string name="crash_report_send">Rapport versturen</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar is een open source pictogrampakket dashboard gelicenceerd onder Apache Licentie 2.0 voor Android beschikbaar bij GitHub en gratis te gebruiken, ontwikkeld door Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Open Source licenties</string>
     <string name="about_dashboard_contributors">CandyBar bijdragers</string>
     <string name="about_dashboard_translator">CandyBar vertaler</string>
