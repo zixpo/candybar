@@ -32,15 +32,29 @@
     <!-- Dialog -->
     <string name="open">Відкрити</string>
     <string name="close">Закрити</string>
+    <string name="clear">Очистити</string>
+    <string name="ok">ОК</string>
+    <string name="install">Встановити</string>
+    <string name="donate">Пожертвувати</string>
+    <string name="update">Оновити</string>
+    <string name="search_noresult">Нічого не знайдено для \"%s\"</string>
+    <string name="search_faqs">Питання чи відповідь</string>
+    <string name="search_icon">Назва іконки</string>
     <!-- Update -->
+    <string name="checking_for_update">Перевірка на наявність оновлень…</string>
+    <string name="update_available">Доступне оновлення!</string>
+    <string name="no_update_available">Ви використовуєте останню версію!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Версія</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Не вдалося завантажити продукти InApp-Покупок</string>
     <!-- License -->
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Пошук</string>
     <!-- Home -->
+    <string name="home_donate">Пожертвувати</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
