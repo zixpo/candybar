@@ -120,7 +120,13 @@
     <string name="icon_shape">Форма іконок</string>
     <!-- Request -->
     <string name="request_title">Запит іконок</string>
+    <string name="request_not_selected">Виберіть додатки для запиту</string>
+    <string name="request_building">Створення запиту …</string>
+    <string name="request_arctic_sending">Надсилання запиту до Arctic Manager...</string>
+    <string name="request_arctic_error">Сталася помилка під час надсилання запиту до Arctic Manager. Помилка %s</string>
+    <string name="request_arctic_success">Успішно надіслано запит до Arctic Manager</string>
     <string name="request_fetching_data">Отримання останніх даних …</string>
+    <string name="request_build_failed">Неможливо створити запит іконок</string>
     <string name="request_appfilter_failed">Неможливо прочитати appfilter.xml</string>
     <string name="connection_error_long">Не вдалося завантажити дані з сервера. Будь ласка, перевірте ваше мережеве з\'єднання.</string>
     <string name="unable_to_load_config">Сталася помилка при завантаженні даних з сервера.</string>
@@ -131,22 +137,32 @@
     <string name="premium_request_buy">Придбати</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Нові шпалери</string>
+    <string name="wallpaper_already_downloaded">Шпалери вже завантажені</string>
     <string name="wallpaper_downloading">Завантаження шпалер …</string>
+    <string name="wallpaper_download_failed">Не вдалося завантажити шпалери</string>
     <string name="wallpaper_loading">Завантаження шпалер …</string>
+    <string name="wallpaper_applying">Застосування шпалер …</string>
     <string name="wallpaper_applied">Шпалери застосовано</string>
+    <string name="wallpaper_apply_failed">Не вдалося застосувати шпалер</string>
+    <string name="wallpaper_apply_cancelled">Застосування шпалер скасовано</string>
     <string name="connection_failed">Неможливо отримати дані із сервера</string>
     <string name="wallpaper_apply">Застосувати шпалери</string>
     <string name="wallpaper_save_to_device">Зберегти шпалери</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Дані і кеш</string>
     <string name="pref_data_cache">Очистити кеш</string>
     <string name="pref_data_cache_size">Розмір кешу: %s</string>
     <string name="pref_data_cache_clear_dialog">Ви дійсно хочете очистити кеш?</string>
     <string name="pref_data_cache_cleared">Кеш очищено</string>
+    <string name="pref_data_request">Очистити дані запитів іконок</string>
+    <string name="pref_data_request_cleared">Дані запиту іконок очищено</string>
     <string name="pref_premium_request_header">Преміум запит іконок</string>
     <string name="pref_premium_request_restore">Відновити покупки</string>
     <string name="pref_theme_header">Тема</string>
     <string name="pref_theme_dark">Темна тема</string>
+    <string name="pref_theme_dark_desc">Використовувати темний колір для теми додатку</string>
     <string name="pref_wallpaper_header">Шпалери</string>
+    <string name="pref_wallpaper_location">Розташування збереження шпалер</string>
     <string name="pref_language_header">Мова</string>
     <string name="pref_others_header">Інше</string>
     <string name="pref_others_report_bugs">Повідомити про помилку</string>
@@ -158,6 +174,7 @@
     <string name="theme_name_light">Світла</string>
     <string name="theme_name_dark">Темна</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Для збереження шпалер потрібен доступ до сховища</string>
     <!-- Intent -->
     <string name="app_client">Виберіть додаток</string>
     <string name="no_email_app">Відсутній додаток, щоб виправити email</string>
@@ -166,11 +183,13 @@
     <string name="intent_email_supported">Підтримується</string>
     <string name="intent_email_recommended">Рекомендовано</string>
     <string name="intent_email_not_supported">Не підтримується</string>
+    <string name="intent_email_not_supported_message">Вибрано непідтримуваний email клієнт, будь ласка, виберіть інший email клієнт</string>
     <!-- About -->
     <string name="about_contributors_title">Автори</string>
     <string name="about_privacy_policy_title">Політика конфіденційності</string>
     <string name="about_terms_and_conditions_title">Правила та умови</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Будь ласка, опишіть ваші проблеми</string>
     <string name="report_bugs_desc_hint">Опис</string>
     <string name="report_bugs_desc_empty">Будь ласка, дайте опис</string>
     <string name="report_bugs_building">Створення списку активностей …</string>
