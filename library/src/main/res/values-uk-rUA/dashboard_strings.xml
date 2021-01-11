@@ -160,6 +160,8 @@
     <!-- Permission -->
     <!-- Intent -->
     <string name="app_client">Виберіть додаток</string>
+    <string name="no_email_app">Відсутній додаток, щоб виправити email</string>
+    <string name="no_browser">Відсутній додаток, щоб відкрити посилання</string>
     <string name="intent_email_failed">Не вдалося відобразити email додаток</string>
     <string name="intent_email_supported">Підтримується</string>
     <string name="intent_email_recommended">Рекомендовано</string>
@@ -170,13 +172,19 @@
     <string name="about_terms_and_conditions_title">Правила та умови</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc_hint">Опис</string>
+    <string name="report_bugs_desc_empty">Будь ласка, дайте опис</string>
+    <string name="report_bugs_building">Створення списку активностей …</string>
+    <string name="report_bugs_failed">Не вдалося створити список активностей</string>
     <string name="report_bugs_send">Надіслати звіт</string>
     <!-- Support Development -->
+    <string name="donation_success">Дякуємо Вам за пожертви. Я використаю їх на благо.</string>
     <!-- Crash Report -->
     <string name="crash_report">Звіт про збій</string>
+    <string name="crash_report_message">На жаль, %s був закритий. Виберіть \"Надіслати звіт\" нижче, щоб допомогти розробникові виправити цю помилку.</string>
     <string name="crash_report_send">Надіслати звіт</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar - це набір іконок з відкритим вихідним кодом, доступним на android на GitHub. Розроблено Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Ліцензії з відкритим кодом</string>
     <string name="about_dashboard_contributors">Автори CandyBar</string>
     <string name="about_dashboard_translator">Переклад CandyBar</string>
