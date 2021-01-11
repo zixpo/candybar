@@ -5,6 +5,12 @@
     <string name="navigation_view_home">Головна</string>
     <string name="navigation_view_apply">Застосувати</string>
     <string name="navigation_view_icons">Іконки</string>
+    <string name="navigation_view_request">Запит іконок</string>
+    <string name="navigation_view_wallpapers">Шпалери</string>
+    <string name="navigation_view_settings">Налаштування</string>
+    <string name="navigation_view_faqs">Запитання й відповіді</string>
+    <string name="navigation_view_about">Про додаток</string>
+    <string name="navigation_view_donate">Підтримати розробку</string>
     <!-- Muzei -->
     <!-- Menu -->
     <!-- Dialog -->
@@ -19,6 +25,7 @@
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Запит іконок</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
