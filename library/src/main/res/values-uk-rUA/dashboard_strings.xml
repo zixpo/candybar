@@ -12,8 +12,26 @@
     <string name="navigation_view_about">Про додаток</string>
     <string name="navigation_view_donate">Підтримати розробку</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Налаштування Muzei</string>
+    <string name="minute">Хвилина</string>
+    <string name="hour">Година</string>
+    <string name="save_setting">Зберегти</string>
+    <string name="muzei_refresh_duration">Оновити тривалість</string>
+    <string name="muzei_wifi_only">Оновлювати лише через WiFi</string>
+    <string name="muzei_downloaded_only">Завантажувати лише завантажені шпалери</string>
+    <string name="muzei_settings_ignored">Пакет іконок не містить шпалер, налаштування проігноровано.</string>
+    <string name="muzei_settings_saved">Налаштування збережено</string>
     <!-- Menu -->
+    <string name="menu_search">Пошук</string>
+    <string name="menu_save">Зберегти на пристрій</string>
+    <string name="menu_select_all">Виділити все</string>
+    <string name="menu_wallpaper_crop">Обрізати шпалери</string>
+    <string name="menu_apply_homescreen">Головний екран</string>
+    <string name="menu_apply_lockscreen">Заблокований екран</string>
+    <string name="menu_apply_homescreen_lockscreen">Головний і заблокований екрани</string>
     <!-- Dialog -->
+    <string name="open">Відкрити</string>
+    <string name="close">Закрити</string>
     <!-- Update -->
     <!-- Changelog -->
     <!-- InAppBilling -->
@@ -21,6 +39,7 @@
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Пошук</string>
     <!-- Home -->
     <!-- Apply -->
     <!-- Icons -->
@@ -39,4 +58,6 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Відкрити</string>
+    <string name="txt_close">Закрити</string>
 </resources>
