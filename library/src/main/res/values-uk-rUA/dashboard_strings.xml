@@ -24,7 +24,7 @@
     <!-- Menu -->
     <string name="menu_search">Пошук</string>
     <string name="menu_save">Зберегти на пристрій</string>
-    <string name="menu_select_all">Виділити все</string>
+    <string name="menu_select_all">Виділити всі</string>
     <string name="menu_wallpaper_crop">Обрізати шпалери</string>
     <string name="menu_apply_homescreen">Головний екран</string>
     <string name="menu_apply_lockscreen">Заблокований екран</string>
@@ -71,6 +71,12 @@
     <string name="tap_intro_icons_search">Пошук</string>
     <string name="tap_intro_icons_search_desc">Натисніть тут для пошуку іконки</string>
     <string name="tap_intro_request_select">Виберіть пропущений додаток</string>
+    <string name="tap_intro_request_select_desc">Натисніть тут, щоб вибрати пропущений додаток для запиту іконки</string>
+    <string name="tap_intro_request_select_all">Виберіть усі пропущені додатки</string>
+    <string name="tap_intro_request_select_all_desc">Натисніть тут, щоб вибрати всі пропущені додатки для запиту іконок</string>
+    <string name="tap_intro_request_send">Надіслати запит іконок</string>
+    <string name="tap_intro_request_send_desc">Натисніть тут для надсилання вибраних пропущених додатків</string>
+    <string name="tap_intro_request_premium">Преміум запит іконок</string>
     <!-- Home -->
     <string name="home_donate">Пожертвувати</string>
     <!-- Apply -->
