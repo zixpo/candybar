@@ -78,33 +78,51 @@
     <string name="tap_intro_request_send_desc">Натисніть тут для надсилання вибраних пропущених додатків</string>
     <string name="tap_intro_request_premium">Преміум запит іконок</string>
     <string name="tap_intro_request_premium_desc">Натисніть тут, щоб купити пакет преміум запитів іконок, із позначкою \"преміум\" ви можете отримати іконки додатків швидше.</string>
-    <string name="tap_intro_wallpapers_option">Налаштування шпалер</string>
+    <string name="tap_intro_wallpapers_option">Опції шпалер</string>
+    <string name="tap_intro_wallpapers_option_desc">Натисніть і утримуйте тут, щоб показати опції шпалер, %s застосувати шпалери.</string>
     <string name="tap_intro_wallpapers_option_desc_download">завантажити або</string>
     <string name="tap_intro_wallpapers_preview">Перегляд шпалер</string>
+    <string name="tap_intro_wallpapers_preview_desc">Натисніть тут для перегляду повного розміру шпалери</string>
     <string name="tap_intro_wallpaper_preview_save">Зберегти шпалери</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Натисніть тут для завантажити і збереження шпалери на ваш пристрій, щоб пізніше ви могли її використати</string>
     <string name="tap_intro_wallpaper_preview_apply">Застосувати шпалери</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Натисніть тут, щоб встановити шпалери як фон головного екрану</string>
     <!-- Home -->
     <string name="home_more_apps_header">Більше додатків</string>
+    <string name="home_more_apps">Подивитися інші додатки, опубліковані в Google Play Маркеті</string>
+    <string name="home_rate_and_review">Оцінки й відгуки</string>
     <string name="home_apply_icon_pack">Застосувати %s</string>
     <string name="home_donate">Пожертвувати</string>
+    <string name="home_muzei">Muzei живі шпалери</string>
     <!-- Apply -->
     <string name="apply_installed">Встановлений лаунчер</string>
+    <string name="apply_supported">Підтримувані лаунчери</string>
+    <string name="apply_manual_evie">Натисніть і утримуйте на головному екрані - Налаштування - Набір іконок - оберіть %s.</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Не вдалося завантажити іконки</string>
     <string name="icon_shape">Форма іконок</string>
     <!-- Request -->
     <string name="request_title">Запит іконок</string>
+    <string name="request_fetching_data">Отримання останніх даних …</string>
     <!-- Regular Request -->
+    <string name="regular_request">Звичайний запит іконок</string>
     <!-- Premium Request -->
+    <string name="premium_request">Преміум запит іконок</string>
     <string name="premium_request_buy">Придбати</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Нові шпалери</string>
+    <string name="wallpaper_downloading">Завантаження шпалер …</string>
+    <string name="wallpaper_loading">Завантаження шпалер …</string>
     <string name="wallpaper_applied">Шпалери застосовано</string>
+    <string name="connection_failed">Неможливо отримати дані із сервера</string>
     <string name="wallpaper_apply">Застосувати шпалери</string>
     <string name="wallpaper_save_to_device">Зберегти шпалери</string>
     <!-- Preferences -->
     <string name="pref_data_cache">Очистити кеш</string>
     <string name="pref_data_cache_size">Розмір кешу: %s</string>
+    <string name="pref_data_cache_clear_dialog">Ви дійсно хочете очистити кеш?</string>
     <string name="pref_data_cache_cleared">Кеш очищено</string>
+    <string name="pref_premium_request_header">Преміум запит іконок</string>
     <string name="pref_premium_request_restore">Відновити покупки</string>
     <string name="pref_theme_header">Тема</string>
     <string name="pref_theme_dark">Темна тема</string>
@@ -122,12 +140,14 @@
     <!-- Permission -->
     <!-- Intent -->
     <string name="app_client">Виберіть додаток</string>
+    <string name="intent_email_failed">Не вдалося відобразити email додаток</string>
     <string name="intent_email_supported">Підтримується</string>
     <string name="intent_email_recommended">Рекомендовано</string>
     <string name="intent_email_not_supported">Не підтримується</string>
     <!-- About -->
     <string name="about_contributors_title">Учасники</string>
     <string name="about_privacy_policy_title">Політика конфіденційності</string>
+    <string name="about_terms_and_conditions_title">Правила та умови</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc_hint">Опис</string>
     <string name="report_bugs_send">Надіслати звіт</string>
@@ -137,6 +157,8 @@
     <string name="crash_report_send">Надіслати звіт</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_open_source_licenses">Ліцензії з відкритим кодом</string>
+    <string name="about_dashboard_translator">Переклад CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Відкрити</string>
     <string name="txt_close">Закрити</string>
