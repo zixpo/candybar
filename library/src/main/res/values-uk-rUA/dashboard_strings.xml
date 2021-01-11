@@ -77,25 +77,68 @@
     <string name="tap_intro_request_send">Надіслати запит іконок</string>
     <string name="tap_intro_request_send_desc">Натисніть тут для надсилання вибраних пропущених додатків</string>
     <string name="tap_intro_request_premium">Преміум запит іконок</string>
+    <string name="tap_intro_request_premium_desc">Натисніть тут, щоб купити пакет преміум запитів іконок, із позначкою \"преміум\" ви можете отримати іконки додатків швидше.</string>
+    <string name="tap_intro_wallpapers_option">Налаштування шпалер</string>
+    <string name="tap_intro_wallpapers_option_desc_download">завантажити або</string>
+    <string name="tap_intro_wallpapers_preview">Перегляд шпалер</string>
+    <string name="tap_intro_wallpaper_preview_save">Зберегти шпалери</string>
+    <string name="tap_intro_wallpaper_preview_apply">Застосувати шпалери</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Більше додатків</string>
+    <string name="home_apply_icon_pack">Застосувати %s</string>
     <string name="home_donate">Пожертвувати</string>
     <!-- Apply -->
+    <string name="apply_installed">Встановлений лаунчер</string>
     <!-- Icons -->
+    <string name="icon_shape">Форма іконок</string>
     <!-- Request -->
     <string name="request_title">Запит іконок</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
+    <string name="premium_request_buy">Придбати</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Нові шпалери</string>
+    <string name="wallpaper_applied">Шпалери застосовано</string>
+    <string name="wallpaper_apply">Застосувати шпалери</string>
+    <string name="wallpaper_save_to_device">Зберегти шпалери</string>
     <!-- Preferences -->
+    <string name="pref_data_cache">Очистити кеш</string>
+    <string name="pref_data_cache_size">Розмір кешу: %s</string>
+    <string name="pref_data_cache_cleared">Кеш очищено</string>
+    <string name="pref_premium_request_restore">Відновити покупки</string>
+    <string name="pref_theme_header">Тема</string>
+    <string name="pref_theme_dark">Темна тема</string>
+    <string name="pref_wallpaper_header">Шпалери</string>
+    <string name="pref_language_header">Мова</string>
+    <string name="pref_others_header">Інше</string>
+    <string name="pref_others_report_bugs">Повідомити про помилку</string>
+    <string name="pref_others_changelog">Список змін</string>
+    <string name="pref_others_reset_tutorial">Скинути посібник</string>
+    <string name="pref_others_reset_tutorial_reset">Посібник скинуто</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Авто</string>
+    <string name="theme_name_light">Світла</string>
+    <string name="theme_name_dark">Темна</string>
     <!-- Permission -->
     <!-- Intent -->
+    <string name="app_client">Виберіть додаток</string>
+    <string name="intent_email_supported">Підтримується</string>
+    <string name="intent_email_recommended">Рекомендовано</string>
+    <string name="intent_email_not_supported">Не підтримується</string>
     <!-- About -->
+    <string name="about_contributors_title">Учасники</string>
+    <string name="about_privacy_policy_title">Політика конфіденційності</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc_hint">Опис</string>
+    <string name="report_bugs_send">Надіслати звіт</string>
     <!-- Support Development -->
     <!-- Crash Report -->
+    <string name="crash_report">Звіт про збій</string>
+    <string name="crash_report_send">Надіслати звіт</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Відкрити</string>
     <string name="txt_close">Закрити</string>
+    <string name="txt_new">Новий</string>
 </resources>
