@@ -93,17 +93,31 @@
     <string name="home_rate_and_review">Оцінки й відгуки</string>
     <string name="home_apply_icon_pack">Застосувати %s</string>
     <string name="home_donate">Пожертвувати</string>
+    <string name="home_donate_desc">Підтримати розробку пакету іконок</string>
+    <string name="home_icon_dimension">%s пікселів - розмір іконки</string>
+    <string name="home_loud_wallpapers">%d хмарних шпалер</string>
     <string name="home_muzei">Muzei живі шпалери</string>
+    <string name="home_icon_request_installed_apps">Всього\n%d встановлених додатків</string>
+    <string name="home_icon_request_missed_apps">Пропущені\n%d додатки</string>
     <!-- Apply -->
     <string name="apply_installed">Встановлений лаунчер</string>
     <string name="apply_supported">Підтримувані лаунчери</string>
+    <string name="apply_manual">%1$s Лаунчер не підтримує пряме застосування, але ви можете застосувати %2$s вручну з налаштувань лаунчера.</string>
     <string name="apply_manual_evie">Натисніть і утримуйте на головному екрані - Налаштування - Набір іконок - оберіть %s.</string>
+    <string name="apply_launch_failed">Не вдалося запустити налаштування %s</string>
+    <string name="apply_launcher_not_installed">%s Лаунчер не встановлено. Ви хочете відкрити
+        Google Play Маркет для його завантаження та встановлення?</string>
+    <string name="apply_cmtheme_not_available">CM Theme Manager не підтримує на цьому пристрої</string>
+    <string name="apply_lg_home_not_available">LG Home не доступний на цьому пристрої</string>
     <!-- Icons -->
     <string name="icons_load_failed">Не вдалося завантажити іконки</string>
     <string name="icon_shape">Форма іконок</string>
     <!-- Request -->
     <string name="request_title">Запит іконок</string>
     <string name="request_fetching_data">Отримання останніх даних …</string>
+    <string name="request_appfilter_failed">Неможливо прочитати appfilter.xml</string>
+    <string name="connection_error_long">Не вдалося завантажити дані з сервера. Будь ласка, перевірте ваше мережеве з\'єднання.</string>
+    <string name="unable_to_load_config">Сталася помилка при завантаженні даних з сервера.</string>
     <!-- Regular Request -->
     <string name="regular_request">Звичайний запит іконок</string>
     <!-- Premium Request -->
