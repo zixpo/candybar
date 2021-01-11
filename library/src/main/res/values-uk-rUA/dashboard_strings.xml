@@ -49,10 +49,28 @@
     <!-- InAppBilling -->
     <string name="billing_load_product_failed">Не вдалося завантажити продукти InApp-Покупок</string>
     <!-- License -->
+    <string name="license_checking">Перевірка ліцензії…</string>
+    <string name="license_check">Перевірка ліцензії</string>
+    <string name="license_check_success">Ліцензія успішно перевірена, спасибі за завантаження додатку з Play Store.</string>
+    <string name="license_check_failed">Ліцензія пройшла перевірку невдало, Ви не завантажили додаток з Play Store.
+        Ви не зможете його використовувати.</string>
+    <string name="license_check_retry">Неможливо перевірити ліцензію, будь ласка, спробуйте ще раз через кілька хвилин.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Перевірити Play Маркет</string>
+    <string name="playstore_check_success">Дякуємо, що встановили додаток з Google Play Маркету. Насолоджуйтесь.</string>
+    <string name="playstore_check_failed">Схоже, що ви встановили цей пакет іконок не з Google Play Маркету.
+        Ви не зможете його використовувати.</string>
     <!-- Share -->
+    <string name="share_app_title">Йо! Заціни %s</string>
+    <string name="share_app_body">Заціни %1$s, цей пакет іконок справді крутий! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Панель навігації</string>
+    <string name="tap_intro_home_navigation_desc">Натисніть тут або проведіть від лівого краю екрану, щоб відкрити панель навігації</string>
+    <string name="tap_intro_home_apply">Застосувати набір іконок</string>
+    <string name="tap_intro_home_apply_desc">Натисніть тут, щоб застосувати %s</string>
     <string name="tap_intro_icons_search">Пошук</string>
+    <string name="tap_intro_icons_search_desc">Натисніть тут для пошуку іконки</string>
+    <string name="tap_intro_request_select">Виберіть пропущений додаток</string>
     <!-- Home -->
     <string name="home_donate">Пожертвувати</string>
     <!-- Apply -->
