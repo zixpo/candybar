@@ -109,7 +109,12 @@
         Google Play Маркет для його завантаження та встановлення?</string>
     <string name="apply_launcher_not_installable">%s Лаунчер не встановлено. Будь ласка, спробуйте ще раз після встановлення лаунчера.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager не підтримує на цьому пристрої</string>
+    <string name="apply_cmtheme_failed">Не вдалося запустити CM Theme Manager, спробуйте застосувати пакет іконок вручну з налаштувань.</string>
+    <string name="apply_lg_home">Щоб застосувати пакет іконок відкрийте налаштування - Дисплей - Головний екран - Тема</string>
     <string name="apply_lg_home_not_available">LG Home не доступний на цьому пристрої</string>
+    <string name="apply_lg_home_failed">Не вдалося запустити налаштування LG Home, спробуйте застосувати пакет іконок вручну з налаштувань.</string>
+    <string name="apply_lg_home_nougat">LG Home на android 7.0+ не підтримує набори іконок. Вам потрібен сторонній лаунчер для використання пакету іконок.</string>
+    <string name="apply_launcher_incompatible">%s Лаунчер не підтримує жодного пакету іконок, так що ви не можете використовувати цей пакет іконок з цим лаунчером. Ви можете спробувати сторонній додаток, щоб використовувати цей пакет іконок з %2$s лаунчером. Бажаєте його встановити?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Не вдалося завантажити іконки</string>
     <string name="icon_shape">Форма іконок</string>
@@ -160,7 +165,7 @@
     <string name="intent_email_recommended">Рекомендовано</string>
     <string name="intent_email_not_supported">Не підтримується</string>
     <!-- About -->
-    <string name="about_contributors_title">Учасники</string>
+    <string name="about_contributors_title">Автори</string>
     <string name="about_privacy_policy_title">Політика конфіденційності</string>
     <string name="about_terms_and_conditions_title">Правила та умови</string>
     <!-- Report Bugs -->
@@ -173,6 +178,7 @@
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
     <string name="about_open_source_licenses">Ліцензії з відкритим кодом</string>
+    <string name="about_dashboard_contributors">Автори CandyBar</string>
     <string name="about_dashboard_translator">Переклад CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Відкрити</string>
