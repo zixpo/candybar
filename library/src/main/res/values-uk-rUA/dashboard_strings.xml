@@ -128,13 +128,27 @@
     <string name="request_fetching_data">Отримання останніх даних …</string>
     <string name="request_build_failed">Неможливо створити запит іконок</string>
     <string name="request_appfilter_failed">Неможливо прочитати appfilter.xml</string>
+    <string name="request_email_client">Виберіть додаток, за допомогою якого ви хочете надіслати запит іконок</string>
     <string name="connection_error_long">Не вдалося завантажити дані з сервера. Будь ласка, перевірте ваше мережеве з\'єднання.</string>
     <string name="unable_to_load_config">Сталася помилка при завантаженні даних з сервера.</string>
+    <string name="request_limit">Ви можeт зробити тільки %d запитів(а).</string>
+    <string name="request_used">Ви запросили %d іконок.</string>
+    <string name="request_limit_buy">Ви можете купити преміум запити і просити більше значків.</string>
+    <string name="request_limit_reset">Ліміт запитів іконок буде скинутий при кожному оновленні.</string>
     <!-- Regular Request -->
     <string name="regular_request">Звичайний запит іконок</string>
+    <string name="regular_request_count">Всього\n%d запита</string>
+    <string name="regular_request_used">Використано\n%d запита</string>
+    <string name="regular_request_available">Доступно\n%d запита</string>
     <!-- Premium Request -->
     <string name="premium_request">Преміум запит іконок</string>
     <string name="premium_request_buy">Придбати</string>
+    <string name="premium_request_count">Всього\n%d запита</string>
+    <string name="premium_request_used">Використано\n%d запита</string>
+    <string name="premium_request_available">Доступно\n%d запита</string>
+    <string name="premium_request_limit">У Вас є тільки %d преміум запит(ів),</string>
+    <string name="premium_request_rebuilding">Перебудова преміум запиту …</string>
+    <string name="premium_request_required">Вам потрібно купити пакет преміум запитів, щоб роботи нові запити</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Нові шпалери</string>
     <string name="wallpaper_already_downloaded">Шпалери вже завантажені</string>
@@ -155,9 +169,15 @@
     <string name="pref_data_cache_clear_dialog">Ви дійсно хочете очистити кеш?</string>
     <string name="pref_data_cache_cleared">Кеш очищено</string>
     <string name="pref_data_request">Очистити дані запитів іконок</string>
+    <string name="pref_data_request_clear_dialog">Ви дійсно хочете видалити дані запитів іконок?</string>
     <string name="pref_data_request_cleared">Дані запиту іконок очищено</string>
     <string name="pref_premium_request_header">Преміум запит іконок</string>
     <string name="pref_premium_request_restore">Відновити покупки</string>
+    <string name="pref_premium_request_restore_desc">Відновити пакет преміум запитів після переустановлення пакету іконок</string>
+    <string name="pref_premium_request_restore_success">Преміум запит відновлено</string>
+    <string name="pref_premium_request_restore_empty">У вас немає покупок</string>
+    <string name="pref_premium_request_rebuild">Перебудувати преміум запит іконок</string>
+    <string name="pref_premium_request_rebuild_desc">Зібрати всі Преміум запити іконок, щоб надіслати їх повторно</string>
     <string name="pref_theme_header">Тема</string>
     <string name="pref_theme_dark">Темна тема</string>
     <string name="pref_theme_dark_desc">Використовувати темний колір для теми додатку</string>
