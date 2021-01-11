@@ -107,6 +107,7 @@
     <string name="apply_launch_failed">Не вдалося запустити налаштування %s</string>
     <string name="apply_launcher_not_installed">%s Лаунчер не встановлено. Ви хочете відкрити
         Google Play Маркет для його завантаження та встановлення?</string>
+    <string name="apply_launcher_not_installable">%s Лаунчер не встановлено. Будь ласка, спробуйте ще раз після встановлення лаунчера.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager не підтримує на цьому пристрої</string>
     <string name="apply_lg_home_not_available">LG Home не доступний на цьому пристрої</string>
     <!-- Icons -->
