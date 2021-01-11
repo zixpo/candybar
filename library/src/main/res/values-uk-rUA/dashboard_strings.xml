@@ -128,7 +128,10 @@
     <string name="request_fetching_data">Отримання останніх даних …</string>
     <string name="request_build_failed">Неможливо створити запит іконок</string>
     <string name="request_appfilter_failed">Неможливо прочитати appfilter.xml</string>
+    <string name="request_requested">Будь ласка, перевірте запит ще раз.
+        Тому що ви намагаєтеся запитати додаток, який вже було запропоновано.</string>
     <string name="request_email_client">Виберіть додаток, за допомогою якого ви хочете надіслати запит іконок</string>
+    <string name="request_app_disabled">Ви використовуєте стару версію цього пакета іконок. Іконки можуть бути включені в останню версію. Будь ласка, оновіть додаток до останньої версії, щоб надіслати запит іконок.</string>
     <string name="connection_error_long">Не вдалося завантажити дані з сервера. Будь ласка, перевірте ваше мережеве з\'єднання.</string>
     <string name="unable_to_load_config">Сталася помилка при завантаженні даних з сервера.</string>
     <string name="request_limit">Ви можeт зробити тільки %d запитів(а).</string>
@@ -137,17 +140,28 @@
     <string name="request_limit_reset">Ліміт запитів іконок буде скинутий при кожному оновленні.</string>
     <!-- Regular Request -->
     <string name="regular_request">Звичайний запит іконок</string>
+    <string name="regular_request_desc">Подайте запит на свої іконки і розробник спробує додати іконки, які ви просили.</string>
     <string name="regular_request_count">Всього\n%d запита</string>
     <string name="regular_request_used">Використано\n%d запита</string>
     <string name="regular_request_available">Доступно\n%d запита</string>
     <!-- Premium Request -->
     <string name="premium_request">Преміум запит іконок</string>
+    <string name="premium_request_no_internet">Перед надсиланням преміум запиту переконайтесь, що ваш телефон під\'єднано до інтернету</string>
     <string name="premium_request_buy">Придбати</string>
     <string name="premium_request_count">Всього\n%d запита</string>
     <string name="premium_request_used">Використано\n%d запита</string>
     <string name="premium_request_available">Доступно\n%d запита</string>
+    <string name="premium_request_already_purchased">Ви все ще маєте %d преміум запитів.
+        Ви повинні використати їх всі, перш ніж знову придбати пакет преміум запитів.</string>
     <string name="premium_request_limit">У Вас є тільки %d преміум запит(ів),</string>
+    <string name="premium_request_limit1">але ви обрали %d додатки(ів).
+        \n\nВи повинні використати всі свої преміум запити перед використанням звичайного запиту знову.</string>
+    <string name="premium_request_consume_failed">Неможливо використати преміум запит. Переконайтеся, що у вас є стабільне інтернет-з\'єднання і спробуйте ще раз.
+        Зайди в Налаштування, щоб перебудувати преміум запит.</string>
     <string name="premium_request_rebuilding">Перебудова преміум запиту …</string>
+    <string name="premium_request_rebuilding_empty">Ви не зробили преміум запитів</string>
+    <string name="premium_request_exist">У Вас ще є преміум запити.
+        Відкрийте налаштування, виберіть \"відновити покупки\", щоб відновити їх.</string>
     <string name="premium_request_required">Вам потрібно купити пакет преміум запитів, щоб роботи нові запити</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Нові шпалери</string>
@@ -165,10 +179,12 @@
     <!-- Preferences -->
     <string name="pref_data_header">Дані і кеш</string>
     <string name="pref_data_cache">Очистити кеш</string>
+    <string name="pref_data_cache_desc">Видалити кеш зображень з вашої пам\'яті, створений при виборі зображень з цього додатку, запитів пропущених додатків, завантаження піктограм шпалер.</string>
     <string name="pref_data_cache_size">Розмір кешу: %s</string>
     <string name="pref_data_cache_clear_dialog">Ви дійсно хочете очистити кеш?</string>
     <string name="pref_data_cache_cleared">Кеш очищено</string>
     <string name="pref_data_request">Очистити дані запитів іконок</string>
+    <string name="pref_data_request_desc">Видалити дані запитів іконок.</string>
     <string name="pref_data_request_clear_dialog">Ви дійсно хочете видалити дані запитів іконок?</string>
     <string name="pref_data_request_cleared">Дані запиту іконок очищено</string>
     <string name="pref_premium_request_header">Преміум запит іконок</string>
