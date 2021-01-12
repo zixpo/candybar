@@ -75,6 +75,14 @@
     <string name="tap_intro_request_send">Pictogramaanvraag versturen</string>
     <string name="tap_intro_request_send_desc">Tik hier om gekozen missende apps te versturen</string>
     <string name="tap_intro_request_premium">Premium pictogramaanvraag</string>
+    <string name="tap_intro_request_premium_desc">Tik hier om een premium pictogramverzoek pakket te kopen,
+        met een premium pictogramverzoek kun je je gevraagde apps sneller krijgen.</string>
+    <string name="tap_intro_wallpapers_option">Achtergrond opties</string>
+    <string name="tap_intro_wallpapers_option_desc">Tik hier en houd vast om achtergrond opties te weergeven, %s achtergrond toepassen.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">downloaden of</string>
+    <string name="tap_intro_wallpapers_preview">Achtergrond bekijken</string>
+    <string name="tap_intro_wallpapers_preview_desc">Tik hier om de volledige afbeelding te bekijken</string>
+    <string name="tap_intro_wallpaper_preview_save">Achtergrond opslaan</string>
     <!-- Home -->
     <string name="home_donate">Doneren</string>
     <!-- Apply -->
@@ -84,6 +92,7 @@
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
+    <string name="wallpaper_save_to_device">Achtergrond opslaan</string>
     <!-- Preferences -->
     <!-- Themes -->
     <!-- Permission -->
