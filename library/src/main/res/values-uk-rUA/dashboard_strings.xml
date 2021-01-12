@@ -147,6 +147,7 @@
     <!-- Premium Request -->
     <string name="premium_request">Преміум запит іконок</string>
     <string name="premium_request_no_internet">Перед надсиланням преміум запиту переконайтесь, що ваш телефон під\'єднано до інтернету</string>
+    <string name="premium_request_desc">Преміум запит іконок це платний запит. Ви зможете отримати бажаний додаток швидше використовуючи преміум запит іконок.</string>
     <string name="premium_request_buy">Придбати</string>
     <string name="premium_request_count">Всього\n%d запита</string>
     <string name="premium_request_used">Використано\n%d запита</string>
