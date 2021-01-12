@@ -35,7 +35,7 @@ import candybar.lib.R;
 
 public class LauncherHelper {
 
-    private static final String thirdPartyHelperURL = "https://play.google.com/store/apps/details?id=com.momocode.shortcuts";
+    private static final String thirdPartyHelperURL = "https://play.google.com/store/apps/details?id=rk.android.app.shortcutmaker";
 
     private enum Launcher {
         UNKNOWN, ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO, HOLOHD, LAWNCHAIR,
