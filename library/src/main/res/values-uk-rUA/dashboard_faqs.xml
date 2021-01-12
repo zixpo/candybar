@@ -38,21 +38,21 @@
         <item>Як подати запит на іконку?</item>
         <item>Як відновити Преміум запити після перевстановлення програми?</item>
         <item>Після перезапуску телефону, пакет іконок не застосований, він відновив значення за замовчуванням?</item>
-        <item>Why do the icons looks jaggy or pixelated on my phone?</item>
+        <item>Чому іконки на моєму телефоні виглядають криво або піксельно?</item>
         <item>I can see the icon included in all icons,
             but why isn\'t the actual icon on app drawer changed?</item>
-        <item>What is the \"report bugs\" option?</item>
-        <item>My launcher is listed in the google play description, but why isn\'t it included in apply section?</item>
-        <item>Wallpaper can\'t be applied, just showing black screen?</item>
-        <item>Muzei: How to load downloaded wallpapers only?</item>
-        <item>Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes?</item>
-        <item>Muzei: I only want to use specific wallpapers?</item>
-        <item>Why are Read &amp; Write External Storage permission needed?</item>
-        <item>Why is Internet permission needed?</item>
-        <item>Why is Access Network State permission needed?</item>
-        <item>Why is Access Wifi State permission needed?</item>
-        <item>Why is Set Wallpaper permission needed?</item>
-        <item>Why is Wake Lock Permission needed?</item>
+        <item>Що таке \"повідомити про помилки\"?</item>
+        <item>Мій лаунчер вказаний в описі google play, але чому він відсутній в розділі із додатками?</item>
+        <item>Шпалери не можна застосовувати, просто відображається чорний екран?</item>
+        <item>Muzei: Як підвантажувати лиш завантажені шпалери?</item>
+        <item>Muzei: Я не хочу завантажувати шпалери щоразу, коли вони змінюються?</item>
+        <item>Muzei: Я хочу використовувати лише конкретні шпалери?</item>
+        <item>Навіщо потрібен дозвіл на доступ до пам\'яті?</item>
+        <item>Навіщо потрібен доступ до Інтернету?</item>
+        <item>Навіщо потрібен дозвіл на доступ до мережі?</item>
+        <item>Навіщо потрібен дозвіл на WiFi з\'єднання?</item>
+        <item>Навіщо потрібен дозвіл на зміну шпалер?</item>
+        <item>Навіщо потрібен дозвіл на пробудження?</item>
     </string-array>
     <string-array name="answers">
         <item>Launcher is the part of the Android user interface that lets users customize the home screen,
