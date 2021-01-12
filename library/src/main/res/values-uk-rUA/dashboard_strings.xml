@@ -94,10 +94,12 @@
     <string name="home_apply_icon_pack">Застосувати %s</string>
     <string name="home_donate">Пожертвувати</string>
     <string name="home_donate_desc">Підтримати розробку пакету іконок</string>
+    <string name="home_icons">Інші іконки</string>
     <string name="home_icon_dimension">%s пікселів - розмір іконки</string>
     <string name="home_loud_wallpapers">%d хмарних шпалер</string>
     <string name="home_muzei">Muzei живі шпалери</string>
     <string name="home_icon_request_installed_apps">Всього\n%d встановлених додатків</string>
+    <string name="home_icon_request_themed_apps">Змінено\n%d додатків</string>
     <string name="home_icon_request_missed_apps">Пропущені\n%d додатки</string>
     <!-- Apply -->
     <string name="apply_installed">Встановлений лаунчер</string>
@@ -121,6 +123,8 @@
     <!-- Request -->
     <string name="request_title">Запит іконок</string>
     <string name="request_not_selected">Виберіть додатки для запиту</string>
+    <string name="request_not_requested">Запит ще не надіслано</string>
+    <string name="request_already_requested">Запит вже надіслано</string>
     <string name="request_building">Створення запиту …</string>
     <string name="request_arctic_sending">Надсилання запиту до Arctic Manager...</string>
     <string name="request_arctic_error">Сталася помилка під час надсилання запиту до Arctic Manager. Помилка %s</string>
@@ -202,7 +206,7 @@
     <string name="pref_wallpaper_location">Розташування збереження шпалер</string>
     <string name="pref_language_header">Мова</string>
     <string name="pref_others_header">Інше</string>
-    <string name="pref_others_report_bugs">Повідомити про помилку</string>
+    <string name="pref_others_report_bugs">Повідомити про помилки</string>
     <string name="pref_others_changelog">Список змін</string>
     <string name="pref_others_reset_tutorial">Скинути посібник</string>
     <string name="pref_others_reset_tutorial_reset">Посібник скинуто</string>
