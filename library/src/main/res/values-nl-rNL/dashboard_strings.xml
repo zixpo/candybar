@@ -111,9 +111,33 @@
     <string name="apply_launcher_not_installable">%s is niet geïnstalleerd. Probeer het opnieuw na het installeren van de launcher.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager is niet beschikbaar op dit apparaat</string>
     <string name="apply_cmtheme_failed">Kan CM Theme Manager niet starten. Je kunt proberen het pictogrampakket handmatig toe te passen vanuit de instellingen.</string>
+    <string name="apply_lg_home">Om dit pictogrampakket toe te passen, open Instellingen - Display - Thuisscherm - Thema</string>
+    <string name="apply_lg_home_not_available">LG Home is niet beschikbaar op dit apparaat</string>
+    <string name="apply_lg_home_failed">Kan LG Home Instellingen niet starten. Je kunt proberen het pictogrampakket handmatig toe te passen vanuit de instellingen.</string>
+    <string name="apply_lg_home_nougat">LG Home met Android Nougat ondersteunt geen pictogrampakketten. Je hebt een andere launcher nodig om pictogrampakketten te gebruiken.</string>
+    <string name="apply_launcher_incompatible">%s ondersteunt geen pictogrampakketten. Je kunt dit pictogrampakket niet gebruiken met deze launcher. Je kunt een third-party app proberen om dit pictogrampakket te gebruiken in %2$s launcher. Wil je het installeren?</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Kan pictogrammen niet laden</string>
+    <string name="icon_shape">Pictogramvorm</string>
     <!-- Request -->
     <string name="request_title">Pictogramaanvraag</string>
+    <string name="request_not_selected">Kies apps voor aanvraag</string>
+    <string name="request_not_requested">Niet aangevraagd</string>
+    <string name="request_already_requested">Reeds aangevraagd</string>
+    <string name="request_building">Aanvraag aanmaken…</string>
+    <string name="request_arctic_sending">Aanvraag versturen naar Arctic Manager...</string>
+    <string name="request_arctic_error">Fout tijdens het versturen van de aanvraag naar Arctic Manager. Fout is %s</string>
+    <string name="request_arctic_success">Aanvraag succesvol verstuurt naar Arctic Manager</string>
+    <string name="request_fetching_data">Laatste gegevens ophalen…</string>
+    <string name="request_build_failed">Kan pictogramaanvraag niet aanmaken</string>
+    <string name="request_appfilter_failed">Kan appfilter.xml niet lezen</string>
+    <string name="request_requested">Controleer je verzoek opnieuw.
+        Je probeert een reeds aangevraagde app te versturen.</string>
+    <string name="request_email_client">Kies een app die je wilt meesturen in de pictogramaanvraag</string>
+    <string name="request_app_disabled">Je gebruikt een oudere versie van dit pictogrampakket. De verzochte pictogrammen zijn mogelijk al toegevoegd. Applicatie bijwerken om pictogrammen aan te vragen.</string>
+    <string name="connection_error_long">Kan geen gegevens laden van de server. Controleer je netwerkverbinding.</string>
+    <string name="unable_to_load_config">Fout bij het ophalen/lezen van gegevens van de server.</string>
+    <string name="request_limit">Je kunt slechts %d verzoek(en) maken met standaard aanvraag.</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
