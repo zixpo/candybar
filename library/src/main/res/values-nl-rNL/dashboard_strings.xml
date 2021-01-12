@@ -137,13 +137,26 @@
     <string name="request_app_disabled">Je gebruikt een oudere versie van dit pictogrampakket. De verzochte pictogrammen zijn mogelijk al toegevoegd. Applicatie bijwerken om pictogrammen aan te vragen.</string>
     <string name="connection_error_long">Kan geen gegevens laden van de server. Controleer je netwerkverbinding.</string>
     <string name="unable_to_load_config">Fout bij het ophalen/lezen van gegevens van de server.</string>
-    <string name="request_limit">Je kunt slechts %d verzoek(en) maken met standaard aanvraag.</string>
+    <string name="request_limit">Je kunt slechts %d verzoek(en) maken met reguliere aanvraag.</string>
+    <string name="request_used">Je hebt %d pictogram(men) aangevraagd.</string>
+    <string name="request_limit_buy">Je kunt Premium Aanvragen kopen om meer pictogrammen aan te vragen.</string>
+    <string name="request_limit_reset">Pictogram aanvraaglimiet wordt gereset bij iedere update.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Reguliere Pictogramaanvraag</string>
+    <string name="regular_request_desc">Vraag je pictogram aan en de ontwikkelaar zal deze proberen toe te voegen.</string>
+    <string name="regular_request_count">Totaal\n%d aanvragen</string>
+    <string name="regular_request_used">Gebruikt\n%d aanvragen</string>
+    <string name="regular_request_available">Beschikbaar\n%d aanvragen</string>
     <!-- Premium Request -->
+    <string name="premium_request">Premium Pictogramaanvraag</string>
+    <string name="premium_request_count">Totaal\n%d aanvragen</string>
+    <string name="premium_request_used">Gebruikt\n%d aanvragen</string>
+    <string name="premium_request_available">Beschikbaar\n%d aanvragen</string>
     <!-- Wallpapers -->
     <string name="wallpaper_apply">Achtergrond toepassen</string>
     <string name="wallpaper_save_to_device">Achtergrond opslaan</string>
     <!-- Preferences -->
+    <string name="pref_premium_request_header">Premium Pictogramaanvraag</string>
     <!-- Themes -->
     <!-- Permission -->
     <!-- Intent -->
