@@ -93,8 +93,8 @@
         <item>It is used to write &amp; read cache, and collect the icon request data.</item>
         <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
         <item>Він використовується, щоб перевірити, чи має ваш телефон підключення до інтернету.</item>
-        <item>Він використовується, щоб перевірити, чи має Ваш телефон підключення до інтернету по WiFi, щоб завантажити шпалери.</item>
-        <item>It is used to apply wallpapers directly from the dashboard app.</item>
+        <item>Він використовується, щоб перевірити, чи має Ваш телефон підключення до інтернету по WiFi, щоб завантажити шпалери з Muzei.</item>
+        <item>Він використовується, щоб застосувати шпалери прямо з програми шпалер.</item>
         <item>Його потребує Muzei Live Wallpaper</item>
     </string-array>
 </resources>
