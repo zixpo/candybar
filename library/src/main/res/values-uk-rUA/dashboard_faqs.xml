@@ -69,16 +69,13 @@
         <item>Відкрийте налаштування, прокрутіть вниз, потім виберіть \"Повідомити про помилки\".</item>
         <item>\"Повідомити про помилки\" використовується, щоб повідомити про помилки, що належати до пакета іконок, а не до додатка.</item>
         <item>Не кожен лаунчер підтримує пряме застосування, і деякі з них не доступні безпосередньо з додатка. Ви можете застосувати цей пакет значків вручну в налаштувань лаунчер.</item>
-        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
-      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
-      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
-      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
-            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
+        <item>Коли ви натиснули \"Встановити шпалери\" безпосередньо з додатка, вони будуть завантажені в кеш, тоді додаток буде намагатися застосувати їх. Застосування займе певний час, а також потрібна величезна кількість оперативної пам\'яті на короткий час.
+Помилка з \"Чорним екраном\" може з\'явитися, тому що ваш телефон не має достатньо вільної оперативної пам\'яті для обробки шпалер.
+Перезавантаження може виправити цю проблему. Після перезавантаження ваш телефон буде мати більше оперативної пам\'яті.
+Крім того, ви зможете відкрити викачані шпалери з вашої галереї та встановити їх звідти.</item>
         <item>Відкрийте muzei, виберіть це пакет іконок, налаштування. Ви побачите опцію для завантаження викачаних шпалер. Спочатку вам потрібно буде завантажити шпалери з головної панелі.</item>
-        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
-            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
-        <item>Open Dashboard, download wallpapers that you want to use in Muzei.
-            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
+        <item>Якщо шпалери вже завантажені, вони будуть підтягнуті автоматично з вашого телефону. Muzei не буде завантажувати їх, якщо шпалери були змінені. Але для початку вам потрібно завантажити шпалери з головної панелі.</item>
+        <item>Відкрийте головну панель, завантажте шпалери, які ви хочете використовувати в Muzei. Відкрийте налаштування, потім виберіть тільки завантажувати викачаних шпалер.</item>
         <item>Він використовується для запису і читання кешу та збору запитів іконок.</item>
         <item>Він використовується для підвантаження списку шпалер і їх звантаження.</item>
         <item>Він використовується, щоб перевірити, чи має ваш телефон підключення до інтернету.</item>
