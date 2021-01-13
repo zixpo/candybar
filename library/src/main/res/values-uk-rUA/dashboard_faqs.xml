@@ -65,7 +65,7 @@
             (see on Google Play Store description for supported launchers),
             you can apply the icon pack manually from your launcher settings.</item>
         <item>Ви можете відкрити панель навігації, а потім відкрити \"Іконки\"</item>
-        <item>Just tap the icon. A preview dialog will appear with a bigger image and complete icon name.</item>
+        <item>Просто натисніть на іконку. Діалогове вікно попереднього перегляду з\'явиться з великим зображенням та повною назвою іконки.</item>
         <item>It depends on which launcher you used. Not every launcher supports icon editing.
        	    Mostly you can edit an icon by tapping &amp; holding the icon or double tapping it.</item>
         <item>Ви можете відкрити панель навігації, а потім відкрити \"Запит іконок\".</item>
@@ -76,7 +76,7 @@
        	    You can fix it by increasing the icon size to 115 - 120%.
        	    Alternatively you might change your launcher.</item>
         <item>Відкрийте налаштування, прокрутіть вниз, потім виберіть \"Повідомити про помилки\".</item>
-        <item>\"Report Bugs\" is used to report bugs related to the icon pack, not the dashboard.</item>
+        <item>\"Повідомити про помилки\" використовується, щоб повідомити про помилки, що належати до пакета іконок, а не до додатка.</item>
         <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
       	    You can apply this icon pack manually from the individual launcher settings.</item>
         <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
@@ -90,11 +90,11 @@
             Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
         <item>Open Dashboard, download wallpapers that you want to use in Muzei.
             Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
-        <item>It is used to write &amp; read cache, and collect the icon request data.</item>
-        <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
+        <item>Він використовується для запису і читання кешу та збору запитів іконок.</item>
+        <item>Він використовується для підвантаження списку шпалер і їх звантаження.</item>
         <item>Він використовується, щоб перевірити, чи має ваш телефон підключення до інтернету.</item>
         <item>Він використовується, щоб перевірити, чи має Ваш телефон підключення до інтернету по WiFi, щоб завантажити шпалери з Muzei.</item>
-        <item>Він використовується, щоб застосувати шпалери прямо з програми шпалер.</item>
+        <item>Він використовується, щоб застосувати шпалери прямо з додатку шпалер.</item>
         <item>Його потребує Muzei Live Wallpaper</item>
     </string-array>
 </resources>
