@@ -1,3 +1,6 @@
+# v3.9.1
+- Fix GMail not showing up when sending icon request in Android 11
+
 # v3.9.0
 - Fix new wallpaper count badge
 - Add Indonesian language

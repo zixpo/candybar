@@ -29,6 +29,16 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+
+        <package android:name="com.android.bluetooth" />
+        <package android:name="com.android.cellbroadcastreceiver" />
+    </queries>
+
     <application>
         <meta-data
             android:name="android.max_aspect"

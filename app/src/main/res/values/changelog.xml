@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">October 9, 2020</string>
+    <string name="changelog_date" translatable="false">January 16, 2021</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,15 +10,7 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Fix new wallpaper count badge</item>
-        <item>Add Indonesian language</item>
-        <item>Added option to set default theme</item>
-        <item>Now shows CandyBar version in the About section</item>
-        <item>Remove duplicates in icon search, fixed back press behaviour</item>
-        <item>Now sorts wallpapers in ascending order</item>
-        <item>Fixed locale not applying after a relaunch</item>
-        <item>Added configuration to customize email body</item>
-        <item>Updated translations</item>
+        <item>Fix GMail not showing up when sending icon request in Android 11</item>
     </string-array>
 
 </resources>
