@@ -2,22 +2,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">لوحة مواد CandyBar</string>
     <!-- Navigation View -->
-    <string name="navigation_view_home">الرئيسية</string>
-    <string name="navigation_view_apply">تطبيق</string>
+    <string name="navigation_view_home">الصفحة الرئيسية</string>
+    <string name="navigation_view_apply">تنفيذ</string>
     <string name="navigation_view_icons">الأيقونات</string>
-    <string name="navigation_view_request">طلب أيقونات</string>
+    <string name="navigation_view_request">طلب أيقونات خاصة</string>
     <string name="navigation_view_wallpapers">الخلفيات</string>
     <string name="navigation_view_settings">الإعدادات</string>
     <string name="navigation_view_faqs">الأسئلة الشائعة</string>
-    <string name="navigation_view_about">حول</string>
+    <string name="navigation_view_about">معلومات عن التطبيق</string>
     <string name="navigation_view_donate">دعم التطوير</string>
     <!-- Muzei -->
-    <string name="muzei_settings">إعدادات Muzei</string>
+    <string name="muzei_settings">إعدادات \"Muzei\"</string>
     <string name="minute">دقيقة</string>
     <string name="hour">ساعة</string>
     <string name="save_setting">حفظ</string>
-    <string name="muzei_refresh_duration">تحديث المدة</string>
-    <string name="muzei_wifi_only">تحديث عن طريق Wifi فقط</string>
+    <string name="muzei_refresh_duration">مدة التحديث</string>
+    <string name="muzei_wifi_only">تحديث عبر Wifi فقط</string>
     <string name="muzei_downloaded_only">عرض الخلفيات المحملة فقط</string>
     <string name="muzei_settings_ignored">لا تحتوي حزمة الأيقونات على خلفيات، تم تجاهل الإعدادات.</string>
     <string name="muzei_settings_saved">تم حفظ الإعدادات</string>
@@ -119,7 +119,7 @@
     <string name="icons_load_failed">تعذر تحميل الأيقونات</string>
     <string name="icon_shape">شكل الأيقونات</string>
     <!-- Request -->
-    <string name="request_title">طلب أيقونات</string>
+    <string name="request_title">طلب أيقونات خاصة</string>
     <string name="request_not_selected">اختر التطبيقات للطلب</string>
     <string name="request_not_requested">لم يتم طلبه</string>
     <string name="request_already_requested">تم طلبه بالفعل</string>
