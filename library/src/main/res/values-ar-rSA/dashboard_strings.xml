@@ -18,12 +18,12 @@
     <string name="save_setting">حفظ</string>
     <string name="muzei_refresh_duration">مدة التحديث</string>
     <string name="muzei_wifi_only">تحديث عبر Wifi فقط</string>
-    <string name="muzei_downloaded_only">عرض الخلفيات المحملة فقط</string>
+    <string name="muzei_downloaded_only">تحميل الخلفيات التي تم تنزيلها فقط</string>
     <string name="muzei_settings_ignored">لا تحتوي حزمة الأيقونات على خلفيات، تم تجاهل الإعدادات.</string>
     <string name="muzei_settings_saved">تم حفظ الإعدادات</string>
     <!-- Menu -->
     <string name="menu_search">بحث</string>
-    <string name="menu_save">حفظ إلى الجهاز</string>
+    <string name="menu_save">حفظها في الجهاز</string>
     <string name="menu_select_all">تحديد الكل</string>
     <string name="menu_wallpaper_crop">اقتصاص الخلفية</string>
     <string name="menu_apply_homescreen">الشاشة الرئيسية</string>
@@ -35,14 +35,14 @@
     <string name="clear">مسح</string>
     <string name="ok">موافق</string>
     <string name="install">تثبيت</string>
-    <string name="donate">التبرع</string>
+    <string name="donate">تبرّع</string>
     <string name="update">تحديث</string>
     <string name="search_noresult">لم يتم العثور على نتائج لـ \"%s\"</string>
-    <string name="search_faqs">سؤال أم جواب</string>
+    <string name="search_faqs">سؤال أو جواب</string>
     <string name="search_icon">اسم الأيقونة</string>
     <!-- Update -->
     <string name="checking_for_update">جار التحقق من وجود تحديث …</string>
-    <string name="update_available">هناك تحديث متوفر!</string>
+    <string name="update_available">التحديث متوفر!</string>
     <string name="no_update_available">أنت تستخدم أحدث إصدار!</string>
     <!-- Changelog -->
     <string name="changelog_version">الإصدار</string>
@@ -51,14 +51,15 @@
     <!-- License -->
     <string name="license_checking">جار التحقق من الترخيص ...</string>
     <string name="license_check">التحقق من الترخيص</string>
-    <string name="license_check_success">نجح التحقق من الترخيص، شكراً لك لتحميلك التطبيق من متجر Play.</string>
-    <string name="license_check_failed">فشل التحقق من الترخيص، أنت لم تقم بتحميل التطبيق من متجر Play. لن تتمكن من استخدامه.</string>
-    <string name="license_check_retry">تعذر التحقق من الترخيص، يرجى المحاولة مرة أخرى بعد لحظات قليلة.</string>
+    <string name="license_check_success">نجح التحقق من الترخيص، شكراً لك لتحميلك التطبيق من متجر بلاي ستور.</string>
+    <string name="license_check_failed">فشل التحقق من الترخيص ، لم تقم بتنزيل التطبيق من متجر بلاي ستور.
+         لن تكون قادرًا على استخدامه.</string>
+    <string name="license_check_retry">تعذر التحقق من الترخيص، يرجى المحاولة مرة أخرى بعد لحظات.</string>
     <!-- Play Store Installation Check -->
-    <string name="playstore_check">التحقق من متجر Play</string>
+    <string name="playstore_check">التحقق من متجر بلاي ستور</string>
     <string name="playstore_check_success">شكراً لك لتثبيتك التطبيق من متجر Google Play. استمتع.</string>
     <string name="playstore_check_failed">يبدو أنك قمت بتثبيت حزمة الأيقونات هذه من خارج متجر Google Play.
-        لذا لن تتمكن من استخدامها.</string>
+        لذلك لن تتمكن من استخدامها.</string>
     <!-- Share -->
     <string name="share_app_title">مرحباً! تفقد %s</string>
     <string name="share_app_body">تفقد %1$s، حزمة الأيقونات هذه رائعة جداً! %2$s</string>
@@ -91,7 +92,7 @@
     <string name="home_more_apps">تفقد التطبيقات الأخرى على متجر Google Play</string>
     <string name="home_rate_and_review">التقييم والمراجعة</string>
     <string name="home_apply_icon_pack">تطبيق %s</string>
-    <string name="home_donate">التبرع</string>
+    <string name="home_donate">تبرّع</string>
     <string name="home_donate_desc">دعم تطوير حزمة الأيقونات</string>
     <string name="home_icons">أيقونات مخصصة</string>
     <string name="home_icon_dimension">أبعاد الأيقونة %s بكسل</string>
