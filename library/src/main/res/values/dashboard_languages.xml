@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string-array name="languages_name">
         <item>Arabic</item>
         <item>Bengali</item>
+        <item>Chinese Simplified</item>
         <item>Czech</item>
         <item>English</item>
-        <item>Chinese Simplified</item>
         <item>French</item>
         <item>German</item>
         <item>Hindi</item>
@@ -21,14 +20,15 @@
         <item>Spanish</item>
         <item>Traditional Chinese</item>
         <item>Turkish</item>
+        <item>Ukrainian</item>
     </string-array>
 
     <string-array name="languages_code">
         <item>ar_rSA</item>
         <item>bn_IN</item>
+        <item>zh_CN</item>
         <item>cs_CZ</item>
         <item>en_US</item>
-        <item>zh_CN</item>
         <item>fr_FR</item>
         <item>de_DE</item>
         <item>hi_IN</item>
@@ -43,5 +43,6 @@
         <item>es_ES</item>
         <item>zh_TW</item>
         <item>tr_TR</item>
+        <item>uk_rUA</item>
     </string-array>
 </resources>
