@@ -190,7 +190,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (holder.getItemViewType() == TYPE_HEADER) {
             HeaderViewHolder headerViewHolder = (HeaderViewHolder) holder;
 
-            headerViewHolder.title.setText(mContext.getResources().getString(R.string.home_title));
+            String home_title_text = mContext.getResources().getString(R.string.home_title);
+            if (home_title_text.length() > 0) {
+                headerViewHolder.title.setText(home_title_text);
+            } else {
+                headerViewHolder.title.setVisibility(View.GONE);
+            }
+
             headerViewHolder.content.setHtml(mContext.getResources().getString(R.string.home_description));
 
             String uri = mContext.getResources().getString(R.string.home_image);
