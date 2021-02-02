@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="splash_screen_title">لوحة معلومات CandyBar بتصميم الماتيريال</string>
+    <string name="splash_screen_title">لوحة مواد CandyBar</string>
     <!-- Navigation View -->
-    <string name="navigation_view_home">الرئيسية</string>
-    <string name="navigation_view_apply">تطبيق</string>
+    <string name="navigation_view_home">الصفحة الرئيسية</string>
+    <string name="navigation_view_apply">تنفيذ</string>
     <string name="navigation_view_icons">الأيقونات</string>
-    <string name="navigation_view_request">طلب أيقونات</string>
+    <string name="navigation_view_request">طلب أيقونات خاصة</string>
     <string name="navigation_view_wallpapers">الخلفيات</string>
     <string name="navigation_view_settings">الإعدادات</string>
     <string name="navigation_view_faqs">الأسئلة الشائعة</string>
     <string name="navigation_view_about">حول</string>
     <string name="navigation_view_donate">دعم التطوير</string>
     <!-- Muzei -->
-    <string name="muzei_settings">إعدادات Muzei</string>
+    <string name="muzei_settings">إعدادات \"Muzei\"</string>
     <string name="minute">دقيقة</string>
     <string name="hour">ساعة</string>
     <string name="save_setting">حفظ</string>
     <string name="muzei_refresh_duration">تحديث المدة</string>
-    <string name="muzei_wifi_only">تحديث عن طريق Wifi فقط</string>
-    <string name="muzei_downloaded_only">عرض الخلفيات المحملة فقط</string>
+    <string name="muzei_wifi_only">تحديث عبر Wifi فقط</string>
+    <string name="muzei_downloaded_only">تحميل الخلفيات التي تم تنزيلها فقط</string>
     <string name="muzei_settings_ignored">لا تحتوي حزمة الأيقونات على خلفيات، تم تجاهل الإعدادات.</string>
     <string name="muzei_settings_saved">تم حفظ الإعدادات</string>
     <!-- Menu -->
     <string name="menu_search">بحث</string>
-    <string name="menu_save">حفظ إلى الجهاز</string>
+    <string name="menu_save">حفظها في الجهاز</string>
     <string name="menu_select_all">تحديد الكل</string>
     <string name="menu_wallpaper_crop">اقتصاص الخلفية</string>
     <string name="menu_apply_homescreen">الشاشة الرئيسية</string>
@@ -35,14 +35,14 @@
     <string name="clear">مسح</string>
     <string name="ok">موافق</string>
     <string name="install">تثبيت</string>
-    <string name="donate">التبرع</string>
+    <string name="donate">تبرّع</string>
     <string name="update">تحديث</string>
     <string name="search_noresult">لم يتم العثور على نتائج لـ \"%s\"</string>
-    <string name="search_faqs">سؤال أم جواب</string>
+    <string name="search_faqs">سؤال أو جواب</string>
     <string name="search_icon">اسم الأيقونة</string>
     <!-- Update -->
     <string name="checking_for_update">جار التحقق من وجود تحديث …</string>
-    <string name="update_available">هناك تحديث متوفر!</string>
+    <string name="update_available">التحديث متوفر!</string>
     <string name="no_update_available">أنت تستخدم أحدث إصدار!</string>
     <!-- Changelog -->
     <string name="changelog_version">الإصدار</string>
@@ -51,14 +51,15 @@
     <!-- License -->
     <string name="license_checking">جار التحقق من الترخيص ...</string>
     <string name="license_check">التحقق من الترخيص</string>
-    <string name="license_check_success">نجح التحقق من الترخيص، شكراً لك لتحميلك التطبيق من متجر Play.</string>
-    <string name="license_check_failed">فشل التحقق من الترخيص، أنت لم تقم بتحميل التطبيق من متجر Play. لن تتمكن من استخدامه.</string>
-    <string name="license_check_retry">تعذر التحقق من الترخيص، يرجى المحاولة مرة أخرى بعد لحظات قليلة.</string>
+    <string name="license_check_success">نجح التحقق من الترخيص، شكراً لك لتحميلك التطبيق من متجر بلاي ستور.</string>
+    <string name="license_check_failed">فشل التحقق من الترخيص ، لم تقم بتنزيل التطبيق من متجر بلاي ستور.
+         لن تكون قادرًا على استخدامه.</string>
+    <string name="license_check_retry">تعذر التحقق من الترخيص، يرجى المحاولة مرة أخرى بعد لحظات.</string>
     <!-- Play Store Installation Check -->
-    <string name="playstore_check">التحقق من متجر Play</string>
+    <string name="playstore_check">التحقق من متجر بلاي ستور</string>
     <string name="playstore_check_success">شكراً لك لتثبيتك التطبيق من متجر Google Play. استمتع.</string>
     <string name="playstore_check_failed">يبدو أنك قمت بتثبيت حزمة الأيقونات هذه من خارج متجر Google Play.
-        لذا لن تتمكن من استخدامها.</string>
+        لذلك لن تتمكن من استخدامها.</string>
     <!-- Share -->
     <string name="share_app_title">مرحباً! تفقد %s</string>
     <string name="share_app_body">تفقد %1$s، حزمة الأيقونات هذه رائعة جداً! %2$s</string>
@@ -69,21 +70,21 @@
     <string name="tap_intro_home_apply_desc">اضغط هنا لتطبيق %s</string>
     <string name="tap_intro_icons_search">بحث</string>
     <string name="tap_intro_icons_search_desc">اضغط هنا للبحث عن أيقونة</string>
-    <string name="tap_intro_request_select">تحديد التطبيق المفقود</string>
-    <string name="tap_intro_request_select_desc">اضغط هنا لتحديد التطبيق المفقود لطلب الأيقونات</string>
-    <string name="tap_intro_request_select_all">تحديد جميع التطبيقات المفقودة</string>
-    <string name="tap_intro_request_select_all_desc">اضغط هنا لتحديد جميع التطبيقات المفقودة لطلب الأيقونات</string>
+    <string name="tap_intro_request_select">تحديد التطبيق الناقص</string>
+    <string name="tap_intro_request_select_desc">اضغط هنا لتحديد التطبيق الناقص لطلب الأيقونات</string>
+    <string name="tap_intro_request_select_all">تحديد جميع التطبيقات الناقصة</string>
+    <string name="tap_intro_request_select_all_desc">اضغط هنا لتحديد جميع التطبيقات الناقصة لطلب الأيقونات</string>
     <string name="tap_intro_request_send">إرسال طلب الأيقونات</string>
-    <string name="tap_intro_request_send_desc">اضغط هنا لإرسال التطبيقات المفقودة المحددة</string>
-    <string name="tap_intro_request_premium">طلب أيقونات متميز</string>
-    <string name="tap_intro_request_premium_desc">اضغط هنا لشراء حزمة طلب أيقونات متميزة، عن طريق طلب الأيقونات المتميز يمكن لك الحصول على تطبيقاتك المطلوبة بسرعة.</string>
+    <string name="tap_intro_request_send_desc">اضغط هنا لإرسال التطبيقات الناقصة المحددة</string>
+    <string name="tap_intro_request_premium">طلب أيقونات خاص</string>
+    <string name="tap_intro_request_premium_desc">اضغط هنا لشراء حزمة طلب أيقونات خاصة، عن طريق طلب الأيقونات الخاصة يمكن لك الحصول على تطبيقاتك المطلوبة بشكل أسرع.</string>
     <string name="tap_intro_wallpapers_option">خيارات الخلفية</string>
     <string name="tap_intro_wallpapers_option_desc">اضغط مطولاً هنا لعرض خيارات الخلفية، %s تطبيق الخلفية.</string>
     <string name="tap_intro_wallpapers_option_desc_download">تحميل أو</string>
     <string name="tap_intro_wallpapers_preview">معاينة الخلفية</string>
-    <string name="tap_intro_wallpapers_preview_desc">اضغط هنا لمعاينة الحجم الكامل للخلفية</string>
+    <string name="tap_intro_wallpapers_preview_desc">انقر هنا لمعاينة الحجم الكامل للخلفية</string>
     <string name="tap_intro_wallpaper_preview_save">حفظ الخلفية</string>
-    <string name="tap_intro_wallpaper_preview_save_desc">اضغط هنا لتحميل وحفظ الخلفية إلى جهازك لكي يتسنى لك استعمالها لاحقاً</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">انقر هنا لتنزيل الخلفية وحفظها على جهازك حتى تتمكن من استخدامها لاحقًا</string>
     <string name="tap_intro_wallpaper_preview_apply">تطبيق الخلفية</string>
     <string name="tap_intro_wallpaper_preview_apply_desc">اضغط هنا لتعيين الخلفية كخلفية الشاشة الرئيسية</string>
     <!-- Home -->
@@ -91,11 +92,11 @@
     <string name="home_more_apps">تفقد التطبيقات الأخرى على متجر Google Play</string>
     <string name="home_rate_and_review">التقييم والمراجعة</string>
     <string name="home_apply_icon_pack">تطبيق %s</string>
-    <string name="home_donate">التبرع</string>
+    <string name="home_donate">تبرّع</string>
     <string name="home_donate_desc">دعم تطوير حزمة الأيقونات</string>
     <string name="home_icons">أيقونات مخصصة</string>
     <string name="home_icon_dimension">أبعاد الأيقونة %s بكسل</string>
-    <string name="home_loud_wallpapers">%d خلفية(ات) في السحابة</string>
+    <string name="home_loud_wallpapers">%d سحابة الخلفيات</string>
     <string name="home_muzei">خلفية Muzei الحية</string>
     <string name="home_icon_request_installed_apps">الإجمالي\n%d تطبيق(ات) مثبت(ة)</string>
     <string name="home_icon_request_themed_apps">له أيقونة\n%d تطبيق(ات)</string>
@@ -105,7 +106,7 @@
     <string name="apply_supported">المشغلات المدعومة</string>
     <string name="apply_manual">المشغل %1$s لا يدعم التطبيق المباشر ولكن بإمكانك تطبيق %2$s يدوياً من إعدادات المشغل.</string>
     <string name="apply_manual_evie">اضغط مطولاً على الشاشة الرئيسية - الإعدادات - حزمة الأيقونات - اختر %s.</string>
-    <string name="apply_launch_failed">تعذر تشغيل إعدادات %s</string>
+    <string name="apply_launch_failed">تعذر التشغيل إعدادات</string>
     <string name="apply_launcher_not_installed">المشغل %s ليس مثبتاً. هل تريد فتح متجر Google Play لتحميله وتثبيته؟</string>
     <string name="apply_launcher_not_installable">المشغل %s ليس مثبتاً. يرجى المحاولة مرة أخرى بعد تثبيت المشغل.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager ليس متاحاً على هذا الجهاز</string>
@@ -119,7 +120,7 @@
     <string name="icons_load_failed">تعذر تحميل الأيقونات</string>
     <string name="icon_shape">شكل الأيقونات</string>
     <!-- Request -->
-    <string name="request_title">طلب أيقونات</string>
+    <string name="request_title">طلب أيقونات خاصة</string>
     <string name="request_not_selected">اختر التطبيقات للطلب</string>
     <string name="request_not_requested">لم يتم طلبه</string>
     <string name="request_already_requested">تم طلبه بالفعل</string>
