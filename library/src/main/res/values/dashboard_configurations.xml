@@ -42,7 +42,7 @@
         just put the image's name here without the extension (ex: home_image.png -> home_image)
 
         If you want to use a solid color, you can put the hex color code here
-        ex: <string name="navigation_view_header">#000000</string>
+        ex: <string name="home_image">#000000</string>
         -->
     <string name="home_image">https://drive.google.com/uc?id=0B0f4ypHfNKm5bVo5aHFOLVZpNlE</string>
 
@@ -244,7 +244,7 @@
         just put the image's name here without the extension (ex: about_image.png -> about_image)
 
         If you want to use a solid color, you can put the hex color code here
-        ex: <string name="navigation_view_header">#000000</string> -->
+        ex: <string name="about_image">#000000</string> -->
     <string name="about_image">https://drive.google.com/uc?id=0B0f4ypHfNKm5WV9JOG9Fb2h2Qms</string>
 
     <!-- About profile image

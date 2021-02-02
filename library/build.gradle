@@ -36,6 +36,7 @@ android {
         versionName rootProject.ext.VersionName
         vectorDrawables.useSupportLibrary true
         multiDexEnabled true
+        buildConfigField 'String', 'VERSION_NAME', "\"${versionName}\""
     }
 
     buildTypes {
