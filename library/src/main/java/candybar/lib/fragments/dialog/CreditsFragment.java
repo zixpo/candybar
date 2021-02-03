@@ -1,5 +1,6 @@
 package candybar.lib.fragments.dialog;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -47,7 +48,7 @@ import candybar.lib.items.Credit;
 public class CreditsFragment extends DialogFragment {
 
     private ListView mListView;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
     private int mType;
 
     private static final String TAG = "candybar.dialog.credits";
@@ -81,6 +82,7 @@ public class CreditsFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
         builder.customView(R.layout.fragment_credits, false);
@@ -120,6 +122,7 @@ public class CreditsFragment extends DialogFragment {
 
     @NonNull
     private String getTitle(int type) {
+        if (getActivity() == null) return "";
         switch (type) {
             case TYPE_ICON_PACK_CONTRIBUTORS:
                 return getActivity().getResources().getString(R.string.about_contributors_title);
@@ -145,6 +148,7 @@ public class CreditsFragment extends DialogFragment {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class CreditsLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<Credit> credits;
@@ -157,7 +161,7 @@ public class CreditsFragment extends DialogFragment {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     int res = getResource(mType);

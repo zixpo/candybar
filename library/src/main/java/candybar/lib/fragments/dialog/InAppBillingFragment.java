@@ -1,5 +1,6 @@
 package candybar.lib.fragments.dialog;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
@@ -20,6 +21,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.anjlab.android.iab.v3.SkuDetails;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.InAppBillingAdapter;
@@ -58,7 +61,7 @@ public class InAppBillingFragment extends DialogFragment {
     private int[] mProductsCount;
 
     private InAppBillingAdapter mAdapter;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     private static final String TYPE = "type";
     private static final String KEY = "key";
@@ -108,6 +111,7 @@ public class InAppBillingFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
         builder.title(mType == InAppBilling.DONATE ?
@@ -166,13 +170,14 @@ public class InAppBillingFragment extends DialogFragment {
     }
 
     @Override
-    public void onDismiss(DialogInterface dialog) {
+    public void onDismiss(@NotNull DialogInterface dialog) {
         if (mAsyncTask != null) {
             mAsyncTask.cancel(true);
         }
         super.onDismiss(dialog);
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class InAppProductsLoader extends AsyncTask<Void, Void, Boolean> {
 
         private InAppBilling[] inAppBillings;
@@ -185,8 +190,9 @@ public class InAppBillingFragment extends DialogFragment {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
 

@@ -19,6 +19,8 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.data.DataFetcher;
 
+import org.jetbrains.annotations.NotNull;
+
 import candybar.lib.preferences.Preferences;
 import sarsamurmu.adaptiveicon.AdaptiveIcon;
 
@@ -53,6 +55,7 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
         intent.setComponent(new ComponentName(packageName, activityName));
         ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
 
+        assert resolveInfo != null;
         Drawable drawable = resolveInfo.loadIcon(packageManager);
         if (drawable != null) {
             if (drawable instanceof BitmapDrawable) return ((BitmapDrawable) drawable).getBitmap();
@@ -94,6 +97,7 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
     public void cancel() {
     }
 
+    @NotNull
     @Override
     public Class<Bitmap> getDataClass() {
         return Bitmap.class;

@@ -51,13 +51,9 @@ public class ConfigurationHelper {
     }
 
     public static int getSocialIconColor(@NonNull Context context, @NonNull CandyBarApplication.IconColor iconColor) {
-        switch (iconColor) {
-            case ACCENT:
-                return ColorHelper.getAttributeColor(context, R.attr.colorAccent);
-            case PRIMARY_TEXT:
-                return ColorHelper.getAttributeColor(context, android.R.attr.textColorPrimary);
-            default:
-                return ColorHelper.getAttributeColor(context, android.R.attr.textColorPrimary);
+        if (iconColor == CandyBarApplication.IconColor.ACCENT) {
+            return ColorHelper.getAttributeColor(context, R.attr.colorAccent);
         }
+        return ColorHelper.getAttributeColor(context, android.R.attr.textColorPrimary);
     }
 }

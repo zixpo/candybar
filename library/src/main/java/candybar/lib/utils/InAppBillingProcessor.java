@@ -10,6 +10,8 @@ import com.anjlab.android.iab.v3.Constants;
 import com.anjlab.android.iab.v3.TransactionDetails;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.lang.ref.WeakReference;
 
 import candybar.lib.items.InAppBilling;
@@ -37,7 +39,7 @@ import candybar.lib.utils.listeners.RequestListener;
 
 public class InAppBillingProcessor implements BillingProcessor.IBillingHandler {
 
-    private Context mContext;
+    private final Context mContext;
     private boolean mIsInitialized;
     private BillingProcessor mBillingProcessor;
 
@@ -89,7 +91,7 @@ public class InAppBillingProcessor implements BillingProcessor.IBillingHandler {
     }
 
     @Override
-    public void onProductPurchased(String productId, TransactionDetails details) {
+    public void onProductPurchased(@NotNull String productId, TransactionDetails details) {
         if (mInAppBilling == null || mInAppBilling.get() == null) {
             LogUtil.e("InAppBillingProcessor error: not initialized");
             return;

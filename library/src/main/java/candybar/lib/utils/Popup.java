@@ -49,8 +49,8 @@ import candybar.lib.items.PopupItem;
 
 public class Popup {
 
-    private ListPopupWindow mPopupWindow;
-    private PopupAdapter mAdapter;
+    private final ListPopupWindow mPopupWindow;
+    private final PopupAdapter mAdapter;
 
     private Popup(Builder builder) {
         mPopupWindow = new ListPopupWindow(builder.mContext);
@@ -184,9 +184,9 @@ public class Popup {
         }
     }
 
-    class PopupAdapter extends BaseAdapter {
+    static class PopupAdapter extends BaseAdapter {
 
-        private List<PopupItem> mItems;
+        private final List<PopupItem> mItems;
         private final Context mContext;
 
         PopupAdapter(@NonNull Context context, @NonNull List<PopupItem> items) {
@@ -242,7 +242,7 @@ public class Popup {
             return view;
         }
 
-        class ViewHolder {
+        static class ViewHolder {
 
             AppCompatCheckBox checkBox;
             TextView title;

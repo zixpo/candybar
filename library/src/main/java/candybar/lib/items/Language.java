@@ -22,8 +22,8 @@ import java.util.Locale;
 
 public class Language {
 
-    private String mName;
-    private Locale mLocale;
+    private final String mName;
+    private final Locale mLocale;
 
     public Language(String name, Locale locale) {
         mName = name;

@@ -1,5 +1,6 @@
 package candybar.lib.fragments.dialog;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -26,6 +27,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -64,7 +67,7 @@ public class IntentChooserFragment extends DialogFragment {
 
     private int mType;
     private IntentAdapter mAdapter;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     public static final int ICON_REQUEST = 0;
     public static final int REBUILD_ICON_REQUEST = 1;
@@ -104,6 +107,7 @@ public class IntentChooserFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
         builder.customView(R.layout.fragment_intent_chooser, false);
@@ -147,13 +151,14 @@ public class IntentChooserFragment extends DialogFragment {
     }
 
     @Override
-    public void onDismiss(DialogInterface dialog) {
+    public void onDismiss(@NotNull DialogInterface dialog) {
         if (mAsyncTask != null) {
             mAsyncTask.cancel(true);
         }
         super.onDismiss(dialog);
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class IntentChooserLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<IntentChooser> apps;
@@ -165,8 +170,9 @@ public class IntentChooserFragment extends DialogFragment {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
 

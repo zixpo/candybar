@@ -48,8 +48,6 @@ public class WallpaperHelper {
     public static final int CLOUD_WALLPAPERS = 1;
     public static final int EXTERNAL_APP = 2;
 
-    public static final String IMAGE_EXTENSION = ".jpeg";
-
     public static int getWallpaperType(@NonNull Context context) {
         String url = context.getResources().getString(R.string.wallpaper_json);
         if (URLUtil.isValidUrl(url)) {

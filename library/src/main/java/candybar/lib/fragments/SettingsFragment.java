@@ -1,5 +1,6 @@
 package candybar.lib.fragments;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -67,6 +68,7 @@ public class SettingsFragment extends Fragment {
 
     @Nullable
     @Override
+    @SuppressWarnings("ConstantConditions")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
@@ -88,6 +90,7 @@ public class SettingsFragment extends Fragment {
         initSettings();
     }
 
+    @SuppressWarnings("ConstantConditions")
     public void restorePurchases(List<String> productsId, String[] premiumRequestProductsId,
                                  int[] premiumRequestProductsCount) {
         int index = -1;
@@ -115,6 +118,7 @@ public class SettingsFragment extends Fragment {
         Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void initSettings() {
         List<Setting> settings = new ArrayList<>();
 
@@ -214,6 +218,8 @@ public class SettingsFragment extends Fragment {
         new PremiumRequestRebuilder().execute();
     }
 
+    @SuppressLint("StaticFieldLeak")
+    @SuppressWarnings("ConstantConditions")
     private class PremiumRequestRebuilder extends AsyncTask<Void, Void, Boolean> {
 
         private MaterialDialog dialog;
@@ -242,7 +248,7 @@ public class SettingsFragment extends Fragment {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     File directory = getActivity().getCacheDir();

@@ -1,5 +1,6 @@
 package candybar.lib.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +53,7 @@ public class HomeFragment extends Fragment implements HomeListener {
 
     @Nullable
     @Override
+    @SuppressWarnings("ConstantConditions")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -63,6 +67,7 @@ public class HomeFragment extends Fragment implements HomeListener {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mManager = new StaggeredGridLayoutManager(
@@ -81,7 +86,7 @@ public class HomeFragment extends Fragment implements HomeListener {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         HomeAdapter adapter = (HomeAdapter) mRecyclerView.getAdapter();
         if (adapter != null) adapter.setOrientation(newConfig.orientation);
@@ -127,6 +132,7 @@ public class HomeFragment extends Fragment implements HomeListener {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onHomeIntroInit() {
         if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
             TapIntroHelper.showHomeIntros(getActivity(),
@@ -135,6 +141,8 @@ public class HomeFragment extends Fragment implements HomeListener {
         }
     }
 
+    @SuppressLint("StringFormatInvalid")
+    @SuppressWarnings("ConstantConditions")
     private void initHome() {
         List<Home> homes = new ArrayList<>();
 
@@ -174,6 +182,7 @@ public class HomeFragment extends Fragment implements HomeListener {
                 getActivity().getResources().getConfiguration().orientation));
     }
 
+    @SuppressWarnings("ConstantConditions")
     public void resetWallpapersCount() {
         if (WallpaperHelper.getWallpaperType(getActivity()) == WallpaperHelper.CLOUD_WALLPAPERS) {
             if (mRecyclerView == null) return;

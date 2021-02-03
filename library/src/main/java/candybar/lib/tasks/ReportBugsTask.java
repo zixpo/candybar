@@ -50,7 +50,7 @@ import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
 public class ReportBugsTask extends AsyncTask<Void, Void, Boolean> {
 
     private final WeakReference<Context> mContext;
-    private String mDescription;
+    private final String mDescription;
     private String mZipPath = null;
     private StringBuilder mStringBuilder;
     private MaterialDialog mDialog;
@@ -60,11 +60,11 @@ public class ReportBugsTask extends AsyncTask<Void, Void, Boolean> {
         mDescription = description;
     }
 
-    public static AsyncTask start(@NonNull Context context, @NonNull String description) {
+    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @NonNull String description) {
         return start(context, description, SERIAL_EXECUTOR);
     }
 
-    public static AsyncTask start(@NonNull Context context, @NonNull String description, @NonNull Executor executor) {
+    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @NonNull String description, @NonNull Executor executor) {
         return new ReportBugsTask(context, description).executeOnExecutor(executor);
     }
 
@@ -88,7 +88,7 @@ public class ReportBugsTask extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected Boolean doInBackground(Void... voids) {
-        while (!isCancelled()) {
+        if (!isCancelled()) {
             try {
                 Thread.sleep(1);
                 List<String> files = new ArrayList<>();

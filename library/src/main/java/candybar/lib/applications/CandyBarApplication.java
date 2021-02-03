@@ -495,10 +495,10 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
     public static class OtherApp {
 
-        private String mIcon;
-        private String mTitle;
-        private String mDescription;
-        private String mUrl;
+        private final String mIcon;
+        private final String mTitle;
+        private final String mDescription;
+        private final String mUrl;
 
         public OtherApp(String icon, String title, String description, String url) {
             mIcon = icon;

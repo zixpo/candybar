@@ -46,6 +46,8 @@ import com.danimahardhika.android.helpers.license.LicenseHelper;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.google.android.material.navigation.NavigationView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.util.List;
 
@@ -245,7 +247,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (prevIsDarkTheme != ThemeHelper.isDarkTheme(this)) {
             recreate();
@@ -524,7 +526,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     if (counter == null) return;
 
                     int newItem = (size - offlineSize);
-                    counter.setText(this.getResources().getString(R.string.txt_new) + " " + (newItem > 99 ? "99+" : newItem));
+                    counter.setText(this.getResources().getString(R.string.txt_new));
+                    counter.append(" " + (newItem > 99 ? "99+" : newItem));
                     container.setVisibility(View.VISIBLE);
                     return;
                 }
@@ -635,10 +638,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             mDrawerLayout.closeDrawers();
             return true;
         });
-
-        // FIX ANDROIDX
-        // NavigationViewHelper.hideScrollBar(mNavigationView);
-        mNavigationView.setVerticalScrollBarEnabled(false);
     }
 
     private void initNavigationViewHeader() {

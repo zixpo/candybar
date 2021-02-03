@@ -182,10 +182,6 @@ public class Preferences {
         return getSharedPreferences().getBoolean(KEY_WIFI_ONLY, false);
     }
 
-    public void setWallsDirectory(String directory) {
-        getSharedPreferences().edit().putString(KEY_WALLS_DIRECTORY, directory).apply();
-    }
-
     public String getWallsDirectory() {
         return getSharedPreferences().getString(KEY_WALLS_DIRECTORY, "");
     }
@@ -363,6 +359,7 @@ public class Preferences {
         try {
             ConnectivityManager connectivityManager = (ConnectivityManager)
                     mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+            assert connectivityManager != null;
             NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
             return activeNetworkInfo != null && activeNetworkInfo.isConnected();
         } catch (Exception e) {
@@ -375,7 +372,9 @@ public class Preferences {
             if (isWifiOnly()) {
                 ConnectivityManager connectivityManager = (ConnectivityManager)
                         mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+                assert connectivityManager != null;
                 NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+                assert activeNetworkInfo != null;
                 return activeNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI &&
                         activeNetworkInfo.isConnected();
             }

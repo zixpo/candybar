@@ -56,10 +56,4 @@ public class NavigationViewHelper {
         if (WallpaperHelper.getWallpaperType(context) == WallpaperHelper.UNKNOWN)
             menuItem.setVisible(false);
     }
-
-    public static void hideScrollBar(NavigationView navigationView) {
-        NavigationView navigationMenuView = (NavigationView) navigationView.getChildAt(0);
-        if (navigationMenuView != null)
-            navigationMenuView.setVerticalScrollBarEnabled(true);
-    }
 }

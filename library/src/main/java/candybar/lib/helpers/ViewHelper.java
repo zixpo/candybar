@@ -1,16 +1,10 @@
 package candybar.lib.helpers;
 
-import android.content.Context;
-import android.content.res.Configuration;
 import android.graphics.Point;
-import android.os.Build;
-import android.view.View;
 
 import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.WindowHelper;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.Locale;
@@ -37,45 +31,6 @@ import candybar.lib.items.Home;
  */
 
 public class ViewHelper {
-
-    public static void resetViewBottomMargin(@Nullable View view) {
-        if (view == null) return;
-
-        Context context = ContextHelper.getBaseContext(view);
-        int orientation = context.getResources().getConfiguration().orientation;
-
-        if (!(view.getLayoutParams() instanceof CoordinatorLayout.LayoutParams))
-            return;
-
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) view.getLayoutParams();
-        int left = params.leftMargin;
-        int right = params.rightMargin;
-        int bottom = params.bottomMargin;
-        int top = params.topMargin;
-        int bottomNavBar = 0;
-        int rightNavBar = 0;
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            boolean tabletMode = context.getResources().getBoolean(R.bool.android_helpers_tablet_mode);
-            if (tabletMode || orientation == Configuration.ORIENTATION_PORTRAIT) {
-                bottomNavBar = WindowHelper.getNavigationBarHeight(context);
-            } else {
-                rightNavBar = WindowHelper.getNavigationBarHeight(context);
-            }
-        }
-
-        int navBar = WindowHelper.getNavigationBarHeight(context);
-        if ((bottom > bottomNavBar) && ((bottom - navBar) > 0))
-            bottom -= navBar;
-        if ((right > rightNavBar) && ((right - navBar) > 0))
-            right -= navBar;
-
-        params.setMargins(left, top, (right + rightNavBar), (bottom + bottomNavBar));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            params.setMarginEnd(right + rightNavBar);
-        }
-        view.setLayoutParams(params);
-    }
 
     public static void setFastScrollColor(@Nullable RecyclerFastScroller fastScroll) {
         if (fastScroll == null) return;

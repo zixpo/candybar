@@ -86,7 +86,7 @@ public class InAppBillingAdapter extends BaseAdapter {
         return view;
     }
 
-    private class ViewHolder {
+    private static class ViewHolder {
 
         private final AppCompatRadioButton radio;
         private final TextView name;

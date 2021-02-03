@@ -1,5 +1,6 @@
 package candybar.lib.tasks;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -54,17 +55,18 @@ public class IconsLoaderTask extends AsyncTask<Void, Void, Boolean> {
         mContext = new WeakReference<>(context);
     }
 
-    public static AsyncTask start(@NonNull Context context) {
+    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context) {
         return start(context, SERIAL_EXECUTOR);
     }
 
-    public static AsyncTask start(@NonNull Context context, @NonNull Executor executor) {
+    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @NonNull Executor executor) {
         return new IconsLoaderTask(context).executeOnExecutor(executor);
     }
 
+    @SuppressLint("StringFormatInvalid")
     @Override
     protected Boolean doInBackground(Void... voids) {
-        while (!isCancelled()) {
+        if (!isCancelled()) {
             try {
                 Thread.sleep(1);
                 if (CandyBarMainActivity.sSections == null) {

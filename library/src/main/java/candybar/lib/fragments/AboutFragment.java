@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.danimahardhika.android.helpers.core.ViewHelper;
 
+import org.jetbrains.annotations.NotNull;
+
 import candybar.lib.R;
 import candybar.lib.adapters.AboutAdapter;
 import candybar.lib.applications.CandyBarApplication;
@@ -43,6 +45,7 @@ public class AboutFragment extends Fragment {
 
     @Nullable
     @Override
+    @SuppressWarnings("ConstantConditions")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerview);
@@ -55,6 +58,7 @@ public class AboutFragment extends Fragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         resetRecyclerViewPadding(getActivity().getResources().getConfiguration().orientation);
@@ -68,16 +72,19 @@ public class AboutFragment extends Fragment {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    @SuppressWarnings("ConstantConditions")
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         resetRecyclerViewPadding(newConfig.orientation);
         ViewHelper.resetSpanCount(mRecyclerView,
                 getActivity().getResources().getInteger(R.integer.about_column_count));
 
         StaggeredGridLayoutManager manager = (StaggeredGridLayoutManager) mRecyclerView.getLayoutManager();
+        assert manager != null;
         mRecyclerView.setAdapter(new AboutAdapter(getActivity(), manager.getSpanCount()));
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void resetRecyclerViewPadding(int orientation) {
         if (mRecyclerView == null) return;
 

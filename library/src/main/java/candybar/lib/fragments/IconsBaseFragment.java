@@ -1,6 +1,7 @@
 package candybar.lib.fragments;
 
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -28,6 +29,8 @@ import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.animation.AnimationHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.tabs.TabLayout;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
@@ -98,7 +101,8 @@ public class IconsBaseFragment extends Fragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    @SuppressWarnings("ConstantConditions")
+    public void onCreateOptionsMenu(@NotNull Menu menu, @NotNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_icons_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
@@ -194,6 +198,7 @@ public class IconsBaseFragment extends Fragment {
                 .start();
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class IconsLoader extends AsyncTask<Void, Void, Boolean> {
         @Override
         protected void onPreExecute() {
@@ -204,8 +209,9 @@ public class IconsBaseFragment extends Fragment {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (CandyBarMainActivity.sSections == null) {
@@ -282,6 +288,7 @@ public class IconsBaseFragment extends Fragment {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class TabTypefaceChanger extends AsyncTask<Void, Integer, Void> {
         PagerIconsAdapter adapter;
 
@@ -293,7 +300,7 @@ public class IconsBaseFragment extends Fragment {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     for (int i = 0; i < adapter.getCount(); i++) {
@@ -328,7 +335,7 @@ public class IconsBaseFragment extends Fragment {
         }
     }
 
-    private class PagerIconsAdapter extends FragmentStatePagerAdapter {
+    private static class PagerIconsAdapter extends FragmentStatePagerAdapter {
 
         private final List<Icon> mIcons;
 
@@ -346,6 +353,7 @@ public class IconsBaseFragment extends Fragment {
             return title;
         }
 
+        @NotNull
         @Override
         public Fragment getItem(int position) {
             return IconsFragment.newInstance(position);

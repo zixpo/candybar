@@ -39,10 +39,10 @@ import candybar.lib.items.IconShape;
  */
 
 public class IconShapeAdapter extends BaseAdapter {
-    private Context mContext;
-    private List<IconShape> mShapes;
-    private int mSelectedIndex;
-    private List<ViewHolder> mHolders;
+    private final Context mContext;
+    private final List<IconShape> mShapes;
+    private final int mSelectedIndex;
+    private final List<ViewHolder> mHolders;
 
     public IconShapeAdapter(@NonNull Context context, @NonNull List<IconShape> shapes, int selectedIndex) {
         mContext = context;
@@ -72,7 +72,7 @@ public class IconShapeAdapter extends BaseAdapter {
 
         if (view == null) {
             view = View.inflate(mContext, R.layout.fragment_inapp_dialog_item_list, null);
-            holder = new IconShapeAdapter.ViewHolder(view);
+            holder = new ViewHolder(view);
             view.setTag(holder);
             mHolders.add(holder);
         } else {
@@ -102,7 +102,7 @@ public class IconShapeAdapter extends BaseAdapter {
         return view;
     }
 
-    private class ViewHolder {
+    private static class ViewHolder {
         private final AppCompatRadioButton radio;
         private final TextView name;
         private final LinearLayout container;

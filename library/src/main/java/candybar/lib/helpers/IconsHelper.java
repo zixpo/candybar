@@ -14,9 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.target.CustomTarget;
-import com.bumptech.glide.request.transition.Transition;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -148,13 +150,13 @@ public class IconsHelper {
 
     public static String capitalizeWord(String str) {
         String[] words = str.split("\\s");
-        String capitalizeWord = "";
+        StringBuilder capitalizeWord = new StringBuilder();
         for (String w : words) {
             String first = w.substring(0, 1);
             String afterfirst = w.substring(1);
-            capitalizeWord += first.toUpperCase() + afterfirst + " ";
+            capitalizeWord.append(first.toUpperCase()).append(afterfirst).append(" ");
         }
-        return capitalizeWord.trim();
+        return capitalizeWord.toString().trim();
     }
 
     public static void selectIcon(@NonNull Context context, int action, Icon icon) {
@@ -164,9 +166,8 @@ public class IconsHelper {
                     .load("drawable://" + icon.getRes())
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(new CustomTarget<Bitmap>() {
-                        @Override
-                        public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                    .listener(new RequestListener<Bitmap>() {
+                        public void handleResult(Bitmap resource) {
                             Intent intent = new Intent();
                             intent.putExtra("icon", resource);
                             ((AppCompatActivity) context).setResult(resource != null ?
@@ -175,10 +176,18 @@ public class IconsHelper {
                         }
 
                         @Override
-                        public void onLoadCleared(@Nullable Drawable placeholder) {
-                            // Do nothing
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+                            handleResult(null);
+                            return true;
                         }
-                    });
+
+                        @Override
+                        public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
+                            handleResult(resource);
+                            return true;
+                        }
+                    })
+                    .submit();
         } else if (action == IntentHelper.IMAGE_PICKER) {
 
             Glide.with(context)
@@ -186,17 +195,15 @@ public class IconsHelper {
                     .load("drawable://" + icon.getRes())
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(new CustomTarget<Bitmap>() {
-                        @Override
-                        public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                    .listener(new RequestListener<Bitmap>() {
+                        private void handleResult(Bitmap bitmap) {
                             Intent intent = new Intent();
-
-                            if (resource != null) {
+                            if (bitmap != null) {
                                 File file = new File(context.getCacheDir(), icon.getTitle() + ".png");
                                 FileOutputStream outStream;
                                 try {
                                     outStream = new FileOutputStream(file);
-                                    resource.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+                                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
                                     outStream.flush();
                                     outStream.close();
 
@@ -210,16 +217,24 @@ public class IconsHelper {
                                 }
                                 intent.putExtra("return-data", false);
                             }
-                            ((AppCompatActivity) context).setResult(resource != null ?
+                            ((AppCompatActivity) context).setResult(bitmap != null ?
                                     Activity.RESULT_OK : Activity.RESULT_CANCELED, intent);
                             ((AppCompatActivity) context).finish();
                         }
 
                         @Override
-                        public void onLoadCleared(@Nullable Drawable placeholder) {
-                            // Do nothing
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+                            handleResult(null);
+                            return false;
                         }
-                    });
+
+                        @Override
+                        public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
+                            handleResult(resource);
+                            return true;
+                        }
+                    })
+                    .submit();
         } else {
             IconPreviewFragment.showIconPreview(((AppCompatActivity) context)
                             .getSupportFragmentManager(),
@@ -243,6 +258,7 @@ public class IconsHelper {
             }
 
             FileOutputStream outStream = new FileOutputStream(file);
+            assert bitmap != null;
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             outStream.flush();
             outStream.close();

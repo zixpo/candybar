@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,6 +76,7 @@ public class IconsFragment extends Fragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIcons = new ArrayList<>();
@@ -83,6 +86,7 @@ public class IconsFragment extends Fragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
@@ -94,7 +98,7 @@ public class IconsFragment extends Fragment {
         setFastScrollColor(mFastScroll);
         mFastScroll.attachRecyclerView(mRecyclerView);
 
-        mAdapter = new IconsAdapter(getActivity(), mIcons, false, this);
+        mAdapter = new IconsAdapter(getActivity(), mIcons, this);
         mRecyclerView.setAdapter(mAdapter);
         iconsAdapters.add(mAdapter);
     }
@@ -106,7 +110,8 @@ public class IconsFragment extends Fragment {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    @SuppressWarnings("ConstantConditions")
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         ViewHelper.resetSpanCount(mRecyclerView,
                 getActivity().getResources().getInteger(R.integer.icons_column_count));

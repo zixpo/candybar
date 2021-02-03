@@ -18,7 +18,6 @@ public class PlaystoreCheckHelper {
 
     public Context mContext;
     private static String contentString;
-    private static boolean checkPassed;
 
     /*private boolean isTest = true, testPass = true;*/
 
@@ -46,6 +45,7 @@ public class PlaystoreCheckHelper {
             return;
         }*/
         if (mContext.getResources().getBoolean(R.bool.playstore_check_enabled)) {
+            boolean checkPassed;
             if (fromPlaystore(mContext)) {
                 contentString = mContext.getResources().getString(R.string.playstore_check_success);
                 checkPassed = true;

@@ -55,7 +55,7 @@ public class IntentAdapter extends BaseAdapter {
 
     private final Context mContext;
     private final List<IntentChooser> mApps;
-    private int mType;
+    private final int mType;
     private AsyncTask mAsyncTask;
 
     public IntentAdapter(@NonNull Context context, @NonNull List<IntentChooser> apps, int type) {
@@ -162,7 +162,7 @@ public class IntentAdapter extends BaseAdapter {
         return mAsyncTask != null;
     }
 
-    private class ViewHolder {
+    private static class ViewHolder {
 
         private final TextView name;
         private final TextView type;

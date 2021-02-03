@@ -63,6 +63,7 @@ public class OtherAppsFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
         builder.customView(R.layout.fragment_other_apps, false);
@@ -80,6 +81,7 @@ public class OtherAppsFragment extends DialogFragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         List<CandyBarApplication.OtherApp> otherApps = CandyBarApplication.getConfiguration().getOtherApps();

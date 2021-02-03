@@ -1,5 +1,6 @@
 package candybar.lib.fragments;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,6 +26,8 @@ import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,10 +64,11 @@ public class FAQsFragment extends Fragment {
     private RecyclerFastScroller mFastScroll;
 
     private FAQsAdapter mAdapter;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     @Nullable
     @Override
+    @SuppressWarnings("ConstantConditions")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_faqs, container, false);
@@ -94,7 +98,8 @@ public class FAQsFragment extends Fragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    @SuppressWarnings("ConstantConditions")
+    public void onCreateOptionsMenu(@NotNull Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
         int color = ColorHelper.getAttributeColor(getActivity(), R.attr.toolbar_icon);
@@ -132,6 +137,8 @@ public class FAQsFragment extends Fragment {
         super.onDestroy();
     }
 
+    @SuppressLint("StringFormatInvalid")
+    @SuppressWarnings("ConstantConditions")
     private void filterSearch(String query) {
         try {
             mAdapter.search(query);
@@ -146,6 +153,7 @@ public class FAQsFragment extends Fragment {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class FAQsLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<FAQs> faqs;
@@ -162,7 +170,7 @@ public class FAQsFragment extends Fragment {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     for (int i = 0; i < questions.length; i++) {

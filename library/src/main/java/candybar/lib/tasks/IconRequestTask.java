@@ -59,18 +59,18 @@ public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
         mContext = new WeakReference<>(context);
     }
 
-    public static AsyncTask start(@NonNull Context context) {
+    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context) {
         return start(context, SERIAL_EXECUTOR);
     }
 
-    public static AsyncTask start(@NonNull Context context, @NonNull Executor executor) {
+    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @NonNull Executor executor) {
         isLoading = true;
         return new IconRequestTask(context).executeOnExecutor(executor);
     }
 
     @Override
     protected Boolean doInBackground(Void... voids) {
-        while (!isCancelled()) {
+        if (!isCancelled()) {
             try {
                 Thread.sleep(1);
                 if (mContext.get().getResources().getBoolean(R.bool.enable_icon_request) ||
@@ -88,7 +88,7 @@ public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
                     intent.addCategory(Intent.CATEGORY_LAUNCHER);
                     List<ResolveInfo> installedApps = packageManager.queryIntentActivities(
                             intent, PackageManager.GET_RESOLVED_FILTER);
-                    if (installedApps == null || installedApps.size() == 0) {
+                    if (installedApps.size() == 0) {
                         mError = Extras.Error.INSTALLED_APPS_NULL;
                         return false;
                     }

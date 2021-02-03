@@ -160,14 +160,16 @@ public class RequestHelper {
         for (Request request : requests) {
             Bitmap appBitmap = getRightIcon(getReqIcon(context, request.getActivity()));
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            assert appBitmap != null;
             appBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
             String base64Icon = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
 
             if (!isFirst) sb.append(",\n");
-            sb.append("\"name\": \"" + request.getName() + "\"," +
-                    "\"packageName\": \"" + request.getPackageName() + "\"," +
-                    "\"imageStr\": \"" + base64Icon + "\"," +
-                    "\"activities\": [\"" + request.getActivity() + "\"]");
+            sb
+                    .append("\"name\": \"").append(request.getName()).append("\",")
+                    .append("\"packageName\": \"").append(request.getPackageName()).append("\",")
+                    .append("\"imageStr\": \"").append(base64Icon).append("\",")
+                    .append("\"activities\": [\"").append(request.getActivity()).append("\"]");
             isFirst = false;
         }
         sb.append("]}");
@@ -209,6 +211,7 @@ public class RequestHelper {
                 : getRegularArcticApiKey(context).length() > 0;
     }
 
+    @SuppressWarnings("ConstantConditions")
     public static String sendArcticRequest(List<Request> requests, List<String> iconFiles, File directory, String apiKey) {
         okhttp3.RequestBody okRequestBody = new okhttp3.MultipartBody.Builder()
                 .setType(okhttp3.MultipartBody.FORM)
@@ -508,9 +511,9 @@ public class RequestHelper {
         APPMAP(RequestHelper.APPMAP, "<appmap>", "</appmap>"),
         THEME_RESOURCES(RequestHelper.THEME_RESOURCES, "<Theme version=\"1\">", "</Theme>");
 
-        private String fileName;
-        private String header;
-        private String footer;
+        private final String fileName;
+        private final String header;
+        private final String footer;
 
         XmlType(String fileName, String header, String footer) {
             this.fileName = fileName;
@@ -565,8 +568,8 @@ public class RequestHelper {
         ACTIVITY("component", "drawable"),
         DRAWABLE("drawable", "component");
 
-        private String key;
-        private String value;
+        private final String key;
+        private final String value;
 
         Key(String key, String value) {
             this.key = key;

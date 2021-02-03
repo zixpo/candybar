@@ -59,18 +59,18 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         mCallback = new WeakReference<>(callback);
     }
 
-    public static AsyncTask start(@NonNull Context context, @Nullable PremiumRequestBuilderCallback callback) {
+    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @Nullable PremiumRequestBuilderCallback callback) {
         return start(context, callback, SERIAL_EXECUTOR);
     }
 
-    public static AsyncTask start(@NonNull Context context, @Nullable PremiumRequestBuilderCallback callback,
-                                  @NonNull Executor executor) {
+    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @Nullable PremiumRequestBuilderCallback callback,
+                                                       @NonNull Executor executor) {
         return new PremiumRequestBuilderTask(context, callback).executeOnExecutor(executor);
     }
 
     @Override
     protected Boolean doInBackground(Void... voids) {
-        while (!isCancelled()) {
+        if (!isCancelled()) {
             try {
                 Thread.sleep(1);
                 if (CandyBarApplication.sRequestProperty == null) {
@@ -145,7 +145,7 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
     private Intent getIntent(ComponentName name, String emailBody) {
         try {
             Intent intent = new Intent(Intent.ACTION_SEND);
-            intent = addIntentExtra(intent, emailBody);
+            addIntentExtra(intent, emailBody);
             intent.setComponent(name);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -153,7 +153,7 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         } catch (IllegalArgumentException e) {
             try {
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                intent = addIntentExtra(intent, emailBody);
+                addIntentExtra(intent, emailBody);
                 return intent;
             } catch (ActivityNotFoundException e1) {
                 LogUtil.e(Log.getStackTraceString(e1));
@@ -162,7 +162,7 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         return null;
     }
 
-    private Intent addIntentExtra(@NonNull Intent intent, String emailBody) {
+    private void addIntentExtra(@NonNull Intent intent, String emailBody) {
         intent.setType("application/zip");
 
         if (CandyBarApplication.sZipPath != null) {
@@ -193,7 +193,6 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         intent.putExtra(Intent.EXTRA_TEXT, emailBody);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
                 Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
-        return intent;
     }
 
     public interface PremiumRequestBuilderCallback {

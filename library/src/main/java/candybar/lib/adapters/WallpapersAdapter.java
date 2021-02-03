@@ -29,6 +29,8 @@ import com.danimahardhika.android.helpers.permission.PermissionHelper;
 import com.google.android.material.card.MaterialCardView;
 import com.kogitune.activitytransition.ActivityTransitionLauncher;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import candybar.lib.R;
@@ -77,8 +79,9 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
         mIsShowName = mContext.getResources().getBoolean(R.bool.wallpaper_show_name_author);
     }
 
+    @NotNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         View view;
         if (mIsShowName) {
             view = LayoutInflater.from(mContext).inflate(
@@ -91,7 +94,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(@NotNull ViewHolder holder, int position) {
         Wallpaper wallpaper = mWallpapers.get(position);
         if (mIsShowName) {
             holder.name.setText(wallpaper.getName());
@@ -127,7 +130,6 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnLongClickListener {
 
-        private final MaterialCardView card;
         private final HeaderView image;
         private TextView name;
         private TextView author;
@@ -142,7 +144,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
             image = itemView.findViewById(R.id.image);
             image.setRatio(ratio.x, ratio.y);
 
-            card = itemView.findViewById(R.id.card);
+            MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getWallpapersGrid() == CandyBarApplication.GridStyle.FLAT) {
                 card.setCardElevation(0);
                 card.setMaxCardElevation(0);

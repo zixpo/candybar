@@ -46,8 +46,8 @@ import candybar.lib.applications.CandyBarApplication;
 
 public class OtherAppsAdapter extends BaseAdapter {
 
-    private Context mContext;
-    private List<CandyBarApplication.OtherApp> mOtherApps;
+    private final Context mContext;
+    private final List<CandyBarApplication.OtherApp> mOtherApps;
 
     public OtherAppsAdapter(@NonNull Context context, @NonNull List<CandyBarApplication.OtherApp> otherApps) {
         mContext = context;
@@ -116,12 +116,12 @@ public class OtherAppsAdapter extends BaseAdapter {
         return view;
     }
 
-    private class ViewHolder {
+    private static class ViewHolder {
 
-        private LinearLayout container;
-        private ImageView image;
-        private TextView title;
-        private TextView desc;
+        private final LinearLayout container;
+        private final ImageView image;
+        private final TextView title;
+        private final TextView desc;
 
         ViewHolder(View view) {
             container = view.findViewById(R.id.container);

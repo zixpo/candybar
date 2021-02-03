@@ -1,5 +1,6 @@
 package candybar.lib.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.ResolveInfo;
@@ -40,6 +41,7 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -97,7 +99,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private MenuItem mMenuItem;
     private RequestAdapter mAdapter;
     private StaggeredGridLayoutManager mManager;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     public static List<Integer> sSelectedRequests;
 
@@ -105,6 +107,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     @Nullable
     @Override
+    @SuppressWarnings("ConstantConditions")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_request, container, false);
@@ -121,6 +124,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(false);
@@ -154,7 +158,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    @SuppressWarnings("ConstantConditions")
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         resetRecyclerViewPadding(newConfig.orientation);
         if (mAsyncTask != null) return;
@@ -176,7 +181,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NotNull Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_request, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -207,6 +212,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.fab) {
@@ -270,6 +276,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void resetRecyclerViewPadding(int orientation) {
         if (mRecyclerView == null) return;
 
@@ -312,6 +319,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         RequestFragment.sSelectedRequests = null;
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class MissingAppsLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<Request> requests;
@@ -325,8 +333,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (CandyBarMainActivity.sMissedApps == null) {
@@ -371,6 +380,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class RequestLoader extends AsyncTask<Void, Void, Boolean> {
 
         private MaterialDialog dialog;
@@ -379,6 +389,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         private String errorMessage;
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected void onPreExecute() {
             super.onPreExecute();
 
@@ -405,8 +416,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(2);
 
@@ -521,6 +533,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     public class CheckConfig extends AsyncTask<Void, Void, Boolean> {
 
         private MaterialDialog dialog;
@@ -528,6 +541,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         private String updateUrl;
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected void onPreExecute() {
             super.onPreExecute();
 
@@ -546,6 +560,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... params) {
             String configJsonUrl = getActivity().getResources().getString(R.string.config_json);
             URLConnection urlConnection;
@@ -592,6 +607,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected void onPostExecute(Boolean aBoolean) {
             dialog.dismiss();
             dialog = null;

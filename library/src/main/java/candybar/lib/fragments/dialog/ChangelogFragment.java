@@ -1,5 +1,6 @@
 package candybar.lib.fragments.dialog;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+
+import org.jetbrains.annotations.NotNull;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.ChangelogAdapter;
@@ -66,6 +69,7 @@ public class ChangelogFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
         builder.typeface(
@@ -83,28 +87,32 @@ public class ChangelogFragment extends DialogFragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Activity activity = getActivity();
         try {
-            String version = getActivity().getPackageManager().getPackageInfo(
-                    getActivity().getPackageName(), 0).versionName;
+            String version = activity.getPackageManager().getPackageInfo(
+                    activity.getPackageName(), 0).versionName;
             if (version != null && version.length() > 0) {
-                mChangelogVersion.setText(getActivity().getResources().getString(
-                        R.string.changelog_version) + " " + version);
+                mChangelogVersion.setText(activity.getResources().getString(
+                        R.string.changelog_version));
+                mChangelogVersion.append(" " + version);
             }
         } catch (Exception ignored) {
         }
 
-        String date = getActivity().getResources().getString(R.string.changelog_date);
+        String date = activity.getResources().getString(R.string.changelog_date);
         if (date.length() > 0) mChangelogDate.setText(date);
         else mChangelogDate.setVisibility(View.GONE);
 
-        String[] changelog = getActivity().getResources().getStringArray(R.array.changelog);
+        String[] changelog = activity.getResources().getStringArray(R.array.changelog);
         mChangelogList.setAdapter(new ChangelogAdapter(getActivity(), changelog));
     }
 
     @Override
-    public void onDismiss(DialogInterface dialog) {
+    @SuppressWarnings("ConstantConditions")
+    public void onDismiss(@NotNull DialogInterface dialog) {
         super.onDismiss(dialog);
 
         FragmentManager fm = getActivity().getSupportFragmentManager();

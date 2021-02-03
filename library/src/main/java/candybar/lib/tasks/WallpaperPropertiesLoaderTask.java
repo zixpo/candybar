@@ -61,11 +61,11 @@ public class WallpaperPropertiesLoaderTask extends AsyncTask<Void, Void, Boolean
         return this;
     }
 
-    public AsyncTask start() {
+    public AsyncTask<Void, Void, Boolean> start() {
         return start(SERIAL_EXECUTOR);
     }
 
-    public AsyncTask start(@NonNull Executor executor) {
+    public AsyncTask<Void, Void, Boolean> start(@NonNull Executor executor) {
         return executeOnExecutor(executor);
     }
 
@@ -75,7 +75,7 @@ public class WallpaperPropertiesLoaderTask extends AsyncTask<Void, Void, Boolean
 
     @Override
     protected Boolean doInBackground(Void... voids) {
-        while (!isCancelled()) {
+        if (!isCancelled()) {
             try {
                 Thread.sleep(1);
                 if (mWallpaper == null) return false;

@@ -1,5 +1,6 @@
 package candybar.lib.fragments.dialog;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
@@ -16,6 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -46,7 +49,7 @@ import candybar.lib.helpers.TypefaceHelper;
 public class LicensesFragment extends DialogFragment {
 
     private WebView mWebView;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     private static final String TAG = "candybar.dialog.licenses";
 
@@ -70,6 +73,7 @@ public class LicensesFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
         builder.customView(R.layout.fragment_licenses, false);
@@ -92,11 +96,12 @@ public class LicensesFragment extends DialogFragment {
     }
 
     @Override
-    public void onDismiss(DialogInterface dialog) {
+    public void onDismiss(@NotNull DialogInterface dialog) {
         if (mAsyncTask != null) mAsyncTask.cancel(true);
         super.onDismiss(dialog);
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class LicensesLoader extends AsyncTask<Void, Void, Boolean> {
 
         private StringBuilder sb;
@@ -109,7 +114,7 @@ public class LicensesFragment extends DialogFragment {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     InputStream rawResource = getResources().openRawResource(R.raw.licenses);

@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import candybar.lib.R;
@@ -68,6 +70,7 @@ public class IconShapeChooserFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
         builder.customView(R.layout.fragment_languages, false);
@@ -82,6 +85,7 @@ public class IconShapeChooserFragment extends DialogFragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
@@ -101,7 +105,8 @@ public class IconShapeChooserFragment extends DialogFragment {
     }
 
     @Override
-    public void onDismiss(DialogInterface dialog) {
+    @SuppressWarnings("ConstantConditions")
+    public void onDismiss(@NotNull DialogInterface dialog) {
         Preferences.get(getActivity()).setIconShape(mShape);
         IconsFragment.reloadIcons();
         super.onDismiss(dialog);

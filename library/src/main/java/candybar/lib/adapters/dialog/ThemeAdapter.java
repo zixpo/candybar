@@ -39,10 +39,10 @@ import candybar.lib.items.Theme;
  */
 
 public class ThemeAdapter extends BaseAdapter {
-    private Context mContext;
-    private List<Theme> mThemes;
-    private int mSelectedIndex;
-    private List<ViewHolder> mHolders;
+    private final Context mContext;
+    private final List<Theme> mThemes;
+    private final int mSelectedIndex;
+    private final List<ViewHolder> mHolders;
 
     public ThemeAdapter(@NonNull Context context, @NonNull List<Theme> themes, int selectedIndex) {
         mContext = context;
@@ -72,7 +72,7 @@ public class ThemeAdapter extends BaseAdapter {
 
         if (view == null) {
             view = View.inflate(mContext, R.layout.fragment_inapp_dialog_item_list, null);
-            holder = new ThemeAdapter.ViewHolder(view);
+            holder = new ViewHolder(view);
             view.setTag(holder);
             mHolders.add(holder);
         } else {
@@ -102,7 +102,7 @@ public class ThemeAdapter extends BaseAdapter {
         return view;
     }
 
-    private class ViewHolder {
+    private static class ViewHolder {
         private final AppCompatRadioButton radio;
         private final TextView name;
         private final LinearLayout container;

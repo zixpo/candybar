@@ -1,5 +1,6 @@
 package candybar.lib.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -29,6 +30,8 @@ import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -68,10 +71,10 @@ public class IconsSearchFragment extends Fragment {
     private RecyclerFastScroller mFastScroll;
     private TextView mSearchResult;
     private SearchView mSearchView;
-    private Fragment mFragment = this;
+    private final Fragment mFragment = this;
 
     private IconsAdapter mAdapter;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     public static final String TAG = "icons_search";
 
@@ -87,6 +90,7 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);
@@ -103,7 +107,8 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    @SuppressWarnings("ConstantConditions")
+    public void onCreateOptionsMenu(@NotNull Menu menu, @NotNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_icons_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
@@ -158,7 +163,8 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    @SuppressWarnings("ConstantConditions")
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         ViewHelper.resetSpanCount(mRecyclerView, getActivity().getResources().getInteger(R.integer.icons_column_count));
     }
@@ -169,6 +175,8 @@ public class IconsSearchFragment extends Fragment {
         super.onDestroy();
     }
 
+    @SuppressLint("StringFormatInvalid")
+    @SuppressWarnings("ConstantConditions")
     private void filterSearch(String query) {
         try {
             mAdapter.search(query);
@@ -183,6 +191,7 @@ public class IconsSearchFragment extends Fragment {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class IconsLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<Icon> icons;
@@ -194,8 +203,9 @@ public class IconsSearchFragment extends Fragment {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (CandyBarMainActivity.sSections == null) {
@@ -259,7 +269,7 @@ public class IconsSearchFragment extends Fragment {
 
             mAsyncTask = null;
             if (aBoolean) {
-                mAdapter = new IconsAdapter(getActivity(), icons, true, mFragment);
+                mAdapter = new IconsAdapter(getActivity(), icons, mFragment);
                 mRecyclerView.setAdapter(mAdapter);
                 filterSearch("");
                 mSearchView.requestFocus();

@@ -24,8 +24,8 @@ import androidx.annotation.Nullable;
 
 public class Request {
 
-    private String mName;
-    private String mActivity;
+    private final String mName;
+    private final String mActivity;
     private String mPackageName;
     private String mOrderId;
     private String mProductId;

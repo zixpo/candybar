@@ -1,5 +1,6 @@
 package candybar.lib.fragments.dialog;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
@@ -15,6 +16,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Locale;
@@ -48,7 +51,7 @@ public class LanguagesFragment extends DialogFragment {
 
     private ListView mListView;
     private Locale mLocale;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     public static final String TAG = "candybar.dialog.languages";
 
@@ -72,6 +75,7 @@ public class LanguagesFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
         builder.customView(R.layout.fragment_languages, false);
@@ -100,7 +104,8 @@ public class LanguagesFragment extends DialogFragment {
     }
 
     @Override
-    public void onDismiss(DialogInterface dialog) {
+    @SuppressWarnings("ConstantConditions")
+    public void onDismiss(@NotNull DialogInterface dialog) {
         if (mLocale != null) {
             Preferences.get(getActivity()).setCurrentLocale(mLocale.toString());
             LocaleHelper.setLocale(getActivity());
@@ -114,14 +119,16 @@ public class LanguagesFragment extends DialogFragment {
         dismiss();
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class LanguagesLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<Language> languages;
         private int index = 0;
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     languages = LocaleHelper.getAvailableLanguages(getActivity());

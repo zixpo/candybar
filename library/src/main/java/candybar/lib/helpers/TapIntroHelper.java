@@ -1,5 +1,6 @@
 package candybar.lib.helpers;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -49,6 +50,8 @@ import static com.danimahardhika.android.helpers.core.UnitHelper.toDp;
 
 public class TapIntroHelper {
 
+    @SuppressLint("StringFormatInvalid")
+    @SuppressWarnings("ConstantConditions")
     public static void showHomeIntros(@NonNull Context context, @Nullable RecyclerView recyclerView,
                                       @Nullable StaggeredGridLayoutManager manager, int position) {
         if (Preferences.get(context).isTimeToShowHomeIntro()) {
@@ -168,7 +171,6 @@ public class TapIntroHelper {
                     int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
 
                     Typeface title = TypefaceHelper.getMedium(context);
-                    Typeface description = TypefaceHelper.getRegular(context);
 
                     TapTarget tapTarget = TapTarget.forToolbarMenuItem(toolbar, R.id.menu_search,
                             context.getResources().getString(R.string.tap_intro_icons_search),
@@ -223,7 +225,6 @@ public class TapIntroHelper {
                     tapTargetSequence.continueOnCancel(true);
 
                     Typeface title = TypefaceHelper.getMedium(context);
-                    Typeface description = TypefaceHelper.getRegular(context);
 
                     if (recyclerView != null) {
                         int position = 0;
@@ -368,6 +369,7 @@ public class TapIntroHelper {
         }
     }
 
+    @SuppressLint("StringFormatInvalid")
     public static void showWallpapersIntro(@NonNull Context context, @Nullable RecyclerView recyclerView) {
         if (Preferences.get(context).isTimeToShowWallpapersIntro()) {
             AppCompatActivity activity = (AppCompatActivity) context;
@@ -398,7 +400,6 @@ public class TapIntroHelper {
                             float targetRadius = toDp(context, view.getMeasuredWidth()) - 10f;
 
                             Typeface title = TypefaceHelper.getMedium(context);
-                            Typeface description = TypefaceHelper.getRegular(context);
 
                             String desc = String.format(context.getResources().getString(R.string.tap_intro_wallpapers_option_desc),
                                     context.getResources().getBoolean(R.bool.enable_wallpaper_download) ?

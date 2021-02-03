@@ -1,5 +1,6 @@
 package candybar.lib.helpers;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,7 @@ import candybar.lib.utils.JsonStructure;
 
 public class JsonHelper {
 
+    @SuppressLint("Raw")
     @Nullable
     public static List parseList(@NonNull InputStream stream) {
         List list = null;

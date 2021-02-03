@@ -84,11 +84,11 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
         return this;
     }
 
-    public AsyncTask start() {
+    public AsyncTask<Void, Void, Boolean> start() {
         return start(SERIAL_EXECUTOR);
     }
 
-    public AsyncTask start(@NonNull Executor executor) {
+    public AsyncTask<Void, Void, Boolean> start(@NonNull Executor executor) {
         if (mDialog == null) {
             int color = mWallpaper.getColor();
             if (color == 0) {
@@ -104,9 +104,7 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                     .content(R.string.wallpaper_loading)
                     .positiveColor(color)
                     .positiveText(android.R.string.cancel)
-                    .onPositive((dialog, which) -> {
-                        cancel(true);
-                    });
+                    .onPositive((dialog, which) -> cancel(true));
 
             mDialog = builder.build();
         }
@@ -163,7 +161,7 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
 
     @Override
     protected Boolean doInBackground(Void... voids) {
-        while (!isCancelled()) {
+        if (!isCancelled()) {
             try {
                 Thread.sleep(1);
                 ImageSize imageSize = WallpaperHelper.getTargetSize(mContext.get());

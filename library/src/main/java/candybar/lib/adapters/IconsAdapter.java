@@ -17,6 +17,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -56,7 +58,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
 
     private final boolean mIsShowIconName;
 
-    public IconsAdapter(@NonNull Context context, @NonNull List<Icon> icons, boolean search, Fragment fragment) {
+    public IconsAdapter(@NonNull Context context, @NonNull List<Icon> icons, Fragment fragment) {
         mContext = context;
         mFragment = fragment;
         mIcons = icons;
@@ -64,8 +66,9 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         mViewHolders = new ArrayList<>();
     }
 
+    @NotNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(
                 R.layout.fragment_icons_item_grid, parent, false);
         return new ViewHolder(view);
@@ -108,13 +111,12 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final ImageView icon;
         private final TextView name;
-        private final LinearLayout container;
 
         ViewHolder(View itemView) {
             super(itemView);
             icon = itemView.findViewById(R.id.icon);
             name = itemView.findViewById(R.id.name);
-            container = itemView.findViewById(R.id.container);
+            LinearLayout container = itemView.findViewById(R.id.container);
             container.setOnClickListener(this);
 
             if (!mIsShowIconName) {

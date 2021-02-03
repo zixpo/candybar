@@ -1,5 +1,6 @@
 package candybar.lib.helpers;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
@@ -143,6 +144,7 @@ public class LauncherHelper {
                             "com.abclauncher.launcher");
                     final Intent abc1 = new Intent("com.abclauncher.launcher.themes.themeaction");
                     abc1.putExtra("theme_package_name", context.getPackageName());
+                    assert abc != null;
                     abc.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(abc1);
                     context.startActivity(abc);
@@ -155,6 +157,7 @@ public class LauncherHelper {
                 try {
                     final Intent action = context.getPackageManager().getLaunchIntentForPackage(
                             launcherPackage);
+                    assert action != null;
                     action.putExtra("apply_icon_pack", context.getPackageName());
                     action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(action);
@@ -234,6 +237,7 @@ public class LauncherHelper {
                     final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
                     flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
                     flickAction.setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
+                    assert flick != null;
                     flick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(flickAction);
                     context.startActivity(flick);
@@ -249,6 +253,7 @@ public class LauncherHelper {
                     final Intent go = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
                     go.putExtra("type", 1);
                     go.putExtra("pkgname", context.getPackageName());
+                    assert goex != null;
                     goex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(go);
                     context.startActivity(goex);
@@ -310,6 +315,7 @@ public class LauncherHelper {
                     final Intent next2 = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
                     next2.putExtra("type", 1);
                     next2.putExtra("pkgname", context.getPackageName());
+                    assert next != null;
                     next.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(next2);
                     context.startActivity(next);
@@ -368,6 +374,7 @@ public class LauncherHelper {
                     soloAction.putExtra("EXTRA_THEMENAME", context.getResources().getString(
                             R.string.app_name));
                     soloAction.putExtra("EXTRA_PACKAGENAME", context.getPackageName());
+                    assert solo != null;
                     solo.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(soloAction);
                     context.startActivity(solo);
@@ -448,6 +455,7 @@ public class LauncherHelper {
                     final Intent zero1 = new Intent("com.zeroteam.zerolauncher.MyThemes.mythemeaction");
                     zero1.putExtra("type", 1);
                     zero1.putExtra("pkgname", context.getPackageName());
+                    assert zero != null;
                     zero.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(zero1);
                     context.startActivity(zero);
@@ -469,6 +477,7 @@ public class LauncherHelper {
                     final Intent v1 = new Intent("com.vivid.launcher.MyThemes.mythemeaction");
                     v1.putExtra("type", 1);
                     v1.putExtra("pkgname", context.getPackageName());
+                    assert v != null;
                     v.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(v1);
                     context.startActivity(v);
@@ -480,6 +489,7 @@ public class LauncherHelper {
         }
     }
 
+    @SuppressLint("StringFormatInvalid")
     private static void applyManual(Context context, String launcherPackage, String launcherName, String activity) {
         if (isInstalled(context, launcherPackage)) {
             new MaterialDialog.Builder(context)
@@ -541,6 +551,7 @@ public class LauncherHelper {
                 .onPositive((dialog, which) -> {
                     try {
                         final Intent intent = context.getPackageManager().getLaunchIntentForPackage(launcherPackage);
+                        assert intent != null;
                         intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         context.startActivity(intent);
                         ((AppCompatActivity) context).finish();

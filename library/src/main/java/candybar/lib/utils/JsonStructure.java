@@ -22,7 +22,7 @@ import androidx.annotation.Nullable;
 
 public class JsonStructure {
 
-    private Builder mBuilder;
+    private final Builder mBuilder;
 
     private JsonStructure(@NonNull Builder builder) {
         mBuilder = builder;

@@ -45,6 +45,8 @@ import com.danimahardhika.android.helpers.permission.PermissionHelper;
 import com.kogitune.activitytransition.ActivityTransition;
 import com.kogitune.activitytransition.ExitActivityTransition;
 
+import org.jetbrains.annotations.NotNull;
+
 import candybar.lib.R;
 import candybar.lib.adapters.WallpapersAdapter;
 import candybar.lib.databases.Database;
@@ -214,7 +216,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (prevIsDarkTheme != ThemeHelper.isDarkTheme(this)) {
             recreate();
@@ -231,7 +233,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NotNull Bundle outState) {
         if (mWallpaper != null) {
             outState.putString(Extras.EXTRA_URL, mWallpaper.getURL());
         }

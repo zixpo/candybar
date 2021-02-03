@@ -78,12 +78,14 @@ public class IconPreviewFragment extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        assert getArguments() != null;
         mIconName = getArguments().getString(NAME);
         mIconId = getArguments().getInt(ID);
     }
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                 .customView(R.layout.fragment_icon_preview, false)
@@ -101,6 +103,7 @@ public class IconPreviewFragment extends DialogFragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {

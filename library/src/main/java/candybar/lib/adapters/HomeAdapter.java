@@ -39,6 +39,7 @@ import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
@@ -128,8 +129,9 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
+    @NotNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         if (viewType == TYPE_HEADER) {
             View view = LayoutInflater.from(mContext).inflate(
                     R.layout.fragment_home_item_header, parent, false);
@@ -159,7 +161,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onViewRecycled(RecyclerView.ViewHolder holder) {
+    public void onViewRecycled(@NotNull RecyclerView.ViewHolder holder) {
         super.onViewRecycled(holder);
         if (holder.getItemViewType() == TYPE_CONTENT) {
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
@@ -175,8 +177,9 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
+    @SuppressLint("StringFormatInvalid")
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NotNull RecyclerView.ViewHolder holder, int position) {
         try {
             if (holder.itemView != null) {
                 StaggeredGridLayoutManager.LayoutParams layoutParams = (StaggeredGridLayoutManager.LayoutParams)
@@ -408,6 +411,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             update.setOnClickListener(this);
         }
 
+        @SuppressLint("StringFormatInvalid")
         @Override
         public void onClick(View view) {
             int id = view.getId();
@@ -435,6 +439,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class UpdateChecker extends AsyncTask<Void, Void, Boolean> {
 
         private MaterialDialog loadingDialog;
@@ -572,12 +577,11 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private final TextView subtitle;
         private final AutofitTextView autoFitTitle;
-        private final LinearLayout container;
         private final ProgressBar progressBar;
 
         ContentViewHolder(View itemView) {
             super(itemView);
-            container = itemView.findViewById(R.id.container);
+            LinearLayout container = itemView.findViewById(R.id.container);
             autoFitTitle = itemView.findViewById(R.id.title);
             subtitle = itemView.findViewById(R.id.subtitle);
             progressBar = itemView.findViewById(R.id.progressBar);
@@ -648,23 +652,21 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private class IconRequestViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private final TextView title;
         private final TextView installedApps;
         private final TextView themedApps;
         private final TextView missedApps;
-        private final LinearLayout container;
         private final ProgressBar progress;
         private final ProgressBar progressBar;
         private final LinearLayout dataContainer;
 
         IconRequestViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
+            TextView title = itemView.findViewById(R.id.title);
             installedApps = itemView.findViewById(R.id.installed_apps);
             missedApps = itemView.findViewById(R.id.missed_apps);
             themedApps = itemView.findViewById(R.id.themed_apps);
             progress = itemView.findViewById(R.id.progress);
-            container = itemView.findViewById(R.id.container);
+            LinearLayout container = itemView.findViewById(R.id.container);
             progressBar = itemView.findViewById(R.id.progressBar);
             dataContainer = itemView.findViewById(R.id.dataContainer);
 
@@ -783,13 +785,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private class GooglePlayDevViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private final TextView title;
-        private final LinearLayout container;
-
         GooglePlayDevViewHolder(View itemView) {
             super(itemView);
-            container = itemView.findViewById(R.id.container);
-            title = itemView.findViewById(R.id.title);
+            LinearLayout container = itemView.findViewById(R.id.container);
+            TextView title = itemView.findViewById(R.id.title);
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {

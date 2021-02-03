@@ -13,6 +13,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 
 import candybar.lib.R;
@@ -67,6 +69,7 @@ public class ThemeChooserFragment extends DialogFragment {
 
     @NonNull
     @Override
+    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                 .customView(R.layout.fragment_languages, false)
@@ -82,6 +85,7 @@ public class ThemeChooserFragment extends DialogFragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
@@ -91,7 +95,8 @@ public class ThemeChooserFragment extends DialogFragment {
     }
 
     @Override
-    public void onDismiss(DialogInterface dialog) {
+    @SuppressWarnings("ConstantConditions")
+    public void onDismiss(@NotNull DialogInterface dialog) {
         if (mChosenTheme != mCurrentTheme) {
             Preferences.get(getActivity()).setTheme(mChosenTheme);
             getActivity().recreate();

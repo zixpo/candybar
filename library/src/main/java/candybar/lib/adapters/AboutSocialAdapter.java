@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
+import org.jetbrains.annotations.NotNull;
+
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.UrlHelper;
@@ -48,8 +50,9 @@ public class AboutSocialAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         mUrls = urls;
     }
 
+    @NotNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(
                 R.layout.fragment_about_item_social, parent, false);
         if (CandyBarApplication.getConfiguration().getSocialIconColor() == CandyBarApplication.IconColor.ACCENT) {
@@ -60,7 +63,7 @@ public class AboutSocialAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NotNull RecyclerView.ViewHolder holder, int position) {
         SocialViewHolder socialViewHolder = (SocialViewHolder) holder;
         UrlHelper.Type type = UrlHelper.getType(mUrls[position]);
         Drawable drawable = UrlHelper.getSocialIcon(mContext, type);

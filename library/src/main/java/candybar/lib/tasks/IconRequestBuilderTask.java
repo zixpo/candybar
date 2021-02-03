@@ -52,7 +52,7 @@ import candybar.lib.utils.listeners.RequestListener;
 
 public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
 
-    private WeakReference<Context> mContext;
+    private final WeakReference<Context> mContext;
     private WeakReference<IconRequestBuilderCallback> mCallback;
     private String mEmailBody;
     private Extras.Error mError;
@@ -66,11 +66,11 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         return this;
     }
 
-    public AsyncTask start() {
+    public AsyncTask<Void, Void, Boolean> start() {
         return start(SERIAL_EXECUTOR);
     }
 
-    public AsyncTask start(@NonNull Executor executor) {
+    public AsyncTask<Void, Void, Boolean> start(@NonNull Executor executor) {
         return executeOnExecutor(executor);
     }
 
@@ -80,7 +80,7 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected Boolean doInBackground(Void... voids) {
-        while (!isCancelled()) {
+        if (!isCancelled()) {
             try {
                 Thread.sleep(1);
                 if (RequestFragment.sSelectedRequests == null) {
@@ -187,7 +187,7 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
     private Intent getIntent(ComponentName name, String emailBody) {
         try {
             Intent intent = new Intent(Intent.ACTION_SEND);
-            intent = addIntentExtra(intent, emailBody);
+            addIntentExtra(intent, emailBody);
             intent.setComponent(name);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -195,7 +195,7 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         } catch (IllegalArgumentException e) {
             try {
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                intent = addIntentExtra(intent, emailBody);
+                addIntentExtra(intent, emailBody);
                 return intent;
             } catch (ActivityNotFoundException e1) {
                 LogUtil.e(Log.getStackTraceString(e1));
@@ -204,7 +204,7 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         return null;
     }
 
-    private Intent addIntentExtra(@NonNull Intent intent, String emailBody) {
+    private void addIntentExtra(@NonNull Intent intent, String emailBody) {
         intent.setType("application/zip");
 
         if (CandyBarApplication.sZipPath != null) {
@@ -245,7 +245,6 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
         intent.putExtra(Intent.EXTRA_TEXT, emailBody);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
                 Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
-        return intent;
     }
 
     public interface IconRequestBuilderCallback {

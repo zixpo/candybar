@@ -1,5 +1,6 @@
 package candybar.lib.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -19,6 +20,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -52,10 +55,11 @@ import candybar.lib.utils.AlphanumComparator;
 public class ApplyFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     @Nullable
     @Override
+    @SuppressWarnings("ConstantConditions")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_apply, container, false);
@@ -69,6 +73,7 @@ public class ApplyFragment extends Fragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
@@ -84,7 +89,7 @@ public class ApplyFragment extends Fragment {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
 
@@ -96,6 +101,7 @@ public class ApplyFragment extends Fragment {
         super.onDestroy();
     }
 
+    @SuppressWarnings("ConstantConditions")
     private boolean isPackageInstalled(String pkg) {
         try {
             PackageInfo packageInfo = getActivity().getPackageManager().getPackageInfo(
@@ -111,6 +117,7 @@ public class ApplyFragment extends Fragment {
     }
 
     private boolean isLauncherShouldBeAdded(String packageName) {
+        assert getActivity() != null;
         if (("com.dlto.atom.launcher").equals(packageName)) {
             int id = getResources().getIdentifier("appmap", "xml", getActivity().getPackageName());
             return id > 0;
@@ -122,6 +129,7 @@ public class ApplyFragment extends Fragment {
         return true;
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class LaunchersLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<Icon> launchers;
@@ -134,7 +142,7 @@ public class ApplyFragment extends Fragment {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     String[] launcherNames = getResources().getStringArray(

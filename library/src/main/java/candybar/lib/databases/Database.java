@@ -201,22 +201,20 @@ public class Database extends SQLiteOpenHelper {
         }
     }
 
-    public boolean closeDatabase() {
+    public void closeDatabase() {
         try {
             if (mDatabase == null || mDatabase.get() == null) {
                 LogUtil.e("Database error: closeDatabase() database instance is null");
-                return false;
+                return;
             }
 
             if (mDatabase.get().mSQLiteDatabase == null) {
                 LogUtil.e("Database error: trying to close database which is not opened");
-                return false;
+                return;
             }
             mDatabase.get().mSQLiteDatabase.close();
-            return true;
         } catch (SQLiteException | NullPointerException e) {
             LogUtil.e(Log.getStackTraceString(e));
-            return false;
         }
     }
 

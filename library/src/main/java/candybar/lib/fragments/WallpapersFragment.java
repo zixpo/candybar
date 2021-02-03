@@ -1,5 +1,6 @@
 package candybar.lib.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -33,6 +34,8 @@ import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 import com.rafakob.drawme.DrawMeButton;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -78,10 +81,11 @@ public class WallpapersFragment extends Fragment {
     private RecyclerFastScroller mFastScroll;
     private DrawMeButton mPopupBubble;
 
-    private AsyncTask mAsyncTask;
+    private AsyncTask<Void, Void, ?> mAsyncTask;
 
     @Nullable
     @Override
+    @SuppressWarnings("ConstantConditions")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wallpapers, container, false);
@@ -99,6 +103,7 @@ public class WallpapersFragment extends Fragment {
     }
 
     @Override
+    @SuppressWarnings("ConstantConditions")
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, false);
@@ -128,7 +133,8 @@ public class WallpapersFragment extends Fragment {
     }
 
     @Override
-    public void onConfigurationChanged(Configuration newConfig) {
+    @SuppressWarnings("ConstantConditions")
+    public void onConfigurationChanged(@NotNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         ViewHelper.resetSpanCount(mRecyclerView,
                 getActivity().getResources().getInteger(R.integer.wallpapers_column_count));
@@ -142,6 +148,7 @@ public class WallpapersFragment extends Fragment {
         super.onDestroy();
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void initPopupBubble() {
         int color = ColorHelper.getAttributeColor(getActivity(), R.attr.colorAccent);
         mPopupBubble.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
@@ -157,6 +164,7 @@ public class WallpapersFragment extends Fragment {
         });
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void showPopupBubble() {
         int wallpapersCount = Database.get(getActivity()).getWallpapersCount();
         if (wallpapersCount == 0) return;
@@ -168,16 +176,18 @@ public class WallpapersFragment extends Fragment {
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class WallpapersLoader extends AsyncTask<Void, Void, Boolean> {
 
         private List<Wallpaper> wallpapers;
-        private boolean refreshing;
+        private final boolean refreshing;
 
         private WallpapersLoader(boolean refreshing) {
             this.refreshing = refreshing;
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected void onPreExecute() {
             super.onPreExecute();
             if (!refreshing) mProgress.setVisibility(View.VISIBLE);
@@ -190,8 +200,9 @@ public class WallpapersFragment extends Fragment {
         }
 
         @Override
+        @SuppressWarnings("ConstantConditions")
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (!refreshing && (Database.get(getActivity()).getWallpapersCount() > 0)) {

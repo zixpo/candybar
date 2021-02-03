@@ -52,8 +52,8 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
-    private AsyncTask mSplashScreenLoader;
-    private AsyncTask mCloudWallpapersLoader;
+    private AsyncTask<Void, Void, Boolean> mSplashScreenLoader;
+    private AsyncTask<Void, Void, Boolean> mCloudWallpapersLoader;
 
     @NotNull
     public abstract Class<?> getMainActivity();
@@ -93,7 +93,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
     private static class SplashScreenLoader extends AsyncTask<Void, Void, Boolean> {
 
-        private WeakReference<Context> context;
+        private final WeakReference<Context> context;
         private Class<?> mainActivity;
 
         private SplashScreenLoader(@NonNull Context context) {
@@ -107,7 +107,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(400);
                     return true;
@@ -140,7 +140,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
     private static class CloudWallpapersLoader extends AsyncTask<Void, Void, Boolean> {
 
-        private WeakReference<Context> context;
+        private final WeakReference<Context> context;
 
         private CloudWallpapersLoader(@NonNull Context context) {
             this.context = new WeakReference<>(context);
@@ -148,7 +148,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            while (!isCancelled()) {
+            if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (WallpaperHelper.getWallpaperType(context.get()) != WallpaperHelper.CLOUD_WALLPAPERS)

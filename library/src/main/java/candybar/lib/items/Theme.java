@@ -11,7 +11,7 @@ public enum Theme {
     LIGHT(R.string.theme_name_light),
     DARK(R.string.theme_name_dark);
 
-    private int nameStringRes;
+    private final int nameStringRes;
 
     Theme(@StringRes int nameRes) {
         nameStringRes = nameRes;

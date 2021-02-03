@@ -233,7 +233,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private class HeaderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private final TextView premTitle;
         private final TextView premContent;
         private final TextView premTotal;
         private final TextView premAvailable;
@@ -243,18 +242,15 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private final LinearLayout premWholeContainer;
         private final ProgressBar premProgress;
 
-        private final TextView regTitle;
-        private final TextView regContent;
         private final TextView regTotal;
         private final TextView regAvailable;
         private final TextView regUsed;
-        private final LinearLayout regContainer;
         private final LinearLayout regWholeContainer;
         private final ProgressBar regProgress;
 
         HeaderViewHolder(View itemView) {
             super(itemView);
-            premTitle = itemView.findViewById(R.id.premium_request_title);
+            TextView premTitle = itemView.findViewById(R.id.premium_request_title);
             premContent = itemView.findViewById(R.id.premium_request_content);
             button = itemView.findViewById(R.id.buy);
 
@@ -266,10 +262,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             premProgress = itemView.findViewById(R.id.premium_request_progress);
 
 
-            regTitle = itemView.findViewById(R.id.regular_request_title);
-            regContent = itemView.findViewById(R.id.regular_request_content);
+            TextView regTitle = itemView.findViewById(R.id.regular_request_title);
+            TextView regContent = itemView.findViewById(R.id.regular_request_content);
             regWholeContainer = itemView.findViewById(R.id.regular_request_container);
-            regContainer = itemView.findViewById(R.id.regular_request);
+            LinearLayout regContainer = itemView.findViewById(R.id.regular_request);
             regTotal = itemView.findViewById(R.id.regular_request_total);
             regAvailable = itemView.findViewById(R.id.regular_request_available);
             regUsed = itemView.findViewById(R.id.regular_request_used);
@@ -350,7 +346,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private final TextView content;
         private final ImageView icon;
         private final AppCompatCheckBox checkbox;
-        private final LinearLayout container;
         private final View divider;
 
         ContentViewHolder(View itemView) {
@@ -359,7 +354,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             content = itemView.findViewById(R.id.requested);
             icon = itemView.findViewById(R.id.icon);
             checkbox = itemView.findViewById(R.id.checkbox);
-            container = itemView.findViewById(R.id.container);
+            LinearLayout container = itemView.findViewById(R.id.container);
             divider = itemView.findViewById(R.id.divider);
 
             MaterialCardView card = itemView.findViewById(R.id.card);
@@ -518,10 +513,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         } catch (Exception ignored) {
         }
         notifyDataSetChanged();
-    }
-
-    public Request getRequest(int position) {
-        return mRequests.get(position);
     }
 
     public List<Request> getSelectedApps() {
