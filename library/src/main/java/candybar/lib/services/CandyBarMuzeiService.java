@@ -26,7 +26,7 @@ public class CandyBarMuzeiService extends MuzeiArtProvider {
     }
 
     @Override
-    protected void onLoadRequested(boolean initial) {
+    public void onLoadRequested(boolean initial) {
         CandyBarArtWorker.enqueueLoad(getContext());
     }
 }
