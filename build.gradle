@@ -14,19 +14,17 @@ allprojects {
         mavenCentral()
         jcenter()
         google()
-        maven { url "https://jitpack.io" }
+        maven { url 'https://jitpack.io' }
         maven { url 'https://maven.google.com' }
-        flatDir { dirs 'libs' }
     }
 
     rootProject.ext {
         VersionCode = 391
-        VersionName = "3.9.1"
+        VersionName = '3.9.1'
 
         MinSdk = 15
         TargetSdk = 29
         CompileSdk = 29
-        SupportLibrary = "27.1.1"
     }
 }
 

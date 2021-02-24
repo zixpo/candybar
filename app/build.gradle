@@ -5,7 +5,7 @@ buildscript {
         maven { url 'https://plugins.gradle.org/m2/' }
     }
     dependencies {
-        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.6'
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.9'
     }
 }
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
@@ -26,12 +26,12 @@ android {
 
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = "candybar.apk"
+            outputFileName = 'candybar.apk'
         }
     }
 
     defaultConfig {
-        applicationId "com.candybar.dev"
+        applicationId 'com.candybar.dev'
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode rootProject.ext.VersionCode
@@ -64,5 +64,5 @@ dependencies {
     implementation project(':library')
 
     // Remove '//' below to Enable OneSignal
-    //implementation 'com.onesignal:OneSignal:3.12.4'
+    //implementation 'com.onesignal:OneSignal:3.15.4'
 }

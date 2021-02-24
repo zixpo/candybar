@@ -23,7 +23,7 @@ android {
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode 1
-        versionName "1.0"
+        versionName '1.0'
     }
 
     buildTypes {
