@@ -35,8 +35,6 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 import com.rafakob.drawme.DrawMeButton;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -134,7 +132,7 @@ public class WallpapersFragment extends Fragment {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onConfigurationChanged(@NotNull Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         ViewHelper.resetSpanCount(mRecyclerView,
                 getActivity().getResources().getInteger(R.integer.wallpapers_column_count));

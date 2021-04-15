@@ -46,8 +46,6 @@ import com.danimahardhika.android.helpers.license.LicenseHelper;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.google.android.material.navigation.NavigationView;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.File;
 import java.util.List;
 
@@ -247,7 +245,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onConfigurationChanged(@NotNull Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (prevIsDarkTheme != ThemeHelper.isDarkTheme(this)) {
             recreate();

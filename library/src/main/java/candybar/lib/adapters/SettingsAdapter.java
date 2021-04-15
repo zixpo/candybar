@@ -21,8 +21,6 @@ import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.File;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -72,9 +70,9 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         mSettings = settings;
     }
 
-    @NotNull
+    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == TYPE_CONTENT) {
             View view = LayoutInflater.from(mContext).inflate(
                     R.layout.fragment_settings_item_list, parent, false);

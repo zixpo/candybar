@@ -22,8 +22,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.anjlab.android.iab.v3.SkuDetails;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
-import org.jetbrains.annotations.NotNull;
-
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.InAppBillingAdapter;
 import candybar.lib.helpers.TypefaceHelper;
@@ -170,7 +168,7 @@ public class InAppBillingFragment extends DialogFragment {
     }
 
     @Override
-    public void onDismiss(@NotNull DialogInterface dialog) {
+    public void onDismiss(@NonNull DialogInterface dialog) {
         if (mAsyncTask != null) {
             mAsyncTask.cancel(true);
         }

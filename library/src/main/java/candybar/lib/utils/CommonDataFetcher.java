@@ -19,8 +19,6 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.data.DataFetcher;
 
-import org.jetbrains.annotations.NotNull;
-
 import candybar.lib.preferences.Preferences;
 import sarsamurmu.adaptiveicon.AdaptiveIcon;
 
@@ -97,7 +95,7 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
     public void cancel() {
     }
 
-    @NotNull
+    @NonNull
     @Override
     public Class<Bitmap> getDataClass() {
         return Bitmap.class;

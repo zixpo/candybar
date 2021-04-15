@@ -16,8 +16,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 import candybar.lib.R;
@@ -57,7 +55,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         mLaunchers = launchers;
     }
 
-    @NotNull
+    @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = null;

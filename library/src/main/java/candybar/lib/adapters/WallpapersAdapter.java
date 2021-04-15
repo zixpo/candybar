@@ -29,8 +29,6 @@ import com.danimahardhika.android.helpers.permission.PermissionHelper;
 import com.google.android.material.card.MaterialCardView;
 import com.kogitune.activitytransition.ActivityTransitionLauncher;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 import candybar.lib.R;
@@ -79,9 +77,9 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
         mIsShowName = mContext.getResources().getBoolean(R.bool.wallpaper_show_name_author);
     }
 
-    @NotNull
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         if (mIsShowName) {
             view = LayoutInflater.from(mContext).inflate(
@@ -94,7 +92,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(@NotNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Wallpaper wallpaper = mWallpapers.get(position);
         if (mIsShowName) {
             holder.name.setText(wallpaper.getName());

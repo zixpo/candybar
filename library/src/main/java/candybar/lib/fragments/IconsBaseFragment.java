@@ -30,8 +30,6 @@ import com.danimahardhika.android.helpers.animation.AnimationHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.tabs.TabLayout;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Collections;
 import java.util.List;
 
@@ -102,7 +100,7 @@ public class IconsBaseFragment extends Fragment {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onCreateOptionsMenu(@NotNull Menu menu, @NotNull MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_icons_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
@@ -353,7 +351,7 @@ public class IconsBaseFragment extends Fragment {
             return title;
         }
 
-        @NotNull
+        @NonNull
         @Override
         public Fragment getItem(int position) {
             return IconsFragment.newInstance(position);

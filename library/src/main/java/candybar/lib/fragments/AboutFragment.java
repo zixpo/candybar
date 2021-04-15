@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -13,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.danimahardhika.android.helpers.core.ViewHelper;
-
-import org.jetbrains.annotations.NotNull;
 
 import candybar.lib.R;
 import candybar.lib.adapters.AboutAdapter;
@@ -73,7 +72,7 @@ public class AboutFragment extends Fragment {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onConfigurationChanged(@NotNull Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         resetRecyclerViewPadding(newConfig.orientation);
         ViewHelper.resetSpanCount(mRecyclerView,

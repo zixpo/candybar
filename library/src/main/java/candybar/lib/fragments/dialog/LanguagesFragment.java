@@ -17,8 +17,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 import java.util.Locale;
 
@@ -105,7 +103,7 @@ public class LanguagesFragment extends DialogFragment {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onDismiss(@NotNull DialogInterface dialog) {
+    public void onDismiss(@NonNull DialogInterface dialog) {
         if (mLocale != null) {
             Preferences.get(getActivity()).setCurrentLocale(mLocale.toString());
             LocaleHelper.setLocale(getActivity());

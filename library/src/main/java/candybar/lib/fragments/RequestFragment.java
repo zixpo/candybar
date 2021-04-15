@@ -41,7 +41,6 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
-import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -159,7 +158,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onConfigurationChanged(@NotNull Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         resetRecyclerViewPadding(newConfig.orientation);
         if (mAsyncTask != null) return;
@@ -181,7 +180,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onCreateOptionsMenu(@NotNull Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_request, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }

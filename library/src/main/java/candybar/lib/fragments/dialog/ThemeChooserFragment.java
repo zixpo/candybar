@@ -13,8 +13,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Arrays;
 
 import candybar.lib.R;
@@ -96,7 +94,7 @@ public class ThemeChooserFragment extends DialogFragment {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onDismiss(@NotNull DialogInterface dialog) {
+    public void onDismiss(@NonNull DialogInterface dialog) {
         if (mChosenTheme != mCurrentTheme) {
             Preferences.get(getActivity()).setTheme(mChosenTheme);
             getActivity().recreate();

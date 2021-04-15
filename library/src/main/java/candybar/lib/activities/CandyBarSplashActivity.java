@@ -15,8 +15,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
@@ -55,7 +53,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
     private AsyncTask<Void, Void, Boolean> mSplashScreenLoader;
     private AsyncTask<Void, Void, Boolean> mCloudWallpapersLoader;
 
-    @NotNull
+    @NonNull
     public abstract Class<?> getMainActivity();
 
     @Override

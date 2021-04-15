@@ -16,8 +16,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import org.jetbrains.annotations.NotNull;
-
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.ChangelogAdapter;
 import candybar.lib.helpers.TypefaceHelper;
@@ -112,7 +110,7 @@ public class ChangelogFragment extends DialogFragment {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onDismiss(@NotNull DialogInterface dialog) {
+    public void onDismiss(@NonNull DialogInterface dialog) {
         super.onDismiss(dialog);
 
         FragmentManager fm = getActivity().getSupportFragmentManager();
