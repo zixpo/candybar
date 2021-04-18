@@ -35,7 +35,6 @@ import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.TypefaceHelper;
-import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Language;
 import candybar.lib.items.Request;
 import candybar.lib.items.Setting;
@@ -169,17 +168,6 @@ public class SettingsFragment extends Fragment {
             settings.add(new Setting(-1, "",
                     Preferences.get(getActivity()).getTheme().displayName(getActivity()),
                     "", "", Setting.Type.THEME));
-        }
-
-        if (WallpaperHelper.getWallpaperType(getActivity()) == WallpaperHelper.CLOUD_WALLPAPERS) {
-            settings.add(new Setting(R.drawable.ic_toolbar_wallpapers,
-                    getActivity().getResources().getString(R.string.pref_wallpaper_header),
-                    "", "", "", Setting.Type.HEADER));
-
-            settings.add(new Setting(-1, "",
-                    getActivity().getResources().getString(R.string.pref_wallpaper_location),
-                    WallpaperHelper.getDefaultWallpapersDirectory(getActivity()).toString(), "",
-                    Setting.Type.WALLPAPER));
         }
 
         settings.add(new Setting(R.drawable.ic_toolbar_language,

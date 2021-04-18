@@ -41,7 +41,6 @@ import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.WindowHelper;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
-import com.danimahardhika.android.helpers.permission.PermissionHelper;
 import com.kogitune.activitytransition.ActivityTransition;
 import com.kogitune.activitytransition.ExitActivityTransition;
 
@@ -329,14 +328,9 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
             }
             popup.show();
         } else if (id == R.id.menu_save) {
-            if (PermissionHelper.isStorageGranted(this)) {
-                WallpaperDownloader.prepare(this)
-                        .wallpaper(mWallpaper)
-                        .start();
-                return;
-            }
-
-            PermissionHelper.requestStorage(this);
+            WallpaperDownloader.prepare(this)
+                    .wallpaper(mWallpaper)
+                    .start();
         }
     }
 

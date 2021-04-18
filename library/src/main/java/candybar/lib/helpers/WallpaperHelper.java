@@ -9,7 +9,6 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Environment;
 import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
@@ -17,12 +16,8 @@ import androidx.annotation.Nullable;
 
 import com.danimahardhika.android.helpers.core.WindowHelper;
 
-import java.io.File;
-
 import candybar.lib.R;
 import candybar.lib.items.ImageSize;
-import candybar.lib.items.Wallpaper;
-import candybar.lib.preferences.Preferences;
 
 /*
  * CandyBar - Material Dashboard
@@ -80,20 +75,6 @@ public class WallpaperHelper {
         }
     }
 
-    public static File getDefaultWallpapersDirectory(@NonNull Context context) {
-        try {
-            if (Preferences.get(context).getWallsDirectory().length() == 0) {
-                return new File(Environment.getExternalStoragePublicDirectory(
-                        Environment.DIRECTORY_PICTURES) + "/" +
-                        context.getResources().getString(R.string.app_name));
-            }
-            return new File(Preferences.get(context).getWallsDirectory());
-        } catch (Exception e) {
-            return new File(context.getFilesDir().toString() + "/Pictures/" +
-                    context.getResources().getString(R.string.app_name));
-        }
-    }
-
     public static String getFormat(String mimeType) {
         if (mimeType == null) return "jpg";
         switch (mimeType) {
@@ -104,18 +85,6 @@ public class WallpaperHelper {
             default:
                 return "jpg";
         }
-    }
-
-    public static boolean isWallpaperSaved(@NonNull Context context, @NonNull Wallpaper wallpaper) {
-        String fileName = wallpaper.getName() + "." + getFormat(wallpaper.getMimeType());
-        File directory = WallpaperHelper.getDefaultWallpapersDirectory(context);
-        File target = new File(directory, fileName);
-
-        if (target.exists()) {
-            long size = target.length();
-            return size == wallpaper.getSize();
-        }
-        return false;
     }
 
     public static ImageSize getTargetSize(@NonNull Context context) {

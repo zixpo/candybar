@@ -25,7 +25,6 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.danimahardhika.android.helpers.permission.PermissionHelper;
 import com.google.android.material.card.MaterialCardView;
 import com.kogitune.activitytransition.ActivityTransitionLauncher;
 
@@ -210,13 +209,9 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
                                 applyPopup.updateItem(i, item);
                                 return;
                             } else if (item.getType() == PopupItem.Type.DOWNLOAD) {
-                                if (PermissionHelper.isStorageGranted(mContext)) {
-                                    WallpaperDownloader.prepare(mContext)
-                                            .wallpaper(mWallpapers.get(position))
-                                            .start();
-                                } else {
-                                    PermissionHelper.requestStorage(mContext);
-                                }
+                                WallpaperDownloader.prepare(mContext)
+                                        .wallpaper(mWallpapers.get(position))
+                                        .start();
                             } else {
                                 WallpaperApplyTask task = WallpaperApplyTask.prepare(mContext)
                                         .wallpaper(mWallpapers.get(position));
