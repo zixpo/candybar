@@ -1,40 +1,48 @@
-language: android
+language: java
 dist: trusty
-install: true
 jdk: oraclejdk8
 
 env:
   global:
     - ANDROID_API=30
     - ANDROID_BUILD_TOOLS=30.0.0
+    - ANDROID_HOME=$HOME/android-sdk
 
-android:
-  components:
-    - tools
-    - platform-tools
-    - extra-android-support
-    - extra-google-google_play_services
-    - extra-android-m2repository
-    - extra-google-m2repository
-  licenses:
-    - '.+'
+before_cache:
+  # Do not cache a few Gradle files/directories (see https://docs.travis-ci.com/user/languages/java/#Caching)
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    # Android SDK
+    - $HOME/android-cmdline-tools
+    - $HOME/android-sdk
+
+    # Gradle dependencies
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+    # Android build cache (see http://tools.android.com/tech-docs/build-cache)
+    - $HOME/.android/build-cache
+
+install:
+  # Download and unzip the Android command line tools (if not already there thanks to the cache mechanism)
+  # Latest version of this file available here: https://developer.android.com/studio/#command-tools
+  - if test ! -e $HOME/android-cmdline-tools/cmdline-tools.zip ; then curl https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip > $HOME/android-cmdline-tools/cmdline-tools.zip ; fi
+  - unzip -qq -n $HOME/android-cmdline-tools/cmdline-tools.zip -d $HOME/android-cmdline-tools
+
+  # Install or update Android SDK components (will not do anything if already up to date thanks to the cache mechanism)
+  - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$HOME/android-sdk 'platform-tools' > /dev/null
+  # Latest version of build-tools available here: https://developer.android.com/studio/releases/build-tools.html
+  - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$HOME/android-sdk "build-tools;$ANDROID_BUILD_TOOLS" > /dev/null
+  - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$HOME/android-sdk "platforms;android-$ANDROID_API" > /dev/null
 
 branches:
-  only:
-    - main
+  only: [main]
 
-before_install:
-  - yes | sdkmanager "platforms;android-$ANDROID_API"
-  - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS"
-  - chmod +x gradlew
-  - ./gradlew dependencies || true
-
-script:
-  # Build App
-  - ./gradlew clean :app:assembleRelease --stacktrace
+script: ./gradlew --no-daemon clean :app:assembleRelease --stacktrace
 
 after_script:
-  #- chmod +x sign-apk.sh
-  #- bash ./sign-apk.sh
-  - chmod +x send-to-telegram.sh
-  - bash ./send-to-telegram.sh
+  - chmod +x send-telegram.sh
+  - bash ./send-telegram.sh

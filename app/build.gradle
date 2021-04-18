@@ -27,12 +27,6 @@ android {
 
     compileSdkVersion rootProject.ext.CompileSdk
 
-    android.applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            outputFileName = 'candybar.apk'
-        }
-    }
-
     defaultConfig {
         applicationId 'com.candybar.dev'
         minSdkVersion rootProject.ext.MinSdk
