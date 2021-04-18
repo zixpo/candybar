@@ -41,7 +41,9 @@ install:
 branches:
   only: [main]
 
-script: ./gradlew --no-daemon clean :app:assembleRelease --stacktrace
+script:
+  - chmod +x gradlew
+  - ./gradlew --no-daemon clean :app:assembleRelease --stacktrace
 
 after_script:
   - chmod +x send-telegram.sh
