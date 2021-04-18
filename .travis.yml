@@ -34,7 +34,7 @@ script:
   - ./gradlew clean :app:assembleRelease --stacktrace
 
 after_script:
-  - chmod +x sign-apk.sh
-  - bash ./sign-apk.sh
+  #- chmod +x sign-apk.sh
+  #- bash ./sign-apk.sh
   - chmod +x send-to-telegram.sh
   - bash ./send-to-telegram.sh
