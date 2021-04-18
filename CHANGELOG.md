@@ -4,6 +4,7 @@
 - Updated Gradle wrapper and plugin
 - Now hides home title if it's empty
 - Upgrade storage system to support Android 11
+- Now targets Android 11
 
 # v3.9.1
 - Fix Gmail not showing up when sending icon request in Android 11

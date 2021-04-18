@@ -15,6 +15,7 @@
         <item>Updated Gradle wrapper and plugin</item>
         <item>Now hides home title if it\'s empty</item>
         <item>Upgrade storage system to support Android 11</item>
+        <item>Now targets Android 11</item>
     </string-array>
 
 </resources>

@@ -23,8 +23,8 @@ allprojects {
         VersionName = '3.9.2'
 
         MinSdk = 15
-        TargetSdk = 29
-        CompileSdk = 29
+        TargetSdk = 30
+        CompileSdk = 30
     }
 }
 
