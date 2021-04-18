@@ -19,6 +19,9 @@ android {
             keyPassword 'candybar'
             storeFile file('candybar.jks')
             storePassword 'candybar'
+
+            v1SigningEnabled true
+            v2SigningEnabled true
         }
     }
 
@@ -49,6 +52,7 @@ android {
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

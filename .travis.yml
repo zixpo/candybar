@@ -18,7 +18,7 @@ android:
 
 branches:
   only:
-    - master
+    - main
 
 before_install:
   - chmod +x gradlew

@@ -21,7 +21,6 @@ apply plugin: 'com.android.library'
 buildscript {
     repositories {
         mavenCentral()
-        jcenter()
         maven { url 'https://jitpack.io' }
     }
 }
@@ -66,13 +65,13 @@ android {
 dependencies {
     implementation project(':extLibs:PreLollipopTransitions')
 
-    api 'androidx.annotation:annotation:1.1.0'
+    api 'androidx.annotation:annotation:1.2.0'
     api 'androidx.appcompat:appcompat:1.2.0'
     api 'com.google.android.apps.muzei:muzei-api:3.4.0'
     api 'androidx.multidex:multidex:2.0.1'
 
     implementation 'androidx.work:work-runtime:2.5.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.palette:palette:1.0.0'
 
