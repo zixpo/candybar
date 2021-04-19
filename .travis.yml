@@ -12,10 +12,11 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-$ANDROID_BUILD_TOOLS
-    - android-$ANDROID_API
   licenses:
     - '.+'
+before_install:
+  - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS"
+  - yes | sdkmanager "platforms;android-$ANDROID_API"
 
 cache:
   directories:
@@ -25,6 +26,7 @@ cache:
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 
 before_script:
   - chmod +x gradlew
