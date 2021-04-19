@@ -1,46 +1,35 @@
-language: java
+language: android
 dist: trusty
 jdk: oraclejdk8
-
+branches:
+  only: [main]
 env:
   global:
     - ANDROID_API=30
     - ANDROID_BUILD_TOOLS=30.0.0
-    - ANDROID_HOME=$HOME/android-sdk
 
-before_cache:
-  # Do not cache a few Gradle files/directories (see https://docs.travis-ci.com/user/languages/java/#Caching)
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-$ANDROID_BUILD_TOOLS
+    - android-$ANDROID_API
+  licenses:
+    - '.+'
 
 cache:
   directories:
-    # Android SDK
-    - $HOME/android-cmdline-tools
-    - $HOME/android-sdk
-
-    # Gradle dependencies
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
-
-    # Android build cache (see http://tools.android.com/tech-docs/build-cache)
     - $HOME/.android/build-cache
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
-install:
-  # Download and unzip the Android command line tools (if not already there thanks to the cache mechanism)
-  # Latest version of this file available here: https://developer.android.com/studio/#command-tools
-  - if test ! -e $HOME/android-cmdline-tools/cmdline-tools.zip ; then curl https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip > $HOME/android-cmdline-tools/cmdline-tools.zip ; fi
-  - unzip -qq -n $HOME/android-cmdline-tools/cmdline-tools.zip -d $HOME/android-cmdline-tools
-
-  # Install or update Android SDK components (will not do anything if already up to date thanks to the cache mechanism)
-  - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$ANDROID_HOME 'platform-tools' > /dev/null
-  # Latest version of build-tools available here: https://developer.android.com/studio/releases/build-tools.html
-  - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$ANDROID_HOME "build-tools;$ANDROID_BUILD_TOOLS" > /dev/null
-  - echo y | $HOME/android-cmdline-tools/tools/bin/sdkmanager --sdk_root=$ANDROID_HOME "platforms;android-$ANDROID_API" > /dev/null
-
-branches:
-  only: [main]
-
-before_script: chmod +x gradlew
-script: ./gradlew --no-daemon clean :app:assembleRelease --stacktrace
-after_success: chmod +x send-telegram.sh && bash ./send-telegram.sh
+before_script:
+  - chmod +x gradlew
+  - chmod +x send-telegram.sh
+script:
+  - ./gradlew --no-daemon clean :app:assembleRelease --stacktrace
+after_success:
+  - bash ./send-telegram.sh
