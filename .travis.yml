@@ -1,5 +1,7 @@
+os: linux
+dist: xenial
+arch: arm64-graviton2
 language: android
-dist: trusty
 jdk: oraclejdk8
 branches:
   only: [main]
