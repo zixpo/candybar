@@ -31,9 +31,23 @@ android {
         applicationId 'com.candybar.dev'
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode rootProject.ext.VersionCode
+        versionCode rootProject.ext.VersionCode * 10 + 1
         versionName rootProject.ext.VersionName
         multiDexEnabled true
+
+        // This code loads the license key from `local.properties` file or `LICENSE_KEY` environment variable
+        // and saves it as build config field named "LICENSE_KEY"
+        String licenseKey = ''
+        Properties props = new Properties()
+        File propFile = rootProject.file('local.properties')
+        if (propFile.exists()) {
+            props.load(propFile.newDataInputStream())
+            licenseKey = props.get('license_key', '')
+        }
+        if (licenseKey.contentEquals('')) {
+            licenseKey = System.getenv('LICENCE_KEY')
+        }
+        buildConfigField 'String', 'LICENSE_KEY', "\"$licenseKey\""
 
         // Remove '/*' and '*/' below to enable OneSignal
         /*
