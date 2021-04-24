@@ -4,7 +4,7 @@ fi
 
 readonly local last_commit_log=$(git log -1 --pretty=format:'%s %b')
 
-if [[ "$(echo "$last_commit_log" | grep -c '\[skip apk\]')" -gt 0 ]]; then
+if [ "$(echo "$last_commit_log" | grep -c '\[skip apk\]')" -gt 0 ]; then
   echo 'Found `[skip apk]` tag. Skipping APK publishing.'
   exit 0
 fi
@@ -23,6 +23,6 @@ mv 'app-release.apk' $name
 
 curl -v \
   -F document=@"$name" \
-  -F chat_id=@candybar_builds \
+  -F chat_id=\@candybar_builds \
   -F disable_notification=true \
   https://api.telegram.org/bot$BOT_TOKEN/sendDocument
