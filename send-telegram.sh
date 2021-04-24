@@ -2,7 +2,7 @@ if [ "$TRAVIS_PULL_REQUEST" = true ]; then
   exit 0
 fi
 
-readonly local last_commit_log=$(git log -1 --pretty=format:'%s %b')
+last_commit_log=$(git log -1 --pretty=format:'%s %b')
 
 if [ "$(echo "$last_commit_log" | grep -c '\[skip apk\]')" -gt 0 ]; then
   echo 'Found `[skip apk]` tag. Skipping APK publishing.'
@@ -11,7 +11,7 @@ fi
 
 cd $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/
 
-local name='CandyBar-'
+name='CandyBar-'
 if [ "$TRAVIS_TAG" ]; then
   name+=TRAVIS_TAG
 else
