@@ -19,7 +19,7 @@ else
 fi
 apk_name+='.apk'
 
-mv 'app-release.apk' $name
+mv 'app-release.apk' $apk_name
 
 curl -v \
   --form-string chat_id=@candybar_builds \
