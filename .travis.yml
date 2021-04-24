@@ -13,8 +13,8 @@ env:
 android:
   components:
     - tools
-    - tools
     - platform-tools
+    - tools
   licenses:
     - '.+'
 before_install:
