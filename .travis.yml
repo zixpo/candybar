@@ -4,7 +4,7 @@ arch: arm64-graviton2
 language: android
 jdk: oraclejdk8
 branches:
-  only: [main]
+  except: [translations]
 env:
   global:
     - ANDROID_API=30
@@ -28,7 +28,6 @@ cache:
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
 
 before_script:
   - chmod +x gradlew
