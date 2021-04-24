@@ -13,6 +13,7 @@ env:
 android:
   components:
     - tools
+    - tools
     - platform-tools
   licenses:
     - '.+'
