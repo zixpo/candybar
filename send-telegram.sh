@@ -23,6 +23,6 @@ mv 'app-release.apk' $name
 
 curl -v \
   -F document=@"$name" \
-  -F chat_id=\@candybar_builds \
+  -F chat_id=\\@candybar_builds \
   -F disable_notification=true \
   https://api.telegram.org/bot$BOT_TOKEN/sendDocument
