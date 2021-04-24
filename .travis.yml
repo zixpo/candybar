@@ -34,6 +34,6 @@ before_script:
   - chmod +x gradlew
   - chmod +x send-telegram.sh
 script:
-  - ./gradlew --no-daemon clean :app:assembleRelease --stacktrace
+  - ./gradlew clean :app:assembleRelease --stacktrace
 after_success:
   - bash ./send-telegram.sh
