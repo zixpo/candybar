@@ -2,26 +2,27 @@ if [ "$TRAVIS_PULL_REQUEST" = true ]; then
   exit 0
 fi
 
-last_commit_log=$(git log -1 --pretty=format:'%s %b')
+LAST_COMMIT_LOG=$(git log -1 --pretty=format:'%s %b')
 
-if [ "$(echo "$last_commit_log" | grep -c '\[skip apk\]')" -gt 0 ]; then
+if [ "$(echo "$LAST_COMMIT_LOG" | grep -c '\[skip apk\]')" -gt 0 ]; then
   echo 'Found `[skip apk]` tag. Skipping APK publishing.'
   exit 0
 fi
 
 cd $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/
 
-name='CandyBar-'
+apk_name='CandyBar-'
 if [ "$TRAVIS_TAG" ]; then
-  name+=TRAVIS_TAG
+  apk_name+="$TRAVIS_TAG"
 else
-  name+=`date +%d%m%Y-%H%M`
+  apk_name+=$(date +%d%m%Y-%H%M)
 fi
-name+='.apk'
+apk_name+='.apk'
 
 mv 'app-release.apk' $name
 
 curl -v \
-  -F document=@"$name" \
+  --form-string chat_id=@candybar_builds \
+  -F document=@"$apk_name" \
   -F disable_notification=true \
-  https://api.telegram.org/bot$BOT_TOKEN/sendDocument?chat_id=@candybar_builds
+  https://api.telegram.org/bot$BOT_TOKEN/sendDocument
