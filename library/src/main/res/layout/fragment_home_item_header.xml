@@ -41,7 +41,7 @@
             android:textSize="@dimen/text_title"
             fontPath="fonts/Font-Medium.ttf" />
 
-        <org.sufficientlysecure.htmltextview.HtmlTextView
+        <TextView
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

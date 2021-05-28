@@ -4,13 +4,13 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.text.HtmlCompat;
 
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
-
-import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import candybar.lib.R;
 
@@ -68,13 +68,13 @@ public class ChangelogAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
 
-        holder.changelog.setHtml(mChangelog[position]);
+        holder.changelog.setText(HtmlCompat.fromHtml(mChangelog[position], HtmlCompat.FROM_HTML_MODE_COMPACT));
         return view;
     }
 
     private class ViewHolder {
 
-        private final HtmlTextView changelog;
+        private final TextView changelog;
 
         ViewHolder(View view) {
             changelog = view.findViewById(R.id.changelog);

@@ -27,6 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -41,7 +42,6 @@ import com.google.android.material.card.MaterialCardView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -199,7 +199,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 headerViewHolder.title.setVisibility(View.GONE);
             }
 
-            headerViewHolder.content.setHtml(mContext.getResources().getString(R.string.home_description));
+            headerViewHolder.content.setText(HtmlCompat.fromHtml(
+                    mContext.getResources().getString(R.string.home_description), HtmlCompat.FROM_HTML_MODE_COMPACT));
 
             String uri = mContext.getResources().getString(R.string.home_image);
             if (ColorHelper.isValidColor(uri)) {
@@ -328,7 +329,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private final HeaderView image;
         private final TextView title;
-        private final HtmlTextView content;
+        private final TextView content;
 
         HeaderViewHolder(View itemView) {
             super(itemView);

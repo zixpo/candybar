@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,8 +32,6 @@ import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
 import com.mikhaellopez.circularimageview.CircularImageView;
-
-import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import candybar.lib.BuildConfig;
 import candybar.lib.R;
@@ -192,7 +191,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             super(itemView);
             image = itemView.findViewById(R.id.image);
             profile = itemView.findViewById(R.id.profile);
-            HtmlTextView subtitle = itemView.findViewById(R.id.subtitle);
+            TextView subtitle = itemView.findViewById(R.id.subtitle);
             RecyclerView recyclerView = itemView.findViewById(R.id.recyclerview);
             recyclerView.setItemAnimator(new DefaultItemAnimator());
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, true));
@@ -253,7 +252,8 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 profile.setShadowColor(Color.TRANSPARENT);
             }
 
-            subtitle.setHtml(mContext.getResources().getString(R.string.about_desc));
+            subtitle.setText(HtmlCompat.fromHtml(
+                    mContext.getResources().getString(R.string.about_desc), HtmlCompat.FROM_HTML_MODE_COMPACT));
         }
     }
 
