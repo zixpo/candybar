@@ -18,6 +18,7 @@ import java.util.List;
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.IconShapeAdapter;
 import candybar.lib.fragments.IconsFragment;
+import candybar.lib.fragments.IconsSearchFragment;
 import candybar.lib.helpers.IconShapeHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.IconShape;
@@ -88,7 +89,7 @@ public class IconShapeChooserFragment extends DialogFragment {
         super.onActivityCreated(savedInstanceState);
 
         List<IconShape> iconShapes = IconShapeHelper.getShapes();
-        int currentShape = Preferences.get(getActivity()).getIconShape();
+        int currentShape = mShape = Preferences.get(getActivity()).getIconShape();
         int currentShapeIndex = 0;
 
         for (int i = 0; i < iconShapes.size(); i++) {
@@ -105,8 +106,12 @@ public class IconShapeChooserFragment extends DialogFragment {
     @Override
     @SuppressWarnings("ConstantConditions")
     public void onDismiss(@NonNull DialogInterface dialog) {
-        Preferences.get(getActivity()).setIconShape(mShape);
-        IconsFragment.reloadIcons();
+        int prevShape = Preferences.get(getActivity()).getIconShape();
+        if (prevShape != mShape) {
+            Preferences.get(getActivity()).setIconShape(mShape);
+            IconsFragment.reloadIcons();
+            IconsSearchFragment.reloadIcons();
+        }
         super.onDismiss(dialog);
     }
 

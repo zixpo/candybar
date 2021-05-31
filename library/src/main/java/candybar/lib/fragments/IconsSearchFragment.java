@@ -31,6 +31,7 @@ import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -39,6 +40,7 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.IconsAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.fragments.dialog.IconShapeChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.AlphanumComparator;
@@ -75,6 +77,8 @@ public class IconsSearchFragment extends Fragment {
     private AsyncTask<Void, Void, ?> mAsyncTask;
 
     public static final String TAG = "icons_search";
+
+    private static WeakReference<IconsAdapter> currentAdapter;
 
     @Nullable
     @Override
@@ -158,6 +162,11 @@ public class IconsSearchFragment extends Fragment {
                 return true;
             }
         });
+
+        iconShape.setOnMenuItemClickListener(menuItem -> {
+            IconShapeChooserFragment.showIconShapeChooser(getActivity().getSupportFragmentManager());
+            return false;
+        });
     }
 
     @Override
@@ -170,6 +179,7 @@ public class IconsSearchFragment extends Fragment {
     @Override
     public void onDestroy() {
         if (mAsyncTask != null) mAsyncTask.cancel(true);
+        currentAdapter = null;
         super.onDestroy();
     }
 
@@ -187,6 +197,11 @@ public class IconsSearchFragment extends Fragment {
         } catch (Exception e) {
             LogUtil.e(Log.getStackTraceString(e));
         }
+    }
+
+    public static void reloadIcons() {
+        if (currentAdapter != null && currentAdapter.get() != null)
+            currentAdapter.get().reloadIcons();
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -268,6 +283,7 @@ public class IconsSearchFragment extends Fragment {
             mAsyncTask = null;
             if (aBoolean) {
                 mAdapter = new IconsAdapter(getActivity(), icons, mFragment);
+                currentAdapter = new WeakReference<>(mAdapter);
                 mRecyclerView.setAdapter(mAdapter);
                 filterSearch("");
                 mSearchView.requestFocus();

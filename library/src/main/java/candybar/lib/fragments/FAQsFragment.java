@@ -17,7 +17,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -103,7 +102,7 @@ public class FAQsFragment extends Fragment {
         MenuItem search = menu.findItem(R.id.menu_search);
         int color = ColorHelper.getAttributeColor(getActivity(), R.attr.toolbar_icon);
 
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
+        SearchView searchView = (SearchView) search.getActionView();
         searchView.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         searchView.setQueryHint(getActivity().getResources().getString(R.string.search_faqs));
         searchView.setMaxWidth(Integer.MAX_VALUE);
