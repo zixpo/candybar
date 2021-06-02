@@ -5,11 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -27,14 +30,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
@@ -226,11 +235,32 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
             if (mHomes.get(finalPosition).getIcon() != -1) {
                 if (mHomes.get(finalPosition).getType() == Home.Type.DIMENSION) {
-                    contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(
-                            DrawableHelper.getResizedDrawable(mContext,
-                                    DrawableHelper.get(mContext, mHomes.get(finalPosition).getIcon()),
-                                    40),
-                            null, null, null);
+                    Glide.with(mContext)
+                            .asBitmap()
+                            .load("drawable://" + mHomes.get(finalPosition).getIcon())
+                            .skipMemoryCache(true)
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+                            .listener(new RequestListener<Bitmap>() {
+                                @Override
+                                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+                                    return true;
+                                }
+
+                                @Override
+                                public boolean onResourceReady(Bitmap bitmap, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
+                                    new Handler(Looper.getMainLooper()).post(() -> {
+                                        // Using RoundedBitmapDrawable because BitmapDrawable is deprecated
+                                        RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(
+                                                mContext.getResources(), bitmap);
+                                        drawable.setCornerRadius(0);
+                                        contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(
+                                                DrawableHelper.getResizedDrawable(mContext, drawable, 40),
+                                                null, null, null);
+                                    });
+                                    return true;
+                                }
+                            })
+                            .submit();
                 } else {
                     contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
                             mContext, mHomes.get(finalPosition).getIcon(), color), null, null, null);

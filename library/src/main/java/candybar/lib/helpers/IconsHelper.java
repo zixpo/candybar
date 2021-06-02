@@ -74,7 +74,7 @@ public class IconsHelper {
                 if (parser.getName().equals("category")) {
                     String title = parser.getAttributeValue(null, "title");
                     if (!sectionTitle.equals(title)) {
-                        if (sectionTitle.length() > 0) {
+                        if (sectionTitle.length() > 0 && icons.size() > 0) {
                             count += icons.size();
                             sections.add(new Icon(sectionTitle, icons));
                         }
@@ -99,7 +99,9 @@ public class IconsHelper {
                 CandyBarApplication.getConfiguration().getCustomIconsCount() == 0) {
             CandyBarApplication.getConfiguration().setCustomIconsCount(count);
         }
-        sections.add(new Icon(sectionTitle, icons));
+        if (icons.size() > 0) {
+            sections.add(new Icon(sectionTitle, icons));
+        }
         parser.close();
         return sections;
     }
