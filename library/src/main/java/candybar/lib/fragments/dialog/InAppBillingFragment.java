@@ -19,15 +19,21 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.anjlab.android.iab.v3.SkuDetails;
+import com.android.billingclient.api.BillingClient;
+import com.android.billingclient.api.SkuDetails;
+import com.android.billingclient.api.SkuDetailsParams;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import java.util.Arrays;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.InAppBillingAdapter;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.utils.InAppBillingProcessor;
+import candybar.lib.utils.InAppBillingClient;
 import candybar.lib.utils.listeners.InAppBillingListener;
 
 /*
@@ -194,26 +200,35 @@ public class InAppBillingFragment extends DialogFragment {
                 try {
                     Thread.sleep(1);
 
-                    for (int i = 0; i < mProductsId.length; i++) {
-                        SkuDetails product = InAppBillingProcessor.get(getActivity()).getProcessor()
-                                .getPurchaseListingDetails(mProductsId[i]);
-                        if (product != null) {
-                            InAppBilling inAppBilling;
-                            String title = product.title.substring(0, product.title.lastIndexOf("("));
-                            if (mProductsCount != null) {
-                                inAppBilling = new InAppBilling(product.priceText, mProductsId[i],
-                                        title, mProductsCount[i]);
-                            } else {
-                                inAppBilling = new InAppBilling(product.priceText, mProductsId[i],
-                                        title);
-                            }
-                            inAppBillings[i] = inAppBilling;
-                        } else {
-                            if (i == mProductsId.length - 1)
-                                return false;
-                        }
-                    }
-                    return true;
+                    AtomicBoolean isSuccess = new AtomicBoolean(false);
+                    CountDownLatch doneSignal = new CountDownLatch(1);
+
+                    InAppBillingClient.get(getActivity()).getClient().querySkuDetailsAsync(
+                            SkuDetailsParams.newBuilder()
+                                    .setSkusList(Arrays.asList(mProductsId))
+                                    .setType(BillingClient.SkuType.INAPP)
+                                    .build(),
+                            (billingResult, skuDetailsList) -> {
+                                if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
+                                    if (skuDetailsList != null) {
+                                        for (int i = 0; i < skuDetailsList.size(); i++) {
+                                            SkuDetails skuDetails = skuDetailsList.get(i);
+                                            inAppBillings[i] = mProductsCount != null
+                                                    ? new InAppBilling(skuDetails, mProductsId[i], mProductsCount[i])
+                                                    : new InAppBilling(skuDetails, mProductsId[i]);
+                                        }
+                                        isSuccess.set(true);
+                                    }
+                                } else {
+                                    LogUtil.e("Failed to load SKU details. Response Code: " + billingResult.getResponseCode());
+                                }
+
+                                doneSignal.countDown();
+                            });
+
+                    doneSignal.await();
+
+                    return isSuccess.get();
                 } catch (Exception e) {
                     LogUtil.e(Log.getStackTraceString(e));
                     return false;

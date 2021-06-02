@@ -28,7 +28,5 @@ public interface RequestListener {
 
     void onBuyPremiumRequest();
 
-    void onPremiumRequestBought();
-
     void onRequestBuilt(Intent intent, int type);
 }

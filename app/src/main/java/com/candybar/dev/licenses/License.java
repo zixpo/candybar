@@ -50,10 +50,7 @@ public class License {
      * Format: new InAppBilling("premium request product id", number of icons)
      */
     private static final InAppBilling[] PREMIUM_REQUEST_PRODUCTS = new InAppBilling[]{
-            new InAppBilling("your.product.id", 1),
-            new InAppBilling("your.product.id", 2),
-            new InAppBilling("your.product.id", 3),
-            new InAppBilling("your.product.id", 4)
+            new InAppBilling("premium_1", 2)
     };
 
     /*

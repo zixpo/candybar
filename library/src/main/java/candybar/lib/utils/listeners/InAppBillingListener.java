@@ -1,5 +1,7 @@
 package candybar.lib.utils.listeners;
 
+import com.android.billingclient.api.Purchase;
+
 import candybar.lib.items.InAppBilling;
 
 /*
@@ -26,7 +28,7 @@ public interface InAppBillingListener {
 
     void onInAppBillingSelected(int type, InAppBilling product);
 
-    void onInAppBillingConsume(int type, String productId);
+    void onProcessPurchase(Purchase purchase);
 
     void onInAppBillingRequest();
 

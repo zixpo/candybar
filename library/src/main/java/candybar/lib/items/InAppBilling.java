@@ -18,12 +18,13 @@ package candybar.lib.items;
  * limitations under the License.
  */
 
+import com.android.billingclient.api.SkuDetails;
+
 public class InAppBilling {
 
     private final String mProductId;
-    private String mProductName;
-    private String mPrice;
     private int mProductCount;
+    private SkuDetails mSkuDetails;
 
     public static final int DONATE = 0;
     public static final int PREMIUM_REQUEST = 1;
@@ -32,17 +33,15 @@ public class InAppBilling {
         mProductId = productId;
     }
 
-    public InAppBilling(String price, String productId, String productName) {
-        mPrice = price;
+    public InAppBilling(SkuDetails skuDetails, String productId) {
         mProductId = productId;
-        mProductName = productName;
+        mSkuDetails = skuDetails;
     }
 
-    public InAppBilling(String price, String productId, String productName, int productCount) {
-        mPrice = price;
+    public InAppBilling(SkuDetails skuDetails, String productId, int productCount) {
         mProductId = productId;
-        mProductName = productName;
         mProductCount = productCount;
+        mSkuDetails = skuDetails;
     }
 
     public InAppBilling(String productId, int productCount) {
@@ -51,7 +50,7 @@ public class InAppBilling {
     }
 
     public String getPrice() {
-        return mPrice;
+        return mSkuDetails.getPrice();
     }
 
     public String getProductId() {
@@ -59,11 +58,15 @@ public class InAppBilling {
     }
 
     public String getProductName() {
-        return mProductName;
+        String title = mSkuDetails.getTitle();
+        return title.substring(0, title.lastIndexOf("(")).trim();
     }
 
     public int getProductCount() {
         return mProductCount;
     }
 
+    public SkuDetails getSkuDetails() {
+        return mSkuDetails;
+    }
 }
