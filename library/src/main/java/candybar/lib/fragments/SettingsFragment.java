@@ -218,8 +218,6 @@ public class SettingsFragment extends Fragment {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
-
             dialog = new MaterialDialog.Builder(getActivity())
                     .typeface(
                             TypefaceHelper.getMedium(getActivity()),
@@ -287,7 +285,6 @@ public class SettingsFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 

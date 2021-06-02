@@ -160,7 +160,6 @@ public class FAQsFragment extends Fragment {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
             faqs = new ArrayList<>();
             questions = getResources().getStringArray(R.array.questions);
             answers = getResources().getStringArray(R.array.answers);
@@ -188,7 +187,6 @@ public class FAQsFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 

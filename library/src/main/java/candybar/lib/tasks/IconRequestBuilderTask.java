@@ -162,7 +162,6 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
-        super.onPostExecute(aBoolean);
         if (aBoolean) {
             try {
                 if (mCallback != null && mCallback.get() != null)

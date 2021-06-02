@@ -106,7 +106,6 @@ public class LicensesFragment extends DialogFragment {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
             sb = new StringBuilder();
         }
 
@@ -136,7 +135,6 @@ public class LicensesFragment extends DialogFragment {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 

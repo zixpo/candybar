@@ -163,7 +163,6 @@ public class IntentChooserFragment extends DialogFragment {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
             apps = new ArrayList<>();
         }
 
@@ -237,7 +236,6 @@ public class IntentChooserFragment extends DialogFragment {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 

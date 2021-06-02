@@ -211,7 +211,6 @@ public class IconsSearchFragment extends Fragment {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
             icons = new ArrayList<>();
         }
 
@@ -276,7 +275,6 @@ public class IconsSearchFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 

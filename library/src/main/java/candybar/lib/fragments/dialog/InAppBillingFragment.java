@@ -188,7 +188,6 @@ public class InAppBillingFragment extends DialogFragment {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
             mProgress.setVisibility(View.VISIBLE);
             inAppBillings = new InAppBilling[mProductsId.length];
         }
@@ -239,7 +238,6 @@ public class InAppBillingFragment extends DialogFragment {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 

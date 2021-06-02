@@ -117,7 +117,6 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
-        super.onPostExecute(aBoolean);
         if (mContext.get() == null) return;
         if (((AppCompatActivity) mContext.get()).isFinishing()) return;
 

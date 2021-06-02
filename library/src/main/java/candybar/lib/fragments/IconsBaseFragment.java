@@ -200,7 +200,6 @@ public class IconsBaseFragment extends Fragment {
     private class IconsLoader extends AsyncTask<Void, Void, Boolean> {
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
             if (CandyBarMainActivity.sSections == null) {
                 mProgress.setVisibility(View.VISIBLE);
             }
@@ -262,7 +261,6 @@ public class IconsBaseFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
@@ -292,7 +290,6 @@ public class IconsBaseFragment extends Fragment {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
             adapter = (PagerIconsAdapter) mPager.getAdapter();
         }
 

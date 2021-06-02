@@ -160,7 +160,6 @@ public class IconsLoaderTask extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
-        super.onPostExecute(aBoolean);
         if (aBoolean) {
             if (mHome == null) return;
             if (mContext.get() == null) return;

@@ -187,7 +187,6 @@ public class WallpapersFragment extends Fragment {
         @Override
         @SuppressWarnings("ConstantConditions")
         protected void onPreExecute() {
-            super.onPreExecute();
             if (!refreshing) mProgress.setVisibility(View.VISIBLE);
             else mSwipe.setRefreshing(true);
 
@@ -264,7 +263,6 @@ public class WallpapersFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 

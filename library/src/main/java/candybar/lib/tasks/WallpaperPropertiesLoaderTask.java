@@ -121,7 +121,6 @@ public class WallpaperPropertiesLoaderTask extends AsyncTask<Void, Void, Boolean
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
-        super.onPostExecute(aBoolean);
         if (aBoolean && mContext.get() != null && !((AppCompatActivity) mContext.get()).isFinishing()) {
             if (mWallpaper.getSize() <= 0) {
                 try {

@@ -119,7 +119,6 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (context.get() == null) return;
             if (context.get() instanceof Activity) {
                 if (((Activity) context.get()).isFinishing()) return;

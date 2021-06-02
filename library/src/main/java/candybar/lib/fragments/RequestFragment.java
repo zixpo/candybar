@@ -330,7 +330,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
             if (CandyBarMainActivity.sMissedApps == null) {
                 mProgress.setVisibility(View.VISIBLE);
             }
@@ -358,7 +357,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
@@ -395,8 +393,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         @Override
         @SuppressWarnings("ConstantConditions")
         protected void onPreExecute() {
-            super.onPreExecute();
-
             if (Preferences.get(getActivity()).isPremiumRequest()) {
                 isArctic = RequestHelper.isPremiumArcticEnabled(getActivity());
                 arcticApiKey = RequestHelper.getPremiumArcticApiKey(getActivity());
@@ -513,7 +509,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
@@ -564,8 +559,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         @Override
         @SuppressWarnings("ConstantConditions")
         protected void onPreExecute() {
-            super.onPreExecute();
-
             dialog = new MaterialDialog.Builder(getActivity())
                     .typeface(
                             TypefaceHelper.getMedium(getActivity()),

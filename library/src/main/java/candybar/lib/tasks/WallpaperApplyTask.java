@@ -369,7 +369,6 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
-        super.onPostExecute(aBoolean);
         if (mContext.get() == null) {
             return;
         }

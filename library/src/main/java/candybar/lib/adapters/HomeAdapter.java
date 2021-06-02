@@ -450,8 +450,6 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
-
             loadingDialog = new MaterialDialog.Builder(mContext)
                     .typeface(
                             TypefaceHelper.getMedium(mContext),
@@ -518,8 +516,6 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         @SuppressLint("SetTextI18n")
         @Override
         protected void onPostExecute(Boolean aBoolean) {
-            super.onPostExecute(aBoolean);
-
             loadingDialog.dismiss();
             loadingDialog = null;
 

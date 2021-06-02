@@ -70,7 +70,6 @@ public class ReportBugsTask extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected void onPreExecute() {
-        super.onPreExecute();
         MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext.get());
         builder.typeface(
                 TypefaceHelper.getMedium(mContext.get()),
@@ -122,7 +121,6 @@ public class ReportBugsTask extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
-        super.onPostExecute(aBoolean);
         if (mContext.get() == null) return;
         if (((AppCompatActivity) mContext.get()).isFinishing()) return;
 
