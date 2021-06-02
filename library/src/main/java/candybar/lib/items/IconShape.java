@@ -23,9 +23,9 @@ public class IconShape {
     private final String mName;
     private final int mShape;
 
-    public IconShape(String name, int locale) {
+    public IconShape(String name, int shape) {
         mName = name;
-        mShape = locale;
+        mShape = shape;
     }
 
     public String getName() {

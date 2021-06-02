@@ -9,6 +9,7 @@ import sarsamurmu.adaptiveicon.AdaptiveIcon;
 public class IconShapeHelper {
     public static List<IconShape> getShapes() {
         List<IconShape> shapes = new ArrayList<>();
+        shapes.add(new IconShape("System default", -1));
         shapes.add(new IconShape("Circle", AdaptiveIcon.PATH_CIRCLE));
         shapes.add(new IconShape("Square", AdaptiveIcon.PATH_SQUARE));
         shapes.add(new IconShape("Rounded Square", AdaptiveIcon.PATH_ROUNDED_SQUARE));

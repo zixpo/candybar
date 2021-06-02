@@ -18,7 +18,6 @@ import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.items.Language;
 import candybar.lib.items.Theme;
-import sarsamurmu.adaptiveicon.AdaptiveIcon;
 
 /*
  * CandyBar - Material Dashboard
@@ -111,7 +110,7 @@ public class Preferences {
     }
 
     public int getIconShape() {
-        return getSharedPreferences().getInt(KEY_ICON_SHAPE, AdaptiveIcon.PATH_CIRCLE);
+        return getSharedPreferences().getInt(KEY_ICON_SHAPE, -1); // -1 is System default
     }
 
     public boolean isTimeToShowHomeIntro() {

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -78,6 +80,15 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
         if (drawable instanceof BitmapDrawable) return ((BitmapDrawable) drawable).getBitmap();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && drawable instanceof AdaptiveIconDrawable) {
+            if (Preferences.get(mContext).getIconShape() == -1) {
+                // System default icon shape
+                Bitmap bitmap = Bitmap.createBitmap(256, 256, Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(bitmap);
+                drawable.setBounds(new Rect(0, 0, 256, 256));
+                drawable.draw(canvas);
+                return bitmap;
+            }
+
             return new AdaptiveIcon()
                     .setDrawable((AdaptiveIconDrawable) drawable)
                     .setPath(Preferences.get(mContext).getIconShape())
