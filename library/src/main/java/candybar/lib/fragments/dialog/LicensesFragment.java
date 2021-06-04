@@ -3,12 +3,15 @@ package candybar.lib.fragments.dialog;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.webkit.WebView;
 
+import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -133,6 +136,13 @@ public class LicensesFragment extends DialogFragment {
             return false;
         }
 
+        private String getColorHex(@AttrRes int res) {
+            TypedValue typedValue = new TypedValue();
+            Resources.Theme theme = getActivity().getTheme();
+            theme.resolveAttribute(res, typedValue, true);
+            return String.format("#%06X", (0xFFFFFF & typedValue.data));
+        }
+
         @Override
         protected void onPostExecute(Boolean aBoolean) {
             if (getActivity() == null) return;
@@ -141,9 +151,13 @@ public class LicensesFragment extends DialogFragment {
             mAsyncTask = null;
             LocaleHelper.setLocale(getActivity());
             if (aBoolean) {
+                String html = sb.toString()
+                        .replace("{{textColor}}", getColorHex(android.R.attr.textColorPrimary))
+                        .replace("{{bodyColor}}", getColorHex(R.attr.main_background));
+
                 mWebView.setVisibility(View.VISIBLE);
                 mWebView.loadDataWithBaseURL(null,
-                        sb.toString(), "text/html", "utf-8", null);
+                        html, "text/html", "utf-8", null);
             }
         }
     }
