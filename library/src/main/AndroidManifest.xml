@@ -63,8 +63,6 @@
             android:theme="@style/WallpaperTheme"
             android:configChanges="uiMode|orientation|keyboardHidden|screenSize" />
 
-        <service android:name="candybar.lib.services.CandyBarWallpapersService" />
-
         <service
             android:name="candybar.lib.services.CandyBarService"
             android:stopWithTask="false" />

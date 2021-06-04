@@ -46,7 +46,7 @@ import candybar.lib.preferences.Preferences;
 public class Database extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "candybar_database";
-    private static final int DATABASE_VERSION = 9;
+    private static final int DATABASE_VERSION = 10;
 
     private static final String TABLE_REQUEST = "icon_request";
     private static final String TABLE_PREMIUM_REQUEST = "premium_request";
@@ -64,7 +64,6 @@ public class Database extends SQLiteOpenHelper {
     private static final String KEY_AUTHOR = "author";
     private static final String KEY_THUMB_URL = "thumbUrl";
     private static final String KEY_URL = "url";
-    private static final String KEY_ADDED_ON = "added_on";
     private static final String KEY_MIME_TYPE = "mimeType";
     private static final String KEY_COLOR = "color";
     private static final String KEY_WIDTH = "width";
@@ -115,7 +114,6 @@ public class Database extends SQLiteOpenHelper {
                 KEY_COLOR + " INTEGER DEFAULT 0, " +
                 KEY_WIDTH + " INTEGER DEFAULT 0, " +
                 KEY_HEIGHT + " INTEGER DEFAULT 0, " +
-                KEY_ADDED_ON + " TEXT NOT NULL, " +
                 "UNIQUE (" + KEY_URL + "))";
         db.execSQL(CREATE_TABLE_REQUEST);
         db.execSQL(CREATE_TABLE_PREMIUM_REQUEST);
@@ -148,6 +146,7 @@ public class Database extends SQLiteOpenHelper {
 
         List<Request> requests = getRequestedApps(db);
         List<Request> premiumRequest = getPremiumRequest(db);
+        List<Wallpaper> wallpapers = getWallpapers(db);
 
         for (int i = 0; i < tables.size(); i++) {
             try {
@@ -162,6 +161,8 @@ public class Database extends SQLiteOpenHelper {
         for (Request request : requests) {
             addRequest(db, request);
         }
+
+        addWallpapers(db, wallpapers);
 
         if (oldVersion <= 3) {
             return;
@@ -336,16 +337,21 @@ public class Database extends SQLiteOpenHelper {
         return requests;
     }
 
-    public void addWallpapers(List<?> list) {
-        if (!openDatabase()) {
-            LogUtil.e("Database error: addWallpapers() failed to open database");
-            return;
+    public void addWallpapers(@Nullable SQLiteDatabase db, List<?> list) {
+        SQLiteDatabase database = db;
+        if (database == null) {
+            if (!openDatabase()) {
+                LogUtil.e("Database error: addWallpapers() failed to open database");
+                return;
+            }
+
+            database = mDatabase.get().mSQLiteDatabase;
         }
 
         String query = "INSERT OR IGNORE INTO " + TABLE_WALLPAPERS + " (" + KEY_NAME + "," + KEY_AUTHOR + "," + KEY_URL + ","
-                + KEY_THUMB_URL + "," + KEY_ADDED_ON + ") VALUES (?,?,?,?,?);";
-        SQLiteStatement statement = mDatabase.get().mSQLiteDatabase.compileStatement(query);
-        mDatabase.get().mSQLiteDatabase.beginTransaction();
+                + KEY_THUMB_URL + ") VALUES (?,?,?,?);";
+        SQLiteStatement statement = database.compileStatement(query);
+        database.beginTransaction();
 
         for (int i = 0; i < list.size(); i++) {
             statement.clearBindings();
@@ -372,13 +378,13 @@ public class Database extends SQLiteOpenHelper {
 
                     statement.bindString(3, wallpaper.getURL());
                     statement.bindString(4, wallpaper.getThumbUrl());
-                    statement.bindString(5, TimeHelper.getLongDateTime());
                     statement.execute();
                 }
             }
         }
-        mDatabase.get().mSQLiteDatabase.setTransactionSuccessful();
-        mDatabase.get().mSQLiteDatabase.endTransaction();
+
+        database.setTransactionSuccessful();
+        database.endTransaction();
     }
 
     public void updateWallpaper(Wallpaper wallpaper) {
@@ -467,15 +473,20 @@ public class Database extends SQLiteOpenHelper {
         return wallpaper;
     }
 
-    public List<Wallpaper> getWallpapers() {
-        if (!openDatabase()) {
-            LogUtil.e("Database error: getWallpapers() failed to open database");
-            return new ArrayList<>();
+    public List<Wallpaper> getWallpapers(@Nullable SQLiteDatabase db) {
+        SQLiteDatabase database = db;
+        if (database == null) {
+            if (!openDatabase()) {
+                LogUtil.e("Database error: getWallpapers() failed to open database");
+                return new ArrayList<>();
+            }
+
+            database = mDatabase.get().mSQLiteDatabase;
         }
 
         List<Wallpaper> wallpapers = new ArrayList<>();
-        Cursor cursor = mDatabase.get().mSQLiteDatabase.query(TABLE_WALLPAPERS,
-                null, null, null, null, null, KEY_ADDED_ON + " ASC, " + KEY_ID);
+        Cursor cursor = database.query(TABLE_WALLPAPERS,
+                null, null, null, null, null, KEY_ID + " ASC");
         if (cursor.moveToFirst()) {
             do {
                 int width = cursor.getInt(cursor.getColumnIndex(KEY_WIDTH));
@@ -546,18 +557,6 @@ public class Database extends SQLiteOpenHelper {
 
         mDatabase.get().mSQLiteDatabase.delete("SQLITE_SEQUENCE", "NAME = ?", new String[]{TABLE_REQUEST});
         mDatabase.get().mSQLiteDatabase.delete(TABLE_REQUEST, null, null);
-    }
-
-    public void deleteWallpapers(List<Wallpaper> wallpapers) {
-        if (!openDatabase()) {
-            LogUtil.e("Database error: deleteWallpapers() failed to open database");
-            return;
-        }
-
-        for (Wallpaper wallpaper : wallpapers) {
-            mDatabase.get().mSQLiteDatabase.delete(TABLE_WALLPAPERS, KEY_URL + " = ?",
-                    new String[]{wallpaper.getURL()});
-        }
     }
 
     public void deleteWallpapers() {

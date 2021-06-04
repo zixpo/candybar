@@ -64,7 +64,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
                 .mainActivity(getMainActivity())
                 .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
-        mCloudWallpapersLoader = new CloudWallpapersLoader(this).execute();
+        mCloudWallpapersLoader = new WallpaperThumbPreloader(this).execute();
     }
 
     @Override
@@ -135,11 +135,11 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
         }
     }
 
-    private static class CloudWallpapersLoader extends AsyncTask<Void, Void, Boolean> {
+    private static class WallpaperThumbPreloader extends AsyncTask<Void, Void, Boolean> {
 
         private final WeakReference<Context> context;
 
-        private CloudWallpapersLoader(@NonNull Context context) {
+        private WallpaperThumbPreloader(@NonNull Context context) {
             this.context = new WeakReference<>(context);
         }
 
@@ -148,15 +148,14 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    if (WallpaperHelper.getWallpaperType(context.get()) != WallpaperHelper.CLOUD_WALLPAPERS)
-                        return true;
 
-                    if (Database.get(context.get().getApplicationContext()).getWallpapersCount() > 0)
+                    if (WallpaperHelper.getWallpaperType(context.get()) != WallpaperHelper.CLOUD_WALLPAPERS)
                         return true;
 
                     URL url = new URL(context.get().getString(R.string.wallpaper_json));
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setConnectTimeout(15000);
+
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                         InputStream stream = connection.getInputStream();
                         List list = JsonHelper.parseList(stream);
@@ -166,16 +165,13 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
                             return false;
                         }
 
-                        if (Database.get(context.get().getApplicationContext()).getWallpapersCount() > 0) {
-                            Database.get(context.get().getApplicationContext()).deleteWallpapers();
-                        }
-
-                        Database.get(context.get().getApplicationContext()).addWallpapers(list);
-
                         if (list.size() > 0 && list.get(0) instanceof Map) {
                             Map map = (Map) list.get(0);
                             String thumbUrl = JsonHelper.getThumbUrl(map);
 
+                            // Preload the first wallpaper's thumbnail
+                            // It should show up immediately without any delay on first run
+                            // so that the intro popup works correctly
                             Glide.with(context.get())
                                     .load(thumbUrl)
                                     .diskCacheStrategy(DiskCacheStrategy.RESOURCE)

@@ -57,7 +57,7 @@ public class CandyBarArtWorker extends Worker {
             return Result.failure();
         }
 
-        List<Wallpaper> wallpapers = Database.get(mContext).getWallpapers();
+        List<Wallpaper> wallpapers = Database.get(mContext).getWallpapers(null);
 
         ProviderClient providerClient = ProviderContract.getProviderClient(getApplicationContext(), WORKER_TAG);
 

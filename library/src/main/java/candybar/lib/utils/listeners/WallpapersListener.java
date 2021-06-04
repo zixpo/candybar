@@ -1,9 +1,5 @@
 package candybar.lib.utils.listeners;
 
-import android.content.Intent;
-
-import androidx.annotation.Nullable;
-
 /*
  * CandyBar - Material Dashboard
  *
@@ -24,6 +20,6 @@ import androidx.annotation.Nullable;
 
 public interface WallpapersListener {
 
-    void onWallpapersChecked(@Nullable Intent intent);
+    void onWallpapersChecked(int wallpaperCount);
 
 }

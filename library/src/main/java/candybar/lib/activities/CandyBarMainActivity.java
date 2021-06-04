@@ -2,7 +2,6 @@ package candybar.lib.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
@@ -53,6 +52,10 @@ import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -75,6 +78,7 @@ import candybar.lib.fragments.dialog.InAppBillingFragment;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.ConfigurationHelper;
 import candybar.lib.helpers.IntentHelper;
+import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.LicenseCallbackHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
@@ -87,10 +91,9 @@ import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.items.Request;
+import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.receivers.CandyBarBroadcastReceiver;
 import candybar.lib.services.CandyBarService;
-import candybar.lib.services.CandyBarWallpapersService;
 import candybar.lib.tasks.IconRequestTask;
 import candybar.lib.tasks.IconsLoaderTask;
 import candybar.lib.utils.Extras;
@@ -130,7 +133,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     private String mFragmentTag;
     private int mPosition, mLastPosition;
-    private CandyBarBroadcastReceiver mReceiver;
     private ActionBarDrawerToggle mDrawerToggle;
     private FragmentManager mFragManager;
     private LicenseHelper mLicenseHelper;
@@ -176,7 +178,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             }
         }
 
-        registerBroadcastReceiver();
         startService(new Intent(this, CandyBarService.class));
 
         //Todo: wait until google fix the issue, then enable wallpaper crop again on API 26+
@@ -293,10 +294,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
         if (mLicenseHelper != null) {
             mLicenseHelper.destroy();
-        }
-
-        if (mReceiver != null) {
-            unregisterReceiver(mReceiver);
         }
 
         CandyBarMainActivity.sMissedApps = null;
@@ -599,45 +596,13 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onWallpapersChecked(@Nullable Intent intent) {
-        if (intent != null) {
-            String packageName = intent.getStringExtra("packageName");
-            LogUtil.d("Broadcast received from service with packageName: " + packageName);
+    public void onWallpapersChecked(int wallpaperCount) {
+        Preferences.get(this).setAvailableWallpapersCount(wallpaperCount);
 
-            if (packageName == null)
-                return;
-
-            if (!packageName.equals(getPackageName())) {
-                LogUtil.d("Received broadcast from different packageName, expected: " + getPackageName());
-                return;
-            }
-
-            int size = intent.getIntExtra(Extras.EXTRA_SIZE, 0);
-            int offlineSize = Database.get(this).getWallpapersCount();
-            Preferences.get(this).setAvailableWallpapersCount(size);
-
-            if (size > offlineSize) {
-                if (mFragmentTag.equals(Extras.TAG_HOME)) {
-                    HomeFragment fragment = (HomeFragment) mFragManager.findFragmentByTag(Extras.TAG_HOME);
-                    if (fragment != null) fragment.resetWallpapersCount();
-                }
-
-                LinearLayout container = (LinearLayout) mNavigationView.getMenu().getItem(4).getActionView();
-                if (container != null) {
-                    TextView counter = container.findViewById(R.id.counter);
-                    if (counter == null) return;
-
-                    int newItem = (size - offlineSize);
-                    counter.setText(this.getResources().getString(R.string.txt_new));
-                    counter.append(" " + (newItem > 99 ? "99+" : newItem));
-                    container.setVisibility(View.VISIBLE);
-                    return;
-                }
-            }
+        if (mFragmentTag.equals(Extras.TAG_HOME)) {
+            HomeFragment fragment = (HomeFragment) mFragManager.findFragmentByTag(Extras.TAG_HOME);
+            if (fragment != null) fragment.resetWallpapersCount();
         }
-
-        LinearLayout container = (LinearLayout) mNavigationView.getMenu().getItem(4).getActionView();
-        if (container != null) container.setVisibility(View.GONE);
     }
 
     @Override
@@ -791,25 +756,46 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 .into(image);
     }
 
-    private void registerBroadcastReceiver() {
-        IntentFilter filter = new IntentFilter(CandyBarBroadcastReceiver.PROCESS_RESPONSE);
-        filter.addCategory(Intent.CATEGORY_DEFAULT);
-        mReceiver = new CandyBarBroadcastReceiver();
-        registerReceiver(mReceiver, filter);
-    }
-
     private void checkWallpapers() {
         if (Preferences.get(this).isConnectedToNetwork()) {
-            Intent intent = new Intent(this, CandyBarWallpapersService.class);
-            startService(intent);
-            return;
+            new Thread(() -> {
+                try {
+                    if (WallpaperHelper.getWallpaperType(this) != WallpaperHelper.CLOUD_WALLPAPERS)
+                        return;
+
+                    String wallpaperUrl = getResources().getString(R.string.wallpaper_json);
+                    URL url = new URL(wallpaperUrl);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setConnectTimeout(15000);
+
+                    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                        InputStream stream = connection.getInputStream();
+                        List list = JsonHelper.parseList(stream);
+                        if (list == null) return;
+
+                        List<Wallpaper> wallpapers = new ArrayList<>();
+                        for (int i = 0; i < list.size(); i++) {
+                            Wallpaper wallpaper = JsonHelper.getWallpaper(list.get(i));
+                            if (wallpaper != null) {
+                                if (!wallpapers.contains(wallpaper)) {
+                                    wallpapers.add(wallpaper);
+                                } else {
+                                    LogUtil.e("Duplicate wallpaper found: " + wallpaper.getURL());
+                                }
+                            }
+                        }
+
+                        this.runOnUiThread(() -> onWallpapersChecked(wallpapers.size()));
+                    }
+                } catch (IOException e) {
+                    LogUtil.e(Log.getStackTraceString(e));
+                }
+            }).start();
         }
 
         int size = Preferences.get(this).getAvailableWallpapersCount();
         if (size > 0) {
-            onWallpapersChecked(new Intent()
-                    .putExtra("size", size)
-                    .putExtra("packageName", getPackageName()));
+            onWallpapersChecked(size);
         }
     }
 
