@@ -9,6 +9,10 @@ Check out [Blueprint Dashboard](https://github.com/jahirfiquitiva/blueprint/). I
 
 This is the library of CandyBar Dashboard. It is only used for development purpose. Use the [sample implementation](https://github.com/zixpo/candybar-sample) for making icon packs.
 
+<a href="https://play.google.com/store/apps/details?id=com.candybar.dev">
+  <img height="80" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+</a>
+
 # Features
 - License checker
 - Apply: 32 launchers
@@ -25,7 +29,7 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
   - Clear cache
   - Switch themes - Auto/Light/Dark
   - Restore purchases: Restore premium requests after reinstalling
-- Frequently asked questions with Search
+- Frequently asked questions with search
 - About
 - Donation
 - Changelog: Shown on every update
@@ -47,7 +51,7 @@ the dashboard.
 
 # License
 ```
-Copyright (c) 2014-2020 Dani Mahardhika
+Copyright (c) 2014-2016 Dani Mahardhika
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
