@@ -1,7 +1,5 @@
 package com.candybar.dev.licenses;
 
-import com.candybar.dev.BuildConfig;
-
 import candybar.lib.items.InAppBilling;
 
 public class License {
@@ -34,7 +32,7 @@ public class License {
      * Your license key
      * If your app hasn't published at play store, publish it first as beta, get license key
      */
-    private static final String LICENSE_KEY = BuildConfig.LICENSE_KEY;
+    private static final String LICENSE_KEY = "";
 
     /*
      * NOTE: Make sure your app name in project same as app name at play store listing
