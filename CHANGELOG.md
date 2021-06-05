@@ -1,3 +1,14 @@
+# v3.10.0
+- Updated Gradle wrapper and plugin
+- Migrated away from JCenter
+- Added Hungarian language
+- Now launches clock app when tapped on the clock widget
+- Updated to In-app Billing v3
+- Added `System default` icon shape
+- Fixed icon shape of the random icon viewer
+- Improved wallpaper sorting
+- Update FAQs
+
 # v3.9.2
 - Add Ukrainian language
 - Updated translations

@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">April 18, 2021</string>
+    <string name="changelog_date" translatable="false">June 5, 2021</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,12 +10,15 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Add Ukrainian language</item>
-        <item>Updated translations</item>
         <item>Updated Gradle wrapper and plugin</item>
-        <item>Now hides home title if it\'s empty</item>
-        <item>Upgrade storage system to support Android 11</item>
-        <item>Now targets Android 11</item>
+        <item>Migrated away from JCenter</item>
+        <item>Added Hungarian language</item>
+        <item>Now launches clock app when tapped on the clock widget</item>
+        <item>Updated to In-app Billing v3</item>
+        <item>Added `System default` icon shape</item>
+        <item>Fixed icon shape of the random icon viewer</item>
+        <item>Improved wallpaper sorting</item>
+        <item>Update FAQs</item>
     </string-array>
 
 </resources>

@@ -31,7 +31,7 @@ android {
         applicationId 'com.candybar.dev'
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode rootProject.ext.VersionCode * 10 + 2
+        versionCode rootProject.ext.VersionCode * 10 + 0
         versionName rootProject.ext.VersionName
         multiDexEnabled true
 
