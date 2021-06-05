@@ -27,18 +27,19 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
 
     <string-array name="questions">
         <item>What is a launcher?</item>
         <item>What is an icon pack?</item>
-        <item>How do i use an icon pack?</item>
-        <item>How do i apply an icon pack?</item>
-        <item>How do i see all icons included?</item>
+        <item>How do I use an icon pack?</item>
+        <item>How do I apply an icon pack?</item>
+        <item>How do I see all icons included?</item>
         <item>I can\'t see a complete icon name</item>
-        <item>How can i replace icons with an alternate icon?</item>
-        <item>How do i request an icon?</item>
-        <item>How can i restore remaining Premium Requests after reinstalling the app?</item>
+        <item>How can I replace icons with an alternate icon?</item>
+        <item>How do I request an icon?</item>
+        <item>How can I restore remaining Premium Requests after reinstalling the app?</item>
         <item>After restarting my phone, the icon pack is not applied, it restore to defaults?</item>
         <item>Why do the icons looks jaggy or pixelated on my phone?</item>
         <item>I can see the icon included in all icons,
@@ -54,7 +55,8 @@
         <item>Why is Access Network State permission needed?</item>
         <item>Why is Access Wifi State permission needed?</item>
         <item>Why is Set Wallpaper permission needed?</item>
-        <item>Why is Wake Lock Permission needed?</item>
+        <item>Why is Wake Lock permission needed?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
 
     <string-array name="answers">
@@ -99,6 +101,7 @@
         <item>It is used to check if your phone has an internet connection or not.</item>
         <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
         <item>It is used to apply wallpapers directly from the dashboard app.</item>
-        <item>It is used by Muzei Live Wallpaper</item>
+        <item>It is used by Muzei Live Wallpaper.</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>
