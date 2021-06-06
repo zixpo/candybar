@@ -31,6 +31,18 @@ public class CandyBar extends CandyBarApplication {
         configuration.setGenerateAppMap(true);
         configuration.setGenerateThemeResources(true);
         configuration.setNavigationIcon(NavigationIcon.STYLE_4);
+        configuration.setOtherApps(new OtherApp[]{
+                new OtherApp(
+                        "icon_1",
+                        "App 1",
+                        "Another app #1",
+                        "https://play.google.com/store/apps/details?id=app.1"),
+                new OtherApp(
+                        "icon_2",
+                        "App 2",
+                        "Another app #2",
+                        "https://play.google.com/store/apps/details?id=app.2")
+        });
 
         return configuration;
     }

@@ -58,10 +58,10 @@ public class AboutFragment extends Fragment {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        resetRecyclerViewPadding(getActivity().getResources().getConfiguration().orientation);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        resetRecyclerViewPadding(getActivity().getResources().getConfiguration().orientation);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         int spanCount = getActivity().getResources().getInteger(R.integer.about_column_count);
@@ -74,6 +74,7 @@ public class AboutFragment extends Fragment {
     @SuppressWarnings("ConstantConditions")
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+
         resetRecyclerViewPadding(newConfig.orientation);
         ViewHelper.resetSpanCount(mRecyclerView,
                 getActivity().getResources().getInteger(R.integer.about_column_count));

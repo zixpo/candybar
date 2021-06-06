@@ -139,13 +139,9 @@ public class IntentChooserFragment extends DialogFragment {
 
         mIntentList = (ListView) dialog.findViewById(R.id.intent_list);
         mNoApp = (TextView) dialog.findViewById(R.id.intent_noapp);
-        return dialog;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         mAsyncTask = new IntentChooserLoader().execute();
+
+        return dialog;
     }
 
     @Override

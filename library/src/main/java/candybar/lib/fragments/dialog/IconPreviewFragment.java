@@ -41,9 +41,6 @@ import candybar.lib.helpers.TypefaceHelper;
 
 public class IconPreviewFragment extends DialogFragment {
 
-    private TextView mName;
-    private ImageView mIcon;
-
     private String mIconName;
     private int mIconId;
 
@@ -97,15 +94,9 @@ public class IconPreviewFragment extends DialogFragment {
 
         dialog.show();
 
-        mName = (TextView) dialog.findViewById(R.id.name);
-        mIcon = (ImageView) dialog.findViewById(R.id.icon);
-        return dialog;
-    }
+        TextView name = (TextView) dialog.findViewById(R.id.name);
+        ImageView icon = (ImageView) dialog.findViewById(R.id.icon);
 
-    @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {
             mIconName = savedInstanceState.getString(NAME);
             mIconId = savedInstanceState.getInt(ID);
@@ -117,14 +108,16 @@ public class IconPreviewFragment extends DialogFragment {
             mIconName = IconsHelper.replaceName(getActivity(), iconNameReplacer, mIconName);
         }
 
-        mName.setText(mIconName);
+        name.setText(mIconName);
 
         Glide.with(this)
                 .load("drawable://" + mIconId)
                 .transition(DrawableTransitionOptions.withCrossFade(300))
                 .skipMemoryCache(true)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(mIcon);
+                .into(icon);
+
+        return dialog;
     }
 
     @Override

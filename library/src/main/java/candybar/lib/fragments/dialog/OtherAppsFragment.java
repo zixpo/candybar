@@ -39,8 +39,6 @@ import candybar.lib.helpers.TypefaceHelper;
 
 public class OtherAppsFragment extends DialogFragment {
 
-    private ListView mListView;
-
     private static final String TAG = "candybar.dialog.otherapps";
 
     private static OtherAppsFragment newInstance() {
@@ -76,20 +74,14 @@ public class OtherAppsFragment extends DialogFragment {
         MaterialDialog dialog = builder.build();
         dialog.show();
 
-        mListView = (ListView) dialog.findViewById(R.id.listview);
-        return dialog;
-    }
-
-    @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+        ListView listView = (ListView) dialog.findViewById(R.id.listview);
         List<CandyBarApplication.OtherApp> otherApps = CandyBarApplication.getConfiguration().getOtherApps();
         if (otherApps != null) {
-            mListView.setAdapter(new OtherAppsAdapter(getActivity(), otherApps));
-            return;
+            listView.setAdapter(new OtherAppsAdapter(getActivity(), otherApps));
+        } else {
+            dismiss();
         }
 
-        dismiss();
+        return dialog;
     }
 }

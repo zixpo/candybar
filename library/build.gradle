@@ -72,7 +72,7 @@ dependencies {
     api 'com.android.billingclient:billing:4.0.0'
 
     implementation 'androidx.work:work-runtime:2.5.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.palette:palette:1.0.0'
 

@@ -148,12 +148,7 @@ public class InAppBillingFragment extends DialogFragment {
 
         mInAppList = (ListView) dialog.findViewById(R.id.inapp_list);
         mProgress = (ProgressBar) dialog.findViewById(R.id.progress);
-        return dialog;
-    }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {
             mType = savedInstanceState.getInt(TYPE);
             mKey = savedInstanceState.getString(KEY);
@@ -162,6 +157,8 @@ public class InAppBillingFragment extends DialogFragment {
         }
 
         mAsyncTask = new InAppProductsLoader().execute();
+
+        return dialog;
     }
 
     @Override

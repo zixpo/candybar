@@ -41,7 +41,6 @@ import candybar.lib.preferences.Preferences;
 
 public class ThemeChooserFragment extends DialogFragment {
 
-    private ListView mListView;
     private Theme mChosenTheme;
     private Theme mCurrentTheme;
 
@@ -78,18 +77,12 @@ public class ThemeChooserFragment extends DialogFragment {
 
         dialog.show();
 
-        mListView = (ListView) dialog.findViewById(R.id.listview);
-        return dialog;
-    }
-
-    @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
+        ListView listView = (ListView) dialog.findViewById(R.id.listview);
         mChosenTheme = mCurrentTheme = Preferences.get(getActivity()).getTheme();
 
-        mListView.setAdapter(new ThemeAdapter(getActivity(), Arrays.asList(Theme.values()), mCurrentTheme.ordinal()));
+        listView.setAdapter(new ThemeAdapter(getActivity(), Arrays.asList(Theme.values()), mCurrentTheme.ordinal()));
+
+        return dialog;
     }
 
     @Override

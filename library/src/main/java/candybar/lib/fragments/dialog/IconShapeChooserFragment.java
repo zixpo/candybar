@@ -44,7 +44,6 @@ import candybar.lib.preferences.Preferences;
 
 public class IconShapeChooserFragment extends DialogFragment {
 
-    private ListView mListView;
     private int mShape;
 
     public static final String TAG = "candybar.dialog.iconshapes";
@@ -79,15 +78,7 @@ public class IconShapeChooserFragment extends DialogFragment {
         MaterialDialog dialog = builder.build();
         dialog.show();
 
-        mListView = (ListView) dialog.findViewById(R.id.listview);
-        return dialog;
-    }
-
-    @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
+        ListView listView = (ListView) dialog.findViewById(R.id.listview);
         List<IconShape> iconShapes = IconShapeHelper.getShapes();
         int currentShape = mShape = Preferences.get(getActivity()).getIconShape();
         int currentShapeIndex = 0;
@@ -100,7 +91,9 @@ public class IconShapeChooserFragment extends DialogFragment {
             }
         }
 
-        mListView.setAdapter(new IconShapeAdapter(getActivity(), iconShapes, currentShapeIndex));
+        listView.setAdapter(new IconShapeAdapter(getActivity(), iconShapes, currentShapeIndex));
+
+        return dialog;
     }
 
     @Override

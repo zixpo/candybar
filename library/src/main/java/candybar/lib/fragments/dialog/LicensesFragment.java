@@ -87,13 +87,9 @@ public class LicensesFragment extends DialogFragment {
         dialog.show();
 
         mWebView = (WebView) dialog.findViewById(R.id.webview);
-        return dialog;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         mAsyncTask = new LicensesLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+        return dialog;
     }
 
     @Override
@@ -136,6 +132,7 @@ public class LicensesFragment extends DialogFragment {
             return false;
         }
 
+        @SuppressWarnings("ConstantConditions")
         private String getColorHex(@AttrRes int res) {
             TypedValue typedValue = new TypedValue();
             Resources.Theme theme = getActivity().getTheme();

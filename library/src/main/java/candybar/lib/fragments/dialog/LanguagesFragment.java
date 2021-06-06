@@ -84,13 +84,9 @@ public class LanguagesFragment extends DialogFragment {
         dialog.show();
 
         mListView = (ListView) dialog.findViewById(R.id.listview);
-        return dialog;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         mAsyncTask = new LanguagesLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
+        return dialog;
     }
 
     @Override

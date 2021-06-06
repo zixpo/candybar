@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleObserver;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -45,7 +46,7 @@ import candybar.lib.utils.listeners.HomeListener;
  * limitations under the License.
  */
 
-public class HomeFragment extends Fragment implements HomeListener {
+public class HomeFragment extends Fragment implements HomeListener, LifecycleObserver {
 
     private RecyclerView mRecyclerView;
     private StaggeredGridLayoutManager mManager;
@@ -67,8 +68,9 @@ public class HomeFragment extends Fragment implements HomeListener {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         mManager = new StaggeredGridLayoutManager(
                 getActivity().getResources().getInteger(R.integer.home_column_count),
                 StaggeredGridLayoutManager.VERTICAL);

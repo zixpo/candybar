@@ -95,6 +95,8 @@ public class CreditsFragment extends DialogFragment {
         MaterialDialog dialog = builder.build();
         dialog.show();
         mListView = (ListView) dialog.findViewById(R.id.listview);
+        mAsyncTask = new CreditsLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+
         return dialog;
     }
 
@@ -104,12 +106,6 @@ public class CreditsFragment extends DialogFragment {
         if (getArguments() != null) {
             mType = getArguments().getInt(TYPE);
         }
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mAsyncTask = new CreditsLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     @Override

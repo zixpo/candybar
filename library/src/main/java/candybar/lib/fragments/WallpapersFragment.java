@@ -93,8 +93,9 @@ public class WallpapersFragment extends Fragment {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, false);
 
         mProgress.getIndeterminateDrawable().setColorFilter(

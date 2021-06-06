@@ -127,8 +127,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     @Override
     @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         setHasOptionsMenu(false);
         resetRecyclerViewPadding(getResources().getConfiguration().orientation);
 
