@@ -166,7 +166,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.container) {
-                int position = getAdapterPosition();
+                int position = getBindingAdapterPosition();
 
                 if (position < 0 || position > mSettings.size()) return;
 

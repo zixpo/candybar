@@ -127,7 +127,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         @Override
         public void onClick(View view) {
             int id = view.getId();
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (id == R.id.container) {
                 if (position < 0 || position > getItemCount()) return;
                 try {

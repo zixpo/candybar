@@ -649,7 +649,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.container) {
-                int position = getAdapterPosition() - 1;
+                int position = getBindingAdapterPosition() - 1;
                 if (position < 0 || position > mHomes.size()) return;
 
                 switch (mHomes.get(position).getType()) {

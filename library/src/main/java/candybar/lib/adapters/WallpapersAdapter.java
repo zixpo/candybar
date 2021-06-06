@@ -169,7 +169,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
         @Override
         public void onClick(View view) {
             int id = view.getId();
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (id == R.id.card) {
                 if (sIsClickable) {
                     sIsClickable = false;
@@ -191,7 +191,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
         @Override
         public boolean onLongClick(View view) {
             int id = view.getId();
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (id == R.id.card) {
                 if (position < 0 || position > mWallpapers.size()) {
                     return false;

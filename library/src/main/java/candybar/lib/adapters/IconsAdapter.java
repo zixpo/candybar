@@ -97,7 +97,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     public void reloadIcons() {
         Glide.get(mContext).clearMemory();
         for (ViewHolder holder : mViewHolders) {
-            loadIconInto(holder.icon, holder.getAdapterPosition());
+            loadIconInto(holder.icon, holder.getBindingAdapterPosition());
         }
     }
 
@@ -125,7 +125,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         @Override
         public void onClick(View view) {
             int id = view.getId();
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (id == R.id.container) {
                 if (position < 0 || position > mIcons.size()) return;
                 SoftKeyboardHelper.closeKeyboard(mContext);
