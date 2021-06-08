@@ -3,7 +3,6 @@ package candybar.lib.fragments.dialog;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -26,6 +25,7 @@ import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Language;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -49,7 +49,7 @@ public class LanguagesFragment extends DialogFragment {
 
     private ListView mListView;
     private Locale mLocale;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     public static final String TAG = "candybar.dialog.languages";
 
@@ -84,7 +84,7 @@ public class LanguagesFragment extends DialogFragment {
         dialog.show();
 
         mListView = (ListView) dialog.findViewById(R.id.listview);
-        mAsyncTask = new LanguagesLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mAsyncTask = new LanguagesLoader().executeOnThreadPool();
 
         return dialog;
     }
@@ -114,14 +114,14 @@ public class LanguagesFragment extends DialogFragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class LanguagesLoader extends AsyncTask<Void, Void, Boolean> {
+    private class LanguagesLoader extends AsyncTaskBase {
 
         private List<Language> languages;
         private int index = 0;
 
         @Override
         @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -144,12 +144,13 @@ public class LanguagesFragment extends DialogFragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            if (aBoolean) {
+
+            if (ok) {
                 mListView.setAdapter(new LanguagesAdapter(getActivity(), languages, index));
             } else {
                 dismiss();

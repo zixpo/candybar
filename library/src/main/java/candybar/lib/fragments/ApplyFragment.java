@@ -5,7 +5,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +30,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AlphanumComparator;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -53,7 +53,7 @@ import candybar.lib.utils.AlphanumComparator;
 public class ApplyFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     @Nullable
     @Override
@@ -83,7 +83,7 @@ public class ApplyFragment extends Fragment {
             mRecyclerView.setPadding(padding, padding, 0, 0);
         }
 
-        mAsyncTask = new LaunchersLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mAsyncTask = new LaunchersLoader().executeOnThreadPool();
     }
 
     @Override
@@ -128,17 +128,17 @@ public class ApplyFragment extends Fragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class LaunchersLoader extends AsyncTask<Void, Void, Boolean> {
+    private class LaunchersLoader extends AsyncTaskBase {
 
         private List<Icon> launchers;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             launchers = new ArrayList<>();
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -240,12 +240,12 @@ public class ApplyFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            if (aBoolean) {
+            if (ok) {
                 mRecyclerView.setAdapter(new LauncherAdapter(getActivity(), launchers));
             }
         }

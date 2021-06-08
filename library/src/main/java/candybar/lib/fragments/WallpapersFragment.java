@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -42,6 +41,7 @@ import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.WallpapersListener;
 
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
@@ -71,7 +71,7 @@ public class WallpapersFragment extends Fragment {
     private ProgressBar mProgress;
     private RecyclerFastScroller mFastScroll;
 
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     @Nullable
     @Override
@@ -138,7 +138,7 @@ public class WallpapersFragment extends Fragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class WallpapersLoader extends AsyncTask<Void, Void, Boolean> {
+    private class WallpapersLoader extends AsyncTaskBase {
 
         private List<Wallpaper> wallpapers;
         private final boolean refreshing;
@@ -148,14 +148,14 @@ public class WallpapersFragment extends Fragment {
         }
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             if (!refreshing) mProgress.setVisibility(View.VISIBLE);
             else mSwipe.setRefreshing(true);
         }
 
         @Override
         @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -191,7 +191,7 @@ public class WallpapersFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
@@ -199,7 +199,7 @@ public class WallpapersFragment extends Fragment {
             mProgress.setVisibility(View.GONE);
             mSwipe.setRefreshing(false);
 
-            if (aBoolean) {
+            if (ok) {
                 mRecyclerView.setAdapter(new WallpapersAdapter(getActivity(), wallpapers));
 
                 ((WallpapersListener) getActivity())

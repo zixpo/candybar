@@ -2,7 +2,6 @@ package candybar.lib.fragments;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,6 +33,7 @@ import candybar.lib.R;
 import candybar.lib.adapters.FAQsAdapter;
 import candybar.lib.items.FAQs;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
@@ -62,7 +62,7 @@ public class FAQsFragment extends Fragment {
     private RecyclerFastScroller mFastScroll;
 
     private FAQsAdapter mAdapter;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     @Nullable
     @Override
@@ -92,7 +92,7 @@ public class FAQsFragment extends Fragment {
         setFastScrollColor(mFastScroll);
         mFastScroll.attachRecyclerView(mRecyclerView);
 
-        mAsyncTask = new FAQsLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mAsyncTask = new FAQsLoader().executeOnThreadPool();
     }
 
     @Override
@@ -152,21 +152,21 @@ public class FAQsFragment extends Fragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class FAQsLoader extends AsyncTask<Void, Void, Boolean> {
+    private class FAQsLoader extends AsyncTaskBase {
 
         private List<FAQs> faqs;
         private String[] questions;
         private String[] answers;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             faqs = new ArrayList<>();
             questions = getResources().getStringArray(R.array.questions);
             answers = getResources().getStringArray(R.array.answers);
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -186,12 +186,12 @@ public class FAQsFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            if (aBoolean) {
+            if (ok) {
                 setHasOptionsMenu(true);
                 mAdapter = new FAQsAdapter(getActivity(), faqs);
                 mRecyclerView.setAdapter(mAdapter);

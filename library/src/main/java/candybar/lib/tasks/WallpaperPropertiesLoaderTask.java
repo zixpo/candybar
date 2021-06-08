@@ -2,10 +2,8 @@ package candybar.lib.tasks;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,11 +15,11 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.concurrent.Executor;
 
 import candybar.lib.databases.Database;
 import candybar.lib.items.ImageSize;
 import candybar.lib.items.Wallpaper;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -41,40 +39,20 @@ import candybar.lib.items.Wallpaper;
  * limitations under the License.
  */
 
-public class WallpaperPropertiesLoaderTask extends AsyncTask<Void, Void, Boolean> {
+public class WallpaperPropertiesLoaderTask extends AsyncTaskBase {
 
-    private Wallpaper mWallpaper;
-    private WeakReference<Callback> mCallback;
+    private final Wallpaper mWallpaper;
+    private final WeakReference<Callback> mCallback;
     private final WeakReference<Context> mContext;
 
-    private WallpaperPropertiesLoaderTask(Context context) {
+    public WallpaperPropertiesLoaderTask(Context context, Wallpaper wallpaper, @Nullable Callback callback) {
         mContext = new WeakReference<>(context);
-    }
-
-    public WallpaperPropertiesLoaderTask wallpaper(Wallpaper wallpaper) {
         mWallpaper = wallpaper;
-        return this;
-    }
-
-    public WallpaperPropertiesLoaderTask callback(@Nullable Callback callback) {
         mCallback = new WeakReference<>(callback);
-        return this;
-    }
-
-    public AsyncTask<Void, Void, Boolean> start() {
-        return start(SERIAL_EXECUTOR);
-    }
-
-    public AsyncTask<Void, Void, Boolean> start(@NonNull Executor executor) {
-        return executeOnExecutor(executor);
-    }
-
-    public static WallpaperPropertiesLoaderTask prepare(@NonNull Context context) {
-        return new WallpaperPropertiesLoaderTask(context);
     }
 
     @Override
-    protected Boolean doInBackground(Void... voids) {
+    protected boolean run() {
         if (!isCancelled()) {
             try {
                 Thread.sleep(1);
@@ -120,8 +98,8 @@ public class WallpaperPropertiesLoaderTask extends AsyncTask<Void, Void, Boolean
     }
 
     @Override
-    protected void onPostExecute(Boolean aBoolean) {
-        if (aBoolean && mContext.get() != null && !((AppCompatActivity) mContext.get()).isFinishing()) {
+    protected void postRun(boolean ok) {
+        if (ok && mContext.get() != null && !((AppCompatActivity) mContext.get()).isFinishing()) {
             if (mWallpaper.getSize() <= 0) {
                 try {
                     File target = Glide.with(mContext.get())
@@ -138,7 +116,7 @@ public class WallpaperPropertiesLoaderTask extends AsyncTask<Void, Void, Boolean
             }
         }
 
-        if (mCallback != null && mCallback.get() != null) {
+        if (mCallback.get() != null) {
             mCallback.get().onPropertiesReceived(mWallpaper);
         }
     }

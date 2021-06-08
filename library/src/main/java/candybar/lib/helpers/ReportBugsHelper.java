@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.EditText;
 
@@ -76,7 +75,7 @@ public class ReportBugsHelper {
         dialog.getActionButton(DialogAction.POSITIVE).setOnClickListener(view -> {
             if (editText.getText().length() > 0) {
                 inputLayout.setErrorEnabled(false);
-                ReportBugsTask.start(context, editText.getText().toString(), AsyncTask.THREAD_POOL_EXECUTOR);
+                new ReportBugsTask(context, editText.getText().toString()).executeOnThreadPool();
                 dialog.dismiss();
                 return;
             }

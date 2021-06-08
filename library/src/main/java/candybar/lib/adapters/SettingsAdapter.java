@@ -37,6 +37,7 @@ import candybar.lib.helpers.ReportBugsHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Setting;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.tasks.IconRequestTask;
 import candybar.lib.utils.listeners.InAppBillingListener;
 
 /*
@@ -213,6 +214,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                     Database.get(mContext).deleteIconRequestData();
 
                                     CandyBarMainActivity.sMissedApps = null;
+                                    new IconRequestTask(mContext).executeOnThreadPool();
 
                                     Toast.makeText(mContext, R.string.pref_data_request_cleared,
                                             Toast.LENGTH_LONG).show();

@@ -2,7 +2,6 @@ package candybar.lib.fragments.dialog;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -26,6 +25,7 @@ import candybar.lib.R;
 import candybar.lib.adapters.dialog.CreditsAdapter;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Credit;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -48,7 +48,7 @@ import candybar.lib.items.Credit;
 public class CreditsFragment extends DialogFragment {
 
     private ListView mListView;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
     private int mType;
 
     private static final String TAG = "candybar.dialog.credits";
@@ -95,7 +95,7 @@ public class CreditsFragment extends DialogFragment {
         MaterialDialog dialog = builder.build();
         dialog.show();
         mListView = (ListView) dialog.findViewById(R.id.listview);
-        mAsyncTask = new CreditsLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mAsyncTask = new CreditsLoader().executeOnThreadPool();
 
         return dialog;
     }
@@ -145,17 +145,17 @@ public class CreditsFragment extends DialogFragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class CreditsLoader extends AsyncTask<Void, Void, Boolean> {
+    private class CreditsLoader extends AsyncTaskBase {
 
         private List<Credit> credits;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             credits = new ArrayList<>();
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -186,12 +186,12 @@ public class CreditsFragment extends DialogFragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            if (aBoolean) {
+            if (ok) {
                 mListView.setAdapter(new CreditsAdapter(getActivity(), credits));
             } else {
                 dismiss();

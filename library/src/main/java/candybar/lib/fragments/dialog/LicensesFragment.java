@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -28,6 +27,7 @@ import java.io.InputStreamReader;
 import candybar.lib.R;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.TypefaceHelper;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -50,7 +50,7 @@ import candybar.lib.helpers.TypefaceHelper;
 public class LicensesFragment extends DialogFragment {
 
     private WebView mWebView;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     private static final String TAG = "candybar.dialog.licenses";
 
@@ -87,7 +87,7 @@ public class LicensesFragment extends DialogFragment {
         dialog.show();
 
         mWebView = (WebView) dialog.findViewById(R.id.webview);
-        mAsyncTask = new LicensesLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mAsyncTask = new LicensesLoader().executeOnThreadPool();
 
         return dialog;
     }
@@ -99,17 +99,17 @@ public class LicensesFragment extends DialogFragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class LicensesLoader extends AsyncTask<Void, Void, Boolean> {
+    private class LicensesLoader extends AsyncTaskBase {
 
         private StringBuilder sb;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             sb = new StringBuilder();
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -141,13 +141,13 @@ public class LicensesFragment extends DialogFragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
             LocaleHelper.setLocale(getActivity());
-            if (aBoolean) {
+            if (ok) {
                 String html = sb.toString()
                         .replace("{{textColor}}", getColorHex(android.R.attr.textColorPrimary))
                         .replace("{{bodyColor}}", getColorHex(R.attr.main_background));

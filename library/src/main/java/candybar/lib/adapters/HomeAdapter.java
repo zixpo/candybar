@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -70,7 +69,7 @@ import candybar.lib.helpers.ViewHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.tasks.IconRequestTask;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.views.HeaderView;
 import me.grantland.widget.AutofitTextView;
 
@@ -301,7 +300,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (mContext.getResources().getBoolean(R.bool.hide_missing_app_count)) {
                 iconRequestViewHolder.dataContainer.setVisibility(View.GONE);
                 iconRequestViewHolder.progressBar.setVisibility(View.GONE);
-            } else if (IconRequestTask.isLoading) {
+            } else if (CandyBarMainActivity.sMissedApps == null) {
+                // Missing apps are not yet loaded, show the progressbar
                 iconRequestViewHolder.dataContainer.setVisibility(View.GONE);
                 iconRequestViewHolder.progressBar.setVisibility(View.VISIBLE);
             } else {
@@ -441,8 +441,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             update.setOnClickListener(this);
         }
 
-        @SuppressLint("StringFormatInvalid")
         @Override
+        @SuppressLint("StringFormatInvalid")
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.rate) {
@@ -470,7 +470,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class UpdateChecker extends AsyncTask<Void, Void, Boolean> {
+    private class UpdateChecker extends AsyncTaskBase {
 
         private MaterialDialog loadingDialog;
         private String latestVersion;
@@ -479,7 +479,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private boolean isUpdateAvailable;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             loadingDialog = new MaterialDialog.Builder(mContext)
                     .typeface(
                             TypefaceHelper.getMedium(mContext),
@@ -495,61 +495,64 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
-            boolean isSuccess = true;
-            String configJsonUrl = mContext.getResources().getString(R.string.config_json);
-            URLConnection urlConnection;
-            BufferedReader bufferedReader = null;
+        protected boolean run() {
+            if (!isCancelled()) {
+                boolean isSuccess = true;
+                String configJsonUrl = mContext.getResources().getString(R.string.config_json);
+                URLConnection urlConnection;
+                BufferedReader bufferedReader = null;
 
-            try {
-                urlConnection = new URL(configJsonUrl).openConnection();
-                bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                try {
+                    urlConnection = new URL(configJsonUrl).openConnection();
+                    bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 
-                String line;
-                StringBuilder stringBuilder = new StringBuilder();
-                while ((line = bufferedReader.readLine()) != null) {
-                    stringBuilder.append(line);
-                }
+                    String line;
+                    StringBuilder stringBuilder = new StringBuilder();
+                    while ((line = bufferedReader.readLine()) != null) {
+                        stringBuilder.append(line);
+                    }
 
-                JSONObject configJson = new JSONObject(stringBuilder.toString());
-                latestVersion = configJson.getString("latestVersion");
-                updateUrl = configJson.getString("url");
+                    JSONObject configJson = new JSONObject(stringBuilder.toString());
+                    latestVersion = configJson.getString("latestVersion");
+                    updateUrl = configJson.getString("url");
 
-                PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
-                long latestVersionCode = configJson.getLong("latestVersionCode");
-                long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
+                    PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
+                    long latestVersionCode = configJson.getLong("latestVersionCode");
+                    long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
 
-                if (latestVersionCode > appVersionCode) {
-                    isUpdateAvailable = true;
-                    JSONArray changelogArray = configJson.getJSONArray("releaseNotes");
-                    changelog = new String[changelogArray.length()];
-                    for (int i = 0; i < changelogArray.length(); i++) {
-                        changelog[i] = changelogArray.getString(i);
+                    if (latestVersionCode > appVersionCode) {
+                        isUpdateAvailable = true;
+                        JSONArray changelogArray = configJson.getJSONArray("releaseNotes");
+                        changelog = new String[changelogArray.length()];
+                        for (int i = 0; i < changelogArray.length(); i++) {
+                            changelog[i] = changelogArray.getString(i);
+                        }
+                    }
+                } catch (Exception ex) {
+                    LogUtil.e("Error loading Configuration JSON " + Log.getStackTraceString(ex));
+                    isSuccess = false;
+                } finally {
+                    if (bufferedReader != null) {
+                        try {
+                            bufferedReader.close();
+                        } catch (IOException e) {
+                            LogUtil.e(Log.getStackTraceString(e));
+                        }
                     }
                 }
-            } catch (Exception ex) {
-                LogUtil.e("Error loading Configuration JSON " + Log.getStackTraceString(ex));
-                isSuccess = false;
-            } finally {
-                if (bufferedReader != null) {
-                    try {
-                        bufferedReader.close();
-                    } catch (IOException e) {
-                        LogUtil.e(Log.getStackTraceString(e));
-                    }
-                }
+
+                return isSuccess;
             }
-
-            return isSuccess;
+            return false;
         }
 
-        @SuppressLint("SetTextI18n")
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        @SuppressLint("SetTextI18n")
+        protected void postRun(boolean ok) {
             loadingDialog.dismiss();
             loadingDialog = null;
 
-            if (aBoolean) {
+            if (ok) {
                 MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext)
                         .typeface(
                                 TypefaceHelper.getMedium(mContext),

@@ -3,7 +3,6 @@ package candybar.lib.fragments;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +41,7 @@ import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AlphanumComparator;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.SearchListener;
 
 /*
@@ -68,7 +68,7 @@ public class IconsBaseFragment extends Fragment {
     private ProgressBar mProgress;
     private TabLayout mTabLayout;
 
-    private AsyncTask<Void, Void, Boolean> mGetIcons;
+    private AsyncTaskBase mGetIcons;
 
     @Nullable
     @Override
@@ -197,9 +197,9 @@ public class IconsBaseFragment extends Fragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class IconsLoader extends AsyncTask<Void, Void, Boolean> {
+    private class IconsLoader extends AsyncTaskBase {
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             if (CandyBarMainActivity.sSections == null) {
                 mProgress.setVisibility(View.VISIBLE);
             }
@@ -207,7 +207,7 @@ public class IconsBaseFragment extends Fragment {
 
         @Override
         @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -260,19 +260,19 @@ public class IconsBaseFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mGetIcons = null;
             mProgress.setVisibility(View.GONE);
-            if (aBoolean) {
+            if (ok) {
                 setHasOptionsMenu(true);
                 PagerIconsAdapter adapter = new PagerIconsAdapter(
                         getChildFragmentManager(), CandyBarMainActivity.sSections);
                 mPager.setAdapter(adapter);
 
-                new TabTypefaceChanger().executeOnExecutor(THREAD_POOL_EXECUTOR);
+                new TabTypefaceChanger().executeOnThreadPool();
 
                 if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
                     TapIntroHelper.showIconsIntro(getActivity());
@@ -285,48 +285,44 @@ public class IconsBaseFragment extends Fragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class TabTypefaceChanger extends AsyncTask<Void, Integer, Void> {
+    private class TabTypefaceChanger extends AsyncTaskBase {
+
         PagerIconsAdapter adapter;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             adapter = (PagerIconsAdapter) mPager.getAdapter();
         }
 
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     for (int i = 0; i < adapter.getCount(); i++) {
-                        publishProgress(i);
+                        int finalI = i;
+                        runOnUiThread(() -> {
+                            if (getActivity() == null) return;
+                            if (getActivity().isFinishing()) return;
+                            if (mTabLayout == null) return;
+
+                            if (finalI < mTabLayout.getTabCount()) {
+                                TabLayout.Tab tab = mTabLayout.getTabAt(finalI);
+                                if (tab != null) {
+                                    if (finalI < adapter.getCount()) {
+                                        tab.setCustomView(R.layout.fragment_icons_base_tab);
+                                        tab.setText(adapter.getPageTitle(finalI));
+                                    }
+                                }
+                            }
+                        });
                     }
-                    return null;
+                    return true;
                 } catch (Exception ignored) {
-                    return null;
+                    return false;
                 }
             }
-            return null;
-        }
-
-        @Override
-        protected void onProgressUpdate(Integer... values) {
-            super.onProgressUpdate(values);
-            if (getActivity() == null) return;
-            if (getActivity().isFinishing()) return;
-
-            int position = values[0];
-            if (mTabLayout == null) return;
-
-            if (position >= 0 && position < mTabLayout.getTabCount()) {
-                TabLayout.Tab tab = mTabLayout.getTabAt(position);
-                if (tab != null) {
-                    if (position < adapter.getCount()) {
-                        tab.setCustomView(R.layout.fragment_icons_base_tab);
-                        tab.setText(adapter.getPageTitle(position));
-                    }
-                }
-            }
+            return false;
         }
     }
 

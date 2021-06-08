@@ -5,7 +5,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,6 @@ import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -30,6 +28,7 @@ import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.DeviceHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.listeners.RequestListener;
 /*
@@ -50,36 +49,20 @@ import candybar.lib.utils.listeners.RequestListener;
  * limitations under the License.
  */
 
-public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
+public class IconRequestBuilderTask extends AsyncTaskBase {
 
     private final WeakReference<Context> mContext;
-    private WeakReference<IconRequestBuilderCallback> mCallback;
+    private final WeakReference<IconRequestBuilderCallback> mCallback;
     private String mEmailBody;
     private Extras.Error mError;
 
-    private IconRequestBuilderTask(Context context) {
+    public IconRequestBuilderTask(@NonNull Context context, IconRequestBuilderCallback callback) {
         mContext = new WeakReference<>(context);
-    }
-
-    public IconRequestBuilderTask callback(IconRequestBuilderCallback callback) {
         mCallback = new WeakReference<>(callback);
-        return this;
-    }
-
-    public AsyncTask<Void, Void, Boolean> start() {
-        return start(SERIAL_EXECUTOR);
-    }
-
-    public AsyncTask<Void, Void, Boolean> start(@NonNull Executor executor) {
-        return executeOnExecutor(executor);
-    }
-
-    public static IconRequestBuilderTask prepare(@NonNull Context context) {
-        return new IconRequestBuilderTask(context);
     }
 
     @Override
-    protected Boolean doInBackground(Void... voids) {
+    protected boolean run() {
         if (!isCancelled()) {
             try {
                 Thread.sleep(1);
@@ -161,10 +144,10 @@ public class IconRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
     }
 
     @Override
-    protected void onPostExecute(Boolean aBoolean) {
-        if (aBoolean) {
+    protected void postRun(boolean ok) {
+        if (ok) {
             try {
-                if (mCallback != null && mCallback.get() != null)
+                if (mCallback.get() != null)
                     mCallback.get().onFinished();
 
                 RequestListener listener = (RequestListener) mContext.get();

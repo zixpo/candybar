@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -304,8 +303,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                                     rectF = mAttacher.getDisplayRect();
                             }
 
-                            WallpaperApplyTask task = WallpaperApplyTask.prepare(this)
-                                    .wallpaper(mWallpaper)
+                            WallpaperApplyTask task = new WallpaperApplyTask(this, mWallpaper)
                                     .crop(rectF);
 
                             if (item.getType() == PopupItem.Type.LOCKSCREEN) {
@@ -316,7 +314,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                                 task.to(WallpaperApplyTask.Apply.HOMESCREEN_LOCKSCREEN);
                             }
 
-                            task.start(AsyncTask.THREAD_POOL_EXECUTOR);
+                            task.executeOnThreadPool();
                         }
 
                         p.dismiss();
@@ -433,10 +431,8 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
             mAttacher = null;
         }
 
-        WallpaperPropertiesLoaderTask.prepare(this)
-                .callback(this)
-                .wallpaper(mWallpaper)
-                .start(AsyncTask.THREAD_POOL_EXECUTOR);
+        new WallpaperPropertiesLoaderTask(this, mWallpaper, this)
+                .executeOnThreadPool();
 
         Glide.with(this)
                 .asBitmap()

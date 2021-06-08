@@ -1,8 +1,6 @@
 package candybar.lib.fragments;
 
-import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,6 +38,7 @@ import candybar.lib.items.Language;
 import candybar.lib.items.Request;
 import candybar.lib.items.Setting;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.RequestListener;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
@@ -208,9 +207,8 @@ public class SettingsFragment extends Fragment {
         new PremiumRequestRebuilder().execute();
     }
 
-    @SuppressLint("StaticFieldLeak")
     @SuppressWarnings("ConstantConditions")
-    private class PremiumRequestRebuilder extends AsyncTask<Void, Void, Boolean> {
+    private class PremiumRequestRebuilder extends AsyncTaskBase {
 
         private MaterialDialog dialog;
         private final boolean isArctic = RequestHelper.isPremiumArcticEnabled(getActivity());
@@ -219,7 +217,7 @@ public class SettingsFragment extends Fragment {
         private String errorMessage = "";
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             dialog = new MaterialDialog.Builder(getActivity())
                     .typeface(
                             TypefaceHelper.getMedium(getActivity()),
@@ -235,7 +233,7 @@ public class SettingsFragment extends Fragment {
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -286,14 +284,14 @@ public class SettingsFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             dialog.dismiss();
             dialog = null;
 
-            if (aBoolean) {
+            if (ok) {
                 if (requests.size() == 0) {
                     Toast.makeText(getActivity(), R.string.premium_request_rebuilding_empty,
                             Toast.LENGTH_LONG).show();

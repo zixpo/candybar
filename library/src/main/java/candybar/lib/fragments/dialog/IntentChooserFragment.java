@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +38,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.RequestFragment;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.IntentChooser;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -65,7 +65,7 @@ public class IntentChooserFragment extends DialogFragment {
 
     private int mType;
     private IntentAdapter mAdapter;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     public static final int ICON_REQUEST = 0;
     public static final int REBUILD_ICON_REQUEST = 1;
@@ -153,18 +153,17 @@ public class IntentChooserFragment extends DialogFragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class IntentChooserLoader extends AsyncTask<Void, Void, Boolean> {
+    private class IntentChooserLoader extends AsyncTaskBase {
 
         private List<IntentChooser> apps;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             apps = new ArrayList<>();
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -231,12 +230,12 @@ public class IntentChooserFragment extends DialogFragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            if (aBoolean && apps != null) {
+            if (ok && apps != null) {
                 mAdapter = new IntentAdapter(getActivity(), apps, mType);
                 mIntentList.setAdapter(mAdapter);
 

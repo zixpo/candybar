@@ -3,7 +3,6 @@ package candybar.lib.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -27,6 +26,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.WallpaperHelper;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.ImageConfig;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
@@ -50,8 +50,8 @@ import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
-    private AsyncTask<Void, Void, Boolean> mSplashScreenLoader;
-    private AsyncTask<Void, Void, Boolean> mCloudWallpapersLoader;
+    private AsyncTaskBase mSplashScreenLoader;
+    private AsyncTaskBase mWallpaperThumbPreloader;
 
     @NonNull
     public abstract Class<?> getMainActivity();
@@ -62,9 +62,9 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
         mSplashScreenLoader = new SplashScreenLoader(this)
                 .mainActivity(getMainActivity())
-                .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                .executeOnThreadPool();
 
-        mCloudWallpapersLoader = new WallpaperThumbPreloader(this).execute();
+        mWallpaperThumbPreloader = new WallpaperThumbPreloader(this).execute();
     }
 
     @Override
@@ -74,8 +74,8 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mCloudWallpapersLoader != null) {
-            mCloudWallpapersLoader.cancel(true);
+        if (mWallpaperThumbPreloader != null) {
+            mWallpaperThumbPreloader.cancel(true);
         }
         Database.get(this.getApplicationContext()).closeDatabase();
         super.onBackPressed();
@@ -89,7 +89,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    private static class SplashScreenLoader extends AsyncTask<Void, Void, Boolean> {
+    private static class SplashScreenLoader extends AsyncTaskBase {
 
         private final WeakReference<Context> context;
         private Class<?> mainActivity;
@@ -104,7 +104,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(400);
@@ -118,7 +118,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (context.get() == null) return;
             if (context.get() instanceof Activity) {
                 if (((Activity) context.get()).isFinishing()) return;
@@ -135,7 +135,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
         }
     }
 
-    private static class WallpaperThumbPreloader extends AsyncTask<Void, Void, Boolean> {
+    private static class WallpaperThumbPreloader extends AsyncTaskBase {
 
         private final WeakReference<Context> context;
 
@@ -144,7 +144,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);

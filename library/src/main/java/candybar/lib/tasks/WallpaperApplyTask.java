@@ -8,7 +8,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.RectF;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
@@ -28,7 +27,7 @@ import com.danimahardhika.cafebar.CafeBarTheme;
 
 import java.lang.ref.WeakReference;
 import java.util.Locale;
-import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 
 import candybar.lib.R;
 import candybar.lib.helpers.TypefaceHelper;
@@ -36,6 +35,7 @@ import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.ImageSize;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -55,17 +55,17 @@ import candybar.lib.preferences.Preferences;
  * limitations under the License.
  */
 
-public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implements WallpaperPropertiesLoaderTask.Callback {
+public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperPropertiesLoaderTask.Callback {
 
     private final WeakReference<Context> mContext;
     private Apply mApply;
     private RectF mRectF;
-    private Executor mExecutor;
     private Wallpaper mWallpaper;
     private MaterialDialog mDialog;
 
-    private WallpaperApplyTask(Context context) {
+    public WallpaperApplyTask(@NonNull Context context, @NonNull Wallpaper wallpaper) {
         mContext = new WeakReference<>(context);
+        mWallpaper = wallpaper;
         mApply = Apply.HOMESCREEN;
     }
 
@@ -74,21 +74,13 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
         return this;
     }
 
-    public WallpaperApplyTask wallpaper(@NonNull Wallpaper wallpaper) {
-        mWallpaper = wallpaper;
-        return this;
-    }
-
     public WallpaperApplyTask crop(@Nullable RectF rectF) {
         mRectF = rectF;
         return this;
     }
 
-    public AsyncTask<Void, Void, Boolean> start() {
-        return start(SERIAL_EXECUTOR);
-    }
-
-    public AsyncTask<Void, Void, Boolean> start(@NonNull Executor executor) {
+    @Override
+    protected AsyncTaskBase execute(ExecutorService executorService) {
         if (mDialog == null) {
             int color = mWallpaper.getColor();
             if (color == 0) {
@@ -111,29 +103,22 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
 
         if (!mDialog.isShowing()) mDialog.show();
 
-        mExecutor = executor;
         if (mWallpaper == null) {
             LogUtil.e("WallpaperApply cancelled, wallpaper is null");
             return null;
         }
 
         if (mWallpaper.getDimensions() == null) {
-            return WallpaperPropertiesLoaderTask.prepare(mContext.get())
-                    .wallpaper(mWallpaper)
-                    .callback(this)
-                    .start(AsyncTask.THREAD_POOL_EXECUTOR);
+            return new WallpaperPropertiesLoaderTask(mContext.get(), mWallpaper, this)
+                    .executeOnThreadPool();
         }
-        return executeOnExecutor(executor);
-    }
 
-    public static WallpaperApplyTask prepare(@NonNull Context context) {
-        return new WallpaperApplyTask(context);
+        return super.execute(executorService);
     }
 
     @Override
     public void onPropertiesReceived(Wallpaper wallpaper) {
         mWallpaper = wallpaper;
-        if (mExecutor == null) mExecutor = SERIAL_EXECUTOR;
         if (mWallpaper.getDimensions() == null) {
             LogUtil.e("WallpaperApply cancelled, unable to retrieve wallpaper dimensions");
 
@@ -153,14 +138,14 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
         }
 
         try {
-            executeOnExecutor(mExecutor);
+            executeOnThreadPool();
         } catch (IllegalStateException e) {
             LogUtil.e(Log.getStackTraceString(e));
         }
     }
 
     @Override
-    protected Boolean doInBackground(Void... voids) {
+    protected boolean run() {
         if (!isCancelled()) {
             try {
                 Thread.sleep(1);
@@ -257,7 +242,7 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
                              */
                             LogUtil.d(String.format(Locale.getDefault(), "loaded bitmap: %d x %d",
                                     loadedBitmap.getWidth(), loadedBitmap.getHeight()));
-                            publishProgress();
+                            runOnUiThread(() -> mDialog.setContent(R.string.wallpaper_applying));
 
                             Bitmap bitmap = loadedBitmap;
                             if (Preferences.get(mContext.get()).isCropWallpaper() && adjustedRectF != null) {
@@ -355,20 +340,14 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
     }
 
     @Override
-    protected void onProgressUpdate(Void... values) {
-        super.onProgressUpdate(values);
-        mDialog.setContent(R.string.wallpaper_applying);
-    }
-
-    @Override
-    protected void onCancelled(Boolean aBoolean) {
-        super.onCancelled(aBoolean);
+    public void cancel(boolean mayInterruptIfRunning) {
+        super.cancel(mayInterruptIfRunning);
         Toast.makeText(mContext.get(), R.string.wallpaper_apply_cancelled,
                 Toast.LENGTH_LONG).show();
     }
 
     @Override
-    protected void onPostExecute(Boolean aBoolean) {
+    protected void postRun(boolean ok) {
         if (mContext.get() == null) {
             return;
         }
@@ -381,7 +360,7 @@ public class WallpaperApplyTask extends AsyncTask<Void, Void, Boolean> implement
             mDialog.dismiss();
         }
 
-        if (aBoolean) {
+        if (ok) {
             CafeBar.builder(mContext.get())
                     .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(
                             mContext.get(), R.attr.card_background)))

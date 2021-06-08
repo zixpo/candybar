@@ -3,7 +3,6 @@ package candybar.lib.fragments;
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +43,7 @@ import candybar.lib.fragments.dialog.IconShapeChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.AlphanumComparator;
+import candybar.lib.utils.AsyncTaskBase;
 
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
@@ -74,7 +74,7 @@ public class IconsSearchFragment extends Fragment {
     private final Fragment mFragment = this;
 
     private IconsAdapter mAdapter;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     public static final String TAG = "icons_search";
 
@@ -205,18 +205,18 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class IconsLoader extends AsyncTask<Void, Void, Boolean> {
+    private class IconsLoader extends AsyncTaskBase {
 
         private List<Icon> icons;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             icons = new ArrayList<>();
         }
 
         @Override
         @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -274,12 +274,12 @@ public class IconsSearchFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            if (aBoolean) {
+            if (ok) {
                 mAdapter = new IconsAdapter(getActivity(), icons, mFragment);
                 currentAdapter = new WeakReference<>(mAdapter);
                 mRecyclerView.setAdapter(mAdapter);

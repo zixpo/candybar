@@ -7,7 +7,6 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -225,8 +224,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         checkWallpapers();
-        IconRequestTask.start(this, AsyncTask.THREAD_POOL_EXECUTOR);
-        IconsLoaderTask.start(this);
+        new IconRequestTask(this).executeOnThreadPool();
+        new IconsLoaderTask(this).execute();
 
         new PlaystoreCheckHelper(this).run();
 

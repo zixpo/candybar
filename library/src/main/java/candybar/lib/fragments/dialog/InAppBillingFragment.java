@@ -3,7 +3,6 @@ package candybar.lib.fragments.dialog;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +32,7 @@ import candybar.lib.adapters.dialog.InAppBillingAdapter;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.InAppBillingClient;
 import candybar.lib.utils.listeners.InAppBillingListener;
 
@@ -65,7 +65,7 @@ public class InAppBillingFragment extends DialogFragment {
     private int[] mProductsCount;
 
     private InAppBillingAdapter mAdapter;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     private static final String TYPE = "type";
     private static final String KEY = "key";
@@ -179,19 +179,19 @@ public class InAppBillingFragment extends DialogFragment {
     }
 
     @SuppressLint("StaticFieldLeak")
-    private class InAppProductsLoader extends AsyncTask<Void, Void, Boolean> {
+    private class InAppProductsLoader extends AsyncTaskBase {
 
         private InAppBilling[] inAppBillings;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             mProgress.setVisibility(View.VISIBLE);
             inAppBillings = new InAppBilling[mProductsId.length];
         }
 
         @Override
         @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -234,13 +234,14 @@ public class InAppBillingFragment extends DialogFragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
             mProgress.setVisibility(View.GONE);
-            if (aBoolean) {
+
+            if (ok) {
                 mAdapter = new InAppBillingAdapter(getActivity(), inAppBillings);
                 mInAppList.setAdapter(mAdapter);
             } else {

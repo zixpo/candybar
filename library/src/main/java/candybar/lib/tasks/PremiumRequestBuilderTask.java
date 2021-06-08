@@ -5,7 +5,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,6 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.List;
-import java.util.concurrent.Executor;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
@@ -26,6 +24,7 @@ import candybar.lib.databases.Database;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.DeviceHelper;
 import candybar.lib.items.Request;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.listeners.RequestListener;
 
@@ -47,29 +46,20 @@ import candybar.lib.utils.listeners.RequestListener;
  * limitations under the License.
  */
 
-public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
+public class PremiumRequestBuilderTask extends AsyncTaskBase {
 
     private final WeakReference<Context> mContext;
     private final WeakReference<PremiumRequestBuilderCallback> mCallback;
     private String mEmailBody;
     private Extras.Error mError;
 
-    private PremiumRequestBuilderTask(Context context, PremiumRequestBuilderCallback callback) {
+    public PremiumRequestBuilderTask(Context context, PremiumRequestBuilderCallback callback) {
         mContext = new WeakReference<>(context);
         mCallback = new WeakReference<>(callback);
     }
 
-    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @Nullable PremiumRequestBuilderCallback callback) {
-        return start(context, callback, SERIAL_EXECUTOR);
-    }
-
-    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @Nullable PremiumRequestBuilderCallback callback,
-                                                       @NonNull Executor executor) {
-        return new PremiumRequestBuilderTask(context, callback).executeOnExecutor(executor);
-    }
-
     @Override
-    protected Boolean doInBackground(Void... voids) {
+    protected boolean run() {
         if (!isCancelled()) {
             try {
                 Thread.sleep(1);
@@ -116,13 +106,13 @@ public class PremiumRequestBuilderTask extends AsyncTask<Void, Void, Boolean> {
     }
 
     @Override
-    protected void onPostExecute(Boolean aBoolean) {
+    protected void postRun(boolean ok) {
         if (mContext.get() == null) return;
         if (((AppCompatActivity) mContext.get()).isFinishing()) return;
 
-        if (aBoolean) {
+        if (ok) {
             try {
-                if (mCallback != null && mCallback.get() != null) {
+                if (mCallback.get() != null) {
                     mCallback.get().onFinished();
                 }
 
