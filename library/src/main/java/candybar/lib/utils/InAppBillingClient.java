@@ -133,11 +133,13 @@ public class InAppBillingClient implements PurchasesUpdatedListener, BillingClie
 
     @Override
     public void onBillingServiceDisconnected() {
+        if (mInAppBilling.get() == null) return;
         mInAppBilling.get().mIsInitialized = true;
     }
 
     @Override
     public void onBillingSetupFinished(@NonNull BillingResult billingResult) {
+        if (mInAppBilling.get() == null) return;
         mInAppBilling.get().mIsInitialized = true;
         checkForUnprocessedPurchases();
     }
