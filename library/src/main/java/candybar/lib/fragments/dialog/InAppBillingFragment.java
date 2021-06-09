@@ -24,11 +24,8 @@ import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsParams;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -215,37 +212,16 @@ public class InAppBillingFragment extends DialogFragment {
                             (billingResult, skuDetailsList) -> {
                                 if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                                     if (skuDetailsList != null) {
-                                        // NOTE: We are not sure if the skuDetailsList retains original
-                                        // order, some user complained that it doesn't. So we
-                                        // are going to map it back to the original order
-
-                                        // TODO: Not really important, just for testing
-                                        Collections.shuffle(skuDetailsList);
-
                                         Map<String, SkuDetails> skuDetailsMap = new HashMap<>();
                                         for (SkuDetails skuDetails : skuDetailsList) {
                                             skuDetailsMap.put(skuDetails.getSku(), skuDetails);
                                         }
 
-                                        Map<String, Integer> productCountMap = new HashMap<>();
-                                        if (mProductsCount != null) {
-                                            for (int i = 0; i < mProductsCount.length; i++) {
-                                                productCountMap.put(mProductsId[i], mProductsCount[i]);
-                                            }
-                                        }
-
-                                        List<String> products = new ArrayList<>();
-                                        for (String productId : mProductsId) {
-                                            if (!products.contains(productId)) {
-                                                products.add(productId);
-                                            }
-                                        }
-
-                                        for (int i = 0; i < products.size(); i++) {
-                                            String productId = products.get(i);
+                                        for (int i = 0; i < mProductsId.length; i++) {
+                                            String productId = mProductsId[i];
                                             SkuDetails skuDetails = skuDetailsMap.get(productId);
                                             inAppBillings[i] = mProductsCount != null
-                                                    ? new InAppBilling(skuDetails, productId, productCountMap.get(productId))
+                                                    ? new InAppBilling(skuDetails, productId, mProductsCount[i])
                                                     : new InAppBilling(skuDetails, productId);
                                         }
 
