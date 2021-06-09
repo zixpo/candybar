@@ -1,3 +1,7 @@
+# v3.10.1
+- Fixed in-app billings
+- Fixed icon request limit not resetting when license checker is enabled
+
 # v3.10.0
 - Updated Gradle wrapper and plugin
 - Migrated away from JCenter
