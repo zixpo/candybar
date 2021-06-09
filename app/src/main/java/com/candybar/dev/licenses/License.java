@@ -1,5 +1,7 @@
 package com.candybar.dev.licenses;
 
+import com.candybar.dev.BuildConfig;
+
 import candybar.lib.items.InAppBilling;
 
 public class License {
@@ -26,13 +28,14 @@ public class License {
      */
     private static final byte[] SALT = new byte[]{
             // Put generated random bytes below, separate with comma, ex: 14, 23, 58, 85, ...
+            // 1, 4, 81, 99, 95, 66, 64, 85, 51, 17, 39, 86, 61, 79, 19, 82, 74, 33, 47, 25,
     };
 
     /*
      * Your license key
      * If your app hasn't published at play store, publish it first as beta, get license key
      */
-    private static final String LICENSE_KEY = "";
+    private static final String LICENSE_KEY = BuildConfig.LICENSE_KEY;
 
     /*
      * NOTE: Make sure your app name in project same as app name at play store listing

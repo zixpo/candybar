@@ -82,7 +82,7 @@ import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.LicenseCallbackHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
-import candybar.lib.helpers.PlaystoreCheckHelper;
+import candybar.lib.helpers.PlayStoreCheckHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
@@ -228,20 +228,52 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         IconRequestTask.start(this, AsyncTask.THREAD_POOL_EXECUTOR);
         IconsLoaderTask.start(this);
 
-        new PlaystoreCheckHelper(this).run();
+        /*
+        The below code does this
+        #1. If new version - set `firstRun` to `true`
+        #2. If `firstRun` equals `true`, run the following steps
+            #X. Play store check
+                - Enabled: Run check, when completed run #Y
+                - Disabled: Run #Y
+            #Y. License check
+                - Enabled: Run check, when completed run #Z
+                - Disabled: Run #Z
+            #Z. Reset icon request limit, clear cache and show changelog
+        */
 
-        if (Preferences.get(this).isFirstRun() && mConfig.isLicenseCheckerEnabled()) {
-            mLicenseHelper = new LicenseHelper(this);
-            mLicenseHelper.run(mConfig.getLicenseKey(), mConfig.getRandomString(), new LicenseCallbackHelper(this));
-            return;
+        if (Preferences.get(this).isNewVersion()) {
+            // Check licenses on new version
+            Preferences.get(this).setFirstRun(true);
         }
 
-        if (!Preferences.get(this).isPlaystoreCheckEnabled() && !mConfig.isLicenseCheckerEnabled()) {
-            if (Preferences.get(this).isNewVersion()) {
-                ChangelogFragment.showChangelog(mFragManager);
-                File cache = this.getCacheDir();
-                FileHelper.clearDirectory(cache);
+        final Runnable onNewVersion = () -> {
+            ChangelogFragment.showChangelog(mFragManager);
+            File cache = getCacheDir();
+            FileHelper.clearDirectory(cache);
+        };
+
+        if (Preferences.get(this).isFirstRun()) {
+            final Runnable checkLicenseIfEnabled = () -> {
+                final Runnable onAllChecksCompleted = () -> {
+                    Preferences.get(this).setFirstRun(false);
+                    onNewVersion.run();
+                };
+
+                if (mConfig.isLicenseCheckerEnabled()) {
+                    mLicenseHelper = new LicenseHelper(this);
+                    mLicenseHelper.run(mConfig.getLicenseKey(), mConfig.getRandomString(),
+                            new LicenseCallbackHelper(this, onAllChecksCompleted));
+                } else {
+                    onAllChecksCompleted.run();
+                }
+            };
+
+            if (Preferences.get(this).isPlayStoreCheckEnabled()) {
+                new PlayStoreCheckHelper(this, checkLicenseIfEnabled).run();
+            } else {
+                checkLicenseIfEnabled.run();
             }
+            return;
         }
 
         if (mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isLicensed()) {

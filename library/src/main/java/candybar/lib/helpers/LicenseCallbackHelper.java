@@ -1,19 +1,17 @@
 package candybar.lib.helpers;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.license.LicenseCallback;
 import com.danimahardhika.android.helpers.license.LicenseHelper;
 
-import java.io.File;
-
 import candybar.lib.R;
-import candybar.lib.fragments.dialog.ChangelogFragment;
 import candybar.lib.preferences.Preferences;
 
 /*
@@ -37,10 +35,12 @@ import candybar.lib.preferences.Preferences;
 public class LicenseCallbackHelper implements LicenseCallback {
 
     private final Context mContext;
+    private final Runnable mCallback;
     private final MaterialDialog mDialog;
 
-    public LicenseCallbackHelper(@NonNull Context context) {
+    public LicenseCallbackHelper(@NonNull Context context, Runnable callback) {
         mContext = context;
+        mCallback = callback;
 
         MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
         builder.typeface(
@@ -61,13 +61,19 @@ public class LicenseCallbackHelper implements LicenseCallback {
 
     @Override
     public void onLicenseCheckFinished(LicenseHelper.Status status) {
-        mDialog.dismiss();
-        if (status == LicenseHelper.Status.RETRY) {
-            showRetryDialog();
-            return;
-        }
+        // Sometimes `onLicenseCheckFinished` gets called just after `onLicenseCheckStart`
+        // and it messes up the layout, so delay is the workaround
 
-        showLicenseDialog(status);
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            mDialog.dismiss();
+
+            if (status == LicenseHelper.Status.RETRY) {
+                showRetryDialog();
+                return;
+            }
+
+            showLicenseDialog(status);
+        }, 1000);
     }
 
     private void showLicenseDialog(LicenseHelper.Status status) {
@@ -104,15 +110,9 @@ public class LicenseCallbackHelper implements LicenseCallback {
     }
 
     private void onLicenseChecked(LicenseHelper.Status status) {
-        Preferences.get(mContext).setFirstRun(false);
         if (status == LicenseHelper.Status.SUCCESS) {
             Preferences.get(mContext).setLicensed(true);
-
-            if (Preferences.get(mContext).isNewVersion()) {
-                ChangelogFragment.showChangelog(((AppCompatActivity) mContext).getSupportFragmentManager());
-                File cache = mContext.getCacheDir();
-                FileHelper.clearDirectory(cache);
-            }
+            mCallback.run();
         } else if (status == LicenseHelper.Status.FAILED) {
             Preferences.get(mContext).setLicensed(false);
             ((AppCompatActivity) mContext).finish();

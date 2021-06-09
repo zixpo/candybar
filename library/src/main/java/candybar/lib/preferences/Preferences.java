@@ -279,7 +279,7 @@ public class Preferences {
         getSharedPreferences().edit().putInt(KEY_AVAILABLE_WALLPAPERS_COUNT, count).apply();
     }
 
-    public boolean isPlaystoreCheckEnabled() {
+    public boolean isPlayStoreCheckEnabled() {
         return mContext.getResources().getBoolean(R.bool.playstore_check_enabled);
     }
 
