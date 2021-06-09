@@ -73,14 +73,13 @@ public class LanguagesFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_languages, false);
-        builder.typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()));
-        builder.title(R.string.pref_language_header);
-        builder.negativeText(R.string.close);
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
+                .customView(R.layout.fragment_languages, false)
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .title(R.string.pref_language_header)
+                .negativeText(R.string.close)
+                .build();
         dialog.show();
 
         mListView = (ListView) dialog.findViewById(R.id.listview);
@@ -98,12 +97,11 @@ public class LanguagesFragment extends DialogFragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onDismiss(@NonNull DialogInterface dialog) {
         if (mLocale != null) {
-            Preferences.get(getActivity()).setCurrentLocale(mLocale.toString());
-            LocaleHelper.setLocale(getActivity());
-            getActivity().recreate();
+            Preferences.get(requireActivity()).setCurrentLocale(mLocale.toString());
+            LocaleHelper.setLocale(requireActivity());
+            requireActivity().recreate();
         }
         super.onDismiss(dialog);
     }
@@ -120,13 +118,12 @@ public class LanguagesFragment extends DialogFragment {
         private int index = 0;
 
         @Override
-        @SuppressWarnings("ConstantConditions")
         protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    languages = LocaleHelper.getAvailableLanguages(getActivity());
-                    Locale locale = Preferences.get(getActivity()).getCurrentLocale();
+                    languages = LocaleHelper.getAvailableLanguages(requireActivity());
+                    Locale locale = Preferences.get(requireActivity()).getCurrentLocale();
                     for (int i = 0; i < languages.size(); i++) {
                         Locale l = languages.get(i).getLocale();
                         if (l.toString().equals(locale.toString())) {

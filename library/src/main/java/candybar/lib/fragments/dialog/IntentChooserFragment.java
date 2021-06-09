@@ -105,16 +105,13 @@ public class IntentChooserFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_intent_chooser, false);
-        builder.typeface(
-                TypefaceHelper.getMedium(getActivity()),
-                TypefaceHelper.getRegular(getActivity()));
-        builder.positiveText(android.R.string.cancel);
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
+                .customView(R.layout.fragment_intent_chooser, false)
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .positiveText(android.R.string.cancel)
+                .build();
 
-        MaterialDialog dialog = builder.build();
         dialog.getActionButton(DialogAction.POSITIVE).setOnClickListener(view -> {
             if (mAdapter == null || mAdapter.isAsyncTaskRunning()) return;
 
@@ -179,11 +176,11 @@ public class IntentChooserFragment extends DialogFragment {
                         intent.setType("application/zip");
                     }
 
-                    List<ResolveInfo> resolveInfos = getActivity().getPackageManager()
+                    List<ResolveInfo> resolveInfos = requireActivity().getPackageManager()
                             .queryIntentActivities(intent, 0);
                     try {
                         Collections.sort(resolveInfos, new ResolveInfo.DisplayNameComparator(
-                                getActivity().getPackageManager()));
+                                requireActivity().getPackageManager()));
                     } catch (Exception ignored) {
                     }
 
@@ -199,7 +196,7 @@ public class IntentChooserFragment extends DialogFragment {
                                     Intent inbox = new Intent(Intent.ACTION_SEND);
                                     inbox.setComponent(componentName);
 
-                                    List<ResolveInfo> list = getActivity().getPackageManager().queryIntentActivities(
+                                    List<ResolveInfo> list = requireActivity().getPackageManager().queryIntentActivities(
                                             inbox, PackageManager.MATCH_DEFAULT_ONLY);
                                     if (list.size() > 0) {
                                         apps.add(new IntentChooser(resolveInfo, IntentChooser.TYPE_SUPPORTED));

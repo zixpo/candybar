@@ -175,9 +175,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 switch (setting.getType()) {
                     case CACHE:
                         new MaterialDialog.Builder(mContext)
-                                .typeface(
-                                        TypefaceHelper.getMedium(mContext),
-                                        TypefaceHelper.getRegular(mContext))
+                                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                                 .content(R.string.pref_data_cache_clear_dialog)
                                 .positiveText(R.string.clear)
                                 .negativeText(android.R.string.cancel)
@@ -204,9 +202,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         break;
                     case ICON_REQUEST:
                         new MaterialDialog.Builder(mContext)
-                                .typeface(
-                                        TypefaceHelper.getMedium(mContext),
-                                        TypefaceHelper.getRegular(mContext))
+                                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                                 .content(R.string.pref_data_request_clear_dialog)
                                 .positiveText(R.string.clear)
                                 .negativeText(android.R.string.cancel)

@@ -61,23 +61,19 @@ public class OtherAppsFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_other_apps, false);
-        builder.typeface(
-                TypefaceHelper.getMedium(getActivity()),
-                TypefaceHelper.getRegular(getActivity()));
-        builder.title(R.string.home_more_apps_header);
-        builder.positiveText(R.string.close);
-
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
+                .customView(R.layout.fragment_other_apps, false)
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .title(R.string.home_more_apps_header)
+                .positiveText(R.string.close)
+                .build();
         dialog.show();
 
         ListView listView = (ListView) dialog.findViewById(R.id.listview);
         List<CandyBarApplication.OtherApp> otherApps = CandyBarApplication.getConfiguration().getOtherApps();
         if (otherApps != null) {
-            listView.setAdapter(new OtherAppsAdapter(getActivity(), otherApps));
+            listView.setAdapter(new OtherAppsAdapter(requireActivity(), otherApps));
         } else {
             dismiss();
         }

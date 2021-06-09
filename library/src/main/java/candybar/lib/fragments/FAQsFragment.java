@@ -66,7 +66,6 @@ public class FAQsFragment extends Fragment {
 
     @Nullable
     @Override
-    @SuppressWarnings("ConstantConditions")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_faqs, container, false);
@@ -74,7 +73,7 @@ public class FAQsFragment extends Fragment {
         mSearchResult = view.findViewById(R.id.search_result);
         mFastScroll = view.findViewById(R.id.fastscroll);
 
-        if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
@@ -96,7 +95,6 @@ public class FAQsFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
@@ -104,7 +102,7 @@ public class FAQsFragment extends Fragment {
 
         SearchView searchView = (SearchView) search.getActionView();
         searchView.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
-        searchView.setQueryHint(getActivity().getResources().getString(R.string.search_faqs));
+        searchView.setQueryHint(requireActivity().getResources().getString(R.string.search_faqs));
         searchView.setMaxWidth(Integer.MAX_VALUE);
 
         ViewHelper.setSearchViewTextColor(searchView, color);
@@ -136,12 +134,11 @@ public class FAQsFragment extends Fragment {
     }
 
     @SuppressLint("StringFormatInvalid")
-    @SuppressWarnings("ConstantConditions")
     private void filterSearch(String query) {
         try {
             mAdapter.search(query);
             if (mAdapter.getFaqsCount() == 0) {
-                String text = String.format(getActivity().getResources().getString(
+                String text = String.format(requireActivity().getResources().getString(
                         R.string.search_noresult), query);
                 mSearchResult.setText(text);
                 mSearchResult.setVisibility(View.VISIBLE);

@@ -44,12 +44,11 @@ public class AboutFragment extends Fragment {
 
     @Nullable
     @Override
-    @SuppressWarnings("ConstantConditions")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerview);
 
-        if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
@@ -57,43 +56,40 @@ public class AboutFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        resetRecyclerViewPadding(getActivity().getResources().getConfiguration().orientation);
+        resetRecyclerViewPadding(requireActivity().getResources().getConfiguration().orientation);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        int spanCount = getActivity().getResources().getInteger(R.integer.about_column_count);
+        int spanCount = requireActivity().getResources().getInteger(R.integer.about_column_count);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(
                 spanCount, StaggeredGridLayoutManager.VERTICAL));
-        mRecyclerView.setAdapter(new AboutAdapter(getActivity(), spanCount));
+        mRecyclerView.setAdapter(new AboutAdapter(requireActivity(), spanCount));
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
         resetRecyclerViewPadding(newConfig.orientation);
         ViewHelper.resetSpanCount(mRecyclerView,
-                getActivity().getResources().getInteger(R.integer.about_column_count));
+                requireActivity().getResources().getInteger(R.integer.about_column_count));
 
         StaggeredGridLayoutManager manager = (StaggeredGridLayoutManager) mRecyclerView.getLayoutManager();
         assert manager != null;
-        mRecyclerView.setAdapter(new AboutAdapter(getActivity(), manager.getSpanCount()));
+        mRecyclerView.setAdapter(new AboutAdapter(requireActivity(), manager.getSpanCount()));
     }
 
-    @SuppressWarnings("ConstantConditions")
     private void resetRecyclerViewPadding(int orientation) {
         if (mRecyclerView == null) return;
 
         int padding = 0;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            padding = getActivity().getResources().getDimensionPixelSize(R.dimen.content_padding);
+            padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.content_padding);
 
             if (CandyBarApplication.getConfiguration().getAboutStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT) {
-                padding = getActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
+                padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
             }
         }
 

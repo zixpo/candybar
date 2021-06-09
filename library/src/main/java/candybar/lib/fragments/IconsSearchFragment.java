@@ -92,7 +92,6 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -101,7 +100,7 @@ public class IconsSearchFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
-                getActivity().getResources().getInteger(R.integer.icons_column_count)));
+                requireActivity().getResources().getInteger(R.integer.icons_column_count)));
 
         setFastScrollColor(mFastScroll);
         mFastScroll.attachRecyclerView(mRecyclerView);
@@ -109,7 +108,6 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_icons_search, menu);
@@ -117,13 +115,13 @@ public class IconsSearchFragment extends Fragment {
         MenuItem iconShape = menu.findItem(R.id.menu_icon_shape);
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
-                !getActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
+                !requireActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
             iconShape.setVisible(false);
         }
 
         mSearchView = (SearchView) search.getActionView();
         mSearchView.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI | EditorInfo.IME_ACTION_SEARCH);
-        mSearchView.setQueryHint(getActivity().getResources().getString(R.string.search_icon));
+        mSearchView.setQueryHint(requireActivity().getResources().getString(R.string.search_icon));
         mSearchView.setMaxWidth(Integer.MAX_VALUE);
 
         search.expandActionView();
@@ -144,7 +142,7 @@ public class IconsSearchFragment extends Fragment {
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                getActivity().onBackPressed();
+                requireActivity().onBackPressed();
                 return true;
             }
         });
@@ -164,16 +162,15 @@ public class IconsSearchFragment extends Fragment {
         });
 
         iconShape.setOnMenuItemClickListener(menuItem -> {
-            IconShapeChooserFragment.showIconShapeChooser(getActivity().getSupportFragmentManager());
+            IconShapeChooserFragment.showIconShapeChooser(requireActivity().getSupportFragmentManager());
             return false;
         });
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        ViewHelper.resetSpanCount(mRecyclerView, getActivity().getResources().getInteger(R.integer.icons_column_count));
+        ViewHelper.resetSpanCount(mRecyclerView, requireActivity().getResources().getInteger(R.integer.icons_column_count));
     }
 
     @Override
@@ -184,12 +181,11 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @SuppressLint("StringFormatInvalid")
-    @SuppressWarnings("ConstantConditions")
     private void filterSearch(String query) {
         try {
             mAdapter.search(query);
             if (mAdapter.getItemCount() == 0) {
-                String text = String.format(getActivity().getResources().getString(
+                String text = String.format(requireActivity().getResources().getString(
                         R.string.search_noresult), query);
                 mSearchResult.setText(text);
                 mSearchResult.setVisibility(View.VISIBLE);
@@ -215,23 +211,22 @@ public class IconsSearchFragment extends Fragment {
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
         protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (CandyBarMainActivity.sSections == null) {
-                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(getActivity());
+                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(requireActivity());
 
                         for (Icon section : CandyBarMainActivity.sSections) {
-                            if (getActivity().getResources().getBoolean(R.bool.show_icon_name)) {
+                            if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
                                 for (Icon icon : section.getIcons()) {
                                     String name;
                                     if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
                                         name = icon.getCustomName();
                                     } else {
-                                        name = IconsHelper.replaceName(getActivity(),
-                                                getActivity().getResources().getBoolean(R.bool.enable_icon_name_replacer),
+                                        name = IconsHelper.replaceName(requireActivity(),
+                                                requireActivity().getResources().getBoolean(R.bool.enable_icon_name_replacer),
                                                 icon.getTitle());
                                     }
                                     icon.setTitle(name);

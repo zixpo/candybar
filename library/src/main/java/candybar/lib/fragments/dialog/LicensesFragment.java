@@ -74,16 +74,13 @@ public class LicensesFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_licenses, false);
-        builder.typeface(
-                TypefaceHelper.getMedium(getActivity()),
-                TypefaceHelper.getRegular(getActivity()));
-        builder.title(R.string.about_open_source_licenses);
-        builder.negativeText(R.string.close);
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
+                .customView(R.layout.fragment_licenses, false)
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .title(R.string.about_open_source_licenses)
+                .negativeText(R.string.close)
+                .build();
         dialog.show();
 
         mWebView = (WebView) dialog.findViewById(R.id.webview);
@@ -132,10 +129,9 @@ public class LicensesFragment extends DialogFragment {
             return false;
         }
 
-        @SuppressWarnings("ConstantConditions")
         private String getColorHex(@AttrRes int res) {
             TypedValue typedValue = new TypedValue();
-            Resources.Theme theme = getActivity().getTheme();
+            Resources.Theme theme = requireActivity().getTheme();
             theme.resolveAttribute(res, typedValue, true);
             return String.format("#%06X", (0xFFFFFF & typedValue.data));
         }

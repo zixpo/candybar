@@ -481,9 +481,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         @Override
         protected void preRun() {
             loadingDialog = new MaterialDialog.Builder(mContext)
-                    .typeface(
-                            TypefaceHelper.getMedium(mContext),
-                            TypefaceHelper.getRegular(mContext))
+                    .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                     .content(R.string.checking_for_update)
                     .cancelable(false)
                     .canceledOnTouchOutside(false)
@@ -554,9 +552,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             if (ok) {
                 MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext)
-                        .typeface(
-                                TypefaceHelper.getMedium(mContext),
-                                TypefaceHelper.getRegular(mContext))
+                        .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                         .customView(R.layout.fragment_update, false);
 
                 if (isUpdateAvailable) {
@@ -591,9 +587,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 dialog.show();
             } else {
                 new MaterialDialog.Builder(mContext)
-                        .typeface(
-                                TypefaceHelper.getMedium(mContext),
-                                TypefaceHelper.getRegular(mContext))
+                        .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                         .content(R.string.unable_to_load_config)
                         .positiveText(R.string.close)
                         .build()

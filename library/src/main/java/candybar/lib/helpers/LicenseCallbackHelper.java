@@ -42,14 +42,11 @@ public class LicenseCallbackHelper implements LicenseCallback {
     public LicenseCallbackHelper(@NonNull Context context) {
         mContext = context;
 
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext);
-        builder.typeface(
-                TypefaceHelper.getMedium(mContext),
-                TypefaceHelper.getRegular(mContext));
-        builder.content(R.string.license_checking)
-                .progress(true, 0);
-
-        mDialog = builder.build();
+        mDialog = new MaterialDialog.Builder(mContext)
+                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
+                .content(R.string.license_checking)
+                .progress(true, 0)
+                .build();
         mDialog.setCancelable(false);
         mDialog.setCanceledOnTouchOutside(false);
     }
@@ -74,9 +71,7 @@ public class LicenseCallbackHelper implements LicenseCallback {
         int message = status == LicenseHelper.Status.SUCCESS ?
                 R.string.license_check_success : R.string.license_check_failed;
         new MaterialDialog.Builder(mContext)
-                .typeface(
-                        TypefaceHelper.getMedium(mContext),
-                        TypefaceHelper.getRegular(mContext))
+                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                 .title(R.string.license_check)
                 .content(message)
                 .positiveText(R.string.close)
@@ -91,9 +86,7 @@ public class LicenseCallbackHelper implements LicenseCallback {
 
     private void showRetryDialog() {
         new MaterialDialog.Builder(mContext)
-                .typeface(
-                        TypefaceHelper.getMedium(mContext),
-                        TypefaceHelper.getRegular(mContext))
+                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                 .title(R.string.license_check)
                 .content(R.string.license_check_retry)
                 .positiveText(R.string.close)

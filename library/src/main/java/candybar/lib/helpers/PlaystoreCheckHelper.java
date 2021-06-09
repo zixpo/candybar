@@ -68,9 +68,7 @@ public class PlaystoreCheckHelper {
 
     private void onPlaystoreChecked(boolean success) {
         MaterialDialog.Builder dialog = new MaterialDialog.Builder(mContext)
-                .typeface(
-                        TypefaceHelper.getMedium(mContext),
-                        TypefaceHelper.getRegular(mContext))
+                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                 .title(R.string.playstore_check)
                 .content(contentString)
                 .positiveText(R.string.close)

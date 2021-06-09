@@ -82,17 +82,13 @@ public class CreditsFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_credits, false);
-        builder.typeface(
-                TypefaceHelper.getMedium(getActivity()),
-                TypefaceHelper.getRegular(getActivity()));
-        builder.title(getTitle(mType));
-        builder.positiveText(R.string.close);
-
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
+                .customView(R.layout.fragment_credits, false)
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .title(getTitle(mType))
+                .positiveText(R.string.close)
+                .build();
         dialog.show();
         mListView = (ListView) dialog.findViewById(R.id.listview);
         mAsyncTask = new CreditsLoader().executeOnThreadPool();

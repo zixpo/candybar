@@ -115,22 +115,18 @@ public class InAppBillingFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
+        MaterialDialog.Builder builder = new MaterialDialog.Builder(requireActivity());
         builder.title(mType == InAppBilling.DONATE ?
                 R.string.navigation_view_donate : R.string.premium_request)
                 .customView(R.layout.fragment_inapp_dialog, false)
-                .typeface(
-                        TypefaceHelper.getMedium(getActivity()),
-                        TypefaceHelper.getRegular(getActivity()))
-                .positiveText(mType == InAppBilling.DONATE ?
-                        R.string.donate : R.string.premium_request_buy)
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .positiveText(mType == InAppBilling.DONATE ? R.string.donate : R.string.premium_request_buy)
                 .negativeText(R.string.close)
                 .onPositive((dialog, which) -> {
                     if (mAsyncTask == null) {
                         try {
-                            InAppBillingListener listener = (InAppBillingListener) getActivity();
+                            InAppBillingListener listener = (InAppBillingListener) requireActivity();
                             listener.onInAppBillingSelected(
                                     mType, mAdapter.getSelectedProduct());
                         } catch (Exception ignored) {
@@ -139,7 +135,7 @@ public class InAppBillingFragment extends DialogFragment {
                     }
                 })
                 .onNegative((dialog, which) ->
-                        Preferences.get(getActivity()).setInAppBillingType(-1));
+                        Preferences.get(requireActivity()).setInAppBillingType(-1));
         MaterialDialog dialog = builder.build();
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
@@ -190,7 +186,6 @@ public class InAppBillingFragment extends DialogFragment {
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
         protected boolean run() {
             if (!isCancelled()) {
                 try {
@@ -199,7 +194,7 @@ public class InAppBillingFragment extends DialogFragment {
                     AtomicBoolean isSuccess = new AtomicBoolean(false);
                     CountDownLatch doneSignal = new CountDownLatch(1);
 
-                    InAppBillingClient.get(getActivity()).getClient().querySkuDetailsAsync(
+                    InAppBillingClient.get(requireActivity()).getClient().querySkuDetailsAsync(
                             SkuDetailsParams.newBuilder()
                                     .setSkusList(Arrays.asList(mProductsId))
                                     .setType(BillingClient.SkuType.INAPP)

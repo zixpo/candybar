@@ -82,13 +82,10 @@ public class IconPreviewFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
                 .customView(R.layout.fragment_icon_preview, false)
-                .typeface(
-                        TypefaceHelper.getMedium(getActivity()),
-                        TypefaceHelper.getRegular(getActivity()))
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                 .positiveText(R.string.close)
                 .build();
 
@@ -102,10 +99,10 @@ public class IconPreviewFragment extends DialogFragment {
             mIconId = savedInstanceState.getInt(ID);
         }
 
-        if (!getActivity().getResources().getBoolean(R.bool.show_icon_name)) {
-            boolean iconNameReplacer = getActivity().getResources().getBoolean(
+        if (!requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
+            boolean iconNameReplacer = requireActivity().getResources().getBoolean(
                     R.bool.enable_icon_name_replacer);
-            mIconName = IconsHelper.replaceName(getActivity(), iconNameReplacer, mIconName);
+            mIconName = IconsHelper.replaceName(requireActivity(), iconNameReplacer, mIconName);
         }
 
         name.setText(mIconName);

@@ -60,17 +60,14 @@ public class ReportBugsTask extends AsyncTaskBase {
 
     @Override
     protected void preRun() {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext.get());
-        builder.typeface(
-                TypefaceHelper.getMedium(mContext.get()),
-                TypefaceHelper.getRegular(mContext.get()))
+        mDialog = new MaterialDialog.Builder(mContext.get())
+                .typeface(TypefaceHelper.getMedium(mContext.get()), TypefaceHelper.getRegular(mContext.get()))
                 .content(R.string.report_bugs_building)
                 .progress(true, 0)
                 .progressIndeterminateStyle(true)
                 .cancelable(false)
-                .canceledOnTouchOutside(false);
-
-        mDialog = builder.build();
+                .canceledOnTouchOutside(false)
+                .build();
         mDialog.show();
         mStringBuilder = new StringBuilder();
     }

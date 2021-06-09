@@ -66,31 +66,28 @@ public class ThemeChooserFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
                 .customView(R.layout.fragment_languages, false)
-                .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                 .title(R.string.pref_theme_header)
                 .negativeText(R.string.close)
                 .build();
-
         dialog.show();
 
         ListView listView = (ListView) dialog.findViewById(R.id.listview);
-        mChosenTheme = mCurrentTheme = Preferences.get(getActivity()).getTheme();
+        mChosenTheme = mCurrentTheme = Preferences.get(requireActivity()).getTheme();
 
-        listView.setAdapter(new ThemeAdapter(getActivity(), Arrays.asList(Theme.values()), mCurrentTheme.ordinal()));
+        listView.setAdapter(new ThemeAdapter(requireActivity(), Arrays.asList(Theme.values()), mCurrentTheme.ordinal()));
 
         return dialog;
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onDismiss(@NonNull DialogInterface dialog) {
         if (mChosenTheme != mCurrentTheme) {
-            Preferences.get(getActivity()).setTheme(mChosenTheme);
-            getActivity().recreate();
+            Preferences.get(requireActivity()).setTheme(mChosenTheme);
+            requireActivity().recreate();
         }
         super.onDismiss(dialog);
     }

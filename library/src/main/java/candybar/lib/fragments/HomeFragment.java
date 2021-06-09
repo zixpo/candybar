@@ -2,6 +2,7 @@ package candybar.lib.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -53,13 +55,12 @@ public class HomeFragment extends Fragment implements HomeListener, LifecycleObs
 
     @Nullable
     @Override
-    @SuppressWarnings("ConstantConditions")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerview);
 
-        if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
@@ -67,19 +68,18 @@ public class HomeFragment extends Fragment implements HomeListener, LifecycleObs
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         mManager = new StaggeredGridLayoutManager(
-                getActivity().getResources().getInteger(R.integer.home_column_count),
+                requireActivity().getResources().getInteger(R.integer.home_column_count),
                 StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(mManager);
 
         if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {
-            int padding = getActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
+            int padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
             mRecyclerView.setPadding(padding, padding, 0, 0);
         }
 
@@ -133,35 +133,34 @@ public class HomeFragment extends Fragment implements HomeListener, LifecycleObs
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onHomeIntroInit() {
-        if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
-            TapIntroHelper.showHomeIntros(getActivity(),
+        if (requireActivity().getResources().getBoolean(R.bool.show_intro)) {
+            TapIntroHelper.showHomeIntros(requireActivity(),
                     mRecyclerView, mManager,
-                    ((HomeAdapter) mRecyclerView.getAdapter()).getApplyIndex());
+                    ((HomeAdapter) Objects.requireNonNull(mRecyclerView.getAdapter())).getApplyIndex());
         }
     }
 
     @SuppressLint("StringFormatInvalid")
-    @SuppressWarnings("ConstantConditions")
     private void initHome() {
         List<Home> homes = new ArrayList<>();
+        final Resources resources = requireActivity().getResources();
 
-        if (getActivity().getResources().getBoolean(R.bool.enable_apply)) {
+        if (resources.getBoolean(R.bool.enable_apply)) {
             homes.add(new Home(
                     R.drawable.ic_toolbar_apply_launcher,
-                    String.format(getActivity().getResources().getString(R.string.home_apply_icon_pack),
-                            getActivity().getResources().getString(R.string.app_name)),
+                    String.format(resources.getString(R.string.home_apply_icon_pack),
+                            resources.getString(R.string.app_name)),
                     "",
                     Home.Type.APPLY,
                     false));
         }
 
-        if (getActivity().getResources().getBoolean(R.bool.enable_donation)) {
+        if (resources.getBoolean(R.bool.enable_donation)) {
             homes.add(new Home(
                     R.drawable.ic_toolbar_donate,
-                    getActivity().getResources().getString(R.string.home_donate),
-                    getActivity().getResources().getString(R.string.home_donate_desc),
+                    resources.getString(R.string.home_donate),
+                    resources.getString(R.string.home_donate_desc),
                     Home.Type.DONATE,
                     false));
         }
@@ -171,7 +170,7 @@ public class HomeFragment extends Fragment implements HomeListener, LifecycleObs
                 CandyBarApplication.getConfiguration().isAutomaticIconsCountEnabled() ?
                         String.valueOf(CandyBarMainActivity.sIconsCount) :
                         String.valueOf(CandyBarApplication.getConfiguration().getCustomIconsCount()),
-                getActivity().getResources().getString(R.string.home_icons),
+                resources.getString(R.string.home_icons),
                 Home.Type.ICONS,
                 true));
 
@@ -179,13 +178,12 @@ public class HomeFragment extends Fragment implements HomeListener, LifecycleObs
             homes.add(CandyBarMainActivity.sHomeIcon);
         }
 
-        mRecyclerView.setAdapter(new HomeAdapter(getActivity(), homes,
-                getActivity().getResources().getConfiguration().orientation));
+        mRecyclerView.setAdapter(new HomeAdapter(requireActivity(), homes,
+                resources.getConfiguration().orientation));
     }
 
-    @SuppressWarnings("ConstantConditions")
     public void resetWallpapersCount() {
-        if (WallpaperHelper.getWallpaperType(getActivity()) == WallpaperHelper.CLOUD_WALLPAPERS) {
+        if (WallpaperHelper.getWallpaperType(requireActivity()) == WallpaperHelper.CLOUD_WALLPAPERS) {
             if (mRecyclerView == null) return;
             if (mRecyclerView.getAdapter() == null) return;
 

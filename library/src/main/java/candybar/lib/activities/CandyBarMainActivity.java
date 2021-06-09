@@ -532,10 +532,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     (billingResult, s) -> {
                         if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                             Preferences.get(this).setInAppBillingType(-1);
-
-                            this.runOnUiThread(() -> new MaterialDialog.Builder(this)
-                                    .typeface(TypefaceHelper.getMedium(this),
-                                            TypefaceHelper.getRegular(this))
+                            runOnUiThread(() -> new MaterialDialog.Builder(this)
+                                    .typeface(TypefaceHelper.getMedium(this), TypefaceHelper.getRegular(this))
                                     .title(R.string.navigation_view_donate)
                                     .content(R.string.donation_success)
                                     .positiveText(R.string.close)

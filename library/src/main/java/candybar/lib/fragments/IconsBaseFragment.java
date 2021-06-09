@@ -99,7 +99,6 @@ public class IconsBaseFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_icons_search, menu);
@@ -109,11 +108,11 @@ public class IconsBaseFragment extends Fragment {
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
-                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentManager fm = requireActivity().getSupportFragmentManager();
                 if (fm == null) return false;
 
                 setHasOptionsMenu(false);
-                View view = getActivity().findViewById(R.id.shadow);
+                View view = requireActivity().findViewById(R.id.shadow);
                 if (view != null) view.animate().translationY(-mTabLayout.getHeight())
                         .setDuration(200).start();
                 mTabLayout.animate().translationY(-mTabLayout.getHeight()).setDuration(200)
@@ -127,7 +126,7 @@ public class IconsBaseFragment extends Fragment {
                                 PagerIconsAdapter adapter = (PagerIconsAdapter) mPager.getAdapter();
                                 if (adapter == null) return;
 
-                                SearchListener listener = (SearchListener) getActivity();
+                                SearchListener listener = (SearchListener) requireActivity();
                                 listener.onSearchExpanded(true);
 
                                 FragmentTransaction ft = fm.beginTransaction()
@@ -153,12 +152,12 @@ public class IconsBaseFragment extends Fragment {
         });
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
-                !getActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
+                !requireActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
             iconShape.setVisible(false);
         }
 
         iconShape.setOnMenuItemClickListener(menuItem -> {
-            IconShapeChooserFragment.showIconShapeChooser(getActivity().getSupportFragmentManager());
+            IconShapeChooserFragment.showIconShapeChooser(requireActivity().getSupportFragmentManager());
             return false;
         });
     }
@@ -206,31 +205,30 @@ public class IconsBaseFragment extends Fragment {
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
         protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (CandyBarMainActivity.sSections == null) {
-                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(getActivity());
+                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(requireActivity());
 
                         for (int i = 0; i < CandyBarMainActivity.sSections.size(); i++) {
                             List<Icon> icons = CandyBarMainActivity.sSections.get(i).getIcons();
-                            if (getActivity().getResources().getBoolean(R.bool.show_icon_name)) {
+                            if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
                                 for (Icon icon : icons) {
-                                    boolean replacer = getActivity().getResources().getBoolean(
+                                    boolean replacer = requireActivity().getResources().getBoolean(
                                             R.bool.enable_icon_name_replacer);
                                     String name;
                                     if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
                                         name = icon.getCustomName();
                                     } else {
-                                        name = IconsHelper.replaceName(getActivity(), replacer, icon.getTitle());
+                                        name = IconsHelper.replaceName(requireActivity(), replacer, icon.getTitle());
                                     }
                                     icon.setTitle(name);
                                 }
                             }
 
-                            if (getActivity().getResources().getBoolean(R.bool.enable_icons_sort)) {
+                            if (requireActivity().getResources().getBoolean(R.bool.enable_icons_sort)) {
                                 Collections.sort(icons, new AlphanumComparator() {
                                     @Override
                                     public int compare(Object o1, Object o2) {

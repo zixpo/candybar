@@ -57,13 +57,12 @@ public class ApplyFragment extends Fragment {
 
     @Nullable
     @Override
-    @SuppressWarnings("ConstantConditions")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_apply, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerview);
 
-        if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
@@ -71,7 +70,6 @@ public class ApplyFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -79,7 +77,7 @@ public class ApplyFragment extends Fragment {
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
 
         if (CandyBarApplication.getConfiguration().getApplyGrid() == CandyBarApplication.GridStyle.FLAT) {
-            int padding = getActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
+            int padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
             mRecyclerView.setPadding(padding, padding, 0, 0);
         }
 
@@ -99,10 +97,9 @@ public class ApplyFragment extends Fragment {
         super.onDestroy();
     }
 
-    @SuppressWarnings("ConstantConditions")
     private boolean isPackageInstalled(String pkg) {
         try {
-            PackageInfo packageInfo = getActivity().getPackageManager().getPackageInfo(
+            PackageInfo packageInfo = requireActivity().getPackageManager().getPackageInfo(
                     pkg, PackageManager.GET_ACTIVITIES);
             return packageInfo != null;
         } catch (Exception e) {

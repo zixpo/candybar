@@ -59,15 +59,12 @@ public class ReportBugsHelper {
     private static String UTF8 = "UTF8";
 
     public static void prepareReportBugs(@NonNull Context context) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(context);
-        builder.customView(R.layout.dialog_report_bugs, true);
-        builder.typeface(
-                TypefaceHelper.getMedium(context),
-                TypefaceHelper.getRegular(context));
-        builder.positiveText(R.string.report_bugs_send);
-        builder.negativeText(R.string.close);
-
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(context)
+                .customView(R.layout.dialog_report_bugs, true)
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
+                .positiveText(R.string.report_bugs_send)
+                .negativeText(R.string.close)
+                .build();
 
         EditText editText = (EditText) dialog.findViewById(R.id.input_desc);
         TextInputLayout inputLayout = (TextInputLayout) dialog.findViewById(R.id.input_layout);

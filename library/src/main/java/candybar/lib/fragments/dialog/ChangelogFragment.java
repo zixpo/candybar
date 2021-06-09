@@ -64,22 +64,19 @@ public class ChangelogFragment extends DialogFragment implements LifecycleObserv
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.typeface(
-                TypefaceHelper.getMedium(getActivity()),
-                TypefaceHelper.getRegular(getActivity()));
-        builder.customView(R.layout.fragment_changelog, false);
-        builder.positiveText(R.string.close);
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .customView(R.layout.fragment_changelog, false)
+                .positiveText(R.string.close)
+                .build();
         dialog.show();
 
         ListView changelogList = (ListView) dialog.findViewById(R.id.changelog_list);
         TextView changelogDate = (TextView) dialog.findViewById(R.id.changelog_date);
         TextView changelogVersion = (TextView) dialog.findViewById(R.id.changelog_version);
 
-        Activity activity = getActivity();
+        Activity activity = requireActivity();
         try {
             String version = activity.getPackageManager().getPackageInfo(
                     activity.getPackageName(), 0).versionName;
@@ -96,17 +93,16 @@ public class ChangelogFragment extends DialogFragment implements LifecycleObserv
         else changelogDate.setVisibility(View.GONE);
 
         String[] changelog = activity.getResources().getStringArray(R.array.changelog);
-        changelogList.setAdapter(new ChangelogAdapter(getActivity(), changelog));
+        changelogList.setAdapter(new ChangelogAdapter(requireActivity(), changelog));
 
         return dialog;
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onDismiss(@NonNull DialogInterface dialog) {
         super.onDismiss(dialog);
 
-        FragmentManager fm = getActivity().getSupportFragmentManager();
+        FragmentManager fm = requireActivity().getSupportFragmentManager();
         if (fm != null) {
             Fragment fragment = fm.findFragmentByTag("home");
             if (fragment != null) {

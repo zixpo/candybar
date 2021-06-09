@@ -1,5 +1,6 @@
 package candybar.lib.fragments;
 
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -67,13 +68,12 @@ public class SettingsFragment extends Fragment {
 
     @Nullable
     @Override
-    @SuppressWarnings("ConstantConditions")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerview);
 
-        if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
@@ -90,7 +90,6 @@ public class SettingsFragment extends Fragment {
         initSettings();
     }
 
-    @SuppressWarnings("ConstantConditions")
     public void restorePurchases(List<String> productsId, String[] premiumRequestProductsId,
                                  int[] premiumRequestProductsCount) {
         int index = -1;
@@ -102,13 +101,12 @@ public class SettingsFragment extends Fragment {
                 }
             }
             if (index > -1 && index < premiumRequestProductsCount.length) {
-                if (!Preferences.get(getActivity()).isPremiumRequest()) {
-                    Preferences.get(getActivity()).setPremiumRequestProductId(productId);
-                    Preferences.get(getActivity()).setPremiumRequestCount(
-                            premiumRequestProductsCount[index]);
-                    Preferences.get(getActivity()).setPremiumRequestTotal(
-                            premiumRequestProductsCount[index]);
-                    Preferences.get(getActivity()).setPremiumRequest(true);
+                final Preferences preferences = Preferences.get(requireActivity());
+                if (!preferences.isPremiumRequest()) {
+                    preferences.setPremiumRequestProductId(productId);
+                    preferences.setPremiumRequestCount(premiumRequestProductsCount[index]);
+                    preferences.setPremiumRequestTotal(premiumRequestProductsCount[index]);
+                    preferences.setPremiumRequest(true);
                 }
             }
         }
@@ -118,110 +116,110 @@ public class SettingsFragment extends Fragment {
         Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
     }
 
-    @SuppressWarnings("ConstantConditions")
     private void initSettings() {
         List<Setting> settings = new ArrayList<>();
 
-        double cache = (double) FileHelper.getDirectorySize(getActivity().getCacheDir()) / FileHelper.MB;
+        double cache = (double) FileHelper.getDirectorySize(requireActivity().getCacheDir()) / FileHelper.MB;
         NumberFormat formatter = new DecimalFormat("#0.00");
+        final Resources resources = requireActivity().getResources();
 
         settings.add(new Setting(R.drawable.ic_toolbar_storage,
-                getActivity().getResources().getString(R.string.pref_data_header),
+                resources.getString(R.string.pref_data_header),
                 "", "", "", Setting.Type.HEADER));
 
         settings.add(new Setting(-1, "",
-                getActivity().getResources().getString(R.string.pref_data_cache),
-                getActivity().getResources().getString(R.string.pref_data_cache_desc),
-                String.format(getActivity().getResources().getString(R.string.pref_data_cache_size),
+                resources.getString(R.string.pref_data_cache),
+                resources.getString(R.string.pref_data_cache_desc),
+                String.format(resources.getString(R.string.pref_data_cache_size),
                         formatter.format(cache) + " MB"),
                 Setting.Type.CACHE));
 
-        if (getActivity().getResources().getBoolean(R.bool.enable_icon_request) ||
-                Preferences.get(getActivity()).isPremiumRequestEnabled() &&
-                        !getActivity().getResources().getBoolean(R.bool.enable_icon_request_limit)) {
+        if (resources.getBoolean(R.bool.enable_icon_request) ||
+                Preferences.get(requireActivity()).isPremiumRequestEnabled() &&
+                        !resources.getBoolean(R.bool.enable_icon_request_limit)) {
             settings.add(new Setting(-1, "",
-                    getActivity().getResources().getString(R.string.pref_data_request),
-                    getActivity().getResources().getString(R.string.pref_data_request_desc),
+                    resources.getString(R.string.pref_data_request),
+                    resources.getString(R.string.pref_data_request_desc),
                     "", Setting.Type.ICON_REQUEST));
         }
 
-        if (Preferences.get(getActivity()).isPremiumRequestEnabled()) {
+        if (Preferences.get(requireActivity()).isPremiumRequestEnabled()) {
             settings.add(new Setting(R.drawable.ic_toolbar_premium_request,
-                    getActivity().getResources().getString(R.string.pref_premium_request_header),
+                    resources.getString(R.string.pref_premium_request_header),
                     "", "", "", Setting.Type.HEADER));
 
             settings.add(new Setting(-1, "",
-                    getActivity().getResources().getString(R.string.pref_premium_request_restore),
-                    getActivity().getResources().getString(R.string.pref_premium_request_restore_desc),
+                    resources.getString(R.string.pref_premium_request_restore),
+                    resources.getString(R.string.pref_premium_request_restore_desc),
                     "", Setting.Type.RESTORE));
 
             settings.add(new Setting(-1, "",
-                    getActivity().getResources().getString(R.string.pref_premium_request_rebuild),
-                    getActivity().getResources().getString(R.string.pref_premium_request_rebuild_desc),
+                    resources.getString(R.string.pref_premium_request_rebuild),
+                    resources.getString(R.string.pref_premium_request_rebuild_desc),
                     "", Setting.Type.PREMIUM_REQUEST));
         }
 
         if (CandyBarApplication.getConfiguration().isDashboardThemingEnabled()) {
             settings.add(new Setting(R.drawable.ic_toolbar_theme,
-                    getActivity().getResources().getString(R.string.pref_theme_header),
+                    resources.getString(R.string.pref_theme_header),
                     "", "", "", Setting.Type.HEADER));
 
             settings.add(new Setting(-1, "",
-                    Preferences.get(getActivity()).getTheme().displayName(getActivity()),
+                    Preferences.get(requireActivity()).getTheme().displayName(requireActivity()),
                     "", "", Setting.Type.THEME));
         }
 
         settings.add(new Setting(R.drawable.ic_toolbar_language,
-                getActivity().getResources().getString(R.string.pref_language_header),
+                resources.getString(R.string.pref_language_header),
                 "", "", "", Setting.Type.HEADER));
 
-        Language language = LocaleHelper.getCurrentLanguage(getActivity());
+        Language language = LocaleHelper.getCurrentLanguage(requireActivity());
         settings.add(new Setting(-1, "",
                 language.getName(),
                 "", "", Setting.Type.LANGUAGE));
 
         settings.add(new Setting(R.drawable.ic_toolbar_others,
-                getActivity().getResources().getString(R.string.pref_others_header),
+                resources.getString(R.string.pref_others_header),
                 "", "", "", Setting.Type.HEADER));
 
         settings.add(new Setting(-1, "",
-                getActivity().getResources().getString(R.string.pref_others_changelog),
+                resources.getString(R.string.pref_others_changelog),
                 "", "", Setting.Type.CHANGELOG));
 
-        if (getActivity().getResources().getBoolean(R.bool.enable_apply)) {
+        if (resources.getBoolean(R.bool.enable_apply)) {
             settings.add(new Setting(-1, "",
-                    getActivity().getResources().getString(R.string.pref_others_report_bugs),
+                    resources.getString(R.string.pref_others_report_bugs),
                     "", "", Setting.Type.REPORT_BUGS));
         }
 
-        if (getActivity().getResources().getBoolean(R.bool.show_intro)) {
+        if (resources.getBoolean(R.bool.show_intro)) {
             settings.add(new Setting(-1, "",
-                    getActivity().getResources().getString(R.string.pref_others_reset_tutorial),
+                    resources.getString(R.string.pref_others_reset_tutorial),
                     "", "", Setting.Type.RESET_TUTORIAL));
         }
 
-        mRecyclerView.setAdapter(new SettingsAdapter(getActivity(), settings));
+        mRecyclerView.setAdapter(new SettingsAdapter(requireActivity(), settings));
     }
 
     public void rebuildPremiumRequest() {
         new PremiumRequestRebuilder().execute();
     }
 
-    @SuppressWarnings("ConstantConditions")
     private class PremiumRequestRebuilder extends AsyncTaskBase {
 
         private MaterialDialog dialog;
-        private final boolean isArctic = RequestHelper.isPremiumArcticEnabled(getActivity());
-        private final String arcticApiKey = RequestHelper.getPremiumArcticApiKey(getActivity());
+        private boolean isArctic;
+        private String arcticApiKey;
         private List<Request> requests;
         private String errorMessage = "";
 
         @Override
         protected void preRun() {
-            dialog = new MaterialDialog.Builder(getActivity())
-                    .typeface(
-                            TypefaceHelper.getMedium(getActivity()),
-                            TypefaceHelper.getRegular(getActivity()))
+            isArctic = RequestHelper.isPremiumArcticEnabled(requireActivity());
+            arcticApiKey = RequestHelper.getPremiumArcticApiKey(requireActivity());
+
+            dialog = new MaterialDialog.Builder(requireActivity())
+                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                     .content(R.string.premium_request_rebuilding)
                     .cancelable(false)
                     .canceledOnTouchOutside(false)
@@ -237,14 +235,14 @@ public class SettingsFragment extends Fragment {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    File directory = getActivity().getCacheDir();
-                    requests = Database.get(getActivity()).getPremiumRequest(null);
+                    File directory = requireActivity().getCacheDir();
+                    requests = Database.get(requireActivity()).getPremiumRequest(null);
                     if (requests.size() == 0) return true;
 
                     List<String> files = new ArrayList<>();
 
                     for (Request request : requests) {
-                        Drawable drawable = getReqIcon(getActivity(), request.getActivity());
+                        Drawable drawable = getReqIcon(requireActivity(), request.getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
                                 isArctic ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
@@ -254,9 +252,9 @@ public class SettingsFragment extends Fragment {
                         errorMessage = RequestHelper.sendArcticRequest(requests, files, directory, arcticApiKey);
                         return errorMessage == null;
                     } else {
-                        File appFilter = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.APPFILTER);
-                        File appMap = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.APPMAP);
-                        File themeResources = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.THEME_RESOURCES);
+                        File appFilter = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.APPFILTER);
+                        File appMap = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.APPMAP);
+                        File themeResources = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.THEME_RESOURCES);
 
                         if (appFilter != null) {
                             files.add(appFilter.toString());

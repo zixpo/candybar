@@ -75,29 +75,27 @@ public class IconsFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIcons = new ArrayList<>();
-        int index = getArguments().getInt(INDEX);
+        int index = requireArguments().getInt(INDEX);
         if (CandyBarMainActivity.sSections != null)
             mIcons = CandyBarMainActivity.sSections.get(index).getIcons();
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
-                getActivity().getResources().getInteger(R.integer.icons_column_count)));
+                requireActivity().getResources().getInteger(R.integer.icons_column_count)));
 
         setFastScrollColor(mFastScroll);
         mFastScroll.attachRecyclerView(mRecyclerView);
 
-        mAdapter = new IconsAdapter(getActivity(), mIcons, this);
+        mAdapter = new IconsAdapter(requireActivity(), mIcons, this);
         mRecyclerView.setAdapter(mAdapter);
         iconsAdapters.add(mAdapter);
     }
@@ -109,11 +107,10 @@ public class IconsFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         ViewHelper.resetSpanCount(mRecyclerView,
-                getActivity().getResources().getInteger(R.integer.icons_column_count));
+                requireActivity().getResources().getInteger(R.integer.icons_column_count));
     }
 
     public static void reloadIcons() {
