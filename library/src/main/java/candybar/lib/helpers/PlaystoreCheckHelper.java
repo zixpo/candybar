@@ -16,7 +16,7 @@ import candybar.lib.preferences.Preferences;
 
 public class PlaystoreCheckHelper {
 
-    public Context mContext;
+    public final Context mContext;
     private static String contentString;
 
     /*private boolean isTest = true, testPass = true;*/

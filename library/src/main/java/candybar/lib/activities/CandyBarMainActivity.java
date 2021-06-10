@@ -764,7 +764,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                         InputStream stream = connection.getInputStream();
-                        List list = JsonHelper.parseList(stream);
+                        List<?> list = JsonHelper.parseList(stream);
                         if (list == null) return;
 
                         List<Wallpaper> wallpapers = new ArrayList<>();

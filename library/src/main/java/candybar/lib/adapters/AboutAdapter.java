@@ -67,9 +67,9 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     private final boolean mShowExtraInfo;
 
-    boolean mShowContributors;
-    boolean mShowPrivacyPolicy;
-    final boolean mShowTerms;
+    private final boolean mShowContributors;
+    private final boolean mShowPrivacyPolicy;
+    private final boolean mShowTerms;
 
     private static final int TYPE_HEADER = 0;
     private static final int TYPE_EXTRA_INFO = 1;

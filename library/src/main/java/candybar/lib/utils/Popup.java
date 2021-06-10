@@ -244,8 +244,8 @@ public class Popup {
 
         static class ViewHolder {
 
-            AppCompatCheckBox checkBox;
-            TextView title;
+            final AppCompatCheckBox checkBox;
+            final TextView title;
 
             ViewHolder(@NonNull View view) {
                 checkBox = view.findViewById(R.id.checkbox);

@@ -581,8 +581,10 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     JSONObject disableRequestObj = configJson.getJSONObject("disableRequest");
                     long disableRequestBelow = disableRequestObj.optLong("below", 0);
                     String disableRequestOn = disableRequestObj.optString("on", "");
-                    PackageInfo packageInfo = requireActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
-                    long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
+                    PackageInfo packageInfo = requireActivity().getPackageManager()
+                            .getPackageInfo(requireActivity().getPackageName(), 0);
+                    long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
+                            ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
 
                     if ((appVersionCode < disableRequestBelow) ||
                             disableRequestOn.matches(".*\\b" + appVersionCode + "\\b.*")) {

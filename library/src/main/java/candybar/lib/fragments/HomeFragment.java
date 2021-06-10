@@ -116,7 +116,7 @@ public class HomeFragment extends Fragment implements HomeListener, LifecycleObs
             return;
         }
 
-        RecyclerView.Adapter adapter = mRecyclerView.getAdapter();
+        RecyclerView.Adapter<?> adapter = mRecyclerView.getAdapter();
         if (adapter.getItemCount() > 8) {
             //Probably the original adapter already modified
             adapter.notifyDataSetChanged();
@@ -187,7 +187,7 @@ public class HomeFragment extends Fragment implements HomeListener, LifecycleObs
             if (mRecyclerView == null) return;
             if (mRecyclerView.getAdapter() == null) return;
 
-            RecyclerView.Adapter adapter = mRecyclerView.getAdapter();
+            RecyclerView.Adapter<?> adapter = mRecyclerView.getAdapter();
             if (adapter.getItemCount() > 8) {
                 //Probably the original adapter already modified
                 adapter.notifyDataSetChanged();

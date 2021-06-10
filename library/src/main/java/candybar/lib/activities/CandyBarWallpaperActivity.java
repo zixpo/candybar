@@ -455,14 +455,16 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                     public boolean onResourceReady(Bitmap loadedImage, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
                         if (loadedImage != null && mWallpaper.getColor() == 0) {
                             Palette.from(loadedImage).generate(palette -> {
-                                int accent = ColorHelper.getAttributeColor(
-                                        CandyBarWallpaperActivity.this, R.attr.colorAccent);
-                                int color = palette.getVibrantColor(accent);
-                                if (color == accent)
-                                    color = palette.getMutedColor(accent);
+                                if (palette != null) {
+                                    int accent = ColorHelper.getAttributeColor(
+                                            CandyBarWallpaperActivity.this, R.attr.colorAccent);
+                                    int color = palette.getVibrantColor(accent);
+                                    if (color == accent)
+                                        color = palette.getMutedColor(accent);
 
-                                mWallpaper.setColor(color);
-                                Database.get(CandyBarWallpaperActivity.this).updateWallpaper(mWallpaper);
+                                    mWallpaper.setColor(color);
+                                    Database.get(CandyBarWallpaperActivity.this).updateWallpaper(mWallpaper);
+                                }
 
                                 onWallpaperLoaded();
                             });

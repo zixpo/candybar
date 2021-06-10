@@ -158,7 +158,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
 
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                         InputStream stream = connection.getInputStream();
-                        List list = JsonHelper.parseList(stream);
+                        List<?> list = JsonHelper.parseList(stream);
                         if (list == null) {
                             LogUtil.e("Json error, no array with name: "
                                     + CandyBarApplication.getConfiguration().getWallpaperJsonStructure().getArrayName());
@@ -166,7 +166,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
                         }
 
                         if (list.size() > 0 && list.get(0) instanceof Map) {
-                            Map map = (Map) list.get(0);
+                            Map<?, ?> map = (Map<?, ?>) list.get(0);
                             String thumbUrl = JsonHelper.getThumbUrl(map);
 
                             // Preload the first wallpaper's thumbnail

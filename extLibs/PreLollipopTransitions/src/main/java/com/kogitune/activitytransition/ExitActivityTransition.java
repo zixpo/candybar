@@ -43,16 +43,13 @@ public class ExitActivityTransition {
         if (interpolator == null) {
             interpolator = new DecelerateInterpolator();
         }
-        TransitionAnimation.startExitAnimation(moveData, interpolator, new Runnable() {
-            @Override
-            public void run() {
-                if (Build.VERSION.SDK_INT >= 21) {
-                    activity.finishAfterTransition();
-                    return;
-                }
-                activity.finish();
-                activity.overridePendingTransition(0, 0);
+        TransitionAnimation.startExitAnimation(moveData, interpolator, () -> {
+            if (Build.VERSION.SDK_INT >= 21) {
+                activity.finishAfterTransition();
+                return;
             }
+            activity.finish();
+            activity.overridePendingTransition(0, 0);
         });
     }
 
