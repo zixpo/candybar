@@ -1,6 +1,5 @@
 package candybar.lib.fragments.dialog;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -174,7 +173,6 @@ public class InAppBillingFragment extends DialogFragment {
         super.onDismiss(dialog);
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class InAppProductsLoader extends AsyncTaskBase {
 
         private InAppBilling[] inAppBillings;

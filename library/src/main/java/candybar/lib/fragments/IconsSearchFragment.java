@@ -200,7 +200,6 @@ public class IconsSearchFragment extends Fragment {
             currentAdapter.get().reloadIcons();
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class IconsLoader extends AsyncTaskBase {
 
         private List<Icon> icons;

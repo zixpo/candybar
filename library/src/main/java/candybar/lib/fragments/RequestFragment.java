@@ -1,6 +1,5 @@
 package candybar.lib.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.ResolveInfo;
@@ -379,7 +378,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class RequestLoader extends AsyncTaskBase {
 
         private MaterialDialog dialog;

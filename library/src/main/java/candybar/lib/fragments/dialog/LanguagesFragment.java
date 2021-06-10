@@ -1,6 +1,5 @@
 package candybar.lib.fragments.dialog;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -111,7 +110,6 @@ public class LanguagesFragment extends DialogFragment {
         dismiss();
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class LanguagesLoader extends AsyncTaskBase {
 
         private List<Language> languages;

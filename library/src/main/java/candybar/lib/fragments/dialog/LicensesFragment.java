@@ -1,6 +1,5 @@
 package candybar.lib.fragments.dialog;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
@@ -95,7 +94,6 @@ public class LicensesFragment extends DialogFragment {
         super.onDismiss(dialog);
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class LicensesLoader extends AsyncTaskBase {
 
         private StringBuilder sb;

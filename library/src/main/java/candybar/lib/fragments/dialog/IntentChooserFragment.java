@@ -1,6 +1,5 @@
 package candybar.lib.fragments.dialog;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -149,7 +148,6 @@ public class IntentChooserFragment extends DialogFragment {
         super.onDismiss(dialog);
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class IntentChooserLoader extends AsyncTaskBase {
 
         private List<IntentChooser> apps;

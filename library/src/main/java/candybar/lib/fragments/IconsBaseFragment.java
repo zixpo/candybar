@@ -1,7 +1,6 @@
 package candybar.lib.fragments;
 
 import android.animation.AnimatorListenerAdapter;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
@@ -195,7 +194,6 @@ public class IconsBaseFragment extends Fragment {
                 .start();
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class IconsLoader extends AsyncTaskBase {
         @Override
         protected void preRun() {
@@ -282,7 +280,6 @@ public class IconsBaseFragment extends Fragment {
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class TabTypefaceChanger extends AsyncTaskBase {
 
         PagerIconsAdapter adapter;

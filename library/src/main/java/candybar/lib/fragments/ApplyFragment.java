@@ -1,6 +1,5 @@
 package candybar.lib.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -124,7 +123,6 @@ public class ApplyFragment extends Fragment {
         return true;
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class LaunchersLoader extends AsyncTaskBase {
 
         private List<Icon> launchers;

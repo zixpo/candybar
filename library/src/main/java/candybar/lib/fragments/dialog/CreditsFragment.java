@@ -1,6 +1,5 @@
 package candybar.lib.fragments.dialog;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
@@ -140,7 +139,6 @@ public class CreditsFragment extends DialogFragment {
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class CreditsLoader extends AsyncTaskBase {
 
         private List<Credit> credits;

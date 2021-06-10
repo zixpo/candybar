@@ -469,7 +469,6 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class UpdateChecker extends AsyncTaskBase {
 
         private MaterialDialog loadingDialog;

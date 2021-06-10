@@ -1,6 +1,5 @@
 package candybar.lib.fragments;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
@@ -134,7 +133,6 @@ public class WallpapersFragment extends Fragment {
         super.onDestroy();
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class WallpapersLoader extends AsyncTaskBase {
 
         private List<Wallpaper> wallpapers;

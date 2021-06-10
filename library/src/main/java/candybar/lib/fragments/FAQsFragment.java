@@ -148,7 +148,6 @@ public class FAQsFragment extends Fragment {
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
     private class FAQsLoader extends AsyncTaskBase {
 
         private List<FAQs> faqs;
