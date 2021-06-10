@@ -1,25 +1,38 @@
 <resources>
 
-    <!-- Base Application Theme -->
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <!-- Base App Theme -->
     <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
         <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
         <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
     </style>
 
     <!-- Base Application Theme -->
     <style name="AppBaseThemeDark" parent="@style/Theme.AppCompat">
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
         <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
         <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/darkColorPrimaryDark</item>
     </style>
 
     <!-- Wallpaper Theme -->
@@ -47,10 +60,8 @@
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
-        <!--<item name="android:windowFullscreen">true</item>-->
+        <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <!--<item name="android:windowBackground">@color/splashColor</item>
-        <item name="android:windowTranslucentNavigation">true</item>-->
         <item name="android:navigationBarColor">@color/splashColor</item>
         <item name="android:statusBarColor">@color/splashColor</item>
         <item name="android:windowBackground">@drawable/splash_screen</item>

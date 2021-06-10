@@ -10,7 +10,7 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
-    <!-- App Theme-->
+    <!-- App Theme -->
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

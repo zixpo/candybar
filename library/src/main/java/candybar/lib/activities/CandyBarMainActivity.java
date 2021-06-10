@@ -152,28 +152,26 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        LocaleHelper.setLocale(this);
+        final boolean isDarkTheme = prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
 
-        prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
-        super.setTheme(ThemeHelper.isDarkTheme(this) ?
-                R.style.AppThemeDark : R.style.AppTheme);
+        LocaleHelper.setLocale(this);
+        super.setTheme(isDarkTheme ? R.style.AppThemeDark : R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ColorHelper.setupStatusBarIconColor(this);
-        ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this,
-                ThemeHelper.isDarkTheme(this) ?
-                        R.color.navigationBarDark : R.color.navigationBar));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !ThemeHelper.isDarkTheme(this)) {
+        ColorHelper.setupStatusBarIconColor(this);
+        ColorHelper.setNavigationBarColor(this,
+                ContextCompat.getColor(this, isDarkTheme ? R.color.navigationBarDark : R.color.navigationBar));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !isDarkTheme) {
             int flags = 0;
             if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)))
                 flags = flags | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
             if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)))
                 flags = flags | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
             if (flags != 0) {
-                this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                this.getWindow().getDecorView().setSystemUiVisibility(flags);
-                this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                getWindow().getDecorView().setSystemUiVisibility(flags);
             }
         }
 
@@ -192,8 +190,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         Toolbar toolbar = findViewById(R.id.toolbar);
         mToolbarTitle = findViewById(R.id.toolbar_title);
 
-        toolbar.setPopupTheme(ThemeHelper.isDarkTheme(this) ?
-                R.style.AppThemeDark : R.style.AppTheme);
+        toolbar.setPopupTheme(isDarkTheme ? R.style.AppThemeDark : R.style.AppTheme);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
