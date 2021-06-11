@@ -39,8 +39,16 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
 - Check for updates
 - Control your dashboard remotely with configuration JSON
 
+# What's new?
+Check out the [changelog](/CHANGELOG.md) to find out what's new.
+
 # Translation
 Help us translate CandyBar in many other languages. [Translate CandyBar](https://crowdin.com/project/candybar).
+
+# Need help?
+Need help in something or maybe you have some question, just head out
+to [Q&A Discussions](https://github.com/zixpo/candybar/discussions/categories/q-a).
+Try to find your answer there or ask a new question if you can't find your answer.
 
 # Support me
 I am doing this work for free, but you can show your appreciation
@@ -48,6 +56,15 @@ and support me by donating. It would keep me motivated to work on
 the dashboard.
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J7WR0M)
+
+You can also donate from the [CandyBar App](https://play.google.com/store/apps/details?id=com.candybar.dev) published on Google Play Store.
+
+### Social
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/sarsamurmu?color=%231da1f2&label=Follow%20on%20Twitter&logo=twitter&style=for-the-badge)](https://twitter.com/sarsamurmu)\
+[![GitHub Follow](https://img.shields.io/github/followers/sarsamurmu?color=%23dfdfdf&label=Follow%20on%20GitHub&logo=github&style=for-the-badge)](https://github.com/sarsamurmu)
+
+**Thanks! Have fun with the dashboard 😉**
 
 # License
 ```
