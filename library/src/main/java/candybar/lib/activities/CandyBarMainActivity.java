@@ -82,7 +82,7 @@ import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.LicenseCallbackHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
-import candybar.lib.helpers.PlaystoreCheckHelper;
+import candybar.lib.helpers.PlayStoreCheckHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
@@ -238,7 +238,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         new IconRequestTask(this).executeOnThreadPool();
         new IconsLoaderTask(this).execute();
 
-        new PlaystoreCheckHelper(this).run();
+        new PlayStoreCheckHelper(this).run();
 
         if (Preferences.get(this).isFirstRun() && mConfig.isLicenseCheckerEnabled()) {
             mLicenseHelper = new LicenseHelper(this);

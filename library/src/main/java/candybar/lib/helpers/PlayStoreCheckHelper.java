@@ -14,14 +14,14 @@ import candybar.lib.R;
 import candybar.lib.fragments.dialog.ChangelogFragment;
 import candybar.lib.preferences.Preferences;
 
-public class PlaystoreCheckHelper {
+public class PlayStoreCheckHelper {
 
     public final Context mContext;
     private static String contentString;
 
     /*private boolean isTest = true, testPass = true;*/
 
-    public PlaystoreCheckHelper(Context context) {
+    public PlayStoreCheckHelper(Context context) {
         mContext = context;
     }
 
