@@ -78,8 +78,7 @@ public class ChangelogAdapter extends BaseAdapter {
 
         ViewHolder(View view) {
             changelog = view.findViewById(R.id.changelog);
-            int color = ColorHelper.getAttributeColor(mContext,
-                    R.attr.colorAccent);
+            int color = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
             changelog.setCompoundDrawablesWithIntrinsicBounds(
                     DrawableHelper.getTintedDrawable(mContext, R.drawable.ic_changelog_dot, color),
                     null, null, null);

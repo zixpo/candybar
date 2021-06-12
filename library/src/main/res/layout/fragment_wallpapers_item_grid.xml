@@ -41,7 +41,7 @@
         android:layout_marginTop="6dp"
         android:maxLines="1"
         android:ellipsize="end"
-        fontPath="fonts/Font-Medium.ttf" />
+        app:fontFamily="@font/medium" />
 
     <TextView
         android:id="@+id/author"
@@ -56,7 +56,7 @@
         android:layout_marginBottom="@dimen/content_margin"
         android:maxLines="1"
         android:ellipsize="end"
-        fontPath="fonts/Font-Regular.ttf" />
+        app:fontFamily="@font/regular" />
 
     <View
         android:layout_width="0dp"

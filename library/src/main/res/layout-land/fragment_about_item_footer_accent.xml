@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -35,7 +33,7 @@
             android:text="@string/about_dashboard"
             android:textSize="@dimen/text_content_header"
             android:textColor="?android:attr/textColorPrimary"
-            fontPath="fonts/Font-Medium.ttf" />
+            app:fontFamily="@font/medium" />
 
         <TextView
             android:layout_width="match_parent"
@@ -50,7 +48,7 @@
             android:text="@string/about_dashboard_dev"
             android:textSize="@dimen/text_content"
             android:textColor="?android:attr/textColorPrimary"
-            fontPath="fonts/Font-Regular.ttf" />
+            app:fontFamily="@font/regular" />
 
         <TextView
             android:id="@+id/about_dashboard_licenses"
@@ -68,7 +66,7 @@
             android:textColor="?android:attr/textColorPrimary"
             android:background="?attr/selectableItemBackground"
             android:theme="@style/RippleStyle"
-            fontPath="fonts/Font-Regular.ttf" />
+            app:fontFamily="@font/regular" />
 
         <TextView
             android:id="@+id/about_dashboard_contributors"
@@ -86,7 +84,7 @@
             android:textColor="?android:attr/textColorPrimary"
             android:background="?attr/selectableItemBackground"
             android:theme="@style/RippleStyle"
-            fontPath="fonts/Font-Regular.ttf" />
+            app:fontFamily="@font/regular" />
 
         <TextView
             android:id="@+id/about_dashboard_translator"
@@ -104,7 +102,7 @@
             android:textColor="?android:attr/textColorPrimary"
             android:background="?attr/selectableItemBackground"
             android:theme="@style/RippleStyle"
-            fontPath="fonts/Font-Regular.ttf" />
+            app:fontFamily="@font/regular" />
 
         <LinearLayout
             android:layout_width="match_parent"

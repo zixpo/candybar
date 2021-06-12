@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/changelog"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,4 +13,4 @@
     android:drawablePadding="@dimen/content_padding"
     android:textColor="?android:attr/textColorPrimary"
     android:textSize="@dimen/text_content_title"
-    fontPath="fonts/Font-Regular.ttf" />
+    app:fontFamily="@font/regular" />

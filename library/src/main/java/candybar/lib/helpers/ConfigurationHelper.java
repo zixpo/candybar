@@ -52,7 +52,7 @@ public class ConfigurationHelper {
 
     public static int getSocialIconColor(@NonNull Context context, @NonNull CandyBarApplication.IconColor iconColor) {
         if (iconColor == CandyBarApplication.IconColor.ACCENT) {
-            return ColorHelper.getAttributeColor(context, R.attr.colorAccent);
+            return ColorHelper.getAttributeColor(context, R.attr.colorSecondary);
         }
         return ColorHelper.getAttributeColor(context, android.R.attr.textColorPrimary);
     }

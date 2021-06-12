@@ -11,11 +11,11 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.appcompat.widget.ListPopupWindow;
 
 import com.danimahardhika.android.helpers.core.ColorHelper;
@@ -229,7 +229,7 @@ public class Popup {
 
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
             if (item.isSelected()) {
-                color = ColorHelper.getAttributeColor(mContext, R.attr.colorAccent);
+                color = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
             }
 
             if (item.getIcon() != 0) {
@@ -244,7 +244,7 @@ public class Popup {
 
         static class ViewHolder {
 
-            final AppCompatCheckBox checkBox;
+            final CheckBox checkBox;
             final TextView title;
 
             ViewHolder(@NonNull View view) {

@@ -8,6 +8,8 @@ import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -15,8 +17,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatCheckBox;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -78,7 +78,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         mRequests = requests;
         mTextColorSecondary = ColorHelper.getAttributeColor(mContext,
                 android.R.attr.textColorSecondary);
-        mTextColorAccent = ColorHelper.getAttributeColor(mContext, R.attr.colorAccent);
+        mTextColorAccent = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
         mSelectedItems = new SparseBooleanArray();
 
         mShowShadow = (spanCount == 1);
@@ -235,7 +235,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private final TextView premTotal;
         private final TextView premAvailable;
         private final TextView premUsed;
-        private final AppCompatButton button;
+        private final Button button;
         private final LinearLayout premContainer;
         private final LinearLayout premWholeContainer;
         private final ProgressBar premProgress;
@@ -319,7 +319,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     null, null, null);
 
             int primary = ColorHelper.getAttributeColor(mContext, R.attr.colorPrimary);
-            int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorAccent);
+            int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
             button.setTextColor(ColorHelper.getTitleTextColor(primary));
 
             premProgress.getProgressDrawable().setColorFilter(accent, PorterDuff.Mode.SRC_IN);
@@ -343,7 +343,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private final TextView title;
         private final TextView content;
         private final ImageView icon;
-        private final AppCompatCheckBox checkbox;
+        private final CheckBox checkbox;
         private final View divider;
 
         ContentViewHolder(View itemView) {
@@ -469,6 +469,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
         mSelectedAll = mSelectedItems.size() > 0;
         notifyDataSetChanged();
+
         try {
             RequestListener listener = (RequestListener) mContext;
             listener.onRequestSelected(getSelectedItemsSize());

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -26,7 +25,7 @@
         android:textSize="@dimen/text_content_title"
         android:visibility="gone"
         android:textColor="?android:attr/textColorPrimary"
-        fontPath="fonts/Font-Medium.ttf" />
+        app:fontFamily="@font/medium" />
 
     <View
         android:id="@+id/shadow"

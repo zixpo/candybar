@@ -2,9 +2,12 @@
 <resources>
 
     <!--
-        Blueish #1A73E9
-        Dark #1366D3
-        Accent #6E3AFF
+        Try to not reference other theme colors, or it may result in
+        an error (android.view.InflateException)
+
+        If you want to reuse colors using referencing, just create a
+        new color and reference it. Do not try to reference existing
+        theme colors.
     -->
 
     <color name="colorPrimary">#FFF</color>
@@ -12,8 +15,8 @@
     <color name="colorAccent">#1BB96F</color>
 
     <color name="darkColorPrimary">#222222</color>
-    <color name="darkColorPrimaryDark">@color/darkColorPrimary</color>
-    <color name="darkColorAccent">@color/colorAccent</color>
+    <color name="darkColorPrimaryDark">#222222</color>
+    <color name="darkColorAccent">#1BB96F</color>
 
     <!-- Shortcut Icon -->
     <color name="shortcutIconForeground">#FFF</color>
@@ -22,7 +25,7 @@
     <!-- Navigation Bar
     * Must be solid color, no alpha -->
     <color name="navigationBar">#1A73E9</color>
-    <color name="navigationBarDark">@color/darkColorPrimary</color>
+    <color name="navigationBarDark">#222222</color>
 
     <!-- Splash Screen -->
     <color name="splashColor">#FFFFFF</color>
@@ -36,22 +39,21 @@
     <color name="navigationViewText">#484848</color>
     <color name="navigationViewTextDark">#FFFFFF</color>
     <color name="navigationViewTextSelected">#1BB96F</color>
-    <color name="navigationViewTextSelectedDark">@color/navigationViewTextSelected</color>
+    <color name="navigationViewTextSelectedDark">#1BB96F</color>
     <color name="navigationViewSelectedBackground">#2A1BB96F</color>
-    <color name="navigationViewSelectedBackgroundDark">@color/navigationViewSelectedBackground
-    </color>
+    <color name="navigationViewSelectedBackgroundDark">#2A1BB96F</color>
     <color name="navigationViewRippleColor">#25000000</color>
 
     <!-- Swipe Refresh -->
-    <color name="swipeRefresh">@color/colorAccent</color>
+    <color name="swipeRefresh">#1BB96F</color>
 
     <!-- Toolbar -->
     <color name="toolbarIcon">#616161</color>
     <color name="toolbarIconDark">#FFFFFFFF</color>
 
     <!-- Tab -->
-    <color name="tabIndicator">@color/tabTextSelected</color>
-    <color name="tabIndicatorDark">@color/tabTextSelectedDark</color>
+    <color name="tabIndicator">#757575</color>
+    <color name="tabIndicatorDark">#BDBDBD</color>
     <color name="tabText">#BDBDBD</color>
     <color name="tabTextDark">#616161</color>
     <color name="tabTextSelected">#757575</color>
@@ -64,10 +66,10 @@
     <color name="cardStrokeDark">#11000000</color>
 
     <!-- Ripple -->
-    <color name="rippleColor">@color/navigationViewTextSelected</color>
-    <color name="rippleColorDark">@color/rippleColor</color>
-    <color name="rippleAccent">@color/colorAccent</color>
-    <color name="rippleAccentDark">@color/rippleAccent</color>
+    <color name="rippleColor">#1BB96F</color>
+    <color name="rippleColorDark">#1BB96F</color>
+    <color name="rippleAccent">#1BB96F</color>
+    <color name="rippleAccentDark">#1BB96F</color>
 
     <!-- Attributes -->
     <color name="mainBackground">#FFFFFF</color>
@@ -77,11 +79,11 @@
     <color name="secondaryText">#777777</color>
     <color name="secondaryTextDark">#ABABAB</color>
 
-    <color name="dividerList">@color/cardBackground</color>
-    <color name="dividerListDark">@color/cardBackgroundDark</color>
+    <color name="dividerList">#FFFFFF</color>
+    <color name="dividerListDark">#2C2C2C</color>
 
     <!-- Wallpaper Preview -->
-    <color name="wallpaperStatusBar">@color/wallpaperToolbar</color>
+    <color name="wallpaperStatusBar">#66000000</color>
     <color name="wallpaperToolbar">#66000000</color>
 
 </resources>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -29,7 +27,7 @@
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/text_title"
             android:text="@string/premium_request"
-            fontPath="fonts/Font-Medium.ttf" />
+            app:fontFamily="@font/medium" />
 
         <TextView
             android:id="@+id/premium_request_content"
@@ -43,9 +41,9 @@
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/text_content"
             android:text="@string/premium_request_desc"
-            fontPath="fonts/Font-Regular.ttf" />
+            app:fontFamily="@font/regular" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/buy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +56,7 @@
             android:textSize="@dimen/text_content"
             android:text="@string/premium_request_buy"
             app:backgroundTint="?attr/colorPrimary"
-            fontPath="fonts/Font-Bold.ttf" />
+            app:fontFamily="@font/bold" />
 
         <LinearLayout
             android:id="@+id/premium_request"
@@ -78,7 +76,7 @@
                 android:gravity="center_vertical"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/text_content_title"
-                fontPath="fonts/Font-Medium.ttf" />
+                app:fontFamily="@font/medium" />
 
             <ProgressBar
                 android:id="@+id/premium_request_progress"
@@ -103,7 +101,7 @@
                     android:gravity="start"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="@dimen/text_content"
-                    fontPath="fonts/Font-Regular.ttf" />
+                    app:fontFamily="@font/regular" />
 
                 <TextView
                     android:id="@+id/premium_request_used"
@@ -113,7 +111,7 @@
                     android:gravity="end"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="@dimen/text_content"
-                    fontPath="fonts/Font-Regular.ttf" />
+                    app:fontFamily="@font/regular" />
 
             </LinearLayout>
 
@@ -146,7 +144,7 @@
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/text_title"
             android:text="@string/regular_request"
-            fontPath="fonts/Font-Medium.ttf" />
+            app:fontFamily="@font/medium" />
 
         <TextView
             android:id="@+id/regular_request_content"
@@ -160,7 +158,7 @@
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/text_content"
             android:text="@string/regular_request_desc"
-            fontPath="fonts/Font-Regular.ttf" />
+            app:fontFamily="@font/regular" />
 
         <LinearLayout
             android:id="@+id/regular_request"
@@ -180,7 +178,7 @@
                 android:gravity="center_vertical"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/text_content_title"
-                fontPath="fonts/Font-Medium.ttf" />
+                app:fontFamily="@font/medium" />
 
             <ProgressBar
                 android:id="@+id/regular_request_progress"
@@ -205,7 +203,7 @@
                     android:gravity="start"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="@dimen/text_content"
-                    fontPath="fonts/Font-Regular.ttf" />
+                    app:fontFamily="@font/regular" />
 
                 <TextView
                     android:id="@+id/regular_request_used"
@@ -215,7 +213,7 @@
                     android:gravity="end"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="@dimen/text_content"
-                    fontPath="fonts/Font-Regular.ttf" />
+                    app:fontFamily="@font/regular" />
 
             </LinearLayout>
 

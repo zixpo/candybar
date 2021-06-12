@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -18,7 +17,7 @@
         android:paddingEnd="@dimen/content_margin"
         android:textColor="?android:attr/textColorPrimary"
         android:layout_alignParentTop="true"
-        fontPath="fonts/Font-Regular.ttf" />
+        app:fontFamily="@font/regular" />
 
     <TextView
         android:id="@+id/intent_noapp"
@@ -31,7 +30,7 @@
         android:textSize="@dimen/text_content_subtitle"
         android:textColor="?android:attr/textColorPrimary"
         android:visibility="gone"
-        fontPath="fonts/Font-Medium.ttf" />
+        app:fontFamily="@font/medium" />
 
     <ListView
         android:id="@+id/intent_list"

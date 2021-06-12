@@ -1,28 +1,30 @@
 package candybar.lib.fragments;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.ViewHelper;
+import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
@@ -98,30 +100,53 @@ public class FAQsFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
-        int color = ColorHelper.getAttributeColor(getActivity(), R.attr.toolbar_icon);
 
-        SearchView searchView = (SearchView) search.getActionView();
-        searchView.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
-        searchView.setQueryHint(requireActivity().getResources().getString(R.string.search_faqs));
-        searchView.setMaxWidth(Integer.MAX_VALUE);
+        View searchView = search.getActionView();
+        EditText searchInput = searchView.findViewById(R.id.search_input);
+        View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
 
-        ViewHelper.setSearchViewTextColor(searchView, color);
-        ViewHelper.setSearchViewBackgroundColor(searchView, Color.TRANSPARENT);
+        searchInput.setHint(requireActivity().getResources().getString(R.string.search_faqs));
+        searchInput.requestFocus();
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        new Handler(Looper.getMainLooper())
+                .postDelayed(() -> SoftKeyboardHelper.openKeyboard(requireActivity()), 1000);
+
+        searchView.findViewById(R.id.container).setPadding(0, 0,
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 12,
+                        requireActivity().getResources().getDisplayMetrics()), 0);
+
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
-            public boolean onQueryTextChange(String string) {
-                filterSearch(string);
+            public void afterTextChanged(Editable editable) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String query = charSequence.toString();
+                filterSearch(query);
+                clearQueryButton.setVisibility(query.contentEquals("") ? View.GONE : View.VISIBLE);
+            }
+        });
+
+        clearQueryButton.setOnClickListener(view -> searchInput.setText(""));
+
+        search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
                 return true;
             }
 
             @Override
-            public boolean onQueryTextSubmit(String string) {
-                searchView.clearFocus();
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+                searchInput.setText("");
                 return true;
             }
         });
+
         super.onCreateOptionsMenu(menu, inflater);
     }
 

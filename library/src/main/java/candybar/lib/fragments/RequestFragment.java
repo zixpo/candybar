@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -33,7 +34,6 @@ import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.Purchase;
 import com.danimahardhika.android.helpers.animation.AnimationHelper;
 import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
@@ -131,13 +131,15 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         resetRecyclerViewPadding(getResources().getConfiguration().orientation);
 
         mProgress.getIndeterminateDrawable().setColorFilter(
-                ColorHelper.getAttributeColor(getActivity(), R.attr.colorAccent),
+                ColorHelper.getAttributeColor(getActivity(), R.attr.colorSecondary),
                 PorterDuff.Mode.SRC_IN);
 
         int color = ColorHelper.getTitleTextColor(ColorHelper
-                .getAttributeColor(getActivity(), R.attr.colorAccent));
-        mFab.setImageDrawable(DrawableHelper.getTintedDrawable(
-                requireActivity(), R.drawable.ic_fab_send, color));
+                .getAttributeColor(getActivity(), R.attr.colorSecondary));
+        Drawable tintedDrawable = ResourcesCompat.getDrawable(requireActivity().getResources(), R.drawable.ic_fab_send, null);
+        assert tintedDrawable != null;
+        tintedDrawable.mutate().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        mFab.setImageDrawable(tintedDrawable);
         mFab.setOnClickListener(this);
 
         if (!Preferences.get(requireActivity()).isFabShadowEnabled()) {

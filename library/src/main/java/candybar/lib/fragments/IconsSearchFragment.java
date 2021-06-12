@@ -2,9 +2,10 @@ package candybar.lib.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,19 +13,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
@@ -70,7 +69,7 @@ public class IconsSearchFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerFastScroller mFastScroll;
     private TextView mSearchResult;
-    private SearchView mSearchView;
+    private EditText mSearchInput;
     private final Fragment mFragment = this;
 
     private IconsAdapter mAdapter;
@@ -119,20 +118,12 @@ public class IconsSearchFragment extends Fragment {
             iconShape.setVisible(false);
         }
 
-        mSearchView = (SearchView) search.getActionView();
-        mSearchView.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI | EditorInfo.IME_ACTION_SEARCH);
-        mSearchView.setQueryHint(requireActivity().getResources().getString(R.string.search_icon));
-        mSearchView.setMaxWidth(Integer.MAX_VALUE);
+        View searchView = search.getActionView();
+        View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
+        mSearchInput = searchView.findViewById(R.id.search_input);
+        mSearchInput.setHint(R.string.search_icon);
 
         search.expandActionView();
-        mSearchView.setIconifiedByDefault(false);
-        mSearchView.clearFocus();
-
-        int color = ColorHelper.getAttributeColor(getActivity(), R.attr.toolbar_icon);
-        ViewHelper.setSearchViewTextColor(mSearchView, color);
-        ViewHelper.setSearchViewBackgroundColor(mSearchView, Color.TRANSPARENT);
-        ViewHelper.setSearchViewCloseIcon(mSearchView, R.drawable.ic_toolbar_close);
-        ViewHelper.setSearchViewSearchIcon(mSearchView, null);
 
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
@@ -147,19 +138,24 @@ public class IconsSearchFragment extends Fragment {
             }
         });
 
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        mSearchInput.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onQueryTextChange(String string) {
-                filterSearch(string);
-                return true;
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
 
             @Override
-            public boolean onQueryTextSubmit(String string) {
-                mSearchView.clearFocus();
-                return true;
+            public void afterTextChanged(Editable editable) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String query = charSequence.toString();
+                filterSearch(query);
+                clearQueryButton.setVisibility(query.contentEquals("") ? View.GONE : View.VISIBLE);
             }
         });
+
+        clearQueryButton.setOnClickListener(view -> mSearchInput.setText(""));
 
         iconShape.setOnMenuItemClickListener(menuItem -> {
             IconShapeChooserFragment.showIconShapeChooser(requireActivity().getSupportFragmentManager());
@@ -278,7 +274,7 @@ public class IconsSearchFragment extends Fragment {
                 currentAdapter = new WeakReference<>(mAdapter);
                 mRecyclerView.setAdapter(mAdapter);
                 filterSearch("");
-                mSearchView.requestFocus();
+                mSearchInput.requestFocus();
                 SoftKeyboardHelper.openKeyboard(getActivity());
             } else {
                 // Unable to load all icons

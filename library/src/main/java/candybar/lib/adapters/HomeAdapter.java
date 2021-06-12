@@ -19,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.URLUtil;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -28,7 +29,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.core.text.HtmlCompat;
@@ -173,12 +173,12 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (holder.getItemViewType() == TYPE_CONTENT) {
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
 
-            contentViewHolder.autoFitTitle.setSingleLine(false);
-            contentViewHolder.autoFitTitle.setMaxLines(10);
-            contentViewHolder.autoFitTitle.setSizeToFit(false);
-            contentViewHolder.autoFitTitle.setGravity(Gravity.CENTER_VERTICAL);
-            contentViewHolder.autoFitTitle.setIncludeFontPadding(true);
-            contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+            contentViewHolder.title.setSingleLine(false);
+            contentViewHolder.title.setMaxLines(10);
+            contentViewHolder.title.setSizeToFit(false);
+            contentViewHolder.title.setGravity(Gravity.CENTER_VERTICAL);
+            contentViewHolder.title.setIncludeFontPadding(true);
+            contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
             contentViewHolder.subtitle.setVisibility(View.GONE);
             contentViewHolder.subtitle.setGravity(Gravity.CENTER_VERTICAL);
         }
@@ -252,7 +252,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                         RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(
                                                 mContext.getResources(), bitmap);
                                         drawable.setCornerRadius(0);
-                                        contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(
+                                        contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(
                                                 DrawableHelper.getResizedDrawable(mContext, drawable, 40),
                                                 null, null, null);
                                     });
@@ -261,7 +261,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                             })
                             .submit();
                 } else {
-                    contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
+                    contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
                             mContext, mHomes.get(finalPosition).getIcon(), color), null, null, null);
                 }
             }
@@ -269,27 +269,28 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (mHomes.get(finalPosition).getType() == Home.Type.ICONS) {
                 if (mHomes.get(finalPosition).isLoading() && CandyBarMainActivity.sIconsCount == 0 && CandyBarApplication.getConfiguration().isAutomaticIconsCountEnabled()) {
                     contentViewHolder.progressBar.setVisibility(View.VISIBLE);
-                    contentViewHolder.autoFitTitle.setVisibility(View.GONE);
+                    contentViewHolder.title.setVisibility(View.GONE);
                 } else {
                     contentViewHolder.progressBar.setVisibility(View.GONE);
-                    contentViewHolder.autoFitTitle.setVisibility(View.VISIBLE);
+                    contentViewHolder.title.setVisibility(View.VISIBLE);
                 }
 
-                contentViewHolder.autoFitTitle.setSingleLine(true);
-                contentViewHolder.autoFitTitle.setMaxLines(1);
-                contentViewHolder.autoFitTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                contentViewHolder.title.setSingleLine(true);
+                contentViewHolder.title.setMaxLines(1);
+                contentViewHolder.title.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                         mContext.getResources().getDimension(R.dimen.text_max_size));
-                contentViewHolder.autoFitTitle.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
-                contentViewHolder.autoFitTitle.setIncludeFontPadding(false);
-                contentViewHolder.autoFitTitle.setSizeToFit(true);
+                contentViewHolder.title.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
+                contentViewHolder.title.setIncludeFontPadding(false);
+                contentViewHolder.title.setSizeToFit(true);
 
                 contentViewHolder.subtitle.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
             } else {
-                contentViewHolder.autoFitTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mContext.getResources()
-                        .getDimension(R.dimen.text_content_title));
+                contentViewHolder.title.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                        mContext.getResources().getDimension(R.dimen.text_content_title));
             }
 
-            contentViewHolder.autoFitTitle.setText(mHomes.get(finalPosition).getTitle());
+            contentViewHolder.title.setTypeface(TypefaceHelper.getMedium(mContext));
+            contentViewHolder.title.setText(mHomes.get(finalPosition).getTitle());
 
             if (mHomes.get(finalPosition).getSubtitle().length() > 0) {
                 contentViewHolder.subtitle.setText(mHomes.get(finalPosition).getSubtitle());
@@ -366,7 +367,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             image = itemView.findViewById(R.id.header_image);
             title = itemView.findViewById(R.id.title);
             content = itemView.findViewById(R.id.content);
-            AppCompatButton rate = itemView.findViewById(R.id.rate);
+            Button rate = itemView.findViewById(R.id.rate);
             ImageView share = itemView.findViewById(R.id.share);
             ImageView update = itemView.findViewById(R.id.update);
 
@@ -598,13 +599,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private class ContentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView subtitle;
-        private final AutofitTextView autoFitTitle;
+        private final AutofitTextView title;
         private final ProgressBar progressBar;
 
         ContentViewHolder(View itemView) {
             super(itemView);
             LinearLayout container = itemView.findViewById(R.id.container);
-            autoFitTitle = itemView.findViewById(R.id.title);
+            title = itemView.findViewById(R.id.title);
             subtitle = itemView.findViewById(R.id.subtitle);
             progressBar = itemView.findViewById(R.id.progressBar);
 
@@ -726,7 +727,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             title.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
                     mContext, R.drawable.ic_toolbar_icon_request, color), null, null, null);
 
-            int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorAccent);
+            int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
             progress.getProgressDrawable().setColorFilter(accent, PorterDuff.Mode.SRC_IN);
 
             container.setOnClickListener(this);

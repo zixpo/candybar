@@ -22,6 +22,7 @@
         android:background="?attr/card_background"
         android:theme="@style/NavigationViewStyle"
         app:headerLayout="@layout/navigation_view_header"
-        app:menu="@menu/menu_navigation_view" />
+        app:menu="@menu/menu_navigation_view"
+        app:itemIconPadding="25dp" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

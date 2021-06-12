@@ -471,7 +471,7 @@ public class TapIntroHelper {
                 try {
                     int baseColor = color;
                     if (baseColor == 0) {
-                        baseColor = ColorHelper.getAttributeColor(context, R.attr.colorAccent);
+                        baseColor = ColorHelper.getAttributeColor(context, R.attr.colorSecondary);
                     }
 
                     int primary = ColorHelper.getTitleTextColor(baseColor);

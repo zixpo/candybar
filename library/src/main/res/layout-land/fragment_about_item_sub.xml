@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -39,7 +37,7 @@
                 android:textSize="@dimen/text_content_title"
                 android:background="?attr/selectableItemBackground"
                 android:theme="@style/RippleStyle"
-                fontPath="fonts/Font-Medium.ttf" />
+                app:fontFamily="@font/medium" />
 
             <View
                 android:layout_width="match_parent"
@@ -66,7 +64,7 @@
                 android:textSize="@dimen/text_content_title"
                 android:background="?attr/selectableItemBackground"
                 android:theme="@style/RippleStyle"
-                fontPath="fonts/Font-Medium.ttf" />
+                app:fontFamily="@font/medium" />
 
             <View
                 android:layout_width="match_parent"
@@ -84,7 +82,6 @@
 
             <TextView
                 android:id="@+id/terms_title"
-                fontPath="fonts/Font-Medium.ttf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
@@ -93,7 +90,8 @@
                 android:padding="@dimen/content_margin"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/text_content_title"
-                android:theme="@style/RippleStyle" />
+                android:theme="@style/RippleStyle"
+                app:fontFamily="@font/medium" />
 
         </LinearLayout>
 

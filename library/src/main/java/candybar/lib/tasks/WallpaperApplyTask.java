@@ -84,7 +84,7 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
         if (mDialog == null) {
             int color = mWallpaper.getColor();
             if (color == 0) {
-                color = ColorHelper.getAttributeColor(mContext.get(), R.attr.colorAccent);
+                color = ColorHelper.getAttributeColor(mContext.get(), R.attr.colorSecondary);
             }
 
             final MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext.get());

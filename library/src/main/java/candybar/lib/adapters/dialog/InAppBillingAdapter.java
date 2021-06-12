@@ -5,10 +5,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatRadioButton;
 
 import candybar.lib.R;
 import candybar.lib.items.InAppBilling;
@@ -88,7 +88,7 @@ public class InAppBillingAdapter extends BaseAdapter {
 
     private static class ViewHolder {
 
-        private final AppCompatRadioButton radio;
+        private final RadioButton radio;
         private final TextView name;
         private final LinearLayout container;
 

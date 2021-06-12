@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/main_background">
@@ -32,7 +30,7 @@
             android:textColor="@color/navigationViewTitle"
             android:textSize="16sp"
             android:text="@string/navigation_view_header_title"
-            fontPath="fonts/Font-Medium.ttf" />
+            app:fontFamily="@font/medium" />
 
         <TextView
             android:id="@+id/header_version"
@@ -40,7 +38,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/navigationViewTitle"
             android:textSize="14sp"
-            fontPath="fonts/Font-Regular.ttf" />
+            app:fontFamily="@font/regular" />
 
     </LinearLayout>
 

@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -90,6 +91,7 @@ import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.items.Request;
+import candybar.lib.items.Theme;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.services.CandyBarService;
@@ -102,7 +104,6 @@ import candybar.lib.utils.listeners.RequestListener;
 import candybar.lib.utils.listeners.SearchListener;
 import candybar.lib.utils.listeners.WallpapersListener;
 import candybar.lib.utils.views.HeaderView;
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /*
  * CandyBar - Material Dashboard
@@ -154,14 +155,27 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         final boolean isDarkTheme = prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
 
+        final int nightMode;
+        final Theme currentTheme = Preferences.get(this).getTheme();
+        switch (currentTheme) {
+            case LIGHT:
+                nightMode = AppCompatDelegate.MODE_NIGHT_NO;
+                break;
+            case DARK:
+                nightMode = AppCompatDelegate.MODE_NIGHT_YES;
+                break;
+            default:
+                nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        }
+        AppCompatDelegate.setDefaultNightMode(nightMode);
+
         LocaleHelper.setLocale(this);
-        super.setTheme(isDarkTheme ? R.style.AppThemeDark : R.style.AppTheme);
+        super.setTheme(R.style.CandyBar_Theme_App);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         ColorHelper.setupStatusBarIconColor(this);
-        ColorHelper.setNavigationBarColor(this,
-                ContextCompat.getColor(this, isDarkTheme ? R.color.navigationBarDark : R.color.navigationBar));
+        ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this, R.color.navigationBar));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !isDarkTheme) {
             int flags = 0;
@@ -190,7 +204,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         Toolbar toolbar = findViewById(R.id.toolbar);
         mToolbarTitle = findViewById(R.id.toolbar_title);
 
-        toolbar.setPopupTheme(isDarkTheme ? R.style.AppThemeDark : R.style.AppTheme);
+        toolbar.setPopupTheme(R.style.CandyBar_Theme_App);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
@@ -265,7 +279,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     @Override
     protected void attachBaseContext(Context newBase) {
         LocaleHelper.setLocale(newBase);
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+        super.attachBaseContext(newBase);
     }
 
     @Override

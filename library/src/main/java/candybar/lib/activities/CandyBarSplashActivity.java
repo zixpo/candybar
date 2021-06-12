@@ -28,7 +28,6 @@ import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.ImageConfig;
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /*
  * CandyBar - Material Dashboard
@@ -65,11 +64,6 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
                 .executeOnThreadPool();
 
         mWallpaperThumbPreloader = new WallpaperThumbPreloader(this).execute();
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 
     @Override

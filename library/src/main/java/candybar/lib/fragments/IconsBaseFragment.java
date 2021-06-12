@@ -18,15 +18,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
-import androidx.viewpager.widget.ViewPager;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.animation.AnimationHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.Collections;
 import java.util.List;
@@ -63,7 +65,7 @@ import candybar.lib.utils.listeners.SearchListener;
 
 public class IconsBaseFragment extends Fragment {
 
-    private ViewPager mPager;
+    private ViewPager2 mPager;
     private ProgressBar mProgress;
     private TabLayout mTabLayout;
 
@@ -79,21 +81,6 @@ public class IconsBaseFragment extends Fragment {
         mProgress = view.findViewById(R.id.progress);
         initTabs();
         mPager.setOffscreenPageLimit(2);
-        mTabLayout.setupWithViewPager(mPager);
-        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                mPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
         return view;
     }
 
@@ -264,9 +251,13 @@ public class IconsBaseFragment extends Fragment {
             mProgress.setVisibility(View.GONE);
             if (ok) {
                 setHasOptionsMenu(true);
+
                 PagerIconsAdapter adapter = new PagerIconsAdapter(
-                        getChildFragmentManager(), CandyBarMainActivity.sSections);
+                        getChildFragmentManager(), getLifecycle(), CandyBarMainActivity.sSections);
                 mPager.setAdapter(adapter);
+
+                new TabLayoutMediator(mTabLayout, mPager, (tab, position) -> {
+                }).attach();
 
                 new TabTypefaceChanger().executeOnThreadPool();
 
@@ -294,7 +285,7 @@ public class IconsBaseFragment extends Fragment {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    for (int i = 0; i < adapter.getCount(); i++) {
+                    for (int i = 0; i < adapter.getItemCount(); i++) {
                         int finalI = i;
                         runOnUiThread(() -> {
                             if (getActivity() == null) return;
@@ -304,7 +295,7 @@ public class IconsBaseFragment extends Fragment {
                             if (finalI < mTabLayout.getTabCount()) {
                                 TabLayout.Tab tab = mTabLayout.getTabAt(finalI);
                                 if (tab != null) {
-                                    if (finalI < adapter.getCount()) {
+                                    if (finalI < adapter.getItemCount()) {
                                         tab.setCustomView(R.layout.fragment_icons_base_tab);
                                         tab.setText(adapter.getPageTitle(finalI));
                                     }
@@ -321,16 +312,16 @@ public class IconsBaseFragment extends Fragment {
         }
     }
 
-    private static class PagerIconsAdapter extends FragmentStatePagerAdapter {
+    private static class PagerIconsAdapter extends FragmentStateAdapter {
 
         private final List<Icon> mIcons;
 
-        PagerIconsAdapter(@NonNull FragmentManager fm, @NonNull List<Icon> icons) {
-            super(fm);
+        PagerIconsAdapter(@NonNull FragmentManager fm, @NonNull Lifecycle lifecycle,
+                          @NonNull List<Icon> icons) {
+            super(fm, lifecycle);
             mIcons = icons;
         }
 
-        @Override
         public CharSequence getPageTitle(int position) {
             String title = mIcons.get(position).getTitle();
             if (CandyBarApplication.getConfiguration().isShowTabIconsCount()) {
@@ -341,12 +332,12 @@ public class IconsBaseFragment extends Fragment {
 
         @NonNull
         @Override
-        public Fragment getItem(int position) {
+        public Fragment createFragment(int position) {
             return IconsFragment.newInstance(position);
         }
 
         @Override
-        public int getCount() {
+        public int getItemCount() {
             return mIcons.size();
         }
 

@@ -57,7 +57,6 @@ import candybar.lib.tasks.WallpaperPropertiesLoaderTask;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.Popup;
 import candybar.lib.utils.WallpaperDownloader;
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 /*
@@ -104,8 +103,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
-        super.setTheme(ThemeHelper.isDarkTheme(this) ?
-                R.style.WallpaperThemeDark : R.style.WallpaperTheme);
+        super.setTheme(R.style.CandyBar_Theme_Wallpaper);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wallpaper);
         mIsEnter = true;
@@ -225,7 +223,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     @Override
     protected void attachBaseContext(Context newBase) {
         LocaleHelper.setLocale(newBase);
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+        super.attachBaseContext(newBase);
     }
 
     @Override
@@ -445,7 +443,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
                         if (mWallpaper.getColor() == 0) {
                             mWallpaper.setColor(ColorHelper.getAttributeColor(
-                                    CandyBarWallpaperActivity.this, R.attr.colorAccent));
+                                    CandyBarWallpaperActivity.this, R.attr.colorSecondary));
                         }
 
                         return true;
@@ -457,7 +455,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             Palette.from(loadedImage).generate(palette -> {
                                 if (palette != null) {
                                     int accent = ColorHelper.getAttributeColor(
-                                            CandyBarWallpaperActivity.this, R.attr.colorAccent);
+                                            CandyBarWallpaperActivity.this, R.attr.colorSecondary);
                                     int color = palette.getVibrantColor(accent);
                                     if (color == accent)
                                         color = palette.getMutedColor(accent);

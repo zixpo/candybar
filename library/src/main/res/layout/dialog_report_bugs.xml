@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -15,12 +14,14 @@
         android:textSize="@dimen/text_content"
         android:textColor="?android:attr/textColorPrimary"
         android:text="@string/report_bugs_desc"
-        fontPath="fonts/Font-Regular.ttf" />
+        app:fontFamily="@font/regular" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:hintTextColor="?colorSecondary"
+        app:boxStrokeColor="?colorSecondary">
 
         <EditText
             android:id="@+id/input_desc"
@@ -30,7 +31,8 @@
             android:hint="@string/report_bugs_desc_hint"
             android:textSize="@dimen/text_content"
             android:textColor="?android:attr/textColorPrimary"
-            fontPath="fonts/Font-Regular.ttf" />
+            android:textCursorDrawable="@drawable/colored_cursor"
+            app:fontFamily="@font/regular" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
