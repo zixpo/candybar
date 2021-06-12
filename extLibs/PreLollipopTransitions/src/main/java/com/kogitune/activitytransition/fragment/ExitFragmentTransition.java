@@ -61,43 +61,37 @@ public class ExitFragmentTransition {
         final View toView = moveData.toView;
         toView.setFocusableInTouchMode(true);
         toView.requestFocus();
-        toView.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    if (event.getAction() != KeyEvent.ACTION_UP) {
-                        return true;
-                    }
-                    TransitionAnimation.startExitAnimation(moveData, interpolator, new Runnable() {
-                        @Override
-                        public void run() {
-                            if (popBackStackRunnable != null) {
-                                popBackStackRunnable.run();
-                                return;
-                            }
-                            if (fragment == null) {
-                                if (!supportFragment.isResumed()) {
-                                    return;
-                                }
-                                final FragmentManager fragmentManager = supportFragment.getFragmentManager();
-                                if (fragmentManager != null) {
-                                    fragmentManager.popBackStack();
-                                }
-                            } else {
-                                if (!fragment.isResumed()) {
-                                    return;
-                                }
-                                final android.app.FragmentManager fragmentManager = fragment.getFragmentManager();
-                                if (fragmentManager != null) {
-                                    fragmentManager.popBackStack();
-                                }
-                            }
-                        }
-                    });
+        toView.setOnKeyListener((v, keyCode, event) -> {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                if (event.getAction() != KeyEvent.ACTION_UP) {
                     return true;
                 }
-                return false;
+                TransitionAnimation.startExitAnimation(moveData, interpolator, () -> {
+                    if (popBackStackRunnable != null) {
+                        popBackStackRunnable.run();
+                        return;
+                    }
+                    if (fragment == null) {
+                        if (!supportFragment.isResumed()) {
+                            return;
+                        }
+                        final FragmentManager fragmentManager = supportFragment.getFragmentManager();
+                        if (fragmentManager != null) {
+                            fragmentManager.popBackStack();
+                        }
+                    } else {
+                        if (!fragment.isResumed()) {
+                            return;
+                        }
+                        final android.app.FragmentManager fragmentManager = fragment.getFragmentManager();
+                        if (fragmentManager != null) {
+                            fragmentManager.popBackStack();
+                        }
+                    }
+                });
+                return true;
             }
+            return false;
         });
     }
 

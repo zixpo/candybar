@@ -57,7 +57,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
         if (viewType == TYPE_HEADER) {
             view = LayoutInflater.from(mContext).inflate(
@@ -127,7 +127,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         @Override
         public void onClick(View view) {
             int id = view.getId();
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (id == R.id.container) {
                 if (position < 0 || position > getItemCount()) return;
                 try {

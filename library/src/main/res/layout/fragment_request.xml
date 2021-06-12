@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -35,7 +33,7 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"
         android:visibility="gone"
-        app:backgroundTint="?attr/colorAccent" />
+        app:backgroundTint="?colorSecondary" />
 
     <View
         android:id="@+id/shadow"

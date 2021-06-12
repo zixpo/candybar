@@ -55,12 +55,12 @@
             android:name="candybar.lib.activities.CandyBarCrashReport"
             android:launchMode="singleInstance"
             android:noHistory="true"
-            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+            android:theme="@style/Theme.MaterialComponents.Light.Dialog" />
 
         <activity
             android:name="candybar.lib.activities.CandyBarWallpaperActivity"
             android:launchMode="singleTop"
-            android:theme="@style/WallpaperTheme"
+            android:theme="@style/CandyBar.Theme.Wallpaper"
             android:configChanges="uiMode|orientation|keyboardHidden|screenSize" />
 
         <service

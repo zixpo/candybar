@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -169,7 +168,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
         @Override
         public void onClick(View view) {
             int id = view.getId();
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (id == R.id.card) {
                 if (sIsClickable) {
                     sIsClickable = false;
@@ -191,7 +190,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
         @Override
         public boolean onLongClick(View view) {
             int id = view.getId();
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (id == R.id.card) {
                 if (position < 0 || position > mWallpapers.size()) {
                     return false;
@@ -213,8 +212,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
                                         .wallpaper(mWallpapers.get(position))
                                         .start();
                             } else {
-                                WallpaperApplyTask task = WallpaperApplyTask.prepare(mContext)
-                                        .wallpaper(mWallpapers.get(position));
+                                WallpaperApplyTask task = new WallpaperApplyTask(mContext, mWallpapers.get(position));
 
                                 if (item.getType() == PopupItem.Type.LOCKSCREEN) {
                                     task.to(WallpaperApplyTask.Apply.LOCKSCREEN);
@@ -224,7 +222,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
                                     task.to(WallpaperApplyTask.Apply.HOMESCREEN_LOCKSCREEN);
                                 }
 
-                                task.start(AsyncTask.THREAD_POOL_EXECUTOR);
+                                task.executeOnThreadPool();
                             }
                             applyPopup.dismiss();
                         })

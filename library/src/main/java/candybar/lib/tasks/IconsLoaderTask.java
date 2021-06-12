@@ -3,10 +3,8 @@ package candybar.lib.tasks;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -17,7 +15,6 @@ import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.Executor;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -26,6 +23,7 @@ import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.AlphanumComparator;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.HomeListener;
 
 /*
@@ -46,26 +44,18 @@ import candybar.lib.utils.listeners.HomeListener;
  * limitations under the License.
  */
 
-public class IconsLoaderTask extends AsyncTask<Void, Void, Boolean> {
+public class IconsLoaderTask extends AsyncTaskBase {
 
     private final WeakReference<Context> mContext;
     private Home mHome;
 
-    private IconsLoaderTask(Context context) {
+    public IconsLoaderTask(Context context) {
         mContext = new WeakReference<>(context);
     }
 
-    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context) {
-        return start(context, SERIAL_EXECUTOR);
-    }
-
-    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @NonNull Executor executor) {
-        return new IconsLoaderTask(context).executeOnExecutor(executor);
-    }
-
-    @SuppressLint("StringFormatInvalid")
     @Override
-    protected Boolean doInBackground(Void... voids) {
+    @SuppressLint("StringFormatInvalid")
+    protected boolean run() {
         if (!isCancelled()) {
             try {
                 Thread.sleep(1);
@@ -159,8 +149,8 @@ public class IconsLoaderTask extends AsyncTask<Void, Void, Boolean> {
     }
 
     @Override
-    protected void onPostExecute(Boolean aBoolean) {
-        if (aBoolean) {
+    protected void postRun(boolean ok) {
+        if (ok) {
             if (mHome == null) return;
             if (mContext.get() == null) return;
 

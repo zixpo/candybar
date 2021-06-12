@@ -40,12 +40,12 @@ public class ActivityTransition {
     private int duration = 1000;
     private View toView;
     private TimeInterpolator interpolator;
-    private Intent fromIntent;
+    private final Intent fromIntent;
     private String toViewName;
     private Context context;
 
     private ActivityTransition(Intent intent) {
-        this.fromIntent = intent;
+        fromIntent = intent;
     }
 
     public static ActivityTransition with(Intent intent) {

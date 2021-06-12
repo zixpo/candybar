@@ -22,9 +22,6 @@ import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.JsonStructure;
-import io.github.inflationx.calligraphy3.CalligraphyConfig;
-import io.github.inflationx.calligraphy3.CalligraphyInterceptor;
-import io.github.inflationx.viewpump.ViewPump;
 
 /*
  * CandyBar - Material Dashboard
@@ -66,14 +63,6 @@ public abstract class CandyBarApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         Database.get(this).openDatabase();
-
-        ViewPump.init(ViewPump.builder()
-                .addInterceptor(new CalligraphyInterceptor(
-                        new CalligraphyConfig.Builder()
-                                .setDefaultFontPath("fonts/Font-Regular.ttf")
-                                .setFontAttrId(R.attr.fontPath)
-                                .build()))
-                .build());
 
         // Enable or disable logging
         LogUtil.setLoggingTag(getString(R.string.app_name));

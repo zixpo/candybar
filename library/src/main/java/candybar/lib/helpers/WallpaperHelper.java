@@ -77,14 +77,10 @@ public class WallpaperHelper {
 
     public static String getFormat(String mimeType) {
         if (mimeType == null) return "jpg";
-        switch (mimeType) {
-            case "image/jpeg":
-                return "jpg";
-            case "image/png":
-                return "png";
-            default:
-                return "jpg";
+        if ("image/png".equals(mimeType)) {
+            return "png";
         }
+        return "jpg";
     }
 
     public static ImageSize getTargetSize(@NonNull Context context) {

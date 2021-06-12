@@ -1,11 +1,9 @@
 package candybar.lib.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +29,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AlphanumComparator;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -53,17 +52,16 @@ import candybar.lib.utils.AlphanumComparator;
 public class ApplyFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     @Nullable
     @Override
-    @SuppressWarnings("ConstantConditions")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_apply, container, false);
         mRecyclerView = view.findViewById(R.id.recyclerview);
 
-        if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
@@ -71,19 +69,18 @@ public class ApplyFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
 
         if (CandyBarApplication.getConfiguration().getApplyGrid() == CandyBarApplication.GridStyle.FLAT) {
-            int padding = getActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
+            int padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
             mRecyclerView.setPadding(padding, padding, 0, 0);
         }
 
-        mAsyncTask = new LaunchersLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mAsyncTask = new LaunchersLoader().executeOnThreadPool();
     }
 
     @Override
@@ -99,10 +96,9 @@ public class ApplyFragment extends Fragment {
         super.onDestroy();
     }
 
-    @SuppressWarnings("ConstantConditions")
     private boolean isPackageInstalled(String pkg) {
         try {
-            PackageInfo packageInfo = getActivity().getPackageManager().getPackageInfo(
+            PackageInfo packageInfo = requireActivity().getPackageManager().getPackageInfo(
                     pkg, PackageManager.GET_ACTIVITIES);
             return packageInfo != null;
         } catch (Exception e) {
@@ -127,18 +123,17 @@ public class ApplyFragment extends Fragment {
         return true;
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class LaunchersLoader extends AsyncTask<Void, Void, Boolean> {
+    private class LaunchersLoader extends AsyncTaskBase {
 
         private List<Icon> launchers;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             launchers = new ArrayList<>();
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -240,12 +235,12 @@ public class ApplyFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            if (aBoolean) {
+            if (ok) {
                 mRecyclerView.setAdapter(new LauncherAdapter(getActivity(), launchers));
             }
         }

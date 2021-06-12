@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,14 +8,12 @@
     android:paddingStart="@dimen/content_margin"
     android:paddingRight="@dimen/content_margin"
     android:paddingEnd="@dimen/content_margin"
-    android:paddingTop="@dimen/content_padding"
-    android:paddingBottom="@dimen/content_padding"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:background="?attr/selectableItemBackground"
     android:theme="@style/RippleStyle">
 
-    <androidx.appcompat.widget.AppCompatRadioButton
+    <RadioButton
         android:id="@+id/radio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,5 +31,6 @@
         android:layout_marginRight="12dp"
         android:textSize="15sp"
         android:textColor="?android:attr/textColorPrimary"
-        fontPath="fonts/Font-Regular.ttf" />
+        app:fontFamily="@font/regular" />
+
 </LinearLayout>

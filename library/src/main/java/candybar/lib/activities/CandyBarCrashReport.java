@@ -73,7 +73,7 @@ public class CandyBarCrashReport extends AppCompatActivity {
                         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
                         intent.putExtra(Intent.EXTRA_SUBJECT, "CandyBar: Crash Report");
 
-                        intent = prepareUri(deviceInfo, stackTrace, intent);
+                        prepareUri(deviceInfo, stackTrace, intent);
 
                         startActivity(Intent.createChooser(intent,
                                 getResources().getString(R.string.app_client)));
@@ -86,7 +86,7 @@ public class CandyBarCrashReport extends AppCompatActivity {
         }
     }
 
-    private Intent prepareUri(String deviceInfo, String stackTrace, Intent intent) {
+    private void prepareUri(String deviceInfo, String stackTrace, Intent intent) {
         File crashLog = ReportBugsHelper.buildCrashLog(this, stackTrace);
         if (crashLog != null) {
             Uri uri = FileHelper.getUriFromFile(this, getPackageName(), crashLog);
@@ -94,11 +94,10 @@ public class CandyBarCrashReport extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_TEXT, deviceInfo + "\n");
                 intent.putExtra(Intent.EXTRA_STREAM, uri);
                 intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                return intent;
+                return;
             }
         }
 
         intent.putExtra(Intent.EXTRA_TEXT, deviceInfo + stackTrace);
-        return intent;
     }
 }

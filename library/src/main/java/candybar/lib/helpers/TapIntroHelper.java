@@ -51,7 +51,6 @@ import static com.danimahardhika.android.helpers.core.UnitHelper.toDp;
 public class TapIntroHelper {
 
     @SuppressLint("StringFormatInvalid")
-    @SuppressWarnings("ConstantConditions")
     public static void showHomeIntros(@NonNull Context context, @Nullable RecyclerView recyclerView,
                                       @Nullable StaggeredGridLayoutManager manager, int position) {
         if (Preferences.get(context).isTimeToShowHomeIntro()) {
@@ -100,31 +99,29 @@ public class TapIntroHelper {
                                     RecyclerView.ViewHolder holder = recyclerView.findViewHolderForAdapterPosition(position);
                                     if (holder != null) {
                                         View view = holder.itemView;
-                                        if (view != null) {
-                                            float targetRadius = toDp(context, view.getMeasuredWidth()) - 20f;
+                                        float targetRadius = toDp(context, view.getMeasuredWidth()) - 20f;
 
-                                            String desc = String.format(context.getResources().getString(R.string.tap_intro_home_apply_desc),
-                                                    context.getResources().getString(R.string.app_name));
-                                            TapTarget tapTarget = TapTarget.forView(view,
-                                                    context.getResources().getString(R.string.tap_intro_home_apply),
-                                                    desc)
-                                                    .titleTextColorInt(primary)
-                                                    .descriptionTextColorInt(secondary)
-                                                    .targetCircleColorInt(primary)
-                                                    .targetRadius((int) targetRadius)
-                                                    .tintTarget(false)
-                                                    .drawShadow(Preferences.get(context).isTapIntroShadowEnabled());
+                                        String desc = String.format(context.getResources().getString(R.string.tap_intro_home_apply_desc),
+                                                context.getResources().getString(R.string.app_name));
+                                        TapTarget tapTarget = TapTarget.forView(view,
+                                                context.getResources().getString(R.string.tap_intro_home_apply),
+                                                desc)
+                                                .titleTextColorInt(primary)
+                                                .descriptionTextColorInt(secondary)
+                                                .targetCircleColorInt(primary)
+                                                .targetRadius((int) targetRadius)
+                                                .tintTarget(false)
+                                                .drawShadow(Preferences.get(context).isTapIntroShadowEnabled());
 
-                                            if (title != null) {
-                                                tapTarget.textTypeface(title);
-                                            }
-
-                                            //if (description != null) {
-                                            //tapTarget.descriptionTypeface(description);
-                                            //}
-
-                                            tapTargetSequence.target(tapTarget);
+                                        if (title != null) {
+                                            tapTarget.textTypeface(title);
                                         }
+
+                                        //if (description != null) {
+                                        //tapTarget.descriptionTypeface(description);
+                                        //}
+
+                                        tapTargetSequence.target(tapTarget);
                                     }
                                 }
                             }
@@ -474,7 +471,7 @@ public class TapIntroHelper {
                 try {
                     int baseColor = color;
                     if (baseColor == 0) {
-                        baseColor = ColorHelper.getAttributeColor(context, R.attr.colorAccent);
+                        baseColor = ColorHelper.getAttributeColor(context, R.attr.colorSecondary);
                     }
 
                     int primary = ColorHelper.getTitleTextColor(baseColor);

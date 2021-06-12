@@ -493,9 +493,7 @@ public class LauncherHelper {
     private static void applyManual(Context context, String launcherPackage, String launcherName, String activity) {
         if (isInstalled(context, launcherPackage)) {
             new MaterialDialog.Builder(context)
-                    .typeface(
-                            TypefaceHelper.getMedium(context),
-                            TypefaceHelper.getRegular(context))
+                    .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                     .title(launcherName)
                     .content(context.getResources().getString(R.string.apply_manual,
                             launcherName,
@@ -536,11 +534,10 @@ public class LauncherHelper {
         return found;
     }
 
+    @SuppressLint("StringFormatInvalid")
     private static void applyEvie(Context context, String launcherPackage, String launcherName) {
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
                 .content(context.getResources().getString(R.string.apply_manual,
                         launcherName,
@@ -565,9 +562,7 @@ public class LauncherHelper {
 
     private static void launcherIncompatible(Context context, String launcherName) {
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
                 .content(R.string.apply_launcher_incompatible, launcherName, launcherName)
                 .positiveText(android.R.string.yes)
@@ -586,9 +581,7 @@ public class LauncherHelper {
 
     private static void notInstalledError(Context context, String launcherName) {
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
                 .content(R.string.apply_launcher_not_installable, launcherName)
                 .positiveText(context.getResources().getString(R.string.close))
@@ -597,9 +590,7 @@ public class LauncherHelper {
 
     private static void openGooglePlay(Context context, String packageName, String launcherName) {
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
                 .content(R.string.apply_launcher_not_installed, launcherName)
                 .positiveText(context.getResources().getString(R.string.install))

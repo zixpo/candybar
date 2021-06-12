@@ -1,10 +1,8 @@
 package candybar.lib.fragments;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -42,6 +40,7 @@ import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.WallpapersListener;
 
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
@@ -71,11 +70,10 @@ public class WallpapersFragment extends Fragment {
     private ProgressBar mProgress;
     private RecyclerFastScroller mFastScroll;
 
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     @Nullable
     @Override
-    @SuppressWarnings("ConstantConditions")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wallpapers, container, false);
@@ -84,7 +82,7 @@ public class WallpapersFragment extends Fragment {
         mProgress = view.findViewById(R.id.progress);
         mFastScroll = view.findViewById(R.id.fastscroll);
 
-        if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
@@ -92,21 +90,21 @@ public class WallpapersFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, false);
 
         mProgress.getIndeterminateDrawable().setColorFilter(
-                ColorHelper.getAttributeColor(getActivity(), R.attr.colorAccent),
+                ColorHelper.getAttributeColor(getActivity(), R.attr.colorSecondary),
                 PorterDuff.Mode.SRC_IN);
         mSwipe.setColorSchemeColors(
-                ContextCompat.getColor(getActivity(), R.color.swipeRefresh));
+                ContextCompat.getColor(requireActivity(), R.color.swipeRefresh));
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setHasFixedSize(false);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
-                getActivity().getResources().getInteger(R.integer.wallpapers_column_count)));
+                requireActivity().getResources().getInteger(R.integer.wallpapers_column_count)));
 
         setFastScrollColor(mFastScroll);
         mFastScroll.attachRecyclerView(mRecyclerView);
@@ -121,11 +119,10 @@ public class WallpapersFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         ViewHelper.resetSpanCount(mRecyclerView,
-                getActivity().getResources().getInteger(R.integer.wallpapers_column_count));
+                requireActivity().getResources().getInteger(R.integer.wallpapers_column_count));
     }
 
     @Override
@@ -136,8 +133,7 @@ public class WallpapersFragment extends Fragment {
         super.onDestroy();
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class WallpapersLoader extends AsyncTask<Void, Void, Boolean> {
+    private class WallpapersLoader extends AsyncTaskBase {
 
         private List<Wallpaper> wallpapers;
         private final boolean refreshing;
@@ -147,14 +143,13 @@ public class WallpapersFragment extends Fragment {
         }
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             if (!refreshing) mProgress.setVisibility(View.VISIBLE);
             else mSwipe.setRefreshing(true);
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
@@ -165,19 +160,19 @@ public class WallpapersFragment extends Fragment {
 
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                         InputStream stream = connection.getInputStream();
-                        List list = JsonHelper.parseList(stream);
+                        List<?> list = JsonHelper.parseList(stream);
                         if (list == null) {
                             LogUtil.e("Json error, no array with name: "
                                     + CandyBarApplication.getConfiguration().getWallpaperJsonStructure().getArrayName());
                             return false;
                         }
 
-                        if (Database.get(getActivity()).getWallpapersCount() > 0) {
-                            Database.get(getActivity()).deleteWallpapers();
+                        if (Database.get(requireActivity()).getWallpapersCount() > 0) {
+                            Database.get(requireActivity()).deleteWallpapers();
                         }
 
-                        Database.get(getActivity()).addWallpapers(null, list);
-                        wallpapers = Database.get(getActivity()).getWallpapers(null);
+                        Database.get(requireActivity()).addWallpapers(null, list);
+                        wallpapers = Database.get(requireActivity()).getWallpapers(null);
 
                         return true;
                     }
@@ -190,7 +185,7 @@ public class WallpapersFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
@@ -198,7 +193,7 @@ public class WallpapersFragment extends Fragment {
             mProgress.setVisibility(View.GONE);
             mSwipe.setRefreshing(false);
 
-            if (aBoolean) {
+            if (ok) {
                 mRecyclerView.setAdapter(new WallpapersAdapter(getActivity(), wallpapers));
 
                 ((WallpapersListener) getActivity())

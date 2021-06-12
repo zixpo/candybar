@@ -39,8 +39,6 @@ import candybar.lib.helpers.TypefaceHelper;
 
 public class OtherAppsFragment extends DialogFragment {
 
-    private ListView mListView;
-
     private static final String TAG = "candybar.dialog.otherapps";
 
     private static OtherAppsFragment newInstance() {
@@ -63,33 +61,23 @@ public class OtherAppsFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_other_apps, false);
-        builder.typeface(
-                TypefaceHelper.getMedium(getActivity()),
-                TypefaceHelper.getRegular(getActivity()));
-        builder.title(R.string.home_more_apps_header);
-        builder.positiveText(R.string.close);
-
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
+                .customView(R.layout.fragment_other_apps, false)
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .title(R.string.home_more_apps_header)
+                .positiveText(R.string.close)
+                .build();
         dialog.show();
 
-        mListView = (ListView) dialog.findViewById(R.id.listview);
-        return dialog;
-    }
-
-    @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+        ListView listView = (ListView) dialog.findViewById(R.id.listview);
         List<CandyBarApplication.OtherApp> otherApps = CandyBarApplication.getConfiguration().getOtherApps();
         if (otherApps != null) {
-            mListView.setAdapter(new OtherAppsAdapter(getActivity(), otherApps));
-            return;
+            listView.setAdapter(new OtherAppsAdapter(requireActivity(), otherApps));
+        } else {
+            dismiss();
         }
 
-        dismiss();
+        return dialog;
     }
 }

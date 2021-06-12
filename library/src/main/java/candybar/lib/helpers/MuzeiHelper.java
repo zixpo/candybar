@@ -49,7 +49,7 @@ public class MuzeiHelper {
 
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream stream = new BufferedInputStream(connection.getInputStream());
-                List list = JsonHelper.parseList(stream);
+                List<?> list = JsonHelper.parseList(stream);
                 if (list == null) {
                     JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
                     LogUtil.e("Muzei: Json error: wallpaper array with name "

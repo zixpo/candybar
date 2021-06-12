@@ -1,6 +1,5 @@
 package candybar.lib.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.ResolveInfo;
@@ -8,7 +7,6 @@ import android.content.res.Configuration;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +22,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -35,7 +34,6 @@ import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.Purchase;
 import com.danimahardhika.android.helpers.animation.AnimationHelper;
 import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
@@ -66,6 +64,7 @@ import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.InAppBillingClient;
 import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
@@ -101,7 +100,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private MenuItem mMenuItem;
     private RequestAdapter mAdapter;
     private StaggeredGridLayoutManager mManager;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     public static List<Integer> sSelectedRequests;
 
@@ -109,7 +108,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     @Nullable
     @Override
-    @SuppressWarnings("ConstantConditions")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_request, container, false);
@@ -118,7 +116,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         mFastScroll = view.findViewById(R.id.fastscroll);
         mProgress = view.findViewById(R.id.progress);
 
-        if (!Preferences.get(getActivity()).isToolbarShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
@@ -126,30 +124,33 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         setHasOptionsMenu(false);
         resetRecyclerViewPadding(getResources().getConfiguration().orientation);
 
         mProgress.getIndeterminateDrawable().setColorFilter(
-                ColorHelper.getAttributeColor(getActivity(), R.attr.colorAccent),
+                ColorHelper.getAttributeColor(getActivity(), R.attr.colorSecondary),
                 PorterDuff.Mode.SRC_IN);
 
         int color = ColorHelper.getTitleTextColor(ColorHelper
-                .getAttributeColor(getActivity(), R.attr.colorAccent));
-        mFab.setImageDrawable(DrawableHelper.getTintedDrawable(
-                getActivity(), R.drawable.ic_fab_send, color));
+                .getAttributeColor(getActivity(), R.attr.colorSecondary));
+        Drawable tintedDrawable = ResourcesCompat.getDrawable(requireActivity().getResources(), R.drawable.ic_fab_send, null);
+        assert tintedDrawable != null;
+        tintedDrawable.mutate().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        mFab.setImageDrawable(tintedDrawable);
         mFab.setOnClickListener(this);
 
-        if (!Preferences.get(getActivity()).isFabShadowEnabled()) {
+        if (!Preferences.get(requireActivity()).isFabShadowEnabled()) {
             mFab.setCompatElevation(0f);
         }
 
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.getItemAnimator().setChangeDuration(0);
+        RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
+        itemAnimator.setChangeDuration(0);
+        mRecyclerView.setItemAnimator(itemAnimator);
         mManager = new StaggeredGridLayoutManager(
-                getActivity().getResources().getInteger(R.integer.request_column_count),
+                requireActivity().getResources().getInteger(R.integer.request_column_count),
                 StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(mManager);
 
@@ -160,7 +161,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         resetRecyclerViewPadding(newConfig.orientation);
@@ -170,9 +170,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         SparseBooleanArray selectedItems = mAdapter.getSelectedItemsArray();
         ViewHelper.resetSpanCount(mRecyclerView,
-                getActivity().getResources().getInteger(R.integer.request_column_count));
+                requireActivity().getResources().getInteger(R.integer.request_column_count));
 
-        mAdapter = new RequestAdapter(getActivity(),
+        mAdapter = new RequestAdapter(requireActivity(),
                 CandyBarMainActivity.sMissedApps,
                 mManager.getSpanCount());
         mRecyclerView.setAdapter(mAdapter);
@@ -214,7 +214,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.fab) {
@@ -223,7 +222,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             int selected = mAdapter.getSelectedItemsSize();
             if (selected > 0) {
                 if (mAdapter.isContainsRequested()) {
-                    RequestHelper.showAlreadyRequestedDialog(getActivity());
+                    RequestHelper.showAlreadyRequestedDialog(requireActivity());
                     return;
                 }
 
@@ -234,17 +233,17 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 boolean premiumRequest = getResources().getBoolean(
                         R.bool.enable_premium_request);
 
-                if (Preferences.get(getActivity()).isPremiumRequest()) {
-                    int count = Preferences.get(getActivity()).getPremiumRequestCount();
+                if (Preferences.get(requireActivity()).isPremiumRequest()) {
+                    int count = Preferences.get(requireActivity()).getPremiumRequestCount();
                     if (selected > count) {
-                        RequestHelper.showPremiumRequestLimitDialog(getActivity(), selected);
+                        RequestHelper.showPremiumRequestLimitDialog(requireActivity(), selected);
                         return;
                     }
 
-                    if (!RequestHelper.isReadyToSendPremiumRequest(getActivity())) return;
+                    if (!RequestHelper.isReadyToSendPremiumRequest(requireActivity())) return;
 
                     try {
-                        InAppBillingListener listener = (InAppBillingListener) getActivity();
+                        InAppBillingListener listener = (InAppBillingListener) requireActivity();
                         listener.onInAppBillingRequest();
                     } catch (Exception ignored) {
                     }
@@ -252,23 +251,24 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 }
 
                 if (!iconRequest && premiumRequest) {
-                    RequestHelper.showPremiumRequestRequired(getActivity());
+                    RequestHelper.showPremiumRequestRequired(requireActivity());
                     return;
                 }
 
                 if (requestLimit) {
-                    int limit = getActivity().getResources().getInteger(R.integer.icon_request_limit);
-                    int used = Preferences.get(getActivity()).getRegularRequestUsed();
+                    int limit = requireActivity().getResources().getInteger(R.integer.icon_request_limit);
+                    int used = Preferences.get(requireActivity()).getRegularRequestUsed();
                     if (selected > (limit - used)) {
-                        RequestHelper.showIconRequestLimitDialog(getActivity());
+                        RequestHelper.showIconRequestLimitDialog(requireActivity());
                         return;
                     }
                 }
 
-                if ((getActivity().getResources().getBoolean(R.bool.json_check_before_request)) && (getActivity().getResources().getString(R.string.config_json).length() != 0)) {
-                    mAsyncTask = new CheckConfig().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                if ((requireActivity().getResources().getBoolean(R.bool.json_check_before_request)) &&
+                        (requireActivity().getResources().getString(R.string.config_json).length() != 0)) {
+                    mAsyncTask = new CheckConfig().executeOnThreadPool();
                 } else {
-                    mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                    mAsyncTask = new RequestLoader().executeOnThreadPool();
                 }
 
             } else {
@@ -278,22 +278,21 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    @SuppressWarnings("ConstantConditions")
     private void resetRecyclerViewPadding(int orientation) {
         if (mRecyclerView == null) return;
 
         int padding = 0;
         boolean tabletMode = getResources().getBoolean(R.bool.android_helpers_tablet_mode);
         if (tabletMode || orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            padding = getActivity().getResources().getDimensionPixelSize(R.dimen.content_padding);
+            padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.content_padding);
 
             if (CandyBarApplication.getConfiguration().getRequestStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT) {
-                padding = getActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
+                padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.card_margin);
             }
         }
 
-        int size = getActivity().getResources().getDimensionPixelSize(R.dimen.fab_size);
-        int marginGlobal = getActivity().getResources().getDimensionPixelSize(R.dimen.fab_margin_global);
+        int size = requireActivity().getResources().getDimensionPixelSize(R.dimen.fab_size);
+        int marginGlobal = requireActivity().getResources().getDimensionPixelSize(R.dimen.fab_margin_global);
 
         mRecyclerView.setPadding(padding, padding, 0, size + (marginGlobal * 2));
     }
@@ -301,7 +300,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     public void prepareRequest() {
         if (mAsyncTask != null) return;
 
-        mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mAsyncTask = new RequestLoader().executeOnThreadPool();
     }
 
     public void refreshIconRequest() {
@@ -323,26 +322,24 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         RequestFragment.sSelectedRequests = null;
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class MissingAppsLoader extends AsyncTask<Void, Void, Boolean> {
+    private class MissingAppsLoader extends AsyncTaskBase {
 
         private List<Request> requests;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             if (CandyBarMainActivity.sMissedApps == null) {
                 mProgress.setVisibility(View.VISIBLE);
             }
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (CandyBarMainActivity.sMissedApps == null) {
-                        CandyBarMainActivity.sMissedApps = RequestHelper.getMissingApps(getActivity());
+                        CandyBarMainActivity.sMissedApps = RequestHelper.getMissingApps(requireActivity());
                     }
 
                     requests = CandyBarMainActivity.sMissedApps;
@@ -356,13 +353,14 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
             mProgress.setVisibility(View.GONE);
-            if (aBoolean) {
+
+            if (ok) {
                 setHasOptionsMenu(true);
                 mAdapter = new RequestAdapter(getActivity(),
                         requests, mManager.getSpanCount());
@@ -382,8 +380,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class RequestLoader extends AsyncTask<Void, Void, Boolean> {
+    private class RequestLoader extends AsyncTaskBase {
 
         private MaterialDialog dialog;
         private boolean isArctic;
@@ -391,20 +388,17 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         private String errorMessage;
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected void onPreExecute() {
-            if (Preferences.get(getActivity()).isPremiumRequest()) {
-                isArctic = RequestHelper.isPremiumArcticEnabled(getActivity());
-                arcticApiKey = RequestHelper.getPremiumArcticApiKey(getActivity());
+        protected void preRun() {
+            if (Preferences.get(requireActivity()).isPremiumRequest()) {
+                isArctic = RequestHelper.isPremiumArcticEnabled(requireActivity());
+                arcticApiKey = RequestHelper.getPremiumArcticApiKey(requireActivity());
             } else {
-                isArctic = RequestHelper.isRegularArcticEnabled(getActivity());
-                arcticApiKey = RequestHelper.getRegularArcticApiKey(getActivity());
+                isArctic = RequestHelper.isRegularArcticEnabled(requireActivity());
+                arcticApiKey = RequestHelper.getRegularArcticApiKey(requireActivity());
             }
 
-            dialog = new MaterialDialog.Builder(getActivity())
-                    .typeface(
-                            TypefaceHelper.getMedium(getActivity()),
-                            TypefaceHelper.getRegular(getActivity()))
+            dialog = new MaterialDialog.Builder(requireActivity())
+                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                     .content(R.string.request_building)
                     .cancelable(false)
                     .canceledOnTouchOutside(false)
@@ -416,8 +410,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(2);
@@ -425,11 +418,11 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     RequestFragment.sSelectedRequests = mAdapter.getSelectedItems();
                     List<Request> requests = mAdapter.getSelectedApps();
 
-                    File directory = getActivity().getCacheDir();
+                    File directory = requireActivity().getCacheDir();
                     List<String> files = new ArrayList<>();
 
                     for (Request request : requests) {
-                        Drawable drawable = getReqIcon(getActivity(), request.getActivity());
+                        Drawable drawable = getReqIcon(requireActivity(), request.getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
                                 isArctic ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
@@ -450,21 +443,21 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                             intent.setType("application/zip");
                         }
 
-                        List<ResolveInfo> resolveInfos = getActivity().getPackageManager()
+                        List<ResolveInfo> resolveInfos = requireActivity().getPackageManager()
                                 .queryIntentActivities(intent, 0);
                         if (resolveInfos.size() == 0) {
                             noEmailClientError = true;
                             return false;
                         }
 
-                        if (Preferences.get(getActivity()).isPremiumRequest()) {
+                        if (Preferences.get(requireActivity()).isPremiumRequest()) {
                             AtomicBoolean hasDetailsLoaded = new AtomicBoolean(false);
                             CountDownLatch doneSignal = new CountDownLatch(1);
 
-                            InAppBillingClient.get(getActivity()).getClient().queryPurchasesAsync(
+                            InAppBillingClient.get(requireActivity()).getClient().queryPurchasesAsync(
                                     BillingClient.SkuType.INAPP, (billingResult, purchases) -> {
                                         if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                                            String premiumRequestProductId = Preferences.get(getActivity()).getPremiumRequestProductId();
+                                            String premiumRequestProductId = Preferences.get(requireActivity()).getPremiumRequestProductId();
                                             for (Purchase purchase : purchases) {
                                                 if (purchase.getSkus().contains(premiumRequestProductId)) {
                                                     CandyBarApplication.sRequestProperty = new Request.Property(null,
@@ -485,9 +478,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                             if (!hasDetailsLoaded.get()) return false;
                         }
 
-                        File appFilter = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.APPFILTER);
-                        File appMap = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.APPMAP);
-                        File themeResources = RequestHelper.buildXml(getActivity(), requests, RequestHelper.XmlType.THEME_RESOURCES);
+                        File appFilter = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.APPFILTER);
+                        File appMap = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.APPMAP);
+                        File themeResources = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.THEME_RESOURCES);
 
                         if (appFilter != null) files.add(appFilter.toString());
 
@@ -508,7 +501,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
@@ -516,7 +509,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             mAsyncTask = null;
             dialog = null;
 
-            if (aBoolean) {
+            if (ok) {
                 if (isArctic) {
                     Toast.makeText(getActivity(), R.string.request_arctic_success, Toast.LENGTH_LONG).show();
                     ((RequestListener) getActivity()).onRequestBuilt(null, IntentChooserFragment.ICON_REQUEST);
@@ -529,9 +522,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             } else {
                 if (isArctic) {
                     new MaterialDialog.Builder(getActivity())
-                            .typeface(
-                                    TypefaceHelper.getMedium(getActivity()),
-                                    TypefaceHelper.getRegular(getActivity()))
+                            .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
                             .content(R.string.request_arctic_error, "\"" + errorMessage + "\"")
                             .cancelable(true)
                             .canceledOnTouchOutside(false)
@@ -549,20 +540,16 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
-    public class CheckConfig extends AsyncTask<Void, Void, Boolean> {
+    public class CheckConfig extends AsyncTaskBase {
 
         private MaterialDialog dialog;
         private boolean canRequest = true;
         private String updateUrl;
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected void onPreExecute() {
-            dialog = new MaterialDialog.Builder(getActivity())
-                    .typeface(
-                            TypefaceHelper.getMedium(getActivity()),
-                            TypefaceHelper.getRegular(getActivity()))
+        protected void preRun() {
+            dialog = new MaterialDialog.Builder(requireActivity())
+                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                     .content(R.string.request_fetching_data)
                     .cancelable(false)
                     .canceledOnTouchOutside(false)
@@ -574,71 +561,70 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... params) {
-            String configJsonUrl = getActivity().getResources().getString(R.string.config_json);
-            URLConnection urlConnection;
-            BufferedReader bufferedReader = null;
+        protected boolean run() {
+            if (!isCancelled()) {
+                String configJsonUrl = requireActivity().getResources().getString(R.string.config_json);
+                URLConnection urlConnection;
+                BufferedReader bufferedReader = null;
 
-            try {
-                urlConnection = new URL(configJsonUrl).openConnection();
-                bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                try {
+                    urlConnection = new URL(configJsonUrl).openConnection();
+                    bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 
-                String line;
-                StringBuilder stringBuilder = new StringBuilder();
-                while ((line = bufferedReader.readLine()) != null) {
-                    stringBuilder.append(line);
-                }
+                    String line;
+                    StringBuilder stringBuilder = new StringBuilder();
+                    while ((line = bufferedReader.readLine()) != null) {
+                        stringBuilder.append(line);
+                    }
 
-                JSONObject configJson = new JSONObject(stringBuilder.toString());
-                updateUrl = configJson.getString("url");
+                    JSONObject configJson = new JSONObject(stringBuilder.toString());
+                    updateUrl = configJson.getString("url");
 
-                JSONObject disableRequestObj = configJson.getJSONObject("disableRequest");
-                long disableRequestBelow = disableRequestObj.optLong("below", 0);
-                String disableRequestOn = disableRequestObj.optString("on", "");
-                PackageInfo packageInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
-                long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
+                    JSONObject disableRequestObj = configJson.getJSONObject("disableRequest");
+                    long disableRequestBelow = disableRequestObj.optLong("below", 0);
+                    String disableRequestOn = disableRequestObj.optString("on", "");
+                    PackageInfo packageInfo = requireActivity().getPackageManager()
+                            .getPackageInfo(requireActivity().getPackageName(), 0);
+                    long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
+                            ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
 
-                if ((appVersionCode < disableRequestBelow) ||
-                        disableRequestOn.matches(".*\\b" + appVersionCode + "\\b.*")) {
-                    canRequest = false;
-                }
+                    if ((appVersionCode < disableRequestBelow) ||
+                            disableRequestOn.matches(".*\\b" + appVersionCode + "\\b.*")) {
+                        canRequest = false;
+                    }
 
-                return true;
-            } catch (Exception ex) {
-                LogUtil.e("Error loading Configuration JSON " + Log.getStackTraceString(ex));
-            } finally {
-                if (bufferedReader != null) {
-                    try {
-                        bufferedReader.close();
-                    } catch (IOException e) {
-                        LogUtil.e(Log.getStackTraceString(e));
+                    return true;
+                } catch (Exception ex) {
+                    LogUtil.e("Error loading Configuration JSON " + Log.getStackTraceString(ex));
+                } finally {
+                    if (bufferedReader != null) {
+                        try {
+                            bufferedReader.close();
+                        } catch (IOException e) {
+                            LogUtil.e(Log.getStackTraceString(e));
+                        }
                     }
                 }
             }
-
             return false;
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             dialog.dismiss();
             dialog = null;
 
-            if (aBoolean) {
+            if (ok) {
                 if (!canRequest) {
-                    new MaterialDialog.Builder(getActivity())
-                            .typeface(
-                                    TypefaceHelper.getMedium(getActivity()),
-                                    TypefaceHelper.getRegular(getActivity()))
+                    new MaterialDialog.Builder(requireActivity())
+                            .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                             .content(R.string.request_app_disabled)
                             .negativeText(R.string.close)
                             .positiveText(R.string.update)
                             .onPositive(((dialog, which) -> {
                                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
                                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
-                                getActivity().startActivity(intent);
+                                requireActivity().startActivity(intent);
                             }))
                             .cancelable(false)
                             .canceledOnTouchOutside(false)
@@ -648,13 +634,11 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     mAdapter.resetSelectedItems();
                     if (mMenuItem != null) mMenuItem.setIcon(R.drawable.ic_toolbar_select_all);
                 } else {
-                    mAsyncTask = new RequestLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                    mAsyncTask = new RequestLoader().executeOnThreadPool();
                 }
             } else {
-                new MaterialDialog.Builder(getActivity())
-                        .typeface(
-                                TypefaceHelper.getMedium(getActivity()),
-                                TypefaceHelper.getRegular(getActivity()))
+                new MaterialDialog.Builder(requireActivity())
+                        .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                         .content(R.string.unable_to_load_config)
                         .canceledOnTouchOutside(false)
                         .positiveText(R.string.close)

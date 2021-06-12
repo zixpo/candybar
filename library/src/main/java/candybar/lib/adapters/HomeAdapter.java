@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -20,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.URLUtil;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -29,7 +29,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.core.text.HtmlCompat;
@@ -70,7 +69,7 @@ import candybar.lib.helpers.ViewHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.tasks.IconRequestTask;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.views.HeaderView;
 import me.grantland.widget.AutofitTextView;
 
@@ -174,12 +173,12 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (holder.getItemViewType() == TYPE_CONTENT) {
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
 
-            contentViewHolder.autoFitTitle.setSingleLine(false);
-            contentViewHolder.autoFitTitle.setMaxLines(10);
-            contentViewHolder.autoFitTitle.setSizeToFit(false);
-            contentViewHolder.autoFitTitle.setGravity(Gravity.CENTER_VERTICAL);
-            contentViewHolder.autoFitTitle.setIncludeFontPadding(true);
-            contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+            contentViewHolder.title.setSingleLine(false);
+            contentViewHolder.title.setMaxLines(10);
+            contentViewHolder.title.setSizeToFit(false);
+            contentViewHolder.title.setGravity(Gravity.CENTER_VERTICAL);
+            contentViewHolder.title.setIncludeFontPadding(true);
+            contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
             contentViewHolder.subtitle.setVisibility(View.GONE);
             contentViewHolder.subtitle.setGravity(Gravity.CENTER_VERTICAL);
         }
@@ -253,7 +252,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                         RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(
                                                 mContext.getResources(), bitmap);
                                         drawable.setCornerRadius(0);
-                                        contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(
+                                        contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(
                                                 DrawableHelper.getResizedDrawable(mContext, drawable, 40),
                                                 null, null, null);
                                     });
@@ -262,7 +261,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                             })
                             .submit();
                 } else {
-                    contentViewHolder.autoFitTitle.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
+                    contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
                             mContext, mHomes.get(finalPosition).getIcon(), color), null, null, null);
                 }
             }
@@ -270,27 +269,28 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (mHomes.get(finalPosition).getType() == Home.Type.ICONS) {
                 if (mHomes.get(finalPosition).isLoading() && CandyBarMainActivity.sIconsCount == 0 && CandyBarApplication.getConfiguration().isAutomaticIconsCountEnabled()) {
                     contentViewHolder.progressBar.setVisibility(View.VISIBLE);
-                    contentViewHolder.autoFitTitle.setVisibility(View.GONE);
+                    contentViewHolder.title.setVisibility(View.GONE);
                 } else {
                     contentViewHolder.progressBar.setVisibility(View.GONE);
-                    contentViewHolder.autoFitTitle.setVisibility(View.VISIBLE);
+                    contentViewHolder.title.setVisibility(View.VISIBLE);
                 }
 
-                contentViewHolder.autoFitTitle.setSingleLine(true);
-                contentViewHolder.autoFitTitle.setMaxLines(1);
-                contentViewHolder.autoFitTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                contentViewHolder.title.setSingleLine(true);
+                contentViewHolder.title.setMaxLines(1);
+                contentViewHolder.title.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                         mContext.getResources().getDimension(R.dimen.text_max_size));
-                contentViewHolder.autoFitTitle.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
-                contentViewHolder.autoFitTitle.setIncludeFontPadding(false);
-                contentViewHolder.autoFitTitle.setSizeToFit(true);
+                contentViewHolder.title.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
+                contentViewHolder.title.setIncludeFontPadding(false);
+                contentViewHolder.title.setSizeToFit(true);
 
                 contentViewHolder.subtitle.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
             } else {
-                contentViewHolder.autoFitTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mContext.getResources()
-                        .getDimension(R.dimen.text_content_title));
+                contentViewHolder.title.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                        mContext.getResources().getDimension(R.dimen.text_content_title));
             }
 
-            contentViewHolder.autoFitTitle.setText(mHomes.get(finalPosition).getTitle());
+            contentViewHolder.title.setTypeface(TypefaceHelper.getMedium(mContext));
+            contentViewHolder.title.setText(mHomes.get(finalPosition).getTitle());
 
             if (mHomes.get(finalPosition).getSubtitle().length() > 0) {
                 contentViewHolder.subtitle.setText(mHomes.get(finalPosition).getSubtitle());
@@ -301,7 +301,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (mContext.getResources().getBoolean(R.bool.hide_missing_app_count)) {
                 iconRequestViewHolder.dataContainer.setVisibility(View.GONE);
                 iconRequestViewHolder.progressBar.setVisibility(View.GONE);
-            } else if (IconRequestTask.isLoading) {
+            } else if (CandyBarMainActivity.sMissedApps == null) {
+                // Missing apps are not yet loaded, show the progressbar
                 iconRequestViewHolder.dataContainer.setVisibility(View.GONE);
                 iconRequestViewHolder.progressBar.setVisibility(View.VISIBLE);
             } else {
@@ -366,7 +367,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             image = itemView.findViewById(R.id.header_image);
             title = itemView.findViewById(R.id.title);
             content = itemView.findViewById(R.id.content);
-            AppCompatButton rate = itemView.findViewById(R.id.rate);
+            Button rate = itemView.findViewById(R.id.rate);
             ImageView share = itemView.findViewById(R.id.share);
             ImageView update = itemView.findViewById(R.id.update);
 
@@ -441,8 +442,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             update.setOnClickListener(this);
         }
 
-        @SuppressLint("StringFormatInvalid")
         @Override
+        @SuppressLint("StringFormatInvalid")
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.rate) {
@@ -469,8 +470,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class UpdateChecker extends AsyncTask<Void, Void, Boolean> {
+    private class UpdateChecker extends AsyncTaskBase {
 
         private MaterialDialog loadingDialog;
         private String latestVersion;
@@ -479,11 +479,9 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private boolean isUpdateAvailable;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             loadingDialog = new MaterialDialog.Builder(mContext)
-                    .typeface(
-                            TypefaceHelper.getMedium(mContext),
-                            TypefaceHelper.getRegular(mContext))
+                    .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                     .content(R.string.checking_for_update)
                     .cancelable(false)
                     .canceledOnTouchOutside(false)
@@ -495,65 +493,66 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
-            boolean isSuccess = true;
-            String configJsonUrl = mContext.getResources().getString(R.string.config_json);
-            URLConnection urlConnection;
-            BufferedReader bufferedReader = null;
+        protected boolean run() {
+            if (!isCancelled()) {
+                boolean isSuccess = true;
+                String configJsonUrl = mContext.getResources().getString(R.string.config_json);
+                URLConnection urlConnection;
+                BufferedReader bufferedReader = null;
 
-            try {
-                urlConnection = new URL(configJsonUrl).openConnection();
-                bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                try {
+                    urlConnection = new URL(configJsonUrl).openConnection();
+                    bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 
-                String line;
-                StringBuilder stringBuilder = new StringBuilder();
-                while ((line = bufferedReader.readLine()) != null) {
-                    stringBuilder.append(line);
-                }
+                    String line;
+                    StringBuilder stringBuilder = new StringBuilder();
+                    while ((line = bufferedReader.readLine()) != null) {
+                        stringBuilder.append(line);
+                    }
 
-                JSONObject configJson = new JSONObject(stringBuilder.toString());
-                latestVersion = configJson.getString("latestVersion");
-                updateUrl = configJson.getString("url");
+                    JSONObject configJson = new JSONObject(stringBuilder.toString());
+                    latestVersion = configJson.getString("latestVersion");
+                    updateUrl = configJson.getString("url");
 
-                PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
-                long latestVersionCode = configJson.getLong("latestVersionCode");
-                long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
+                    PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
+                    long latestVersionCode = configJson.getLong("latestVersionCode");
+                    long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
 
-                if (latestVersionCode > appVersionCode) {
-                    isUpdateAvailable = true;
-                    JSONArray changelogArray = configJson.getJSONArray("releaseNotes");
-                    changelog = new String[changelogArray.length()];
-                    for (int i = 0; i < changelogArray.length(); i++) {
-                        changelog[i] = changelogArray.getString(i);
+                    if (latestVersionCode > appVersionCode) {
+                        isUpdateAvailable = true;
+                        JSONArray changelogArray = configJson.getJSONArray("releaseNotes");
+                        changelog = new String[changelogArray.length()];
+                        for (int i = 0; i < changelogArray.length(); i++) {
+                            changelog[i] = changelogArray.getString(i);
+                        }
+                    }
+                } catch (Exception ex) {
+                    LogUtil.e("Error loading Configuration JSON " + Log.getStackTraceString(ex));
+                    isSuccess = false;
+                } finally {
+                    if (bufferedReader != null) {
+                        try {
+                            bufferedReader.close();
+                        } catch (IOException e) {
+                            LogUtil.e(Log.getStackTraceString(e));
+                        }
                     }
                 }
-            } catch (Exception ex) {
-                LogUtil.e("Error loading Configuration JSON " + Log.getStackTraceString(ex));
-                isSuccess = false;
-            } finally {
-                if (bufferedReader != null) {
-                    try {
-                        bufferedReader.close();
-                    } catch (IOException e) {
-                        LogUtil.e(Log.getStackTraceString(e));
-                    }
-                }
+
+                return isSuccess;
             }
-
-            return isSuccess;
+            return false;
         }
 
-        @SuppressLint("SetTextI18n")
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        @SuppressLint("SetTextI18n")
+        protected void postRun(boolean ok) {
             loadingDialog.dismiss();
             loadingDialog = null;
 
-            if (aBoolean) {
+            if (ok) {
                 MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext)
-                        .typeface(
-                                TypefaceHelper.getMedium(mContext),
-                                TypefaceHelper.getRegular(mContext))
+                        .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                         .customView(R.layout.fragment_update, false);
 
                 if (isUpdateAvailable) {
@@ -588,9 +587,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 dialog.show();
             } else {
                 new MaterialDialog.Builder(mContext)
-                        .typeface(
-                                TypefaceHelper.getMedium(mContext),
-                                TypefaceHelper.getRegular(mContext))
+                        .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                         .content(R.string.unable_to_load_config)
                         .positiveText(R.string.close)
                         .build()
@@ -602,13 +599,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private class ContentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView subtitle;
-        private final AutofitTextView autoFitTitle;
+        private final AutofitTextView title;
         private final ProgressBar progressBar;
 
         ContentViewHolder(View itemView) {
             super(itemView);
             LinearLayout container = itemView.findViewById(R.id.container);
-            autoFitTitle = itemView.findViewById(R.id.title);
+            title = itemView.findViewById(R.id.title);
             subtitle = itemView.findViewById(R.id.subtitle);
             progressBar = itemView.findViewById(R.id.progressBar);
 
@@ -649,7 +646,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.container) {
-                int position = getAdapterPosition() - 1;
+                int position = getBindingAdapterPosition() - 1;
                 if (position < 0 || position > mHomes.size()) return;
 
                 switch (mHomes.get(position).getType()) {
@@ -730,7 +727,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             title.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
                     mContext, R.drawable.ic_toolbar_icon_request, color), null, null, null);
 
-            int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorAccent);
+            int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
             progress.getProgressDrawable().setColorFilter(accent, PorterDuff.Mode.SRC_IN);
 
             container.setOnClickListener(this);

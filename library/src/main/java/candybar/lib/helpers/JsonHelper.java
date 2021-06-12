@@ -40,8 +40,8 @@ public class JsonHelper {
 
     @SuppressLint("Raw")
     @Nullable
-    public static List parseList(@NonNull InputStream stream) {
-        List list = null;
+    public static List<?> parseList(@NonNull InputStream stream) {
+        List<?> list = null;
         JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
 
         try {
@@ -61,7 +61,7 @@ public class JsonHelper {
     public static Wallpaper getWallpaper(@NonNull Object object) {
         if (object instanceof Map) {
             JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
-            Map map = (Map) object;
+            Map<?, ?> map = (Map<?, ?>) object;
             return Wallpaper.Builder()
                     .name((String) map.get(jsonStructure.getName()))
                     .author(getAuthor(map))
@@ -72,7 +72,7 @@ public class JsonHelper {
         return null;
     }
 
-    public static String getThumbUrl(@NonNull Map map) {
+    public static String getThumbUrl(@NonNull Map<?, ?> map) {
         JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
         String url = (String) map.get(jsonStructure.getUrl());
         if (jsonStructure.getThumbUrl() == null) return url;
@@ -86,7 +86,7 @@ public class JsonHelper {
         return thumbUrl;
     }
 
-    private static String getAuthor(@NonNull Map map) {
+    private static String getAuthor(@NonNull Map<?, ?> map) {
         JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
         String defaultAuthorName = "";
 

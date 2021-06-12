@@ -93,7 +93,7 @@ public class AboutSocialAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         @Override
         public void onClick(View view) {
             int id = view.getId();
-            int position = getAdapterPosition();
+            int position = getBindingAdapterPosition();
             if (position < 0 || position > mUrls.length) return;
 
             if (id == R.id.image) {

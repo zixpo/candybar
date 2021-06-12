@@ -4,10 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.os.AsyncTask;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -20,7 +18,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.Executor;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -28,6 +25,7 @@ import candybar.lib.databases.Database;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.items.Request;
+import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.listeners.HomeListener;
 
@@ -49,27 +47,17 @@ import candybar.lib.utils.listeners.HomeListener;
  * limitations under the License.
  */
 
-public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
+public class IconRequestTask extends AsyncTaskBase {
 
     private final WeakReference<Context> mContext;
     private Extras.Error mError;
-    public static boolean isLoading;
 
-    private IconRequestTask(Context context) {
+    public IconRequestTask(Context context) {
         mContext = new WeakReference<>(context);
     }
 
-    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context) {
-        return start(context, SERIAL_EXECUTOR);
-    }
-
-    public static AsyncTask<Void, Void, Boolean> start(@NonNull Context context, @NonNull Executor executor) {
-        isLoading = true;
-        return new IconRequestTask(context).executeOnExecutor(executor);
-    }
-
     @Override
-    protected Boolean doInBackground(Void... voids) {
+    protected boolean run() {
         if (!isCancelled()) {
             try {
                 Thread.sleep(1);
@@ -139,13 +127,11 @@ public class IconRequestTask extends AsyncTask<Void, Void, Boolean> {
     }
 
     @Override
-    protected void onPostExecute(Boolean aBoolean) {
+    protected void postRun(boolean ok) {
         if (mContext.get() == null) return;
         if (((AppCompatActivity) mContext.get()).isFinishing()) return;
 
-        if (aBoolean) {
-            isLoading = false;
-
+        if (ok) {
             FragmentManager fm = ((AppCompatActivity) mContext.get()).getSupportFragmentManager();
             if (fm == null) return;
 

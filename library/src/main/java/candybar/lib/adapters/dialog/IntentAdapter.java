@@ -4,7 +4,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -31,6 +30,7 @@ import candybar.lib.items.IntentChooser;
 import candybar.lib.items.Request;
 import candybar.lib.tasks.IconRequestBuilderTask;
 import candybar.lib.tasks.PremiumRequestBuilderTask;
+import candybar.lib.utils.AsyncTaskBase;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
 /*
@@ -56,7 +56,7 @@ public class IntentAdapter extends BaseAdapter {
     private final Context mContext;
     private final List<IntentChooser> mApps;
     private final int mType;
-    private AsyncTask mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     public IntentAdapter(@NonNull Context context, @NonNull List<IntentChooser> apps, int type) {
         mContext = context;
@@ -97,7 +97,7 @@ public class IntentAdapter extends BaseAdapter {
             holder.type.setTextColor(ColorHelper.getAttributeColor(mContext, android.R.attr.textColorSecondary));
             holder.type.setText(mContext.getResources().getString(R.string.intent_email_supported));
         } else if (mApps.get(position).getType() == IntentChooser.TYPE_RECOMMENDED) {
-            holder.type.setTextColor(ColorHelper.getAttributeColor(mContext, R.attr.colorAccent));
+            holder.type.setTextColor(ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary));
             holder.type.setText(mContext.getResources().getString(R.string.intent_email_recommended));
         } else {
             holder.type.setTextColor(Color.parseColor("#F44336"));
@@ -120,21 +120,7 @@ public class IntentAdapter extends BaseAdapter {
                         new ComponentName(app.applicationInfo.packageName, app.name));
 
                 if (mType == IntentChooserFragment.ICON_REQUEST) {
-                    mAsyncTask = IconRequestBuilderTask.prepare(mContext)
-                            .callback(() -> {
-                                mAsyncTask = null;
-                                FragmentManager fm = ((AppCompatActivity) mContext).getSupportFragmentManager();
-                                if (fm != null) {
-                                    DialogFragment dialog = (DialogFragment) fm.findFragmentByTag(
-                                            IntentChooserFragment.TAG);
-                                    if (dialog != null) {
-                                        dialog.dismiss();
-                                    }
-                                }
-                            })
-                            .start(AsyncTask.THREAD_POOL_EXECUTOR);
-                } else if (mType == IntentChooserFragment.REBUILD_ICON_REQUEST) {
-                    mAsyncTask = PremiumRequestBuilderTask.start(mContext, () -> {
+                    mAsyncTask = new IconRequestBuilderTask(mContext, () -> {
                         mAsyncTask = null;
                         FragmentManager fm = ((AppCompatActivity) mContext).getSupportFragmentManager();
                         if (fm != null) {
@@ -144,7 +130,19 @@ public class IntentAdapter extends BaseAdapter {
                                 dialog.dismiss();
                             }
                         }
-                    }, AsyncTask.THREAD_POOL_EXECUTOR);
+                    }).executeOnThreadPool();
+                } else if (mType == IntentChooserFragment.REBUILD_ICON_REQUEST) {
+                    mAsyncTask = new PremiumRequestBuilderTask(mContext, () -> {
+                        mAsyncTask = null;
+                        FragmentManager fm = ((AppCompatActivity) mContext).getSupportFragmentManager();
+                        if (fm != null) {
+                            DialogFragment dialog = (DialogFragment) fm.findFragmentByTag(
+                                    IntentChooserFragment.TAG);
+                            if (dialog != null) {
+                                dialog.dismiss();
+                            }
+                        }
+                    }).executeOnThreadPool();
                 } else {
                     LogUtil.e("Intent chooser type unknown: " + mType);
                 }

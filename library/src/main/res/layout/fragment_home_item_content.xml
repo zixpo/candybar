@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -40,8 +38,7 @@
             android:gravity="center_vertical"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/text_max_size"
-            app:minTextSize="@dimen/text_content_title"
-            fontPath="fonts/Font-Medium.ttf" />
+            app:minTextSize="@dimen/text_content_title" />
 
         <TextView
             android:id="@+id/subtitle"
@@ -51,7 +48,7 @@
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="@dimen/text_content"
             android:visibility="gone"
-            fontPath="fonts/Font-Regular.ttf" />
+            app:fontFamily="@font/regular" />
 
     </LinearLayout>
 

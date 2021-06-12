@@ -1,17 +1,11 @@
 package candybar.lib.fragments.dialog;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.View;
-import android.webkit.WebView;
+import android.widget.ListView;
 
-import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -21,13 +15,16 @@ import androidx.fragment.app.FragmentTransaction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import org.xmlpull.v1.XmlPullParser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import candybar.lib.R;
-import candybar.lib.helpers.LocaleHelper;
+import candybar.lib.adapters.dialog.LicensesAdapter;
 import candybar.lib.helpers.TypefaceHelper;
+import candybar.lib.items.License;
+import candybar.lib.utils.AsyncTaskBase;
 
 /*
  * CandyBar - Material Dashboard
@@ -49,8 +46,8 @@ import candybar.lib.helpers.TypefaceHelper;
 
 public class LicensesFragment extends DialogFragment {
 
-    private WebView mWebView;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private ListView mListView;
+    private AsyncTaskBase mAsyncTask;
 
     private static final String TAG = "candybar.dialog.licenses";
 
@@ -74,59 +71,75 @@ public class LicensesFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
-        builder.customView(R.layout.fragment_licenses, false);
-        builder.typeface(
-                TypefaceHelper.getMedium(getActivity()),
-                TypefaceHelper.getRegular(getActivity()));
-        builder.title(R.string.about_open_source_licenses);
-        builder.negativeText(R.string.close);
-        MaterialDialog dialog = builder.build();
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
+                .customView(R.layout.fragment_licenses, false)
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
+                .title(R.string.about_open_source_licenses)
+                .negativeText(R.string.close)
+                .build();
         dialog.show();
 
-        mWebView = (WebView) dialog.findViewById(R.id.webview);
+        mListView = (ListView) dialog.findViewById(R.id.licenses_list);
+
+        mAsyncTask = new LicensesLoader().executeOnThreadPool();
+
         return dialog;
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mAsyncTask = new LicensesLoader().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-    }
-
-    @Override
     public void onDismiss(@NonNull DialogInterface dialog) {
-        if (mAsyncTask != null) mAsyncTask.cancel(true);
+        if (mAsyncTask != null) {
+            mAsyncTask.cancel(true);
+        }
         super.onDismiss(dialog);
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class LicensesLoader extends AsyncTask<Void, Void, Boolean> {
+    private class LicensesLoader extends AsyncTaskBase {
 
-        private StringBuilder sb;
+        private List<License> licenses;
 
         @Override
-        protected void onPreExecute() {
-            sb = new StringBuilder();
+        protected void preRun() {
+            licenses = new ArrayList<>();
         }
 
         @Override
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    InputStream rawResource = getResources().openRawResource(R.raw.licenses);
-                    BufferedReader bufferedReader = new BufferedReader(
-                            new InputStreamReader(rawResource));
 
-                    String line;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        sb.append(line);
-                        sb.append("\n");
+                    XmlPullParser xpp = requireActivity().getResources().getXml(R.xml.dashboard_licenses);
+                    String licenseName = "";
+                    String licenseText = "";
+
+                    while (xpp.getEventType() != XmlPullParser.END_DOCUMENT) {
+                        switch (xpp.getEventType()) {
+                            case XmlPullParser.START_TAG:
+                                if (xpp.getName().equals("license")) {
+                                    licenseName = xpp.getAttributeValue(null, "name");
+                                }
+                                break;
+
+                            case XmlPullParser.TEXT:
+                                String[] parts = xpp.getText().split("\n");
+                                for (int i = 0; i < parts.length; i++) {
+                                    licenseText += parts[i].trim() + "\n";
+                                }
+                                licenseText = licenseText.trim();
+                                licenseText = licenseText.replaceAll("(.)\\n(.)", "$1 $2");
+                                break;
+
+                            case XmlPullParser.END_TAG:
+                                if (xpp.getName().equals("license")) {
+                                    licenses.add(new License(licenseName, licenseText));
+                                    licenseName = licenseText = "";
+                                }
+                                break;
+                        }
+                        xpp.next();
                     }
-                    bufferedReader.close();
                     return true;
                 } catch (Exception e) {
                     LogUtil.e(Log.getStackTraceString(e));
@@ -136,28 +149,16 @@ public class LicensesFragment extends DialogFragment {
             return false;
         }
 
-        private String getColorHex(@AttrRes int res) {
-            TypedValue typedValue = new TypedValue();
-            Resources.Theme theme = getActivity().getTheme();
-            theme.resolveAttribute(res, typedValue, true);
-            return String.format("#%06X", (0xFFFFFF & typedValue.data));
-        }
-
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            LocaleHelper.setLocale(getActivity());
-            if (aBoolean) {
-                String html = sb.toString()
-                        .replace("{{textColor}}", getColorHex(android.R.attr.textColorPrimary))
-                        .replace("{{bodyColor}}", getColorHex(R.attr.main_background));
-
-                mWebView.setVisibility(View.VISIBLE);
-                mWebView.loadDataWithBaseURL(null,
-                        html, "text/html", "utf-8", null);
+            if (ok) {
+                mListView.setAdapter(new LicensesAdapter(getActivity(), licenses));
+            } else {
+                dismiss();
             }
         }
     }

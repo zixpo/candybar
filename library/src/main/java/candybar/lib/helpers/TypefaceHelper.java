@@ -5,6 +5,9 @@ import android.graphics.Typeface;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
+
+import candybar.lib.R;
 
 /*
  * CandyBar - Material Dashboard
@@ -28,28 +31,16 @@ public class TypefaceHelper {
 
     @Nullable
     public static Typeface getRegular(@NonNull Context context) {
-        try {
-            return Typeface.createFromAsset(context.getAssets(), "fonts/Font-Regular.ttf");
-        } catch (Exception e) {
-            return null;
-        }
+        return ResourcesCompat.getFont(context, R.font.regular);
     }
 
     @Nullable
     public static Typeface getMedium(@NonNull Context context) {
-        try {
-            return Typeface.createFromAsset(context.getAssets(), "fonts/Font-Medium.ttf");
-        } catch (Exception e) {
-            return null;
-        }
+        return ResourcesCompat.getFont(context, R.font.medium);
     }
 
     @Nullable
     public static Typeface getBold(@NonNull Context context) {
-        try {
-            return Typeface.createFromAsset(context.getAssets(), "fonts/Font-Bold.ttf");
-        } catch (Exception e) {
-            return null;
-        }
+        return ResourcesCompat.getFont(context, R.font.bold);
     }
 }

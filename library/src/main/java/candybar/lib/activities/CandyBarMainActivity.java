@@ -7,7 +7,6 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -91,6 +91,7 @@ import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.items.Request;
+import candybar.lib.items.Theme;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.services.CandyBarService;
@@ -103,7 +104,6 @@ import candybar.lib.utils.listeners.RequestListener;
 import candybar.lib.utils.listeners.SearchListener;
 import candybar.lib.utils.listeners.WallpapersListener;
 import candybar.lib.utils.views.HeaderView;
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 /*
  * CandyBar - Material Dashboard
@@ -153,28 +153,39 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        LocaleHelper.setLocale(this);
+        final boolean isDarkTheme = prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
 
-        prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
-        super.setTheme(ThemeHelper.isDarkTheme(this) ?
-                R.style.AppThemeDark : R.style.AppTheme);
+        final int nightMode;
+        final Theme currentTheme = Preferences.get(this).getTheme();
+        switch (currentTheme) {
+            case LIGHT:
+                nightMode = AppCompatDelegate.MODE_NIGHT_NO;
+                break;
+            case DARK:
+                nightMode = AppCompatDelegate.MODE_NIGHT_YES;
+                break;
+            default:
+                nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        }
+        AppCompatDelegate.setDefaultNightMode(nightMode);
+
+        LocaleHelper.setLocale(this);
+        super.setTheme(R.style.CandyBar_Theme_App);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ColorHelper.setupStatusBarIconColor(this);
-        ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this,
-                ThemeHelper.isDarkTheme(this) ?
-                        R.color.navigationBarDark : R.color.navigationBar));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !ThemeHelper.isDarkTheme(this)) {
+        ColorHelper.setupStatusBarIconColor(this);
+        ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this, R.color.navigationBar));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !isDarkTheme) {
             int flags = 0;
             if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)))
                 flags = flags | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
             if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)))
                 flags = flags | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
             if (flags != 0) {
-                this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                this.getWindow().getDecorView().setSystemUiVisibility(flags);
-                this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                getWindow().getDecorView().setSystemUiVisibility(flags);
             }
         }
 
@@ -193,8 +204,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         Toolbar toolbar = findViewById(R.id.toolbar);
         mToolbarTitle = findViewById(R.id.toolbar_title);
 
-        toolbar.setPopupTheme(ThemeHelper.isDarkTheme(this) ?
-                R.style.AppThemeDark : R.style.AppTheme);
+        toolbar.setPopupTheme(R.style.CandyBar_Theme_App);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
@@ -225,8 +235,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         checkWallpapers();
-        IconRequestTask.start(this, AsyncTask.THREAD_POOL_EXECUTOR);
-        IconsLoaderTask.start(this);
+        new IconRequestTask(this).executeOnThreadPool();
+        new IconsLoaderTask(this).execute();
 
         /*
         The below code does this
@@ -301,7 +311,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     @Override
     protected void attachBaseContext(Context newBase) {
         LocaleHelper.setLocale(newBase);
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+        super.attachBaseContext(newBase);
     }
 
     @Override
@@ -565,10 +575,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     (billingResult, s) -> {
                         if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                             Preferences.get(this).setInAppBillingType(-1);
-
-                            this.runOnUiThread(() -> new MaterialDialog.Builder(this)
-                                    .typeface(TypefaceHelper.getMedium(this),
-                                            TypefaceHelper.getRegular(this))
+                            runOnUiThread(() -> new MaterialDialog.Builder(this)
+                                    .typeface(TypefaceHelper.getMedium(this), TypefaceHelper.getRegular(this))
                                     .title(R.string.navigation_view_donate)
                                     .content(R.string.donation_success)
                                     .positiveText(R.string.close)
@@ -802,7 +810,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                         InputStream stream = connection.getInputStream();
-                        List list = JsonHelper.parseList(stream);
+                        List<?> list = JsonHelper.parseList(stream);
                         if (list == null) return;
 
                         List<Wallpaper> wallpapers = new ArrayList<>();

@@ -2,10 +2,10 @@ package candybar.lib.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,19 +13,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
@@ -44,6 +42,7 @@ import candybar.lib.fragments.dialog.IconShapeChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.AlphanumComparator;
+import candybar.lib.utils.AsyncTaskBase;
 
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
@@ -70,11 +69,11 @@ public class IconsSearchFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerFastScroller mFastScroll;
     private TextView mSearchResult;
-    private SearchView mSearchView;
+    private EditText mSearchInput;
     private final Fragment mFragment = this;
 
     private IconsAdapter mAdapter;
-    private AsyncTask<Void, Void, ?> mAsyncTask;
+    private AsyncTaskBase mAsyncTask;
 
     public static final String TAG = "icons_search";
 
@@ -92,24 +91,22 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         setHasOptionsMenu(true);
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
-                getActivity().getResources().getInteger(R.integer.icons_column_count)));
+                requireActivity().getResources().getInteger(R.integer.icons_column_count)));
 
         setFastScrollColor(mFastScroll);
         mFastScroll.attachRecyclerView(mRecyclerView);
-
         mAsyncTask = new IconsLoader().execute();
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_icons_search, menu);
@@ -117,24 +114,16 @@ public class IconsSearchFragment extends Fragment {
         MenuItem iconShape = menu.findItem(R.id.menu_icon_shape);
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
-                !getActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
+                !requireActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
             iconShape.setVisible(false);
         }
 
-        mSearchView = (SearchView) search.getActionView();
-        mSearchView.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI | EditorInfo.IME_ACTION_SEARCH);
-        mSearchView.setQueryHint(getActivity().getResources().getString(R.string.search_icon));
-        mSearchView.setMaxWidth(Integer.MAX_VALUE);
+        View searchView = search.getActionView();
+        View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
+        mSearchInput = searchView.findViewById(R.id.search_input);
+        mSearchInput.setHint(R.string.search_icon);
 
         search.expandActionView();
-        mSearchView.setIconifiedByDefault(false);
-        mSearchView.clearFocus();
-
-        int color = ColorHelper.getAttributeColor(getActivity(), R.attr.toolbar_icon);
-        ViewHelper.setSearchViewTextColor(mSearchView, color);
-        ViewHelper.setSearchViewBackgroundColor(mSearchView, Color.TRANSPARENT);
-        ViewHelper.setSearchViewCloseIcon(mSearchView, R.drawable.ic_toolbar_close);
-        ViewHelper.setSearchViewSearchIcon(mSearchView, null);
 
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
@@ -144,36 +133,40 @@ public class IconsSearchFragment extends Fragment {
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                getActivity().onBackPressed();
+                requireActivity().onBackPressed();
                 return true;
             }
         });
 
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        mSearchInput.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onQueryTextChange(String string) {
-                filterSearch(string);
-                return true;
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
 
             @Override
-            public boolean onQueryTextSubmit(String string) {
-                mSearchView.clearFocus();
-                return true;
+            public void afterTextChanged(Editable editable) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String query = charSequence.toString();
+                filterSearch(query);
+                clearQueryButton.setVisibility(query.contentEquals("") ? View.GONE : View.VISIBLE);
             }
         });
+
+        clearQueryButton.setOnClickListener(view -> mSearchInput.setText(""));
 
         iconShape.setOnMenuItemClickListener(menuItem -> {
-            IconShapeChooserFragment.showIconShapeChooser(getActivity().getSupportFragmentManager());
+            IconShapeChooserFragment.showIconShapeChooser(requireActivity().getSupportFragmentManager());
             return false;
         });
     }
 
     @Override
-    @SuppressWarnings("ConstantConditions")
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        ViewHelper.resetSpanCount(mRecyclerView, getActivity().getResources().getInteger(R.integer.icons_column_count));
+        ViewHelper.resetSpanCount(mRecyclerView, requireActivity().getResources().getInteger(R.integer.icons_column_count));
     }
 
     @Override
@@ -184,12 +177,11 @@ public class IconsSearchFragment extends Fragment {
     }
 
     @SuppressLint("StringFormatInvalid")
-    @SuppressWarnings("ConstantConditions")
     private void filterSearch(String query) {
         try {
             mAdapter.search(query);
             if (mAdapter.getItemCount() == 0) {
-                String text = String.format(getActivity().getResources().getString(
+                String text = String.format(requireActivity().getResources().getString(
                         R.string.search_noresult), query);
                 mSearchResult.setText(text);
                 mSearchResult.setVisibility(View.VISIBLE);
@@ -204,34 +196,32 @@ public class IconsSearchFragment extends Fragment {
             currentAdapter.get().reloadIcons();
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class IconsLoader extends AsyncTask<Void, Void, Boolean> {
+    private class IconsLoader extends AsyncTaskBase {
 
         private List<Icon> icons;
 
         @Override
-        protected void onPreExecute() {
+        protected void preRun() {
             icons = new ArrayList<>();
         }
 
         @Override
-        @SuppressWarnings("ConstantConditions")
-        protected Boolean doInBackground(Void... voids) {
+        protected boolean run() {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
                     if (CandyBarMainActivity.sSections == null) {
-                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(getActivity());
+                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(requireActivity());
 
                         for (Icon section : CandyBarMainActivity.sSections) {
-                            if (getActivity().getResources().getBoolean(R.bool.show_icon_name)) {
+                            if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
                                 for (Icon icon : section.getIcons()) {
                                     String name;
                                     if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
                                         name = icon.getCustomName();
                                     } else {
-                                        name = IconsHelper.replaceName(getActivity(),
-                                                getActivity().getResources().getBoolean(R.bool.enable_icon_name_replacer),
+                                        name = IconsHelper.replaceName(requireActivity(),
+                                                requireActivity().getResources().getBoolean(R.bool.enable_icon_name_replacer),
                                                 icon.getTitle());
                                     }
                                     icon.setTitle(name);
@@ -274,17 +264,17 @@ public class IconsSearchFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Boolean aBoolean) {
+        protected void postRun(boolean ok) {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
             mAsyncTask = null;
-            if (aBoolean) {
+            if (ok) {
                 mAdapter = new IconsAdapter(getActivity(), icons, mFragment);
                 currentAdapter = new WeakReference<>(mAdapter);
                 mRecyclerView.setAdapter(mAdapter);
                 filterSearch("");
-                mSearchView.requestFocus();
+                mSearchInput.requestFocus();
                 SoftKeyboardHelper.openKeyboard(getActivity());
             } else {
                 // Unable to load all icons

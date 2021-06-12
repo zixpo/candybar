@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingPrefix"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/content_padding_reverse"
@@ -48,7 +46,7 @@
                 android:layout_marginEnd="@dimen/content_margin"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/text_title"
-                fontPath="fonts/Font-Medium.ttf" />
+                app:fontFamily="@font/medium" />
 
             <TextView
                 android:id="@+id/content"
@@ -62,7 +60,7 @@
                 android:layout_marginEnd="@dimen/content_margin"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="@dimen/text_content"
-                fontPath="fonts/Font-Regular.ttf" />
+                app:fontFamily="@font/regular" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -75,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <androidx.appcompat.widget.AppCompatButton
+                    <Button
                         android:id="@+id/rate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -89,8 +87,8 @@
                         android:ellipsize="end"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:theme="@style/RippleStyle"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        fontPath="fonts/Font-Bold.ttf" />
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        app:fontFamily="@font/bold" />
 
                 </FrameLayout>
 

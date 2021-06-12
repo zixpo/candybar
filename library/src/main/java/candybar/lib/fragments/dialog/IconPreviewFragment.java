@@ -41,9 +41,6 @@ import candybar.lib.helpers.TypefaceHelper;
 
 public class IconPreviewFragment extends DialogFragment {
 
-    private TextView mName;
-    private ImageView mIcon;
-
     private String mIconName;
     private int mIconId;
 
@@ -85,46 +82,39 @@ public class IconPreviewFragment extends DialogFragment {
 
     @NonNull
     @Override
-    @SuppressWarnings("ConstantConditions")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
                 .customView(R.layout.fragment_icon_preview, false)
-                .typeface(
-                        TypefaceHelper.getMedium(getActivity()),
-                        TypefaceHelper.getRegular(getActivity()))
+                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                 .positiveText(R.string.close)
                 .build();
 
         dialog.show();
 
-        mName = (TextView) dialog.findViewById(R.id.name);
-        mIcon = (ImageView) dialog.findViewById(R.id.icon);
-        return dialog;
-    }
+        TextView name = (TextView) dialog.findViewById(R.id.name);
+        ImageView icon = (ImageView) dialog.findViewById(R.id.icon);
 
-    @Override
-    @SuppressWarnings("ConstantConditions")
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {
             mIconName = savedInstanceState.getString(NAME);
             mIconId = savedInstanceState.getInt(ID);
         }
 
-        if (!getActivity().getResources().getBoolean(R.bool.show_icon_name)) {
-            boolean iconNameReplacer = getActivity().getResources().getBoolean(
+        if (!requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
+            boolean iconNameReplacer = requireActivity().getResources().getBoolean(
                     R.bool.enable_icon_name_replacer);
-            mIconName = IconsHelper.replaceName(getActivity(), iconNameReplacer, mIconName);
+            mIconName = IconsHelper.replaceName(requireActivity(), iconNameReplacer, mIconName);
         }
 
-        mName.setText(mIconName);
+        name.setText(mIconName);
 
         Glide.with(this)
                 .load("drawable://" + mIconId)
                 .transition(DrawableTransitionOptions.withCrossFade(300))
                 .skipMemoryCache(true)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(mIcon);
+                .into(icon);
+
+        return dialog;
     }
 
     @Override

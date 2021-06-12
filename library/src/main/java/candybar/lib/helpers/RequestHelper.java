@@ -37,6 +37,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -211,13 +212,12 @@ public class RequestHelper {
                 : getRegularArcticApiKey(context).length() > 0;
     }
 
-    @SuppressWarnings("ConstantConditions")
     public static String sendArcticRequest(List<Request> requests, List<String> iconFiles, File directory, String apiKey) {
         okhttp3.RequestBody okRequestBody = new okhttp3.MultipartBody.Builder()
                 .setType(okhttp3.MultipartBody.FORM)
                 .addFormDataPart("apps", buildJsonForArctic(requests))
                 .addFormDataPart("archive", "icons.zip", okhttp3.RequestBody.create(
-                        getZipFile(iconFiles, directory.toString(), "icons.zip"),
+                        Objects.requireNonNull(getZipFile(iconFiles, directory.toString(), "icons.zip")),
                         okhttp3.MediaType.parse("application/zip")))
                 .build();
 
@@ -235,7 +235,7 @@ public class RequestHelper {
             okhttp3.Response response = okHttpClient.newCall(okRequest).execute();
             boolean success = response.code() > 199 && response.code() < 300;
             if (!success) {
-                JSONObject responseJson = new JSONObject(response.body().string());
+                JSONObject responseJson = new JSONObject(Objects.requireNonNull(response.body()).string());
                 return responseJson.getString("error");
             }
         } catch (IOException | JSONException ignoredException) {
@@ -354,9 +354,7 @@ public class RequestHelper {
 
     public static void showAlreadyRequestedDialog(@NonNull Context context) {
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(R.string.request_title)
                 .content(R.string.request_requested)
                 .positiveText(R.string.close)
@@ -376,9 +374,7 @@ public class RequestHelper {
         if (reset)
             message += "\n\n" + context.getResources().getString(R.string.request_limit_reset);
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(R.string.request_title)
                 .content(message)
                 .positiveText(R.string.close)
@@ -387,9 +383,7 @@ public class RequestHelper {
 
     public static void showPremiumRequestRequired(@NonNull Context context) {
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(R.string.request_title)
                 .content(R.string.premium_request_required)
                 .positiveText(R.string.close)
@@ -402,9 +396,7 @@ public class RequestHelper {
         message += " " + String.format(context.getResources().getString(R.string.premium_request_limit1),
                 selected);
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(R.string.premium_request)
                 .content(message)
                 .positiveText(R.string.close)
@@ -416,9 +408,7 @@ public class RequestHelper {
                 R.string.premium_request_already_purchased),
                 Preferences.get(context).getPremiumRequestCount());
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(R.string.premium_request)
                 .content(message)
                 .positiveText(R.string.close)
@@ -429,9 +419,7 @@ public class RequestHelper {
         boolean isReady = Preferences.get(context).isConnectedToNetwork();
         if (!isReady) {
             new MaterialDialog.Builder(context)
-                    .typeface(
-                            TypefaceHelper.getMedium(context),
-                            TypefaceHelper.getRegular(context))
+                    .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                     .title(R.string.premium_request)
                     .content(R.string.premium_request_no_internet)
                     .positiveText(R.string.close)
@@ -442,9 +430,7 @@ public class RequestHelper {
 
     public static void showPremiumRequestConsumeFailed(@NonNull Context context) {
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(R.string.premium_request)
                 .content(R.string.premium_request_consume_failed)
                 .positiveText(R.string.close)
@@ -453,9 +439,7 @@ public class RequestHelper {
 
     public static void showPremiumRequestExist(@NonNull Context context) {
         new MaterialDialog.Builder(context)
-                .typeface(
-                        TypefaceHelper.getMedium(context),
-                        TypefaceHelper.getRegular(context))
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(R.string.premium_request)
                 .content(R.string.premium_request_exist)
                 .positiveText(R.string.close)

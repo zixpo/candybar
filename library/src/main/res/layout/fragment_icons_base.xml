@@ -22,9 +22,9 @@
         app:tabIndicatorHeight="3dp"
         app:tabPadding="@dimen/content_padding"
         app:tabMode="scrollable"
-        app:tabRippleColor="?colorAccent" />
+        app:tabRippleColor="?colorSecondary" />
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
