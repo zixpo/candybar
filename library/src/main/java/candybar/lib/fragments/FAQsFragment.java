@@ -7,7 +7,6 @@ import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -110,10 +109,6 @@ public class FAQsFragment extends Fragment {
 
         new Handler(Looper.getMainLooper())
                 .postDelayed(() -> SoftKeyboardHelper.openKeyboard(requireActivity()), 1000);
-
-        searchView.findViewById(R.id.container).setPadding(0, 0,
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 12,
-                        requireActivity().getResources().getDisplayMetrics()), 0);
 
         searchInput.addTextChangedListener(new TextWatcher() {
             @Override

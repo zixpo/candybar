@@ -5,17 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingRight="12dp">
 
     <EditText
         android:id="@+id/search_input"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:background="@android:color/transparent"
         android:imeOptions="actionSearch"
         android:inputType="text"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textCursorDrawable="@drawable/colored_cursor"
+        android:textColor="?toolbar_icon"
+        android:textCursorDrawable="@drawable/searchbar_cursor"
+        android:textColorHint="#66AEAEAE"
         android:maxWidth="250dp"
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@id/clear_query_button"

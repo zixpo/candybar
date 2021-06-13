@@ -112,13 +112,15 @@ public class IconsSearchFragment extends Fragment {
         inflater.inflate(R.menu.menu_icons_search, menu);
         MenuItem search = menu.findItem(R.id.menu_search);
         MenuItem iconShape = menu.findItem(R.id.menu_icon_shape);
+        View searchView = search.getActionView();
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
                 !requireActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
             iconShape.setVisible(false);
+        } else {
+            searchView.findViewById(R.id.container).setPadding(0, 0, 0, 0);
         }
 
-        View searchView = search.getActionView();
         View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
         mSearchInput = searchView.findViewById(R.id.search_input);
         mSearchInput.setHint(R.string.search_icon);
