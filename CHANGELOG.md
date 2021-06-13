@@ -1,3 +1,8 @@
+# v3.11.0
+- Internal code refactorings
+- Removed deprecated stuffs
+- Now uses Material Components
+
 # v3.10.1
 - Fixed in-app billings
 - Fixed icon request limit not resetting when license checker is enabled

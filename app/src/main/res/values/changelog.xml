@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">June 9, 2021</string>
+    <string name="changelog_date" translatable="false">June 12, 2021</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,8 +10,9 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Fixed in-app billings</item>
-        <item>Fixed icon request limit not resetting when license checker is enabled</item>
+        <item>Internal code refactorings</item>
+        <item>Removed deprecated stuffs</item>
+        <item>Now uses Material Components</item>
     </string-array>
 
 </resources>
