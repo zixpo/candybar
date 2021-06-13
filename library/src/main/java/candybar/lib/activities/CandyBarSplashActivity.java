@@ -166,11 +166,13 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
                             // Preload the first wallpaper's thumbnail
                             // It should show up immediately without any delay on first run
                             // so that the intro popup works correctly
-                            Glide.with(context.get())
-                                    .load(thumbUrl)
-                                    .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                                    .override(ImageConfig.getThumbnailSize())
-                                    .preload();
+                            if (context.get() != null) {
+                                Glide.with(context.get())
+                                        .load(thumbUrl)
+                                        .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                                        .override(ImageConfig.getThumbnailSize())
+                                        .preload();
+                            }
                         }
                     }
                     return true;

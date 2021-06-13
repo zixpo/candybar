@@ -91,7 +91,6 @@ import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.items.Request;
-import candybar.lib.items.Theme;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.services.CandyBarService;
@@ -156,8 +155,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         final boolean isDarkTheme = prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
 
         final int nightMode;
-        final Theme currentTheme = Preferences.get(this).getTheme();
-        switch (currentTheme) {
+        switch (Preferences.get(this).getTheme()) {
             case LIGHT:
                 nightMode = AppCompatDelegate.MODE_NIGHT_NO;
                 break;
@@ -174,31 +172,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ColorHelper.setupStatusBarIconColor(this);
-        ColorHelper.setNavigationBarColor(this, ContextCompat.getColor(this, R.color.navigationBar));
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !isDarkTheme) {
-            int flags = 0;
-            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)))
-                flags = flags | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)))
-                flags = flags | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-            if (flags != 0) {
-                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                getWindow().getDecorView().setSystemUiVisibility(flags);
-            }
-        }
-
-        startService(new Intent(this, CandyBarService.class));
-
-        //Todo: wait until google fix the issue, then enable wallpaper crop again on API 26+
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            Preferences.get(this).setCropWallpaper(false);
-        }
-
-        mConfig = onInit();
-        InAppBillingClient.get(this).init();
-
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mNavigationView = findViewById(R.id.navigation_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -212,6 +185,37 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
         initNavigationView(toolbar);
         initNavigationViewHeader();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().clearFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION | WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.navigationBar));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+            mDrawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
+            int visibilityFlags = 0;
+            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)) &&
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)) &&
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+            getWindow().getDecorView().setSystemUiVisibility(visibilityFlags);
+        }
+
+        try {
+            startService(new Intent(this, CandyBarService.class));
+        } catch (IllegalStateException e) {
+            LogUtil.e("Unable to start CandyBarService. App is probably running in background.");
+        }
+
+        //Todo: wait until google fix the issue, then enable wallpaper crop again on API 26+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Preferences.get(this).setCropWallpaper(false);
+        }
+
+        mConfig = onInit();
+        InAppBillingClient.get(this).init();
 
         mPosition = mLastPosition = 0;
         if (savedInstanceState != null) {
