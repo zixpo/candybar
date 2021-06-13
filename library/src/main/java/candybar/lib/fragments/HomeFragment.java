@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LifecycleObserver;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -48,7 +47,7 @@ import candybar.lib.utils.listeners.HomeListener;
  * limitations under the License.
  */
 
-public class HomeFragment extends Fragment implements HomeListener, LifecycleObserver {
+public class HomeFragment extends Fragment implements HomeListener {
 
     private RecyclerView mRecyclerView;
     private StaggeredGridLayoutManager mManager;

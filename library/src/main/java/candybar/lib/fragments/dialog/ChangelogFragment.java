@@ -13,7 +13,6 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.LifecycleObserver;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
@@ -40,7 +39,7 @@ import candybar.lib.utils.listeners.HomeListener;
  * limitations under the License.
  */
 
-public class ChangelogFragment extends DialogFragment implements LifecycleObserver {
+public class ChangelogFragment extends DialogFragment {
 
     private static final String TAG = "candybar.dialog.changelog";
 
