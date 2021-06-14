@@ -1,3 +1,6 @@
+# v3.11.1
+- Fixed link not working in markup
+
 # v3.11.0
 - Internal code refactorings
 - Removed deprecated stuffs

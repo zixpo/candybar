@@ -10,9 +10,7 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Internal code refactorings</item>
-        <item>Removed deprecated stuffs</item>
-        <item>Now uses Material Components</item>
+        <item>Fixed link not working in markup</item>
     </string-array>
 
 </resources>
