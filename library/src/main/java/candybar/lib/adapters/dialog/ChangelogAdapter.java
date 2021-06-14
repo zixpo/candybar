@@ -1,6 +1,7 @@
 package candybar.lib.adapters.dialog;
 
 import android.content.Context;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -69,6 +70,8 @@ public class ChangelogAdapter extends BaseAdapter {
         }
 
         holder.changelog.setText(HtmlCompat.fromHtml(mChangelog[position], HtmlCompat.FROM_HTML_MODE_COMPACT));
+        holder.changelog.setMovementMethod(LinkMovementMethod.getInstance());
+
         return view;
     }
 

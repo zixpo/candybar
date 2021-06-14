@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -209,6 +210,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             headerViewHolder.content.setText(HtmlCompat.fromHtml(
                     mContext.getResources().getString(R.string.home_description), HtmlCompat.FROM_HTML_MODE_COMPACT));
+            headerViewHolder.content.setMovementMethod(LinkMovementMethod.getInstance());
 
             String uri = mContext.getResources().getString(R.string.home_image);
             if (ColorHelper.isValidColor(uri)) {
