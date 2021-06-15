@@ -1,3 +1,6 @@
+## v3.11.2
+- Added support for bookmarking icons
+
 # v3.11.1
 - Fixed link not working in markup
 
