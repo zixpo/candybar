@@ -41,7 +41,6 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconShapeChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Icon;
-import candybar.lib.utils.AlphanumComparator;
 import candybar.lib.utils.AsyncTaskBase;
 
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
@@ -217,17 +216,7 @@ public class IconsSearchFragment extends Fragment {
 
                         for (Icon section : CandyBarMainActivity.sSections) {
                             if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
-                                for (Icon icon : section.getIcons()) {
-                                    String name;
-                                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
-                                        name = icon.getCustomName();
-                                    } else {
-                                        name = IconsHelper.replaceName(requireActivity(),
-                                                requireActivity().getResources().getBoolean(R.bool.enable_icon_name_replacer),
-                                                icon.getTitle());
-                                    }
-                                    icon.setTitle(name);
-                                }
+                                IconsHelper.computeTitles(requireActivity(), section.getIcons());
                             }
                         }
 
@@ -248,14 +237,7 @@ public class IconsSearchFragment extends Fragment {
                         }
                     }
 
-                    Collections.sort(icons, new AlphanumComparator() {
-                        @Override
-                        public int compare(Object o1, Object o2) {
-                            String s1 = ((Icon) o1).getTitle();
-                            String s2 = ((Icon) o2).getTitle();
-                            return super.compare(s1, s2);
-                        }
-                    });
+                    Collections.sort(icons, Icon.TitleComparator);
                     return true;
                 } catch (Exception e) {
                     LogUtil.e(Log.getStackTraceString(e));
@@ -272,7 +254,7 @@ public class IconsSearchFragment extends Fragment {
 
             mAsyncTask = null;
             if (ok) {
-                mAdapter = new IconsAdapter(getActivity(), icons, mFragment);
+                mAdapter = new IconsAdapter(getActivity(), icons, mFragment, false);
                 currentAdapter = new WeakReference<>(mAdapter);
                 mRecyclerView.setAdapter(mAdapter);
                 filterSearch("");

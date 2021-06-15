@@ -22,7 +22,6 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
-import candybar.lib.utils.AlphanumComparator;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.HomeListener;
 
@@ -67,29 +66,12 @@ public class IconsLoaderTask extends AsyncTaskBase {
 
                         if (mContext.get().getResources().getBoolean(R.bool.show_icon_name) ||
                                 mContext.get().getResources().getBoolean(R.bool.enable_icon_name_replacer)) {
-                            for (Icon icon : icons) {
-                                boolean replacer = mContext.get().getResources().getBoolean(
-                                        R.bool.enable_icon_name_replacer);
-                                String name;
-                                if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
-                                    name = icon.getCustomName();
-                                } else {
-                                    name = IconsHelper.replaceName(mContext.get(), replacer, icon.getTitle());
-                                }
-                                icon.setTitle(name);
-                            }
+                            IconsHelper.computeTitles(mContext.get(), icons);
                         }
 
                         if (mContext.get().getResources().getBoolean(R.bool.enable_icons_sort) ||
                                 mContext.get().getResources().getBoolean(R.bool.enable_icon_name_replacer)) {
-                            Collections.sort(icons, new AlphanumComparator() {
-                                @Override
-                                public int compare(Object o1, Object o2) {
-                                    String s1 = ((Icon) o1).getTitle();
-                                    String s2 = ((Icon) o2).getTitle();
-                                    return super.compare(s1, s2);
-                                }
-                            });
+                            Collections.sort(icons, Icon.TitleComparator);
 
                             CandyBarMainActivity.sSections.get(i).setIcons(icons);
                         }
@@ -114,16 +96,6 @@ public class IconsLoaderTask extends AsyncTaskBase {
                 options.inJustDecodeBounds = true;
                 BitmapFactory.decodeResource(mContext.get().getResources(),
                         icon.getRes(), options);
-
-                if (!mContext.get().getResources().getBoolean(R.bool.show_icon_name)) {
-                    String name;
-                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
-                        name = icon.getCustomName();
-                    } else {
-                        name = IconsHelper.replaceName(mContext.get(), true, icon.getTitle());
-                    }
-                    icon.setTitle(name);
-                }
 
                 String iconDimension = "";
 

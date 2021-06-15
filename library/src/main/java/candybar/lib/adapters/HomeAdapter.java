@@ -666,7 +666,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         Home home = mHomes.get(position);
                         IconPreviewFragment.showIconPreview(
                                 ((AppCompatActivity) mContext).getSupportFragmentManager(),
-                                home.getTitle(), home.getIcon());
+                                home.getTitle(), home.getIcon(), null);
                         break;
                 }
             }
