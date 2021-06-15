@@ -1,4 +1,4 @@
-## v3.11.2
+## v3.11.4
 - Added support for bookmarking icons
 
 # v3.11.1
