@@ -41,7 +41,6 @@ import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.utils.AlphanumComparator;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.SearchListener;
 
@@ -200,28 +199,11 @@ public class IconsBaseFragment extends Fragment {
                         for (int i = 0; i < CandyBarMainActivity.sSections.size(); i++) {
                             List<Icon> icons = CandyBarMainActivity.sSections.get(i).getIcons();
                             if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
-                                for (Icon icon : icons) {
-                                    boolean replacer = requireActivity().getResources().getBoolean(
-                                            R.bool.enable_icon_name_replacer);
-                                    String name;
-                                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
-                                        name = icon.getCustomName();
-                                    } else {
-                                        name = IconsHelper.replaceName(requireActivity(), replacer, icon.getTitle());
-                                    }
-                                    icon.setTitle(name);
-                                }
+                                IconsHelper.computeTitles(requireActivity(), icons);
                             }
 
                             if (requireActivity().getResources().getBoolean(R.bool.enable_icons_sort)) {
-                                Collections.sort(icons, new AlphanumComparator() {
-                                    @Override
-                                    public int compare(Object o1, Object o2) {
-                                        String s1 = ((Icon) o1).getTitle();
-                                        String s2 = ((Icon) o2).getTitle();
-                                        return super.compare(s1, s2);
-                                    }
-                                });
+                                Collections.sort(icons, Icon.TitleComparator);
 
                                 CandyBarMainActivity.sSections.get(i).setIcons(icons);
                             }
@@ -258,6 +240,7 @@ public class IconsBaseFragment extends Fragment {
 
                 new TabLayoutMediator(mTabLayout, mPager, (tab, position) -> {
                 }).attach();
+                mPager.setCurrentItem(1);
 
                 new TabTypefaceChanger().executeOnThreadPool();
 
@@ -286,18 +269,20 @@ public class IconsBaseFragment extends Fragment {
                 try {
                     Thread.sleep(1);
                     for (int i = 0; i < adapter.getItemCount(); i++) {
-                        int finalI = i;
+                        int j = i;
                         runOnUiThread(() -> {
                             if (getActivity() == null) return;
                             if (getActivity().isFinishing()) return;
                             if (mTabLayout == null) return;
 
-                            if (finalI < mTabLayout.getTabCount()) {
-                                TabLayout.Tab tab = mTabLayout.getTabAt(finalI);
+                            if (j < mTabLayout.getTabCount()) {
+                                TabLayout.Tab tab = mTabLayout.getTabAt(j);
                                 if (tab != null) {
-                                    if (finalI < adapter.getItemCount()) {
+                                    if (j == 0) {
+                                        tab.setIcon(R.drawable.ic_bookmarks);
+                                    } else if (j < adapter.getItemCount()) {
                                         tab.setCustomView(R.layout.fragment_icons_base_tab);
-                                        tab.setText(adapter.getPageTitle(finalI));
+                                        tab.setText(adapter.getPageTitle(j - 1));
                                     }
                                 }
                             }
@@ -333,12 +318,12 @@ public class IconsBaseFragment extends Fragment {
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            return IconsFragment.newInstance(position);
+            return IconsFragment.newInstance(position - 1);
         }
 
         @Override
         public int getItemCount() {
-            return mIcons.size();
+            return mIcons.size() + 1;
         }
 
         public List<Icon> getIcons() {

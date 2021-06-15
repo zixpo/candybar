@@ -27,6 +27,7 @@
     <string name="menu_search">Search</string>
     <string name="menu_save">Save to Device</string>
     <string name="menu_select_all">Select All</string>
+    <string name="menu_delete">Delete</string>
 
     <string name="menu_wallpaper_crop">Crop Wallpaper</string>
     <string name="menu_apply_homescreen">Homescreen</string>
@@ -143,6 +144,8 @@
     <!-- Icons -->
     <string name="icons_load_failed">Unable to load icons</string>
     <string name="icon_shape">Icon Shape</string>
+    <string name="bookmark_icons_empty">No bookmarks found. Bookmark icons to quickly access them here.</string>
+    <string name="items_selected">%d selected</string>
 
     <!-- Request -->
     <string name="request_title">Icon Request</string>

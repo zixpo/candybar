@@ -19,6 +19,7 @@
         app:tabIndicatorColor="?attr/tab_indicator"
         app:tabSelectedTextColor="?attr/tab_text_selected"
         app:tabTextColor="?attr/tab_text"
+        app:tabIconTint="@color/tab_icon"
         app:tabIndicatorHeight="3dp"
         app:tabPadding="@dimen/content_padding"
         app:tabMode="scrollable"

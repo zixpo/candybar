@@ -7,19 +7,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.TimeHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import candybar.lib.helpers.JsonHelper;
+import candybar.lib.items.Icon;
 import candybar.lib.items.ImageSize;
 import candybar.lib.items.Request;
 import candybar.lib.items.Wallpaper;
@@ -46,11 +50,12 @@ import candybar.lib.preferences.Preferences;
 public class Database extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "candybar_database";
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 11;
 
     private static final String TABLE_REQUEST = "icon_request";
     private static final String TABLE_PREMIUM_REQUEST = "premium_request";
     private static final String TABLE_WALLPAPERS = "wallpapers";
+    private static final String TABLE_BOOKMARKED_ICONS = "bookmarked_icons";
 
     private static final String KEY_ID = "id";
 
@@ -69,6 +74,8 @@ public class Database extends SQLiteOpenHelper {
     private static final String KEY_WIDTH = "width";
     private static final String KEY_HEIGHT = "height";
     private static final String KEY_SIZE = "size";
+
+    private static final String KEY_TITLE = "title";
 
     private final Context mContext;
 
@@ -115,9 +122,15 @@ public class Database extends SQLiteOpenHelper {
                 KEY_WIDTH + " INTEGER DEFAULT 0, " +
                 KEY_HEIGHT + " INTEGER DEFAULT 0, " +
                 "UNIQUE (" + KEY_URL + "))";
+        String CREATE_TABLE_BOOKMARKED_ICONS = "CREATE TABLE IF NOT EXISTS " + TABLE_BOOKMARKED_ICONS + "(" +
+                KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                KEY_NAME + " TEXT NOT NULL, " +
+                KEY_TITLE + " TEXT NOT NULL, " +
+                "UNIQUE (" + KEY_NAME + ") ON CONFLICT IGNORE)";
         db.execSQL(CREATE_TABLE_REQUEST);
         db.execSQL(CREATE_TABLE_PREMIUM_REQUEST);
         db.execSQL(CREATE_TABLE_WALLPAPER);
+        db.execSQL(CREATE_TABLE_BOOKMARKED_ICONS);
     }
 
     @Override
@@ -547,6 +560,78 @@ public class Database extends SQLiteOpenHelper {
         }
         cursor.close();
         return wallpaper;
+    }
+
+    public void addBookmarkedIcon(String drawableName, String title) {
+        if (!openDatabase()) {
+            LogUtil.e("Database error: addBookmarkedIcon() failed to open database");
+            return;
+        }
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, drawableName);
+        values.put(KEY_TITLE, title);
+
+        mDatabase.get().mSQLiteDatabase.insert(TABLE_BOOKMARKED_ICONS, null, values);
+    }
+
+    public void deleteBookmarkedIcon(String drawableName) {
+        if (!openDatabase()) {
+            LogUtil.e("Database error: deleteBookmarkedIcon() failed to open database");
+            return;
+        }
+
+        mDatabase.get().mSQLiteDatabase
+                .delete(TABLE_BOOKMARKED_ICONS, KEY_NAME + " = ?", new String[]{drawableName});
+    }
+
+    public void deleteBookmarkedIcons(List<String> drawableNames) {
+        if (!openDatabase()) {
+            LogUtil.e("Database error: deleteBookmarkedIcons() failed to open database");
+            return;
+        }
+
+        final String inPart = "\"" + TextUtils.join("\", \"", drawableNames) + "\"";
+
+        mDatabase.get().mSQLiteDatabase.execSQL("DELETE FROM " + TABLE_BOOKMARKED_ICONS +
+                " WHERE " + KEY_NAME + " IN (" + inPart + ")");
+    }
+
+    public boolean isIconBookmarked(String drawableName) {
+        if (!openDatabase()) {
+            LogUtil.e("Database error: isIconBookmarked() failed to open database");
+            return false;
+        }
+
+        Cursor cursor = mDatabase.get().mSQLiteDatabase.query(TABLE_BOOKMARKED_ICONS, null, KEY_NAME + " = ?",
+                new String[]{drawableName}, null, null, null, null);
+        int rowCount = cursor.getCount();
+        cursor.close();
+        return rowCount > 0;
+    }
+
+    public List<Icon> getBookmarkedIcons(Context context) {
+        if (!openDatabase()) {
+            LogUtil.e("Database error: getBookmarkedIcons() failed to open database");
+            return new ArrayList<>();
+        }
+
+        List<Icon> icons = new ArrayList<>();
+        Cursor cursor = mDatabase.get().mSQLiteDatabase.query(TABLE_BOOKMARKED_ICONS,
+                null, null, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                String drawableName = cursor.getString(cursor.getColumnIndex(KEY_NAME));
+                String title = cursor.getString(cursor.getColumnIndex(KEY_TITLE));
+                int resId = DrawableHelper.getResourceId(context, drawableName);
+                icons.add(new Icon(drawableName, null, resId).setTitle(title));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        Collections.sort(icons, Icon.TitleComparator);
+
+        return icons;
     }
 
     public void deleteIconRequestData() {

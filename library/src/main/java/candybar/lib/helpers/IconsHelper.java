@@ -34,7 +34,6 @@ import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
-import candybar.lib.utils.AlphanumComparator;
 
 import static candybar.lib.helpers.DrawableHelper.getRightIcon;
 import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
@@ -82,11 +81,11 @@ public class IconsHelper {
                     sectionTitle = title;
                     icons = new ArrayList<>();
                 } else if (parser.getName().equals("item")) {
-                    String name = parser.getAttributeValue(null, "drawable");
+                    String drawableName = parser.getAttributeValue(null, "drawable");
                     String customName = parser.getAttributeValue(null, "name");
-                    int id = getResourceId(context, name);
+                    int id = getResourceId(context, drawableName);
                     if (id > 0) {
-                        icons.add(new Icon(name, customName, id));
+                        icons.add(new Icon(drawableName, customName, id));
                     }
                 }
             }
@@ -125,15 +124,19 @@ public class IconsHelper {
             }
         }
 
-        Collections.sort(icons, new AlphanumComparator() {
-            @Override
-            public int compare(Object o1, Object o2) {
-                String s1 = ((Icon) o1).getTitle();
-                String s2 = ((Icon) o2).getTitle();
-                return super.compare(s1, s2);
-            }
-        });
+        Collections.sort(icons, Icon.TitleComparator);
         return icons;
+    }
+
+    public static void computeTitles(@NonNull Context context, List<Icon> icons) {
+        final boolean iconReplacer = context.getResources().getBoolean(R.bool.enable_icon_name_replacer);
+        for (Icon icon : icons) {
+            if (icon.getCustomName() != null && !icon.getCustomName().equals("")) {
+                icon.setTitle(icon.getCustomName());
+            } else {
+                icon.setTitle(replaceName(context, iconReplacer, icon.getDrawableName()));
+            }
+        }
     }
 
     public static String replaceName(@NonNull Context context, boolean iconReplacer, String name) {
@@ -240,7 +243,7 @@ public class IconsHelper {
         } else {
             IconPreviewFragment.showIconPreview(((AppCompatActivity) context)
                             .getSupportFragmentManager(),
-                    icon.getTitle(), icon.getRes());
+                    icon.getTitle(), icon.getRes(), icon.getDrawableName());
         }
     }
 

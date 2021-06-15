@@ -35,7 +35,7 @@
     <bool name="enable_apply">true</bool>
 
     <!-- CONFIG: ICONS -->
-    <bool name="enable_icons_sort">true</bool>
+    <bool name="enable_icons_sort">false</bool>
     <bool name="show_icon_name">true</bool>
     <bool name="includes_adaptive_icons">true</bool>
 

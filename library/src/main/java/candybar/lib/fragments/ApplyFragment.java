@@ -28,7 +28,6 @@ import candybar.lib.adapters.LauncherAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
-import candybar.lib.utils.AlphanumComparator;
 import candybar.lib.utils.AsyncTaskBase;
 
 /*
@@ -191,26 +190,12 @@ public class ApplyFragment extends Fragment {
                     }
 
                     try {
-                        Collections.sort(installed, new AlphanumComparator() {
-                            @Override
-                            public int compare(Object o1, Object o2) {
-                                String s1 = ((Icon) o1).getTitle();
-                                String s2 = ((Icon) o2).getTitle();
-                                return super.compare(s1, s2);
-                            }
-                        });
+                        Collections.sort(installed, Icon.TitleComparator);
                     } catch (Exception ignored) {
                     }
 
                     try {
-                        Collections.sort(supported, new AlphanumComparator() {
-                            @Override
-                            public int compare(Object o1, Object o2) {
-                                String s1 = ((Icon) o1).getTitle();
-                                String s2 = ((Icon) o2).getTitle();
-                                return super.compare(s1, s2);
-                            }
-                        });
+                        Collections.sort(supported, Icon.TitleComparator);
                     } catch (Exception ignored) {
                     }
 

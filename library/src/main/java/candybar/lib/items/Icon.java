@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 
 import java.util.List;
 
+import candybar.lib.utils.AlphanumComparator;
+
 /*
  * CandyBar - Material Dashboard
  *
@@ -24,16 +26,17 @@ import java.util.List;
 
 public class Icon {
 
-    private String mTitle;
+    private String mDrawableName;
     private String mCustomName;
+    private String mTitle;
     private int mRes;
     private String mPackageName;
     private List<Icon> mIcons;
 
-    public Icon(String title, String customName, int res) {
-        mTitle = title;
-        mRes = res;
+    public Icon(String drawableName, String customName, int res) {
+        mDrawableName = drawableName;
         mCustomName = customName;
+        mRes = res;
     }
 
     public Icon(String title, int res, String packageName) {
@@ -47,16 +50,21 @@ public class Icon {
         mIcons = icons;
     }
 
-    public String getTitle() {
-        return mTitle;
-    }
-
-    public void setTitle(String title) {
-        mTitle = title;
+    public String getDrawableName() {
+        return mDrawableName;
     }
 
     public String getCustomName() {
         return mCustomName;
+    }
+
+    public Icon setTitle(String title) {
+        mTitle = title;
+        return this;
+    }
+
+    public String getTitle() {
+        return mTitle;
     }
 
     public int getRes() {
@@ -86,4 +94,13 @@ public class Icon {
         }
         return res && title;
     }
+
+    public static final AlphanumComparator TitleComparator = new AlphanumComparator() {
+        @Override
+        public int compare(Object o1, Object o2) {
+            String s1 = ((Icon) o1).getTitle();
+            String s2 = ((Icon) o2).getTitle();
+            return super.compare(s1, s2);
+        }
+    };
 }
