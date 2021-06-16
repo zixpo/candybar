@@ -62,7 +62,7 @@ public class IconPreviewFragment extends DialogFragment {
 
     private static final String TAG = "candybar.dialog.icon.preview";
 
-    private static IconPreviewFragment newInstance(String title, int id, @Nullable String drawableName) {
+    private static IconPreviewFragment newInstance(String title, int id, String drawableName) {
         IconPreviewFragment fragment = new IconPreviewFragment();
         Bundle bundle = new Bundle();
         bundle.putString(TITLE, title);

@@ -131,6 +131,10 @@ public class IconsHelper {
     public static void computeTitles(@NonNull Context context, List<Icon> icons) {
         final boolean iconReplacer = context.getResources().getBoolean(R.bool.enable_icon_name_replacer);
         for (Icon icon : icons) {
+            if (icon.getTitle() != null) {
+                // Title is already computed, so continue
+                continue;
+            }
             if (icon.getCustomName() != null && !icon.getCustomName().equals("")) {
                 icon.setTitle(icon.getCustomName());
             } else {
@@ -241,6 +245,11 @@ public class IconsHelper {
                     })
                     .submit();
         } else {
+            if (!context.getResources().getBoolean(R.bool.show_icon_name)) {
+                // It means the title of icon is not yet computed, so compute it
+                IconsHelper.computeTitles(context, Collections.singletonList(icon));
+            }
+
             IconPreviewFragment.showIconPreview(((AppCompatActivity) context)
                             .getSupportFragmentManager(),
                     icon.getTitle(), icon.getRes(), icon.getDrawableName());
