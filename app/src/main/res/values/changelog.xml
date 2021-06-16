@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">June 15, 2021</string>
+    <string name="changelog_date" translatable="false">June 16, 2021</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,7 +10,7 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Added support for bookmarking icons</item>
+        <item>Fixed icon bookmarking not working when `show_icon_name` is set to false</item>
     </string-array>
 
 </resources>

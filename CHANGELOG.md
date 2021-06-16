@@ -1,4 +1,7 @@
-## v3.11.4
+# v3.11.5
+- Fixed icon bookmarking not working when `show_icon_name` is set to false
+
+# v3.11.4
 - Added support for bookmarking icons
 
 # v3.11.1
