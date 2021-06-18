@@ -1,3 +1,6 @@
+# v3.11.6
+- Fixed icon search not working
+
 # v3.11.5
 - Fixed icon bookmarking not working when `show_icon_name` is set to false
 
