@@ -36,7 +36,7 @@
 
     <!-- CONFIG: ICONS -->
     <bool name="enable_icons_sort">false</bool>
-    <bool name="show_icon_name">true</bool>
+    <bool name="show_icon_name">false</bool>
     <bool name="includes_adaptive_icons">true</bool>
 
     <!-- CONFIG: ICON REQUEST -->
