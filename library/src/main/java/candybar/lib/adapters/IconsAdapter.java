@@ -331,6 +331,11 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         // Initialize mIconsAll if not initialized
         // Also remove duplicates
         if (mIconsAll == null) {
+            if (!mContext.getResources().getBoolean(R.bool.show_icon_name)) {
+                // It means the title of icon is not yet computed, so compute it
+                IconsHelper.computeTitles(mContext, mIcons);
+            }
+
             mIconsAll = new ArrayList<>();
             Set<String> addedNames = new HashSet<>();
             Locale defaultLocale = Locale.getDefault();
@@ -346,7 +351,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         }
 
         String query = string.toLowerCase(Locale.getDefault()).trim();
-        mIcons.clear();
+        mIcons = new ArrayList<>();
         if (query.length() == 0) mIcons.addAll(mIconsAll);
         else {
             Locale defaultLocale = Locale.getDefault();
