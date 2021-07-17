@@ -107,8 +107,11 @@ public class FAQsFragment extends Fragment {
         searchInput.setHint(requireActivity().getResources().getString(R.string.search_faqs));
         searchInput.requestFocus();
 
-        new Handler(Looper.getMainLooper())
-                .postDelayed(() -> SoftKeyboardHelper.openKeyboard(requireActivity()), 1000);
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            if (getActivity() != null) {
+                SoftKeyboardHelper.openKeyboard(getActivity());
+            }
+        }, 1000);
 
         searchInput.addTextChangedListener(new TextWatcher() {
             @Override
