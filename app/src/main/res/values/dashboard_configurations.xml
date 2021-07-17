@@ -13,6 +13,10 @@
     <string name="muzei_art_source_desc">Pleasing wallpapers from CandyBar</string>
     <color name="muzei_color">#0082B4</color>
 
+    <!-- CONFIG: KUPER -->
+    <string name="kustom_pack_title">@string/app_name</string>
+    <string name="kustom_pack_description">Cool Kustom presets</string>
+
     <!-- CONFIG: HOME -->
     <string name="home_title">CandyBar</string>
     <string name="home_image">home_image</string>
