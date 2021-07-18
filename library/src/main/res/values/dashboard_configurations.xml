@@ -30,7 +30,7 @@
     <color name="muzei_color">#0082B4</color>
 
     <!--
-        CONFIG: KUPER
+        CONFIG: KUSTOM
     -->
     <!-- Kustom Pack title. Defaults to the app's name -->
     <string name="kustom_pack_title">@string/app_name</string>

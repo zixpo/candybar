@@ -30,7 +30,7 @@
     <color name="navigationBarDark">#222222</color>
 
     <!-- Splash Screen -->
-    <color name="splashColor">#FFFFFF</color>
+    <color name="splashColor">#FFF</color>
 
     <!-- Navigation View -->
     <color name="navigationViewHeaderBackground">#00000000</color>
