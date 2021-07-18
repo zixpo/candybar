@@ -1,3 +1,8 @@
+# v3.11.7
+- Fixed crash
+- Added basic Kustom support
+- Improved themes
+
 # v3.11.6
 - Fixed icon search not working
 

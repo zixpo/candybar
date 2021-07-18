@@ -203,7 +203,6 @@
         <receiver
             android:name=".services.ClockWidget"
             android:label="Clock Widget">
-
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -216,7 +215,7 @@
             Uncomment the following code to enable Kustom.
             Also remove the `<action ... />`s that you don't want.
         -->
-        <!--<provider
+        <provider
             android:name="org.kustom.api.Provider"
             android:authorities="${applicationId}.kustom.provider"
             android:exported="false">
@@ -226,7 +225,7 @@
                 <action android:name="org.kustom.provider.LOCKSCREENS" />
                 <action android:name="org.kustom.provider.KOMPONENTS" />
             </intent-filter>
-        </provider>-->
+        </provider>
 
         <!-- This is important -->
         <provider
