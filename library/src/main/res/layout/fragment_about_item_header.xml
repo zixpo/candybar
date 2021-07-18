@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="?attr/card_background">
+    android:background="@color/cardBackground">
 
     <candybar.lib.utils.views.HeaderView
         android:id="@+id/image"
@@ -20,7 +20,7 @@
         android:layout_height="@dimen/about_profile"
         android:layout_marginTop="@dimen/about_profile_margin_top"
         android:layout_gravity="center_horizontal"
-        app:civ_border_color="?attr/card_background"
+        app:civ_border_color="@color/cardBackground"
         app:civ_border_width="@dimen/about_profile_border"
         app:civ_shadow="true"
         app:civ_shadow_radius="12"

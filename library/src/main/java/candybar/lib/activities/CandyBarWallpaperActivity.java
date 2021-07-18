@@ -26,6 +26,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.palette.graphics.Palette;
 
 import com.bumptech.glide.Glide;
@@ -153,7 +154,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
         if (mImageView.getDrawable() == null) {
             int color = mWallpaper.getColor();
             if (color == 0) {
-                color = ColorHelper.getAttributeColor(this, R.attr.card_background);
+                color = ContextCompat.getColor(this, R.color.cardBackground);
             }
 
             AnimationHelper.setBackgroundColor(findViewById(R.id.rootview), Color.TRANSPARENT, color).start();

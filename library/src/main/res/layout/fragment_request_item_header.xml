@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="@dimen/content_margin"
-    android:background="?attr/card_background">
+    android:background="@color/cardBackground">
 
     <LinearLayout
         android:layout_width="match_parent"

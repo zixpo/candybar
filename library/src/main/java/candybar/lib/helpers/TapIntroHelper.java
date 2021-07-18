@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -60,7 +61,7 @@ public class TapIntroHelper {
 
             new Handler().postDelayed(() -> {
                 try {
-                    int primary = ColorHelper.getAttributeColor(context, R.attr.toolbar_icon);
+                    int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
                     int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
 
                     TapTargetSequence tapTargetSequence = new TapTargetSequence(activity);
@@ -164,7 +165,7 @@ public class TapIntroHelper {
 
             new Handler().postDelayed(() -> {
                 try {
-                    int primary = ColorHelper.getAttributeColor(context, R.attr.toolbar_icon);
+                    int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
                     int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
 
                     Typeface title = TypefaceHelper.getMedium(context);
@@ -215,7 +216,7 @@ public class TapIntroHelper {
 
             new Handler().postDelayed(() -> {
                 try {
-                    int primary = ColorHelper.getAttributeColor(context, R.attr.toolbar_icon);
+                    int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
                     int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
 
                     TapTargetSequence tapTargetSequence = new TapTargetSequence(activity);
@@ -376,7 +377,7 @@ public class TapIntroHelper {
             }
 
             new Handler().postDelayed(() -> {
-                int primary = ColorHelper.getAttributeColor(context, R.attr.toolbar_icon);
+                int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
                 int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
 
                 if (recyclerView != null) {

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
@@ -362,8 +363,8 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
 
         if (ok) {
             CafeBar.builder(mContext.get())
-                    .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(
-                            mContext.get(), R.attr.card_background)))
+                    .theme(CafeBarTheme.Custom(ContextCompat.getColor(
+                            mContext.get(), R.color.cardBackground)))
                     .contentTypeface(TypefaceHelper.getRegular(mContext.get()))
                     .floating(true)
                     .fitSystemWindow()

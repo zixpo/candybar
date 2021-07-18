@@ -18,19 +18,9 @@
         <item name="android:textColorSecondary">@color/secondaryText</item>
         <item name="android:listDivider">@color/dividerList</item>
         <item name="fontFamily">@font/medium</item>
-
-        <item name="card_background">@color/cardBackground</item>
-        <item name="card_stroke">@color/cardStroke</item>
-        <item name="ripple_color">@color/rippleColor</item>
-        <item name="ripple_accent">@color/rippleAccent</item>
-        <item name="main_background">@color/mainBackground</item>
-        <item name="toolbar_icon">@color/toolbarIcon</item>
-        <item name="toolbar_accent">@color/colorAccent</item>
-        <item name="tab_indicator">@color/tabIndicator</item>
-        <item name="tab_text">@color/tabText</item>
-        <item name="tab_text_selected">@color/tabTextSelected</item>
-        <item name="navigation_selected_color">@color/navigationViewSelectedBackground</item>
-        <item name="navigation_header_background">@color/navigationViewHeaderBackground</item>
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+        <item name="actionModeStyle">@style/ActionModeStyle</item>
+        <item name="actionBarTheme">@style/ActionBarOverlay</item>
 
         <item name="md_background_color">@color/cardBackground</item>
         <item name="md_positive_color">@color/colorAccent</item>

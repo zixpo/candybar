@@ -12,11 +12,15 @@
     </style>
 
     <style name="RippleStyle">
-        <item name="colorControlHighlight">?ripple_color</item>
+        <item name="colorControlHighlight">@color/rippleColor</item>
+    </style>
+
+    <style name="RippleStyleLight">
+        <item name="colorControlHighlight">#44FFFFFF</item>
     </style>
 
     <style name="RippleAccentStyle">
-        <item name="colorControlHighlight">?ripple_accent</item>
+        <item name="colorControlHighlight">@color/rippleAccent</item>
     </style>
 
     <style name="ButtonStyle">
@@ -28,8 +32,21 @@
         <item name="colorControlActivated">?colorSecondary</item>
     </style>
 
-    <style name="RippleStyleLight">
-        <item name="colorControlHighlight">#44FFFFFF</item>
+    <style name="ToolbarThemeOverlay">
+        <item name="colorControlNormal">@color/toolbarIcon</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+        <item name="materialThemeOverlay">@style/ToolbarThemeOverlay</item>
+    </style>
+
+    <style name="ActionBarOverlay">
+        <item name="colorControlNormal">@color/toolbarIcon</item>
+        <item name="android:textColorPrimary">@color/toolbarIcon</item>
+    </style>
+
+    <style name="ActionModeStyle" parent="Widget.AppCompat.ActionMode">
+        <item name="background">@color/colorPrimary</item>
     </style>
 
 </resources>

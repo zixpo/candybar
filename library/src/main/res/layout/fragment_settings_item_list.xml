@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="?attr/card_background">
+    android:background="@color/cardBackground">
 
     <View
         android:id="@+id/divider"

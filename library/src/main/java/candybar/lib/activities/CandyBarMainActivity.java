@@ -655,7 +655,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         mIsMenuVisible = !expand;
 
         if (expand) {
-            int color = ColorHelper.getAttributeColor(this, R.attr.toolbar_icon);
+            int color = ContextCompat.getColor(this, R.color.toolbarIcon);
             toolbar.setNavigationIcon(DrawableHelper.getTintedDrawable(
                     this, R.drawable.ic_toolbar_back, color));
             toolbar.setNavigationOnClickListener(view -> onBackPressed());
@@ -710,7 +710,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
         if (CandyBarApplication.getConfiguration().getNavigationIcon() == CandyBarApplication.NavigationIcon.DEFAULT) {
             DrawerArrowDrawable drawerArrowDrawable = new DrawerArrowDrawable(this);
-            drawerArrowDrawable.setColor(ColorHelper.getAttributeColor(this, R.attr.toolbar_icon));
+            drawerArrowDrawable.setColor(ContextCompat.getColor(this, R.color.toolbarIcon));
             drawerArrowDrawable.setSpinEnabled(true);
             mDrawerToggle.setDrawerArrowDrawable(drawerArrowDrawable);
             mDrawerToggle.setDrawerIndicatorEnabled(true);

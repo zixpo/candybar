@@ -90,6 +90,9 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
                         public void onAnimationEnd(Animator animation) {
                             super.onAnimationEnd(animation);
                             tabLayout.setVisibility(View.GONE);
+                            if (shadow != null) {
+                                shadow.setTranslationY(0);
+                            }
                             tabLayout.animate().setListener(null);
                         }
                     }).start();
@@ -146,6 +149,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
             TabLayout tabLayout = activity.findViewById(R.id.tab);
             View shadow = activity.findViewById(R.id.shadow);
             if (shadow != null) {
+                shadow.setTranslationY(-tabLayout.getHeight());
                 shadow.animate().translationY(0).setDuration(200).start();
             }
             tabLayout.setVisibility(View.VISIBLE);

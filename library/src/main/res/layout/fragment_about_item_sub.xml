@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="?attr/card_background">
+    android:background="@color/cardBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="?attr/card_background"
+        android:background="@color/cardBackground"
         android:id="@+id/contributors">
 
         <TextView
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="?attr/card_background"
+        android:background="@color/cardBackground"
         android:id="@+id/privacy_policy">
 
         <TextView
@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="?attr/card_background"
+        android:background="@color/cardBackground"
         android:id="@+id/terms">
 
         <TextView

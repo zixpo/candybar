@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/main_background">
+    android:background="@color/mainBackground">
 
     <candybar.lib.utils.views.HeaderView
         android:id="@+id/header_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:background="?navigation_header_background"
+        android:background="@color/navigationViewHeaderBackground"
         app:widthRatio="4"
         app:heightRatio="3" />
 
