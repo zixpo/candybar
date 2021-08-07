@@ -1,5 +1,7 @@
 package candybar.lib.fragments;
 
+import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,8 +37,6 @@ import candybar.lib.adapters.FAQsAdapter;
 import candybar.lib.items.FAQs;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
-
-import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -105,13 +105,6 @@ public class FAQsFragment extends Fragment {
         View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
 
         searchInput.setHint(requireActivity().getResources().getString(R.string.search_faqs));
-        searchInput.requestFocus();
-
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            if (getActivity() != null) {
-                SoftKeyboardHelper.openKeyboard(getActivity());
-            }
-        }, 1000);
 
         searchInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -135,6 +128,14 @@ public class FAQsFragment extends Fragment {
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                searchInput.requestFocus();
+
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    if (getActivity() != null) {
+                        SoftKeyboardHelper.openKeyboard(getActivity());
+                    }
+                }, 1000);
+
                 return true;
             }
 
@@ -153,6 +154,7 @@ public class FAQsFragment extends Fragment {
         if (mAsyncTask != null) {
             mAsyncTask.cancel(true);
         }
+        setHasOptionsMenu(false);
         super.onDestroy();
     }
 

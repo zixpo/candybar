@@ -27,7 +27,9 @@ import com.bumptech.glide.request.target.Target;
 import com.google.android.material.card.MaterialCardView;
 import com.kogitune.activitytransition.ActivityTransitionLauncher;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarWallpaperActivity;
@@ -65,6 +67,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
 
     private final Context mContext;
     private final List<Wallpaper> mWallpapers;
+    private final List<Wallpaper> mWallpapersAll;
 
     public static boolean sIsClickable = true;
     private final boolean mIsShowName;
@@ -72,6 +75,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
     public WallpapersAdapter(@NonNull Context context, @NonNull List<Wallpaper> wallpapers) {
         mContext = context;
         mWallpapers = wallpapers;
+        mWallpapersAll = new ArrayList<>(wallpapers);
         mIsShowName = mContext.getResources().getBoolean(R.bool.wallpaper_show_name_author);
     }
 
@@ -116,6 +120,21 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
                     }
                 })
                 .into(holder.image);
+    }
+
+    public void search(String string) {
+        String query = string.toLowerCase(Locale.getDefault()).trim();
+        mWallpapers.clear();
+        if (query.length() == 0) mWallpapers.addAll(mWallpapersAll);
+        else {
+            for (int i = 0; i < mWallpapersAll.size(); i++) {
+                Wallpaper wallpaper = mWallpapersAll.get(i);
+                if (wallpaper.getName().toLowerCase(Locale.getDefault()).contains(query)) {
+                    mWallpapers.add(wallpaper);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     @Override

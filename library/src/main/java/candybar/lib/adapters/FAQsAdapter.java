@@ -48,8 +48,7 @@ public class FAQsAdapter extends RecyclerView.Adapter<FAQsAdapter.ViewHolder> {
     public FAQsAdapter(@NonNull Context context, @NonNull List<FAQs> faqs) {
         mContext = context;
         mFAQs = faqs;
-        mFAQsAll = new ArrayList<>();
-        mFAQsAll.addAll(mFAQs);
+        mFAQsAll = new ArrayList<>(mFAQs);
     }
 
     @NonNull

@@ -46,6 +46,7 @@
     <string name="search_noresult">No result found for \"%s\"</string>
     <string name="search_faqs">Question or answer</string>
     <string name="search_icon">Icon Name</string>
+    <string name="search_wallpapers">Wallpaper name</string>
 
     <!-- Update -->
     <string name="checking_for_update">Checking for update …</string>

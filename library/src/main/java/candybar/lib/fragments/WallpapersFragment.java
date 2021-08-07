@@ -1,14 +1,26 @@
 package candybar.lib.fragments;
 
+import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +35,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.core.ColorHelper;
+import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
@@ -42,8 +55,6 @@ import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.WallpapersListener;
-
-import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -68,6 +79,7 @@ public class WallpapersFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private SwipeRefreshLayout mSwipe;
     private ProgressBar mProgress;
+    private TextView mSearchResult;
     private RecyclerFastScroller mFastScroll;
 
     private AsyncTaskBase mAsyncTask;
@@ -80,6 +92,7 @@ public class WallpapersFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.wallpapers_grid);
         mSwipe = view.findViewById(R.id.swipe);
         mProgress = view.findViewById(R.id.progress);
+        mSearchResult = view.findViewById(R.id.search_result);
         mFastScroll = view.findViewById(R.id.fastscroll);
 
         if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
@@ -119,6 +132,67 @@ public class WallpapersFragment extends Fragment {
     }
 
     @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_search, menu);
+        MenuItem search = menu.findItem(R.id.menu_search);
+
+        View searchView = search.getActionView();
+        EditText searchInput = searchView.findViewById(R.id.search_input);
+        View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
+
+        searchInput.setHint(requireActivity().getResources().getString(R.string.search_wallpapers));
+        searchInput.requestFocus();
+
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            if (getActivity() != null) {
+                SoftKeyboardHelper.openKeyboard(getActivity());
+            }
+        }, 1000);
+
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String query = charSequence.toString();
+                filterSearch(query);
+                clearQueryButton.setVisibility(query.contentEquals("") ? View.GONE : View.VISIBLE);
+            }
+        });
+
+        clearQueryButton.setOnClickListener(view -> searchInput.setText(""));
+
+        search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                searchInput.requestFocus();
+
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    if (getActivity() != null) {
+                        SoftKeyboardHelper.openKeyboard(getActivity());
+                    }
+                }, 1000);
+
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+                searchInput.setText("");
+                return true;
+            }
+        });
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         ViewHelper.resetSpanCount(mRecyclerView,
@@ -130,7 +204,21 @@ public class WallpapersFragment extends Fragment {
         if (mAsyncTask != null) mAsyncTask.cancel(true);
         Activity activity = getActivity();
         if (activity != null) Glide.get(activity).clearMemory();
+        setHasOptionsMenu(false);
         super.onDestroy();
+    }
+
+    @SuppressLint("StringFormatInvalid")
+    private void filterSearch(String query) {
+        if (mRecyclerView.getAdapter() != null) {
+            WallpapersAdapter adapter = (WallpapersAdapter) mRecyclerView.getAdapter();
+            adapter.search(query);
+            if (adapter.getItemCount() == 0) {
+                String text = requireActivity().getResources().getString(R.string.search_noresult, query);
+                mSearchResult.setText(text);
+                mSearchResult.setVisibility(View.VISIBLE);
+            } else mSearchResult.setVisibility(View.GONE);
+        }
     }
 
     private class WallpapersLoader extends AsyncTaskBase {
@@ -194,6 +282,8 @@ public class WallpapersFragment extends Fragment {
             mSwipe.setRefreshing(false);
 
             if (ok) {
+                setHasOptionsMenu(true);
+
                 mRecyclerView.setAdapter(new WallpapersAdapter(getActivity(), wallpapers));
 
                 ((WallpapersListener) getActivity())
