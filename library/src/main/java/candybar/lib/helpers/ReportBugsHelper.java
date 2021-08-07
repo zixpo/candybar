@@ -95,18 +95,18 @@ public class ReportBugsHelper {
                 if (first) {
                     first = false;
                     writer.append("<!-- BROKEN APPFILTER -->")
-                            .append("\n").append("<!-- Broken appfilter will check for activities that included in appfilter but doesn't have a drawable")
-                            .append("\n").append("* ").append("The reason could because misnamed drawable or the drawable not copied to the project -->")
-                            .append("\n\n\n");
+                            .append("\r\n").append("<!-- Broken appfilter will check for activities that included in appfilter but doesn't have a drawable")
+                            .append("\r\n").append("* ").append("The reason could because misnamed drawable or the drawable not copied to the project -->")
+                            .append("\r\n\r\n\r\n");
                 }
 
                 int drawable = context.getResources().getIdentifier(
                         entry.getValue(), "drawable", context.getPackageName());
                 if (drawable == 0) {
                     writer.append("Activity: ").append(entry.getKey())
-                            .append("\n")
+                            .append("\r\n")
                             .append("Drawable: ").append(entry.getValue()).append(".png")
-                            .append("\n\n");
+                            .append("\r\n\r\n");
                 }
             }
 
@@ -145,16 +145,16 @@ public class ReportBugsHelper {
                 if (first) {
                     first = false;
                     writer.append("<!-- BROKEN DRAWABLES -->")
-                            .append("\n").append("<!-- Broken drawables will read drawables that listed in drawable.xml")
-                            .append("\n").append("* ").append("and try to match them with drawables that used in appfilter.xml")
-                            .append("\n").append("* ").append("The reason could be drawable copied to the project but not used in appfilter.xml -->")
-                            .append("\n\n\n");
+                            .append("\r\n").append("<!-- Broken drawables will read drawables that listed in drawable.xml")
+                            .append("\r\n").append("* ").append("and try to match them with drawables that used in appfilter.xml")
+                            .append("\r\n").append("* ").append("The reason could be drawable copied to the project but not used in appfilter.xml -->")
+                            .append("\r\n\r\n\r\n");
                 }
 
                 String drawable = drawables.get(icon.getTitle());
                 if (drawable == null || drawable.length() == 0) {
                     writer.append("Drawable: ").append(icon.getTitle()).append(".png")
-                            .append("\n\n");
+                            .append("\r\n\r\n");
                 }
             }
 
@@ -190,15 +190,15 @@ public class ReportBugsHelper {
                 if (first) {
                     first = false;
                     out.append("<!-- ACTIVITY LIST -->")
-                            .append("\n").append("<!-- Activity list is a list that contains all activity from installed apps -->")
-                            .append("\n\n\n");
+                            .append("\r\n").append("<!-- Activity list is a list that contains all activity from installed apps -->")
+                            .append("\r\n\r\n\r\n");
                 }
 
                 String name = app.activityInfo.loadLabel(context.getPackageManager()).toString();
                 String activity = app.activityInfo.packageName + "/" + app.activityInfo.name;
                 out.append("<!-- ").append(name).append(" -->");
-                out.append("\n").append(activity);
-                out.append("\n\n");
+                out.append("\r\n").append(activity);
+                out.append("\r\n\r\n");
             }
 
             out.flush();

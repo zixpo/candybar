@@ -89,12 +89,12 @@ public abstract class CandyBarApplication extends MultiDexApplication {
             SimpleDateFormat dateFormat = new SimpleDateFormat(
                     "yyyy-MM-dd HH:mm:ss", Locale.getDefault());
             String dateTime = dateFormat.format(new Date());
-            sb.append("Crash Time : ").append(dateTime).append("\n");
-            sb.append("Class Name : ").append(throwable.getClass().getName()).append("\n");
-            sb.append("Caused By : ").append(throwable.toString()).append("\n");
+            sb.append("Crash Time : ").append(dateTime).append("\r\n");
+            sb.append("Class Name : ").append(throwable.getClass().getName()).append("\r\n");
+            sb.append("Caused By : ").append(throwable.toString()).append("\r\n");
 
             for (StackTraceElement element : throwable.getStackTrace()) {
-                sb.append("\n");
+                sb.append("\r\n");
                 sb.append(element.toString());
             }
 

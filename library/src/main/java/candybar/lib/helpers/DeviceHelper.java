@@ -53,20 +53,20 @@ public class DeviceHelper {
         }
 
         sb.append("Manufacturer : ").append(Build.MANUFACTURER)
-                .append("\nModel : ").append(Build.MODEL)
-                .append("\nProduct : ").append(Build.PRODUCT)
-                .append("\nScreen Resolution : ")
+                .append("\r\nModel : ").append(Build.MODEL)
+                .append("\r\nProduct : ").append(Build.PRODUCT)
+                .append("\r\nScreen Resolution : ")
                 .append(width).append(" x ").append(height).append(" pixels")
-                .append("\nAndroid Version : ").append(Build.VERSION.RELEASE)
-                .append("\nApp Version : ").append(appVersion)
-                .append("\nCandyBar Version : ").append(BuildConfig.VERSION_NAME)
-                .append("\n");
+                .append("\r\nAndroid Version : ").append(Build.VERSION.RELEASE)
+                .append("\r\nApp Version : ").append(appVersion)
+                .append("\r\nCandyBar Version : ").append(BuildConfig.VERSION_NAME)
+                .append("\r\n");
         return sb.toString();
     }
 
     @NonNull
     public static String getDeviceInfoForCrashReport(@NonNull Context context) {
         return "Icon Pack Name : " + context.getResources().getString(R.string.app_name)
-                + "\n" + getDeviceInfo(context);
+                + "\r\n" + getDeviceInfo(context);
     }
 }

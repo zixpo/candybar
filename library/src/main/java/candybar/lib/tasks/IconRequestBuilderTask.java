@@ -91,7 +91,7 @@ public class IconRequestBuilderTask extends AsyncTaskBase {
                     }
 
                     if (CandyBarApplication.sRequestProperty.getProductId() != null) {
-                        stringBuilder.append("\nProduct Id: ")
+                        stringBuilder.append("\r\nProduct Id: ")
                                 .append(CandyBarApplication.sRequestProperty.getProductId());
                     }
                 }
@@ -117,11 +117,11 @@ public class IconRequestBuilderTask extends AsyncTaskBase {
                         if (emailBodyGeneratorEnabled) {
                             requestsForGenerator.add(request);
                         } else {
-                            stringBuilder.append("\n\n")
+                            stringBuilder.append("\r\n\r\n")
                                     .append(request.getName())
-                                    .append("\n")
+                                    .append("\r\n")
                                     .append(request.getActivity())
-                                    .append("\n")
+                                    .append("\r\n")
                                     .append("https://play.google.com/store/apps/details?id=")
                                     .append(request.getPackageName());
                         }
@@ -130,7 +130,7 @@ public class IconRequestBuilderTask extends AsyncTaskBase {
 
                 mEmailBody = stringBuilder.toString();
                 if (emailBodyGeneratorEnabled) {
-                    mEmailBody += "\n\n" + emailBodyGenerator.generate(requestsForGenerator);
+                    mEmailBody += "\r\n\r\n" + emailBodyGenerator.generate(requestsForGenerator);
                 }
                 return true;
             } catch (Exception e) {

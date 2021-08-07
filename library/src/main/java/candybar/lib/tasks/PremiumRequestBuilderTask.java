@@ -79,17 +79,17 @@ public class PremiumRequestBuilderTask extends AsyncTaskBase {
                 List<Request> requests = Database.get(mContext.get()).getPremiumRequest(null);
 
                 for (int i = 0; i < requests.size(); i++) {
-                    stringBuilder.append("\n\n")
+                    stringBuilder.append("\r\n\r\n")
                             .append(requests.get(i).getName())
-                            .append("\n")
+                            .append("\r\n")
                             .append(requests.get(i).getActivity())
-                            .append("\n")
+                            .append("\r\n")
                             .append("https://play.google.com/store/apps/details?id=")
                             .append(requests.get(i).getPackageName())
-                            .append("\n")
+                            .append("\r\n")
                             .append("Order Id: ")
                             .append(requests.get(i).getOrderId())
-                            .append("\n")
+                            .append("\r\n")
                             .append("Product Id: ")
                             .append(requests.get(i).getProductId());
                 }

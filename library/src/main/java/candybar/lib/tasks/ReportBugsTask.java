@@ -1,5 +1,7 @@
 package candybar.lib.tasks;
 
+import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -24,8 +26,6 @@ import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
-
-import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
 
 /*
  * CandyBar - Material Dashboard
@@ -80,7 +80,7 @@ public class ReportBugsTask extends AsyncTaskBase {
                 List<String> files = new ArrayList<>();
 
                 mStringBuilder.append(DeviceHelper.getDeviceInfo(mContext.get()))
-                        .append("\n").append(mDescription).append("\n");
+                        .append("\r\n").append(mDescription).append("\r\n");
 
                 File brokenAppFilter = ReportBugsHelper.buildBrokenAppFilter(mContext.get());
                 if (brokenAppFilter != null) files.add(brokenAppFilter.toString());

@@ -91,7 +91,7 @@ public class CandyBarCrashReport extends AppCompatActivity {
         if (crashLog != null) {
             Uri uri = FileHelper.getUriFromFile(this, getPackageName(), crashLog);
             if (uri != null) {
-                intent.putExtra(Intent.EXTRA_TEXT, deviceInfo + "\n");
+                intent.putExtra(Intent.EXTRA_TEXT, deviceInfo + "\r\n");
                 intent.putExtra(Intent.EXTRA_STREAM, uri);
                 intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 return;
