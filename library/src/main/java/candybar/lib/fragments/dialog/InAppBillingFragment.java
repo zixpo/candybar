@@ -22,8 +22,10 @@ import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsParams;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -177,12 +179,12 @@ public class InAppBillingFragment extends DialogFragment {
 
     private class InAppProductsLoader extends AsyncTaskBase {
 
-        private InAppBilling[] inAppBillings;
+        private List<InAppBilling> inAppBillings;
 
         @Override
         protected void preRun() {
             mProgress.setVisibility(View.VISIBLE);
-            inAppBillings = new InAppBilling[mProductsId.length];
+            inAppBillings = new ArrayList<>();
         }
 
         @Override
@@ -210,9 +212,13 @@ public class InAppBillingFragment extends DialogFragment {
                                         for (int i = 0; i < mProductsId.length; i++) {
                                             String productId = mProductsId[i];
                                             SkuDetails skuDetails = skuDetailsMap.get(productId);
-                                            inAppBillings[i] = mProductsCount != null
-                                                    ? new InAppBilling(skuDetails, productId, mProductsCount[i])
-                                                    : new InAppBilling(skuDetails, productId);
+                                            if (skuDetails != null) {
+                                                inAppBillings.add(mProductsCount != null
+                                                        ? new InAppBilling(skuDetails, productId, mProductsCount[i])
+                                                        : new InAppBilling(skuDetails, productId));
+                                            } else {
+                                                LogUtil.e("Found invalid product ID - " + productId);
+                                            }
                                         }
 
                                         isSuccess.set(true);

@@ -18,6 +18,8 @@ package candybar.lib.items;
  * limitations under the License.
  */
 
+import androidx.annotation.NonNull;
+
 import com.android.billingclient.api.SkuDetails;
 
 public class InAppBilling {
@@ -33,12 +35,12 @@ public class InAppBilling {
         mProductId = productId;
     }
 
-    public InAppBilling(SkuDetails skuDetails, String productId) {
+    public InAppBilling(@NonNull SkuDetails skuDetails, String productId) {
         mProductId = productId;
         mSkuDetails = skuDetails;
     }
 
-    public InAppBilling(SkuDetails skuDetails, String productId, int productCount) {
+    public InAppBilling(@NonNull SkuDetails skuDetails, String productId, int productCount) {
         mProductId = productId;
         mProductCount = productCount;
         mSkuDetails = skuDetails;
