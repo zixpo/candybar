@@ -41,7 +41,8 @@ public class LauncherHelper {
     private enum Launcher {
         UNKNOWN, ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO, HOLOHD, LAWNCHAIR,
         LGHOME, LGHOME3, LUCID, MINI, NEXT, NOVA, PIXEL, SMART, SOLO, ZENUI, NOUGAT, M,
-        ZERO, V, ABC, EVIE, POCO, POSIDON, MICROSOFT, FLICK, BLACKBERRY, SQUARE, NIAGARA
+        ZERO, V, ABC, EVIE, POCO, POSIDON, MICROSOFT, FLICK, BLACKBERRY, SQUARE, NIAGARA,
+        HYPERION
     }
 
     private static Launcher getLauncher(String packageName) {
@@ -121,6 +122,8 @@ public class LauncherHelper {
                 return Launcher.FLICK;
             case "com.blackberry.blackberrylauncher":
                 return Launcher.BLACKBERRY;
+            case "projekt.launcher":
+                return Launcher.HYPERION;
             default:
                 return Launcher.UNKNOWN;
         }
@@ -265,6 +268,9 @@ public class LauncherHelper {
             case HOLO:
             case HOLOHD:
                 applyManual(context, launcherPackage, launcherName, "com.mobint.hololauncher.SettingsActivity");
+                break;
+            case HYPERION:
+                applyManual(context, launcherPackage, launcherName, "projekt.launcher.activities.SettingsActivity");
                 break;
             case LAWNCHAIR:
                 try {
