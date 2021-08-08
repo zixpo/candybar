@@ -163,8 +163,7 @@ public class FAQsFragment extends Fragment {
         try {
             mAdapter.search(query);
             if (mAdapter.getFaqsCount() == 0) {
-                String text = String.format(requireActivity().getResources().getString(
-                        R.string.search_noresult), query);
+                String text = requireActivity().getResources().getString(R.string.search_noresult, query);
                 mSearchResult.setText(text);
                 mSearchResult.setVisibility(View.VISIBLE);
             } else mSearchResult.setVisibility(View.GONE);

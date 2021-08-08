@@ -139,15 +139,12 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     int total = Preferences.get(mContext).getPremiumRequestTotal();
                     int available = Preferences.get(mContext).getPremiumRequestCount();
 
-                    HeaderViewHolder.premTotal.setText(String.format(
-                            mContext.getResources().getString(R.string.premium_request_count),
-                            total));
-                    HeaderViewHolder.premAvailable.setText(String.format(
-                            mContext.getResources().getString(R.string.premium_request_available),
-                            available));
-                    HeaderViewHolder.premUsed.setText(String.format(
-                            mContext.getResources().getString(R.string.premium_request_used),
-                            (total - available)));
+                    HeaderViewHolder.premTotal.setText(mContext.getResources().getString(
+                            R.string.premium_request_count, total));
+                    HeaderViewHolder.premAvailable.setText(mContext.getResources().getString(
+                            R.string.premium_request_available, available));
+                    HeaderViewHolder.premUsed.setText(mContext.getResources().getString(
+                            R.string.premium_request_used, (total - available)));
 
                     HeaderViewHolder.premProgress.setMax(total);
                     HeaderViewHolder.premProgress.setProgress(available);
@@ -165,15 +162,12 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 int used = Preferences.get(mContext).getRegularRequestUsed();
                 int available = total - used;
 
-                HeaderViewHolder.regTotal.setText(String.format(
-                        mContext.getResources().getString(R.string.regular_request_count),
-                        total));
-                HeaderViewHolder.regAvailable.setText(String.format(
-                        mContext.getResources().getString(R.string.regular_request_available),
-                        available));
-                HeaderViewHolder.regUsed.setText(String.format(
-                        mContext.getResources().getString(R.string.regular_request_used),
-                        used));
+                HeaderViewHolder.regTotal.setText(mContext.getResources().getString(
+                        R.string.regular_request_count, total));
+                HeaderViewHolder.regAvailable.setText(mContext.getResources().getString(
+                        R.string.regular_request_available, available));
+                HeaderViewHolder.regUsed.setText(mContext.getResources().getString(
+                        R.string.regular_request_used, used));
 
                 HeaderViewHolder.regProgress.setMax(total);
                 HeaderViewHolder.regProgress.setProgress(available);

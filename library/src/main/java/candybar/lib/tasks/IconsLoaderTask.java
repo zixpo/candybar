@@ -104,7 +104,7 @@ public class IconsLoaderTask extends AsyncTaskBase {
                 String iconDimension = "";
 
                 if (options.outWidth > 0 && options.outHeight > 0) {
-                    iconDimension = String.format(mContext.get().getResources().getString(R.string.home_icon_dimension),
+                    iconDimension = mContext.get().getResources().getString(R.string.home_icon_dimension,
                             options.outWidth + " x " + options.outHeight);
                 }
 

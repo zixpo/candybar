@@ -317,24 +317,20 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     installed : CandyBarMainActivity.sMissedApps.size();
             int themed = installed - missed;
 
-            iconRequestViewHolder.installedApps.setText(String.format(
-                    mContext.getResources().getString(R.string.home_icon_request_installed_apps),
-                    installed));
-            iconRequestViewHolder.missedApps.setText(String.format(
-                    mContext.getResources().getString(R.string.home_icon_request_missed_apps),
-                    missed));
-            iconRequestViewHolder.themedApps.setText(String.format(
-                    mContext.getResources().getString(R.string.home_icon_request_themed_apps),
-                    themed));
+            iconRequestViewHolder.installedApps.setText(mContext.getResources().getString(
+                    R.string.home_icon_request_installed_apps, installed));
+            iconRequestViewHolder.missedApps.setText(mContext.getResources().getString(
+                    R.string.home_icon_request_missed_apps, missed));
+            iconRequestViewHolder.themedApps.setText(mContext.getResources().getString(
+                    R.string.home_icon_request_themed_apps, themed));
 
             iconRequestViewHolder.progress.setMax(installed);
             iconRequestViewHolder.progress.setProgress(themed);
         } else if (holder.getItemViewType() == TYPE_WALLPAPERS) {
             WallpapersViewHolder wallpapersViewHolder = (WallpapersViewHolder) holder;
 
-            wallpapersViewHolder.title.setText(
-                    String.format(mContext.getResources().getString(R.string.home_loud_wallpapers),
-                            Preferences.get(mContext).getAvailableWallpapersCount()));
+            wallpapersViewHolder.title.setText(mContext.getResources().getString(
+                    R.string.home_loud_wallpapers, Preferences.get(mContext).getAvailableWallpapersCount()));
         }
     }
 
@@ -456,9 +452,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             } else if (id == R.id.share) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_SUBJECT,
-                        String.format(mContext.getResources().getString(R.string.share_app_title),
-                                mContext.getResources().getString(R.string.app_name)));
+                intent.putExtra(Intent.EXTRA_SUBJECT, mContext.getResources().getString(
+                        R.string.share_app_title, mContext.getResources().getString(R.string.app_name)));
                 intent.putExtra(Intent.EXTRA_TEXT,
                         mContext.getResources().getString(R.string.share_app_body,
                                 mContext.getResources().getString(R.string.app_name),

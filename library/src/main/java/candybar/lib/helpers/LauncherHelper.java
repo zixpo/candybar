@@ -517,8 +517,8 @@ public class LauncherHelper {
                         } catch (ActivityNotFoundException | NullPointerException e) {
                             openGooglePlay(context, launcherPackage, launcherName);
                         } catch (SecurityException | IllegalArgumentException e) {
-                            Toast.makeText(context, String.format(context.getResources().getString(
-                                    R.string.apply_launch_failed), launcherName),
+                            Toast.makeText(context, context.getResources().getString(
+                                    R.string.apply_launch_failed, launcherName),
                                     Toast.LENGTH_LONG).show();
                         }
                     })

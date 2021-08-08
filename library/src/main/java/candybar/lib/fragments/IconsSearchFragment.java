@@ -1,5 +1,7 @@
 package candybar.lib.fragments;
 
+import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
+
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -42,8 +44,6 @@ import candybar.lib.fragments.dialog.IconShapeChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.AsyncTaskBase;
-
-import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -182,8 +182,7 @@ public class IconsSearchFragment extends Fragment {
         try {
             mAdapter.search(query);
             if (mAdapter.getItemCount() == 0) {
-                String text = String.format(requireActivity().getResources().getString(
-                        R.string.search_noresult), query);
+                String text = requireActivity().getResources().getString(R.string.search_noresult, query);
                 mSearchResult.setText(text);
                 mSearchResult.setVisibility(View.VISIBLE);
             } else mSearchResult.setVisibility(View.GONE);

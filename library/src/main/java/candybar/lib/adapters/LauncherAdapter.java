@@ -1,5 +1,6 @@
 package candybar.lib.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -124,6 +125,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         }
 
+        @SuppressLint("StringFormatInvalid")
         @Override
         public void onClick(View view) {
             int id = view.getId();
@@ -135,8 +137,8 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             mLaunchers.get(position).getPackageName(),
                             mLaunchers.get(position).getTitle());
                 } catch (Exception e) {
-                    Toast.makeText(mContext, String.format(mContext.getResources().getString(
-                            R.string.apply_launch_failed), mLaunchers.get(position).getTitle()),
+                    Toast.makeText(mContext, mContext.getResources().getString(
+                            R.string.apply_launch_failed, mLaunchers.get(position).getTitle()),
                             Toast.LENGTH_LONG).show();
                 }
 

@@ -1,5 +1,8 @@
 package candybar.lib.helpers;
 
+import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.DrawableHelper.getRightIcon;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -48,9 +51,6 @@ import candybar.lib.databases.Database;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.listeners.RequestListener;
-
-import static candybar.lib.helpers.DrawableHelper.getReqIcon;
-import static candybar.lib.helpers.DrawableHelper.getRightIcon;
 
 /*
  * CandyBar - Material Dashboard
@@ -364,8 +364,8 @@ public class RequestHelper {
     public static void showIconRequestLimitDialog(@NonNull Context context) {
         boolean reset = context.getResources().getBoolean(R.bool.reset_icon_request_limit);
         int limit = context.getResources().getInteger(R.integer.icon_request_limit);
-        String message = String.format(context.getResources().getString(R.string.request_limit), limit);
-        message += " " + String.format(context.getResources().getString(R.string.request_used),
+        String message = context.getResources().getString(R.string.request_limit, limit);
+        message += " " + context.getResources().getString(R.string.request_used,
                 Preferences.get(context).getRegularRequestUsed());
 
         if (Preferences.get(context).isPremiumRequestEnabled())
@@ -391,10 +391,9 @@ public class RequestHelper {
     }
 
     public static void showPremiumRequestLimitDialog(@NonNull Context context, int selected) {
-        String message = String.format(context.getResources().getString(R.string.premium_request_limit),
+        String message = context.getResources().getString(R.string.premium_request_limit,
                 Preferences.get(context).getPremiumRequestCount());
-        message += " " + String.format(context.getResources().getString(R.string.premium_request_limit1),
-                selected);
+        message += " " + context.getResources().getString(R.string.premium_request_limit1, selected);
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(R.string.premium_request)
@@ -404,8 +403,8 @@ public class RequestHelper {
     }
 
     public static void showPremiumRequestStillAvailable(@NonNull Context context) {
-        String message = String.format(context.getResources().getString(
-                R.string.premium_request_already_purchased),
+        String message = context.getResources().getString(
+                R.string.premium_request_already_purchased,
                 Preferences.get(context).getPremiumRequestCount());
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))

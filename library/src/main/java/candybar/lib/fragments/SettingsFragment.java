@@ -1,5 +1,7 @@
 package candybar.lib.fragments;
 
+import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -41,8 +43,6 @@ import candybar.lib.items.Setting;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.RequestListener;
-
-import static candybar.lib.helpers.DrawableHelper.getReqIcon;
 
 /*
  * CandyBar - Material Dashboard
@@ -130,7 +130,7 @@ public class SettingsFragment extends Fragment {
         settings.add(new Setting(-1, "",
                 resources.getString(R.string.pref_data_cache),
                 resources.getString(R.string.pref_data_cache_desc),
-                String.format(resources.getString(R.string.pref_data_cache_size),
+                resources.getString(R.string.pref_data_cache_size,
                         formatter.format(cache) + " MB"),
                 Setting.Type.CACHE));
 

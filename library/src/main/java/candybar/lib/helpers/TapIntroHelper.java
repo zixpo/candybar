@@ -1,5 +1,7 @@
 package candybar.lib.helpers;
 
+import static com.danimahardhika.android.helpers.core.UnitHelper.toDp;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -28,8 +30,6 @@ import com.getkeepsafe.taptargetview.TapTargetView;
 import candybar.lib.R;
 import candybar.lib.adapters.HomeAdapter;
 import candybar.lib.preferences.Preferences;
-
-import static com.danimahardhika.android.helpers.core.UnitHelper.toDp;
 
 /*
  * CandyBar - Material Dashboard
@@ -102,7 +102,7 @@ public class TapIntroHelper {
                                         View view = holder.itemView;
                                         float targetRadius = toDp(context, view.getMeasuredWidth()) - 20f;
 
-                                        String desc = String.format(context.getResources().getString(R.string.tap_intro_home_apply_desc),
+                                        String desc = context.getResources().getString(R.string.tap_intro_home_apply_desc,
                                                 context.getResources().getString(R.string.app_name));
                                         TapTarget tapTarget = TapTarget.forView(view,
                                                 context.getResources().getString(R.string.tap_intro_home_apply),
@@ -399,7 +399,7 @@ public class TapIntroHelper {
 
                             Typeface title = TypefaceHelper.getMedium(context);
 
-                            String desc = String.format(context.getResources().getString(R.string.tap_intro_wallpapers_option_desc),
+                            String desc = context.getResources().getString(R.string.tap_intro_wallpapers_option_desc,
                                     context.getResources().getBoolean(R.bool.enable_wallpaper_download) ?
                                             context.getResources().getString(R.string.tap_intro_wallpapers_option_desc_download) : "");
 

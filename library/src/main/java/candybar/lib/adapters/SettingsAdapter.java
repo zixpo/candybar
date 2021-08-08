@@ -187,9 +187,8 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                         double size = (double) FileHelper.getDirectorySize(cache) / FileHelper.MB;
                                         NumberFormat formatter = new DecimalFormat("#0.00");
 
-                                        setting.setFooter(String.format(mContext.getResources().getString(
-                                                R.string.pref_data_cache_size),
-                                                formatter.format(size) + " MB"));
+                                        setting.setFooter(mContext.getResources().getString(
+                                                R.string.pref_data_cache_size, formatter.format(size) + " MB"));
                                         notifyItemChanged(position);
 
                                         Toast.makeText(mContext, R.string.pref_data_cache_cleared,

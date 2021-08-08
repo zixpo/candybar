@@ -148,7 +148,7 @@ public class HomeFragment extends Fragment implements HomeListener {
         if (resources.getBoolean(R.bool.enable_apply)) {
             homes.add(new Home(
                     R.drawable.ic_toolbar_apply_launcher,
-                    String.format(resources.getString(R.string.home_apply_icon_pack),
+                    resources.getString(R.string.home_apply_icon_pack,
                             resources.getString(R.string.app_name)),
                     "",
                     Home.Type.APPLY,
