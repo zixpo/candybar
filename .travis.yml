@@ -16,8 +16,7 @@ android:
     - platform-tools
   licenses:
     - '.+'
-before_install:
-  - yes | sudo sdkmanager --licenses
+#before_install:
 #  - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS"
 #  - yes | sdkmanager "platforms;android-$ANDROID_API"
 
@@ -33,6 +32,7 @@ before_cache:
 before_script:
   - chmod +x gradlew
   - chmod +x send-telegram.sh
+  - yes | sudo /usr/local/android-sdk/tools/bin/sdkmanager --licenses
 script:
   - ./gradlew clean :app:assembleRelease --stacktrace
 after_success:
