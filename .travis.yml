@@ -2,7 +2,7 @@ os: linux
 dist: xenial
 arch: arm64-graviton2
 language: android
-jdk: oraclejdk8
+jdk: oraclejdk11
 branches:
   except: [translations]
 env:
