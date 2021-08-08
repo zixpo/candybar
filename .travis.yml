@@ -16,7 +16,8 @@ android:
     - platform-tools
   licenses:
     - '.+'
-#before_install:
+before_install:
+  - yes | sudo sdkmanager --licenses
 #  - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS"
 #  - yes | sdkmanager "platforms;android-$ANDROID_API"
 
