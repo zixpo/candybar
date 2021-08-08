@@ -28,6 +28,16 @@ plugins {
     id 'maven-publish'
 }
 
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+            }
+        }
+    }
+}
+
 android {
     compileSdkVersion rootProject.ext.CompileSdk
 
@@ -36,7 +46,7 @@ android {
         targetSdkVersion rootProject.ext.TargetSdk
         vectorDrawables.useSupportLibrary true
         multiDexEnabled true
-        buildConfigField 'String', 'VERSION_NAME', "\"${versionName}\""
+        buildConfigField 'String', 'VERSION_NAME', "\"${rootProject.ext.VersionName}\""
     }
 
     buildTypes {
@@ -102,14 +112,4 @@ dependencies {
     implementation 'com.github.danimahardhika.android-helpers:license:0.1.0'
     implementation 'com.github.danimahardhika.android-helpers:permission:0.1.0'
     implementation 'com.github.danimahardhika:DrawMe:4a672e78fc'
-}
-
-project.afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-            }
-        }
-    }
 }

@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">July 18, 2021</string>
+    <string name="changelog_date" translatable="false">August 8, 2021</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,9 +10,10 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Fixed crash</item>
-        <item>Added basic Kustom support</item>
-        <item>Improved themes</item>
+        <item>Update Gradle and AGP</item>
+        <item>Added Hyperion launcher</item>
+        <item>Use CRLF in email related strings</item>
+        <item>Added support to search wallpapers</item>
     </string-array>
 
 </resources>

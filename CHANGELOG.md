@@ -1,3 +1,9 @@
+# v3.12.0
+- Update Gradle and AGP
+- Added Hyperion launcher
+- Use CRLF in email related strings
+- Added support to search wallpapers
+
 # v3.11.7
 - Fixed crash
 - Added basic Kustom support
