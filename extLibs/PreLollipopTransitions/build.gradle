@@ -14,7 +14,21 @@
  * limitations under the License.
  *
  */
-apply plugin: 'com.android.library'
+
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+            }
+        }
+    }
+}
 
 android {
     compileSdkVersion rootProject.ext.CompileSdk
