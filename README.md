@@ -13,8 +13,9 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
   <img height="80" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
 </a>
 
-# App screenshots
-*Click to enlarge*
+<details>
+<summary>App screenshots <i>(Click to expand)</i></summary>
+<p>Tip: Click image to enlarge it</p>
 <p>
   <img height="350" alt="Home section" src="https://user-images.githubusercontent.com/44255990/128632088-dd77b1cf-f289-412e-8df3-53d7cb6f3982.png">
   <img height="350" alt="Apply section" src="https://user-images.githubusercontent.com/44255990/128632346-ec485f2b-69aa-4557-aabb-41df561a7c4f.png">
@@ -29,6 +30,7 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
   <img height="350" alt="Navigation drawer" src="https://user-images.githubusercontent.com/44255990/128632508-dd274ef8-0a73-41db-996d-c2778358a7f8.png">
   <img height="350" alt="Dark mode" src="https://user-images.githubusercontent.com/44255990/128632517-59776f9c-5aa1-449d-a64c-0e1732894a69.png">
 </p>
+</details>
 
 
 # Features
