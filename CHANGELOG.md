@@ -1,3 +1,8 @@
+# v3.12.1
+- Use English date in icon requests' ZIP name
+- Fix issue with launcher apply
+- Upgraded to OneSignal 4
+
 # v3.12.0
 - Update Gradle and AGP
 - Added Hyperion launcher
