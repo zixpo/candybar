@@ -80,7 +80,7 @@ public class RequestHelper {
 
     public static String getGeneratedZipName(@NonNull String baseName) {
         return baseName.substring(0, baseName.lastIndexOf(".")) + "_" + TimeHelper.getDateTime(
-                new SimpleDateFormat("dd_MM_yyyy_HH_mm_ss", Locale.getDefault())) + ".zip";
+                new SimpleDateFormat("dd_MM_yyyy_HH_mm_ss", Locale.ENGLISH)) + ".zip";
     }
 
     public static String fixNameForRequest(String name) {
