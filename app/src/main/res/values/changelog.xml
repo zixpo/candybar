@@ -10,7 +10,7 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Use English date in icon requests' ZIP name</item>
+        <item>Use English date in icon requests\' ZIP name</item>
         <item>Fix issue with launcher apply</item>
         <item>Upgraded to OneSignal 4</item>
     </string-array>
