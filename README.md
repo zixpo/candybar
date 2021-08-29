@@ -32,6 +32,9 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
 </p>
 </details>
 
+# How to use
+Just explore the wiki to get started.
+### [Wiki ➜](https://github.com/zixpo/candybar-sample/wiki)
 
 # Features
 - License checker
