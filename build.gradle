@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0'
+        classpath 'com.android.tools.build:gradle:7.0.1'
     }
 }
 
@@ -25,7 +25,7 @@ allprojects {
         VersionCode = major * 10000 + minor * 100 + patch
         VersionName = "$major.$minor.$patch"
 
-        MinSdk = 15
+        MinSdk = 16
         TargetSdk = 30
         CompileSdk = 30
     }

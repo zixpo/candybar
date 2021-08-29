@@ -1,11 +1,11 @@
-// Remove '/*' and '*/' to Enable OneSignal
+// TODO: Remove `/*` and `*/` below to enable OneSignal
 /*
 buildscript {
     repositories {
         maven { url 'https://plugins.gradle.org/m2/' }
     }
     dependencies {
-        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.9'
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.13.4'
     }
 }
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
@@ -45,14 +45,6 @@ android {
             licenseKey = props.get('license_key', '')
         }
         buildConfigField 'String', 'LICENSE_KEY', "\"$licenseKey\""
-
-        // Remove '/*' and '*/' below to enable OneSignal
-        /*
-        manifestPlaceholders = [
-          onesignal_app_id: 'ONESIGNAL APP ID',
-          onesignal_google_project_number: 'REMOTE'
-        ]
-        */
     }
 
     buildTypes {
@@ -72,6 +64,6 @@ android {
 dependencies {
     implementation project(':library')
 
-    // Remove '//' below to Enable OneSignal
-    //implementation 'com.onesignal:OneSignal:3.15.4'
+    // TODO: Remove `//` below to enable OneSignal
+    //implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
 }

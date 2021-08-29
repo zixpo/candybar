@@ -4,21 +4,20 @@ import androidx.annotation.NonNull;
 
 import candybar.lib.applications.CandyBarApplication;
 
-//import com.onesignal.OneSignal
+// TODO: Remove `//` below to enable OneSignal
+//import com.onesignal.OneSignal;
 
 public class CandyBar extends CandyBarApplication {
 
-    // Remove '/*' and '*/' to Enable OneSignal
+    // TODO: Remove `/*` and `*/` below to Enable OneSignal
     /*
     @Override
     public void onCreate() {
         super.onCreate();
 
         // OneSignal Initialization
-        OneSignal.startInit(this)
-                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
-                .unsubscribeWhenNotificationsAreDisabled(true)
-                .init();
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId("YOUR_ONESIGNAL_APP_ID_HERE");
     }
     */
 
