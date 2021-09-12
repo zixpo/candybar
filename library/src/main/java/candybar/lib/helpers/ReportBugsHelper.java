@@ -140,6 +140,8 @@ public class ReportBugsHelper {
                 }
             }
 
+            IconsHelper.computeTitles(context, icons);
+
             boolean first = true;
             for (Icon icon : icons) {
                 if (first) {
