@@ -1,3 +1,7 @@
+# v3.13.0
+- Added support for previewing Kustom presets
+- Fixed `Broken drawable` in bug reporter
+
 # v3.12.1
 - Use English date in icon requests' ZIP name
 - Fix issue with launcher apply

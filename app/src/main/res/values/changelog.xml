@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">August 29, 2021</string>
+    <string name="changelog_date" translatable="false">September 12, 2021</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,9 +10,8 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Use English date in icon requests\' ZIP name</item>
-        <item>Fix issue with launcher apply</item>
-        <item>Upgraded to OneSignal 4</item>
+        <item>Added support for previewing Kustom presets</item>
+        <item>Fixed `Broken drawable` in bug reporter</item>
     </string-array>
 
 </resources>
