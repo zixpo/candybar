@@ -23,14 +23,25 @@ import android.widget.Toast;
 
 public abstract class Extras {
 
-    public static final String TAG_HOME = "home";
-    public static final String TAG_APPLY = "apply";
-    public static final String TAG_ICONS = "icons";
-    public static final String TAG_REQUEST = "request";
-    public static final String TAG_WALLPAPERS = "wallpapers";
-    public static final String TAG_SETTINGS = "settings";
-    public static final String TAG_FAQS = "faqs";
-    public static final String TAG_ABOUT = "about";
+    public enum Tag {
+        HOME("home"),
+        APPLY("apply"),
+        ICONS("icons"),
+        REQUEST("request"),
+        WALLPAPERS("wallpapers"),
+        PRESETS("presets"),
+        SETTINGS("settings"),
+        FAQS("faqs"),
+        ABOUT("about");
+
+        public String value;
+        public int idx;
+
+        Tag(String name) {
+            value = name;
+            idx = ordinal();
+        }
+    }
 
     public static final String EXTRA_POSITION = "position";
     public static final String EXTRA_SIZE = "size";

@@ -82,6 +82,7 @@ dependencies {
     api 'com.google.android.apps.muzei:muzei-api:3.4.0'
     api 'com.android.billingclient:billing:4.0.0'
     api 'dev.jahir.KustomAPI:api:6369c37'
+    api 'dev.jahir.KustomAPI:preset:6369c37'
 
     implementation 'androidx.work:work-runtime:2.5.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'

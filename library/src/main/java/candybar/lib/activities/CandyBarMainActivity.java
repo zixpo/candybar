@@ -70,6 +70,7 @@ import candybar.lib.fragments.ApplyFragment;
 import candybar.lib.fragments.FAQsFragment;
 import candybar.lib.fragments.HomeFragment;
 import candybar.lib.fragments.IconsBaseFragment;
+import candybar.lib.fragments.PresetsFragment;
 import candybar.lib.fragments.RequestFragment;
 import candybar.lib.fragments.SettingsFragment;
 import candybar.lib.fragments.WallpapersFragment;
@@ -130,7 +131,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
 
-    private String mFragmentTag;
+    private Extras.Tag mFragmentTag;
     private int mPosition, mLastPosition;
     private ActionBarDrawerToggle mDrawerToggle;
     private FragmentManager mFragManager;
@@ -226,7 +227,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             int position = bundle.getInt(Extras.EXTRA_POSITION, -1);
-            if (position >= 0 && position < 5) {
+            if (position >= 0 && position < 6) {
                 mPosition = mLastPosition = position;
             }
         }
@@ -368,7 +369,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             return;
         }
 
-        if (!mFragmentTag.equals(Extras.TAG_HOME)) {
+        if (mFragmentTag != Extras.Tag.HOME) {
             mPosition = mLastPosition = 0;
             setFragment(getFragment(mPosition));
             return;
@@ -401,7 +402,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     public void onRequestSelected(int count) {
-        if (mFragmentTag.equals(Extras.TAG_REQUEST)) {
+        if (mFragmentTag == Extras.Tag.REQUEST) {
             String title = getResources().getString(R.string.navigation_view_request);
             if (count > 0) title += " (" + count + ")";
             mToolbarTitle.setText(title);
@@ -526,8 +527,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 }
             }
 
-            if (mFragmentTag.equals(Extras.TAG_REQUEST)) {
-                RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.TAG_REQUEST);
+            if (mFragmentTag == Extras.Tag.REQUEST) {
+                RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.Tag.REQUEST.value);
                 if (fragment != null) fragment.refreshIconRequest();
             }
         }
@@ -555,7 +556,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                             productIds.add(purchase.getSkus().get(0));
                         }
                         this.runOnUiThread(() -> {
-                            SettingsFragment fragment = (SettingsFragment) mFragManager.findFragmentByTag(Extras.TAG_SETTINGS);
+                            SettingsFragment fragment = (SettingsFragment) mFragManager.findFragmentByTag(Extras.Tag.SETTINGS.value);
                             if (fragment != null) fragment.restorePurchases(productIds,
                                     mConfig.getPremiumRequestProductsId(), mConfig.getPremiumRequestProductsCount());
                         });
@@ -603,8 +604,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                                 Preferences.get(this).setInAppBillingType(-1);
 
                                 this.runOnUiThread(() -> {
-                                    if (mFragmentTag.equals(Extras.TAG_REQUEST)) {
-                                        RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.TAG_REQUEST);
+                                    if (mFragmentTag == Extras.Tag.REQUEST) {
+                                        RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.Tag.REQUEST.value);
                                         if (fragment != null) fragment.refreshIconRequest();
                                     }
                                 });
@@ -633,8 +634,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     public void onInAppBillingRequest() {
-        if (mFragmentTag.equals(Extras.TAG_REQUEST)) {
-            RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.TAG_REQUEST);
+        if (mFragmentTag == Extras.Tag.REQUEST) {
+            RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.Tag.REQUEST.value);
             if (fragment != null) fragment.prepareRequest();
         }
     }
@@ -643,8 +644,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     public void onWallpapersChecked(int wallpaperCount) {
         Preferences.get(this).setAvailableWallpapersCount(wallpaperCount);
 
-        if (mFragmentTag.equals(Extras.TAG_HOME)) {
-            HomeFragment fragment = (HomeFragment) mFragManager.findFragmentByTag(Extras.TAG_HOME);
+        if (mFragmentTag == Extras.Tag.HOME) {
+            HomeFragment fragment = (HomeFragment) mFragManager.findFragmentByTag(Extras.Tag.HOME.value);
             if (fragment != null) fragment.resetWallpapersCount();
         }
     }
@@ -722,6 +723,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         NavigationViewHelper.initApply(mNavigationView);
         NavigationViewHelper.initIconRequest(mNavigationView);
         NavigationViewHelper.initWallpapers(mNavigationView);
+        NavigationViewHelper.initPresets(mNavigationView);
 
         ColorStateList itemStateList = ContextCompat.getColorStateList(this,
                 ThemeHelper.isDarkTheme(this) ?
@@ -736,14 +738,15 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         mNavigationView.setItemBackground(background);
         mNavigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
-            if (id == R.id.navigation_view_home) mPosition = 0;
-            else if (id == R.id.navigation_view_apply) mPosition = 1;
-            else if (id == R.id.navigation_view_icons) mPosition = 2;
-            else if (id == R.id.navigation_view_request) mPosition = 3;
-            else if (id == R.id.navigation_view_wallpapers) mPosition = 4;
-            else if (id == R.id.navigation_view_settings) mPosition = 5;
-            else if (id == R.id.navigation_view_faqs) mPosition = 6;
-            else if (id == R.id.navigation_view_about) mPosition = 7;
+            if (id == R.id.navigation_view_home) mPosition = Extras.Tag.HOME.idx;
+            else if (id == R.id.navigation_view_apply) mPosition = Extras.Tag.APPLY.idx;
+            else if (id == R.id.navigation_view_icons) mPosition = Extras.Tag.ICONS.idx;
+            else if (id == R.id.navigation_view_request) mPosition = Extras.Tag.REQUEST.idx;
+            else if (id == R.id.navigation_view_wallpapers) mPosition = Extras.Tag.WALLPAPERS.idx;
+            else if (id == R.id.navigation_view_presets) mPosition = Extras.Tag.PRESETS.idx;
+            else if (id == R.id.navigation_view_settings) mPosition = Extras.Tag.SETTINGS.idx;
+            else if (id == R.id.navigation_view_faqs) mPosition = Extras.Tag.FAQS.idx;
+            else if (id == R.id.navigation_view_about) mPosition = Extras.Tag.ABOUT.idx;
 
             item.setChecked(true);
             mDrawerLayout.closeDrawers();
@@ -886,7 +889,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         clearBackStack();
 
         FragmentTransaction ft = mFragManager.beginTransaction()
-                .replace(R.id.container, fragment, mFragmentTag);
+                .replace(R.id.container, fragment, mFragmentTag.value);
         try {
             ft.commit();
         } catch (Exception e) {
@@ -899,30 +902,33 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     }
 
     private Fragment getFragment(int position) {
-        mFragmentTag = Extras.TAG_HOME;
-        if (position == 0) {
-            mFragmentTag = Extras.TAG_HOME;
+        mFragmentTag = Extras.Tag.HOME;
+        if (position == Extras.Tag.HOME.idx) {
+            mFragmentTag = Extras.Tag.HOME;
             return new HomeFragment();
-        } else if (position == 1) {
-            mFragmentTag = Extras.TAG_APPLY;
+        } else if (position == Extras.Tag.APPLY.idx) {
+            mFragmentTag = Extras.Tag.APPLY;
             return new ApplyFragment();
-        } else if (position == 2) {
-            mFragmentTag = Extras.TAG_ICONS;
+        } else if (position == Extras.Tag.ICONS.idx) {
+            mFragmentTag = Extras.Tag.ICONS;
             return new IconsBaseFragment();
-        } else if (position == 3) {
-            mFragmentTag = Extras.TAG_REQUEST;
+        } else if (position == Extras.Tag.REQUEST.idx) {
+            mFragmentTag = Extras.Tag.REQUEST;
             return new RequestFragment();
-        } else if (position == 4) {
-            mFragmentTag = Extras.TAG_WALLPAPERS;
+        } else if (position == Extras.Tag.WALLPAPERS.idx) {
+            mFragmentTag = Extras.Tag.WALLPAPERS;
             return new WallpapersFragment();
-        } else if (position == 5) {
-            mFragmentTag = Extras.TAG_SETTINGS;
+        } else if (position == Extras.Tag.PRESETS.idx) {
+            mFragmentTag = Extras.Tag.PRESETS;
+            return new PresetsFragment();
+        } else if (position == Extras.Tag.SETTINGS.idx) {
+            mFragmentTag = Extras.Tag.SETTINGS;
             return new SettingsFragment();
-        } else if (position == 6) {
-            mFragmentTag = Extras.TAG_FAQS;
+        } else if (position == Extras.Tag.FAQS.idx) {
+            mFragmentTag = Extras.Tag.FAQS;
             return new FAQsFragment();
-        } else if (position == 7) {
-            mFragmentTag = Extras.TAG_ABOUT;
+        } else if (position == Extras.Tag.ABOUT.idx) {
+            mFragmentTag = Extras.Tag.ABOUT;
             return new AboutFragment();
         }
         return new HomeFragment();
@@ -932,18 +938,15 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         switch (action) {
             case IntentHelper.ICON_PICKER:
             case IntentHelper.IMAGE_PICKER:
-                mPosition = mLastPosition = 2;
-                mFragmentTag = Extras.TAG_ICONS;
+                mPosition = mLastPosition = (mFragmentTag = Extras.Tag.ICONS).idx;
                 return new IconsBaseFragment();
             case IntentHelper.WALLPAPER_PICKER:
                 if (WallpaperHelper.getWallpaperType(this) == WallpaperHelper.CLOUD_WALLPAPERS) {
-                    mPosition = mLastPosition = 4;
-                    mFragmentTag = Extras.TAG_WALLPAPERS;
+                    mPosition = mLastPosition = (mFragmentTag = Extras.Tag.WALLPAPERS).idx;
                     return new WallpapersFragment();
                 }
             default:
-                mPosition = mLastPosition = 0;
-                mFragmentTag = Extras.TAG_HOME;
+                mPosition = mLastPosition = (mFragmentTag = Extras.Tag.HOME).idx;
                 return new HomeFragment();
         }
     }

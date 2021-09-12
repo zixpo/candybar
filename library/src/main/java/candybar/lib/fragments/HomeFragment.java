@@ -117,7 +117,7 @@ public class HomeFragment extends Fragment implements HomeListener {
 
         RecyclerView.Adapter<?> adapter = mRecyclerView.getAdapter();
         if (adapter.getItemCount() > 8) {
-            //Probably the original adapter already modified
+            // Probably the original adapter already modified
             adapter.notifyDataSetChanged();
             return;
         }
