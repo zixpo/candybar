@@ -11,6 +11,7 @@
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
         <item>Fix SSL error with Arctic Manager</item>
+        <item>Added Norwegian language</item>
     </string-array>
 
 </resources>

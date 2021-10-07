@@ -1,5 +1,6 @@
 # v3.13.1
 - Fix SSL error with Arctic Manager
+- Added Norwegian language. Thanks to Allan Nordhøy ([@comradekingu](https://github.com/comradekingu)) for the contribution.
 
 # v3.13.0
 - Added support for previewing Kustom presets
