@@ -3,6 +3,7 @@ package candybar.lib.helpers;
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
 import static candybar.lib.helpers.DrawableHelper.getRightIcon;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -33,6 +34,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -44,6 +47,9 @@ import java.util.Objects;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.X509TrustManager;
+
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
@@ -51,6 +57,7 @@ import candybar.lib.databases.Database;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.listeners.RequestListener;
+import okhttp3.OkHttpClient;
 
 /*
  * CandyBar - Material Dashboard
@@ -229,17 +236,54 @@ public class RequestHelper {
                 .post(okRequestBody)
                 .build();
 
-        okhttp3.OkHttpClient okHttpClient = new okhttp3.OkHttpClient();
+        OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
+
+        // Disable SSL verification
+        try {
+            final X509TrustManager[] trustManagers = new X509TrustManager[]{
+                    new X509TrustManager() {
+                        @SuppressLint("TrustAllX509TrustManager")
+                        @Override
+                        public void checkClientTrusted(X509Certificate[] a, String b) {
+                        }
+
+                        @SuppressLint("TrustAllX509TrustManager")
+                        @Override
+                        public void checkServerTrusted(X509Certificate[] a, String b) {
+                        }
+
+                        @SuppressLint("TrustAllX509TrustManager")
+                        public void checkServerTrusted(X509Certificate[] a, String b, String c) {
+                        }
+
+                        @SuppressLint("TrustAllX509TrustManager")
+                        public void checkServerTrusted(X509Certificate[] a, String b, String c, String d) {
+                        }
+
+                        @Override
+                        public X509Certificate[] getAcceptedIssuers() {
+                            return new X509Certificate[]{};
+                        }
+                    }
+            };
+            final SSLContext sslContext = SSLContext.getInstance("SSL");
+            sslContext.init(null, trustManagers, new SecureRandom());
+            clientBuilder.hostnameVerifier((hostname, session) -> true);
+            clientBuilder.sslSocketFactory(sslContext.getSocketFactory(), trustManagers[0]);
+        } catch (Exception e) {
+            LogUtil.e(Log.getStackTraceString(e));
+        }
 
         try {
-            okhttp3.Response response = okHttpClient.newCall(okRequest).execute();
+            okhttp3.Response response = clientBuilder.build().newCall(okRequest).execute();
             boolean success = response.code() > 199 && response.code() < 300;
             if (!success) {
                 JSONObject responseJson = new JSONObject(Objects.requireNonNull(response.body()).string());
                 return responseJson.getString("error");
             }
-        } catch (IOException | JSONException ignoredException) {
-            LogUtil.d("ARCTIC_MANAGER: Error");
+        } catch (IOException | JSONException e) {
+            LogUtil.e("ARCTIC_MANAGER: Error");
+            LogUtil.e(Log.getStackTraceString(e));
             return "";
         }
         return null;
