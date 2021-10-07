@@ -1,3 +1,6 @@
+# v3.13.1
+- Fix SSL error with Arctic Manager
+
 # v3.13.0
 - Added support for previewing Kustom presets
 - Fixed `Broken drawable` in bug reporter

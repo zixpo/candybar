@@ -10,8 +10,7 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Added support for previewing Kustom presets</item>
-        <item>Fixed `Broken drawable` in bug reporter</item>
+        <item>Fix SSL error with Arctic Manager</item>
     </string-array>
 
 </resources>
