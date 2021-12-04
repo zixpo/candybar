@@ -43,6 +43,21 @@ public class CandyBar extends CandyBarApplication {
                         "https://play.google.com/store/apps/details?id=app.2")
         });
 
+        /*configuration.setDonationLinks(new DonationLink[]{
+                new DonationLink(
+                        "icon_52",
+                        "Donation Link 1",
+                        "Donate me!",
+                        "https://example.com"
+                ),
+                new DonationLink(
+                        "icon_65",
+                        "Donation Link 2",
+                        "Donate me from this if the other one doesn't work",
+                        "https://example.com"
+                )
+        });*/
+
         return configuration;
     }
 }
