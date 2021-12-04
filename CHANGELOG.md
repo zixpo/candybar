@@ -1,3 +1,10 @@
+# v3.13.2
+- Updated Android Gradle Plugin
+- Analog clock is now resizable
+- Added Lawnchair 12
+- Fixed `Broken drawables` in report bugs
+- Added support for using donation links
+
 # v3.13.1
 - Fix SSL error with Arctic Manager
 - Added Norwegian language. Thanks to Allan Nordhøy ([@comradekingu](https://github.com/comradekingu)) for the contribution.

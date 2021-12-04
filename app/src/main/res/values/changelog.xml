@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">September 12, 2021</string>
+    <string name="changelog_date" translatable="false">December 4, 2021</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,8 +10,11 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Fix SSL error with Arctic Manager</item>
-        <item>Added Norwegian language</item>
+        <item>Updated Android Gradle Plugin</item>
+        <item>Analog clock is now resizable</item>
+        <item>Added Lawnchair 12</item>
+        <item>Fixed \`Broken drawables\` in report bugs</item>
+        <item>Added support for using donation links</item>
     </string-array>
 
 </resources>
