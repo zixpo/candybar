@@ -270,6 +270,12 @@ public class LauncherHelper {
                 break;
             case LAWNCHAIR:
                 try {
+                    if (launcherPackage.startsWith("app.")) {
+                        // Lawnchair 12 does not support direct apply yet
+                        applyManual(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
+                        break;
+                    }
+
                     final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
                     lawnchair.putExtra("packageName", context.getPackageName());
                     context.startActivity(lawnchair);
