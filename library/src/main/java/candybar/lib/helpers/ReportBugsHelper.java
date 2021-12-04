@@ -23,6 +23,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -140,9 +141,8 @@ public class ReportBugsHelper {
                 }
             }
 
-            IconsHelper.computeTitles(context, icons);
-
             boolean first = true;
+            HashSet<String> addedIcons = new HashSet<>();
             for (Icon icon : icons) {
                 if (first) {
                     first = false;
@@ -153,9 +153,10 @@ public class ReportBugsHelper {
                             .append("\r\n\r\n\r\n");
                 }
 
-                String drawable = drawables.get(icon.getTitle());
-                if (drawable == null || drawable.length() == 0) {
-                    writer.append("Drawable: ").append(icon.getTitle()).append(".png")
+                String drawable = drawables.get(icon.getDrawableName());
+                if ((drawable == null || drawable.length() == 0) && !addedIcons.contains(icon.getDrawableName())) {
+                    addedIcons.add(icon.getDrawableName());
+                    writer.append("Drawable: ").append(icon.getDrawableName()).append(".png")
                             .append("\r\n\r\n");
                 }
             }
