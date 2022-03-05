@@ -70,6 +70,7 @@ import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
@@ -432,6 +433,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
                                 isArctic ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
+                        if (isCustom) {
+                            request.setIconBase64(getReqIconBase64(drawable));
+                        }
                     }
 
                     if (isArctic) {
