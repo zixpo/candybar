@@ -159,6 +159,8 @@
     <string name="request_arctic_sending">Sending request to Arctic Manager...</string>
     <string name="request_arctic_error">Error occurred while sending request to Arctic Manager. Error is %s</string>
     <string name="request_arctic_success">Successfully sent request to Arctic Manager</string>
+    <string name="request_custom_error">Error occurred while sending icon request. If this error persists, contact the developer. %s</string>
+    <string name="request_custom_success">Successfully sent icon request</string>
     <string name="request_fetching_data">Fetching latest data …</string>
     <string name="request_build_failed">Unable to build icon request</string>
     <string name="request_appfilter_failed">Unable to read appfilter.xml</string>

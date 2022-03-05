@@ -130,6 +130,8 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_arctic_sending">Sende Request an Arctic Manager...</string>
     <string name="request_arctic_error">Fehler beim Senden des Requests an Arctic Manager. Die Fehlermeldung ist %s</string>
     <string name="request_arctic_success">Request erfolgreich an Arctic Manager gesendet</string>
+    <string name="request_custom_error">Fehler beim Senden des Icon Requests. Falls der Fehler wiederholt auftritt, wende dich an den Entwickler. %s</string>
+    <string name="request_custom_success">Icon Request erfolgreich gesendet</string>
     <string name="request_fetching_data">Rufe neueste Daten ab…</string>
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>

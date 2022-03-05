@@ -44,6 +44,7 @@ Just explore the wiki to get started.
   - Regular request: Free to request
   - Premium request: Pay to request
   - Support for [Arctic Request Manager](https://arcticmanager.com)
+  - Support for custom implementations (e.g. Firestore or AWS Lambda)
 - Cloud based wallpaper
   - Preview wallpaper
   - Apply wallpaper

@@ -120,7 +120,13 @@ public abstract class CandyBarApplication extends MultiDexApplication {
             String generate(List<Request> requests);
         }
 
+        public interface IconRequestHandler {
+            String submit(List<Request> requests, boolean isPremium);
+        }
+
         private EmailBodyGenerator mEmailBodyGenerator;
+
+        private IconRequestHandler iconRequestHandler;
 
         private NavigationIcon mNavigationIcon = NavigationIcon.STYLE_1;
         private NavigationViewHeader mNavigationViewHeader = NavigationViewHeader.NORMAL;
@@ -157,6 +163,11 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
         public Configuration setEmailBodyGenerator(EmailBodyGenerator emailBodyGenerator) {
             mEmailBodyGenerator = emailBodyGenerator;
+            return this;
+        }
+
+        public Configuration setIconRequestHandler(@NonNull IconRequestHandler iconRequestHandler) {
+            this.iconRequestHandler = iconRequestHandler;
             return this;
         }
 
@@ -304,6 +315,8 @@ public abstract class CandyBarApplication extends MultiDexApplication {
         public EmailBodyGenerator getEmailBodyGenerator() {
             return mEmailBodyGenerator;
         }
+
+        public IconRequestHandler getIconRequestHandler() { return iconRequestHandler; }
 
         public List<DonationLink> getDonationLinks() {
             return mDonationLinks;
