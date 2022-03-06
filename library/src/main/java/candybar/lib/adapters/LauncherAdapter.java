@@ -17,9 +17,11 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions;
 
+import java.util.HashMap;
 import java.util.List;
 
 import candybar.lib.R;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.LauncherHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;

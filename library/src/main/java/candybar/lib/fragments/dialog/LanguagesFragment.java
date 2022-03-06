@@ -15,11 +15,13 @@ import androidx.fragment.app.FragmentTransaction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.LanguagesAdapter;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Language;
@@ -78,6 +80,16 @@ public class LanguagesFragment extends DialogFragment {
                 .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                 .title(R.string.pref_language_header)
                 .negativeText(R.string.close)
+                .onNegative(((_dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "settings");
+                                put("action", "cancel");
+                                put("item", "change_language");
+                            }}
+                    );
+                }))
                 .build();
         dialog.show();
 
@@ -106,6 +118,15 @@ public class LanguagesFragment extends DialogFragment {
     }
 
     public void setLanguage(@NonNull Locale locale) {
+        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                "click",
+                new HashMap<String, Object>() {{
+                    put("section", "settings");
+                    put("action", "confirm");
+                    put("item", "change_language");
+                    put("locale", locale.getDisplayName());
+                }}
+        );
         mLocale = locale;
         dismiss();
     }

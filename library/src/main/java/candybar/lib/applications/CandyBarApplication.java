@@ -12,8 +12,10 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarCrashReport;
@@ -124,9 +126,17 @@ public abstract class CandyBarApplication extends MultiDexApplication {
             String submit(List<Request> requests, boolean isPremium);
         }
 
+        public interface AnalyticsHandler {
+            void logEvent(String eventName, HashMap<String, Object> params);
+
+            void logException(Exception exception);
+        }
+
         private EmailBodyGenerator mEmailBodyGenerator;
 
         private IconRequestHandler iconRequestHandler;
+
+        private AnalyticsHandler analyticsHandler;
 
         private NavigationIcon mNavigationIcon = NavigationIcon.STYLE_1;
         private NavigationViewHeader mNavigationViewHeader = NavigationViewHeader.NORMAL;
@@ -168,6 +178,11 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
         public Configuration setIconRequestHandler(@NonNull IconRequestHandler iconRequestHandler) {
             this.iconRequestHandler = iconRequestHandler;
+            return this;
+        }
+
+        public Configuration setAnalyticsHandler(@NonNull AnalyticsHandler analyticsHandler) {
+            this.analyticsHandler = analyticsHandler;
             return this;
         }
 
@@ -317,6 +332,29 @@ public abstract class CandyBarApplication extends MultiDexApplication {
         }
 
         public IconRequestHandler getIconRequestHandler() { return iconRequestHandler; }
+
+        public AnalyticsHandler getAnalyticsHandler() {
+            if (analyticsHandler == null) {
+                analyticsHandler = new AnalyticsHandler() {
+                    @Override
+                    public void logEvent(String eventName, HashMap<String, Object> params) {
+                        StringBuilder sb = new StringBuilder();
+                        for (Map.Entry<String, Object> entry : params.entrySet()) {
+                            sb.append(" ");
+                            sb.append(entry.getKey());
+                            sb.append("=");
+                            sb.append(entry.getValue());
+                        }
+                        LogUtil.d("ANALYTICS EVENT: ".concat(eventName).concat(sb.toString()));
+                    }
+                    @Override
+                    public void logException(Exception exception) {
+                        LogUtil.e(exception.getStackTrace().toString());
+                    }
+                };
+            }
+            return analyticsHandler;
+        }
 
         public List<DonationLink> getDonationLinks() {
             return mDonationLinks;

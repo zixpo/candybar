@@ -14,8 +14,10 @@ import com.android.billingclient.api.QueryPurchasesParams;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
 import java.util.List;
 
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.listeners.InAppBillingListener;
@@ -95,6 +97,16 @@ public class InAppBillingClient implements PurchasesUpdatedListener, BillingClie
                 try {
                     ((InAppBillingListener) mInAppBilling.get().mContext)
                             .onProcessPurchase(purchases.get(0));
+                    for (Purchase purchase : purchases) {
+                        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                "purchase",
+                                new HashMap<String, Object>() {{
+                                    put("order_id", purchase.getOrderId());
+                                    put("order_timestamp", purchase.getPurchaseTime());
+                                    put("order_status", purchase.getPurchaseState());
+                                }}
+                        );
+                    }
                 } catch (Exception ignored) {
                 }
             }

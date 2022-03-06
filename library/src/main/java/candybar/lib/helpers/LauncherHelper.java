@@ -14,7 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import java.util.HashMap;
+
 import candybar.lib.R;
+import candybar.lib.applications.CandyBarApplication;
 
 /*
  * CandyBar - Material Dashboard
@@ -146,6 +149,14 @@ public class LauncherHelper {
     }
 
     public static void apply(@NonNull Context context, String packageName, String launcherName) {
+        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                "click",
+                new HashMap<String, Object>() {{
+                    put("section", "apply");
+                    put("action", "open_dialog");
+                    put("launcher", packageName);
+                }}
+        );
         applyLauncher(context, packageName, launcherName, getLauncher(packageName));
     }
 
@@ -167,6 +178,14 @@ public class LauncherHelper {
                     context.sendBroadcast(abc1);
                     context.startActivity(abc);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -179,6 +198,14 @@ public class LauncherHelper {
                     action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(action);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -190,6 +217,14 @@ public class LauncherHelper {
                     adw.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(adw);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -201,6 +236,14 @@ public class LauncherHelper {
                     apex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(apex);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -212,6 +255,14 @@ public class LauncherHelper {
                     atom.putExtra("packageName", context.getPackageName());
                     context.startActivity(atom);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -223,6 +274,14 @@ public class LauncherHelper {
                     aviate.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(aviate);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -237,6 +296,14 @@ public class LauncherHelper {
                             "org.cyanogenmod.theme.chooser.ChooserActivity"));
                     cmtheme.putExtra("pkgName", context.getPackageName());
                     context.startActivity(cmtheme);
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     Toast.makeText(context, R.string.apply_cmtheme_not_available,
                             Toast.LENGTH_LONG).show();
@@ -258,6 +325,14 @@ public class LauncherHelper {
                     context.sendBroadcast(flickAction);
                     context.startActivity(flick);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -273,6 +348,14 @@ public class LauncherHelper {
                     context.sendBroadcast(go);
                     context.startActivity(goex);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -292,6 +375,14 @@ public class LauncherHelper {
                     kiss.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(kiss);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -302,6 +393,14 @@ public class LauncherHelper {
                     lawnchair.putExtra("packageName", context.getPackageName());
                     context.startActivity(lawnchair);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -320,6 +419,14 @@ public class LauncherHelper {
                     lucid.putExtra("icontheme", context.getPackageName());
                     context.startActivity(lucid);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -336,6 +443,14 @@ public class LauncherHelper {
                     final Intent niagara = new Intent("bitpit.launcher.APPLY_ICONS");
                     niagara.putExtra("packageName", context.getPackageName());
                     context.startActivity(niagara);
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -353,6 +468,14 @@ public class LauncherHelper {
                     context.sendBroadcast(next2);
                     context.startActivity(next);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -366,6 +489,14 @@ public class LauncherHelper {
                     nova.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(nova);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -384,6 +515,14 @@ public class LauncherHelper {
                     posidon.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(posidon);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -395,6 +534,14 @@ public class LauncherHelper {
                     smart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(smart);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -411,6 +558,14 @@ public class LauncherHelper {
                     context.sendBroadcast(soloAction);
                     context.startActivity(solo);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -421,6 +576,14 @@ public class LauncherHelper {
                     square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
                     square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
                     context.startActivity(square);
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -432,6 +595,14 @@ public class LauncherHelper {
                     neo.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(neo);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -450,6 +621,14 @@ public class LauncherHelper {
                     nougat.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(nougat);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -468,6 +647,14 @@ public class LauncherHelper {
                     m.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(m);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -481,6 +668,14 @@ public class LauncherHelper {
                     asus.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(asus);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -502,6 +697,14 @@ public class LauncherHelper {
                     context.sendBroadcast(zero1);
                     context.startActivity(zero);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -523,6 +726,14 @@ public class LauncherHelper {
                     context.sendBroadcast(v1);
                     context.startActivity(v);
                     ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
@@ -541,6 +752,14 @@ public class LauncherHelper {
                             context.getResources().getString(R.string.app_name)))
                     .positiveText(android.R.string.ok)
                     .onPositive((dialog, which) -> {
+                        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                "click",
+                                new HashMap<String, Object>() {{
+                                    put("section", "apply");
+                                    put("action", "manual_open_confirm");
+                                    put("launcher", launcherPackage);
+                                }}
+                        );
                         if (activity == null) return;
                         try {
                             final Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -558,6 +777,16 @@ public class LauncherHelper {
                         }
                     })
                     .negativeText(android.R.string.cancel)
+                    .onNegative(((dialog, which) -> {
+                        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                "click",
+                                new HashMap<String, Object>() {{
+                                    put("section", "apply");
+                                    put("action", "manual_open_cancel");
+                                    put("launcher", launcherPackage);
+                                }}
+                        );
+                    }))
                     .show();
         } else {
             openGooglePlay(context, launcherPackage, launcherName);
@@ -592,11 +821,29 @@ public class LauncherHelper {
                         intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         context.startActivity(intent);
                         ((AppCompatActivity) context).finish();
+                        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                "click",
+                                new HashMap<String, Object>() {{
+                                    put("section", "apply");
+                                    put("action", "manual_open_confirm");
+                                    put("launcher", launcherPackage);
+                                }}
+                        );
                     } catch (ActivityNotFoundException | NullPointerException e) {
                         openGooglePlay(context, launcherPackage, launcherName);
                     }
                 })
                 .negativeText(android.R.string.cancel)
+                .onNegative(((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_cancel");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
+                }))
                 .show();
     }
 
@@ -607,6 +854,14 @@ public class LauncherHelper {
                 .content(R.string.apply_launcher_incompatible, launcherName, launcherName)
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "incompatible_third_party_open");
+                                put("launcher", launcherName);
+                            }}
+                    );
                     try {
                         Intent store = new Intent(Intent.ACTION_VIEW, Uri.parse(thirdPartyHelperURL));
                         context.startActivity(store);
@@ -616,6 +871,16 @@ public class LauncherHelper {
                     }
                 })
                 .negativeText(android.R.string.cancel)
+                .onNegative(((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "incompatible_third_party_cancel");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                }))
                 .show();
     }
 
@@ -635,6 +900,14 @@ public class LauncherHelper {
                 .content(R.string.apply_launcher_not_installed, launcherName)
                 .positiveText(context.getResources().getString(R.string.install))
                 .onPositive((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "not_installed_google_play_open");
+                                put("launcher", packageName);
+                            }}
+                    );
                     try {
                         Intent store = new Intent(Intent.ACTION_VIEW, Uri.parse(
                                 "https://play.google.com/store/apps/details?id=" + packageName));
@@ -645,6 +918,16 @@ public class LauncherHelper {
                     }
                 })
                 .negativeText(android.R.string.cancel)
+                .onNegative(((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "not_installed_google_play_cancel");
+                                put("launcher", packageName);
+                            }}
+                    );
+                }))
                 .show();
     }
 
