@@ -123,9 +123,9 @@
     <string name="request_not_requested">Não solicitado</string>
     <string name="request_already_requested">Já solicitado</string>
     <string name="request_building">Criando solicitação …</string>
-    <string name="request_arctic_sending">Enviando solicitação para Arctic Manager...</string>
-    <string name="request_arctic_error">Ocorreu um erro ao enviar a solicitação para o Arctic Manager. Erro é %s</string>
-    <string name="request_arctic_success">Pedido enviado com sucesso para Arctic Manager</string>
+    <string name="request_pacific_sending">Enviando solicitação para Pacific Manager...</string>
+    <string name="request_pacific_error">Ocorreu um erro ao enviar a solicitação para o Pacific Manager. Erro é %s</string>
+    <string name="request_pacific_success">Pedido enviado com sucesso para Pacific Manager</string>
     <string name="request_build_failed">Não foi possível criar a solicitação do ícone</string>
     <string name="request_appfilter_failed">Não foi possível ler appfilter.xml</string>
     <string name="request_requested">Por favor, verifique seu pedido novamente.

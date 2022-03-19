@@ -127,9 +127,9 @@
     <string name="request_not_requested">Nepožádáno</string>
     <string name="request_already_requested">Již požádáno</string>
     <string name="request_building">Připravuji požadavek…</string>
-    <string name="request_arctic_sending">Odesílání požadavku do Artic Manager...</string>
-    <string name="request_arctic_error">Při odesílání požadavku do Artic Manager došlo k chybě. Chyba je %s</string>
-    <string name="request_arctic_success">Požadavek byl úspěšně odeslán do Arctic Manager</string>
+    <string name="request_pacific_sending">Odesílání požadavku do Pacific Manager...</string>
+    <string name="request_pacific_error">Při odesílání požadavku do Pacific Manager došlo k chybě. Chyba je %s</string>
+    <string name="request_pacific_success">Požadavek byl úspěšně odeslán do Pacific Manager</string>
     <string name="request_fetching_data">Načítání nejnovějších dat…</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>

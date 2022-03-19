@@ -383,18 +383,18 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private class RequestLoader extends AsyncTaskBase {
 
         private MaterialDialog dialog;
-        private boolean isArctic;
-        private String arcticApiKey;
+        private boolean isPacific;
+        private String pacificApiKey;
         private String errorMessage;
 
         @Override
         protected void preRun() {
             if (Preferences.get(requireActivity()).isPremiumRequest()) {
-                isArctic = RequestHelper.isPremiumArcticEnabled(requireActivity());
-                arcticApiKey = RequestHelper.getPremiumArcticApiKey(requireActivity());
+                isPacific = RequestHelper.isPremiumPacificEnabled(requireActivity());
+                pacificApiKey = RequestHelper.getPremiumPacificApiKey(requireActivity());
             } else {
-                isArctic = RequestHelper.isRegularArcticEnabled(requireActivity());
-                arcticApiKey = RequestHelper.getRegularArcticApiKey(requireActivity());
+                isPacific = RequestHelper.isRegularPacificEnabled(requireActivity());
+                pacificApiKey = RequestHelper.getRegularPacificApiKey(requireActivity());
             }
 
             dialog = new MaterialDialog.Builder(requireActivity())
@@ -424,12 +424,12 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     for (Request request : requests) {
                         Drawable drawable = getReqIcon(requireActivity(), request.getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
-                                isArctic ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
+                                isPacific ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
                     }
 
-                    if (isArctic) {
-                        errorMessage = RequestHelper.sendArcticRequest(requests, files, directory, arcticApiKey);
+                    if (isPacific) {
+                        errorMessage = RequestHelper.sendPacificRequest(requests, files, directory, pacificApiKey);
                         return errorMessage == null;
                     } else {
                         boolean nonMailingAppSend = getResources().getBoolean(R.bool.enable_non_mail_app_request);
@@ -510,8 +510,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             dialog = null;
 
             if (ok) {
-                if (isArctic) {
-                    Toast.makeText(getActivity(), R.string.request_arctic_success, Toast.LENGTH_LONG).show();
+                if (isPacific) {
+                    Toast.makeText(getActivity(), R.string.request_pacific_success, Toast.LENGTH_LONG).show();
                     ((RequestListener) getActivity()).onRequestBuilt(null, IntentChooserFragment.ICON_REQUEST);
                 } else {
                     IntentChooserFragment.showIntentChooserDialog(getActivity().getSupportFragmentManager(),
@@ -520,10 +520,10 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 mAdapter.resetSelectedItems();
                 if (mMenuItem != null) mMenuItem.setIcon(R.drawable.ic_toolbar_select_all);
             } else {
-                if (isArctic) {
+                if (isPacific) {
                     new MaterialDialog.Builder(getActivity())
                             .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
-                            .content(R.string.request_arctic_error, "\"" + errorMessage + "\"")
+                            .content(R.string.request_pacific_error, "\"" + errorMessage + "\"")
                             .cancelable(true)
                             .canceledOnTouchOutside(false)
                             .positiveText(R.string.close)

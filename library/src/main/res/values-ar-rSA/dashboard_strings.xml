@@ -125,9 +125,9 @@
     <string name="request_not_requested">لم يتم طلبه</string>
     <string name="request_already_requested">تم طلبه بالفعل</string>
     <string name="request_building">جار بناء الطلب ...</string>
-    <string name="request_arctic_sending">جار إرسال الطلب إلى Arctic Manager...</string>
-    <string name="request_arctic_error">حدث خطأ أثناء إرسال الطلب إلى Arctic Manager. الخطأ هو %s</string>
-    <string name="request_arctic_success">تم إرسال الطلب بنجاح إلى Arctic Manager</string>
+    <string name="request_pacific_sending">جار إرسال الطلب إلى Pacific Manager...</string>
+    <string name="request_pacific_error">حدث خطأ أثناء إرسال الطلب إلى Pacific Manager. الخطأ هو %s</string>
+    <string name="request_pacific_success">تم إرسال الطلب بنجاح إلى Pacific Manager</string>
     <string name="request_fetching_data">جار جلب أحدث البيانات …</string>
     <string name="request_build_failed">تعذر بناء طلب الأيقونات</string>
     <string name="request_appfilter_failed">تعذر قراءة appfilter.xml</string>

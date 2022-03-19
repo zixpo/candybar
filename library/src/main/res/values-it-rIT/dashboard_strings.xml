@@ -124,9 +124,9 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_not_requested">Non richiesta</string>
     <string name="request_already_requested">Richiesta già effettuata</string>
     <string name="request_building">Caricamento richiesta …</string>
-    <string name="request_arctic_sending">Invio della richiesta a Arctic Manager...</string>
-    <string name="request_arctic_error">Si è verificato un errore durante l\'invio della richiesta a Arctic Manager. L\'errore è %s</string>
-    <string name="request_arctic_success">Richiesta inviata con successo a Arctic Manager</string>
+    <string name="request_pacific_sending">Invio della richiesta a Pacific Manager...</string>
+    <string name="request_pacific_error">Si è verificato un errore durante l\'invio della richiesta a Pacific Manager. L\'errore è %s</string>
+    <string name="request_pacific_success">Richiesta inviata con successo a Pacific Manager</string>
     <string name="request_fetching_data">Recupero dati più recenti…</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>

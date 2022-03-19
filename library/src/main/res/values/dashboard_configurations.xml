@@ -185,9 +185,9 @@
         If you want to hide the information then you should enable this -->
     <bool name="hide_missing_app_count">false</bool>
 
-    <!-- Method to use for icon request. Value can be "email" or "arctic".
+    <!-- Method to use for icon request. Value can be "email" or "pacific".
         `email` -> Sends icon requests using email
-        `arctic` -> Sends icon requests using Arctic Manager
+        `pacific` -> Sends icon requests using Pacific Manager
 
         You can leave "premium_request_method" empty to use the regular request's method to send premium icon requests. -->
     <string name="regular_request_method"></string>
@@ -203,10 +203,10 @@
     <string name="regular_request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
 
-    <!-- API keys for Arctic Manager.
-        You can leave "premium_request_arctic_api_key" empty to use the regular request's arctic api key to send premium icon requests. -->
-    <string name="regular_request_arctic_api_key"></string>
-    <string name="premium_request_arctic_api_key"></string>
+    <!-- API keys for Pacific Manager.
+        You can leave "premium_request_pacific_api_key" empty to use the regular request's pacific api key to send premium icon requests. -->
+    <string name="regular_request_pacific_api_key"></string>
+    <string name="premium_request_pacific_api_key"></string>
 
 
     <!--

@@ -128,9 +128,9 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <string name="request_not_requested">Non demandée</string>
     <string name="request_already_requested">Déjà demandée</string>
     <string name="request_building">Construction de la demande …</string>
-    <string name="request_arctic_sending">Envoi de la demande à Artic Manager...</string>
-    <string name="request_arctic_error">Échec de l\'envoi de la demande à Artic Manager. L\'erreur est %s</string>
-    <string name="request_arctic_success">Demande envoyée avec succès à Artic Manager</string>
+    <string name="request_pacific_sending">Envoi de la demande à Artic Manager...</string>
+    <string name="request_pacific_error">Échec de l\'envoi de la demande à Artic Manager. L\'erreur est %s</string>
+    <string name="request_pacific_success">Demande envoyée avec succès à Artic Manager</string>
     <string name="request_fetching_data">Récupération des dernières données...</string>
     <string name="request_build_failed">Impossible de construire la demande d\'icône(s)</string>
     <string name="request_appfilter_failed">Impossible de lire le fichier appfilter.xml</string>
