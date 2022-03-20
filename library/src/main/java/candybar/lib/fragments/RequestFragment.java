@@ -57,6 +57,7 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.RequestAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.databases.Database;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.RequestHelper;
@@ -440,9 +441,19 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
                     if (isArctic) {
                         errorMessage = RequestHelper.sendArcticRequest(requests, files, directory, arcticApiKey);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                            }
+                        }
                         return errorMessage == null;
                     } else if (isCustom) {
                         errorMessage = RequestHelper.sendCustomRequest(requests, isPremium);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                            }
+                        }
                         return errorMessage == null;
                     } else {
                         boolean nonMailingAppSend = getResources().getBoolean(R.bool.enable_non_mail_app_request);

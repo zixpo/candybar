@@ -258,9 +258,21 @@ public class SettingsFragment extends Fragment {
 
                     if (isArctic) {
                         errorMessage = RequestHelper.sendArcticRequest(requests, files, directory, arcticApiKey);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                                Database.get(requireActivity()).addPremiumRequest(null, request);
+                            }
+                        }
                         return errorMessage == null;
                     } else if (isCustom) {
                         errorMessage = RequestHelper.sendCustomRequest(requests, isPremium);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                                Database.get(requireActivity()).addPremiumRequest(null, request);
+                            }
+                        }
                         return errorMessage == null;
                     } else {
                         File appFilter = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.APPFILTER);
