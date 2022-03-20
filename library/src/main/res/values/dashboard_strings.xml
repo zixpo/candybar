@@ -318,4 +318,12 @@
 
     <string name="txt_new">New</string>
 
+    <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Add this icon to the bookmarks section</string>
+    <string name="icon_search_close_button_content_description">Close the icon search</string>
+    <string name="icon_request_submit_button_content_description">Submit an icon request</string>
+    <string name="icon_list_content_description">The list of icons included in the icon pack</string>
+    <string name="icon_search_list_content_description">The list of icons that match the search term</string>
+    <string name="about_item_social_content_description">A link to an online profile of the author of the icon pack: </string>
+    <string name="share_icon_pack_button_content_description">Share this app with someone</string>
 </resources>

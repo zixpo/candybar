@@ -16,6 +16,7 @@
 
         <ImageView
             android:id="@+id/bookmark_button"
+            android:contentDescription="@string/bookmark_button_content_description"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"

@@ -88,6 +88,7 @@
 
             <ImageView
                 android:id="@+id/share"
+                android:contentDescription="@string/share_icon_pack_button_content_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/button_margin_merged"
