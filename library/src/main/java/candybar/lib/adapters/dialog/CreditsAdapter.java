@@ -28,6 +28,7 @@ import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.items.Credit;
+import candybar.lib.utils.CandyBarGlideModule;
 
 /*
  * CandyBar - Material Dashboard
@@ -108,16 +109,18 @@ public class CreditsAdapter extends BaseAdapter {
             holder.subtitle.setVisibility(View.VISIBLE);
         }
 
-        Glide.with(mContext)
-                .load(credit.getImage())
-                .override(144)
-                .optionalCenterInside()
-                .circleCrop()
-                .placeholder(mPlaceholder)
-                .transition(DrawableTransitionOptions.withCrossFade(300))
-                .skipMemoryCache(true)
-                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                .into(holder.image);
+        if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+            Glide.with(mContext)
+                    .load(credit.getImage())
+                    .override(144)
+                    .optionalCenterInside()
+                    .circleCrop()
+                    .placeholder(mPlaceholder)
+                    .transition(DrawableTransitionOptions.withCrossFade(300))
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                    .into(holder.image);
+        }
 
         return view;
     }

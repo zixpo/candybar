@@ -35,6 +35,7 @@ import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.listeners.RequestListener;
 
 /*
@@ -182,12 +183,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             int finalPosition = mShowPremiumRequest ? position - 1 : position;
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
 
-            Glide.with(mContext)
-                    .load("package://" + mRequests.get(finalPosition).getActivity())
-                    .override(272)
-                    .transition(DrawableTransitionOptions.withCrossFade(300))
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(contentViewHolder.icon);
+            if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+                Glide.with(mContext)
+                        .load("package://" + mRequests.get(finalPosition).getActivity())
+                        .override(272)
+                        .transition(DrawableTransitionOptions.withCrossFade(300))
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .into(contentViewHolder.icon);
+            }
 
             contentViewHolder.title.setText(mRequests.get(finalPosition).getName());
 

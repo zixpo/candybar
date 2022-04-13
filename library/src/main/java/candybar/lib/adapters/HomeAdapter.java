@@ -72,6 +72,7 @@ import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
+import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.views.HeaderView;
 import me.grantland.widget.AutofitTextView;
 
@@ -221,14 +222,16 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     uri = "drawable://" + DrawableHelper.getResourceId(mContext, uri);
                 }
 
-                Glide.with(mContext)
-                        .load(uri)
-                        .transition(DrawableTransitionOptions.withCrossFade(300))
-                        .skipMemoryCache(true)
-                        .diskCacheStrategy(uri.contains("drawable://")
-                                ? DiskCacheStrategy.NONE
-                                : DiskCacheStrategy.RESOURCE)
-                        .into(headerViewHolder.image);
+                if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+                    Glide.with(mContext)
+                            .load(uri)
+                            .transition(DrawableTransitionOptions.withCrossFade(300))
+                            .skipMemoryCache(true)
+                            .diskCacheStrategy(uri.contains("drawable://")
+                                    ? DiskCacheStrategy.NONE
+                                    : DiskCacheStrategy.RESOURCE)
+                            .into(headerViewHolder.image);
+                }
             }
         } else if (holder.getItemViewType() == TYPE_CONTENT) {
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
@@ -237,32 +240,34 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
             if (mHomes.get(finalPosition).getIcon() != -1) {
                 if (mHomes.get(finalPosition).getType() == Home.Type.DIMENSION) {
-                    Glide.with(mContext)
-                            .asBitmap()
-                            .load("drawable://" + mHomes.get(finalPosition).getIcon())
-                            .skipMemoryCache(true)
-                            .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .listener(new RequestListener<Bitmap>() {
-                                @Override
-                                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
-                                    return true;
-                                }
+                    if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+                        Glide.with(mContext)
+                                .asBitmap()
+                                .load("drawable://" + mHomes.get(finalPosition).getIcon())
+                                .skipMemoryCache(true)
+                                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                                .listener(new RequestListener<Bitmap>() {
+                                    @Override
+                                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+                                        return true;
+                                    }
 
-                                @Override
-                                public boolean onResourceReady(Bitmap bitmap, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
-                                    new Handler(Looper.getMainLooper()).post(() -> {
-                                        // Using RoundedBitmapDrawable because BitmapDrawable is deprecated
-                                        RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(
-                                                mContext.getResources(), bitmap);
-                                        drawable.setCornerRadius(0);
-                                        contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(
-                                                DrawableHelper.getResizedDrawable(mContext, drawable, 40),
-                                                null, null, null);
-                                    });
-                                    return true;
-                                }
-                            })
-                            .submit();
+                                    @Override
+                                    public boolean onResourceReady(Bitmap bitmap, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
+                                        new Handler(Looper.getMainLooper()).post(() -> {
+                                            // Using RoundedBitmapDrawable because BitmapDrawable is deprecated
+                                            RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(
+                                                    mContext.getResources(), bitmap);
+                                            drawable.setCornerRadius(0);
+                                            contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(
+                                                    DrawableHelper.getResizedDrawable(mContext, drawable, 40),
+                                                    null, null, null);
+                                        });
+                                        return true;
+                                    }
+                                })
+                                .submit();
+                    }
                 } else {
                     contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
                             mContext, mHomes.get(finalPosition).getIcon(), color), null, null, null);

@@ -39,6 +39,7 @@ import candybar.lib.items.PopupItem;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.tasks.WallpaperApplyTask;
+import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.ImageConfig;
 import candybar.lib.utils.Popup;
@@ -101,25 +102,27 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
             holder.author.setText(wallpaper.getAuthor());
         }
 
-        Glide.with(mContext)
-                .asBitmap()
-                .load(wallpaper.getThumbUrl())
-                .override(ImageConfig.getThumbnailSize())
-                .transition(BitmapTransitionOptions.withCrossFade(300))
-                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                .listener(new RequestListener<Bitmap>() {
-                    @Override
-                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
-                        return false;
-                    }
+        if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+            Glide.with(mContext)
+                    .asBitmap()
+                    .load(wallpaper.getThumbUrl())
+                    .override(ImageConfig.getThumbnailSize())
+                    .transition(BitmapTransitionOptions.withCrossFade(300))
+                    .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                    .listener(new RequestListener<Bitmap>() {
+                        @Override
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+                            return false;
+                        }
 
-                    @Override
-                    public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
-                        holder.thumbnailBitmap = resource;
-                        return false;
-                    }
-                })
-                .into(holder.image);
+                        @Override
+                        public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
+                            holder.thumbnailBitmap = resource;
+                            return false;
+                        }
+                    })
+                    .into(holder.image);
+        }
     }
 
     public void search(String string) {
