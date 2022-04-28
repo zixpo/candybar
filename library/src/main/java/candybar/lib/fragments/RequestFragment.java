@@ -577,14 +577,19 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         stringBuilder.append(line);
                     }
 
+                    PackageInfo packageInfo = requireActivity().getPackageManager()
+                            .getPackageInfo(requireActivity().getPackageName(), 0);
                     JSONObject configJson = new JSONObject(stringBuilder.toString());
-                    updateUrl = configJson.getString("url");
+                    if (configJson.isNull("url")) {
+                        // Default to Play Store
+                        updateUrl = "https://play.google.com/store/apps/details?id=" + packageInfo.packageName;
+                    } else {
+                        updateUrl = configJson.getString("url");
+                    }
 
                     JSONObject disableRequestObj = configJson.getJSONObject("disableRequest");
                     long disableRequestBelow = disableRequestObj.optLong("below", 0);
                     String disableRequestOn = disableRequestObj.optString("on", "");
-                    PackageInfo packageInfo = requireActivity().getPackageManager()
-                            .getPackageInfo(requireActivity().getPackageName(), 0);
                     long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
                             ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
 

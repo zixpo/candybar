@@ -510,9 +510,14 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                     JSONObject configJson = new JSONObject(stringBuilder.toString());
                     latestVersion = configJson.getString("latestVersion");
-                    updateUrl = configJson.getString("url");
 
                     PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
+                    if (configJson.isNull("url")) {
+                        // Default to Play Store
+                        updateUrl = "https://play.google.com/store/apps/details?id=" + packageInfo.packageName;
+                    } else {
+                        updateUrl = configJson.getString("url");
+                    }
                     long latestVersionCode = configJson.getLong("latestVersionCode");
                     long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
 
