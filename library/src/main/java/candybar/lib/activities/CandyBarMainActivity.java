@@ -97,6 +97,7 @@ import candybar.lib.preferences.Preferences;
 import candybar.lib.services.CandyBarService;
 import candybar.lib.tasks.IconRequestTask;
 import candybar.lib.tasks.IconsLoaderTask;
+import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.InAppBillingClient;
 import candybar.lib.utils.listeners.InAppBillingListener;
@@ -793,14 +794,17 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             imageUrl = "drawable://" + DrawableHelper.getResourceId(this, imageUrl);
         }
 
-        Glide.with(this)
-                .load(imageUrl)
-                .override(720)
-                .optionalCenterInside()
-                .diskCacheStrategy(imageUrl.contains("drawable://")
-                        ? DiskCacheStrategy.NONE
-                        : DiskCacheStrategy.RESOURCE)
-                .into(image);
+        final Context context = this;
+        if (CandyBarGlideModule.isValidContextForGlide(context)) {
+            Glide.with(context)
+                    .load(imageUrl)
+                    .override(720)
+                    .optionalCenterInside()
+                    .diskCacheStrategy(imageUrl.contains("drawable://")
+                            ? DiskCacheStrategy.NONE
+                            : DiskCacheStrategy.RESOURCE)
+                    .into(image);
+        }
     }
 
     private void checkWallpapers() {

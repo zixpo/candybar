@@ -23,6 +23,7 @@ import candybar.lib.R;
 import candybar.lib.helpers.LauncherHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.CandyBarGlideModule;
 
 /*
  * CandyBar - Material Dashboard
@@ -83,13 +84,15 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ViewHolder contentViewHolder = ((ViewHolder) holder);
             contentViewHolder.name.setText(mLaunchers.get(position).getTitle());
 
-            Glide.with(mContext)
-                    .asBitmap()
-                    .load("drawable://" + mLaunchers.get(position).getRes())
-                    .transition(BitmapTransitionOptions.withCrossFade(300))
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(contentViewHolder.icon);
+            if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+                Glide.with(mContext)
+                        .asBitmap()
+                        .load("drawable://" + mLaunchers.get(position).getRes())
+                        .transition(BitmapTransitionOptions.withCrossFade(300))
+                        .skipMemoryCache(true)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .into(contentViewHolder.icon);
+            }
         }
     }
 

@@ -25,6 +25,7 @@ import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.utils.CandyBarGlideModule;
 
 /*
  * CandyBar - Material Dashboard
@@ -86,14 +87,16 @@ public class OtherAppsAdapter extends BaseAdapter {
             uri = "drawable://" + DrawableHelper.getResourceId(mContext, uri);
         }
 
-        Glide.with(mContext)
-                .load(uri)
-                .transition(DrawableTransitionOptions.withCrossFade(300))
-                .skipMemoryCache(true)
-                .diskCacheStrategy(uri.contains("drawable://")
-                        ? DiskCacheStrategy.NONE
-                        : DiskCacheStrategy.RESOURCE)
-                .into(holder.image);
+        if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+            Glide.with(mContext)
+                    .load(uri)
+                    .transition(DrawableTransitionOptions.withCrossFade(300))
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(uri.contains("drawable://")
+                            ? DiskCacheStrategy.NONE
+                            : DiskCacheStrategy.RESOURCE)
+                    .into(holder.image);
+        }
 
         holder.title.setText(otherApp.getTitle());
 
