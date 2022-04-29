@@ -1,6 +1,7 @@
 package candybar.lib.fragments;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
 
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -210,6 +211,8 @@ public class SettingsFragment extends Fragment {
         private MaterialDialog dialog;
         private boolean isPacific;
         private String pacificApiKey;
+        private boolean isCustom;
+        private boolean isPremium;
         private List<Request> requests;
         private String errorMessage = "";
 
@@ -217,6 +220,8 @@ public class SettingsFragment extends Fragment {
         protected void preRun() {
             isPacific = RequestHelper.isPremiumPacificEnabled(requireActivity());
             pacificApiKey = RequestHelper.getPremiumPacificApiKey(requireActivity());
+            isCustom = RequestHelper.isPremiumCustomEnabled(requireActivity());
+            isPremium = true;
 
             dialog = new MaterialDialog.Builder(requireActivity())
                     .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
@@ -246,10 +251,28 @@ public class SettingsFragment extends Fragment {
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
                                 isPacific ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
+                        if (isCustom) {
+                            request.setIconBase64(getReqIconBase64(drawable));
+                        }
                     }
 
                     if (isPacific) {
                         errorMessage = RequestHelper.sendPacificRequest(requests, files, directory, pacificApiKey);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                                Database.get(requireActivity()).addPremiumRequest(null, request);
+                            }
+                        }
+                        return errorMessage == null;
+                    } else if (isCustom) {
+                        errorMessage = RequestHelper.sendCustomRequest(requests, isPremium);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                                Database.get(requireActivity()).addPremiumRequest(null, request);
+                            }
+                        }
                         return errorMessage == null;
                     } else {
                         File appFilter = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.APPFILTER);
@@ -296,8 +319,9 @@ public class SettingsFragment extends Fragment {
                     return;
                 }
 
-                if (isPacific) {
-                    Toast.makeText(getActivity(), R.string.request_pacific_success, Toast.LENGTH_LONG).show();
+                if (isPacific || isCustom) {
+                    int toastText = isPacific ? R.string.request_pacific_success : R.string.request_custom_success;
+                    Toast.makeText(getActivity(), toastText, Toast.LENGTH_LONG).show();
                     ((RequestListener) getActivity()).onRequestBuilt(null, IntentChooserFragment.REBUILD_ICON_REQUEST);
                 } else {
                     IntentChooserFragment.showIntentChooserDialog(

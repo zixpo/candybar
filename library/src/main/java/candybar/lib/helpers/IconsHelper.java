@@ -34,6 +34,7 @@ import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
+import candybar.lib.utils.CandyBarGlideModule;
 
 import static candybar.lib.helpers.DrawableHelper.getRightIcon;
 import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
@@ -169,7 +170,7 @@ public class IconsHelper {
     }
 
     public static void selectIcon(@NonNull Context context, int action, Icon icon) {
-        if (action == IntentHelper.ICON_PICKER) {
+        if (action == IntentHelper.ICON_PICKER && CandyBarGlideModule.isValidContextForGlide(context)) {
             Glide.with(context)
                     .asBitmap()
                     .load("drawable://" + icon.getRes())
@@ -197,7 +198,7 @@ public class IconsHelper {
                         }
                     })
                     .submit();
-        } else if (action == IntentHelper.IMAGE_PICKER) {
+        } else if (action == IntentHelper.IMAGE_PICKER && CandyBarGlideModule.isValidContextForGlide(context)) {
 
             Glide.with(context)
                     .asBitmap()

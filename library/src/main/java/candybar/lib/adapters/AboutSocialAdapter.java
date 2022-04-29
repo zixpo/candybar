@@ -65,6 +65,7 @@ public class AboutSocialAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         SocialViewHolder socialViewHolder = (SocialViewHolder) holder;
         UrlHelper.Type type = UrlHelper.getType(mUrls[position]);
         Drawable drawable = UrlHelper.getSocialIcon(mContext, type);
+        socialViewHolder.itemView.setContentDescription(R.string.about_item_social_content_description + type.toString());
 
         if (drawable != null && type != UrlHelper.Type.INVALID) {
             socialViewHolder.image.setImageDrawable(drawable);

@@ -130,6 +130,8 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_pacific_sending">Sende Request an Pacific Manager...</string>
     <string name="request_pacific_error">Fehler beim Senden des Requests an Pacific Manager. Die Fehlermeldung ist %s</string>
     <string name="request_pacific_success">Request erfolgreich an Pacific Manager gesendet</string>
+    <string name="request_custom_error">Fehler beim Senden des Icon Requests. Falls der Fehler wiederholt auftritt, wende dich an den Entwickler. %s</string>
+    <string name="request_custom_success">Icon Request erfolgreich gesendet</string>
     <string name="request_fetching_data">Rufe neueste Daten ab…</string>
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>

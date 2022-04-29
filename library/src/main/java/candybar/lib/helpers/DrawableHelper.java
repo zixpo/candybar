@@ -12,6 +12,7 @@ import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -21,6 +22,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import java.io.ByteArrayOutputStream;
 
 import candybar.lib.R;
 import sarsamurmu.adaptiveicon.AdaptiveIcon;
@@ -110,5 +113,13 @@ public class DrawableHelper {
         }
         return null;
     }
-}
 
+    public static String getReqIconBase64(@NonNull Drawable drawable) {
+        Bitmap appBitmap = getRightIcon(drawable);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        assert appBitmap != null;
+        appBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        String base64Icon = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
+        return base64Icon.trim();
+    }
+}

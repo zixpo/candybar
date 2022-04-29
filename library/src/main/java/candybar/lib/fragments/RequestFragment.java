@@ -57,6 +57,7 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.RequestAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.databases.Database;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.RequestHelper;
@@ -70,6 +71,7 @@ import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
@@ -385,14 +387,20 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         private MaterialDialog dialog;
         private boolean isPacific;
         private String pacificApiKey;
+        private boolean isCustom;
+        private boolean isPremium;
         private String errorMessage;
 
         @Override
         protected void preRun() {
             if (Preferences.get(requireActivity()).isPremiumRequest()) {
+                isPremium = true;
+                isCustom = RequestHelper.isPremiumCustomEnabled(requireActivity());
                 isPacific = RequestHelper.isPremiumPacificEnabled(requireActivity());
                 pacificApiKey = RequestHelper.getPremiumPacificApiKey(requireActivity());
             } else {
+                isPremium = false;
+                isCustom = RequestHelper.isRegularCustomEnabled(requireActivity());
                 isPacific = RequestHelper.isRegularPacificEnabled(requireActivity());
                 pacificApiKey = RequestHelper.getRegularPacificApiKey(requireActivity());
             }
@@ -426,10 +434,26 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
                                 isPacific ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
+                        if (isCustom) {
+                            request.setIconBase64(getReqIconBase64(drawable));
+                        }
                     }
 
-                    if (isPacific) {
+                    if (isArctic) {
                         errorMessage = RequestHelper.sendPacificRequest(requests, files, directory, pacificApiKey);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                            }
+                        }
+                        return errorMessage == null;
+                    } else if (isCustom) {
+                        errorMessage = RequestHelper.sendCustomRequest(requests, isPremium);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                            }
+                        }
                         return errorMessage == null;
                     } else {
                         boolean nonMailingAppSend = getResources().getBoolean(R.bool.enable_non_mail_app_request);
@@ -510,8 +534,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             dialog = null;
 
             if (ok) {
-                if (isPacific) {
-                    Toast.makeText(getActivity(), R.string.request_pacific_success, Toast.LENGTH_LONG).show();
+                if (isPacific || isCustom) {
+                    int toastText = isPacific ? R.string.request_pacific_success : R.string.request_custom_success;
+                    Toast.makeText(getActivity(), toastText, Toast.LENGTH_LONG).show();
                     ((RequestListener) getActivity()).onRequestBuilt(null, IntentChooserFragment.ICON_REQUEST);
                 } else {
                     IntentChooserFragment.showIntentChooserDialog(getActivity().getSupportFragmentManager(),
@@ -520,10 +545,11 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 mAdapter.resetSelectedItems();
                 if (mMenuItem != null) mMenuItem.setIcon(R.drawable.ic_toolbar_select_all);
             } else {
-                if (isPacific) {
+                if (isPacific || isCustom) {
+                    int content = isPacific ? R.string.request_pacific_error : R.string.request_custom_error;
                     new MaterialDialog.Builder(getActivity())
                             .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
-                            .content(R.string.request_pacific_error, "\"" + errorMessage + "\"")
+                            .content(content, "\"" + errorMessage + "\"")
                             .cancelable(true)
                             .canceledOnTouchOutside(false)
                             .positiveText(R.string.close)
@@ -577,14 +603,19 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         stringBuilder.append(line);
                     }
 
+                    PackageInfo packageInfo = requireActivity().getPackageManager()
+                            .getPackageInfo(requireActivity().getPackageName(), 0);
                     JSONObject configJson = new JSONObject(stringBuilder.toString());
-                    updateUrl = configJson.getString("url");
+                    if (configJson.isNull("url")) {
+                        // Default to Play Store
+                        updateUrl = "https://play.google.com/store/apps/details?id=" + packageInfo.packageName;
+                    } else {
+                        updateUrl = configJson.getString("url");
+                    }
 
                     JSONObject disableRequestObj = configJson.getJSONObject("disableRequest");
                     long disableRequestBelow = disableRequestObj.optLong("below", 0);
                     String disableRequestOn = disableRequestObj.optString("on", "");
-                    PackageInfo packageInfo = requireActivity().getPackageManager()
-                            .getPackageInfo(requireActivity().getPackageName(), 0);
                     long appVersionCode = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
                             ? packageInfo.getLongVersionCode() : packageInfo.versionCode;
 

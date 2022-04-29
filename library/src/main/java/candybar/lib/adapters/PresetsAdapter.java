@@ -43,6 +43,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Preset;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.views.HeaderView;
 
 /*
@@ -107,13 +108,15 @@ public class PresetsAdapter extends RecyclerView.Adapter<PresetsAdapter.ViewHold
             PresetInfoLoader.create(new AssetPresetFile(preset.getPath()))
                     .load(mContext, info -> holder.name.setText(info.getTitle()));
 
-            Glide.with(mContext)
-                    .asBitmap()
-                    .load(new AssetPresetFile(preset.getPath()))
-                    .transition(BitmapTransitionOptions.withCrossFade(300))
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .into(holder.image);
+            if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+                Glide.with(mContext)
+                        .asBitmap()
+                        .load(new AssetPresetFile(preset.getPath()))
+                        .transition(BitmapTransitionOptions.withCrossFade(300))
+                        .skipMemoryCache(true)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .into(holder.image);
+            }
         }
     }
 

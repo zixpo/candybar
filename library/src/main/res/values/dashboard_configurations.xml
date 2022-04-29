@@ -188,6 +188,7 @@
     <!-- Method to use for icon request. Value can be "email" or "pacific".
         `email` -> Sends icon requests using email
         `pacific` -> Sends icon requests using Pacific Manager
+        `custom` -> Sends icon requests to a custom handler that needs to be configured separately
 
         You can leave "premium_request_method" empty to use the regular request's method to send premium icon requests. -->
     <string name="regular_request_method"></string>

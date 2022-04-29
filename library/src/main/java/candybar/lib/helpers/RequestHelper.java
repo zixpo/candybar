@@ -256,6 +256,38 @@ public class RequestHelper {
         return null;
     }
 
+    public static boolean isRegularCustomEnabled(Context context) {
+        return context.getResources().getString(R.string.regular_request_method).length() > 0
+                && context.getResources().getString(R.string.regular_request_method).contentEquals("custom");
+    }
+
+    public static boolean isPremiumCustomEnabled(Context context) {
+        return (context.getResources().getString(R.string.premium_request_method).length() > 0
+                && context.getResources().getString(R.string.premium_request_method).contentEquals("custom"))
+                ||
+                // Fallback to regular request's method
+                (context.getResources().getString(R.string.regular_request_method).length() > 0
+                && context.getResources().getString(R.string.regular_request_method).contentEquals("custom"));
+    }
+
+    public static String sendCustomRequest(List<Request> requests, boolean isPremium) {
+        String errorMessage;
+        CandyBarApplication.Configuration.IconRequestHandler iconRequestHandler = CandyBarApplication.getConfiguration().getIconRequestHandler();
+        if (iconRequestHandler != null) {
+            errorMessage = iconRequestHandler.submit(requests, isPremium);
+        } else {
+            errorMessage = "Custom icon request failed: No handler configured";
+            LogUtil.e(errorMessage);
+            return errorMessage;
+        }
+        if (errorMessage == "") {
+            return null;
+        } else {
+            LogUtil.e(errorMessage);
+            return errorMessage;
+        }
+    }
+
     public static File getZipFile(List<String> files, String filepath, String filename) {
         // Modified from https://github.com/danimahardhika/android-helpers/blob/master/core/src/main/java/com/danimahardhika/android/helpers/core/FileHelper.java
         try {
