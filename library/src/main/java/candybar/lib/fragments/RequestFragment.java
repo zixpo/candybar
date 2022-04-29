@@ -57,6 +57,7 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.RequestAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.databases.Database;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.RequestHelper;
@@ -70,6 +71,7 @@ import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
@@ -385,14 +387,20 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         private MaterialDialog dialog;
         private boolean isArctic;
         private String arcticApiKey;
+        private boolean isCustom;
+        private boolean isPremium;
         private String errorMessage;
 
         @Override
         protected void preRun() {
             if (Preferences.get(requireActivity()).isPremiumRequest()) {
+                isPremium = true;
+                isCustom = RequestHelper.isPremiumCustomEnabled(requireActivity());
                 isArctic = RequestHelper.isPremiumArcticEnabled(requireActivity());
                 arcticApiKey = RequestHelper.getPremiumArcticApiKey(requireActivity());
             } else {
+                isPremium = false;
+                isCustom = RequestHelper.isRegularCustomEnabled(requireActivity());
                 isArctic = RequestHelper.isRegularArcticEnabled(requireActivity());
                 arcticApiKey = RequestHelper.getRegularArcticApiKey(requireActivity());
             }
@@ -426,10 +434,26 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
                                 isArctic ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
+                        if (isCustom) {
+                            request.setIconBase64(getReqIconBase64(drawable));
+                        }
                     }
 
                     if (isArctic) {
                         errorMessage = RequestHelper.sendArcticRequest(requests, files, directory, arcticApiKey);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                            }
+                        }
+                        return errorMessage == null;
+                    } else if (isCustom) {
+                        errorMessage = RequestHelper.sendCustomRequest(requests, isPremium);
+                        if (errorMessage == null) {
+                            for (Request request : requests) {
+                                Database.get(requireActivity()).addRequest(null, request);
+                            }
+                        }
                         return errorMessage == null;
                     } else {
                         boolean nonMailingAppSend = getResources().getBoolean(R.bool.enable_non_mail_app_request);
@@ -510,8 +534,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             dialog = null;
 
             if (ok) {
-                if (isArctic) {
-                    Toast.makeText(getActivity(), R.string.request_arctic_success, Toast.LENGTH_LONG).show();
+                if (isArctic || isCustom) {
+                    int toastText = isArctic ? R.string.request_arctic_success : R.string.request_custom_success;
+                    Toast.makeText(getActivity(), toastText, Toast.LENGTH_LONG).show();
                     ((RequestListener) getActivity()).onRequestBuilt(null, IntentChooserFragment.ICON_REQUEST);
                 } else {
                     IntentChooserFragment.showIntentChooserDialog(getActivity().getSupportFragmentManager(),
@@ -520,10 +545,11 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 mAdapter.resetSelectedItems();
                 if (mMenuItem != null) mMenuItem.setIcon(R.drawable.ic_toolbar_select_all);
             } else {
-                if (isArctic) {
+                if (isArctic || isCustom) {
+                    int content = isArctic ? R.string.request_arctic_error : R.string.request_custom_error;
                     new MaterialDialog.Builder(getActivity())
                             .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
-                            .content(R.string.request_arctic_error, "\"" + errorMessage + "\"")
+                            .content(content, "\"" + errorMessage + "\"")
                             .cancelable(true)
                             .canceledOnTouchOutside(false)
                             .positiveText(R.string.close)

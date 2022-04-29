@@ -185,9 +185,10 @@
         If you want to hide the information then you should enable this -->
     <bool name="hide_missing_app_count">false</bool>
 
-    <!-- Method to use for icon request. Value can be "email" or "arctic".
+    <!-- Method to use for icon request. Value can be "email", "arctic" or "custom".
         `email` -> Sends icon requests using email
         `arctic` -> Sends icon requests using Arctic Manager
+        `custom` -> Sends icon requests to a custom handler that needs to be configured separately
 
         You can leave "premium_request_method" empty to use the regular request's method to send premium icon requests. -->
     <string name="regular_request_method"></string>

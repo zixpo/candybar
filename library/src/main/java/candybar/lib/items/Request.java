@@ -30,6 +30,7 @@ public class Request {
     private String mOrderId;
     private String mProductId;
     private String mRequestedOn;
+    private String mIconBase64;
     private boolean mRequested;
 
     private Request(String name, String activity) {
@@ -71,6 +72,8 @@ public class Request {
         return mRequestedOn;
     }
 
+    public String getIconBase64() { return mIconBase64; }
+
     public void setPackageName(String packageName) {
         mPackageName = packageName;
     }
@@ -90,6 +93,8 @@ public class Request {
     public void setRequested(boolean requested) {
         mRequested = requested;
     }
+
+    public void setIconBase64(String iconBase64) { mIconBase64 = iconBase64; }
 
     public static Builder Builder() {
         return new Builder();
