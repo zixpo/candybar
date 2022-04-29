@@ -355,6 +355,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         }
 
         String query = string.toLowerCase(Locale.getDefault()).trim();
+
         mIcons = new ArrayList<>();
         if (query.length() == 0) mIcons.addAll(mIconsAll);
         else {

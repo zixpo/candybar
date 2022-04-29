@@ -11,6 +11,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 
 import androidx.annotation.NonNull;
@@ -78,6 +79,15 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
         Drawable drawable = ContextCompat.getDrawable(mContext, drawableId);
 
         if (drawable instanceof BitmapDrawable) return ((BitmapDrawable) drawable).getBitmap();
+        if (drawable instanceof LayerDrawable) {
+            LayerDrawable layerDrawable = (LayerDrawable) drawable;
+            final int width = layerDrawable.getIntrinsicWidth();
+            final int height = layerDrawable.getIntrinsicHeight();
+            final Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            layerDrawable.setBounds(0, 0, width, height);
+            layerDrawable.draw(new Canvas(bitmap));
+            return bitmap;
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && drawable instanceof AdaptiveIconDrawable) {
             if (Preferences.get(mContext).getIconShape() == -1) {
