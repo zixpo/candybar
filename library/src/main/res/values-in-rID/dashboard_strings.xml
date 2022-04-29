@@ -126,9 +126,9 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="request_not_requested">Tidak dipesan</string>
     <string name="request_already_requested">Sudah dipesan</string>
     <string name="request_building">Membuat pesanan…</string>
-    <string name="request_arctic_sending">Mengirim pesanan ke Arctic Manager...</string>
-    <string name="request_arctic_error">Terjadi kesalahan ketika mengirim pesanan ke Arctic Manager. Kesalahan %s</string>
-    <string name="request_arctic_success">Berhasil kirim pesanan ke Arctic Manager</string>
+    <string name="request_pacific_sending">Mengirim pesanan ke Pacific Manager...</string>
+    <string name="request_pacific_error">Terjadi kesalahan ketika mengirim pesanan ke Pacific Manager. Kesalahan %s</string>
+    <string name="request_pacific_success">Berhasil kirim pesanan ke Pacific Manager</string>
     <string name="request_fetching_data">Mengambil data terbaru…</string>
     <string name="request_build_failed">Tidak dapat membuat pesanan ikon</string>
     <string name="request_appfilter_failed">Tidak dapat membaca appfilter.xml</string>

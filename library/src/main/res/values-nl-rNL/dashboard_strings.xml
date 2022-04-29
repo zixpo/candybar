@@ -125,9 +125,9 @@
     <string name="request_not_requested">Niet aangevraagd</string>
     <string name="request_already_requested">Reeds aangevraagd</string>
     <string name="request_building">Aanvraag aanmaken…</string>
-    <string name="request_arctic_sending">Aanvraag versturen naar Arctic Manager...</string>
-    <string name="request_arctic_error">Fout tijdens het versturen van de aanvraag naar Arctic Manager. Fout is %s</string>
-    <string name="request_arctic_success">Aanvraag succesvol verstuurt naar Arctic Manager</string>
+    <string name="request_pacific_sending">Aanvraag versturen naar Pacific Manager...</string>
+    <string name="request_pacific_error">Fout tijdens het versturen van de aanvraag naar Pacific Manager. Fout is %s</string>
+    <string name="request_pacific_success">Aanvraag succesvol verstuurt naar Pacific Manager</string>
     <string name="request_fetching_data">Laatste gegevens ophalen…</string>
     <string name="request_build_failed">Kan pictogramaanvraag niet aanmaken</string>
     <string name="request_appfilter_failed">Kan appfilter.xml niet lezen</string>

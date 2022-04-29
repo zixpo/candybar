@@ -126,9 +126,9 @@
     <string name="request_not_requested">Запит ще не надіслано</string>
     <string name="request_already_requested">Запит вже надіслано</string>
     <string name="request_building">Створення запиту …</string>
-    <string name="request_arctic_sending">Надсилання запиту до Arctic Manager...</string>
-    <string name="request_arctic_error">Сталася помилка під час надсилання запиту до Arctic Manager. Помилка %s</string>
-    <string name="request_arctic_success">Успішно надіслано запит до Arctic Manager</string>
+    <string name="request_pacific_sending">Надсилання запиту до Pacific Manager...</string>
+    <string name="request_pacific_error">Сталася помилка під час надсилання запиту до Pacific Manager. Помилка %s</string>
+    <string name="request_pacific_success">Успішно надіслано запит до Pacific Manager</string>
     <string name="request_fetching_data">Отримання останніх даних …</string>
     <string name="request_build_failed">Неможливо створити запит іконок</string>
     <string name="request_appfilter_failed">Неможливо прочитати appfilter.xml</string>

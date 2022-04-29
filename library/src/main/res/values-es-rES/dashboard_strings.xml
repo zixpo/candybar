@@ -121,9 +121,9 @@ No podrás utilizar la aplicación.</string>
     <string name="request_not_requested">No solicitado</string>
     <string name="request_already_requested">Ya solicitado</string>
     <string name="request_building">Preparando la solicitud …</string>
-    <string name="request_arctic_sending">Enviando solicitud al Arctic Manager...</string>
-    <string name="request_arctic_error">Error al enviar la solicitud al Arctic Manager. El error es %s</string>
-    <string name="request_arctic_success">Solicitud enviada correctamente al Arctic Manager</string>
+    <string name="request_pacific_sending">Enviando solicitud al Pacific Manager...</string>
+    <string name="request_pacific_error">Error al enviar la solicitud al Pacific Manager. El error es %s</string>
+    <string name="request_pacific_success">Solicitud enviada correctamente al Pacific Manager</string>
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
     <string name="request_requested">Por favor comprueba tu solicitud de nuevo, porque estás solicitando una aplicación que ya ha sido solicitada anteriormente.</string>
