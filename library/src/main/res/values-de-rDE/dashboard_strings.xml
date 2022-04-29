@@ -127,9 +127,9 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_not_requested">Nicht angefragt</string>
     <string name="request_already_requested">Bereits angefragt</string>
     <string name="request_building">Anfrage erstellen …</string>
-    <string name="request_arctic_sending">Sende Request an Arctic Manager...</string>
-    <string name="request_arctic_error">Fehler beim Senden des Requests an Arctic Manager. Die Fehlermeldung ist %s</string>
-    <string name="request_arctic_success">Request erfolgreich an Arctic Manager gesendet</string>
+    <string name="request_pacific_sending">Sende Request an Pacific Manager...</string>
+    <string name="request_pacific_error">Fehler beim Senden des Requests an Pacific Manager. Die Fehlermeldung ist %s</string>
+    <string name="request_pacific_success">Request erfolgreich an Pacific Manager gesendet</string>
     <string name="request_custom_error">Fehler beim Senden des Icon Requests. Falls der Fehler wiederholt auftritt, wende dich an den Entwickler. %s</string>
     <string name="request_custom_success">Icon Request erfolgreich gesendet</string>
     <string name="request_fetching_data">Rufe neueste Daten ab…</string>

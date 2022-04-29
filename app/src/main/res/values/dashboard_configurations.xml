@@ -58,8 +58,8 @@
     <string name="premium_request_email"></string>
     <string name="regular_request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
-    <string name="regular_request_arctic_api_key"><!--f2a96282-31d0-42b7-b802-5487f2931113--></string>
-    <string name="premium_request_arctic_api_key"></string>
+    <string name="regular_request_pacific_api_key"><!--f2a96282-31d0-42b7-b802-5487f2931113--></string>
+    <string name="premium_request_pacific_api_key"></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
     <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/walls_alt.json</string>

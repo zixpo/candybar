@@ -156,9 +156,9 @@
     <string name="request_already_requested">Allerede forespurt</string>
 
     <string name="request_building">Bygger forespørsel …</string>
-    <string name="request_arctic_sending">Sender forespørsel til Arctic-håndterer …</string>
-    <string name="request_arctic_error">Kunne ikke sende forespørsel til Arctic-håndterer. Feilen er %s</string>
-    <string name="request_arctic_success">Sendte forespørsel til Arctic-håndterer</string>
+    <string name="request_pacific_sending">Sender forespørsel til Pacific-håndterer …</string>
+    <string name="request_pacific_error">Kunne ikke sende forespørsel til Pacific-håndterer. Feilen er %s</string>
+    <string name="request_pacific_success">Sendte forespørsel til Pacific-håndterer</string>
     <string name="request_fetching_data">Henter oppdatert data …</string>
     <string name="request_build_failed">Kunne ikke bygge ikonforespørsel</string>
     <string name="request_appfilter_failed">Kunne ikke lese appfilter.xml</string>

@@ -156,9 +156,9 @@
     <string name="request_already_requested">Already requested</string>
 
     <string name="request_building">Building request …</string>
-    <string name="request_arctic_sending">Sending request to Arctic Manager...</string>
-    <string name="request_arctic_error">Error occurred while sending request to Arctic Manager. Error is %s</string>
-    <string name="request_arctic_success">Successfully sent request to Arctic Manager</string>
+    <string name="request_pacific_sending">Sending request to Pacific Manager...</string>
+    <string name="request_pacific_error">Error occurred while sending request to Pacific Manager. Error is %s</string>
+    <string name="request_pacific_success">Successfully sent request to Pacific Manager</string>
     <string name="request_custom_error">Error occurred while sending icon request. If this error persists, contact the developer. %s</string>
     <string name="request_custom_success">Successfully sent icon request</string>
     <string name="request_fetching_data">Fetching latest data …</string>

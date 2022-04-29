@@ -385,8 +385,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
     private class RequestLoader extends AsyncTaskBase {
 
         private MaterialDialog dialog;
-        private boolean isArctic;
-        private String arcticApiKey;
+        private boolean isPacific;
+        private String pacificApiKey;
         private boolean isCustom;
         private boolean isPremium;
         private String errorMessage;
@@ -396,13 +396,13 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             if (Preferences.get(requireActivity()).isPremiumRequest()) {
                 isPremium = true;
                 isCustom = RequestHelper.isPremiumCustomEnabled(requireActivity());
-                isArctic = RequestHelper.isPremiumArcticEnabled(requireActivity());
-                arcticApiKey = RequestHelper.getPremiumArcticApiKey(requireActivity());
+                isPacific = RequestHelper.isPremiumPacificEnabled(requireActivity());
+                pacificApiKey = RequestHelper.getPremiumPacificApiKey(requireActivity());
             } else {
                 isPremium = false;
                 isCustom = RequestHelper.isRegularCustomEnabled(requireActivity());
-                isArctic = RequestHelper.isRegularArcticEnabled(requireActivity());
-                arcticApiKey = RequestHelper.getRegularArcticApiKey(requireActivity());
+                isPacific = RequestHelper.isRegularPacificEnabled(requireActivity());
+                pacificApiKey = RequestHelper.getRegularPacificApiKey(requireActivity());
             }
 
             dialog = new MaterialDialog.Builder(requireActivity())
@@ -432,7 +432,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     for (Request request : requests) {
                         Drawable drawable = getReqIcon(requireActivity(), request.getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
-                                isArctic ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
+                                isPacific ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
                         if (isCustom) {
                             request.setIconBase64(getReqIconBase64(drawable));
@@ -440,7 +440,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     }
 
                     if (isArctic) {
-                        errorMessage = RequestHelper.sendArcticRequest(requests, files, directory, arcticApiKey);
+                        errorMessage = RequestHelper.sendPacificRequest(requests, files, directory, pacificApiKey);
                         if (errorMessage == null) {
                             for (Request request : requests) {
                                 Database.get(requireActivity()).addRequest(null, request);
@@ -534,8 +534,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             dialog = null;
 
             if (ok) {
-                if (isArctic || isCustom) {
-                    int toastText = isArctic ? R.string.request_arctic_success : R.string.request_custom_success;
+                if (isPacific || isCustom) {
+                    int toastText = isPacific ? R.string.request_pacific_success : R.string.request_custom_success;
                     Toast.makeText(getActivity(), toastText, Toast.LENGTH_LONG).show();
                     ((RequestListener) getActivity()).onRequestBuilt(null, IntentChooserFragment.ICON_REQUEST);
                 } else {
@@ -545,8 +545,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 mAdapter.resetSelectedItems();
                 if (mMenuItem != null) mMenuItem.setIcon(R.drawable.ic_toolbar_select_all);
             } else {
-                if (isArctic || isCustom) {
-                    int content = isArctic ? R.string.request_arctic_error : R.string.request_custom_error;
+                if (isPacific || isCustom) {
+                    int content = isPacific ? R.string.request_pacific_error : R.string.request_custom_error;
                     new MaterialDialog.Builder(getActivity())
                             .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
                             .content(content, "\"" + errorMessage + "\"")

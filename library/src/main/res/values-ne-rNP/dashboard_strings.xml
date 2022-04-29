@@ -123,9 +123,9 @@
     <string name="request_not_requested">अनुरोध गरिएको छैन</string>
     <string name="request_already_requested">पहिले नै अनुरोध गरीसकेको </string>
     <string name="request_building">अनुरोध निर्माण गरिदैछ…</string>
-    <string name="request_arctic_sending">Arctic Manager लाई अनुरोध पठाउदै..</string>
-    <string name="request_arctic_error">Arctic Manager लाई अनुरोध पठाउदै गर्दा समस्या देखियो । समस्या चाँही  %s हो ।</string>
-    <string name="request_arctic_success">Arctic Manager लाई सफलतापूर्वक अनुरोध पठाईयो ।</string>
+    <string name="request_pacific_sending">Pacific Manager लाई अनुरोध पठाउदै..</string>
+    <string name="request_pacific_error">Pacific Manager लाई अनुरोध पठाउदै गर्दा समस्या देखियो । समस्या चाँही  %s हो ।</string>
+    <string name="request_pacific_success">Pacific Manager लाई सफलतापूर्वक अनुरोध पठाईयो ।</string>
     <string name="request_fetching_data">भर्खरैको डाटा ल्याउँदै...</string>
     <string name="request_build_failed">आइकनको अनुरोध निर्माण गर्न सकिएन</string>
     <string name="request_appfilter_failed">appfilter.xml पढ्न सकिएन</string>

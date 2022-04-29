@@ -113,9 +113,9 @@
     <string name="request_not_requested">Nincs elküldve</string>
     <string name="request_already_requested">Már elküldve</string>
     <string name="request_building">Kérés létrehozása …</string>
-    <string name="request_arctic_sending">Kérés küldése az Arctic Manager-nek...</string>
-    <string name="request_arctic_error">Az Arctic Manager hibába ütközött a kérés elküldése közben. A hiba oka: %s</string>
-    <string name="request_arctic_success">A kérelem az Arctic Managernek sikeresen elküldve</string>
+    <string name="request_pacific_sending">Kérés küldése az Pacific Manager-nek...</string>
+    <string name="request_pacific_error">Az Pacific Manager hibába ütközött a kérés elküldése közben. A hiba oka: %s</string>
+    <string name="request_pacific_success">A kérelem az Pacific Managernek sikeresen elküldve</string>
     <string name="request_fetching_data">Adatok betöltése…</string>
     <string name="request_build_failed">Ikonkérés nem hozható létre</string>
     <string name="request_appfilter_failed">appfilter.xml nem található</string>
