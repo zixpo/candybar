@@ -350,6 +350,16 @@ public class Database extends SQLiteOpenHelper {
         return requests;
     }
 
+    public void deletePremiumRequests() {
+        if (!openDatabase()) {
+            LogUtil.e("Database error: deletePremiumRequests() failed to open database");
+            return;
+        }
+
+        mDatabase.get().mSQLiteDatabase.delete("SQLITE_SEQUENCE", "NAME = ?", new String[]{TABLE_PREMIUM_REQUEST});
+        mDatabase.get().mSQLiteDatabase.delete(TABLE_PREMIUM_REQUEST, null, null);
+    }
+
     public void addWallpapers(@Nullable SQLiteDatabase db, List<?> list) {
         SQLiteDatabase database = db;
         if (database == null) {

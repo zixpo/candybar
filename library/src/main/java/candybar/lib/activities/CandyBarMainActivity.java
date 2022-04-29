@@ -604,6 +604,9 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                                 Preferences.get(this).setPremiumRequestProductId(purchase.getSkus().get(0));
                                 Preferences.get(this).setInAppBillingType(-1);
 
+                                // Delete old premium purchase history
+                                Database.get(this).deletePremiumRequests();
+
                                 this.runOnUiThread(() -> {
                                     if (mFragmentTag == Extras.Tag.REQUEST) {
                                         RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.Tag.REQUEST.value);

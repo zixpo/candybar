@@ -1,5 +1,9 @@
 package candybar.lib.fragments;
 
+import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
+import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
+
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.ResolveInfo;
@@ -69,10 +73,6 @@ import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.InAppBillingClient;
 import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
-
-import static candybar.lib.helpers.DrawableHelper.getReqIcon;
-import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
-import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -439,7 +439,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         }
                     }
 
-                    if (isArctic) {
+                    if (isPacific) {
                         errorMessage = RequestHelper.sendPacificRequest(requests, files, directory, pacificApiKey);
                         if (errorMessage == null) {
                             for (Request request : requests) {
