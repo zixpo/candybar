@@ -19,15 +19,15 @@ allprojects {
 
     rootProject.ext {
         def major = 3
-        def minor = 13
-        def patch = 3
+        def minor = 14
+        def patch = 0
 
         VersionCode = major * 10000 + minor * 100 + patch
         VersionName = "$major.$minor.$patch"
 
         MinSdk = 16
-        TargetSdk = 30
-        CompileSdk = 30
+        TargetSdk = 32
+        CompileSdk = 32
     }
 }
 
