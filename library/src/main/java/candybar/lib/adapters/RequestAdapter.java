@@ -68,7 +68,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private final boolean mShowShadow;
     private final boolean mShowPremiumRequest;
-    private final boolean mShowRegularRequest;
+    private final boolean mShowRegularRequestLimit;
 
     private static final int TYPE_HEADER = 0;
     private static final int TYPE_CONTENT = 1;
@@ -84,7 +84,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         mShowShadow = (spanCount == 1);
         mShowPremiumRequest = Preferences.get(mContext).isPremiumRequestEnabled();
-        mShowRegularRequest = Preferences.get(mContext).isRegularRequestLimit();
+        mShowRegularRequestLimit = Preferences.get(mContext).isRegularRequestLimit();
     }
 
     @NonNull
@@ -131,7 +131,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder.getItemViewType() == TYPE_HEADER) {
             HeaderViewHolder HeaderViewHolder = (HeaderViewHolder) holder;
-            if (Preferences.get(mContext).isPremiumRequestEnabled()) {
+            if (mShowPremiumRequest) {
                 if (Preferences.get(mContext).isPremiumRequest()) {
                     HeaderViewHolder.button.setVisibility(View.GONE);
                     HeaderViewHolder.premContent.setVisibility(View.GONE);
@@ -158,7 +158,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 HeaderViewHolder.premWholeContainer.setVisibility(View.GONE);
             }
 
-            if (Preferences.get(mContext).isRegularRequestLimit()) {
+            if (mShowRegularRequestLimit) {
                 int total = mContext.getResources().getInteger(R.integer.icon_request_limit);
                 int used = Preferences.get(mContext).getRegularRequestUsed();
                 int available = total - used;
@@ -180,7 +180,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 HeaderViewHolder.regWholeContainer.setVisibility(View.GONE);
             }
         } else if (holder.getItemViewType() == TYPE_CONTENT) {
-            int finalPosition = mShowPremiumRequest ? position - 1 : position;
+            int finalPosition = position;
+            if (mShowPremiumRequest || mShowRegularRequestLimit) finalPosition -= 1;
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
 
             if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
@@ -215,13 +216,13 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public int getItemCount() {
         int count = mRequests == null ? 0 : mRequests.size();
         if (mShowShadow) count += 1;
-        if (mShowPremiumRequest) count += 1;
+        if (mShowPremiumRequest || mShowRegularRequestLimit) count += 1;
         return count;
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0 && (mShowPremiumRequest || mShowRegularRequest)) return TYPE_HEADER;
+        if (position == 0 && (mShowPremiumRequest || mShowRegularRequestLimit)) return TYPE_HEADER;
         if (position == (getItemCount() - 1) && mShowShadow) return TYPE_FOOTER;
         return TYPE_CONTENT;
     }
