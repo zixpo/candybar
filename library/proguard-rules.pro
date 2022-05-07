@@ -12,12 +12,6 @@
 #-keepclassmembers class android.widget.Toast { <methods>; }
 #-keepclassmembers class androidx.appcompat.app.AppCompatActivity { <methods>; }
 
-# Force inline
--alwaysinline class candybar.lib.helpers.sharpie.R2 {
-  static void set*;
-  static void draw*;
-}
-
 # LoganSquare JSON parser
 -keep class com.bluelinelabs.logansquare.** { *; }
 -keep @com.bluelinelabs.logansquare.annotation.JsonObject class *
