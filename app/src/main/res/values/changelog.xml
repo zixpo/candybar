@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">December 4, 2021</string>
+    <string name="changelog_date" translatable="false">May 8, 2022</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -11,10 +11,12 @@
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
         <item>Updated Android Gradle Plugin</item>
-        <item>Analog clock is now resizable</item>
-        <item>Added Lawnchair 12</item>
-        <item>Fixed \`Broken drawables\` in report bugs</item>
-        <item>Added support for using donation links</item>
+        <item>Rebuilds only current premium request</item>
+        <item>Ability to render layered drawables</item>
+        <item>Fixed an issue with the request fragment where the first missing app was not showing up when premium request was disabled</item>
+        <item>Updated dependencies</item>
+        <item>Now targets Android S (API 32)</item>
+        <item>Hide old launchers in apply section (I will permanently remove them later)</item>
     </string-array>
 
 </resources>

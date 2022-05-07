@@ -71,7 +71,7 @@
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Check</string>
     <string name="playstore_check_success">Thanks you for installing the app from Google Play Store. Enjoy.</string>
-    <string name="playstore_check_failed">It seems like you installed this icon pack from outside of Google Play Store.
+    <string name="playstore_check_failed">It seems like you have installed this icon pack from outside of Google Play Store.
         You will not be able to use it.</string>
 
     <!-- Share -->

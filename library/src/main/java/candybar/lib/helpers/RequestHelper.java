@@ -3,7 +3,6 @@ package candybar.lib.helpers;
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
 import static candybar.lib.helpers.DrawableHelper.getRightIcon;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -34,8 +33,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.security.SecureRandom;
-import java.security.cert.X509Certificate;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -47,9 +44,6 @@ import java.util.Objects;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.X509TrustManager;
-
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
@@ -57,7 +51,6 @@ import candybar.lib.databases.Database;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.listeners.RequestListener;
-import okhttp3.OkHttpClient;
 
 /*
  * CandyBar - Material Dashboard
@@ -530,6 +523,13 @@ public class RequestHelper {
 
         RequestListener listener = (RequestListener) context;
         listener.onPiracyAppChecked(isPiracyAppInstalled);
+    }
+
+    public static String reverseString(String input) {
+        byte[] bytes = input.getBytes();
+        byte[] output = new byte[bytes.length];
+        for (int i = 0; i < bytes.length; i++) output[i] = bytes[bytes.length - i - 1];
+        return new String(output);
     }
 
     public enum XmlType {

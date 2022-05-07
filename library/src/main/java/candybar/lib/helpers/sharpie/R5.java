@@ -1,0 +1,37 @@
+package candybar.lib.helpers.sharpie;
+
+import static candybar.lib.helpers.sharpie.R1.CLAZZ;
+import static candybar.lib.helpers.sharpie.R1.WrappedMethod;
+import static candybar.lib.helpers.sharpie.R3.getResVal;
+import static candybar.lib.helpers.sharpie.R4.isPS;
+
+import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import candybar.lib.BuildConfig;
+import io.michaelrocks.paranoid.Obfuscate;
+
+@Obfuscate
+public class R5 {
+    public static void thing(Context context) {
+        try {
+            final boolean isEnabled = (boolean) getResVal(context, "playstore_check_enabled", "bool");
+
+            if (BuildConfig.DEBUG) return;
+
+            if (isEnabled && !isPS(context)) {
+                final WrappedMethod makeText = CLAZZ("Toast").getMethod("makeText", CLAZZ("Context"), CLAZZ("CharSequence"), CLAZZ("int"));
+                final Object toast = makeText.invoke(null, context, getResVal(context, "playstore_check_failed", "string"), Toast.LENGTH_LONG);
+                final WrappedMethod show = CLAZZ("Toast").getMethod("show");
+                show.invoke(toast);
+                final WrappedMethod finish = CLAZZ("AppCompatActivity").getMethod("finish");
+                finish.invoke(context);
+            }
+        } catch (Exception e) {
+            LogUtil.e(Log.getStackTraceString(e));
+        }
+    }
+}

@@ -1,3 +1,12 @@
+# v3.14.0
+- Updated Android Gradle Plugin
+- Rebuilds only current premium request
+- Ability to render layered drawables
+- Fixed an issue with the request fragment where the first missing app was not showing up when premium request was disabled
+- Updated dependencies
+- Now targets Android S (API 32)
+- Hide old launchers in apply section (I will permanently remove them later)
+
 # v3.13.2
 - Updated Android Gradle Plugin
 - Analog clock is now resizable

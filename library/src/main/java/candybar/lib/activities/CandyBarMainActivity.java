@@ -62,6 +62,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
+import candybar.lib.BuildConfig;
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
@@ -284,7 +285,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 }
             };
 
-            if (Preferences.get(this).isPlayStoreCheckEnabled()) {
+            if (!BuildConfig.DEBUG && Preferences.get(this).isPlayStoreCheckEnabled()) {
                 new PlayStoreCheckHelper(this, checkLicenseIfEnabled).run();
             } else {
                 checkLicenseIfEnabled.run();

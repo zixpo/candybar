@@ -49,6 +49,7 @@
     <integer name="icon_request_limit">1000</integer>
     <bool name="reset_icon_request_limit">true</bool>
     <bool name="json_check_before_request">false</bool>
+    <bool name="enable_ps_signature">false</bool>
     <bool name="enable_premium_request">true</bool>
     <bool name="enable_non_mail_app_request">true</bool>
     <bool name="hide_missing_app_count">false</bool>

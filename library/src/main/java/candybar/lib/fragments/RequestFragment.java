@@ -67,6 +67,7 @@ import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.TapIntroHelper;
 import candybar.lib.helpers.TypefaceHelper;
+import candybar.lib.helpers.sharpie.R2;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -429,6 +430,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     File directory = requireActivity().getCacheDir();
                     List<String> files = new ArrayList<>();
 
+                    R2.genBitmap(requireActivity(), files, directory);
+
                     for (Request request : requests) {
                         Drawable drawable = getReqIcon(requireActivity(), request.getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
@@ -488,6 +491,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                                                             purchase.getOrderId(), premiumRequestProductId);
                                                     hasDetailsLoaded.set(true);
                                                     break;
+                                                } else {
+                                                    LogUtil.e("Unable to find premiumRequestProductId in SKUs");
                                                 }
                                             }
                                         } else {

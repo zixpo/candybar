@@ -128,10 +128,11 @@ public class IconRequestBuilderTask extends AsyncTaskBase {
                     }
                 }
 
-                mEmailBody = stringBuilder.toString();
+
                 if (emailBodyGeneratorEnabled) {
-                    mEmailBody += "\r\n\r\n" + emailBodyGenerator.generate(requestsForGenerator);
+                    stringBuilder.append("\r\n\r\n").append(emailBodyGenerator.generate(requestsForGenerator));
                 }
+                mEmailBody = stringBuilder.toString();
                 return true;
             } catch (Exception e) {
                 CandyBarApplication.sRequestProperty = null;

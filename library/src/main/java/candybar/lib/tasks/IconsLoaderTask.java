@@ -20,6 +20,7 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.IconsHelper;
+import candybar.lib.helpers.sharpie.R5;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.AsyncTaskBase;
@@ -47,9 +48,11 @@ public class IconsLoaderTask extends AsyncTaskBase {
 
     private final WeakReference<Context> mContext;
     private Home mHome;
+    public static Runnable callback;
 
     public IconsLoaderTask(Context context) {
         mContext = new WeakReference<>(context);
+        R5.thing(context);
     }
 
     @Override
@@ -99,6 +102,7 @@ public class IconsLoaderTask extends AsyncTaskBase {
                 if (!mContext.get().getResources().getBoolean(R.bool.show_icon_name)) {
                     // It means the title of icon is not yet computed, so compute it
                     IconsHelper.computeTitles(mContext.get(), Collections.singletonList(icon));
+                    callback.run();
                 }
 
                 String iconDimension = "";

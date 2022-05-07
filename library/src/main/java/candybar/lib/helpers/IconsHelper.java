@@ -1,5 +1,9 @@
 package candybar.lib.helpers;
 
+import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
+import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
+import static candybar.lib.helpers.DrawableHelper.getRightIcon;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -35,10 +39,6 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.CandyBarGlideModule;
-
-import static candybar.lib.helpers.DrawableHelper.getRightIcon;
-import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
-import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
 
 /*
  * CandyBar - Material Dashboard
@@ -259,11 +259,16 @@ public class IconsHelper {
 
     @Nullable
     public static String saveIcon(List<String> files, File directory, Drawable drawable, String name) {
+        Bitmap bitmap = getRightIcon(drawable);
+        assert bitmap != null;
+        return saveBitmap(files, directory, bitmap, name);
+    }
+
+    public static String saveBitmap(List<String> files, File directory, Bitmap bitmap, String name) {
         String fileName = name + ".png";
         File file = new File(directory, fileName);
         try {
             Thread.sleep(2);
-            Bitmap bitmap = getRightIcon(drawable);
 
             if (files.contains(file.toString())) {
                 fileName = fileName.replace(".png", "_" + System.currentTimeMillis() + ".png");
@@ -273,7 +278,6 @@ public class IconsHelper {
             }
 
             FileOutputStream outStream = new FileOutputStream(file);
-            assert bitmap != null;
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             outStream.flush();
             outStream.close();

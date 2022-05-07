@@ -2,6 +2,7 @@ package candybar.lib.helpers;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -39,6 +40,7 @@ public class PlayStoreCheckHelper {
             });
         } else {
             dialog.onPositive((dial, which) -> ((AppCompatActivity) mContext).finish());
+            Toast.makeText(mContext, R.string.playstore_check_failed, Toast.LENGTH_LONG).show();
         }
 
         dialog.show();

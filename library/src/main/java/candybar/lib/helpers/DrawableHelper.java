@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -16,6 +17,7 @@ import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -24,6 +26,7 @@ import androidx.core.content.res.ResourcesCompat;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.io.ByteArrayOutputStream;
+import java.security.MessageDigest;
 
 import candybar.lib.R;
 import sarsamurmu.adaptiveicon.AdaptiveIcon;
@@ -121,5 +124,26 @@ public class DrawableHelper {
         appBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
         String base64Icon = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
         return base64Icon.trim();
+    }
+
+    public static @ColorInt
+    int stringToColor(Context context, String input) {
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            messageDigest.update((context.getPackageName() + "_" + input).getBytes());
+            int i = (new String(messageDigest.digest())).hashCode();
+            String colorCode = "#" +
+                    /*Integer.toHexString(((i >> 24) & 0xFF)) + // <<-- This is for alpha*/
+                    Integer.toHexString(((i >> 16) & 0xFF)) +
+                    Integer.toHexString(((i >> 8) & 0xFF)) +
+                    Integer.toHexString((i & 0xFF));
+            try {
+                return Color.parseColor(colorCode);
+            } catch (IllegalArgumentException e) {
+                return stringToColor(context, colorCode);
+            }
+        } catch (Exception ignored) {
+            return 0x000000;
+        }
     }
 }
