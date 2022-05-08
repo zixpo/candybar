@@ -156,6 +156,7 @@
     <string name="connection_failed">சேவையகத்திலிருந்து தரவைப் பெற முடியவில்லை</string>
     <string name="wallpaper_apply">Apply wallpaper</string>
     <string name="wallpaper_save_to_device">Save wallpaper</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">தகவல்கள் &amp; தற்காலிக சேமிப்பு</string>
     <string name="pref_data_cache">அலி தற்காலிக சேமிப்பு</string>
@@ -221,4 +222,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">திற</string>
     <string name="txt_close">மூடு</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
