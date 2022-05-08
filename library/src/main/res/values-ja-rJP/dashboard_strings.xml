@@ -152,6 +152,7 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="connection_failed">サーバーからデータを取得できません</string>
     <string name="wallpaper_apply">壁紙を適用</string>
     <string name="wallpaper_save_to_device">壁紙を保存</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">データ &amp; キャッシュ</string>
     <string name="pref_data_cache">キャッシュを消去</string>
@@ -219,4 +220,5 @@ Google Playストアを開きダウンロードしてインストールします
     <!-- DrawerToggle -->
     <string name="txt_open">開く</string>
     <string name="txt_close">閉じる</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
