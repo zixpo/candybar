@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>什么是启动器？</item>
@@ -52,6 +53,7 @@
         <item>为什么需要用到获取 WiFi 连接状态权限？</item>
         <item>为什么需要用到设定壁纸权限？</item>
         <item>为什么需要用到唤醒锁权限？</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>启动器是 Android 界面的一部分，它可以让用户在使用 Android 设备时自定义主屏幕，启动应用程序，拨打电话，以及其它种种任务。</item>
@@ -93,5 +95,6 @@ Muzei 并不会在每次壁纸变化的时候下载壁纸。你需要先在 Dash
         <item>是用来检查你的手机是否连接到 Wifi 网络的，以便载入 Muzei 上的云端壁纸。</item>
         <item>是用来从 Dashboard 程序中直接应用壁纸的。</item>
         <item>它被 Muzei 动态壁纸所使用</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>
