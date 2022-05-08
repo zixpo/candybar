@@ -118,6 +118,7 @@
     <!-- Wallpapers -->
     <string name="wallpaper_apply">Приложи тапет</string>
     <string name="wallpaper_save_to_device">Запазване на тапет</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <!-- Themes -->
     <!-- Permission -->
@@ -130,4 +131,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">Отвори</string>
     <string name="txt_close">Затвори</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
