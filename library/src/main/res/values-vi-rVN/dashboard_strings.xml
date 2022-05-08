@@ -18,6 +18,7 @@
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
+    <!-- Presets -->
     <!-- Preferences -->
     <!-- Themes -->
     <!-- Permission -->
@@ -28,4 +29,5 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <!-- Content descriptions for screen readers -->
 </resources>
