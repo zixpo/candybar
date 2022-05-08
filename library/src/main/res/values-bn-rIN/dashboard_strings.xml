@@ -151,6 +151,7 @@
     <string name="connection_failed">সার্ভার থেকে ডেটা আনতে অক্ষম</string>
     <string name="wallpaper_apply">ওয়ালপেপার প্রয়োগ করুন</string>
     <string name="wallpaper_save_to_device">ওয়ালপেপার সংরক্ষণ করুন</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">ডেটা &amp; ক্যাশে</string>
     <string name="pref_data_cache">ক্যাশে সাফ করুন</string>
@@ -219,4 +220,5 @@ GitHub এ অ্যান্ড্রয়েড উপলব্ধ এবং 
     <!-- DrawerToggle -->
     <string name="txt_open">খুলুন</string>
     <string name="txt_close">বন্ধ করুন</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
