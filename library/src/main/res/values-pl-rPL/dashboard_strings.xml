@@ -140,6 +140,7 @@
     <string name="connection_failed">Pobieranie datych z serwera nie powiodło się</string>
     <string name="wallpaper_apply">Zastosuj tapetę</string>
     <string name="wallpaper_save_to_device">Zapisz tapetę</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Pamięc aplikacji i cache</string>
     <string name="pref_data_cache">Wyczyść pamięć cache</string>
@@ -204,4 +205,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">Otwórz</string>
     <string name="txt_close">Zamknij</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
