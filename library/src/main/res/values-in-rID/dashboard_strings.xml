@@ -180,6 +180,7 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="connection_failed">Tidak dapat mengambil data dari server</string>
     <string name="wallpaper_apply">Terapkan wallpaper</string>
     <string name="wallpaper_save_to_device">Simpan wallpaper</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Data &amp; Cache</string>
     <string name="pref_data_cache">Bersihkan Cache</string>
@@ -251,4 +252,5 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="txt_open">Buka</string>
     <string name="txt_close">Tutup</string>
     <string name="txt_new">Baru</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
