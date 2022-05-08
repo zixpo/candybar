@@ -1,3 +1,7 @@
+# v3.14.1
+- Fixed icon request taking forever to build.
+- Updated translations.
+
 # v3.14.0
 - Updated Android Gradle Plugin
 - Rebuilds only current premium request
