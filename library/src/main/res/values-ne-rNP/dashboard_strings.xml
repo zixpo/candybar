@@ -173,6 +173,7 @@
     <string name="connection_failed">सर्भरबाट डाटा ल्याउन सकिएन</string>
     <string name="wallpaper_apply">वालपेपर लागू गर्नुहोस्</string>
     <string name="wallpaper_save_to_device">वालपेपर समावेस गर्नुहोस्</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">डेटा र क्यास</string>
     <string name="pref_data_cache">क्यास मेटाउनुहोस्</string>
@@ -203,6 +204,9 @@
     <string name="pref_others_reset_tutorial">ट्यूटोरियल रिसेट गर्नुहोस्</string>
     <string name="pref_others_reset_tutorial_reset">ट्यूटोरियल रिसेट</string>
     <!-- Themes -->
+    <string name="theme_name_auto">स्वत:</string>
+    <string name="theme_name_light">उज्यालो</string>
+    <string name="theme_name_dark">अँध्यारो</string>
     <!-- Permission -->
     <string name="permission_storage_denied">वालपेपर राख्नको लागि स्टोरेजको अनुमती चाहिन्छ</string>
     <!-- Intent -->
@@ -241,4 +245,5 @@
     <string name="txt_open">खोल्नुहोस्</string>
     <string name="txt_close">बन्द गर्नुहोस्</string>
     <string name="txt_new">नयाँ</string>
+    <!-- Content descriptions for screen readers -->
 </resources>

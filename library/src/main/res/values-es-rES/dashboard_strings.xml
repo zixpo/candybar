@@ -41,6 +41,7 @@
     <string name="search_faqs">Pregunta o respuesta</string>
     <string name="search_icon">Nombre del icono</string>
     <!-- Update -->
+    <string name="checking_for_update">Verificando actualizaciones…</string>
     <string name="update_available">Actualización disponible!</string>
     <string name="no_update_available">Estas usando la ultima versión!</string>
     <!-- Changelog -->
@@ -56,6 +57,7 @@ No podrás utilizar la aplicación.</string>
     <string name="license_check_retry">No se puede comprobar la licencia, por favor inténtalo en unos minutos.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Comprobación de Play Store</string>
+    <string name="playstore_check_success">Gracias por instalar la application de la Google Play Store. Disfruta.</string>
     <!-- Share -->
     <string name="share_app_title">¡Yo! Echa un vistazo a %s</string>
     <string name="share_app_body">Echa un vistazo a %1$s, ¡este paquete de iconos es fantástico! %2$s</string>
@@ -124,12 +126,14 @@ No podrás utilizar la aplicación.</string>
     <string name="request_pacific_sending">Enviando solicitud al Pacific Manager...</string>
     <string name="request_pacific_error">Error al enviar la solicitud al Pacific Manager. El error es %s</string>
     <string name="request_pacific_success">Solicitud enviada correctamente al Pacific Manager</string>
+    <string name="request_fetching_data">Obteniendo actualizaciones mas recientes …</string>
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
     <string name="request_requested">Por favor comprueba tu solicitud de nuevo, porque estás solicitando una aplicación que ya ha sido solicitada anteriormente.</string>
     <string name="request_email_client">Elige el cliente de correo que quieras usar para enviar la solicitud del icono</string>
     <string name="request_app_disabled">Estás utilizando una versión anterior de este pack de iconos. La solicitud de iconos solo se puede hacer en la ultima versión. Actualice su aplicación a la última versión para solicitar iconos.</string>
     <string name="connection_error_long">No se pueden cargar datos del servidor. Por favor, verifique su conexión de red.</string>
+    <string name="unable_to_load_config">Se ha producido un error al recuperar/leer los datos del servidor.</string>
     <string name="request_limit">Sólo puedes hacer %d solicitud(es) con la solicitud normal.</string>
     <string name="request_used">Has solicitado %d icono(s).</string>
     <string name="request_limit_buy">Puedes comprar \"Solicitudes Premium\" para solicitar más iconos.</string>
@@ -173,6 +177,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="connection_failed">No se pueden recuperar los datos del servidor</string>
     <string name="wallpaper_apply">Establecer el fondo de pantalla</string>
     <string name="wallpaper_save_to_device">Guardar fondo de pantalla</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Datos y Caché</string>
     <string name="pref_data_cache">Limpiar Caché</string>
@@ -203,6 +208,9 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="pref_others_reset_tutorial">Reiniciar Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial reiniciado</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automático</string>
+    <string name="theme_name_light">Claro</string>
+    <string name="theme_name_dark">Oscuro</string>
     <!-- Permission -->
     <string name="permission_storage_denied">El permiso de almacenamiento se necesita para guardar fondos de pantalla</string>
     <!-- Intent -->
@@ -241,4 +249,5 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="txt_open">Abrir</string>
     <string name="txt_close">Cerrar</string>
     <string name="txt_new">Nuevo</string>
+    <!-- Content descriptions for screen readers -->
 </resources>

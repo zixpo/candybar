@@ -26,5 +26,6 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
 </resources>

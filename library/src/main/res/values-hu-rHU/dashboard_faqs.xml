@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>Mi az a - Launcher - kezdőképernyő indító?</item>
@@ -52,11 +53,12 @@
         <item>Miért van szükség a WiFi hálózatokra vonatkozó információk gyűjtésére?</item>
         <item>Miért van szükség engedélyre a háttérkép beállításához?</item>
         <item>Miért van szükség a készenléti mód kikapcsolására vonatkozó engedélyek megadására?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>A Launcher az Android felhasználói felületének az a része, amely lehetővé teszi a kezdőképernyő testreszabását, alkalmazások indítását, hívások kezdeményezését és egyéb feladatok végrehajtását az Android eszközökön.</item>
         <item>Olyan grafikai csomagok, amelyek megváltoztatják az ikonok megjelenítését az alkalmazáslistában.</item>
-        <item>Egy olyan Launcherre van szükséged, amely támogatja az egyedi ikoncsomagok alkalmazását. A támogatott Launcherek a Play Áruház leírásában találhatók. Ha nem tudjod, hogy melyik indító használható, akkor egyszerűen telepítsd a Play Áruházból az \ "Alkalmaz \" menüpont alatt található támogatott Launcherek egyikét.</item>
+        <item>Egy olyan Launcherre van szükséged, amely támogatja az egyedi ikoncsomagok alkalmazását. A támogatott Launcherek a Play Áruház leírásában találhatók. Ha nem tudjod, hogy melyik indító használható, akkor egyszerűen telepítsd a Play Áruházból az \ \"Alkalmaz \" menüpont alatt található támogatott Launcherek egyikét.</item>
         <item>A navigációs fülön nyisd meg az \"Alkalmaz \" menüpontot, keresd meg a Launchert, amit használsz és kattints rá, majd a felugró ablakban engedélyezd az ikontéma használatát. Ha a Launchered nem szerepel a listán, de ez az ikoncsomag kompatibilis vele
 (A kompatibilis indító a Google Play leírásában látható),
 akkor az ikoncsomagot manuálisan kell beállítanod a Launcher beállításaiban.</item>
@@ -92,5 +94,6 @@ Nyisd meg a Muzei beállításokat és válaszd a csak a letöltött háttérké
         <item>Ez a vizsgálat azért szükséges, hogy a készülék WiFi hálózaton csatlakozik-e az internetre, hogy a Muzei felhő háttérképei letölthetők legyenek.</item>
         <item>Erre azért van szükség, hogy a háttérképet közvetlenül az alkalmazás Irányítópultjából alkalmazni tudjuk.</item>
         <item>Ez az engedély a Muzei élő háttérkép alkalmazás miatt szükséges.</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

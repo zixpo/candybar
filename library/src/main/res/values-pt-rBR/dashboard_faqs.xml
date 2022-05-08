@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>O que é um launcher?</item>
@@ -53,6 +54,7 @@
         <item>Por que a permissão Estado da Rede Wifi é necessária?</item>
         <item>Por que a permissão Definir papel de parede é necessária?</item>
         <item>Por que a permissão Manter Acordado é necessária?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>Lançador é a parte da interface de usuário do Android que permite aos usuários personalizar a tela inicial,            iniciar aplicativos, fazer chamadas e realizar outras tarefas em dispositivos Android.</item>
@@ -89,5 +91,6 @@
         <item>É usada para checar se seu celular tem uma conexão wifi ou não, para carregar os papéis de parede da nuvem via Muzei.</item>
         <item>É usada para aplicar papéis de parede diretamente pelo dashboard.</item>
         <item>É utilizada pelo Muzei Live Wallpaper</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

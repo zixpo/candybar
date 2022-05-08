@@ -179,6 +179,7 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="connection_failed">Impossibile recuperare i dati dal server</string>
     <string name="wallpaper_apply">Applica sfondo</string>
     <string name="wallpaper_save_to_device">Salva sfondo</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Data e Cache</string>
     <string name="pref_data_cache">Pulisci Cache</string>
@@ -250,4 +251,5 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="txt_open">Apri</string>
     <string name="txt_close">Chiudi</string>
     <string name="txt_new">Nuovo</string>
+    <!-- Content descriptions for screen readers -->
 </resources>

@@ -155,6 +155,7 @@
     <!-- Wallpapers -->
     <string name="wallpaper_apply">Achtergrond toepassen</string>
     <string name="wallpaper_save_to_device">Achtergrond opslaan</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_premium_request_header">Premium Pictogramaanvraag</string>
     <!-- Themes -->
@@ -180,4 +181,5 @@
     <string name="txt_open">Openen</string>
     <string name="txt_close">Sluiten</string>
     <string name="txt_new">Nieuw</string>
+    <!-- Content descriptions for screen readers -->
 </resources>

@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>লঞ্চার কি?</item>
@@ -52,6 +53,7 @@
         <item>কেন ওয়াই ফাই ব্যবহার করার অনুমতি প্রয়োজন হয়?</item>
         <item>কেন ওয়ালপেপার সেট করার অনুমতি প্রয়োজন হয়?</item>
         <item>কেন ওয়েক লকের অনুমতি প্রয়োজন হয়?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>লঞ্চার হচ্ছে অ্যান্ড্রয়েড ব্যবহারকারীর ইন্টারফেস এর অংশ যা ব্যবহারকারীকে নীড় পর্দা কাস্টমাইজ করতে, অ্যাপ লঞ্চ করতে, কল করতে এবং অন্যান্য কাজ সারতে দেয়।</item>
@@ -84,5 +86,6 @@
         <item>এটি ড্যাশবোর্ড অ্যাপ্লিকেশন থেকে সরাসরি ওয়ালপেপারগুলি প্রয়োগ করতে ব্যবহৃত হয়।</item>
         <item>মুজ্যেই এর ক্লাউড ওয়ালপেপার লোড করার জন্য, আপনার ফোনে ওয়াইফাইয়ের একটি ইন্টারনেট সংযোগ রয়েছে কিনা তা পরীক্ষা করতে ব্যবহৃত হয়।</item>
         <item>এটি মুজ্যেই লাইভ ওয়ালপেপার দ্বারা ব্যবহৃত হয়</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

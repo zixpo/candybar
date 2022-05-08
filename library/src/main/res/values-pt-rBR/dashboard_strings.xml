@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="splash_screen_title">CandyBar Material Dashboard</string>
+    <string name="splash_screen_title">Painel CandyBar Material</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Início</string>
     <string name="navigation_view_apply">Aplicar</string>
@@ -41,6 +41,7 @@
     <string name="search_faqs">Pergunta ou resposta</string>
     <string name="search_icon">Nome do ícone</string>
     <!-- Update -->
+    <string name="checking_for_update">Verificando atualizações…</string>
     <string name="update_available">Atualização disponível!</string>
     <string name="no_update_available">Você está usando a versão mais recente!</string>
     <!-- Changelog -->
@@ -56,6 +57,7 @@
     <string name="license_check_retry">Não foi possível verificar a licença, por favor tente novamente em alguns instantes.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Verificação da Play Store</string>
+    <string name="playstore_check_success">Obrigado por instalar o App pela Google Play Store. Aproveite.</string>
     <!-- Share -->
     <string name="share_app_title">Ei! Confira %s</string>
     <string name="share_app_body">Confira %1$s, este pacote de ícones é muito legal! %2$s</string>
@@ -126,6 +128,7 @@
     <string name="request_pacific_sending">Enviando solicitação para Pacific Manager...</string>
     <string name="request_pacific_error">Ocorreu um erro ao enviar a solicitação para o Pacific Manager. Erro é %s</string>
     <string name="request_pacific_success">Pedido enviado com sucesso para Pacific Manager</string>
+    <string name="request_fetching_data">Buscando dados mais recentes…</string>
     <string name="request_build_failed">Não foi possível criar a solicitação do ícone</string>
     <string name="request_appfilter_failed">Não foi possível ler appfilter.xml</string>
     <string name="request_requested">Por favor, verifique seu pedido novamente.
@@ -133,6 +136,7 @@
     <string name="request_email_client">Escolha o aplicativo que você deseja usar para enviar a solicitação de ícone</string>
     <string name="request_app_disabled">Você está usando uma versão antiga deste pacote de ícones. Os ícones solicitados podem ser incluídos na versão mais recente. Por favor, atualize seu aplicativo para a versão mais recente para solicitar ícones.</string>
     <string name="connection_error_long">Não foi possível carregar dados do servidor. Por favor, verifique sua conexão de rede.</string>
+    <string name="unable_to_load_config">Ocorreu um erro durante a recuperação de dados do servidor.</string>
     <string name="request_limit">Você só pode fazer %d pedido(s) com solicitação regular.</string>
     <string name="request_used">Você solicitou %d ícone(s).</string>
     <string name="request_limit_buy">Você pode comprar pedidos Premium para solicitar mais ícones.</string>
@@ -176,6 +180,7 @@
     <string name="connection_failed">Não foi possível buscar dados do servidor</string>
     <string name="wallpaper_apply">Aplicar o papel de parede</string>
     <string name="wallpaper_save_to_device">Salvar o papel de parede</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Dados &amp; Cache</string>
     <string name="pref_data_cache">Limpar Cache</string>
@@ -208,6 +213,9 @@
     <string name="pref_others_reset_tutorial">Reiniciar Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial Reinicializado</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automático</string>
+    <string name="theme_name_light">Claro</string>
+    <string name="theme_name_dark">Escuro</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Permissão de armazenamento necessária para salvar o papel de parede</string>
     <!-- Intent -->
@@ -247,4 +255,5 @@
     <string name="txt_open">Abrir</string>
     <string name="txt_close">Fechar</string>
     <string name="txt_new">Novo</string>
+    <!-- Content descriptions for screen readers -->
 </resources>

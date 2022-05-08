@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>लांचर क्या है?</item>
@@ -53,6 +54,7 @@
         <item>वाईफ़ाई की अनुमति की आवश्यकता क्यों है?</item>
         <item>क्यों सेट वॉलपेपर अनुमति की आवश्यकता है?</item>
         <item>क्यों वेक लॉक अनुमति की आवश्यकता है?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>लॉन्चर एंड्रॉइड यूजर इंटरफेस का हिस्सा है जो उपयोगकर्ताओं को होम स्क्रीन को अनुकूलित करता है,
@@ -97,5 +99,6 @@
         <item>इसका उपयोग यह देखने के लिए किया जाता है कि आपके फोन में इंटरनेट कनेक्शन है या नहीं, क्लाउड वॉलपेपर संग्रहालय से लोड करने के लिए।</item>
         <item>यह डैशबोर्ड ऐप से सीधे वॉलपेपर लागू करने के लिए उपयोग किया जाता है</item>
         <item>यह मुझ्ई लाइव वॉलपेपर द्वारा प्रयोग किया जाता है</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

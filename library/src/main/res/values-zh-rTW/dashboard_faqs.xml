@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>什麼是啟動器?</item>
@@ -52,6 +53,7 @@
         <item>為什麼需要用到取得 WiFi 連接狀態權限?</item>
         <item>為什麼需要用到設定桌布權限?</item>
         <item>為什麼需要用到喚醒鎖權限?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>啟動器是 Android 界面的一部分，它可以讓使用者在使用 Android 設備時自定義主屏幕，啟動應用 App ，撥打電話，以及其它種種任務。</item>
@@ -93,5 +95,6 @@ Muzei 並不會在每次桌布變化的時候下載桌布。你需要先在 Dash
         <item>是用來檢查你的手機是否連接到 Wifi 網絡的，以便載入 Muzei 上的雲端桌布。</item>
         <item>是用來從 Dashboard  App 中直接啟用桌布的。</item>
         <item>它被 Muzei 動態桌布所使用</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

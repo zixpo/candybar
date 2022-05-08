@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>Czym jest launcher?</item>
@@ -52,6 +53,7 @@
         <item>Dlaczego aplikacja wymaga pozwolenia na dostęp do stanu sieci WiFi?</item>
         <item>Dlaczego aplikacja wymaga pozwolenia na ustawianie tapety?</item>
         <item>Dlaczego aplikacja wymaga pozwolenia na dostęp do blokowania przejścia w stan uśpienia?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>Launcher to część interfejsu użytkownika systemu Android, która pozwala użytkownikom personalizować swój ekran główny, uruchamiać aplikacje, wykonywać połączenia telefoniczne, oraz wykonywać inne zadania na urządzeniu.</item>
@@ -79,5 +81,6 @@ niektóre nie mogą być w sekcji \"Zastosuj\" w aplikacji. W przypadku takich l
         <item>Jest używane aby sprawdzić czy telefon ma połączenie z siecią WiFi, w celu ładowania przechowywanych w chmurze tapet w Muzei.</item>
         <item>Jest używane aby zastosowywać tapety bezpośrednio z aplikacji.</item>
         <item>Jest używane przez Muzei Live Wallpaper</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

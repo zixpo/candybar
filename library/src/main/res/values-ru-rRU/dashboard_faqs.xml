@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>Что такое лаунчер?</item>
@@ -52,6 +53,7 @@
         <item>Почему требуется разрешение на WiFi соединение?</item>
         <item>Почему требуется разрешение на изменение обоев?</item>
         <item>Почему требуется разрешение на пробуждение?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>Лаунчер является частью пользовательского интерфейса Android, который позволяет пользователям настраивать домашний экран, запускать приложения, совершать телефонные звонки и выполнять другие задачи на устройствах Android.</item>
@@ -93,5 +95,6 @@
         <item>Оно используется, чтобы проверить, имеет ли Ваш телефон подключение к интернету по WiFi, чтобы загрузить обои.</item>
         <item>Оно используется, чтобы применить обои прямо из приложения в приборной панели.</item>
         <item>Используется Muzei Live Wallpaper</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

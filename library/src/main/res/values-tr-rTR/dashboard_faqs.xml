@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>Başlatıcı nedir?</item>
@@ -38,7 +39,7 @@
         <item>Nasıl bir simge isteyebilirim?</item>
         <item>Uygulamayı yeniden yükledikten sonra kalan Premium İstekleri nasıl geri yükleyebilirim?</item>
         <item>Telefonumu yeniden başlattıktan sonra, simge paketi uygulanmadı, neden varsayılanlara geri dönüldü?</item>
-        <item>Why do the icons looks jaggy or pixelated on my phone?</item>
+        <item>Simgeler neden telefonumda pürüzlü veya pikselli görünüyor?</item>
         <item>Tüm simgelere dahil olan simgeyi görebiliyorum,
             ama neden uygulama çekmecesinde gerçek simge değişmedi?</item>
         <item>\"Hataları raporla\" seçeneği nedir?</item>
@@ -53,6 +54,7 @@
         <item>Neden Wi-Fi Erişimi Durumu izni gerekli?</item>
         <item>Neden Duvar Kağıdıgı Ayarla izni gerekli?</item>
         <item>Neden Uyandırma izni gerekli?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>Başlatıcısı, kullanıcıların ana ekranı kişiselleştirmelerine, mobil uygulamaları başlatmalarına,
@@ -97,5 +99,6 @@
         <item>Telefonunuzun Muzei\'den bulut duvar kağıtları yüklemek için bir wifi ile internet bağlantısı olup olmadığını kontrol etmek için kullanılır.</item>
         <item>Doğrudan arayüz uygulamasından duvar kağıtlarını uygulamak için kullanılır.</item>
         <item>Muzei Live Wallpaper tarafından kullanılır</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>லான்ச்சர் என்றால் என்ன?</item>
@@ -53,6 +54,7 @@
         <item>Why is Access Wifi State permission needed?</item>
         <item>Why is Set Wallpaper permission needed?</item>
         <item>Why is Wake Lock Permission needed?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>லான்ச்சர் ஆண்ட்ராய்டு பயனர் இடைமுகத்தின் ஒரு பகுதியாகும், இது முகப்புத் திரையைத் தனிப்பயனாக்க, மொபைல் பயன்பாடுகளைத் தொடங்க, தொலைபேசி அழைப்புகளைச் செய்ய மற்றும் ஆண்ட்ராய்டு சாதனங்களில் பிற பணிகளைச் செய்ய பயனர்களை அனுமதிக்கிறது.</item>
@@ -96,5 +98,6 @@
         <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
         <item>It is used to apply wallpapers directly from the dashboard app.</item>
         <item>It is used by Muzei Live Wallpaper</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

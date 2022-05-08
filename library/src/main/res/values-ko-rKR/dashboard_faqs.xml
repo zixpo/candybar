@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>런처는 뭐죠?</item>
@@ -53,6 +54,7 @@
         <item>Why is Access Wifi State permission needed?</item>
         <item>Why is Set Wallpaper permission needed?</item>
         <item>Why is Wake Lock Permission needed?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>Launcher is the part of the Android user interface that lets users customize the home screen,
@@ -97,5 +99,6 @@
         <item>Muzei에서 클라우드 배경화면을 불러올 때 기기의 인터넷이 Wi-Fi인지 판단하는 데 사용됩니다.</item>
         <item>대시보드 앱에서 배경화면을 바로 적용하는 데 사용됩니다.</item>
         <item>Muzei Live Wallpaper 앱에서 사용됩니다.</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>

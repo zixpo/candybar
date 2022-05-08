@@ -4,7 +4,7 @@
     <!-- Navigation View -->
     <string name="navigation_view_home">Startseite</string>
     <string name="navigation_view_apply">Anwenden</string>
-    <string name="navigation_view_icons">Symbole</string>
+    <string name="navigation_view_icons">Icons</string>
     <string name="navigation_view_request">Icon-Anfrage</string>
     <string name="navigation_view_wallpapers">Hintergrundbilder</string>
     <string name="navigation_view_settings">Einstellungen</string>
@@ -184,6 +184,7 @@ Einstellungen öffnen, wähle \"Käufe wiederherstellen\", um es wieder zu bekom
     <string name="connection_failed">Daten können nicht vom Server geholt werden</string>
     <string name="wallpaper_apply">Hintergrundbild anwenden</string>
     <string name="wallpaper_save_to_device">Hintergrundbild speichern</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Daten &amp; Cache</string>
     <string name="pref_data_cache">Cache löschen</string>
@@ -216,6 +217,9 @@ fehlenden Icons erstellt wurde.</string>
     <string name="pref_others_reset_tutorial">Tutorial zurücksetzen</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial zurückgesetzt</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automatisch</string>
+    <string name="theme_name_light">Hell</string>
+    <string name="theme_name_dark">Dunkel</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Zugang zum Speicher nötig, um das Hintergrundbild zu speichern</string>
     <!-- Intent -->
@@ -255,4 +259,5 @@ Für Android bei GitHub verfügbar und kostenlos zur Benutzung freigegeben, entw
     <string name="txt_open">Öffnen</string>
     <string name="txt_close">Schließen</string>
     <string name="txt_new">Neu</string>
+    <!-- Content descriptions for screen readers -->
 </resources>

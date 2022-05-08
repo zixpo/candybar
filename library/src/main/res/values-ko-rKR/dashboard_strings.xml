@@ -146,6 +146,7 @@
     <string name="connection_failed">서버에서 데이터를 받아올 수 없습니다.</string>
     <string name="wallpaper_apply">배경화면 적용</string>
     <string name="wallpaper_save_to_device">배경화면 저장</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">데이터 및 캐시</string>
     <string name="pref_data_cache">캐시 삭제</string>
@@ -213,4 +214,5 @@ Apache License 2.0을 따르며 GitHub에 소스가 공개되어 있습니다.</
     <!-- DrawerToggle -->
     <string name="txt_open">열기</string>
     <string name="txt_close">닫기</string>
+    <!-- Content descriptions for screen readers -->
 </resources>

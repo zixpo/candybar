@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>ランチャーとは？</item>
@@ -53,6 +54,7 @@
         <item>なぜ「Wi-Fi状態の表示」権限が必要なのですか？</item>
         <item>なぜ「壁紙の設定」権限が必要なのですか？</item>
         <item>なぜ「端末のスリープを無効にする」権限が必要なのですか？</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>ランチャーはAndroidのユーザーインターフェースの一部で、Android端末でホーム画面をカスタマイズしたり、
@@ -97,5 +99,6 @@ Muzeiの設定を開き、「ダウンロード済みの壁紙のみ読み込む
         <item>その権限はお使いのデバイスがインターネットに接続されているか確認し、Muzeiからクラウドの壁紙を読み込むために使用されます。</item>
         <item>その権限はダッシュボードアプリから直接壁紙を適用するために使用されます。</item>
         <item>その権限はMuzeiライブ壁紙で使用されています</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>
