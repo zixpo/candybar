@@ -1,9 +1,7 @@
 package candybar.lib.helpers.sharpie;
 
 import static candybar.lib.helpers.DrawableHelper.stringToColor;
-import static candybar.lib.helpers.sharpie.R1.CLAZZ;
-import static candybar.lib.helpers.sharpie.R1.VALUE;
-import static candybar.lib.helpers.sharpie.R1.WrappedMethod;
+import static candybar.lib.helpers.sharpie.R1.*;
 
 import android.app.Activity;
 import android.content.Context;
@@ -84,8 +82,8 @@ public class R2 {
                 } catch (Exception e) {
                     LogUtil.d(Log.getStackTraceString(e));
                 }
-                latch.countDown();
             }
+            latch.countDown();
         });
         latch.await();
     }
