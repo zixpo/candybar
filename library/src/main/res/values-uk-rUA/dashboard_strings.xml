@@ -181,6 +181,7 @@
     <string name="connection_failed">Неможливо отримати дані із сервера</string>
     <string name="wallpaper_apply">Застосувати шпалери</string>
     <string name="wallpaper_save_to_device">Зберегти шпалери</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Дані і кеш</string>
     <string name="pref_data_cache">Очистити кеш</string>
@@ -252,4 +253,5 @@
     <string name="txt_open">Відкрити</string>
     <string name="txt_close">Закрити</string>
     <string name="txt_new">Новий</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
