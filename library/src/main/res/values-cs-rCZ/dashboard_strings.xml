@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Ikony</string>
     <string name="navigation_view_request">Žádost o ikony</string>
     <string name="navigation_view_wallpapers">Tapety</string>
+    <string name="navigation_view_presets">Předvolby</string>
     <string name="navigation_view_settings">Nastavení</string>
     <string name="navigation_view_faqs">FAQ</string>
     <string name="navigation_view_about">O aplikaci</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Hledat</string>
     <string name="menu_save">Uložit do zařízení</string>
     <string name="menu_select_all">Vybrat vše</string>
+    <string name="menu_delete">Smazat</string>
     <string name="menu_wallpaper_crop">Oříznout tapetu</string>
     <string name="menu_apply_homescreen">Domovská obrazovka</string>
     <string name="menu_apply_lockscreen">Zamykací obrazovka</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Nebyly nalezeny žádné výsledky pro \"%s\"</string>
     <string name="search_faqs">Otázky nebo odpovědi</string>
     <string name="search_icon">Název ikony</string>
+    <string name="search_wallpapers">Název tapety</string>
     <!-- Update -->
     <string name="checking_for_update">Kontrola aktualizací…</string>
     <string name="update_available">Aktualizace k dispozici!</string>
@@ -121,6 +124,8 @@
     <!-- Icons -->
     <string name="icons_load_failed">Ikony nelze načíst</string>
     <string name="icon_shape">Tvar ikon</string>
+    <string name="bookmark_icons_empty">Nebyly nalezeny žádné záložky. Ikony záložek k rychlému přístupu.</string>
+    <string name="items_selected">Vybráno: %d</string>
     <!-- Request -->
     <string name="request_title">Žádost o ikony</string>
     <string name="request_not_selected">Vyberte aplikace, o které chcete požádat</string>
@@ -130,6 +135,8 @@
     <string name="request_pacific_sending">Odesílání požadavku do Pacific Manager...</string>
     <string name="request_pacific_error">Při odesílání požadavku do Pacific Manager došlo k chybě. Chyba je %s</string>
     <string name="request_pacific_success">Požadavek byl úspěšně odeslán do Pacific Manager</string>
+    <string name="request_custom_error">Při odesílání požadavku na ikonu došlo k chybě. Pokud tato chyba přetrvává, kontaktujte vývojáře. %s</string>
+    <string name="request_custom_success">Požadavek na ikonu byl úspěšně odeslán</string>
     <string name="request_fetching_data">Načítání nejnovějších dat…</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
@@ -183,6 +190,10 @@
     <string name="wallpaper_apply">Použití tapetu</string>
     <string name="wallpaper_save_to_device">Uložit tapetu</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Nelze načíst předvolby</string>
+    <string name="presets_storage_permission">K načtení náhledu tapety je nutné oprávnění k úložišti</string>
+    <string name="presets_required_apps">Potřebné aplikace pro použití těchto předvoleb</string>
+    <string name="presets_required_apps_not_installed">Aplikace potřebné k použití předvolby nejsou nainstalovány. Nainstalujte chybějící potřebné aplikace a zkuste to znovu.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Data a mezipaměť</string>
     <string name="pref_data_cache">Vymazat mezipaměť</string>
@@ -257,4 +268,5 @@
     <string name="txt_close">Zavřít</string>
     <string name="txt_new">Nový</string>
     <!-- Content descriptions for screen readers -->
+    <string name="icon_request_submit_button_content_description">Odeslat požadavek na ikonu</string>
 </resources>
