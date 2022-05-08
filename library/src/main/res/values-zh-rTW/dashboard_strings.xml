@@ -34,10 +34,14 @@
     <string name="ok">確認</string>
     <string name="install">安裝</string>
     <string name="donate">捐贈</string>
+    <string name="update">更新</string>
     <string name="search_noresult">未找到 \"%s\"</string>
     <string name="search_faqs">問題或回答</string>
     <string name="search_icon">icon 名稱</string>
     <!-- Update -->
+    <string name="checking_for_update">正在檢查更新...</string>
+    <string name="update_available">可用的更新 ！</string>
+    <string name="no_update_available">你正在使用最新版本</string>
     <!-- Changelog -->
     <string name="changelog_version">版本</string>
     <!-- InAppBilling -->
@@ -50,6 +54,7 @@
 您無法使用本 App 。</string>
     <string name="license_check_retry">無法檢查許可證，請稍後重試。</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check_success">感谢您从 Google Play 商店安装该应用程序</string>
     <!-- Share -->
     <string name="share_app_title">喲！來看看 %s</string>
     <string name="share_app_body">來看看 %1$s，這個 icon pack 超酷的！ %2$s</string>
@@ -94,6 +99,7 @@
     <!-- Apply -->
     <string name="apply_installed">已安裝的啟動器</string>
     <string name="apply_supported">受支援的啟動器</string>
+    <string name="apply_manual">%1$s 不支援直接從 App 中啟用 icon ，你可以從啟動器設定中手動啟用 %2$s。</string>
     <string name="apply_manual_evie">在主螢幕上長按 - 設定 -  icon pack  - 選擇 %s。</string>
     <string name="apply_launch_failed">無法啟動 %s 設定</string>
     <string name="apply_launcher_not_installed">%s 尚未安裝。你想跳轉到 Google Play 商店去下載安裝它嗎？</string>
@@ -105,6 +111,7 @@
     <string name="apply_lg_home_nougat">Android Nougat 版本的 LG Home 不再支援 icon pack 了。你需要一個第三方啟動器來使用 icon pack 。</string>
     <!-- Icons -->
     <string name="icons_load_failed">無法載入 icon </string>
+    <string name="icon_shape">圖示形狀</string>
     <!-- Request -->
     <string name="request_title">申請 icon </string>
     <string name="request_not_selected">選擇用來申請適配的 App </string>
@@ -151,6 +158,7 @@
     <string name="connection_failed">無法從服務器獲取資料</string>
     <string name="wallpaper_apply">使用桌布</string>
     <string name="wallpaper_save_to_device">儲存桌布</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">資料 &amp; 快取</string>
     <string name="pref_data_cache">清除快取</string>
@@ -216,4 +224,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">打開</string>
     <string name="txt_close">關閉</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
