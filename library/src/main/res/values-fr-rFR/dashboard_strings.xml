@@ -185,6 +185,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="connection_failed">Impossible d\'obtenir des informations du serveur</string>
     <string name="wallpaper_apply">Appliquer le fond d\'écran</string>
     <string name="wallpaper_save_to_device">Enregistrer le fond d\'écran</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Données et Cache</string>
     <string name="pref_data_cache">Effacer le cache</string>
@@ -212,7 +213,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="pref_others_header">Autres</string>
     <string name="pref_others_report_bugs">Rapport d\'erreurs</string>
     <string name="pref_others_changelog">Journal des Modifications</string>
-    <string name="pref_others_reset_tutorial">Réinitialiser le didactitciel</string>
+    <string name="pref_others_reset_tutorial">Réinitialiser le didacticiel</string>
     <string name="pref_others_reset_tutorial_reset">Didacticiel réinitialisé</string>
     <!-- Themes -->
     <string name="theme_name_auto">Auto</string>
@@ -256,4 +257,5 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="txt_open">Ouvrir</string>
     <string name="txt_close">Fermer</string>
     <string name="txt_new">Nouveau</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
