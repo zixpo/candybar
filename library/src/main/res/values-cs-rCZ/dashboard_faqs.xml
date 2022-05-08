@@ -26,6 +26,7 @@
         <!-- Why is Access Wifi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
+        <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
         <item>Co je to spouštěč?</item>
@@ -53,6 +54,7 @@
         <item>Proč je vyžadováno oprávnění přístupu k Wi-Fi?</item>
         <item>Proč je vyžadováno oprávnění k nastavení tapety?</item>
         <item>Proč je vyžadováno oprávnění k zakázání režimu spánku?</item>
+        <item>Why is Set Alarm permission needed?</item>
     </string-array>
     <string-array name="answers">
         <item>Spouštěč je součástí uživatelského rozhraní systému Android, které umožňuje uživatelům přizpůsobit si domovskou obrazovku,
@@ -97,5 +99,6 @@
         <item>Používá se ke kontrole, zda je váš telefon připojen k Wi-Fi nebo ne, k načtení cloudových tapet z Muzei.</item>
         <item>Používá se k použití tapet přímo z hlavního panelu aplikace.</item>
         <item>Toto oprávnění je požadováno Živou tapetou Muzei</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
     </string-array>
 </resources>
