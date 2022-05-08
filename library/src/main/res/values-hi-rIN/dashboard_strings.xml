@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">शुरुआती स्क्रीन का शीर्षक</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">घर</string>
     <string name="navigation_view_apply">लागू करें</string>
@@ -155,6 +156,7 @@
     <string name="connection_failed">सर्वर से डाटा लेने में असमर्थ</string>
     <string name="wallpaper_apply">वॉलपेपर लागु करें</string>
     <string name="wallpaper_save_to_device">वॉलपेपर सहेजे</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">डेटा और कैश</string>
     <string name="pref_data_cache">कैश हटायें</string>
@@ -223,4 +225,5 @@
     <!-- DrawerToggle -->
     <string name="txt_open">खोलें</string>
     <string name="txt_close">बंद करे</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
