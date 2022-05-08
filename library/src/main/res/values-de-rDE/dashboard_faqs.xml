@@ -54,7 +54,7 @@ aber wieso ist dieses Icon nicht in der App-Übersicht geändert?</item>
         <item>Wieso sind WLAN-Verbindungsinformationen nötig?</item>
         <item>Wieso braucht man die Erlaubnis Hintergründe festzulegen?</item>
         <item>Wieso ist die Erlaubnis den Standby-Modus zu deaktivieren nötig?</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>Wieso wird die Erlaubnis zum Einstellungen von Alarmen benötigt?</item>
     </string-array>
     <string-array name="answers">
         <item>Der Launcher ist der Teil der Androidbenutzeroberfläche, der zulässt den Startbildschirm anzupassen, Apps zu starten, Anrufe zu tätigen und andere Aufgaben auf Android-Geräten zu erfüllen.</item>
@@ -97,6 +97,6 @@ Muzei-Einstellungen öffnen und wähle, dass nur heruntergeladene Hintergrundbil
         <item>Es wird benutzt, um zu überprüfen, ob dein Handy eine Internetverbindung mit einem WLAN-Netzwerk hat, damit Cloud-Hintergründe von Muzei geladen werden können.</item>
         <item>Es wird benutzt, um Hintergrundbilder direkt aus der Dashboard App anzuwenden.</item>
         <item>Es wird von Muzei Live-Hintergrund benutzt</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>Es wird verwendet, um die Uhr-App aus dem analogen Uhr-Widget zu starten.</item>
     </string-array>
 </resources>
