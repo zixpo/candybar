@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="splash_screen_title">CandyBar Materyal Kullanı Arayüzü</string>
+    <string name="splash_screen_title">CandyBar Materyal Simge Paneli</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Ana Ekran</string>
     <string name="navigation_view_apply">Uygula</string>
@@ -36,10 +36,14 @@
     <string name="ok">Tamam</string>
     <string name="install">Yükle</string>
     <string name="donate">Bağış yapın</string>
+    <string name="update">Güncelle</string>
     <string name="search_noresult">\"%s\" için sonuç bulunamadı</string>
     <string name="search_faqs">Soru veya cevap</string>
     <string name="search_icon">Simge Adı</string>
     <!-- Update -->
+    <string name="checking_for_update">Güncellemeler kontrol ediliyor…</string>
+    <string name="update_available">Güncelleme mevcut!</string>
+    <string name="no_update_available">En son sürümü kullanıyorsunuz!</string>
     <!-- Changelog -->
     <string name="changelog_version">Versiyon</string>
     <!-- InAppBilling -->
@@ -52,6 +56,8 @@
         Maalesef kullanamayacaksınız.</string>
     <string name="license_check_retry">Lisans kontrol edilemiyor, lütfen birkaç dakika sonra tekrar deneyin.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play Store doğrulaması</string>
+    <string name="playstore_check_success">Uygulamayı Google Play Store\'dan yüklediğiniz için teşekkür ederiz. Keyfini çıkarın.</string>
     <!-- Share -->
     <string name="share_app_title">%s göz atın</string>
     <string name="share_app_body">%1$s göz atın, bu simge paketi gerçekten harika! %2$s</string>
@@ -97,39 +103,55 @@
     <!-- Apply -->
     <string name="apply_installed">Yüklü Başlatıcı</string>
     <string name="apply_supported">Desteklenen Başlatıcılar</string>
+    <string name="apply_manual">%1$s başlatıcı doğrudan uygulamayı desteklemiyor, fakat %2$s paketini başlatıcı ayarlarından el ile uygulayabilirsiniz.</string>
     <string name="apply_manual_evie">Ana ekrana dokunun ve basılı tutun - Ayarlar - Simge Paketi - %s\'i seçin.</string>
     <string name="apply_launch_failed">%s ayarları başlatılamıyor</string>
     <string name="apply_launcher_not_installed">%s yüklü değil. İndirmek ve yüklemek için
         Google Play Store\'u açmak istiyor musunuz?</string>
+    <string name="apply_launcher_not_installable">%s Başlatıcı yüklü değil. Lütfen başlatıcıyı yükledikten sonra tekrar deneyin.</string>
     <string name="apply_cmtheme_not_available">CM Tema Yöneticisi bu cihazda mevcut değil</string>
     <string name="apply_cmtheme_failed">CM Tema Yöneticisi başlatılamıyor, Simge Paketini el ile Ayarlar\'dan deneyebilirsiniz.</string>
     <string name="apply_lg_home">Bu Simge Paketi uygulamasını açmak için Ayarlar - Ekran - Ana Ekran - Tema</string>
     <string name="apply_lg_home_not_available">LG Home bu cihazda mevcut değil</string>
     <string name="apply_lg_home_failed">LG Home Ayarları başlatılamıyor, Simge Paketini Ayarlar\'dan el ile uygulamayı deneyebilirsiniz.</string>
     <string name="apply_lg_home_nougat">Android Nougat ile LG Home artık Simge Paketi desteklemiyor. Simge Paketi kullanmak için özel bir başlatıcıya ihtiyacınız var.</string>
+    <string name="apply_launcher_incompatible">%s Başlatıcı herhangi bir simge paketini desteklemediğinden, bu simge paketini bu başlatıcıyla kullanamazsınız. Bu simge paketini %2$s başlatıcısında kullanmak için bir üçüncü taraf uygulamasını deneyebilirsiniz. Yüklemek ister misiniz?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Simgeler yüklenemedi</string>
+    <string name="icon_shape">Simge Şekli</string>
     <!-- Request -->
     <string name="request_title">Simge İsteği</string>
     <string name="request_not_selected">İstenecek uygulamaları seçin</string>
     <string name="request_not_requested">İstenmedi</string>
     <string name="request_already_requested">Daha önceden istendi</string>
     <string name="request_building">Simge isteği oluşturuluyor …</string>
+    <string name="request_fetching_data">En son veriler getiriliyor…</string>
     <string name="request_build_failed">Simge isteği oluşturulamadı</string>
     <string name="request_appfilter_failed">Appfilter.xml okunamadı</string>
     <string name="request_requested">Lütfen isteğinizi tekrar kontrol edin.
         Zaten talep edilen uygulamayı istemeye çalıştığınız için.</string>
     <string name="request_email_client">Simge isteğini göndermek için kullanmak istediğiniz e-posta istemcisini seçin</string>
+    <string name="request_app_disabled">Bu simge paketinin daha eski bir sürümünü kullanıyorsunuz. İstenen simgeler en son sürüme dahil edilmiş olabilir. Simge istemek için lütfen uygulamanızı en son sürüme güncelleyin.</string>
+    <string name="connection_error_long">Sunucudan veri yüklenemiyor. Lütfen ağ bağlantınızı kontrol edin.</string>
+    <string name="unable_to_load_config">Sunucudan veri alınırken/okunurken bir hata oluştu.</string>
     <string name="request_limit">Normal istekle yalnızca %d istek yapabilirsiniz.</string>
     <string name="request_used">%d simge isteğinde bulundunuz.</string>
     <string name="request_limit_buy">Daha fazla simge istemek için Premium İstekler satın alabilirsiniz.</string>
     <string name="request_limit_reset">Her güncelleme için simge istek limiti sıfırlanacaktır.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Standart Simge Talebi</string>
+    <string name="regular_request_desc">Simge talebinde bulunun. Geliştirici, istediğiniz simgeleri dahil etmeye çalışacaktır.</string>
+    <string name="regular_request_count">Toplam\n%d istek</string>
+    <string name="regular_request_used">Kullanılmış\n%d istek</string>
+    <string name="regular_request_available">Kalan\n%d istek</string>
     <!-- Premium Request -->
     <string name="premium_request">Premium Simge İsteği</string>
     <string name="premium_request_no_internet">Premium bir talep göndermeden önce telefonunuzun internete bağlı olduğundan emin olun.</string>
     <string name="premium_request_desc">Premium simge isteği talep etmek için ödeme yapılır. İstenen uygulamalarınızı premium simge isteğinizi kullanarak daha hızlı alabilirsiniz.</string>
     <string name="premium_request_buy">Satın al</string>
+    <string name="premium_request_count">Toplam\n%d istek</string>
+    <string name="premium_request_used">Kullanılmış\n%d istek</string>
+    <string name="premium_request_available">Kalan\n%d istek</string>
     <string name="premium_request_already_purchased">Hala %d premium isteğiniz var.
         Tekrar bir premium talep paketi satın almadan önce hepsini kullanmanız gerekir.</string>
     <string name="premium_request_limit">Sadece% d premium isteğiniz var,</string>
@@ -155,6 +177,7 @@
     <string name="connection_failed">Sunucudan veri alınamadı</string>
     <string name="wallpaper_apply">Duvar kağıdını uygula</string>
     <string name="wallpaper_save_to_device">Duvar kağıdını kaydet</string>
+    <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_data_header">Veri ve Önbellek</string>
     <string name="pref_data_cache">Önbelleği Temizle</string>
@@ -187,6 +210,9 @@
     <string name="pref_others_reset_tutorial">Tanıtımı Sıfırla</string>
     <string name="pref_others_reset_tutorial_reset">Tanıtımı Sıfırla</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Otomatik</string>
+    <string name="theme_name_light">Aydınlık</string>
+    <string name="theme_name_dark">Karanlık</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Duvar kağıdını kaydetmek için depolama izni gerekli</string>
     <!-- Intent -->
@@ -200,6 +226,8 @@
     <string name="intent_email_not_supported_message">Desteklenmeyen bir e-posta istemcisi seçildi, lütfen başka bir e-posta istemcisi seçin</string>
     <!-- About -->
     <string name="about_contributors_title">Katkıda Bulunanlar</string>
+    <string name="about_privacy_policy_title">Gizlilik Politikası</string>
+    <string name="about_terms_and_conditions_title">Şartlar ve Koşullar</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Lütfen bildirmek istediğiniz sorunla ilgili bir açıklama yapın</string>
     <string name="report_bugs_desc_hint">Açıklama</string>
@@ -214,6 +242,7 @@
     <string name="crash_report_message">Ne yazık ki %s çöktü. Geliştiricinin sorunu düzeltmesine yardımcı olmak için aşağıdan raporu gönder\'i seçin.</string>
     <string name="crash_report_send">Rapor Gönder</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar, Android için Apache License 2.0 altında, GitHub\'da kullanılabilen ve kullanımı kolay,
         Dani Mahardhika tarafından geliştirilen açık kaynaklı simge paketi panosudur.</string>
     <string name="about_open_source_licenses">Açık Kaynak Lisansları</string>
@@ -222,4 +251,6 @@
     <!-- DrawerToggle -->
     <string name="txt_open">Açık</string>
     <string name="txt_close">Kapalı</string>
+    <string name="txt_new">Yeni</string>
+    <!-- Content descriptions for screen readers -->
 </resources>
