@@ -53,7 +53,7 @@
         <item>لماذا صلاحية الوصول إلى حالة Wifi مطلوبة؟</item>
         <item>لماذا صلاحية تعيين الخلفية مطلوبة؟</item>
         <item>لماذا صلاحية Wake Lock مطلوبة؟</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>لماذا صلاحية ضبط المنبه مطلوبة؟</item>
     </string-array>
     <string-array name="answers">
         <item>المشغل هو جزء من واجهة مستخدم أندرويد يسمح للمستخدمين بتخصيص الشاشة الرئيسية، تشغيل تطبيقات الهاتف، إجراء مكالمات هاتفية، وتنفيذ مهام أخرى على أجهزة أندرويد.</item>
@@ -80,6 +80,6 @@
         <item>يتم استعمالها للتحقق من أن هاتفك لديه اتصال بالإنترنت عبر wifi أم لا، ولعرض الخلفيات في السحابة من Muzei.</item>
         <item>يتم استعمالها لتطبيق الخلفيات مباشرة من تطبيق لوحة المعلومات.</item>
         <item>يتم استعمالها من قبل خلفية Muzei الحية.</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>يتم استعمالها لتشغيل تطبيق الساعة من أداة الساعة الذكية.</item>
     </string-array>
 </resources>
