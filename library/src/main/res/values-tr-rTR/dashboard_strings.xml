@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Simgeler</string>
     <string name="navigation_view_request">Simge İsteği</string>
     <string name="navigation_view_wallpapers">Duvar Kağıtları</string>
+    <string name="navigation_view_presets">Şablonlar</string>
     <string name="navigation_view_settings">Ayarlar</string>
     <string name="navigation_view_faqs">SSS</string>
     <string name="navigation_view_about">Hakkında</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Ara</string>
     <string name="menu_save">Cihaza Kaydet</string>
     <string name="menu_select_all">Tümünü Seç</string>
+    <string name="menu_delete">Sil</string>
     <string name="menu_wallpaper_crop">Duvar Kağıdını Kırp</string>
     <string name="menu_apply_homescreen">Ana ekran</string>
     <string name="menu_apply_lockscreen">Kilit ekranı</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">\"%s\" için sonuç bulunamadı</string>
     <string name="search_faqs">Soru veya cevap</string>
     <string name="search_icon">Simge Adı</string>
+    <string name="search_wallpapers">Duvar Kağıdı ismi</string>
     <!-- Update -->
     <string name="checking_for_update">Güncellemeler kontrol ediliyor…</string>
     <string name="update_available">Güncelleme mevcut!</string>
@@ -58,6 +61,7 @@
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store doğrulaması</string>
     <string name="playstore_check_success">Uygulamayı Google Play Store\'dan yüklediğiniz için teşekkür ederiz. Keyfini çıkarın.</string>
+    <string name="playstore_check_failed">Görünene göre simge paketini Google Play Store dışında bir kaynaktan yüklemişsiniz. Bu yüzden simge paketini kullanamazsınız.</string>
     <!-- Share -->
     <string name="share_app_title">%s göz atın</string>
     <string name="share_app_body">%1$s göz atın, bu simge paketi gerçekten harika! %2$s</string>
@@ -119,12 +123,17 @@
     <!-- Icons -->
     <string name="icons_load_failed">Simgeler yüklenemedi</string>
     <string name="icon_shape">Simge Şekli</string>
+    <string name="bookmark_icons_empty">Favori bulunamadı. Buradan simgelerenize hızlıca erişmek için simgeleri favorilere ekleyin.</string>
+    <string name="items_selected">%d öge seçildi</string>
     <!-- Request -->
     <string name="request_title">Simge İsteği</string>
     <string name="request_not_selected">İstenecek uygulamaları seçin</string>
     <string name="request_not_requested">İstenmedi</string>
     <string name="request_already_requested">Daha önceden istendi</string>
     <string name="request_building">Simge isteği oluşturuluyor …</string>
+    <string name="request_pacific_sending">Pacific Manager\'a istek gönderiliyor...</string>
+    <string name="request_pacific_error">Pacific Manager\'a istek gönderilirken hata oluştu. Hata: %s</string>
+    <string name="request_pacific_success">Pacific Manager\'a başarıyla istek gönderildi</string>
     <string name="request_fetching_data">En son veriler getiriliyor…</string>
     <string name="request_build_failed">Simge isteği oluşturulamadı</string>
     <string name="request_appfilter_failed">Appfilter.xml okunamadı</string>
