@@ -134,6 +134,8 @@
     <string name="request_pacific_sending">Pacific Manager\'a istek gönderiliyor...</string>
     <string name="request_pacific_error">Pacific Manager\'a istek gönderilirken hata oluştu. Hata: %s</string>
     <string name="request_pacific_success">Pacific Manager\'a başarıyla istek gönderildi</string>
+    <string name="request_custom_error">Simge isteği gönderilirken hata oluştu. Bu hata devam ederse geliştiriciyle iletişime geçin. %s</string>
+    <string name="request_custom_success">Simge isteği başarıyla gönderildi</string>
     <string name="request_fetching_data">En son veriler getiriliyor…</string>
     <string name="request_build_failed">Simge isteği oluşturulamadı</string>
     <string name="request_appfilter_failed">Appfilter.xml okunamadı</string>
@@ -187,6 +189,10 @@
     <string name="wallpaper_apply">Duvar kağıdını uygula</string>
     <string name="wallpaper_save_to_device">Duvar kağıdını kaydet</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Şablonlar yüklenemedi</string>
+    <string name="presets_storage_permission">Duvar kağıdı önizlemelerini yüklemek için depolama izni gerekiyor</string>
+    <string name="presets_required_apps">Bu şablonları kullanmak için gerekli uygulamalar</string>
+    <string name="presets_required_apps_not_installed">Şablonu kullanmak için gerekli uygulamalar yüklü değil. Lütfen eksik olan gerekli uygulamaları yükleyin ve tekrar deneyin.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Veri ve Önbellek</string>
     <string name="pref_data_cache">Önbelleği Temizle</string>
@@ -262,4 +268,11 @@
     <string name="txt_close">Kapalı</string>
     <string name="txt_new">Yeni</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Bu simgeyi favoriler bölümüne ekleyin</string>
+    <string name="icon_search_close_button_content_description">Simge aramayı kapat</string>
+    <string name="icon_request_submit_button_content_description">Simge isteğini gönder</string>
+    <string name="icon_list_content_description">Simge paketinde bulunan simgelerin listesi</string>
+    <string name="icon_search_list_content_description">Arama terimiyle eşleşen simgelerin listesi</string>
+    <string name="about_item_social_content_description">Simge paketinin sahibinin çevrimiçi profiline bir bağlantı: </string>
+    <string name="share_icon_pack_button_content_description">Bu uygulamayı arkadaşlarınızla paylaşın</string>
 </resources>
