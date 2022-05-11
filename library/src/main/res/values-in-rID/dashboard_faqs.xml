@@ -97,6 +97,6 @@ Buka pengaturan Muzei, lalu pilih Muat Wallpaper Terunduh Saja.</item>
         <item>Itu digunakan untuk memeriksa telepon anda apakah memiliki koneksi internet ke wifi atau tidak, untuk memuat wallpaper cloud dari Muzei.</item>
         <item>Itu digunakan untuk menerapkan wallpaper secara langsung dari aplikasi dashboard.</item>
         <item>Itu diperlukan oleh Muzei Live Wallpaper</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>Karena diperlukan untuk mengakses aplikasi jam dari widget jam analog.</item>
     </string-array>
 </resources>
