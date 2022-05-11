@@ -269,4 +269,6 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="icon_request_submit_button_content_description">Kirim sebuah permintaan ikon</string>
     <string name="icon_list_content_description">Daftar ikon termasuk dalam paket ikon</string>
     <string name="icon_search_list_content_description">Daftar ikon yang sesuai dengan istilah pencarian</string>
+    <string name="about_item_social_content_description">Tautan ke profile online pencipta paket ikon: </string>
+    <string name="share_icon_pack_button_content_description">Bagikan aplikasi ini dengan seseorang</string>
 </resources>
