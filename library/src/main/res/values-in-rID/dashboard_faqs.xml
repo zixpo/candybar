@@ -53,7 +53,7 @@
         <item>Mengapa izin Akses Status Wifi diperlukan?</item>
         <item>Mengapa izin Mengatur Wallpaper diperlukan?</item>
         <item>Mengapa izin Terjaga diperlukan?</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>Mengapa izin mengatur alarm diperlukan?</item>
     </string-array>
     <string-array name="answers">
         <item>Peluncur adalah bagian dari antar muka Android yang memungkinkan pengguna dapat menyesuaikan layar beranda, menjalankan aplikasi seluler, membuat panggilan telepon, dan melakukan aktivitas lain pada perangkat Android.</item>
