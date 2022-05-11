@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Ikon</string>
     <string name="navigation_view_request">Pesan ikon</string>
     <string name="navigation_view_wallpapers">Wallpaper</string>
+    <string name="navigation_view_presets">Setelan</string>
     <string name="navigation_view_settings">Pengaturan</string>
     <string name="navigation_view_faqs">Tanya Jawab</string>
     <string name="navigation_view_about">Tentang</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Cari</string>
     <string name="menu_save">Simpan ke Perangkat</string>
     <string name="menu_select_all">Pilih Semua</string>
+    <string name="menu_delete">Hapus</string>
     <string name="menu_wallpaper_crop">Potong Wallpaper</string>
     <string name="menu_apply_homescreen">Layar Beranda</string>
     <string name="menu_apply_lockscreen">Layar Kunci</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Tidak ada hasil ditemukan untuk \"%s\"</string>
     <string name="search_faqs">Pertanyaan atau jawaban</string>
     <string name="search_icon">Nama Ikon</string>
+    <string name="search_wallpapers">Nama wallpaper</string>
     <!-- Update -->
     <string name="checking_for_update">Mengecek pembaruan…</string>
     <string name="update_available">Pembaruan tersedia!</string>
