@@ -7,10 +7,11 @@
     <string name="navigation_view_icons">图标</string>
     <string name="navigation_view_request">申请图标</string>
     <string name="navigation_view_wallpapers">壁纸</string>
+    <string name="navigation_view_presets">默认</string>
     <string name="navigation_view_settings">设置</string>
     <string name="navigation_view_faqs">常见问题</string>
     <string name="navigation_view_about">关于</string>
-    <string name="navigation_view_donate">支持开发工作</string>
+    <string name="navigation_view_donate">支持开发者</string>
     <!-- Muzei -->
     <string name="muzei_settings">Muzei 设置</string>
     <string name="minute">分钟</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">搜索</string>
     <string name="menu_save">保存到设备</string>
     <string name="menu_select_all">全选</string>
+    <string name="menu_delete">删除</string>
     <string name="menu_wallpaper_crop">裁剪壁纸</string>
     <string name="menu_apply_homescreen">主屏幕</string>
     <string name="menu_apply_lockscreen">锁屏</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">未找到 “%s”</string>
     <string name="search_faqs">问题或回答</string>
     <string name="search_icon">图标名称</string>
+    <string name="search_wallpapers">壁纸名称</string>
     <!-- Update -->
     <string name="checking_for_update">正在检查更新…</string>
     <string name="update_available">有可用的更新！</string>
