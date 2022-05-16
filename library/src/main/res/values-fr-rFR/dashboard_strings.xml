@@ -196,6 +196,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="presets_load_failed">Impossible de charger les modèles</string>
     <string name="presets_storage_permission">La permission Espace de stockage est requise pour charger la prévisualation du fond d\'écran</string>
     <string name="presets_required_apps">Des applications sont requises pour utiliser ces modèles</string>
+    <string name="presets_required_apps_not_installed">Les applications requises pour utiliser le modèle ne sont pas installées. Veuillez les installer et essayez à nouveau.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Données et Cache</string>
     <string name="pref_data_cache">Effacer le cache</string>
@@ -268,4 +269,11 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="txt_close">Fermer</string>
     <string name="txt_new">Nouveau</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Ajouter cette icône à la section des favoris</string>
+    <string name="icon_search_close_button_content_description">Fermer la recherche d\'icône</string>
+    <string name="icon_request_submit_button_content_description">Soumettre une demande d\'icône</string>
+    <string name="icon_list_content_description">La liste des icônes incluses dans le pack d\'icônes</string>
+    <string name="icon_search_list_content_description">La liste des icônes qui correspondent au terme recherché</string>
+    <string name="about_item_social_content_description">Un lien vers un profil en ligne de l\'auteur du pack d\'icônes : </string>
+    <string name="share_icon_pack_button_content_description">Partager cette application avec une connaissance</string>
 </resources>
