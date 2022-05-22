@@ -392,7 +392,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.container) {
-                int position = mShowPremiumRequest ?
+                int position = mShowPremiumRequest || mShowRegularRequestLimit ?
                         getBindingAdapterPosition() - 1 : getBindingAdapterPosition();
                 if (toggleSelection(position)) {
                     checkbox.toggle();
@@ -404,7 +404,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public boolean onLongClick(View view) {
             int id = view.getId();
             if (id == R.id.container) {
-                int position = mShowPremiumRequest ?
+                int position = mShowPremiumRequest || mShowRegularRequestLimit ?
                         getBindingAdapterPosition() - 1 : getBindingAdapterPosition();
                 if (toggleSelection(position)) {
                     checkbox.toggle();
