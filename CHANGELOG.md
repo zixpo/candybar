@@ -1,3 +1,7 @@
+# v3.14.2
+- Fixed wrong icon getting selected in icon requests
+- Updated translations
+
 # v3.14.1
 - Fixed icon request taking forever to build.
 - Updated translations.

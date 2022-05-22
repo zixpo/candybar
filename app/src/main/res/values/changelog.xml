@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">May 8, 2022</string>
+    <string name="changelog_date" translatable="false">May 22, 2022</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,26 +10,7 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <![CDATA[]]>
-        <item>Updated Android Gradle Plugin</item>
-        <item>Rebuilds only current premium request</item>
-        <item>Ability to render layered drawables</item>
-        <item>
-            <![CDATA[
-                Fixed an issue with the request fragment where the first missing app was not showing up when premium
-                request was disabled (Thanks to <a href="https://github.com/moertel">@moertel</a> for the research)
-            ]]>
-        </item>
-        <item>Updated dependencies</item>
-        <item>Now targets Android S (API 32)</item>
-        <item>Hide old launchers in apply section</item>
-        <item><![CDATA[Updated to work with Pacific Manager (Thanks to <a href="https://github.com/justinkruit">@justinkruit</a>)]]></item>
-        <item>
-            <![CDATA[
-                Added support for custom icon request mode which you can configure
-                programmatically using Java (Thanks to <a href="https://github.com/moertel">@moertel</a>)
-            ]]>
-        </item>
+        <item>Fixed wrong icon getting selected in icon requests</item>
         <item>Updated translations</item>
     </string-array>
 
