@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Ícones</string>
     <string name="navigation_view_request">Sugestão de Ícones</string>
     <string name="navigation_view_wallpapers">Papéis de Parede</string>
+    <string name="navigation_view_presets">Predefinições</string>
     <string name="navigation_view_settings">Configurações</string>
     <string name="navigation_view_faqs">Perguntas Frequentes</string>
     <string name="navigation_view_about">Sobre</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Pesquisar</string>
     <string name="menu_save">Salvar no Dispositivo</string>
     <string name="menu_select_all">Selecionar Tudo</string>
+    <string name="menu_delete">Excluir</string>
     <string name="menu_wallpaper_crop">Cortar Papel de Parede</string>
     <string name="menu_apply_homescreen">Tela inicial</string>
     <string name="menu_apply_lockscreen">Tela de bloqueio</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Nenhum resultado para \"%s\"</string>
     <string name="search_faqs">Pergunta ou resposta</string>
     <string name="search_icon">Nome do ícone</string>
+    <string name="search_wallpapers">Nome do papel de parede</string>
     <!-- Update -->
     <string name="checking_for_update">Verificando atualizações…</string>
     <string name="update_available">Atualização disponível!</string>
@@ -58,6 +61,8 @@
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Verificação da Play Store</string>
     <string name="playstore_check_success">Obrigado por instalar o App pela Google Play Store. Aproveite.</string>
+    <string name="playstore_check_failed">Parece que você instalou este pacote de ícones fora da Google Play Store.
+        Você não será capaz de usá-lo.</string>
     <!-- Share -->
     <string name="share_app_title">Ei! Confira %s</string>
     <string name="share_app_body">Confira %1$s, este pacote de ícones é muito legal! %2$s</string>
@@ -119,6 +124,8 @@
     <!-- Icons -->
     <string name="icons_load_failed">Não foi possível carregar os ícones</string>
     <string name="icon_shape">Formato dos ícones</string>
+    <string name="bookmark_icons_empty">Nenhum marcador encontrado. Marque ícones para acessá-los rapidamente aqui.</string>
+    <string name="items_selected">%d selecionado</string>
     <!-- Request -->
     <string name="request_title">Sugestão de Ícones</string>
     <string name="request_not_selected">Selecione apps para solicitar</string>
@@ -128,6 +135,8 @@
     <string name="request_pacific_sending">Enviando solicitação para Pacific Manager...</string>
     <string name="request_pacific_error">Ocorreu um erro ao enviar a solicitação para o Pacific Manager. Erro é %s</string>
     <string name="request_pacific_success">Pedido enviado com sucesso para Pacific Manager</string>
+    <string name="request_custom_error">Ocorreu um erro ao enviar a solicitação de ícone. Se este erro persistir, entre em contato com o desenvolvedor. %s</string>
+    <string name="request_custom_success">Solicitação de ícone enviada com sucesso</string>
     <string name="request_fetching_data">Buscando dados mais recentes…</string>
     <string name="request_build_failed">Não foi possível criar a solicitação do ícone</string>
     <string name="request_appfilter_failed">Não foi possível ler appfilter.xml</string>
@@ -181,6 +190,9 @@
     <string name="wallpaper_apply">Aplicar o papel de parede</string>
     <string name="wallpaper_save_to_device">Salvar o papel de parede</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Não foi possível carregar as predefinições</string>
+    <string name="presets_storage_permission">Permissão de armazenamento é necessária para carregar a pré-visualização do papel de parede</string>
+    <string name="presets_required_apps">Aplicativos necessários para usar essas predefinições</string>
     <!-- Preferences -->
     <string name="pref_data_header">Dados &amp; Cache</string>
     <string name="pref_data_cache">Limpar Cache</string>
@@ -256,4 +268,5 @@
     <string name="txt_close">Fechar</string>
     <string name="txt_new">Novo</string>
     <!-- Content descriptions for screen readers -->
+    <string name="share_icon_pack_button_content_description">Compartilhe este app com alguém</string>
 </resources>

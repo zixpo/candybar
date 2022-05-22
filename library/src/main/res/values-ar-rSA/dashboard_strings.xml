@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">الأيقونات</string>
     <string name="navigation_view_request">طلب أيقونات</string>
     <string name="navigation_view_wallpapers">الخلفيات</string>
+    <string name="navigation_view_presets">الإعدادات المسبقة</string>
     <string name="navigation_view_settings">الإعدادات</string>
     <string name="navigation_view_faqs">الأسئلة الشائعة</string>
     <string name="navigation_view_about">حول</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">بحث</string>
     <string name="menu_save">حفظها على الجهاز</string>
     <string name="menu_select_all">تحديد الكل</string>
+    <string name="menu_delete">حذف</string>
     <string name="menu_wallpaper_crop">اقتصاص الخلفية</string>
     <string name="menu_apply_homescreen">الشاشة الرئيسية</string>
     <string name="menu_apply_lockscreen">شاشة القفل</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">لم يتم العثور على نتائج لـ \"%s\"</string>
     <string name="search_faqs">سؤال أم جواب</string>
     <string name="search_icon">اسم الأيقونة</string>
+    <string name="search_wallpapers">اسم الخلفية</string>
     <!-- Update -->
     <string name="checking_for_update">جار التحقق من وجود تحديث …</string>
     <string name="update_available">هناك تحديث متوفر!</string>
@@ -119,6 +122,8 @@
     <!-- Icons -->
     <string name="icons_load_failed">تعذر تحميل الأيقونات</string>
     <string name="icon_shape">شكل الأيقونات</string>
+    <string name="bookmark_icons_empty">لم يتم العثور على أي إشارات مرجعية. قم بإضافة إشارات مرجعية للأيقونات للوصول إليها بسرعة هنا.</string>
+    <string name="items_selected">تم تحديد %d</string>
     <!-- Request -->
     <string name="request_title">طلب أيقونات</string>
     <string name="request_not_selected">اختر التطبيقات للطلب</string>
@@ -128,6 +133,8 @@
     <string name="request_pacific_sending">جار إرسال الطلب إلى Pacific Manager...</string>
     <string name="request_pacific_error">حدث خطأ أثناء إرسال الطلب إلى Pacific Manager. الخطأ هو %s</string>
     <string name="request_pacific_success">تم إرسال الطلب بنجاح إلى Pacific Manager</string>
+    <string name="request_custom_error">حدث خطأ أثناء إرسال طلب الأيقونات. إذا استمر هذا الخطأ، تواصل مع المطور. %s</string>
+    <string name="request_custom_success">تم إرسال طلب الأيقونات بنجاح</string>
     <string name="request_fetching_data">جار جلب أحدث البيانات …</string>
     <string name="request_build_failed">تعذر بناء طلب الأيقونات</string>
     <string name="request_appfilter_failed">تعذر قراءة appfilter.xml</string>
@@ -176,6 +183,10 @@
     <string name="wallpaper_apply">تطبيق الخلفية</string>
     <string name="wallpaper_save_to_device">حفظ الخلفية</string>
     <!-- Presets -->
+    <string name="presets_load_failed">تعذر تحميل الإعدادات المسبقة</string>
+    <string name="presets_storage_permission">صلاحية التخزين مطلوبة لتحميل معاينة الخلفية</string>
+    <string name="presets_required_apps">التطبيقات المطلوبة لاستخدام هذه الإعدادات المسبقة</string>
+    <string name="presets_required_apps_not_installed">لم يتم تثبيت التطبيقات المطلوبة لاستخدام الإعداد المسبق. يرجى تثبيت التطبيقات المفقودة والمحاولة مرة أخرى.</string>
     <!-- Preferences -->
     <string name="pref_data_header">البيانات والتخزين المؤقت</string>
     <string name="pref_data_cache">مسح المخزن المؤقت</string>
@@ -248,4 +259,11 @@
     <string name="txt_close">إغلاق</string>
     <string name="txt_new">جديد</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">إضافة هذه الأيقونة إلى قسم الإشارات المرجعية</string>
+    <string name="icon_search_close_button_content_description">إغلاق بحث الأيقونات</string>
+    <string name="icon_request_submit_button_content_description">تقديم طلب أيقونات</string>
+    <string name="icon_list_content_description">قائمة الأيقونات المضمنة في حزمة الأيقونات</string>
+    <string name="icon_search_list_content_description">قائمة الأيقونات التي تتطابق مع مصطلح البحث</string>
+    <string name="about_item_social_content_description">رابط إلى الملف الشخصي لمطور حزمة الأيقونات: </string>
+    <string name="share_icon_pack_button_content_description">مشاركة هذا التطبيق مع شخص ما</string>
 </resources>

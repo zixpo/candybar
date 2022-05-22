@@ -53,7 +53,7 @@
         <item>Pourquoi la permission Afficher les connexions Wi-Fi est requise ?</item>
         <item>Pourquoi la permission Configurer le fond d\'écran est requise ?</item>
         <item>Pourquoi la permission Empêcher le téléphone de passer en mode veille est requise ?</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>Pourquoi la permission Définir une alarme est requise ?</item>
     </string-array>
     <string-array name="answers">
         <item>Le launcher est une partie de l\'interface utilisateur Android qui permet aux utilisateurs de personnaliser l\'écran d\'accueil, démarrer des applications mobile, passer des appels téléphoniques et effectuer d\'autres tâches.</item>
@@ -92,6 +92,6 @@ Ouvrir les paramètres de Muzei puis choisir \"Charger uniquement les fonds d\'�
         <item>Nécessaire pour savoir si votre téléphone a une connexion Internet WiFi ou pas, pour charger les fonds d\'écran du cloud depuis Muzei.</item>
         <item>Nécessaire pour directement appliquer les fonds d\'écran depuis le tableau de bord.</item>
         <item>Nécessaire pour Muzei Live Wallpaper</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>Nécessaire pour lancer l\'application Horloge depuis le widget d\'horloge analogique.</item>
     </string-array>
 </resources>

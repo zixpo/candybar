@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Icônes</string>
     <string name="navigation_view_request">Demande d\'icône(s)</string>
     <string name="navigation_view_wallpapers">Fonds d\'écran</string>
+    <string name="navigation_view_presets">Modèles</string>
     <string name="navigation_view_settings">Paramètres</string>
     <string name="navigation_view_faqs">FAQ</string>
     <string name="navigation_view_about">À propos</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Recherche</string>
     <string name="menu_save">Enregistrer sur l\'appareil</string>
     <string name="menu_select_all">Tout sélectionner</string>
+    <string name="menu_delete">Supprimer</string>
     <string name="menu_wallpaper_crop">Rogner le fond d\'écran</string>
     <string name="menu_apply_homescreen">Ecran d\'accueil</string>
     <string name="menu_apply_lockscreen">Ecran de verrouillage</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Aucun résultat pour \"%s\"</string>
     <string name="search_faqs">Question ou réponse</string>
     <string name="search_icon">Nom d\'icône</string>
+    <string name="search_wallpapers">Nom du fond d\'écran</string>
     <!-- Update -->
     <string name="checking_for_update">Vérification de mise à jour...</string>
     <string name="update_available">Mise à jour disponible !</string>
@@ -122,15 +125,19 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossible de charger les icônes</string>
     <string name="icon_shape">Forme des icônes</string>
+    <string name="bookmark_icons_empty">Aucun favori trouvé. Mettez en favori des icônes pour les consulter rapidement ici.</string>
+    <string name="items_selected">%d sélectionnés</string>
     <!-- Request -->
     <string name="request_title">Demande d\'icône(s)</string>
     <string name="request_not_selected">Sélectionnez les applications à demander</string>
     <string name="request_not_requested">Non demandée</string>
     <string name="request_already_requested">Déjà demandée</string>
     <string name="request_building">Construction de la demande …</string>
-    <string name="request_pacific_sending">Envoi de la demande à Artic Manager...</string>
-    <string name="request_pacific_error">Échec de l\'envoi de la demande à Artic Manager. L\'erreur est %s</string>
-    <string name="request_pacific_success">Demande envoyée avec succès à Artic Manager</string>
+    <string name="request_pacific_sending">Envoi de la demande à Pacific Manager...</string>
+    <string name="request_pacific_error">Échec de l\'envoi de la demande à Pacific Manager. L\'erreur est %s</string>
+    <string name="request_pacific_success">Demande envoyée avec succès à Pacific Manager</string>
+    <string name="request_custom_error">Une erreur s\'est produite lors de l\'envoi de la demande d\'icône. Si cette erreur persiste, contactez le développeur. %s</string>
+    <string name="request_custom_success">Demande d\'icône(s) envoyée avec succès</string>
     <string name="request_fetching_data">Récupération des dernières données...</string>
     <string name="request_build_failed">Impossible de construire la demande d\'icône(s)</string>
     <string name="request_appfilter_failed">Impossible de lire le fichier appfilter.xml</string>
@@ -186,6 +193,10 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="wallpaper_apply">Appliquer le fond d\'écran</string>
     <string name="wallpaper_save_to_device">Enregistrer le fond d\'écran</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Impossible de charger les modèles</string>
+    <string name="presets_storage_permission">La permission Espace de stockage est requise pour charger la prévisualation du fond d\'écran</string>
+    <string name="presets_required_apps">Des applications sont requises pour utiliser ces modèles</string>
+    <string name="presets_required_apps_not_installed">Les applications requises pour utiliser le modèle ne sont pas installées. Veuillez les installer et essayez à nouveau.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Données et Cache</string>
     <string name="pref_data_cache">Effacer le cache</string>
@@ -258,4 +269,11 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="txt_close">Fermer</string>
     <string name="txt_new">Nouveau</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Ajouter cette icône à la section des favoris</string>
+    <string name="icon_search_close_button_content_description">Fermer la recherche d\'icône</string>
+    <string name="icon_request_submit_button_content_description">Soumettre une demande d\'icône</string>
+    <string name="icon_list_content_description">La liste des icônes incluses dans le pack d\'icônes</string>
+    <string name="icon_search_list_content_description">La liste des icônes qui correspondent au terme recherché</string>
+    <string name="about_item_social_content_description">Un lien vers un profil en ligne de l\'auteur du pack d\'icônes : </string>
+    <string name="share_icon_pack_button_content_description">Partager cette application avec une connaissance</string>
 </resources>

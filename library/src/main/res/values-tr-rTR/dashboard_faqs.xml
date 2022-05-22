@@ -54,7 +54,7 @@
         <item>Neden Wi-Fi Erişimi Durumu izni gerekli?</item>
         <item>Neden Duvar Kağıdıgı Ayarla izni gerekli?</item>
         <item>Neden Uyandırma izni gerekli?</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>Alarm kur izni neden gerekli?</item>
     </string-array>
     <string-array name="answers">
         <item>Başlatıcısı, kullanıcıların ana ekranı kişiselleştirmelerine, mobil uygulamaları başlatmalarına,
@@ -99,6 +99,6 @@
         <item>Telefonunuzun Muzei\'den bulut duvar kağıtları yüklemek için bir wifi ile internet bağlantısı olup olmadığını kontrol etmek için kullanılır.</item>
         <item>Doğrudan arayüz uygulamasından duvar kağıtlarını uygulamak için kullanılır.</item>
         <item>Muzei Live Wallpaper tarafından kullanılır</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>Analog saat widget\'ından saat uygulamasını başlatmak için kullanılır.</item>
     </string-array>
 </resources>

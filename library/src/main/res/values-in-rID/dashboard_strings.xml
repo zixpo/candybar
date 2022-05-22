@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Ikon</string>
     <string name="navigation_view_request">Pesan ikon</string>
     <string name="navigation_view_wallpapers">Wallpaper</string>
+    <string name="navigation_view_presets">Setelan</string>
     <string name="navigation_view_settings">Pengaturan</string>
     <string name="navigation_view_faqs">Tanya Jawab</string>
     <string name="navigation_view_about">Tentang</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Cari</string>
     <string name="menu_save">Simpan ke Perangkat</string>
     <string name="menu_select_all">Pilih Semua</string>
+    <string name="menu_delete">Hapus</string>
     <string name="menu_wallpaper_crop">Potong Wallpaper</string>
     <string name="menu_apply_homescreen">Layar Beranda</string>
     <string name="menu_apply_lockscreen">Layar Kunci</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Tidak ada hasil ditemukan untuk \"%s\"</string>
     <string name="search_faqs">Pertanyaan atau jawaban</string>
     <string name="search_icon">Nama Ikon</string>
+    <string name="search_wallpapers">Nama wallpaper</string>
     <!-- Update -->
     <string name="checking_for_update">Mengecek pembaruan…</string>
     <string name="update_available">Pembaruan tersedia!</string>
@@ -120,6 +123,8 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <!-- Icons -->
     <string name="icons_load_failed">Tidak dapat memuat ikon</string>
     <string name="icon_shape">Bentuk Ikon</string>
+    <string name="bookmark_icons_empty">Tak ada penanda ditemukan. Tandai ikon untuk akses cepat disini.</string>
+    <string name="items_selected">%d dipilih</string>
     <!-- Request -->
     <string name="request_title">Pesan ikon</string>
     <string name="request_not_selected">Pilih aplikasi untuk memesan</string>
@@ -129,6 +134,8 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="request_pacific_sending">Mengirim pesanan ke Pacific Manager...</string>
     <string name="request_pacific_error">Terjadi kesalahan ketika mengirim pesanan ke Pacific Manager. Kesalahan %s</string>
     <string name="request_pacific_success">Berhasil kirim pesanan ke Pacific Manager</string>
+    <string name="request_custom_error">Terjadi eror saat mengirim permintaan ikon. Jika eror ini terus terjadi, hubungi pengembang. %s</string>
+    <string name="request_custom_success">Berhasil mengirim permintaan ikon</string>
     <string name="request_fetching_data">Mengambil data terbaru…</string>
     <string name="request_build_failed">Tidak dapat membuat pesanan ikon</string>
     <string name="request_appfilter_failed">Tidak dapat membaca appfilter.xml</string>
@@ -181,6 +188,10 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="wallpaper_apply">Terapkan wallpaper</string>
     <string name="wallpaper_save_to_device">Simpan wallpaper</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Tidak dapat memuat setelan</string>
+    <string name="presets_storage_permission">Izin penyimpanan diperlukan untuk memuat pratinjau wallpaper</string>
+    <string name="presets_required_apps">Dibutuhkan aplikasi untuk menggunakan setelan ini</string>
+    <string name="presets_required_apps_not_installed">Dibutuhkan aplikasi untuk menggunakan setelan yang tidak terpasang. Silahkan instal aplikasi yang diperlukan dan coba lagi.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Data &amp; Cache</string>
     <string name="pref_data_cache">Bersihkan Cache</string>
@@ -253,4 +264,11 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="txt_close">Tutup</string>
     <string name="txt_new">Baru</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Tambahkan ikon ini ke bagian penanda</string>
+    <string name="icon_search_close_button_content_description">Tutup pencarian ikon</string>
+    <string name="icon_request_submit_button_content_description">Kirim sebuah permintaan ikon</string>
+    <string name="icon_list_content_description">Daftar ikon termasuk dalam paket ikon</string>
+    <string name="icon_search_list_content_description">Daftar ikon yang sesuai dengan istilah pencarian</string>
+    <string name="about_item_social_content_description">Tautan ke profile online pencipta paket ikon: </string>
+    <string name="share_icon_pack_button_content_description">Bagikan aplikasi ini dengan seseorang</string>
 </resources>
