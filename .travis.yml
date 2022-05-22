@@ -46,3 +46,5 @@ deploy:
   file_glob: true
   file: app/build/outputs/apk/release/*.apk
   skip_cleanup: true
+  on:
+    tags: true
