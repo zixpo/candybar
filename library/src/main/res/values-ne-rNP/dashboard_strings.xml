@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">आइकनहरु</string>
     <string name="navigation_view_request">आइकन अनुरोध</string>
     <string name="navigation_view_wallpapers">वालपेपरहरु</string>
+    <string name="navigation_view_presets">प्रिसेटहरु</string>
     <string name="navigation_view_settings">सेटिंग</string>
     <string name="navigation_view_faqs">लगातर सोधिने प्रश्नहरू</string>
     <string name="navigation_view_about">एपको बारेमा</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">खोज्नुहोस्</string>
     <string name="menu_save">आफ्नो उपकरणमा समावेस गर्नुहोस्</string>
     <string name="menu_select_all">सबै समावेश गर्नुहोस्</string>
+    <string name="menu_delete">मेटाउनुहोस् </string>
     <string name="menu_wallpaper_crop">वालपेपर क्रोप गर्नुहोस्</string>
     <string name="menu_apply_homescreen">गृह पृष्ठ</string>
     <string name="menu_apply_lockscreen">लोक स्क्रीन</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">\"%s\" को लागी कुनै परिणाम भेटिएन</string>
     <string name="search_faqs">प्रश्न वा उत्तर</string>
     <string name="search_icon">आइकनको नाम</string>
+    <string name="search_wallpapers">वालपेपरको नाम </string>
     <!-- Update -->
     <string name="checking_for_update">अपडेटको लागि जाँच गरिँदैछ…</string>
     <string name="update_available">अपडेट उपलब्ध छ!</string>
@@ -126,6 +129,7 @@
     <string name="request_pacific_sending">Pacific Manager लाई अनुरोध पठाउदै..</string>
     <string name="request_pacific_error">Pacific Manager लाई अनुरोध पठाउदै गर्दा समस्या देखियो । समस्या चाँही  %s हो ।</string>
     <string name="request_pacific_success">Pacific Manager लाई सफलतापूर्वक अनुरोध पठाईयो ।</string>
+    <string name="request_custom_success">आइकनको अनुरोध सफलतापुर्बक पठाईयो </string>
     <string name="request_fetching_data">भर्खरैको डाटा ल्याउँदै...</string>
     <string name="request_build_failed">आइकनको अनुरोध निर्माण गर्न सकिएन</string>
     <string name="request_appfilter_failed">appfilter.xml पढ्न सकिएन</string>
@@ -174,6 +178,7 @@
     <string name="wallpaper_apply">वालपेपर लागू गर्नुहोस्</string>
     <string name="wallpaper_save_to_device">वालपेपर समावेस गर्नुहोस्</string>
     <!-- Presets -->
+    <string name="presets_load_failed">प्रिसेट लोड गर्न सकिएन </string>
     <!-- Preferences -->
     <string name="pref_data_header">डेटा र क्यास</string>
     <string name="pref_data_cache">क्यास मेटाउनुहोस्</string>
@@ -246,4 +251,7 @@
     <string name="txt_close">बन्द गर्नुहोस्</string>
     <string name="txt_new">नयाँ</string>
     <!-- Content descriptions for screen readers -->
+    <string name="icon_search_close_button_content_description">आइकन खोजि बन्द गर्ने </string>
+    <string name="icon_request_submit_button_content_description">आइकनको अनुरोध समावेस गर्ने </string>
+    <string name="share_icon_pack_button_content_description">यस एपलाई साथीहरु माझ शेयर गर्नुहोस </string>
 </resources>
