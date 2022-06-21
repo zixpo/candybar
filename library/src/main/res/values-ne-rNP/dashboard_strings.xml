@@ -120,6 +120,7 @@
     <!-- Icons -->
     <string name="icons_load_failed">आइकन लोड गर्न असमर्थ</string>
     <string name="icon_shape">आइकनको आकार</string>
+    <string name="items_selected">%d चयन गरिएको छ </string>
     <!-- Request -->
     <string name="request_title">आइकन अनुरोध</string>
     <string name="request_not_selected">अनुरोध गर्न एपहरु चयन गर्नुहोस्</string>
@@ -179,6 +180,7 @@
     <string name="wallpaper_save_to_device">वालपेपर समावेस गर्नुहोस्</string>
     <!-- Presets -->
     <string name="presets_load_failed">प्रिसेट लोड गर्न सकिएन </string>
+    <string name="presets_required_apps">यी प्रिसेटहरुलाई आवश्क पर्ने एपहरु </string>
     <!-- Preferences -->
     <string name="pref_data_header">डेटा र क्यास</string>
     <string name="pref_data_cache">क्यास मेटाउनुहोस्</string>
@@ -251,6 +253,7 @@
     <string name="txt_close">बन्द गर्नुहोस्</string>
     <string name="txt_new">नयाँ</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">यस आइकनलाई बुकमार्क क्षेत्रमा समावेस गर्ने</string>
     <string name="icon_search_close_button_content_description">आइकन खोजि बन्द गर्ने </string>
     <string name="icon_request_submit_button_content_description">आइकनको अनुरोध समावेस गर्ने </string>
     <string name="share_icon_pack_button_content_description">यस एपलाई साथीहरु माझ शेयर गर्नुहोस </string>
