@@ -120,6 +120,7 @@
     <!-- Icons -->
     <string name="icons_load_failed">आइकन लोड गर्न असमर्थ</string>
     <string name="icon_shape">आइकनको आकार</string>
+    <string name="bookmark_icons_empty">कुनैपनि बुकमार्क भेटिएन।  यहाँ बुकमार्क गरिएका आइकन भएकोले  पहिले आइकनलाई  बुकमार्क गर्नुहोस्। </string>
     <string name="items_selected">%d चयन गरिएको छ </string>
     <!-- Request -->
     <string name="request_title">आइकन अनुरोध</string>
