@@ -11,7 +11,7 @@
     <string name="navigation_view_settings">सेटिंग</string>
     <string name="navigation_view_faqs">लगातर सोधिएका प्रश्नहरू</string>
     <string name="navigation_view_about">एपको बारेमा</string>
-    <string name="navigation_view_donate">एप निर्माण समर्थन गर्नुहोस् </string>
+    <string name="navigation_view_donate">एप निर्माण सहायता गर्नुहोस् </string>
     <!-- Muzei -->
     <string name="muzei_settings">Muzei सेटिंग्सहरू</string>
     <string name="minute">मिनेट</string>
@@ -20,16 +20,16 @@
     <string name="muzei_refresh_duration">अवधी रेफ्रेश गर्नुहोस् </string>
     <string name="muzei_wifi_only">वाइफाइबाट मात्र रेफ्रेश गर्नुहोस्</string>
     <string name="muzei_downloaded_only">डाउनलोड गरिएका वालपेपर मात्र लोड गर्नुहोस्</string>
-    <string name="muzei_settings_ignored">आइकन प्याकमा वालपेपरहरू समावेश गरिएको छैन, सेटिङ्गहरू बेवास्ता गरियो।  </string>
+    <string name="muzei_settings_ignored">आइकन प्याकमा वालपेपरहरू समावेश गरिएको छैन, सेटिङ्गलाइ समावेस गरिएन।</string>
     <string name="muzei_settings_saved">सेटिंग्सहरू समावेस गरियो</string>
     <!-- Menu -->
     <string name="menu_search">खोज्नुहोस्</string>
     <string name="menu_save">उपकरणमा समावेस गर्नुहोस्</string>
     <string name="menu_select_all">सबै चयन गर्नुहोस्</string>
     <string name="menu_delete">मेटाउनुहोस् </string>
-    <string name="menu_wallpaper_crop">वालपेपरलाई क्रोप गर्नुहोस्</string>
+    <string name="menu_wallpaper_crop">वालपेपरलाई क्रप गर्नुहोस्</string>
     <string name="menu_apply_homescreen">गृह पृष्ठ</string>
-    <string name="menu_apply_lockscreen">लोक स्क्रीन</string>
+    <string name="menu_apply_lockscreen">लक स्क्रीन</string>
     <string name="menu_apply_homescreen_lockscreen">गृह पृष्ठ &amp; लक स्क्रीन</string>
     <!-- Dialog -->
     <string name="open">खोल्नुहोस्</string>
@@ -38,15 +38,15 @@
     <string name="ok">ठीक छ</string>
     <string name="install">इन्स्टल गर्नुहोस्</string>
     <string name="donate">सहयोग गर्नुहोस्</string>
-    <string name="update">अद्यावधिक गर्नुहोस्</string>
-    <string name="search_noresult">\"%s\" को लागी कुनै परिणाम भेटिएन</string>
+    <string name="update">अपडेट गर्नुहोस्</string>
+    <string name="search_noresult">\"%s\" को लागी कुनैपनि परिणाम भेटिएन</string>
     <string name="search_faqs">प्रश्न वा उत्तर</string>
     <string name="search_icon">आइकनको नाम</string>
     <string name="search_wallpapers">वालपेपरको नाम </string>
     <!-- Update -->
     <string name="checking_for_update">नयाँ अपडेट जाँच गरिँदैछ…</string>
     <string name="update_available">नयाँ अपडेट उपलब्ध छ!</string>
-    <string name="no_update_available">तपाईं भर्खरैको संस्करण प्रयोग गर्दै हुनुहुन्छ !</string>
+    <string name="no_update_available">तपाईं नयाँ संस्करण नै प्रयोग गर्दै हुनुहुन्छ !</string>
     <!-- Changelog -->
     <string name="changelog_version">संस्करण</string>
     <!-- InAppBilling -->
@@ -54,9 +54,9 @@
     <!-- License -->
     <string name="license_checking">लाइसेन्स जाँच गरिदैछ…</string>
     <string name="license_check">लाइसेन्स जाँच</string>
-    <string name="license_check_success">लाइसेन्स जाँच सफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भएको रहेछ त्यसको लागि धन्यबाद !  </string>
+    <string name="license_check_success">लाइसेन्स जाँच सफल भयौ, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धेरै धेरै धन्यबाद !</string>
     <string name="license_check_failed">लाइसेन्स जाँच बिफल भयो, तपाईंले प्ले स्टोरबाट डाउनलोड गर्नु भएको रहेनछ,  कृपया प्ले स्टोरेबाट खरिद गर्नुहोला धन्यवाद ।</string>
-    <string name="license_check_retry">लाइसेन्स जाँच गर्न सकिएन, केहि क्षणमा पुनः प्रयास गर्नुहोला </string>
+    <string name="license_check_retry">लाइसेन्स जाँच गर्न सकिएन, केहि क्षणमा पुनः प्रयास गर्नुहोला। </string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">प्ले स्टोर जाँच</string>
     <string name="playstore_check_success">प्ले स्टोरबाट डाउनलोड गर्नु भएकोमा धन्यवाद। यो एपको आनन्द लिनुहोस्।</string>
@@ -141,7 +141,7 @@
     <string name="request_app_disabled">तपाईं यो आइकन प्याकको पुरानो संस्करण प्रयोग गर्दै हुनुहुन्छ। अनुरोध गरिएको आइकनहरू नयाँ संस्करणमा समावेश हुन सक्छ। आइकन अनुरोध गर्न कृपया नौलो संस्करणमा अपडेट गर्नुहोस्।</string>
     <string name="connection_error_long">सर्भरबाट डाटा लोड गर्न सकिएन। कृपया तपाईंको नेटवर्क एक पटक जाँच्नुहोस्।</string>
     <string name="unable_to_load_config">सर्भरबाट डाटा ल्याउँदा / पढ्दा समस्या देखियो।</string>
-    <string name="request_limit">तपाईं मात्र नियमित अनुरोधमा केवल %d अनुरोध (हरू) बनाउन सक्नु हुनेछ।</string>
+    <string name="request_limit">तपाईं मात्र नियमित अनुरोधमा केवल %d अनुरोध (हरू) गर्ना सक्नु हुनेछ।</string>
     <string name="request_used">तपाईंले %d आइकन अनुरोध गर्नु भयो</string>
     <string name="request_limit_buy">तपाइँ धेरै आइकनहरू अनुरोध गर्न प्रिमियम प्यकेज खरीद गर्न सक्नुहुन्छ।</string>
     <string name="request_limit_reset">आइकन अनुरोध सीमा प्रत्येक अपडेटमा रिसेट हुनेछ।</string>
@@ -154,14 +154,14 @@
     <!-- Premium Request -->
     <string name="premium_request">प्रीमियम आइकन अनुरोध</string>
     <string name="premium_request_no_internet">निश्चित गर्नुहोस् कि तपाईंको फोन प्रीमियम अनुरोध पठाउनु अघि इन्टरनेटमा जडित छ</string>
-    <string name="premium_request_desc">प्रीमियम आइकन अनुरोध गर्न भुक्तान गर्नुपर्ने हुन्छ। तपाईं आफ्ना अनुरोधित एपहरु प्रिमियम आईकन अनुरोध प्रयोग गरेर छिटो पाउन सक्नुहुनेछ।</string>
+    <string name="premium_request_desc">तपाईंले प्रिमियम आईकन अनुरोध प्रयोग गर्दा कुनै पनि समावेश नगरिएको आईकन छिटो प्राप्त गर्न  सक्नुहुनेछ, र यो सुविधा प्राप्त गर्न भुक्तानी गर्नु पर्ने हुन्छ।</string>
     <string name="premium_request_buy">खरिद गर्नुहोस्</string>
     <string name="premium_request_count">कुल \n%d अनुरोध</string>
     <string name="premium_request_used">\n%d अनुरोध प्रयोग गरियो</string>
     <string name="premium_request_available">\n%d अनुरोध बाँकी उप्लव्ध</string>
     <string name="premium_request_already_purchased">तपाईंसँग अझै %d प्रीमियम अनुरोध बाँकी छ।  प्रीमियम अनुरोध प्याकेज फेरि खरीद गर्नु अघि यी सबै प्रयोग गर्नु आवश्यक छ।</string>
     <string name="premium_request_limit">तपाईंले केवल %d प्रीमियम अनुरोध गर्नु भएको छ</string>
-    <string name="premium_request_limit1">\n\n तपाईंले फेरि नियमित अनुरोध प्रयोग गर्नु अघि तपाईंको सबै प्रीमियम अनुरोधहरू प्रयोग गर्नु आवश्यक छ। तर तपाईंले %d एपहरु चयन गर्नुभयो</string>
+    <string name="premium_request_limit1">\n\n तपाईंले फेरि नियमित अनुरोध प्रयोग गर्नु अघि, तपाईंको सबै प्रीमियम अनुरोधहरू प्रयोग गर्नु आवश्यक छ। तर तपाईंले %d एपहरु चयन गर्नुभयो</string>
     <string name="premium_request_consume_failed">प्रिमियम अनुरोध प्रयोग गर्न सकिएन, तपाईंले प्रयोग गरिरहनु भएको ईन्टरनेट चलिरहेको छ या छैन भन्ने निश्चित गर्नुहोस् र फेरि प्रयास गर्नुहोस्। प्रीमियम अनुरोध गर्न सेटिंग्समा जानुहोस् र प्रीमियम अनुरोधहरू पुन: निर्माण गर्नुहोस्।</string>
     <string name="premium_request_rebuilding">प्रीमियम अनुरोधको अनुरोध पुनः निर्माण गरिदैछ …</string>
     <string name="premium_request_rebuilding_empty">तपाईंले कुनै प्रीमियम अनुरोध गर्नु भएको छैन</string>
