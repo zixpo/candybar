@@ -118,7 +118,6 @@ Scaricala da lì per utilizzarla.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossibile caricare le icone</string>
     <string name="icon_shape">Forma icona</string>
-    <string name="bookmark_icons_empty">Nessun icona tra i preferiti. Aggiungi le icone che preferisci qui per accedervi rapidamente.</string>
     <!-- Request -->
     <string name="request_title">Richiesta Icone</string>
     <string name="request_not_selected">Selezione le app da richiedere</string>
