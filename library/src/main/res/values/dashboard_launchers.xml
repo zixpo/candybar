@@ -35,7 +35,7 @@
         <item>Square</item>                                 <!-- 30 -->
         <item>Niagara</item>                                <!-- 31 -->
         <item>Hyperion</item>                               <!-- 32 -->
-        <item>Omega</item>                                  <!-- 33 -->
+        <item>Neo</item>                                    <!-- 33 -->
     </string-array>
 
     <array name="launcher_icons">
@@ -72,7 +72,7 @@
         <item>@drawable/ic_launcher_square</item>           <!-- 30 -->
         <item>@drawable/ic_launcher_niagara</item>          <!-- 31 -->
         <item>@drawable/ic_launcher_hyperion</item>         <!-- 32 -->
-        <item>@drawable/ic_launcher_omega</item>            <!-- 33 -->
+        <item>@drawable/ic_launcher_neo</item>              <!-- 33 -->
     </array>
 
     <!-- Launcher Packages -->
