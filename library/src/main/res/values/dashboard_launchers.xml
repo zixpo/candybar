@@ -36,6 +36,7 @@
         <item>Niagara</item>                                <!-- 31 -->
         <item>Hyperion</item>                               <!-- 32 -->
         <item>Neo</item>                                    <!-- 33 -->
+        <item>KISS</item>                                   <!-- 34 -->
     </string-array>
 
     <array name="launcher_icons">
@@ -73,6 +74,7 @@
         <item>@drawable/ic_launcher_niagara</item>          <!-- 31 -->
         <item>@drawable/ic_launcher_hyperion</item>         <!-- 32 -->
         <item>@drawable/ic_launcher_neo</item>              <!-- 33 -->
+        <item>@drawable/ic_launcher_kiss</item>             <!-- 33 -->
     </array>
 
     <!-- Launcher Packages -->
@@ -111,6 +113,7 @@
         <item>bitpit.launcher</item>                        <!-- 31 -->
         <item>projekt.launcher</item>                       <!-- 32 -->
         <item>com.saggitt.omega</item>                      <!-- 33 -->
+        <item>fr.neamar.kiss</item>                         <!-- 33 -->
     </string-array>
 
     <string-array name="launcher_packages_2">
@@ -148,6 +151,7 @@
         <item>none</item>                                   <!-- 31 -->
         <item>none</item>                                   <!-- 32 -->
         <item>none</item>                                   <!-- 33 -->
+        <item>none</item>                                   <!-- 34 -->
     </string-array>
 
     <string-array name="launcher_packages_3">
@@ -185,6 +189,7 @@
         <item>none</item>                                   <!-- 31 -->
         <item>none</item>                                   <!-- 32 -->
         <item>none</item>                                   <!-- 33 -->
+        <item>none</item>                                   <!-- 34 -->
     </string-array>
 
 </resources>
