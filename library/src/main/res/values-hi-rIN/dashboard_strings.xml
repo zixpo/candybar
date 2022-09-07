@@ -38,6 +38,7 @@
     <string name="search_noresult">कोई परिणाम नहीं मिला के लिए \"%s\"</string>
     <string name="search_faqs">प्रश्न या उत्तर</string>
     <string name="search_icon">आइकॉन का नाम</string>
+    <string name="search_wallpapers">वॉलपेपर का नाम</string>
     <!-- Update -->
     <string name="update_available">अपडेट उपलब्ध है</string>
     <string name="no_update_available">आप नवीनतम संस्करण का उपयोग कर रहे हैं।</string>
@@ -189,6 +190,9 @@
     <string name="pref_others_reset_tutorial">ट्यूटोरियल रीसेट करें</string>
     <string name="pref_others_reset_tutorial_reset">ट्यूटोरियल रीसेट करें</string>
     <!-- Themes -->
+    <string name="theme_name_auto">स्वचालित</string>
+    <string name="theme_name_light">प्रकाश</string>
+    <string name="theme_name_dark">अंधेरा</string>
     <!-- Permission -->
     <string name="permission_storage_denied">वॉलपेपर को सहेजने के लिए संग्रहण अनुमति की आवश्यकता है</string>
     <!-- Intent -->
@@ -202,6 +206,8 @@
     <string name="intent_email_not_supported_message">एक असमर्थित ईमेल क्लाइंट चयनित, कृपया एक अन्य ईमेल क्लाइंट का चयन करें</string>
     <!-- About -->
     <string name="about_contributors_title">योगदानकर्ता</string>
+    <string name="about_privacy_policy_title">गोपनीयता नीति</string>
+    <string name="about_terms_and_conditions_title">नियम और शर्तें</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc">आप किस प्रकार की समस्या की रिपोर्ट करना चाहते हैं, इसके बारे में विवरण दें</string>
     <string name="report_bugs_desc_hint">विवरण</string>
@@ -225,5 +231,6 @@
     <!-- DrawerToggle -->
     <string name="txt_open">खोलें</string>
     <string name="txt_close">बंद करे</string>
+    <string name="txt_new">नया</string>
     <!-- Content descriptions for screen readers -->
 </resources>
