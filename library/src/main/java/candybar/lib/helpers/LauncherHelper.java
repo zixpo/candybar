@@ -43,7 +43,7 @@ public class LauncherHelper {
         UNKNOWN, ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO, HOLOHD, LAWNCHAIR,
         LGHOME, LGHOME3, LUCID, MINI, NEXT, NOVA, PIXEL, SMART, SOLO, ZENUI, NOUGAT, M,
         ZERO, V, ABC, EVIE, POCO, POSIDON, MICROSOFT, FLICK, BLACKBERRY, SQUARE, NIAGARA,
-        HYPERION, OMEGA
+        HYPERION, NEO, KISS
     }
 
     private static Launcher getLauncher(String packageName) {
@@ -126,10 +126,12 @@ public class LauncherHelper {
                 return Launcher.BLACKBERRY;
             case "projekt.launcher":
                 return Launcher.HYPERION;
+            case "com.saggitt.omega":
+                return Launcher.NEO;
+            case "fr.neamar.kiss":
+                return Launcher.KISS;
             default:
                 return Launcher.UNKNOWN;
-            case "com.saggitt.omega":
-                return Launcher.OMEGA;
         }
     }
 
@@ -272,6 +274,18 @@ public class LauncherHelper {
             case HYPERION:
                 applyManual(context, launcherPackage, launcherName, "projekt.launcher.activities.SettingsActivity");
                 break;
+            case KISS:
+                try {
+                    Intent kiss = new Intent(Intent.ACTION_MAIN);
+                    kiss.setComponent(new ComponentName("fr.neamar.kiss", "fr.neamar.kiss.SettingsActivity"));
+                    //kiss.putExtra("theme.ThemeManager", context.getPackageName());
+                    kiss.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(kiss);
+                    ((AppCompatActivity) context).finish();
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
+                break;
             case LAWNCHAIR:
                 try {
                     LogUtil.d("@@@@@@@@@@@@@@@@@@@@@@: " + launcherPackage);
@@ -404,12 +418,13 @@ public class LauncherHelper {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
-            case OMEGA:
+            case NEO:
                 try {
-                    final Intent omega = new Intent("com.saggitt.omega.APPLY_ICONS");
-                    omega.setComponent(ComponentName.unflattenFromString("com.saggitt.omega.iconpack.ApplyIconPackActivity"));
-                    omega.putExtra("packageName", context.getPackageName());
-                    context.startActivity(omega);
+                    Intent neo = new Intent(Intent.ACTION_MAIN);
+                    neo.setComponent(new ComponentName("com.saggitt.omega", "com.saggitt.omega.preferences.views.PreferencesActivity"));
+                    neo.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(neo);
+                    ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
