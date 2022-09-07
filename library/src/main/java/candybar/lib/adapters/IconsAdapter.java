@@ -212,6 +212,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     }
 
     private void loadIconInto(ImageView imageView, int position) {
+        if (mFragment.getActivity() == null) return;
         Glide.with(mFragment)
                 .load("drawable://" + mIcons.get(position).getRes())
                 .skipMemoryCache(true)

@@ -28,6 +28,60 @@
     <item drawable="actiondash" />
     <item drawable="actions_service" />
 
+    <category title="Cat 1" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
+    <category title="Cat 2" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
+    <category title="Cat 3" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
+    <category title="Cat 4" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
+    <category title="Cat 5" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
+    <category title="Cat 7" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
+    <category title="Cat 8" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
+    <category title="Cat 9" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
+    <category title="Cat 11" />
+    <item drawable="adaptive_icon" />
+    <item drawable="adaptive_icon_alt" />
+    <item drawable="adaptive_icon_alt_2" />
+    <item drawable="adaptive_icon_alt_3" />
+
     <!-- More -->
     <item drawable="accubattery" />
     <item drawable="accuweather" />
