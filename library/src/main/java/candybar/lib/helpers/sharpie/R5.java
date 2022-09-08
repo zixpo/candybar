@@ -1,23 +1,13 @@
 package candybar.lib.helpers.sharpie;
 
-import static candybar.lib.helpers.sharpie.R1.CLAZZ;
-import static candybar.lib.helpers.sharpie.R1.WrappedMethod;
-import static candybar.lib.helpers.sharpie.R3.getResVal;
-import static candybar.lib.helpers.sharpie.R4.isPS;
-
 import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
-
-import candybar.lib.BuildConfig;
 import io.michaelrocks.paranoid.Obfuscate;
 
 @Obfuscate
 public class R5 {
     public static void thing(Context context) {
-        try {
+        /*try {
             final boolean isEnabled = (boolean) getResVal(context, "playstore_check_enabled", "bool");
 
             if (BuildConfig.DEBUG) return;
@@ -32,6 +22,6 @@ public class R5 {
             }
         } catch (Exception e) {
             LogUtil.e(Log.getStackTraceString(e));
-        }
+        }*/
     }
 }

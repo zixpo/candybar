@@ -1,25 +1,15 @@
 package candybar.lib.helpers.sharpie;
 
-import static candybar.lib.helpers.DrawableHelper.stringToColor;
-import static candybar.lib.helpers.sharpie.R1.*;
+import static candybar.lib.helpers.sharpie.R1.CLAZZ;
+import static candybar.lib.helpers.sharpie.R1.WrappedMethod;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Build;
-import android.util.Log;
-
-import androidx.core.graphics.ColorUtils;
-
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.io.File;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
-import candybar.lib.BuildConfig;
-import candybar.lib.helpers.IconsHelper;
 import io.michaelrocks.paranoid.Obfuscate;
 
 @Obfuscate
@@ -42,7 +32,7 @@ public class R2 {
     }
 
     public static void genBitmap(Activity context, List<String> files, File directory) throws InterruptedException {
-        CountDownLatch latch = new CountDownLatch(1);
+        /*CountDownLatch latch = new CountDownLatch(1);
         context.runOnUiThread(() -> {
             if (BuildConfig.DEBUG || ((boolean) R3.getResVal(context, "enable_ps_signature", "bool")) && R4.isPS(context)) {
                 try {
@@ -85,6 +75,6 @@ public class R2 {
             }
             latch.countDown();
         });
-        latch.await();
+        latch.await();*/
     }
 }
