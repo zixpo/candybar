@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.3'
+        classpath 'com.android.tools.build:gradle:7.2.2'
     }
 }
 
@@ -26,8 +26,8 @@ allprojects {
         VersionName = "$major.$minor.$patch"
 
         MinSdk = 16
-        TargetSdk = 32
-        CompileSdk = 32
+        TargetSdk = 33
+        CompileSdk = 33
     }
 }
 
