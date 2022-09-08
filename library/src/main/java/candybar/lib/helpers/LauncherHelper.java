@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import candybar.lib.R;
 
@@ -40,10 +39,20 @@ public class LauncherHelper {
     private static final String thirdPartyHelperURL = "https://play.google.com/store/apps/details?id=rk.android.app.shortcutmaker";
 
     private enum Launcher {
-        UNKNOWN, ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO, HOLOHD, LAWNCHAIR,
-        LGHOME, LGHOME3, LUCID, MINI, NEXT, NOVA, PIXEL, SMART, SOLO, ZENUI, NOUGAT, M,
-        ZERO, V, ABC, EVIE, POCO, POSIDON, MICROSOFT, FLICK, BLACKBERRY, SQUARE, NIAGARA,
-        HYPERION, NEO, KISS
+        UNKNOWN(false), ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO(false), HOLOHD(false), LAWNCHAIR, LAWNCHAIR12(false),
+        LGHOME(false), LGHOME3(false), LUCID, MINI(false), NEXT, NOVA, PIXEL(false), SMART, SOLO, ZENUI, NOUGAT, M,
+        ZERO, V, ABC, EVIE(false), POCO(false), POSIDON, MICROSOFT(false), FLICK, BLACKBERRY(false), SQUARE, NIAGARA,
+        HYPERION(false), NEO, KISS;
+
+        final boolean directApply;
+
+        Launcher() {
+            this.directApply = true;
+        }
+
+        Launcher(boolean directApply) {
+            this.directApply = directApply;
+        }
     }
 
     private static Launcher getLauncher(String packageName) {
@@ -76,8 +85,9 @@ public class LauncherHelper {
                 return Launcher.LGHOME3;
             case "ch.deletescape.lawnchair.ci":
             case "ch.deletescape.lawnchair.plah":
-            case "app.lawnchair":
                 return Launcher.LAWNCHAIR;
+            case "app.lawnchair":
+                return Launcher.LAWNCHAIR12;
             case "com.powerpoint45.launcher":
                 return Launcher.LUCID;
             case "com.jiubang.go.mini.launcher":
@@ -288,13 +298,6 @@ public class LauncherHelper {
                 break;
             case LAWNCHAIR:
                 try {
-                    LogUtil.d("@@@@@@@@@@@@@@@@@@@@@@: " + launcherPackage);
-                    if (launcherPackage.startsWith("app.")) {
-                        // Lawnchair 12 does not support direct apply yet
-                        applyManual(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
-                        break;
-                    }
-
                     final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
                     lawnchair.putExtra("packageName", context.getPackageName());
                     context.startActivity(lawnchair);
@@ -302,6 +305,10 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case LAWNCHAIR12:
+                // Lawnchair 12 does not support direct apply yet
+                applyManual(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
                 break;
             case LGHOME:
             case LGHOME3:
@@ -639,5 +646,18 @@ public class LauncherHelper {
                 })
                 .negativeText(android.R.string.cancel)
                 .show();
+    }
+
+    public static boolean quickApply(Context context) {
+        PackageManager pm = context.getPackageManager();
+        Intent intent = new Intent("android.intent.action.MAIN");
+        intent.addCategory("android.intent.category.HOME");
+        String packageName = pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;
+        Launcher launcher = getLauncher(packageName);
+        if (launcher.directApply) {
+            applyLauncher(context, packageName, launcher.name(), launcher);
+            return true;
+        }
+        return false;
     }
 }

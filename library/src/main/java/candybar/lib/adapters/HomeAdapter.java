@@ -66,6 +66,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.DonationLinksFragment;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.fragments.dialog.OtherAppsFragment;
+import candybar.lib.helpers.LauncherHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.ViewHelper;
 import candybar.lib.helpers.WallpaperHelper;
@@ -604,11 +605,12 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    private class ContentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    private class ContentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         private final TextView subtitle;
         private final AutofitTextView title;
         private final ProgressBar progressBar;
+        private final boolean quickApply;
 
         ContentViewHolder(View itemView) {
             super(itemView);
@@ -616,6 +618,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             title = itemView.findViewById(R.id.title);
             subtitle = itemView.findViewById(R.id.subtitle);
             progressBar = itemView.findViewById(R.id.progressBar);
+            quickApply = mContext.getResources().getBoolean(R.bool.quick_apply);
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {
@@ -648,6 +651,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
 
             container.setOnClickListener(this);
+            if (quickApply) container.setOnLongClickListener(this);
         }
 
         @Override
@@ -659,7 +663,9 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 switch (mHomes.get(position).getType()) {
                     case APPLY:
-                        ((CandyBarMainActivity) mContext).selectPosition(1);
+                        if (!quickApply || !LauncherHelper.quickApply(mContext)) {
+                            ((CandyBarMainActivity) mContext).selectPosition(1);
+                        }
                         break;
                     case DONATE:
                         if (mContext instanceof CandyBarMainActivity) {
@@ -683,6 +689,21 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         break;
                 }
             }
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
+            int id = view.getId();
+            if (id == R.id.container) {
+                int position = getBindingAdapterPosition() - 1;
+                if (position < 0 || position > mHomes.size()) return false;
+
+                if (mHomes.get(position).getType() == Home.Type.APPLY) {
+                    ((CandyBarMainActivity) mContext).selectPosition(1);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 

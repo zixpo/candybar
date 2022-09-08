@@ -331,6 +331,7 @@
     <string name="version_from_playstore">{{appVersion}} R</string>
     <string name="version_outside_playstore">{{appVersion}}</string>
     <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
+    <bool name="quick_apply">true</bool>
 
     <!-- These are deprecated and replaced with other items. These are only here so that things don't break. -->
     <!-- TODO: Remove them in v3.10.0 -->
