@@ -1,6 +1,6 @@
 # CandyBar
 [![JitPack](https://img.shields.io/jitpack/v/github/zixpo/candybar?color=4c1&label=JitPack&style=flat-square)](https://jitpack.io/#zixpo/candybar)
-[![Build Status](https://img.shields.io/travis/com/zixpo/candybar?style=flat-square)](https://app.travis-ci.com/github/zixpo/candybar)
+[![Build Status](https://img.shields.io/github/workflow/status/zixpo/candybar/Android%20CI?style=flat-square)](https://github.com/zixpo/candybar/actions/workflows/android.yml)
 [![License](https://img.shields.io/github/license/zixpo/candybar?style=flat-square)](/LICENSE)
 
 Improved version of the original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
