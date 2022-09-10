@@ -1,6 +1,8 @@
 name: Android CI
 
 on:
+  release:
+    types: [ published ]
   push:
     branches: [ "main" ]
   pull_request:
@@ -28,3 +30,7 @@ jobs:
       with:
         name: release.apk
         path: app/build/outputs/apk/release
+    - name: Send APK to Telegram
+      env:
+        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+      run: chmod +x ./send-telegram.sh && ./send-telegram
