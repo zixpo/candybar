@@ -33,4 +33,4 @@ jobs:
     - name: Send APK to Telegram
       env:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-      run: chmod +x ./send-telegram.sh && ./send-telegram
+      run: ls && pwd && chmod +x ./send-telegram.sh && ./send-telegram.sh
