@@ -6,7 +6,7 @@ fi
 
 apk_name='CandyBar-'
 if [[ "$GITHUB_EVENT_NAME" == "release" ]]; then
-  apk_name+="$GITHUB_REF"
+  apk_name+="$GITHUB_REF_NAME"
 else
   apk_name+=$(date +%d%m%Y-%H%M)
 fi
