@@ -26,11 +26,11 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew clean :app:assembleRelease --stacktrace
-    - uses: actions/upload-artifact@master
-      with:
-        name: release.apk
-        path: app/build/outputs/apk/release
     - name: Send APK to Telegram
       env:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       run: chmod +x ./send-telegram.sh && ./send-telegram.sh
+    - uses: actions/upload-artifact@master
+      with:
+        name: Release APK
+        path: app/build/outputs/apk/release
