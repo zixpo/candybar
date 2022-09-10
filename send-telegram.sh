@@ -1,24 +1,20 @@
-if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
-  exit 0
-fi
-
 LAST_COMMIT_LOG=$(git log -1 --pretty=format:'%s %b')
 
-if [ "$(echo "$LAST_COMMIT_LOG" | grep -c '\[skip apk\]')" -gt 0 ]; then
-  echo 'Found `[skip apk]` tag. Skipping APK publishing.'
+if !([[ "$GITHUB_EVENT_NAME" == "release" ]] || [ "$(echo "$LAST_COMMIT_LOG" | grep -c '\[make apk\]')" -gt 0 ]); then
   exit 0
 fi
 
-cd $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/
-
 apk_name='CandyBar-'
-if [ "$TRAVIS_TAG" ]; then
-  apk_name+="$TRAVIS_TAG"
+if [[ "$GITHUB_EVENT_NAME" == "release" ]]; then
+  apk_name+="$GITHUB_REF"
 else
   apk_name+=$(date +%d%m%Y-%H%M)
 fi
 apk_name+='.apk'
 
+echo $apk_name
+
+cd app/build/outputs/apk/release/
 mv 'app-release.apk' $apk_name
 
 curl -v \
