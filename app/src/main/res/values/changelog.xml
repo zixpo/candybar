@@ -10,11 +10,11 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Remove Play Store check feature as play store no longer leaves signature.</item>
+        <item>Remove Play Store check feature as play store no longer leaves any signature.</item>
         <item>Targets Android 13</item>
         <item>Updated Android Gradle Plugin and Gradle</item>
         <item>Updated translations</item>
-        <item>Fixed icons not rendering in request section</item>
+        <item>Fixed icons not rendering in the request section</item>
     </string-array>
 
 </resources>
