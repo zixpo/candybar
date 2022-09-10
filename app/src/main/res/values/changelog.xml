@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">May 22, 2022</string>
+    <string name="changelog_date" translatable="false">September 10, 2022</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,8 +10,11 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Fixed wrong icon getting selected in icon requests</item>
+        <item>Remove Play Store check feature as play store no longer leaves signature.</item>
+        <item>Targets Android 13</item>
+        <item>Updated Android Gradle Plugin and Gradle</item>
         <item>Updated translations</item>
+        <item>Fixed icons not rendering in request section</item>
     </string-array>
 
 </resources>

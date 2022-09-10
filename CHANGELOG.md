@@ -1,3 +1,10 @@
+# v3.15.0
+- Remove Play Store check feature as play store no longer leaves signature.
+- Targets Android 13
+- Updated Android Gradle Plugin and Gradle
+- Updated translations
+- Fixed icons not rendering in request section
+
 # v3.14.2
 - Fixed wrong icon getting selected in icon requests
 - Updated translations
