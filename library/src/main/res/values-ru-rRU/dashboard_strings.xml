@@ -7,28 +7,30 @@
     <string name="navigation_view_icons">Иконки</string>
     <string name="navigation_view_request">Запрос иконок</string>
     <string name="navigation_view_wallpapers">Обои</string>
+    <string name="navigation_view_presets">Шаблоны</string>
     <string name="navigation_view_settings">Настройки</string>
     <string name="navigation_view_faqs">ЧаВо</string>
     <string name="navigation_view_about">О проекте</string>
-    <string name="navigation_view_donate">Поддержать Разработку</string>
+    <string name="navigation_view_donate">Поддержать разработку</string>
     <!-- Muzei -->
     <string name="muzei_settings">Настройки Muzei</string>
     <string name="minute">Минут</string>
     <string name="hour">Часов</string>
     <string name="save_setting">Сохранить</string>
-    <string name="muzei_refresh_duration">Обновить Продолжительность</string>
+    <string name="muzei_refresh_duration">Обновить продолжительность</string>
     <string name="muzei_wifi_only">Обновлять только через WiFi</string>
     <string name="muzei_downloaded_only">Загружать только скачанные обои</string>
-    <string name="muzei_settings_ignored">Набор Иконок не содержит обоев, настройки игнорируются.</string>
+    <string name="muzei_settings_ignored">Набор иконок не содержит обоев, настройки игнорируются.</string>
     <string name="muzei_settings_saved">Настройки сохранены</string>
     <!-- Menu -->
     <string name="menu_search">Поиск</string>
     <string name="menu_save">Сохранить на устройство</string>
     <string name="menu_select_all">Выделить всё</string>
+    <string name="menu_delete">Удалить</string>
     <string name="menu_wallpaper_crop">Обрезать обои</string>
     <string name="menu_apply_homescreen">Домашний экран</string>
     <string name="menu_apply_lockscreen">Экран блокировки</string>
-    <string name="menu_apply_homescreen_lockscreen">Домашний экран &amp; Экран блокировки</string>
+    <string name="menu_apply_homescreen_lockscreen">Домашний экран &amp; экран блокировки</string>
     <!-- Dialog -->
     <string name="open">Открыть</string>
     <string name="close">Закрыть</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Ничего не найдено по запросу \"%s\"</string>
     <string name="search_faqs">Вопрос или ответ</string>
     <string name="search_icon">Имя Иконки</string>
+    <string name="search_wallpapers">Название обоев</string>
     <!-- Update -->
     <string name="checking_for_update">Проверка обновлений …</string>
     <string name="update_available">Доступно обновление!</string>
@@ -58,6 +61,7 @@
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Проверьте Плей маркет</string>
     <string name="playstore_check_success">Спасибо за установку приложения с Play Store. Наслаждайтесь.</string>
+    <string name="playstore_check_failed">Похоже, вы установили этот набор иконок не из Google Play Store. Вы не сможете его использовать.</string>
     <!-- Share -->
     <string name="share_app_title">Ёу! Зацени %s</string>
     <string name="share_app_body">Зацени %1$s, это набор иконок на самом деле крутой! %2$s</string>
@@ -118,6 +122,8 @@
     <!-- Icons -->
     <string name="icons_load_failed">Не удалось загрузить иконки</string>
     <string name="icon_shape">Форма значка</string>
+    <string name="bookmark_icons_empty">Закладки не найдены. Вы можете добавлять иконки в закладки для быстрого доступа к ним.</string>
+    <string name="items_selected">%d выбран</string>
     <!-- Request -->
     <string name="request_title">Запрос иконок</string>
     <string name="request_not_selected">Выберите приложения</string>
@@ -177,6 +183,7 @@
     <string name="wallpaper_apply">Применить обои</string>
     <string name="wallpaper_save_to_device">Сохранить обои</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Невозможно загрузить шаблоны</string>
     <!-- Preferences -->
     <string name="pref_data_header">Данные и кэш</string>
     <string name="pref_data_cache">Очистить кэш</string>
@@ -249,4 +256,5 @@
     <string name="txt_close">Закрыть</string>
     <string name="txt_new">Новый</string>
     <!-- Content descriptions for screen readers -->
+    <string name="share_icon_pack_button_content_description">Поделись этим приложением с кем-нибудь</string>
 </resources>
