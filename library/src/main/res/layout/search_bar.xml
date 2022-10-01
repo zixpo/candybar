@@ -22,7 +22,9 @@
         android:maxWidth="250dp"
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@id/clear_query_button"
-        app:fontFamily="@font/regular" />
+        app:fontFamily="@font/regular">
+        <requestFocus />
+    </EditText>
 
     <ImageButton
         android:id="@+id/clear_query_button"
