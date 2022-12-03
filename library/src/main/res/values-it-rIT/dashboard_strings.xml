@@ -190,6 +190,7 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="presets_load_failed">Impossibile caricare i preset</string>
     <string name="presets_storage_permission">È necessario il permesso alla memoria per caricare gli sfondi</string>
     <string name="presets_required_apps">Applicazioni richieste per usare questi preset</string>
+    <string name="presets_required_apps_not_installed">Le applicazioni richieste per usare i preset non sono installate. Per favore, installa le applicazioni mancanti e prova di nuovo.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Data e Cache</string>
     <string name="pref_data_cache">Pulisci Cache</string>
@@ -262,4 +263,11 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="txt_close">Chiudi</string>
     <string name="txt_new">Nuovo</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Aggiungi quest\'icona alla sezione dei preferiti</string>
+    <string name="icon_search_close_button_content_description">Chiudi la ricerca icone</string>
+    <string name="icon_request_submit_button_content_description">Invia una richiesta icone</string>
+    <string name="icon_list_content_description">L\'elenco delle icone incluse nel pacchetto</string>
+    <string name="icon_search_list_content_description">L\'elenco delle icone che corrispondono ai termini di ricerca</string>
+    <string name="about_item_social_content_description">Un link a un profilo online dell\'autore del pacchetto di icone: </string>
+    <string name="share_icon_pack_button_content_description">Condividi questa app con qualcuno</string>
 </resources>
