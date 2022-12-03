@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Icone</string>
     <string name="navigation_view_request">Richiesta Icone</string>
     <string name="navigation_view_wallpapers">Sfondi</string>
+    <string name="navigation_view_presets">Preset</string>
     <string name="navigation_view_settings">Impostazioni</string>
     <string name="navigation_view_faqs">FAQ</string>
     <string name="navigation_view_about">Info</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Cerca</string>
     <string name="menu_save">Salva sul dispositivo</string>
     <string name="menu_select_all">Seleziona Tutto</string>
+    <string name="menu_delete">Elimina</string>
     <string name="menu_wallpaper_crop">Taglia sfondo</string>
     <string name="menu_apply_homescreen">Schermata home</string>
     <string name="menu_apply_lockscreen">Schermata di blocco</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Nessun risultato per \"%s\"</string>
     <string name="search_faqs">Domande o risposte</string>
     <string name="search_icon">Nome Icona</string>
+    <string name="search_wallpapers">Nome sfondo</string>
     <!-- Update -->
     <string name="checking_for_update">Controllo aggiornamento…</string>
     <string name="update_available">Aggiornamento disponibile!</string>
@@ -118,6 +121,8 @@ Scaricala da lì per utilizzarla.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossibile caricare le icone</string>
     <string name="icon_shape">Forma icona</string>
+    <string name="bookmark_icons_empty">Nessun preferito trovato. Aggiungi un\'icona ai preferiti per trovarla velocemente qui.</string>
+    <string name="items_selected">%d selezionato</string>
     <!-- Request -->
     <string name="request_title">Richiesta Icone</string>
     <string name="request_not_selected">Selezione le app da richiedere</string>
@@ -127,6 +132,8 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_pacific_sending">Invio della richiesta a Pacific Manager...</string>
     <string name="request_pacific_error">Si è verificato un errore durante l\'invio della richiesta a Pacific Manager. L\'errore è %s</string>
     <string name="request_pacific_success">Richiesta inviata con successo a Pacific Manager</string>
+    <string name="request_custom_error">Riscontrato un errore nell\'invio della richiesta icone. Se il problema persiste, contattare lo sviluppatore. %s</string>
+    <string name="request_custom_success">Richiesta icone inviata correttamente</string>
     <string name="request_fetching_data">Recupero dati più recenti…</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>
@@ -180,6 +187,9 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="wallpaper_apply">Applica sfondo</string>
     <string name="wallpaper_save_to_device">Salva sfondo</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Impossibile caricare i preset</string>
+    <string name="presets_storage_permission">È necessario il permesso alla memoria per caricare gli sfondi</string>
+    <string name="presets_required_apps">Applicazioni richieste per usare questi preset</string>
     <!-- Preferences -->
     <string name="pref_data_header">Data e Cache</string>
     <string name="pref_data_cache">Pulisci Cache</string>
