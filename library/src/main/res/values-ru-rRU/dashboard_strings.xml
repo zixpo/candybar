@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Иконки</string>
     <string name="navigation_view_request">Запрос иконок</string>
     <string name="navigation_view_wallpapers">Обои</string>
+    <string name="navigation_view_presets">Шаблоны</string>
     <string name="navigation_view_settings">Настройки</string>
     <string name="navigation_view_faqs">ЧаВо</string>
     <string name="navigation_view_about">О проекте</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Поиск</string>
     <string name="menu_save">Сохранить на устройство</string>
     <string name="menu_select_all">Выделить всё</string>
+    <string name="menu_delete">Удалить</string>
     <string name="menu_wallpaper_crop">Обрезать обои</string>
     <string name="menu_apply_homescreen">Домашний экран</string>
     <string name="menu_apply_lockscreen">Экран блокировки</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Ничего не найдено по запросу \"%s\"</string>
     <string name="search_faqs">Вопрос или ответ</string>
     <string name="search_icon">Имя Иконки</string>
+    <string name="search_wallpapers">Название обоев</string>
     <!-- Update -->
     <string name="checking_for_update">Проверка обновлений …</string>
     <string name="update_available">Доступно обновление!</string>
@@ -58,6 +61,7 @@
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Проверьте Плей маркет</string>
     <string name="playstore_check_success">Спасибо за установку приложения с Play Store. Наслаждайтесь.</string>
+    <string name="playstore_check_failed">Похоже, вы установили этот пакет иконок не из Google Play Store. Вы не сможете им пользоваться.</string>
     <!-- Share -->
     <string name="share_app_title">Ёу! Зацени %s</string>
     <string name="share_app_body">Зацени %1$s, это набор иконок на самом деле крутой! %2$s</string>
@@ -118,12 +122,19 @@
     <!-- Icons -->
     <string name="icons_load_failed">Не удалось загрузить иконки</string>
     <string name="icon_shape">Форма значка</string>
+    <string name="bookmark_icons_empty">Закладки не найдены. Вы можете добавлять иконки в закладки для быстрого доступа к ним.</string>
+    <string name="items_selected">%d выбран</string>
     <!-- Request -->
     <string name="request_title">Запрос иконок</string>
     <string name="request_not_selected">Выберите приложения</string>
     <string name="request_not_requested">Не запрошено</string>
     <string name="request_already_requested">Уже запрошено</string>
     <string name="request_building">Сборка запроса …</string>
+    <string name="request_pacific_sending">Отправка запроса в Pacific Manager...</string>
+    <string name="request_pacific_error">Произошла ошибка при отправке запроса в Pacific Manager. Ошибка: %s</string>
+    <string name="request_pacific_success">Запрос успешно отправлен в Pacific Manager</string>
+    <string name="request_custom_error">Произошла ошибка при отправке запроса иконки. Если эта ошибка повторится, обратитесь к разработчику. %s</string>
+    <string name="request_custom_success">Запрос иконки успешно отправлен</string>
     <string name="request_fetching_data">Получение последних данных …</string>
     <string name="request_build_failed">Не удалось собрать запрос</string>
     <string name="request_appfilter_failed">Не удалось считать appfilter.xml</string>
@@ -177,6 +188,10 @@
     <string name="wallpaper_apply">Применить обои</string>
     <string name="wallpaper_save_to_device">Сохранить обои</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Не удалось загрузить шаблоны</string>
+    <string name="presets_storage_permission">Разрешение хранилища необходимо для предварительного просмотра обоев</string>
+    <string name="presets_required_apps">Необходимые приложения для использования шаблонов</string>
+    <string name="presets_required_apps_not_installed">Необходимые приложения для использования шаблонов не установлены. Пожалуйста, установите отсутствующие приложения и попробуйте снова.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Данные и кэш</string>
     <string name="pref_data_cache">Очистить кэш</string>
@@ -249,4 +264,11 @@
     <string name="txt_close">Закрыть</string>
     <string name="txt_new">Новый</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Добавить эту иконку в закладки</string>
+    <string name="icon_search_close_button_content_description">Закрыть поиск иконок</string>
+    <string name="icon_request_submit_button_content_description">Отправить запрос на иконку</string>
+    <string name="icon_list_content_description">Список иконок, включенных в пакет</string>
+    <string name="icon_search_list_content_description">Список иконок, соответствующие поисковому запросу</string>
+    <string name="about_item_social_content_description">Ссылка на онлайн профиль автора пакета иконок: </string>
+    <string name="share_icon_pack_button_content_description">Поделитесь этим приложением с другими</string>
 </resources>
