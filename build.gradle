@@ -25,7 +25,7 @@ allprojects {
         VersionCode = major * 10000 + minor * 100 + patch
         VersionName = "$major.$minor.$patch"
 
-        MinSdk = 16
+        MinSdk = 21
         TargetSdk = 33
         CompileSdk = 33
     }

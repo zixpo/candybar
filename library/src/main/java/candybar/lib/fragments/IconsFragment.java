@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
-import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -28,8 +27,7 @@ import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.IconsAdapter;
 import candybar.lib.databases.Database;
 import candybar.lib.items.Icon;
-
-import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
+import me.zhanghai.android.fastscroll.FastScrollerBuilder;
 
 /*
  * CandyBar - Material Dashboard
@@ -53,7 +51,6 @@ public class IconsFragment extends Fragment {
 
     private View mNoBookmarksFoundView;
     private RecyclerView mRecyclerView;
-    private RecyclerFastScroller mFastScroll;
     private IconsAdapter mAdapter;
 
     private List<Icon> mIcons;
@@ -72,7 +69,6 @@ public class IconsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_icons, container, false);
         mNoBookmarksFoundView = view.findViewById(R.id.no_bookmarks_found_container);
         mRecyclerView = view.findViewById(R.id.icons_grid);
-        mFastScroll = view.findViewById(R.id.fastscroll);
         return view;
     }
 
@@ -110,8 +106,17 @@ public class IconsFragment extends Fragment {
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
                 requireActivity().getResources().getInteger(R.integer.icons_column_count)));
 
-        setFastScrollColor(mFastScroll);
-        mFastScroll.attachRecyclerView(mRecyclerView);
+        new FastScrollerBuilder(mRecyclerView)
+                .useMd2Style()
+                .setPopupTextProvider(position -> {
+                    Icon icon = mIcons.get(position);
+                    String name = icon.getTitle();
+                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
+                        name = icon.getCustomName();
+                    }
+                    return name.substring(0, 1);
+                })
+                .build();
 
         ((ImageView) mNoBookmarksFoundView.findViewById(R.id.bookmark_image))
                 .setImageDrawable(DrawableHelper.getTintedDrawable(requireActivity(), R.drawable.ic_bookmark,
