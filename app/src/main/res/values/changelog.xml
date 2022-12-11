@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">September 10, 2022</string>
+    <string name="changelog_date" translatable="false">December 11, 2022</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,11 +10,12 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Remove Play Store check feature as play store no longer leaves any signature.</item>
-        <item>Targets Android 13</item>
-        <item>Updated Android Gradle Plugin and Gradle</item>
-        <item>Updated translations</item>
-        <item>Fixed icons not rendering in the request section</item>
+        <item>Updated AGP, dependencies and translations</item>
+        <item>Migrated to Billing Library v5.1</item>
+        <item>Fixed icon requests failing when using Gmail</item>
+        <item>Fixed keyboard not showing in search</item>
+        <item>Added better fast scroller in icons section</item>
+        <item>Bump Min SDK to 21</item>
     </string-array>
 
 </resources>

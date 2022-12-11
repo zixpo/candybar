@@ -1,3 +1,14 @@
+# v3.16.0
+- Updated AGP, dependencies and translations
+- Migrated to Billing Library v5.1
+- Fixed icon requests failing when using Gmail
+- Fixed keyboard not showing in search
+- Added better fast scroller in icons section
+- Bump Min SDK to 21
+
+Thanks to [@moertel](//moertel), [@randomvector](//randomvector), [@one4studioicons](//one4studioicons)
+for helping with the issues.
+
 # v3.15.0
 - Remove Play Store check feature as play store no longer leaves any signature.
 - Targets Android 13
