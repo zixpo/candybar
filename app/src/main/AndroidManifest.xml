@@ -200,7 +200,10 @@
                 android:value="@color/muzei_color" />
         </provider>
 
-        <receiver
+        <!--
+            Uncomment the following code to enable Clock Widget.
+        -->
+        <!--<receiver
             android:name=".services.ClockWidget"
             android:label="Clock Widget"
             android:exported="false">
@@ -210,13 +213,13 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/analog_clock" />
-        </receiver>
+        </receiver>-->
 
         <!--
             Uncomment the following code to enable Kustom.
             Also remove the `<action ... />`s that you don't want.
         -->
-        <provider
+        <!--<provider
             android:name="org.kustom.api.Provider"
             android:authorities="${applicationId}.kustom.provider"
             android:exported="false">
@@ -226,7 +229,7 @@
                 <action android:name="org.kustom.provider.LOCKSCREENS" />
                 <action android:name="org.kustom.provider.KOMPONENTS" />
             </intent-filter>
-        </provider>
+        </provider>-->
 
         <!-- This is important -->
         <provider
