@@ -53,7 +53,7 @@
         <item>¿Por qué es necesario el permiso de \"Acceso al estado de WiFi\"?</item>
         <item>¿Por qué es necesario el permiso de \"Establecer fondo de pantalla\"?</item>
         <item>¿Por qué es necesario el permiso de \"Mantener despierto\"?</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>¿Por qué es necesario el permiso de \"Establecer alarma\"?</item>
     </string-array>
     <string-array name="answers">
         <item>El launcher es la parte de la interfaz de usuario de Android que permite personalizar la pantalla de inicio, abrir aplicaciones, hacer llamadas telefónicas y desarrollar otras tareas en dispositivos Android.</item>
