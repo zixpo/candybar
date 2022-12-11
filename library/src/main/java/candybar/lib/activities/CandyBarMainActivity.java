@@ -421,11 +421,11 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         CountDownLatch doneSignal = new CountDownLatch(1);
         AtomicBoolean doesProductIdExist = new AtomicBoolean(false);
         InAppBillingClient.get(this.getApplicationContext()).getClient()
-                .queryPurchasesAsync(BillingClient.SkuType.INAPP, (billingResult, purchases) -> {
+                .queryPurchasesAsync(InAppBillingClient.INAPP_PARAMS, (billingResult, purchases) -> {
                     if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                         for (Purchase purchase : purchases) {
                             for (String premiumRequestProductId : mConfig.getPremiumRequestProductsId()) {
-                                if (purchase.getSkus().contains(premiumRequestProductId)) {
+                                if (purchase.getProducts().contains(premiumRequestProductId)) {
                                     doesProductIdExist.set(true);
                                     break;
                                 }
@@ -470,7 +470,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     CountDownLatch queryDoneSignal = new CountDownLatch(1);
 
                     InAppBillingClient.get(this).getClient()
-                            .queryPurchasesAsync(BillingClient.SkuType.INAPP, (billingResult, aPurchases) -> {
+                            .queryPurchasesAsync(InAppBillingClient.INAPP_PARAMS, (billingResult, aPurchases) -> {
                                 if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                                     purchases.set(aPurchases);
                                 } else {
@@ -489,7 +489,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     if (purchases.get() != null) {
                         String premiumRequestProductId = Preferences.get(this).getPremiumRequestProductId();
                         for (Purchase purchase : purchases.get()) {
-                            if (purchase.getSkus().contains(premiumRequestProductId)) {
+                            if (purchase.getProducts().contains(premiumRequestProductId)) {
                                 CountDownLatch consumeDoneSignal = new CountDownLatch(1);
                                 InAppBillingClient.get(this).getClient().consumeAsync(
                                         ConsumeParams.newBuilder()
@@ -551,11 +551,11 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     @Override
     public void onRestorePurchases() {
         InAppBillingClient.get(this).getClient()
-                .queryPurchasesAsync(BillingClient.SkuType.INAPP, (billingResult, purchases) -> {
+                .queryPurchasesAsync(InAppBillingClient.INAPP_PARAMS, (billingResult, purchases) -> {
                     if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                         List<String> productIds = new ArrayList<>();
                         for (Purchase purchase : purchases) {
-                            productIds.add(purchase.getSkus().get(0));
+                            productIds.add(purchase.getProducts().get(0));
                         }
                         this.runOnUiThread(() -> {
                             SettingsFragment fragment = (SettingsFragment) mFragManager.findFragmentByTag(Extras.Tag.SETTINGS.value);
@@ -602,7 +602,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                         (billingResult) -> {
                             if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                                 Preferences.get(this).setPremiumRequest(true);
-                                Preferences.get(this).setPremiumRequestProductId(purchase.getSkus().get(0));
+                                Preferences.get(this).setPremiumRequestProductId(purchase.getProducts().get(0));
                                 Preferences.get(this).setInAppBillingType(-1);
 
                                 // Delete old premium purchase history
@@ -631,9 +631,14 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             Preferences.get(this).setPremiumRequestTotal(product.getProductCount());
         }
 
+        List<BillingFlowParams.ProductDetailsParams> productDetailsParamsList = new ArrayList<>();
+        productDetailsParamsList.add(BillingFlowParams.ProductDetailsParams.newBuilder()
+                .setProductDetails(product.getProductDetails())
+                .build());
+
         InAppBillingClient.get(this).getClient().launchBillingFlow(this,
                 BillingFlowParams.newBuilder()
-                        .setSkuDetails(product.getSkuDetails())
+                        .setProductDetailsParamsList(productDetailsParamsList)
                         .build());
     }
 

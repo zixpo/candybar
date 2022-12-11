@@ -482,17 +482,17 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                             CountDownLatch doneSignal = new CountDownLatch(1);
 
                             InAppBillingClient.get(requireActivity()).getClient().queryPurchasesAsync(
-                                    BillingClient.SkuType.INAPP, (billingResult, purchases) -> {
+                                    InAppBillingClient.INAPP_PARAMS, (billingResult, purchases) -> {
                                         if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                                             String premiumRequestProductId = Preferences.get(requireActivity()).getPremiumRequestProductId();
                                             for (Purchase purchase : purchases) {
-                                                if (purchase.getSkus().contains(premiumRequestProductId)) {
+                                                if (purchase.getProducts().contains(premiumRequestProductId)) {
                                                     CandyBarApplication.sRequestProperty = new Request.Property(null,
                                                             purchase.getOrderId(), premiumRequestProductId);
                                                     hasDetailsLoaded.set(true);
                                                     break;
                                                 } else {
-                                                    LogUtil.e("Unable to find premiumRequestProductId in SKUs");
+                                                    LogUtil.e("Unable to find premiumRequestProductId in the Products");
                                                 }
                                             }
                                         } else {

@@ -18,12 +18,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.billingclient.api.BillingClient;
-import com.android.billingclient.api.SkuDetails;
-import com.android.billingclient.api.SkuDetailsParams;
+import com.android.billingclient.api.ProductDetails;
+import com.android.billingclient.api.QueryProductDetailsParams;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -196,26 +195,34 @@ public class InAppBillingFragment extends DialogFragment {
                     AtomicBoolean isSuccess = new AtomicBoolean(false);
                     CountDownLatch doneSignal = new CountDownLatch(1);
 
-                    InAppBillingClient.get(requireActivity()).getClient().querySkuDetailsAsync(
-                            SkuDetailsParams.newBuilder()
-                                    .setSkusList(Arrays.asList(mProductsId))
-                                    .setType(BillingClient.SkuType.INAPP)
+                    List<QueryProductDetailsParams.Product> products = new ArrayList<>();
+
+                    for (String productId : mProductsId) {
+                        products.add(QueryProductDetailsParams.Product.newBuilder()
+                                .setProductId(productId)
+                                .setProductId(BillingClient.ProductType.INAPP)
+                                .build());
+                    }
+
+                    InAppBillingClient.get(requireActivity()).getClient().queryProductDetailsAsync(
+                            QueryProductDetailsParams.newBuilder()
+                                    .setProductList(products)
                                     .build(),
-                            (billingResult, skuDetailsList) -> {
+                            (billingResult, productDetailsList) -> {
                                 if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                                    if (skuDetailsList != null) {
-                                        Map<String, SkuDetails> skuDetailsMap = new HashMap<>();
-                                        for (SkuDetails skuDetails : skuDetailsList) {
-                                            skuDetailsMap.put(skuDetails.getSku(), skuDetails);
+                                    if (productDetailsList != null) {
+                                        Map<String, ProductDetails> productDetailsMap = new HashMap<>();
+                                        for (ProductDetails productDetails : productDetailsList) {
+                                            productDetailsMap.put(productDetails.getProductId(), productDetails);
                                         }
 
                                         for (int i = 0; i < mProductsId.length; i++) {
                                             String productId = mProductsId[i];
-                                            SkuDetails skuDetails = skuDetailsMap.get(productId);
-                                            if (skuDetails != null) {
+                                            ProductDetails productDetails = productDetailsMap.get(productId);
+                                            if (productDetails != null) {
                                                 inAppBillings.add(mProductsCount != null
-                                                        ? new InAppBilling(skuDetails, productId, mProductsCount[i])
-                                                        : new InAppBilling(skuDetails, productId));
+                                                        ? new InAppBilling(productDetails, productId, mProductsCount[i])
+                                                        : new InAppBilling(productDetails, productId));
                                             } else {
                                                 LogUtil.e("Found invalid product ID - " + productId);
                                             }
@@ -224,7 +231,7 @@ public class InAppBillingFragment extends DialogFragment {
                                         isSuccess.set(true);
                                     }
                                 } else {
-                                    LogUtil.e("Failed to load SKU details. Response Code: " + billingResult.getResponseCode());
+                                    LogUtil.e("Failed to load Product details. Response Code: " + billingResult.getResponseCode());
                                 }
 
                                 doneSignal.countDown();

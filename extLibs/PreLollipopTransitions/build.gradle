@@ -33,6 +33,8 @@ project.afterEvaluate {
 android {
     compileSdkVersion rootProject.ext.CompileSdk
 
+    namespace 'com.kogitune.activity_transition'
+
     defaultConfig {
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk

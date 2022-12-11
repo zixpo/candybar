@@ -27,6 +27,8 @@ android {
 
     compileSdkVersion rootProject.ext.CompileSdk
 
+    namespace 'com.candybar.dev'
+
     defaultConfig {
         applicationId 'com.candybar.dev'
         minSdkVersion rootProject.ext.MinSdk

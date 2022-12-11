@@ -15,6 +15,7 @@
   ~
   -->
 
-<manifest package="com.kogitune.activity_transition">
+<manifest>
+
     <application />
 </manifest>

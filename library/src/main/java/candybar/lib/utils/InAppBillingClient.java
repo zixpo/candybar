@@ -10,6 +10,7 @@ import com.android.billingclient.api.BillingClientStateListener;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesUpdatedListener;
+import com.android.billingclient.api.QueryPurchasesParams;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.lang.ref.WeakReference;
@@ -42,6 +43,7 @@ public class InAppBillingClient implements PurchasesUpdatedListener, BillingClie
     private final Context mContext;
     private boolean mIsInitialized;
     private BillingClient mBillingClient;
+    public static final QueryPurchasesParams INAPP_PARAMS = QueryPurchasesParams.newBuilder().setProductType(BillingClient.ProductType.INAPP).build();
 
     private static WeakReference<InAppBillingClient> mInAppBilling;
 
@@ -116,7 +118,7 @@ public class InAppBillingClient implements PurchasesUpdatedListener, BillingClie
 
     public void checkForUnprocessedPurchases() {
         mInAppBilling.get().getClient()
-                .queryPurchasesAsync(BillingClient.SkuType.INAPP, (billingResult, purchases) -> {
+                .queryPurchasesAsync(INAPP_PARAMS, (billingResult, purchases) -> {
                     if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                         if (purchases.size() > 0) {
                             try {
