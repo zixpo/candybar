@@ -172,7 +172,7 @@ public class IconRequestBuilderTask extends AsyncTaskBase {
             Intent intent = new Intent(Intent.ACTION_SEND);
             addIntentExtra(intent, emailBody);
             intent.setComponent(name);
-            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+            if (android.os.Build.VERSION.SDK_INT < 32) { intent.addCategory(Intent.CATEGORY_LAUNCHER); }
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             return intent;
         } catch (IllegalArgumentException e) {
