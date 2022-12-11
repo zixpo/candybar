@@ -38,7 +38,6 @@ import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.TypefaceHelper;
-import candybar.lib.helpers.sharpie.R2;
 import candybar.lib.items.Language;
 import candybar.lib.items.Request;
 import candybar.lib.items.Setting;
@@ -246,8 +245,6 @@ public class SettingsFragment extends Fragment {
                     if (requests.size() == 0) return true;
 
                     List<String> files = new ArrayList<>();
-
-                    R2.genBitmap(requireActivity(), files, directory);
 
                     for (Request request : requests) {
                         Drawable drawable = getReqIcon(requireActivity(), request.getActivity());

@@ -62,7 +62,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
-import candybar.lib.BuildConfig;
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
@@ -84,7 +83,6 @@ import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.LicenseCallbackHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
-import candybar.lib.helpers.PlayStoreCheckHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
@@ -249,13 +247,10 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         The below code does this
         #1. If new version - set `firstRun` to `true`
         #2. If `firstRun` equals `true`, run the following steps
-            #X. Play store check
+            #X. License check
                 - Enabled: Run check, when completed run #Y
                 - Disabled: Run #Y
-            #Y. License check
-                - Enabled: Run check, when completed run #Z
-                - Disabled: Run #Z
-            #Z. Reset icon request limit, clear cache and show changelog
+            #Y. Reset icon request limit, clear cache and show changelog
         */
 
         if (Preferences.get(this).isNewVersion()) {
@@ -285,11 +280,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 }
             };
 
-            if (!BuildConfig.DEBUG && Preferences.get(this).isPlayStoreCheckEnabled()) {
-                new PlayStoreCheckHelper(this, checkLicenseIfEnabled).run();
-            } else {
-                checkLicenseIfEnabled.run();
-            }
+            checkLicenseIfEnabled.run();
+
             return;
         }
 

@@ -20,7 +20,6 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.IconsHelper;
-import candybar.lib.helpers.sharpie.R5;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.AsyncTaskBase;
@@ -52,7 +51,6 @@ public class IconsLoaderTask extends AsyncTaskBase {
 
     public IconsLoaderTask(Context context) {
         mContext = new WeakReference<>(context);
-        R5.thing(context);
     }
 
     @Override

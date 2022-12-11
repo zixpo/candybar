@@ -200,7 +200,7 @@ public class InAppBillingFragment extends DialogFragment {
                     for (String productId : mProductsId) {
                         products.add(QueryProductDetailsParams.Product.newBuilder()
                                 .setProductId(productId)
-                                .setProductId(BillingClient.ProductType.INAPP)
+                                .setProductType(BillingClient.ProductType.INAPP)
                                 .build());
                     }
 
