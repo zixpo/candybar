@@ -98,6 +98,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     private boolean mIsResumed = false;
 
     private Wallpaper mWallpaper;
+    private String mWallpaperName;
     private Runnable mRunnable;
     private Handler mHandler;
     private PhotoViewAttacher mAttacher;
@@ -143,10 +144,13 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
             finish();
             return;
         }
+
+        mWallpaperName = mWallpaper.getURL().split("/")[mWallpaper.getURL().split("/").length-1];
+
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "wallpaper",
                 new HashMap<String, Object>() {{
-                    put("url", mWallpaper.getURL());
+                    put("url", mWallpaperName);
                     put("action", "preview");
                 }}
         );
@@ -320,7 +324,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
                                         new HashMap<String, Object>() {{
-                                            put("url", mWallpaper.getURL());
+                                            put("url", mWallpaperName);
                                             put("section", "lockscreen");
                                             put("action", "apply");
                                         }}
@@ -330,7 +334,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
                                         new HashMap<String, Object>() {{
-                                            put("url", mWallpaper.getURL());
+                                            put("url", mWallpaperName);
                                             put("section", "homescreen");
                                             put("action", "apply");
                                         }}
@@ -340,7 +344,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
                                         new HashMap<String, Object>() {{
-                                            put("url", mWallpaper.getURL());
+                                            put("url", mWallpaperName);
                                             put("section", "homescreen_and_lockscreen");
                                             put("action", "apply");
                                         }}
