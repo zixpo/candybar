@@ -1,10 +1,13 @@
+# v3.16.1
+- Fixed app crash when `show_icon_name` is set to `false`
+
 # v3.16.0
 - Updated AGP, dependencies and translations
 - Migrated to Billing Library v5.1
 - Fixed icon requests failing when using Gmail
 - Fixed keyboard not showing in search
 - Added better fast scroller in icons section
-- Bump Min SDK to 21
+- Bumped Min SDK to 21
 
 Thanks to [@moertel](//moertel), [@randomvector](//randomvector), [@one4studioicons](//one4studioicons)
 for helping with the issues.

@@ -198,6 +198,7 @@ public class IconsBaseFragment extends Fragment {
 
                         for (int i = 0; i < CandyBarMainActivity.sSections.size(); i++) {
                             List<Icon> icons = CandyBarMainActivity.sSections.get(i).getIcons();
+
                             if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
                                 IconsHelper.computeTitles(requireActivity(), icons);
                             }
