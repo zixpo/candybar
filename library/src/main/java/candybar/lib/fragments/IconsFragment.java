@@ -114,7 +114,10 @@ public class IconsFragment extends Fragment {
                     if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
                         name = icon.getCustomName();
                     }
-                    return name.substring(0, 1);
+                    if (name != null) {
+                        return name.substring(0, 1);
+                    }
+                    return "";
                 })
                 .build();
 

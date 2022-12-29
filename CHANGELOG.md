@@ -1,3 +1,6 @@
+# v3.16.2
+- Fixed app crash
+
 # v3.16.1
 - Fixed app crash when `show_icon_name` is set to `false`
 
