@@ -328,16 +328,8 @@
     <bool name="show_intro">false</bool>
 
     <!-- These are not documented. As you can guess, these are not for general use -->
-    <string name="version_from_playstore">{{appVersion}} R</string>
-    <string name="version_outside_playstore">{{appVersion}}</string>
     <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
     <bool name="quick_apply">true</bool>
-
-    <!-- These are deprecated and replaced with other items. These are only here so that things don't break. -->
-    <!-- TODO: Remove them in v3.10.0 -->
-    <!-- TODO: Add default values to request options when removing these options -->
-    <string name="dev_email">your@email.com</string>
-    <string name="request_email_subject"></string>
-    <string name="arctic_manager_api_key"></string>
+    <bool name="show_random_icon">false</bool>
 
 </resources>

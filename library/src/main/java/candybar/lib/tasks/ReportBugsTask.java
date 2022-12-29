@@ -114,9 +114,6 @@ public class ReportBugsTask extends AsyncTaskBase {
         mDialog.dismiss();
         if (ok) {
             String emailAddress = mContext.get().getString(R.string.regular_request_email);
-            // Fallback to dev_email
-            if (emailAddress.length() == 0)
-                emailAddress = mContext.get().getString(R.string.dev_email);
 
             final Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("application/zip");

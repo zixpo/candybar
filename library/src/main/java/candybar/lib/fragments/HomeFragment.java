@@ -109,7 +109,7 @@ public class HomeFragment extends Fragment implements HomeListener {
             }
 
             int dimensionsIndex = adapter.getDimensionsIndex();
-            if (dimensionsIndex < 0) {
+            if (dimensionsIndex < 0 && requireActivity().getResources().getBoolean(R.bool.show_random_icon)) {
                 adapter.addNewContent(home);
             }
             return;
@@ -173,7 +173,7 @@ public class HomeFragment extends Fragment implements HomeListener {
                 Home.Type.ICONS,
                 true));
 
-        if (CandyBarMainActivity.sHomeIcon != null) {
+        if (CandyBarMainActivity.sHomeIcon != null && requireActivity().getResources().getBoolean(R.bool.show_random_icon)) {
             homes.add(CandyBarMainActivity.sHomeIcon);
         }
 

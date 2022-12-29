@@ -203,9 +203,6 @@ public class IconRequestBuilderTask extends AsyncTaskBase {
         String appName = mContext.get().getResources().getString(R.string.app_name);
 
         String regularRequestSubject = mContext.get().getResources().getString(R.string.regular_request_email_subject);
-        // Fallback to request_email_subject
-        if (regularRequestSubject.length() == 0)
-            regularRequestSubject = mContext.get().getResources().getString(R.string.request_email_subject);
         if (regularRequestSubject.length() == 0) regularRequestSubject = appName + " Icon Request";
 
         String premiumRequestSubject = mContext.get().getResources().getString(R.string.premium_request_email_subject);
@@ -219,9 +216,6 @@ public class IconRequestBuilderTask extends AsyncTaskBase {
 
         String subject = Preferences.get(mContext.get()).isPremiumRequest() ? premiumRequestSubject : regularRequestSubject;
         String emailAddress = Preferences.get(mContext.get()).isPremiumRequest() ? premiumRequestEmail : regularRequestEmail;
-        // Fallback to dev_email
-        if (emailAddress.length() == 0)
-            emailAddress = mContext.get().getResources().getString(R.string.dev_email);
 
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);

@@ -173,9 +173,6 @@ public class PremiumRequestBuilderTask extends AsyncTaskBase {
         // Fallback to regular request email
         if (emailAddress.length() == 0)
             emailAddress = mContext.get().getResources().getString(R.string.regular_request_email);
-        // Fallback to dev_email
-        if (emailAddress.length() == 0)
-            emailAddress = mContext.get().getResources().getString(R.string.dev_email);
 
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);

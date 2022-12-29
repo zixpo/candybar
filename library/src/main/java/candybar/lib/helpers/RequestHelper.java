@@ -179,12 +179,7 @@ public class RequestHelper {
     }
 
     public static String getRegularPacificApiKey(Context context) {
-        String pacificApiKey = context.getResources().getString(R.string.regular_request_pacific_api_key);
-        // Fallback to arctic_manager_api_key
-        if (pacificApiKey.length() == 0)
-            pacificApiKey = context.getResources().getString(R.string.arctic_manager_api_key);
-
-        return pacificApiKey;
+        return context.getResources().getString(R.string.regular_request_pacific_api_key);
     }
 
     public static boolean isRegularPacificEnabled(Context context) {

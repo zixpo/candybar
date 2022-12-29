@@ -36,20 +36,12 @@ public class DeviceHelper {
         StringBuilder sb = new StringBuilder();
         final int height = displaymetrics.heightPixels;
         final int width = displaymetrics.widthPixels;
-        PackageManager pm = context.getPackageManager();
-        String installerPackage = pm.getInstallerPackageName(context.getPackageName());
 
         String appVersion = "";
         try {
             appVersion = context.getPackageManager().getPackageInfo(
                     context.getPackageName(), 0).versionName;
         } catch (PackageManager.NameNotFoundException ignored) {
-        }
-
-        if (installerPackage == null || !installerPackage.contentEquals("com.android.vending")) {
-            appVersion = context.getResources().getString(R.string.version_outside_playstore).replaceAll("\\{\\{appVersion\\}\\}", appVersion);
-        } else {
-            appVersion = context.getResources().getString(R.string.version_from_playstore).replaceAll("\\{\\{appVersion\\}\\}", appVersion);
         }
 
         sb.append("Manufacturer : ").append(Build.MANUFACTURER)
