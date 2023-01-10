@@ -1,20 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">Tablou de bord CandyBar Material</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Acasă</string>
+    <string name="navigation_view_apply">Aplicare</string>
+    <string name="navigation_view_icons">Pictograme</string>
+    <string name="navigation_view_request">Cerere de pictograme noi</string>
+    <string name="navigation_view_wallpapers">Imagini de fundal</string>
+    <string name="navigation_view_presets">Presetări</string>
+    <string name="navigation_view_settings">Setări</string>
+    <string name="navigation_view_faqs">Întrebări frecvente</string>
+    <string name="navigation_view_about">Despre</string>
+    <string name="navigation_view_donate">Sprijină dezvoltarea</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Setări Muzei</string>
+    <string name="minute">Minut</string>
+    <string name="hour">Oră</string>
+    <string name="save_setting">Salvare</string>
+    <string name="muzei_refresh_duration">Durată reîmprospătare</string>
+    <string name="muzei_wifi_only">Reîmprospătare doar prin Wi-Fi</string>
+    <string name="muzei_downloaded_only">Încarcă doar imaginile descărcate</string>
+    <string name="muzei_settings_ignored">Pachetul de pictograme nu conține imagini de fundal, setările sunt ignorate.</string>
+    <string name="muzei_settings_saved">Setări salvate</string>
     <!-- Menu -->
+    <string name="menu_search">Căutare</string>
+    <string name="menu_save">Salvare pe dispozitiv</string>
+    <string name="menu_select_all">Selectare totală</string>
+    <string name="menu_delete">Ștergere</string>
+    <string name="menu_wallpaper_crop">Decupare imagine de fundal</string>
+    <string name="menu_apply_homescreen">Ecranul de pornire</string>
+    <string name="menu_apply_lockscreen">Ecranul de blocare</string>
+    <string name="menu_apply_homescreen_lockscreen">Ecranul de pornire și Ecranul de blocare</string>
     <!-- Dialog -->
+    <string name="open">Deschidere</string>
+    <string name="close">Închidere</string>
+    <string name="clear">Curățare</string>
+    <string name="ok">OK</string>
+    <string name="install">Instalare</string>
+    <string name="donate">Donează</string>
+    <string name="update">Actualizare</string>
+    <string name="search_noresult">Niciun rezultat găsit pentru \"%s\"</string>
+    <string name="search_faqs">Întrebare sau răspuns</string>
+    <string name="search_icon">Nume Pictogramă</string>
+    <string name="search_wallpapers">Nume fundal</string>
     <!-- Update -->
+    <string name="checking_for_update">Se caută actualizare…</string>
+    <string name="update_available">Actualizare disponibilă!</string>
+    <string name="no_update_available">Folosești ultima versiune!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versiune</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Nu se pot încărca produsele InApp Purchase</string>
     <!-- License -->
+    <string name="license_checking">Verificare licență …</string>
+    <string name="license_check">Verificare Licență</string>
+    <string name="license_check_success">Verificarea licenței a reușit, mulțumim pentru descărcarea aplicației din Magazin Play.</string>
+    <string name="license_check_failed">Verificarea licenței a eșuat, nu ai descărcat aplicația din Magazin Play.
+        Nu o vei putea folosi.</string>
+    <string name="license_check_retry">Imposibil de verificat licența, încearcă din nou în câteva momente.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Verificare Magazin Play</string>
+    <string name="playstore_check_success">Vă mulțumim pentru instalarea aplicației din Magazinul Google Play. Bucurați-vă de ea.</string>
+    <string name="playstore_check_failed">Se pare că ai instalat acest pachet de pictograme din afara Magazinului Google Play.
+        Nu îl vei putea folosi.</string>
     <!-- Share -->
+    <string name="share_app_title">Yo! Verifică %s</string>
+    <string name="share_app_body">Verifică %1$s, acest pachet de pictograme este foarte interesant! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Căutare</string>
     <!-- Home -->
+    <string name="home_donate">Donează</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Cerere de pictograme noi</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -29,5 +88,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Deschidere</string>
+    <string name="txt_close">Închidere</string>
     <!-- Content descriptions for screen readers -->
 </resources>
