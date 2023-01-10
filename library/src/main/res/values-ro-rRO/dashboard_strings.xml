@@ -67,28 +67,150 @@
     <string name="share_app_title">Yo! Verifică %s</string>
     <string name="share_app_body">Verifică %1$s, acest pachet de pictograme este foarte interesant! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Sertar navigare</string>
+    <string name="tap_intro_home_navigation_desc">Apasă aici sau trage din marginea stângă a ecranului pentru a deschide sertarul de navigare</string>
+    <string name="tap_intro_home_apply">Aplică pachetul de pictograme</string>
+    <string name="tap_intro_home_apply_desc">Atinge aici pentru a aplica %s</string>
     <string name="tap_intro_icons_search">Căutare</string>
+    <string name="tap_intro_icons_search_desc">Apasă aici pentru a căuta o pictogramă</string>
+    <string name="tap_intro_request_select">Selectează aplicația omisă</string>
+    <string name="tap_intro_request_select_desc">Atinge aici pentru a selecta aplicația omisă pentru solicitarea de pictograme</string>
+    <string name="tap_intro_request_select_all">Selectează toate aplicațiile omise</string>
+    <string name="tap_intro_request_select_all_desc">Apasă aici pentru a selecta toate aplicațiile omise pentru solicitarea pictogramelor</string>
+    <string name="tap_intro_request_send">Trimite cererea de pictograme</string>
+    <string name="tap_intro_request_send_desc">Apasă aici pentru a trimite aplicațiile selectate omise</string>
+    <string name="tap_intro_request_premium">Cerere premium de pictograme</string>
+    <string name="tap_intro_request_premium_desc">Apasă aici pentru a cumpăra pachetul de cereri cu pictograme premium,
+        cu o solicitare de pictograme premium poți obține mai rapid aplicațiile solicitate.</string>
+    <string name="tap_intro_wallpapers_option">Opțiuni fundal</string>
+    <string name="tap_intro_wallpapers_option_desc">Apasă și țineți apăsat aici pentru a afișa opțiunile de tapet, %s aplică imaginea de fundal.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">descărcare sau</string>
+    <string name="tap_intro_wallpapers_preview">Previzualizare fundal</string>
+    <string name="tap_intro_wallpapers_preview_desc">Apasă aici pentru a previzualiza dimensiunea completă a imaginii de fundal</string>
+    <string name="tap_intro_wallpaper_preview_save">Salvează imaginea de fundal</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Apasă aici pentru a descărca și salva imaginea de fundal pe dispozitivul tău astfel încât să o poți folosi mai târziu</string>
+    <string name="tap_intro_wallpaper_preview_apply">Aplică imaginea de fundal</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Apasă aici pentru a seta imaginea ca fundal de ecran principal</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Mai multe aplicații</string>
+    <string name="home_more_apps">Verifică alte aplicații publicate în Magazinul Google Play</string>
+    <string name="home_rate_and_review">Evaluare și Recenzie</string>
+    <string name="home_apply_icon_pack">Aplicare %s</string>
     <string name="home_donate">Donează</string>
+    <string name="home_donate_desc">Sprijin pentru dezvoltarea pachetului de pictograme</string>
+    <string name="home_icons">Pictograme personalizate</string>
+    <string name="home_icon_dimension">Dimensiune pictogramă %s pixeli</string>
+    <string name="home_loud_wallpapers">%d fundaluri cloud</string>
+    <string name="home_muzei">Imagine de fundal live Muzei</string>
+    <string name="home_icon_request_installed_apps">Total\n%d aplicații instalate</string>
+    <string name="home_icon_request_themed_apps">Cu tematică\n%d aplicații</string>
+    <string name="home_icon_request_missed_apps">Aplicații omise\n%d</string>
     <!-- Apply -->
+    <string name="apply_installed">Lansator instalat</string>
+    <string name="apply_supported">Lansatoare suportate</string>
+    <string name="apply_manual">Lansatorul %1$s nu acceptă aplicare directă, dar poți aplica %2$s manual din setările lansatorului.</string>
+    <string name="apply_manual_evie">Apasă și ține apăsat pe ecranul de pornire - Setări - Pachet pictograme - alege %s.</string>
+    <string name="apply_launch_failed">Imposibil de lansat setările %s</string>
+    <string name="apply_launcher_not_installed">Lansatorul %s nu este instalat. Dorești să deschizi
+        Magazin Google Play pentru a descărca și instala?</string>
+    <string name="apply_launcher_not_installable">Lansatorul %s nu este instalat. Încearcă din nou după instalarea lansatorului.</string>
+    <string name="apply_cmtheme_not_available">Managerul de teme CM nu este disponibil pe acest dispozitiv</string>
+    <string name="apply_cmtheme_failed">Imposibil de lansat Managerul de Teme CM, poți încerca să aplici Pachetul de pictograme manual din Setări.</string>
+    <string name="apply_lg_home">Pentru a aplica acest pachet de pictograme deschide Setări - Afișare - Ecran de pornire - Temă</string>
+    <string name="apply_lg_home_not_available">LG Home nu este disponibil pe acest dispozitiv</string>
+    <string name="apply_lg_home_failed">Imposibil de lansat setările LG Home, poți încerca să aplici Pachetul de pictograme manual din Setări.</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Imposibil de încărcat pictogramele</string>
+    <string name="icon_shape">Formă pictogramă</string>
+    <string name="bookmark_icons_empty">Nu s-au găsit marcaje. Marchează pictogramele pentru a le accesa rapid aici.</string>
+    <string name="items_selected">%d selectat</string>
     <!-- Request -->
     <string name="request_title">Cerere de pictograme noi</string>
+    <string name="request_not_requested">Nu este solicitată</string>
+    <string name="request_already_requested">Deja solicitată</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
+    <string name="premium_request_buy">Cumpărare</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Imagini de fundal noi</string>
+    <string name="wallpaper_already_downloaded">Fundal descărcat deja</string>
+    <string name="wallpaper_downloading">Se descarcă fundalul …</string>
+    <string name="wallpaper_download_failed">Imposibil de descărcat imaginea de fundal</string>
+    <string name="wallpaper_loading">Se încarcă fundalul …</string>
+    <string name="wallpaper_applying">Se aplică fundalul…</string>
+    <string name="wallpaper_applied">Imagine de fundal aplicată</string>
+    <string name="wallpaper_apply_failed">Imposibil de aplicat imaginea de fundal</string>
+    <string name="wallpaper_apply_cancelled">Aplicare imagine de fundal anulată</string>
+    <string name="connection_failed">Imposibil de obținut datele de pe server</string>
+    <string name="wallpaper_apply">Aplică imaginea de fundal</string>
+    <string name="wallpaper_save_to_device">Salvează imaginea de fundal</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Imposibil de încărcat presetările</string>
+    <string name="presets_storage_permission">Permisiunea de stocare este necesară pentru a încărca imaginea de fundal</string>
+    <string name="presets_required_apps">Aplicații necesare pentru utilizarea acestor presetări</string>
+    <string name="presets_required_apps_not_installed">Aplicațiile necesare pentru utilizarea presetării nu sunt instalate. Instalează aplicațiile necesare care lipsesc și încearcă din nou.</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Date și Cache</string>
+    <string name="pref_data_cache">Golește memoria cache</string>
+    <string name="pref_data_cache_desc">Elimină cache-ul imaginilor din spațiul de stocare, creat la alegerea unei imagini
+	    din această aplicație, solicitând aplicații ratate și după încărcarea miniaturilor din imaginea de fundal cloud.</string>
+    <string name="pref_data_cache_size">Dimensiune cache: %s</string>
+    <string name="pref_data_cache_clear_dialog">Ești sigur că vrei să ștergi cache-ul?</string>
+    <string name="pref_data_cache_cleared">Cache-ul a fost golit</string>
+    <string name="pref_data_request">Curăță datele solicitărilor de pictograme</string>
+    <string name="pref_data_request_desc">Elimină datele solicitărilor de pictograme, create după solicitarea
+        aplicațiilor omise din cererea de pictograme.</string>
+    <string name="pref_data_request_clear_dialog">Dorești cu adevărat să ștergi datele solicitărilor de pictograme?</string>
+    <string name="pref_data_request_cleared">Datele solicitărilor de pictograme au fost șterse</string>
+    <string name="pref_premium_request_restore">Restabilește achiziția</string>
+    <string name="pref_premium_request_restore_desc">Restabilește pachetul de cereri premium după reinstalarea pachetului de pictograme</string>
+    <string name="pref_premium_request_restore_success">Solicitarea Premium restaurată</string>
+    <string name="pref_premium_request_restore_empty">Nu ai niciun pachet cumpărat</string>
+    <string name="pref_theme_header">Temă</string>
+    <string name="pref_theme_dark">Temă întunecată</string>
+    <string name="pref_wallpaper_header">Imagine de fundal</string>
+    <string name="pref_language_header">Limbă</string>
+    <string name="pref_others_header">Altele</string>
+    <string name="pref_others_report_bugs">Raportare erori</string>
+    <string name="pref_others_changelog">Jurnal de modificări</string>
+    <string name="pref_others_reset_tutorial">Resetare tutorial</string>
+    <string name="pref_others_reset_tutorial_reset">Resetare Tutorial</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automat</string>
+    <string name="theme_name_light">Luminoasă</string>
+    <string name="theme_name_dark">Întunecată</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Permisiunea de stocare este necesară pentru a salva imaginea de fundal</string>
     <!-- Intent -->
+    <string name="app_client">Alege Aplicația</string>
+    <string name="no_email_app">Nicio aplicație pentru a trimite e-mail</string>
+    <string name="no_browser">Nicio aplicație pentru a deschide url-ul</string>
+    <string name="intent_email_failed">Imposibil de afișat aplicația de e-mail</string>
+    <string name="intent_email_supported">Suportat</string>
+    <string name="intent_email_recommended">Recomandat</string>
+    <string name="intent_email_not_supported">Nu este acceptat</string>
     <!-- About -->
+    <string name="about_contributors_title">Contribuitori</string>
+    <string name="about_privacy_policy_title">Politică de confidențialitate</string>
+    <string name="about_terms_and_conditions_title">Termene și condiții</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc_hint">Descriere</string>
+    <string name="report_bugs_send">Trimite raportul</string>
     <!-- Support Development -->
     <!-- Crash Report -->
+    <string name="crash_report">Raportul de avarie</string>
+    <string name="crash_report_send">Trimite raportul</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar este un tablou de bord open source sub licența Apache Licențe 2. pentru
+        Android disponibil pe GitHub și gratuit de utilizat, dezvoltat de Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Licențe cu sursă deschisă</string>
+    <string name="about_dashboard_contributors">Contribuitori CandyBar</string>
+    <string name="about_dashboard_translator">Traducători CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">Deschidere</string>
     <string name="txt_close">Închidere</string>
+    <string name="txt_new">Nou</string>
     <!-- Content descriptions for screen readers -->
+    <string name="share_icon_pack_button_content_description">Distribuie această aplicație cuiva</string>
 </resources>
