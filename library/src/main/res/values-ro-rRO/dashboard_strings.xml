@@ -126,8 +126,13 @@
     <string name="items_selected">%d selectat</string>
     <!-- Request -->
     <string name="request_title">Cerere de pictograme noi</string>
+    <string name="request_not_selected">Selectează aplicațiile pentru solicitare</string>
     <string name="request_not_requested">Nu este solicitată</string>
     <string name="request_already_requested">Deja solicitată</string>
+    <string name="request_custom_success">Cerere pictograme trimisă cu succes</string>
+    <string name="request_fetching_data">Preluarea celor mai recente date …</string>
+    <string name="request_build_failed">Imposibil de creat cererea de pictograme</string>
+    <string name="request_appfilter_failed">Nu se poate citi appfilter.xml</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <string name="premium_request_buy">Cumpărare</string>
@@ -212,5 +217,6 @@
     <string name="txt_close">Închidere</string>
     <string name="txt_new">Nou</string>
     <!-- Content descriptions for screen readers -->
+    <string name="icon_request_submit_button_content_description">Trimite o cerere de pictograme</string>
     <string name="share_icon_pack_button_content_description">Distribuie această aplicație cuiva</string>
 </resources>
