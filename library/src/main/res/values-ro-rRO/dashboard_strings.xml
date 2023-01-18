@@ -119,6 +119,8 @@
     <string name="apply_lg_home">Pentru a aplica acest pachet de pictograme deschide Setări - Afișare - Ecran de pornire - Temă</string>
     <string name="apply_lg_home_not_available">LG Home nu este disponibil pe acest dispozitiv</string>
     <string name="apply_lg_home_failed">Imposibil de lansat setările LG Home, poți încerca să aplici Pachetul de pictograme manual din Setări.</string>
+    <string name="apply_lg_home_nougat">LG Home cu Android Nougat nu mai acceptă Pachete de pictograme. Aveți nevoie de un lansator personalizat pentru a utiliza Pachete de pictograme.</string>
+    <string name="apply_launcher_incompatible">Lansatorul %s nu acceptă nici un pachet de pictograme, așa că nu puteți utiliza acest pachet de pictograme cu acest lansator. Puteți încerca o aplicație externă pentru a utiliza acest pachet de pictograme în lansatorul %2$s. Doriți să îl instalați?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Imposibil de încărcat pictogramele</string>
     <string name="icon_shape">Formă pictogramă</string>
@@ -129,13 +131,38 @@
     <string name="request_not_selected">Selectează aplicațiile pentru solicitare</string>
     <string name="request_not_requested">Nu este solicitată</string>
     <string name="request_already_requested">Deja solicitată</string>
+    <string name="request_building">Construire solicitare …</string>
+    <string name="request_pacific_sending">Se trimite cererea către Pacific Manager...</string>
+    <string name="request_pacific_error">Eroare în timpul trimiterii cererii la Pacific Manager. Eroare este %s</string>
+    <string name="request_pacific_success">Cerere trimisă cu succes către Pacific Manager</string>
+    <string name="request_custom_error">A apărut o eroare la trimiterea cererii de pictograme. Dacă această eroare persistă, contactați dezvoltatorul. %s</string>
     <string name="request_custom_success">Cerere pictograme trimisă cu succes</string>
     <string name="request_fetching_data">Preluarea celor mai recente date …</string>
     <string name="request_build_failed">Imposibil de creat cererea de pictograme</string>
     <string name="request_appfilter_failed">Nu se poate citi appfilter.xml</string>
+    <string name="request_requested">Verificați cererea din nou.
+        Pentru că încercați să solicitați o aplicație, care a fost deja solicitată.</string>
+    <string name="request_email_client">Alegeți aplicația pe care doriți să o utilizați pentru a trimite solicitarea de pictograme</string>
+    <string name="request_app_disabled">Utilizezi o versiune mai veche a acestui pachet de pictograme. Pictogramele solicitate pot fi incluse în ultima versiune. Actualizează aplicația la cea mai recentă versiune pentru a solicita pictograme.</string>
+    <string name="connection_error_long">Nu s-au putut încărca datele de la server. Verifică conexiunea la rețea.</string>
+    <string name="unable_to_load_config">A aparut o eroare la preluarea datelor de pe server.</string>
+    <string name="request_limit">Puteți face doar %d cereri cu solicitarea obișnuită.</string>
+    <string name="request_used">Ați solicitat %d pictograme.</string>
+    <string name="request_limit_buy">Poți cumpăra Cereri Premium pentru a solicita mai multe pictograme.</string>
+    <string name="request_limit_reset">Limita cererii de pictograme va fi resetată la fiecare actualizare.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Cerere obișnuită de pictograme</string>
+    <string name="regular_request_desc">Solicitați pictograme și dezvoltatorul va încerca să includă pictogramele pe care le-ați solicitat.</string>
+    <string name="regular_request_count">Total\n%d solicitări</string>
+    <string name="regular_request_used">Utilizat\n%d solicitări</string>
+    <string name="regular_request_available">Disponibil\n%d solicitări</string>
     <!-- Premium Request -->
+    <string name="premium_request">Cerere premium de pictograme</string>
+    <string name="premium_request_no_internet">Asigurați-vă că telefonul este conectat la internet înainte de a trimite o cerere premium</string>
     <string name="premium_request_buy">Cumpărare</string>
+    <string name="premium_request_count">Total\n%d solicitări</string>
+    <string name="premium_request_used">Utilizat\n%d solicitări</string>
+    <string name="premium_request_available">Disponibil\n%d solicitări</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Imagini de fundal noi</string>
     <string name="wallpaper_already_downloaded">Fundal descărcat deja</string>
@@ -167,13 +194,16 @@
         aplicațiilor omise din cererea de pictograme.</string>
     <string name="pref_data_request_clear_dialog">Dorești cu adevărat să ștergi datele solicitărilor de pictograme?</string>
     <string name="pref_data_request_cleared">Datele solicitărilor de pictograme au fost șterse</string>
+    <string name="pref_premium_request_header">Cerere premium de pictograme</string>
     <string name="pref_premium_request_restore">Restabilește achiziția</string>
     <string name="pref_premium_request_restore_desc">Restabilește pachetul de cereri premium după reinstalarea pachetului de pictograme</string>
     <string name="pref_premium_request_restore_success">Solicitarea Premium restaurată</string>
     <string name="pref_premium_request_restore_empty">Nu ai niciun pachet cumpărat</string>
     <string name="pref_theme_header">Temă</string>
     <string name="pref_theme_dark">Temă întunecată</string>
+    <string name="pref_theme_dark_desc">Utilizați culoarea întunecată pentru tema aplicației</string>
     <string name="pref_wallpaper_header">Imagine de fundal</string>
+    <string name="pref_wallpaper_location">Locație salvare imagini de fundal</string>
     <string name="pref_language_header">Limbă</string>
     <string name="pref_others_header">Altele</string>
     <string name="pref_others_report_bugs">Raportare erori</string>
@@ -194,6 +224,7 @@
     <string name="intent_email_supported">Suportat</string>
     <string name="intent_email_recommended">Recomandat</string>
     <string name="intent_email_not_supported">Nu este acceptat</string>
+    <string name="intent_email_not_supported_message">A fost selectat un client de e-mail neacceptat, te rugăm să selectezi un alt client de e-mail</string>
     <!-- About -->
     <string name="about_contributors_title">Contribuitori</string>
     <string name="about_privacy_policy_title">Politică de confidențialitate</string>
