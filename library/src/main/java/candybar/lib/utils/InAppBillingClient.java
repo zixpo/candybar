@@ -104,6 +104,8 @@ public class InAppBillingClient implements PurchasesUpdatedListener, BillingClie
                                     put("order_id", purchase.getOrderId());
                                     put("order_timestamp", purchase.getPurchaseTime());
                                     put("order_status", purchase.getPurchaseState());
+                                    put("products", String.join(",", purchase.getProducts()));
+                                    put("token", purchase.getPurchaseToken());
                                 }}
                         );
                     }
