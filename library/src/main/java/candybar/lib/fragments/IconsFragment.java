@@ -148,7 +148,7 @@ public class IconsFragment extends Fragment {
     }
 
     public void refreshBookmarks() {
-        if (isBookmarksFragment) {
+        if (isBookmarksFragment && isAdded()) {
             mIcons = Database.get(requireActivity()).getBookmarkedIcons(requireActivity());
             mAdapter.setIcons(mIcons);
             setupViewVisibility();
