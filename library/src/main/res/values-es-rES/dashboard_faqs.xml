@@ -95,6 +95,6 @@ Abre los ajustes de Muzei y selecciona \"Cargar sólo los fondos de pantalla des
         <item>Se utiliza para comprobar si tu teléfono está conectado a una red WiFi o no y cargar los fondos de pantalla basados en la nube desde Muzei.</item>
         <item>Se utiliza para establecer los fondos de pantalla directamente desde el panel de control de la aplicación.</item>
         <item>Es utilizado por Muzei Live Wallpaper</item>
-        <item>Se utiliza la aplicación \"Reloj\" desde el widget analógico.</item>
+        <item>Se utiliza para lanzar la aplicación \"Reloj\" desde el widget analógico.</item>
     </string-array>
 </resources>
