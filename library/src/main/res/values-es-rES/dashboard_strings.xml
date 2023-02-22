@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Iconos</string>
     <string name="navigation_view_request">Solicitud de iconos</string>
     <string name="navigation_view_wallpapers">Fondos de pantalla</string>
+    <string name="navigation_view_presets">Preajustes</string>
     <string name="navigation_view_settings">Ajustes</string>
     <string name="navigation_view_faqs">Preguntas frecuentes</string>
     <string name="navigation_view_about">Sobre mí</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Buscar</string>
     <string name="menu_save">Guardar en el dispositivo</string>
     <string name="menu_select_all">Seleccionar todos</string>
+    <string name="menu_delete">Eliminar</string>
     <string name="menu_wallpaper_crop">Recortar fondo de pantalla</string>
     <string name="menu_apply_homescreen">Pantalla de inicio</string>
     <string name="menu_apply_lockscreen">Pantalla de bloqueo</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Ningún resultado encontrado para \"%s\"</string>
     <string name="search_faqs">Pregunta o respuesta</string>
     <string name="search_icon">Nombre del icono</string>
+    <string name="search_wallpapers">Nombre del Fondo de Pantalla</string>
     <!-- Update -->
     <string name="checking_for_update">Verificando actualizaciones…</string>
     <string name="update_available">Actualización disponible!</string>
@@ -58,6 +61,8 @@ No podrás utilizar la aplicación.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Comprobación de Play Store</string>
     <string name="playstore_check_success">Gracias por instalar la application de la Google Play Store. Disfruta.</string>
+    <string name="playstore_check_failed">Parece que instalaste este paquete de íconos fuera de la Google Play Store.
+No podrás usarlo.</string>
     <!-- Share -->
     <string name="share_app_title">¡Yo! Echa un vistazo a %s</string>
     <string name="share_app_body">Echa un vistazo a %1$s, ¡este paquete de iconos es fantástico! %2$s</string>
@@ -117,6 +122,8 @@ No podrás utilizar la aplicación.</string>
     <!-- Icons -->
     <string name="icons_load_failed">No se pueden cargar los iconos</string>
     <string name="icon_shape">Forma de icono</string>
+    <string name="bookmark_icons_empty">No se encontraron marcadores. Marca íconos para acceder a ellos rápidamente desde aquí.</string>
+    <string name="items_selected">%d seleccionado</string>
     <!-- Request -->
     <string name="request_title">Solicitud de iconos</string>
     <string name="request_not_selected">Selecciona las aplicaciones para solicitar</string>
@@ -126,6 +133,8 @@ No podrás utilizar la aplicación.</string>
     <string name="request_pacific_sending">Enviando solicitud al Pacific Manager...</string>
     <string name="request_pacific_error">Error al enviar la solicitud al Pacific Manager. El error es %s</string>
     <string name="request_pacific_success">Solicitud enviada correctamente al Pacific Manager</string>
+    <string name="request_custom_error">Ocurrió un error al enviar la solicitud de ícono/s. Si el error persiste, contacta al desarrollador. %s</string>
+    <string name="request_custom_success">Solicitud de íconos enviada exitosamente</string>
     <string name="request_fetching_data">Obteniendo actualizaciones mas recientes …</string>
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
@@ -178,6 +187,10 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="wallpaper_apply">Establecer el fondo de pantalla</string>
     <string name="wallpaper_save_to_device">Guardar fondo de pantalla</string>
     <!-- Presets -->
+    <string name="presets_load_failed">No fue posible cargar los preajustes</string>
+    <string name="presets_storage_permission">Se necesita \"Permiso de almacenamiento\" para cargar la vista previa del fondo de pantalla</string>
+    <string name="presets_required_apps">Aplicaciones requeridas para usar estos preajustes</string>
+    <string name="presets_required_apps_not_installed">Las aplicaciones requeridas para usar el preajuste no están instaladas. Por favor, instala las aplicaciones requeridas faltantes y vuelve a intentarlo.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Datos y Caché</string>
     <string name="pref_data_cache">Limpiar Caché</string>
@@ -250,4 +263,11 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="txt_close">Cerrar</string>
     <string name="txt_new">Nuevo</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Añade este icono a la sección de marcadores</string>
+    <string name="icon_search_close_button_content_description">Cerrar la búsqueda de íconos</string>
+    <string name="icon_request_submit_button_content_description">Enviar una solicitud de íconos</string>
+    <string name="icon_list_content_description">La lista de íconos incluidos en el paquete</string>
+    <string name="icon_search_list_content_description">La lista de íconos que coincide con el término de búsqueda</string>
+    <string name="about_item_social_content_description">Un enlace a un perfil en línea del autor del paquete de iconos: </string>
+    <string name="share_icon_pack_button_content_description">Comparte esta aplicación con alguien</string>
 </resources>
