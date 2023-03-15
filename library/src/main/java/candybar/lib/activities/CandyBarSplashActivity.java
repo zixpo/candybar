@@ -146,7 +146,7 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
                     if (WallpaperHelper.getWallpaperType(context.get()) != WallpaperHelper.CLOUD_WALLPAPERS)
                         return true;
 
-                    URL url = new URL(context.get().getString(R.string.wallpaper_json));
+                    URL url = new URL(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(context.get()));
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setConnectTimeout(15000);
 
@@ -185,4 +185,3 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
         }
     }
 }
-

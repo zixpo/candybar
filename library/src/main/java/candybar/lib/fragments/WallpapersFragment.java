@@ -242,7 +242,7 @@ public class WallpapersFragment extends Fragment {
                 try {
                     Thread.sleep(1);
 
-                    URL url = new URL(getString(R.string.wallpaper_json));
+                    URL url = new URL(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(getContext()));
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setConnectTimeout(15000);
 

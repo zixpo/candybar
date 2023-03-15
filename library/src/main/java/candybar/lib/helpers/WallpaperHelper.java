@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import com.danimahardhika.android.helpers.core.WindowHelper;
 
 import candybar.lib.R;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.ImageSize;
 
 /*
@@ -44,7 +45,7 @@ public class WallpaperHelper {
     public static final int EXTERNAL_APP = 2;
 
     public static int getWallpaperType(@NonNull Context context) {
-        String url = context.getResources().getString(R.string.wallpaper_json);
+        String url = CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(context);
         if (URLUtil.isValidUrl(url)) {
             return CLOUD_WALLPAPERS;
         } else if (url.length() > 0) {
@@ -54,7 +55,7 @@ public class WallpaperHelper {
     }
 
     public static void launchExternalApp(@NonNull Context context) {
-        String packageName = context.getResources().getString(R.string.wallpaper_json);
+        String packageName = CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(context);
 
         PackageManager pm = context.getPackageManager();
         Intent intent = pm.getLaunchIntentForPackage(packageName);

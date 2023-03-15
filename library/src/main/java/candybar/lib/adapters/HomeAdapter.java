@@ -428,7 +428,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 share.setVisibility(View.GONE);
             }
 
-            if ((!mContext.getResources().getBoolean(R.bool.enable_check_update)) || (mContext.getResources().getString(R.string.config_json).length() == 0)) {
+            if ((!mContext.getResources().getBoolean(R.bool.enable_check_update)) || (CandyBarApplication.getConfiguration().getConfigHandler().configJson(mContext).length() == 0)) {
                 update.setVisibility(View.GONE);
             }
 
@@ -500,7 +500,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         protected boolean run() {
             if (!isCancelled()) {
                 boolean isSuccess = true;
-                String configJsonUrl = mContext.getResources().getString(R.string.config_json);
+                String configJsonUrl = CandyBarApplication.getConfiguration().getConfigHandler().configJson(mContext);
                 URLConnection urlConnection;
                 BufferedReader bufferedReader = null;
 
