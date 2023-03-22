@@ -118,7 +118,7 @@ public class TapIntroHelper {
                                     RecyclerView.ViewHolder holder = recyclerView.findViewHolderForAdapterPosition(position);
                                     if (holder != null) {
                                         View view = holder.itemView;
-                                        float circleScale = 1.0f / context.getResources().getInteger(R.integer.tap_intro_circle_scale_percent);
+                                        float circleScale = 100.0f / context.getResources().getInteger(R.integer.tap_intro_circle_scale_percent);
                                         float targetRadius = (toDp(context, view.getMeasuredWidth()) - 20f) * circleScale;
 
                                         String desc = context.getResources().getString(R.string.tap_intro_home_apply_desc,
@@ -374,7 +374,7 @@ public class TapIntroHelper {
                                         if (holder != null) {
                                             View view = holder.itemView.findViewById(R.id.buy);
                                             if (view != null) {
-                                                float circleScale = 1.0f / context.getResources().getInteger(R.integer.tap_intro_circle_scale_percent);
+                                                float circleScale = 100.0f / context.getResources().getInteger(R.integer.tap_intro_circle_scale_percent);
                                                 float targetRadius = (toDp(context, view.getMeasuredWidth()) - 10f) * circleScale;
 
                                                 TapTarget tapTarget = TapTarget.forView(view,
@@ -472,7 +472,7 @@ public class TapIntroHelper {
 
                         View view = holder.itemView.findViewById(R.id.image);
                         if (view != null) {
-                            float circleScale = 1.0f / context.getResources().getInteger(R.integer.tap_intro_circle_scale_percent);
+                            float circleScale = 100.0f / context.getResources().getInteger(R.integer.tap_intro_circle_scale_percent);
                             float targetRadius = (toDp(context, view.getMeasuredWidth()) - 10f) * circleScale;
 
                             Typeface title = TypefaceHelper.getMedium(context);
