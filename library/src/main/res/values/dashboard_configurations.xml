@@ -326,6 +326,14 @@
 
     <!-- Show intro guides on first run -->
     <bool name="show_intro">false</bool>
+    <!-- Use the set of predefined colours for the tap intro
+        This used to be the default. If set to false, you can
+        override colors with these attributes in colors.xml:
+            tapIntroTitle
+            tapIntroDescription
+            tapIntroCircleInner
+            tapIntroCircleOuter -->
+    <bool name="use_legacy_intro_colors">true</bool>
 
     <!-- These are not documented. As you can guess, these are not for general use -->
     <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>

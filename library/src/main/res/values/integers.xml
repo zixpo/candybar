@@ -10,4 +10,5 @@
 
     <integer name="about_column_count">1</integer>
 
+    <integer name="tap_intro_circle_scale_percent">100</integer>
 </resources>
