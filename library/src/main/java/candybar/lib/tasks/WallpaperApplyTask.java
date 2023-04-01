@@ -353,7 +353,7 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
             return;
         }
 
-        if (((AppCompatActivity) mContext.get()).isFinishing()) {
+        if (((AppCompatActivity) mContext.get()).isFinishing() || ((AppCompatActivity) mContext.get()).isDestroyed()) {
             return;
         }
 
