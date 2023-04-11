@@ -33,12 +33,18 @@
     <string name="open">Otwórz</string>
     <string name="close">Zamknij</string>
     <string name="clear">Wyczyść</string>
+    <string name="ok">OK</string>
     <string name="install">Zainstaluj</string>
     <string name="donate">Przekaż pieniądze</string>
+    <string name="update">Zaktualizuj</string>
     <string name="search_noresult">Nie znaleziono wyników dla \"%s\"</string>
     <string name="search_faqs">Pytanie lub odpowiedź</string>
     <string name="search_icon">Nazwa ikony</string>
+    <string name="search_wallpapers">Nazwa tapety</string>
     <!-- Update -->
+    <string name="checking_for_update">Sprawdzanie aktualizacji …</string>
+    <string name="update_available">Dostępna aktualizacja!</string>
+    <string name="no_update_available">Używasz najnowszej wersji!</string>
     <!-- Changelog -->
     <string name="changelog_version">Wersja</string>
     <!-- InAppBilling -->
@@ -50,6 +56,8 @@
     <string name="license_check_failed">Sprawdzanie licencji nie powiodło się, nie pobrałeś aplikacji ze sklepu Google Play. Nie będziesz mógł jej używać.</string>
     <string name="license_check_retry">Sprawdzanie licencji nie powiodło się, spróbuj ponownie za chwilę.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check_success">Dziękujemy za zainstalowanie aplikacji ze sklepu Google Play.</string>
+    <string name="playstore_check_failed">Wygląda na to, że zainstalowałeś tę aplikację spoza sklepu Google Play. Nie będziesz mógł jej używać.</string>
     <!-- Share -->
     <string name="share_app_title">Hej! Wypróbuj %s</string>
     <string name="share_app_body">Wpróbuj %1$s, ta paczka ikon jest super! %2$s</string>
@@ -94,8 +102,11 @@
     <!-- Apply -->
     <string name="apply_installed">Zainstalowane Launchery</string>
     <string name="apply_supported">Wspierane Launchery</string>
+    <string name="apply_manual">%1$s nie wspiera bezpośredniego zastosowywania zestawów ikon. Zastosuj %2$s ręcznie z ustawień launchera.</string>
     <string name="apply_manual_evie">Przytrzymaj palec na ekranie głównym - Ustawienia - Paczka Ikon - wybierz %s.</string>
+    <string name="apply_launch_failed">Nie udało się uruchomić ustawień %s</string>
     <string name="apply_launcher_not_installed">%s nie jest zainstalowany. Czy chcesz pobrać tę aplikację ze sklepu Google Play?</string>
+    <string name="apply_launcher_not_installable">%s nie jest zainstalowany. Zainstaluj launcher i spróbuj ponownie.</string>
     <string name="apply_cmtheme_not_available">Menedżer Motywów CM nie jest dostępny na tym urządzeniu</string>
     <string name="apply_cmtheme_failed">Uruchamianie Menedżera Motywów CM nie powiodło się, możesz spróbować zastosować paczkę manualnie z Ustawień.</string>
     <string name="apply_lg_home">Aby zastosować tę paczkę ikon otwórz Ustawienia - Wyświetlacz - Ekran Główny - Motyw</string>
