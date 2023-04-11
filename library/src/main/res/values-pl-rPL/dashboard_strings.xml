@@ -135,11 +135,15 @@
     <string name="request_requested">Przejrzyj swoją prośbę jeszcze raz. Próbujesz wysłać prośbę o aplikację, która już została zawarta w poprzedniej prośbie.</string>
     <string name="request_email_client">Wybierz aplikację email, przy pomocy której chcesz wysłać prośbę</string>
     <string name="request_app_disabled">Używasz starej wersji zestawu ikon. Ikony z twojej prośby mogą już znajdować się w nowszej wersji. Zaktualizuj aplikację, aby móc wysyłać prośby o ikony.</string>
+    <string name="connection_error_long">Nie udało się wczytać danych z serwera. Sprawdź swoje połączenie sieciowe.</string>
+    <string name="unable_to_load_config">Wystąpił błąd podczas pobierania/odczytywania danych z serwera.</string>
     <string name="request_limit">Możesz wysłać tylko %d próśb z normalnym planem próśb</string>
     <string name="request_used">Wysłałeś prośby o %d ikonę/ikon.</string>
     <string name="request_limit_buy">Możesz kupić płatne prośby by wysłać więcej próśb o ikony.</string>
     <string name="request_limit_reset">Limit ilości próśb o ikony zostanie zresetowany po każdej aktualizacji.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Zwykła prośba o ikony</string>
+    <string name="regular_request_desc">Zapytaj autora zestawu o dodanie brakujących ikon.</string>
     <!-- Premium Request -->
     <string name="premium_request">Płatne Prośby O Ikony</string>
     <string name="premium_request_no_internet">Upewnij się, że twoje urządzenie jest podłączone do internetu przed wysłaniem płatnej prośby o ikony</string>
@@ -197,6 +201,9 @@
     <string name="pref_others_reset_tutorial">Zresetuj poradnik</string>
     <string name="pref_others_reset_tutorial_reset">Poradnik został zresetowany</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automatyczny</string>
+    <string name="theme_name_light">Jasny</string>
+    <string name="theme_name_dark">Ciemny</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Pozwolenie na dostęp do pamięci wewnętrznej jest wymagane aby zapisać tapetę</string>
     <!-- Intent -->
@@ -210,6 +217,8 @@
     <string name="intent_email_not_supported_message">Wybrałeś niewspieraną aplikację email, użyj innego programu</string>
     <!-- About -->
     <string name="about_contributors_title">Współautorzy</string>
+    <string name="about_privacy_policy_title">Polityka prywatności</string>
+    <string name="about_terms_and_conditions_title">Warunki użytkowania</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Podaj opis problemu, który chcesz zgłosić</string>
     <string name="report_bugs_desc_hint">Opis</string>
@@ -224,6 +233,7 @@
     <string name="crash_report_message">Niestety aplikacja %s się zawiesiła. Wybierz opcję wysłania raportu dostępną poniżej aby pomóc autorowi aplikacji naprawić ten błąd.</string>
     <string name="crash_report_send">Wyślij raport</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar to otwarty panel dla paczek ikon z licencją Apache 2.0. Jest dostępny dla systemu Android i można pobrać go za darmo z GitHub. Autorem panelu jst Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Licencje upublicznionego kodu źródłowego</string>
     <string name="about_dashboard_contributors">Współautorzy CandyBar</string>
