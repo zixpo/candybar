@@ -24,6 +24,11 @@
     <string name="menu_search">Wyszukiwanie</string>
     <string name="menu_save">Zapisz na urządzeniu</string>
     <string name="menu_select_all">Zaznacz wszystkie</string>
+    <string name="menu_delete">Usuń</string>
+    <string name="menu_wallpaper_crop">Przytnij tapetę</string>
+    <string name="menu_apply_homescreen">Ekran główny</string>
+    <string name="menu_apply_lockscreen">Ekran blokady</string>
+    <string name="menu_apply_homescreen_lockscreen">Ekran główny i blokady</string>
     <!-- Dialog -->
     <string name="open">Otwórz</string>
     <string name="close">Zamknij</string>
