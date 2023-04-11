@@ -116,16 +116,25 @@
     <!-- Icons -->
     <string name="icons_load_failed">Ładowanie ikon nie powiodło się</string>
     <string name="icon_shape">Kształt ikon</string>
+    <string name="bookmark_icons_empty">Nie znaleziono zakładek. Dodawaj zakładki do ikon, aby je szybko tutaj odnaleźć.</string>
+    <string name="items_selected">Wybrano: %d</string>
     <!-- Request -->
     <string name="request_title">Prośba o ikony</string>
     <string name="request_not_selected">Wybierz aplikacje do prośby</string>
     <string name="request_not_requested">Nie wysłano prośby</string>
     <string name="request_already_requested">Już wysłano prośbę</string>
     <string name="request_building">Budowanie pliku prośby …</string>
+    <string name="request_pacific_sending">Wysyłanie prośby do Pacific Manager...</string>
+    <string name="request_pacific_error">Wystąpił błąd podczas wysyłania prośby do Pacific Manager: %s</string>
+    <string name="request_pacific_success">Pomyślnie wysłano prośbę do Pacific Manager</string>
+    <string name="request_custom_error">Wystąpił błąd podczas wysyłania prośby. Jeśli błąd się powtarza, powiadom programistę. %s</string>
+    <string name="request_custom_success">Pomyślnie wysłano prośbę</string>
+    <string name="request_fetching_data">Pobieranie najnowszych danych …</string>
     <string name="request_build_failed">Budowanie pliku prośby nie powiodło się</string>
     <string name="request_appfilter_failed">Czytanie pliku appfilter.xml nie powiodło się</string>
     <string name="request_requested">Przejrzyj swoją prośbę jeszcze raz. Próbujesz wysłać prośbę o aplikację, która już została zawarta w poprzedniej prośbie.</string>
     <string name="request_email_client">Wybierz aplikację email, przy pomocy której chcesz wysłać prośbę</string>
+    <string name="request_app_disabled">Używasz starej wersji zestawu ikon. Ikony z twojej prośby mogą już znajdować się w nowszej wersji. Zaktualizuj aplikację, aby móc wysyłać prośby o ikony.</string>
     <string name="request_limit">Możesz wysłać tylko %d próśb z normalnym planem próśb</string>
     <string name="request_used">Wysłałeś prośby o %d ikonę/ikon.</string>
     <string name="request_limit_buy">Możesz kupić płatne prośby by wysłać więcej próśb o ikony.</string>
