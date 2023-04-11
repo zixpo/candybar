@@ -115,6 +115,7 @@
     <string name="apply_lg_home_nougat">LG Home w systemie Android Nougat już nie wspiera zewnętrznych paczek ikon. Potrzebujesz innego launchera aby używać tej paczki ikon.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Ładowanie ikon nie powiodło się</string>
+    <string name="icon_shape">Kształt ikon</string>
     <!-- Request -->
     <string name="request_title">Prośba o ikony</string>
     <string name="request_not_selected">Wybierz aplikacje do prośby</string>
