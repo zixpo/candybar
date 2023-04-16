@@ -37,6 +37,7 @@
         <item>Hyperion</item>                               <!-- 32 -->
         <item>Neo</item>                                    <!-- 33 -->
         <item>KISS</item>                                   <!-- 34 -->
+        <item>One UI</item>                                 <!-- 35 -->
     </string-array>
 
     <array name="launcher_icons">
@@ -75,6 +76,7 @@
         <item>@drawable/ic_launcher_hyperion</item>         <!-- 32 -->
         <item>@drawable/ic_launcher_neo</item>              <!-- 33 -->
         <item>@drawable/ic_launcher_kiss</item>             <!-- 33 -->
+        <item>@drawable/ic_launcher_one_ui</item>           <!-- 35 -->
     </array>
 
     <!-- Launcher Packages -->
@@ -114,6 +116,7 @@
         <item>projekt.launcher</item>                       <!-- 32 -->
         <item>com.saggitt.omega</item>                      <!-- 33 -->
         <item>fr.neamar.kiss</item>                         <!-- 33 -->
+        <item>com.sec.android.app.launcher</item>           <!-- 35 -->
     </string-array>
 
     <string-array name="launcher_packages_2">
@@ -152,6 +155,7 @@
         <item>none</item>                                   <!-- 32 -->
         <item>none</item>                                   <!-- 33 -->
         <item>none</item>                                   <!-- 34 -->
+        <item>none</item>                                   <!-- 35 -->
     </string-array>
 
     <string-array name="launcher_packages_3">
@@ -190,6 +194,7 @@
         <item>none</item>                                   <!-- 32 -->
         <item>none</item>                                   <!-- 33 -->
         <item>none</item>                                   <!-- 34 -->
+        <item>none</item>                                   <!-- 35 -->
     </string-array>
 
 </resources>
