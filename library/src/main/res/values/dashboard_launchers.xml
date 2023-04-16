@@ -75,7 +75,7 @@
         <item>@drawable/ic_launcher_niagara</item>          <!-- 31 -->
         <item>@drawable/ic_launcher_hyperion</item>         <!-- 32 -->
         <item>@drawable/ic_launcher_neo</item>              <!-- 33 -->
-        <item>@drawable/ic_launcher_kiss</item>             <!-- 33 -->
+        <item>@drawable/ic_launcher_kiss</item>             <!-- 34 -->
         <item>@drawable/ic_launcher_one_ui</item>           <!-- 35 -->
     </array>
 
@@ -115,7 +115,7 @@
         <item>bitpit.launcher</item>                        <!-- 31 -->
         <item>projekt.launcher</item>                       <!-- 32 -->
         <item>com.saggitt.omega</item>                      <!-- 33 -->
-        <item>fr.neamar.kiss</item>                         <!-- 33 -->
+        <item>fr.neamar.kiss</item>                         <!-- 34 -->
         <item>com.sec.android.app.launcher</item>           <!-- 35 -->
     </string-array>
 
