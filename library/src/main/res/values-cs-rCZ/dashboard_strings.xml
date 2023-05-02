@@ -110,6 +110,15 @@
     <string name="apply_supported">Podporované spouštěče</string>
     <string name="apply_manual">Spouštěč %1$s nepodporuje přímé aktivování, ale můžete aktualizovat %2$s ručně v nastavení spouštěče.</string>
     <string name="apply_manual_evie">Podržte prst na domovské obrazovce –⁠ Nastavení –⁠ Balíček ikon –⁠ vyberte %s.</string>
+    <string name="apply_manual_samsung_oneui">%1$s nepodporuje přímé použití, ale počínaje %2$s můžete použít ikony pomocí doplňkové aplikace.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Vaše aktuální verze %s je příliš stará. Aktualizujte prosím na Android 12 nebo novější, abyste mohli použít ikony přímo. Případně můžete nainstalovat jiný spouštěč.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Otevřete %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Stáhněte aplikaci %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Klepněte na \"Ikona\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Klepněte na \"Vytvořit novou\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Klepněte na modré tlačítko \"Balíček ikon\"</string>
+    <string name="apply_manual_samsung_oneui_step_6">Vyberte %s ze seznamu</string>
+    <string name="apply_manual_samsung_oneui_step_7">Tyto kroky opakujte při každé aktualizaci %s, protože nové ikony nebudou namapovány automaticky.</string>
     <string name="apply_launch_failed">Nelze otevřít nastavení %s</string>
     <string name="apply_launcher_not_installed">Spouštěč %s není nainstalován. Chcete otevřít
         Obchod Play pro jeho stažení a instalaci?</string>
