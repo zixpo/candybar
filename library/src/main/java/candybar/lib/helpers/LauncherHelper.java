@@ -910,6 +910,14 @@ public class LauncherHelper {
                 )
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_confirm");
+                                put("launcher", launcherName);
+                            }}
+                    );
                     if (Build.VERSION.SDK_INT > Build.VERSION_CODES.R) {
                         String packageName = "com.samsung.android.themedesigner";
                         try {
@@ -942,6 +950,16 @@ public class LauncherHelper {
                     }
                 })
                 .negativeText(android.R.string.cancel)
+                .onNegative(((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_cancel");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                }))
                 .show();
     }
 
