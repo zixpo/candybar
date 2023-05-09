@@ -97,5 +97,6 @@
     <!-- CONFIG: MISC -->
     <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config_alt.json</string>
     <bool name="show_intro">false</bool>
+    <bool name="use_legacy_intro_colors">true</bool>
 
 </resources>

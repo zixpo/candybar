@@ -1,5 +1,6 @@
 package candybar.lib.helpers;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
@@ -53,7 +54,9 @@ public class LicenseCallbackHelper implements LicenseCallback {
 
     @Override
     public void onLicenseCheckStart() {
-        mDialog.show();
+        if (!((Activity) mContext).isFinishing() && !((Activity) mContext).isDestroyed()) {
+            mDialog.show();
+        }
     }
 
     @Override
@@ -62,14 +65,16 @@ public class LicenseCallbackHelper implements LicenseCallback {
         // and it messes up the layout, so delay is the workaround
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            mDialog.dismiss();
+            if (!((Activity) mContext).isFinishing() && !((Activity) mContext).isDestroyed()) {
+                mDialog.dismiss();
 
-            if (status == LicenseHelper.Status.RETRY) {
-                showRetryDialog();
-                return;
+                if (status == LicenseHelper.Status.RETRY) {
+                    showRetryDialog();
+                    return;
+                }
+
+                showLicenseDialog(status);
             }
-
-            showLicenseDialog(status);
         }, 1000);
     }
 
