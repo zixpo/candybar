@@ -43,7 +43,7 @@ public class MuzeiHelper {
     @Nullable
     public static Wallpaper getRandomWallpaper(@NonNull Context context) throws Exception {
         if (Database.get(context).getWallpapersCount() == 0) {
-            URL url = new URL(context.getString(R.string.wallpaper_json));
+            URL url = new URL(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(context));
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setConnectTimeout(15000);
 

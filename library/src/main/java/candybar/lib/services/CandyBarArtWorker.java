@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import candybar.lib.R;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
@@ -52,7 +53,7 @@ public class CandyBarArtWorker extends Worker {
     @NonNull
     public Result doWork() {
         LogUtil.d("Executing doWork() for Muzei");
-        if (!URLUtil.isValidUrl(mContext.getString(R.string.wallpaper_json))) {
+        if (!URLUtil.isValidUrl(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(mContext))) {
             LogUtil.e("Not a valid Wallpaper JSON URL");
             return Result.failure();
         }

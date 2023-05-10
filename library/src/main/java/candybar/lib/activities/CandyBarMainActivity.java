@@ -815,7 +815,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     if (WallpaperHelper.getWallpaperType(this) != WallpaperHelper.CLOUD_WALLPAPERS)
                         return;
 
-                    String wallpaperUrl = getResources().getString(R.string.wallpaper_json);
+                    String wallpaperUrl = CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(this);
                     URL url = new URL(wallpaperUrl);
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setConnectTimeout(15000);

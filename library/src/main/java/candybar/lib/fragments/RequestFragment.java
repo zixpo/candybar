@@ -273,7 +273,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 }
 
                 if ((requireActivity().getResources().getBoolean(R.bool.json_check_before_request)) &&
-                        (requireActivity().getResources().getString(R.string.config_json).length() != 0)) {
+                        (CandyBarApplication.getConfiguration().getConfigHandler().configJson(requireActivity()).length() != 0)) {
                     mAsyncTask = new CheckConfig().executeOnThreadPool();
                 } else {
                     mAsyncTask = new RequestLoader().executeOnThreadPool();
@@ -597,7 +597,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         @Override
         protected boolean run() {
             if (!isCancelled()) {
-                String configJsonUrl = requireActivity().getResources().getString(R.string.config_json);
+                String configJsonUrl = CandyBarApplication.getConfiguration().getConfigHandler().configJson(requireActivity());
                 URLConnection urlConnection;
                 BufferedReader bufferedReader = null;
 
