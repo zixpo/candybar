@@ -29,12 +29,14 @@ import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
 import candybar.lib.R;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.fragments.IconsFragment;
 import candybar.lib.helpers.IconsHelper;
@@ -364,6 +366,29 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
                     mIcons.add(icon);
                 }
             }
+        }
+        if (mIcons.size() == 0) {
+            CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                    "click",
+                    new HashMap<String, Object>() {{
+                        put("section", "icons");
+                        put("action", "search");
+                        put("item", query);
+                        put("found", "no");
+                        put("number_of_icons", mIcons.size());
+                    }}
+            );
+        } else {
+            CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                    "click",
+                    new HashMap<String, Object>() {{
+                        put("section", "icons");
+                        put("action", "search");
+                        put("item", query);
+                        put("found", "yes");
+                        put("number_of_icons", mIcons.size());
+                    }}
+            );
         }
         notifyDataSetChanged();
     }

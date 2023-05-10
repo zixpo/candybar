@@ -44,8 +44,11 @@ import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.kogitune.activitytransition.ActivityTransition;
 import com.kogitune.activitytransition.ExitActivityTransition;
 
+import java.util.HashMap;
+
 import candybar.lib.R;
 import candybar.lib.adapters.WallpapersAdapter;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.TapIntroHelper;
@@ -95,6 +98,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     private boolean mIsResumed = false;
 
     private Wallpaper mWallpaper;
+    private String mWallpaperName;
     private Runnable mRunnable;
     private Handler mHandler;
     private PhotoViewAttacher mAttacher;
@@ -140,6 +144,16 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
             finish();
             return;
         }
+
+        mWallpaperName = mWallpaper.getURL().split("/")[mWallpaper.getURL().split("/").length-1];
+
+        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                "wallpaper",
+                new HashMap<String, Object>() {{
+                    put("url", mWallpaperName);
+                    put("action", "preview");
+                }}
+        );
 
         initBottomBar();
         resetBottomBarPadding();
@@ -307,10 +321,34 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                                     .crop(rectF);
 
                             if (item.getType() == PopupItem.Type.LOCKSCREEN) {
+                                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                        "wallpaper",
+                                        new HashMap<String, Object>() {{
+                                            put("url", mWallpaperName);
+                                            put("section", "lockscreen");
+                                            put("action", "apply");
+                                        }}
+                                );
                                 task.to(WallpaperApplyTask.Apply.LOCKSCREEN);
                             } else if (item.getType() == PopupItem.Type.HOMESCREEN) {
+                                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                        "wallpaper",
+                                        new HashMap<String, Object>() {{
+                                            put("url", mWallpaperName);
+                                            put("section", "homescreen");
+                                            put("action", "apply");
+                                        }}
+                                );
                                 task.to(WallpaperApplyTask.Apply.HOMESCREEN);
                             } else if (item.getType() == PopupItem.Type.HOMESCREEN_LOCKSCREEN) {
+                                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                        "wallpaper",
+                                        new HashMap<String, Object>() {{
+                                            put("url", mWallpaperName);
+                                            put("section", "homescreen_and_lockscreen");
+                                            put("action", "apply");
+                                        }}
+                                );
                                 task.to(WallpaperApplyTask.Apply.HOMESCREEN_LOCKSCREEN);
                             }
 

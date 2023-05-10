@@ -34,11 +34,13 @@ import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 import candybar.lib.R;
 import candybar.lib.adapters.PresetsAdapter;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Preset;
 import candybar.lib.preferences.Preferences;
@@ -89,6 +91,11 @@ public class PresetsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                "view",
+                new HashMap<String, Object>() {{ put("section", "presets"); }}
+        );
 
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, false);
 
