@@ -10,10 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
 import candybar.lib.R;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.FAQs;
 import candybar.lib.preferences.Preferences;
 
@@ -135,6 +137,28 @@ public class FAQsAdapter extends RecyclerView.Adapter<FAQsAdapter.ViewHolder> {
                     mFAQs.add(faq);
                 }
             }
+        }
+        if (getFaqsCount() == 0) {
+            CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                    "type",
+                    new HashMap<String, Object>() {{
+                        put("section", "faq");
+                        put("action", "search");
+                        put("found", "no");
+                        put("query", query);
+                    }}
+            );
+        } else {
+            CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                    "type",
+                    new HashMap<String, Object>() {{
+                        put("section", "faq");
+                        put("action", "search");
+                        put("found", "yes");
+                        put("query", query);
+                        put("num_results", getFaqsCount());
+                    }}
+            );
         }
         notifyDataSetChanged();
     }

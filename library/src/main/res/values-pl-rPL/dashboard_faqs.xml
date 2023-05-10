@@ -53,7 +53,7 @@
         <item>Dlaczego aplikacja wymaga pozwolenia na dostęp do stanu sieci WiFi?</item>
         <item>Dlaczego aplikacja wymaga pozwolenia na ustawianie tapety?</item>
         <item>Dlaczego aplikacja wymaga pozwolenia na dostęp do blokowania przejścia w stan uśpienia?</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>Dlaczego aplikacja wymaga pozwolenia na ustawienie alarmu?</item>
     </string-array>
     <string-array name="answers">
         <item>Launcher to część interfejsu użytkownika systemu Android, która pozwala użytkownikom personalizować swój ekran główny, uruchamiać aplikacje, wykonywać połączenia telefoniczne, oraz wykonywać inne zadania na urządzeniu.</item>

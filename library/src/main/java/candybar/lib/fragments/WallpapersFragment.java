@@ -43,6 +43,7 @@ import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 
 import candybar.lib.R;
@@ -105,6 +106,11 @@ public class WallpapersFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                "view",
+                new HashMap<String, Object>() {{ put("section", "wallpapers"); }}
+        );
 
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, false);
 

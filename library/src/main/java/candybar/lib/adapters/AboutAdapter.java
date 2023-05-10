@@ -34,6 +34,8 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
+import java.util.HashMap;
+
 import candybar.lib.BuildConfig;
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
@@ -337,13 +339,37 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.contributors_title) {
+                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "about");
+                            put("action", "open_dialog");
+                            put("item", "contributors");
+                        }}
+                );
                 CreditsFragment.showCreditsDialog(((AppCompatActivity) mContext).getSupportFragmentManager(),
                         CreditsFragment.TYPE_ICON_PACK_CONTRIBUTORS);
             } else if (id == R.id.privacy_policy_title) {
+                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "about");
+                            put("action", "open_dialog");
+                            put("item", "privacy_policy");
+                        }}
+                );
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext.getResources().getString(R.string.privacy_policy_link)));
                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                 mContext.startActivity(intent);
             } else if (id == R.id.terms_title) {
+                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "about");
+                            put("action", "open_dialog");
+                            put("item", "terms_and_conditions");
+                        }}
+                );
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext.getResources().getString(R.string.terms_and_conditions_link)));
                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                 mContext.startActivity(intent);
@@ -411,17 +437,41 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.about_dashboard_licenses) {
+                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "about");
+                            put("action", "open_dialog");
+                            put("item", "licenses");
+                        }}
+                );
                 LicensesFragment.showLicensesDialog(((AppCompatActivity) mContext).getSupportFragmentManager());
                 return;
             }
 
             if (id == R.id.about_dashboard_contributors) {
+                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "about");
+                            put("action", "open_dialog");
+                            put("item", "contributors");
+                        }}
+                );
                 CreditsFragment.showCreditsDialog(((AppCompatActivity) mContext).getSupportFragmentManager(),
                         CreditsFragment.TYPE_DASHBOARD_CONTRIBUTORS);
                 return;
             }
 
             if (id == R.id.about_dashboard_translator) {
+                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "about");
+                            put("action", "open_dialog");
+                            put("item", "translators");
+                        }}
+                );
                 CreditsFragment.showCreditsDialog(((AppCompatActivity) mContext).getSupportFragmentManager(),
                         CreditsFragment.TYPE_DASHBOARD_TRANSLATOR);
                 return;
@@ -429,6 +479,14 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
             Intent intent = null;
             if (id == R.id.about_dashboard_github) {
+                CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "about");
+                            put("action", "open_dialog");
+                            put("item", "github");
+                        }}
+                );
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mContext
                         .getResources().getString(R.string.about_dashboard_github_url)));
             }

@@ -29,6 +29,7 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import candybar.lib.R;
@@ -186,7 +187,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
             if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
                 Glide.with(mContext)
-                        .load("package://" + mRequests.get(finalPosition).getActivity())
+                        .load(candybar.lib.helpers.DrawableHelper.getReqIcon(mContext, mRequests.get(finalPosition).getActivity()))
                         .override(272)
                         .transition(DrawableTransitionOptions.withCrossFade(300))
                         .diskCacheStrategy(DiskCacheStrategy.NONE)

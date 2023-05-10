@@ -38,6 +38,12 @@
     <!-- Swipe Refresh -->
     <color name="swipeRefresh">#20AC6B</color>
 
+    <!-- Tap Intro -->
+    <color name="tapIntroTitle">@color/mainBackground</color>
+    <color name="tapIntroDescription">@color/mainBackground</color>
+    <color name="tapIntroCircleInner">@color/primaryText</color>
+    <color name="tapIntroCircleOuter">@color/secondaryText</color>
+
     <!-- Toolbar -->
     <color name="toolbarIcon">#FFFFFFFF</color>
     <color name="toolbarIconDark">#FFFFFFFF</color>

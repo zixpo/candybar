@@ -127,6 +127,15 @@
 
     <string name="apply_manual">%1$s Launcher doesn\'t support direct apply but you can apply %2$s manually from the launcher settings.</string>
     <string name="apply_manual_evie">Tap and hold on homescreen - Settings - Icon Pack - choose %s.</string>
+    <string name="apply_manual_samsung_oneui">%1$s doesn\'t support direct apply but starting with %2$s you can apply icons with a companion app.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Your current version of %s is too old. Please update to Android 12 or newer to be able to apply icons directly. Alternatively, you can install a different launcher.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Open %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Download the app %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Tap \"Icon\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Tap \"Create New\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Tap the blue \"Iconpack\" button</string>
+    <string name="apply_manual_samsung_oneui_step_6">Choose %s from the list</string>
+    <string name="apply_manual_samsung_oneui_step_7">Repeat these steps each time you update %s as new icons won\'t be mapped automatically.</string>
     <string name="apply_launch_failed">Unable to launch %s settings</string>
     <string name="apply_launcher_not_installed">%s Launcher is not installed. Do you want to open
         Google Play Store to download and install it?</string>

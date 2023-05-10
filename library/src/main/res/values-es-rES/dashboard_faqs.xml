@@ -35,18 +35,18 @@
         <item>¿Cómo puedo establecer un paquete de iconos?</item>
         <item>¿Cómo veo todos los iconos incluidos?</item>
         <item>No puedo ver el nombre completo de un icono</item>
-        <item>¿Cómo puedo reemplazar los iconos con un paquete de iconos diferente?</item>
-        <item>¿Cómo solicito un icono?</item>
-        <item>¿Cómo puedo restablecer las compras premium después de reinstalar la aplicación?</item>
+        <item>¿Cómo puedo reemplazar íconos con uno diferente?</item>
+        <item>¿Cómo solicito un ícono?</item>
+        <item>¿Cómo puedo restablecer las compras Premium después de reinstalar la aplicación?</item>
         <item>Después de reiniciar mi teléfono, el paquete de iconos no está establecido, ¿se restableció a los valores predeterminados?</item>
         <item>¿Por qué los iconos parecen dentados o pixelados en mi teléfono?</item>
         <item>Puedo ver el icono incluido dentro de todos los iconos pero, ¿por qué no se ha cambiado el icono real en el cajón de la aplicación?</item>
         <item>¿Qué es la opción de \"reportar errores\"?</item>
         <item>Mi launcher aparece en la sección de descripción de Google Play pero, ¿por qué no aparece en la sección de establecer?</item>
         <item>El fondo de pantalla no se puede establecer, ¿sólo muestra la pantalla en negro?</item>
-        <item>Muzei: ¿Cómo cargar sólo los fondos de pantalla descargados?</item>
+        <item>Muzei: ¿Cómo cargar solo los fondos de pantalla descargados?</item>
         <item>Muzei: No quiero estar descargando los fondos de pantalla cada vez que el fondo de pantalla cambie.</item>
-        <item>Muzei: ¿Sólo quiero usar fondos de pantalla específicos?</item>
+        <item>Muzei: ¿Solo quiero usar fondos de pantalla específicos?</item>
         <item>¿Por qué es necesario el permiso de \"Escritura y lectura del almacenamiento\"?</item>
         <item>¿Por qué es necesario el permiso de \"Conexión a internet\"?</item>
         <item>¿Por qué es necesario el permiso de \"Acceso al estado de la red\"?</item>
@@ -95,6 +95,6 @@ Abre los ajustes de Muzei y selecciona \"Cargar sólo los fondos de pantalla des
         <item>Se utiliza para comprobar si tu teléfono está conectado a una red WiFi o no y cargar los fondos de pantalla basados en la nube desde Muzei.</item>
         <item>Se utiliza para establecer los fondos de pantalla directamente desde el panel de control de la aplicación.</item>
         <item>Es utilizado por Muzei Live Wallpaper</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>Se utiliza para lanzar la aplicación \"Reloj\" desde el widget analógico.</item>
     </string-array>
 </resources>

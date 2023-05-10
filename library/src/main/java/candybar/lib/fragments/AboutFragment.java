@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.danimahardhika.android.helpers.core.ViewHelper;
 
+import java.util.HashMap;
+
 import candybar.lib.R;
 import candybar.lib.adapters.AboutAdapter;
 import candybar.lib.applications.CandyBarApplication;
@@ -58,6 +60,10 @@ public class AboutFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                "view",
+                new HashMap<String, Object>() {{ put("section", "about"); }}
+        );
 
         resetRecyclerViewPadding(requireActivity().getResources().getConfiguration().orientation);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());

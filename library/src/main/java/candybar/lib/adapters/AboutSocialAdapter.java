@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
+import java.util.HashMap;
+
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.UrlHelper;
@@ -97,6 +99,14 @@ public class AboutSocialAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             int position = getBindingAdapterPosition();
             if (position < 0 || position > mUrls.length) return;
 
+            CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                    "click",
+                    new HashMap<String, Object>() {{
+                        put("section", "about");
+                        put("action", "open_social");
+                        put("url", mUrls[position]);
+                    }}
+            );
             if (id == R.id.image) {
                 UrlHelper.Type type = UrlHelper.getType(mUrls[position]);
                 if (type == UrlHelper.Type.INVALID) return;
