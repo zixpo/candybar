@@ -66,6 +66,8 @@ public class Preferences {
     private static final String KEY_REQUEST_INTRO = "request_intro";
     private static final String KEY_WALLPAPERS_INTRO = "wallpapers_intro";
     private static final String KEY_WALLPAPER_PREVIEW_INTRO = "wallpaper_preview_intro";
+    private static final String KEY_TIMES_VISITED = "times_visited";
+    private static final String KEY_NEXT_REVIEW_ON_VISIT = "next_review_visit";
 
     private static final String KEY_LANGUAGE_PREFERENCE = "language_preference";
     private static final String KEY_CURRENT_LOCALE = "current_locale";
@@ -286,6 +288,22 @@ public class Preferences {
 
     public void setAvailableWallpapersCount(int count) {
         getSharedPreferences().edit().putInt(KEY_AVAILABLE_WALLPAPERS_COUNT, count).apply();
+    }
+
+    public int getTimesVisited() {
+        return getSharedPreferences().getInt(KEY_TIMES_VISITED, 0);
+    }
+
+    public void setTimesVisited(int count) {
+        getSharedPreferences().edit().putInt(KEY_TIMES_VISITED, count).apply();
+    }
+
+    public int getNextReviewVisit() {
+        return getSharedPreferences().getInt(KEY_NEXT_REVIEW_ON_VISIT, -1);
+    }
+
+    public void setNextReviewVisit(int visitIdx) {
+        getSharedPreferences().edit().putInt(KEY_NEXT_REVIEW_ON_VISIT, visitIdx).apply();
     }
 
     private int getVersion() {

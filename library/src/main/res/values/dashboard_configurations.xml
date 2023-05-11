@@ -335,6 +335,15 @@
             tapIntroCircleOuter -->
     <bool name="use_legacy_intro_colors">true</bool>
 
+    <!-- Enable/disable in-app review -->
+    <bool name="enable_in_app_review">true</bool>
+    <!-- After how many seconds the dashboard should count that the user visited the app.
+        By default it is set to 30 seconds. If the user opens the app and stays for 30 seconds,
+        it would be counted as a visit -->
+    <integer name="in_app_review_visit_time">30</integer>
+    <!-- After how many visits the in app review dialog should pop up -->
+    <integer name="in_app_review_after_visits">2</integer>
+
     <!-- These are not documented. As you can guess, these are not for general use -->
     <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
     <bool name="quick_apply">true</bool>

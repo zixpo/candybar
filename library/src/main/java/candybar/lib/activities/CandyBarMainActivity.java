@@ -9,6 +9,8 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,7 +51,11 @@ import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.license.LicenseHelper;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -147,6 +153,9 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     public static int sIconsCount;
 
     private ActivityConfiguration mConfig;
+
+    private Handler mTimesVisitedHandler;
+    private Runnable mTimesVisitedRunnable;
 
     @NonNull
     public abstract ActivityConfiguration onInit();
@@ -288,6 +297,32 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         if (mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isLicensed()) {
             finish();
         }
+
+        if (getResources().getBoolean(R.bool.enable_in_app_review)) {
+            int timesVisited = Preferences.get(this).getTimesVisited();
+            int afterVisits = getResources().getInteger(R.integer.in_app_review_after_visits);
+            int nextReviewVisitIdx = Preferences.get(this).getNextReviewVisit();
+
+            if (timesVisited == afterVisits || (timesVisited > afterVisits && timesVisited == nextReviewVisitIdx)) {
+                ReviewManager manager = ReviewManagerFactory.create(this);
+                Task<ReviewInfo> request = manager.requestReviewFlow();
+                request.addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        ReviewInfo reviewInfo = task.getResult();
+                        manager.launchReviewFlow(this, reviewInfo);
+
+                        Preferences.get(this).setNextReviewVisit(timesVisited + 3);
+                        // We are scheduling next review to be on 3rd visit from the current visit
+                    } else {
+                        LogUtil.e(Log.getStackTraceString(task.getException()));
+                    }
+                });
+            }
+
+            mTimesVisitedHandler = new Handler(Looper.getMainLooper());
+            mTimesVisitedRunnable = () -> Preferences.get(this).setTimesVisited(timesVisited + 1);
+            mTimesVisitedHandler.postDelayed(mTimesVisitedRunnable, getResources().getInteger(R.integer.in_app_review_visit_time) * 1000L);
+        }
     }
 
     @Override
@@ -341,6 +376,9 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         CandyBarMainActivity.sHomeIcon = null;
         stopService(new Intent(this, CandyBarService.class));
         Database.get(this.getApplicationContext()).closeDatabase();
+        if (mTimesVisitedHandler != null) {
+            mTimesVisitedHandler.removeCallbacks(mTimesVisitedRunnable);
+        }
         super.onDestroy();
     }
 
