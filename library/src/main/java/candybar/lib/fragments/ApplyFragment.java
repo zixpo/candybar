@@ -3,7 +3,6 @@ package candybar.lib.fragments;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,6 +26,7 @@ import java.util.List;
 import candybar.lib.R;
 import candybar.lib.adapters.LauncherAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.helpers.LauncherHelper;
 import candybar.lib.items.Icon;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -111,16 +111,18 @@ public class ApplyFragment extends Fragment {
         }
     }
 
-    private String getInstalledPackage(String pkg1, String pkg2, String pkg3) {
-        return isPackageInstalled(pkg1) ? pkg1 : isPackageInstalled(pkg2) ? pkg2 : isPackageInstalled(pkg3) ? pkg3 : null;
+    private String getInstalledPackage(String[] pkgs) {
+        for (String pkg : pkgs) {
+            if (isPackageInstalled(pkg)) {
+                return pkg;
+            }
+        }
+        return null;
     }
 
     private boolean shouldLauncherBeAdded(String packageName) {
         assert getActivity() != null;
-        if (("com.dlto.atom.launcher").equals(packageName)) {
-            int id = getResources().getIdentifier("appmap", "xml", getActivity().getPackageName());
-            return id > 0;
-        } else if (("com.lge.launcher2").equals(packageName) ||
+        if (("com.lge.launcher2").equals(packageName) ||
                 ("com.lge.launcher3").equals(packageName)) {
             int id = getResources().getIdentifier("theme_resources", "xml", getActivity().getPackageName());
             return id > 0;
@@ -142,16 +144,8 @@ public class ApplyFragment extends Fragment {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    String[] launcherNames = getResources().getStringArray(
-                            R.array.launcher_names);
-                    TypedArray launcherIcons = getResources().obtainTypedArray(
-                            R.array.launcher_icons);
-                    String[] launcherPackages1 = getResources().getStringArray(
-                            R.array.launcher_packages_1);
-                    String[] launcherPackages2 = getResources().getStringArray(
-                            R.array.launcher_packages_2);
-                    String[] launcherPackages3 = getResources().getStringArray(
-                            R.array.launcher_packages_3);
+
+                    LauncherHelper.Launcher[] dataLaunchers = LauncherHelper.Launcher.values();
                     String[] showableLauncherNames = getResources().getStringArray(
                             R.array.dashboard_launchers);
 
@@ -165,31 +159,21 @@ public class ApplyFragment extends Fragment {
                         showable.add(filtered_name);
                     }
 
-                    for (int i = 0; i < launcherNames.length; i++) {
-                        String lowercaseLauncherName = launcherNames[i].toLowerCase().replaceAll(" ", "_");
+                    for (LauncherHelper.Launcher value : dataLaunchers) {
+                        if (value.name == null) continue;
+                        if (value.packages == null) continue;
+
+                        String lowercaseLauncherName = value.name.toLowerCase().replaceAll(" ", "_");
 
                         if (!showable.contains(lowercaseLauncherName)) {
                             LogUtil.d("Launcher Excluded: " + lowercaseLauncherName);
                             continue;
                         }
 
-                        String installedPackage = getInstalledPackage(
-                                launcherPackages1[i],
-                                launcherPackages2[i],
-                                launcherPackages3[i]);
+                        String installedPackage = getInstalledPackage(value.packages);
 
-                        int icon = R.drawable.ic_app_default;
-                        if (i < launcherIcons.length())
-                            icon = launcherIcons.getResourceId(i, icon);
-
-                        String launcherPackage = launcherPackages1[i];
-                        if (launcherPackages1[i].equals("com.lge.launcher2")) {
-                            boolean lghome3 = isPackageInstalled(launcherPackages2[i]);
-                            if (lghome3) launcherPackage = launcherPackages2[i];
-                        }
-
-                        Icon launcher = new Icon(launcherNames[i], icon, launcherPackage);
-                        if (shouldLauncherBeAdded(launcherPackage)) {
+                        Icon launcher = new Icon(value.name, value.icon, value.packages[0]);
+                        if (shouldLauncherBeAdded(value.packages[0])) {
                             if (installedPackage != null) {
                                 installed.add(launcher);
                                 launcher.setPackageName(installedPackage);
@@ -217,7 +201,6 @@ public class ApplyFragment extends Fragment {
                             R.string.apply_supported), -2, null));
                     launchers.addAll(supported);
 
-                    launcherIcons.recycle();
                     return true;
                 } catch (Exception e) {
                     LogUtil.e(Log.getStackTraceString(e));
