@@ -41,6 +41,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.regex.Matcher;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -579,7 +580,7 @@ public class RequestHelper {
                     return "\t<!-- " + request.getName() + " -->" +
                             "\n" +
                             "\t" + context.getString(R.string.appfilter_item)
-                            .replaceAll("\\{\\{component\\}\\}", request.getActivity())
+                            .replaceAll("\\{\\{component\\}\\}", Matcher.quoteReplacement(request.getActivity()))
                             .replaceAll("\\{\\{drawable\\}\\}", fixNameForRequest(request.getName())) +
                             "\n\n";
                 case APPMAP:
