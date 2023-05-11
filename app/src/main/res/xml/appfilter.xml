@@ -1822,26 +1822,6 @@
         component="ComponentInfo{com.xda.labs/com.xda.labs.LabsLauncher}"
         drawable="xda" />
 
-    <!-- YouTube -->
-    <item
-        component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.HomeActivity}"
-        drawable="youtube" />
-    <item
-        component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.HomePage}"
-        drawable="youtube" />
-    <item
-        component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}"
-        drawable="youtube" />
-    <item
-        component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.app.froyo.phone.HomeActivity}"
-        drawable="youtube" />
-    <item
-        component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.app.tablet.HomeActivity}"
-        drawable="youtube" />
-    <item
-        component="ComponentInfo{com.lara.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}"
-        drawable="youtube" />
-
     <!-- ZipSigner -->
     <item
         component="ComponentInfo{kellinwood.zipsigner2/kellinwood.zipsigner2.ZipPickerActivity}"
