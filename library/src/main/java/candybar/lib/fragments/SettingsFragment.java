@@ -155,10 +155,12 @@ public class SettingsFragment extends Fragment {
                     resources.getString(R.string.pref_premium_request_header),
                     "", "", "", Setting.Type.HEADER));
 
-            settings.add(new Setting(-1, "",
-                    resources.getString(R.string.pref_premium_request_restore),
-                    resources.getString(R.string.pref_premium_request_restore_desc),
-                    "", Setting.Type.RESTORE));
+            if (requireActivity().getResources().getBoolean(R.bool.enable_restore_purchases)) {
+                settings.add(new Setting(-1, "",
+                        resources.getString(R.string.pref_premium_request_restore),
+                        resources.getString(R.string.pref_premium_request_restore_desc),
+                        "", Setting.Type.RESTORE));
+            }
 
             settings.add(new Setting(-1, "",
                     resources.getString(R.string.pref_premium_request_rebuild),
