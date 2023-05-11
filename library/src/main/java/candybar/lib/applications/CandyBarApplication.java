@@ -129,6 +129,7 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
         public interface ConfigHandler {
             String wallpaperJson(Context context);
+
             String configJson(Context context);
         }
 
@@ -138,12 +139,19 @@ public abstract class CandyBarApplication extends MultiDexApplication {
             void logException(Exception exception);
         }
 
+        public interface FilterRequestHandler {
+            boolean filterRequest(Request request);
+        }
+
         private EmailBodyGenerator mEmailBodyGenerator;
 
         private IconRequestHandler iconRequestHandler;
 
         private ConfigHandler configHandler;
+
         private AnalyticsHandler analyticsHandler;
+
+        private FilterRequestHandler mFilterRequestHandler;
 
         private NavigationIcon mNavigationIcon = NavigationIcon.STYLE_1;
         private NavigationViewHeader mNavigationViewHeader = NavigationViewHeader.NORMAL;
@@ -195,6 +203,11 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
         public Configuration setAnalyticsHandler(@NonNull AnalyticsHandler analyticsHandler) {
             this.analyticsHandler = analyticsHandler;
+            return this;
+        }
+
+        public Configuration setFilterRequestHandler(@NonNull FilterRequestHandler filterRequestHandler) {
+            this.mFilterRequestHandler = filterRequestHandler;
             return this;
         }
 
@@ -376,6 +389,7 @@ public abstract class CandyBarApplication extends MultiDexApplication {
                         }
                         LogUtil.d("ANALYTICS EVENT: ".concat(eventName).concat(sb.toString()));
                     }
+
                     @Override
                     public void logException(Exception exception) {
                         LogUtil.e(exception.getStackTrace().toString());
@@ -383,6 +397,14 @@ public abstract class CandyBarApplication extends MultiDexApplication {
                 };
             }
             return analyticsHandler;
+        }
+
+        public FilterRequestHandler getFilterRequestHandler() {
+            if (mFilterRequestHandler == null) {
+                // By default allow all requests
+                mFilterRequestHandler = (request) -> true;
+            }
+            return mFilterRequestHandler;
         }
 
         public List<DonationLink> getDonationLinks() {

@@ -21,6 +21,7 @@ import java.util.Locale;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
+import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
@@ -109,7 +110,8 @@ public class IconRequestTask extends AsyncTaskBase {
                                     .requested(requested)
                                     .build();
 
-                            requests.add(request);
+                            if (CandyBarApplication.getConfiguration().getFilterRequestHandler()
+                                    .filterRequest(request)) requests.add(request);
                         }
                     }
 
