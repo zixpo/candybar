@@ -24,8 +24,8 @@ plugins {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.github.zixpo'
-            artifactId = 'candybar'
+            groupId = 'com.github.zixpo.candybar'
+            artifactId = 'library'
             version = rootProject.ext.VersionName
 
             afterEvaluate {
