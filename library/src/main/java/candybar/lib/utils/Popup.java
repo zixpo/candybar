@@ -230,7 +230,7 @@ public class Popup {
 
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
             if (item.isSelected()) {
-                color = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
+                color = ColorHelper.getAttributeColor(mContext, com.google.android.material.R.attr.colorSecondary);
             }
 
             if (item.getIcon() != 0) {

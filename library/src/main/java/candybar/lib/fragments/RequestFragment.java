@@ -139,11 +139,11 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         resetRecyclerViewPadding(getResources().getConfiguration().orientation);
 
         mProgress.getIndeterminateDrawable().setColorFilter(
-                ColorHelper.getAttributeColor(getActivity(), R.attr.colorSecondary),
+                ColorHelper.getAttributeColor(getActivity(), com.google.android.material.R.attr.colorSecondary),
                 PorterDuff.Mode.SRC_IN);
 
         int color = ColorHelper.getTitleTextColor(ColorHelper
-                .getAttributeColor(getActivity(), R.attr.colorSecondary));
+                .getAttributeColor(getActivity(), com.google.android.material.R.attr.colorSecondary));
         Drawable tintedDrawable = ResourcesCompat.getDrawable(requireActivity().getResources(), R.drawable.ic_fab_send, null);
         assert tintedDrawable != null;
         tintedDrawable.mutate().setColorFilter(color, PorterDuff.Mode.SRC_IN);
@@ -290,7 +290,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         if (mRecyclerView == null) return;
 
         int padding = 0;
-        boolean tabletMode = getResources().getBoolean(R.bool.android_helpers_tablet_mode);
+        boolean tabletMode = getResources().getBoolean(com.danimahardhika.android.helpers.core.R.bool.android_helpers_tablet_mode);
         if (tabletMode || orientation == Configuration.ORIENTATION_LANDSCAPE) {
             padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.content_padding);
 

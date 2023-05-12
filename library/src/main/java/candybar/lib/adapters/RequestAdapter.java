@@ -29,7 +29,6 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import candybar.lib.R;
@@ -80,7 +79,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         mRequests = requests;
         mTextColorSecondary = ColorHelper.getAttributeColor(mContext,
                 android.R.attr.textColorSecondary);
-        mTextColorAccent = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
+        mTextColorAccent = ColorHelper.getAttributeColor(mContext, com.google.android.material.R.attr.colorSecondary);
         mSelectedItems = new SparseBooleanArray();
 
         mShowShadow = (spanCount == 1);
@@ -317,8 +316,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             R.drawable.ic_toolbar_icon_request, color),
                     null, null, null);
 
-            int primary = ColorHelper.getAttributeColor(mContext, R.attr.colorPrimary);
-            int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
+            int primary = ColorHelper.getAttributeColor(mContext, androidx.appcompat.R.attr.colorPrimary);
+            int accent = ColorHelper.getAttributeColor(mContext, com.google.android.material.R.attr.colorSecondary);
             button.setTextColor(ColorHelper.getTitleTextColor(primary));
 
             premProgress.getProgressDrawable().setColorFilter(accent, PorterDuff.Mode.SRC_IN);

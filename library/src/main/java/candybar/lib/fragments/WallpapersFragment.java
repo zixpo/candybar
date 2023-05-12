@@ -115,7 +115,7 @@ public class WallpapersFragment extends Fragment {
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, false);
 
         mProgress.getIndeterminateDrawable().setColorFilter(
-                ColorHelper.getAttributeColor(getActivity(), R.attr.colorSecondary),
+                ColorHelper.getAttributeColor(getActivity(), com.google.android.material.R.attr.colorSecondary),
                 PorterDuff.Mode.SRC_IN);
         mSwipe.setColorSchemeColors(
                 ContextCompat.getColor(requireActivity(), R.color.swipeRefresh));

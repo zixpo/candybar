@@ -20,10 +20,14 @@ plugins {
     id 'maven-publish'
 }
 
-project.afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.zixpo.candybar'
+            artifactId = 'PreLollipopTransitions'
+            version = rootProject.ext.VersionName
+
+            afterEvaluate {
                 from components.release
             }
         }
@@ -44,6 +48,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
         }
     }
 }

@@ -820,7 +820,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             title.setCompoundDrawablesWithIntrinsicBounds(DrawableHelper.getTintedDrawable(
                     mContext, R.drawable.ic_toolbar_icon_request, color), null, null, null);
 
-            int accent = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
+            int accent = ColorHelper.getAttributeColor(mContext, com.google.android.material.R.attr.colorSecondary);
             progress.getProgressDrawable().setColorFilter(accent, PorterDuff.Mode.SRC_IN);
 
             container.setOnClickListener(this);
