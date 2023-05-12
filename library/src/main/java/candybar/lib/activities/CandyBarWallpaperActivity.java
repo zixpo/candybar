@@ -442,7 +442,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                 params.topMargin = WindowHelper.getStatusBarHeight(this);
             }
 
-            boolean tabletMode = getResources().getBoolean(R.bool.android_helpers_tablet_mode);
+            boolean tabletMode = getResources().getBoolean(com.danimahardhika.android.helpers.core.R.bool.android_helpers_tablet_mode);
             if (tabletMode || getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
                 bottom = right;
                 right = 0;
@@ -485,7 +485,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
                             if (mWallpaper.getColor() == 0) {
                                 mWallpaper.setColor(ColorHelper.getAttributeColor(
-                                        CandyBarWallpaperActivity.this, R.attr.colorSecondary));
+                                        CandyBarWallpaperActivity.this, com.google.android.material.R.attr.colorSecondary));
                             }
 
                             return true;
@@ -497,7 +497,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                                 Palette.from(loadedImage).generate(palette -> {
                                     if (palette != null) {
                                         int accent = ColorHelper.getAttributeColor(
-                                                CandyBarWallpaperActivity.this, R.attr.colorSecondary);
+                                                CandyBarWallpaperActivity.this, com.google.android.material.R.attr.colorSecondary);
                                         int color = palette.getVibrantColor(accent);
                                         if (color == accent)
                                             color = palette.getMutedColor(accent);

@@ -146,7 +146,7 @@ public class IconPreviewFragment extends DialogFragment {
                 @AttrRes int colorAttr;
                 if (isBookmarked.get()) {
                     drawableRes = R.drawable.ic_bookmark_filled;
-                    colorAttr = R.attr.colorSecondary;
+                    colorAttr = com.google.android.material.R.attr.colorSecondary;
                 } else {
                     drawableRes = R.drawable.ic_bookmark;
                     colorAttr = android.R.attr.textColorSecondary;

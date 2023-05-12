@@ -9,7 +9,6 @@ import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.Locale;
 
-import candybar.lib.R;
 import candybar.lib.items.Home;
 
 /*
@@ -35,7 +34,7 @@ public class ViewHelper {
     public static void setFastScrollColor(@Nullable RecyclerFastScroller fastScroll) {
         if (fastScroll == null) return;
 
-        int accent = ColorHelper.getAttributeColor(fastScroll.getContext(), R.attr.colorSecondary);
+        int accent = ColorHelper.getAttributeColor(fastScroll.getContext(), com.google.android.material.R.attr.colorSecondary);
         fastScroll.setBarColor(ColorHelper.setColorAlpha(accent, 0.8f));
         fastScroll.setHandleNormalColor(accent);
         fastScroll.setHandlePressedColor(ColorHelper.getDarkerColor(accent, 0.7f));

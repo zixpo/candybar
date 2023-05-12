@@ -263,7 +263,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
 
             if (mIsBookmarkMode) {
                 container.setOnLongClickListener(this);
-                int color = ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary);
+                int color = ColorHelper.getAttributeColor(mContext, com.google.android.material.R.attr.colorSecondary);
                 ((ImageView) checkBackground.findViewById(R.id.checkmark))
                         .setImageDrawable(DrawableHelper.getTintedDrawable(mContext, R.drawable.ic_check_circle, color));
             }
@@ -278,11 +278,11 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         private void onActionModeChange() {
             TypedValue outValue = new TypedValue();
             if (actionMode != null) {
-                mContext.getTheme().resolveAttribute(R.attr.selectableItemBackground, outValue, true);
+                mContext.getTheme().resolveAttribute(androidx.appcompat.R.attr.selectableItemBackground, outValue, true);
                 container.setBackgroundResource(outValue.resourceId);
                 innerContainer.setBackgroundResource(0);
             } else {
-                mContext.getTheme().resolveAttribute(R.attr.selectableItemBackgroundBorderless, outValue, true);
+                mContext.getTheme().resolveAttribute(androidx.appcompat.R.attr.selectableItemBackgroundBorderless, outValue, true);
                 container.setBackgroundResource(0);
                 innerContainer.setBackgroundResource(outValue.resourceId);
                 setChecked(false, true);

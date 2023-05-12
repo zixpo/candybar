@@ -97,7 +97,7 @@ public class IntentAdapter extends BaseAdapter {
             holder.type.setTextColor(ColorHelper.getAttributeColor(mContext, android.R.attr.textColorSecondary));
             holder.type.setText(mContext.getResources().getString(R.string.intent_email_supported));
         } else if (mApps.get(position).getType() == IntentChooser.TYPE_RECOMMENDED) {
-            holder.type.setTextColor(ColorHelper.getAttributeColor(mContext, R.attr.colorSecondary));
+            holder.type.setTextColor(ColorHelper.getAttributeColor(mContext, com.google.android.material.R.attr.colorSecondary));
             holder.type.setText(mContext.getResources().getString(R.string.intent_email_recommended));
         } else {
             holder.type.setTextColor(Color.parseColor("#F44336"));

@@ -1,5 +1,7 @@
 package candybar.lib.helpers;
 
+import static com.danimahardhika.android.helpers.core.DrawableHelper.get;
+
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
@@ -10,8 +12,6 @@ import com.danimahardhika.android.helpers.core.ColorHelper;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
-
-import static com.danimahardhika.android.helpers.core.DrawableHelper.get;
 
 /*
  * CandyBar - Material Dashboard
@@ -52,7 +52,7 @@ public class ConfigurationHelper {
 
     public static int getSocialIconColor(@NonNull Context context, @NonNull CandyBarApplication.IconColor iconColor) {
         if (iconColor == CandyBarApplication.IconColor.ACCENT) {
-            return ColorHelper.getAttributeColor(context, R.attr.colorSecondary);
+            return ColorHelper.getAttributeColor(context, com.google.android.material.R.attr.colorSecondary);
         }
         return ColorHelper.getAttributeColor(context, android.R.attr.textColorPrimary);
     }
