@@ -1,3 +1,6 @@
+# v3.17.1
+- Updated Gradle, AGP and dependencies
+
 # v3.17.0
 - Configuration for filtering out apps in requests. Refer to [this issue](https://github.com/zixpo/candybar/issues/123) for more details
 - Configuration for enabling analytics in the app
