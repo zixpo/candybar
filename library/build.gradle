@@ -21,19 +21,14 @@ buildscript {
         mavenCentral()
         maven { url 'https://jitpack.io' }
     }
-
-    dependencies {
-        classpath 'io.michaelrocks:paranoid-gradle-plugin:0.3.7'
-    }
 }
 
 plugins {
     id 'com.android.library'
     id 'maven-publish'
 }
-apply plugin: 'io.michaelrocks.paranoid'
 
-project.afterEvaluate {
+/*project.afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
@@ -41,7 +36,7 @@ project.afterEvaluate {
             }
         }
     }
-}
+}*/
 
 allprojects {
     tasks.withType(JavaCompile) {
@@ -92,6 +87,10 @@ android {
     lint {
         abortOnError false
         disable 'MissingTranslation'
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
 
