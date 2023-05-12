@@ -10,7 +10,16 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Fixed app crash</item>
+        <item>Configuration for filtering out apps in requests</item>
+        <item>Configuration for enabling analytics in the app</item>
+        <item>Now supports dynamic configuration for wallpaper and config JSON</item>
+        <item>Option to override TapIntro colors</item>
+        <item>OneUI launcher is now available in apply section</item>
+        <item>Fixed clock widget click not working correctly on Android 12</item>
+        <item>Removed very old launchers</item>
+        <item>Fixed error in appfilter.xml when a activity name contains `$` (dollar sign)</item>
+        <item>Added option to enable/disable "Restore purchases" option</item>
+        <item>Updated translations</item>
     </string-array>
 
 </resources>

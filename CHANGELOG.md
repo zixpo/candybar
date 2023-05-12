@@ -1,3 +1,17 @@
+# v3.17.0
+- Configuration for filtering out apps in requests. Refer to [this issue](https://github.com/zixpo/candybar/issues/123) for more details
+- Configuration for enabling analytics in the app
+- Now supports dynamic configuration for wallpaper and config JSON
+- Option to override TapIntro colors
+- OneUI launcher is now available in apply section
+- Fixed clock widget click not working correctly on Android 12
+- Removed very old launchers
+- Fixed error in appfilter.xml when a activity name contains `$` (dollar sign)
+- Added option to enable/disable "Restore purchases" option
+- Updated translations
+
+Big thanks to [@moertel](//moertel) and [@Donnnno](//Donnnno) for their contribution.
+
 # v3.16.2
 - Fixed app crash
 
