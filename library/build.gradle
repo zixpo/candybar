@@ -16,27 +16,24 @@
  * limitations under the License.
  */
 
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url 'https://jitpack.io' }
-    }
-}
-
 plugins {
     id 'com.android.library'
     id 'maven-publish'
 }
 
-/*project.afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.zixpo'
+            artifactId = 'candybar'
+            version = rootProject.ext.VersionName
+
+            afterEvaluate {
                 from components.release
             }
         }
     }
-}*/
+}
 
 allprojects {
     tasks.withType(JavaCompile) {

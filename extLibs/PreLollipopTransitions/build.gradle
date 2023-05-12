@@ -20,6 +20,20 @@ plugins {
     id 'maven-publish'
 }
 
+/*publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.zixpo'
+            artifactId = 'PreLollipopTransitions'
+            version = rootProject.ext.VersionName
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}*/
+
 android {
     compileSdkVersion rootProject.ext.CompileSdk
 
