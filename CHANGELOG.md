@@ -6,8 +6,8 @@
 - OneUI launcher is now available in apply section
 - Fixed clock widget click not working correctly on Android 12
 - Removed very old launchers
-- Fixed error in appfilter.xml when a activity name contains `$` (dollar sign)
-- Added option to enable/disable "Restore purchases" option
+- Fixed error in appfilter.xml when an activity name contains `$` (dollar sign)
+- Added option to enable/disable the "Restore purchases" option
 - Updated translations
 
 Big thanks to [@moertel](//moertel) and [@Donnnno](//Donnnno) for their contribution.
