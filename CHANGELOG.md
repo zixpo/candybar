@@ -1,3 +1,6 @@
+# v3.7.2
+- Added ZenUI to launcher. It was deleted by mistake.
+
 # v3.17.1
 - Updated Gradle, AGP and dependencies
 
