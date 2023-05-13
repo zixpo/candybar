@@ -176,7 +176,12 @@ public class LauncherHelper {
                 "One UI",
                 R.drawable.ic_launcher_one_ui,
                 new String[]{"com.sec.android.app.launcher"},
-                false);
+                false),
+        ZENUI(
+                "ZenUI",
+                R.drawable.ic_launcher_zenui,
+                new String[]{"com.asus.launcher"},
+                true);
 
         private interface DirectApplyFunc {
             boolean check(String packageName);
@@ -612,6 +617,27 @@ public class LauncherHelper {
                     nougat.putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName());
                     nougat.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(nougat);
+                    ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
+                break;
+            case ZENUI:
+                try {
+                    final Intent asus = new Intent("com.asus.launcher");
+                    asus.setAction("com.asus.launcher.intent.action.APPLY_ICONPACK");
+                    asus.addCategory(Intent.CATEGORY_DEFAULT);
+                    asus.putExtra("com.asus.launcher.iconpack.PACKAGE_NAME", context.getPackageName());
+                    asus.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(asus);
                     ((AppCompatActivity) context).finish();
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
