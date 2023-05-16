@@ -66,6 +66,7 @@ public class Preferences {
     private static final String KEY_REQUEST_INTRO = "request_intro";
     private static final String KEY_WALLPAPERS_INTRO = "wallpapers_intro";
     private static final String KEY_WALLPAPER_PREVIEW_INTRO = "wallpaper_preview_intro";
+    private static final String KEY_INTRO_RESET = "intro_reset";
     private static final String KEY_TIMES_VISITED = "times_visited";
     private static final String KEY_NEXT_REVIEW_ON_VISIT = "next_review_visit";
 
@@ -154,6 +155,14 @@ public class Preferences {
 
     public void setTimeToShowWallpaperPreviewIntro(boolean bool) {
         getSharedPreferences().edit().putBoolean(KEY_WALLPAPER_PREVIEW_INTRO, bool).apply();
+    }
+
+    public boolean isIntroReset() {
+        return getSharedPreferences().getBoolean(KEY_INTRO_RESET, false);
+    }
+
+    public void setIntroReset(boolean bool) {
+        getSharedPreferences().edit().putBoolean(KEY_INTRO_RESET, bool).apply();
     }
 
     public Theme getTheme() {

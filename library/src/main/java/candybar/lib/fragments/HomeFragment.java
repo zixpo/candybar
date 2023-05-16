@@ -185,6 +185,16 @@ public class HomeFragment extends Fragment implements HomeListener {
 
         mRecyclerView.setAdapter(new HomeAdapter(requireActivity(), homes,
                 resources.getConfiguration().orientation));
+
+        // By default `onHomeIntroInit` is called by the ChangelogFragment,
+        // so that the intro starts after the changelog dialog is dismissed
+        // But when intros are reset using the settings, there's no changelog
+        // that would call `onHomeIntroInit`, so in that case we are calling
+        // it from here
+        if (Preferences.get(requireActivity()).isIntroReset()) {
+            onHomeIntroInit();
+            Preferences.get(requireActivity()).setIntroReset(false);
+        }
     }
 
     public void resetWallpapersCount() {

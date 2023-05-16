@@ -1,12 +1,14 @@
 package candybar.lib.adapters;
 
 import android.content.Context;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -78,8 +80,10 @@ public class FAQsAdapter extends RecyclerView.Adapter<FAQsAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         if (holder.holderId == TYPE_CONTENT) {
-            holder.question.setText(mFAQs.get(position).getQuestion());
-            holder.answer.setText(mFAQs.get(position).getAnswer());
+            holder.question.setText(HtmlCompat.fromHtml(mFAQs.get(position).getQuestion(), HtmlCompat.FROM_HTML_MODE_COMPACT));
+            holder.answer.setText(HtmlCompat.fromHtml(mFAQs.get(position).getAnswer(), HtmlCompat.FROM_HTML_MODE_COMPACT));
+            holder.question.setMovementMethod(LinkMovementMethod.getInstance());
+            holder.answer.setMovementMethod(LinkMovementMethod.getInstance());
 
             if (position == (mFAQs.size() - 1)) {
                 holder.divider.setVisibility(View.GONE);

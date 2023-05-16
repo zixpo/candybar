@@ -357,6 +357,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                     put("action", "confirm_without_dialog");
                                 }}
                         );
+                        Preferences.get(mContext).setIntroReset(true);
                         Preferences.get(mContext).setTimeToShowHomeIntro(true);
                         Preferences.get(mContext).setTimeToShowIconsIntro(true);
                         Preferences.get(mContext).setTimeToShowRequestIntro(true);

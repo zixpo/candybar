@@ -151,7 +151,7 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
         private AnalyticsHandler analyticsHandler;
 
-        private FilterRequestHandler mFilterRequestHandler;
+        private FilterRequestHandler mFilterRequestHandler = (request) -> true;
 
         private NavigationIcon mNavigationIcon = NavigationIcon.STYLE_1;
         private NavigationViewHeader mNavigationViewHeader = NavigationViewHeader.NORMAL;
@@ -400,10 +400,6 @@ public abstract class CandyBarApplication extends MultiDexApplication {
         }
 
         public FilterRequestHandler getFilterRequestHandler() {
-            if (mFilterRequestHandler == null) {
-                // By default allow all requests
-                mFilterRequestHandler = (request) -> true;
-            }
             return mFilterRequestHandler;
         }
 
