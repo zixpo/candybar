@@ -1,3 +1,7 @@
+# v3.17.3
+- Add support for formatting FAQs
+- Fixed home intro not showing when tutorials are reset using the `Setting` sections
+
 # v3.7.2
 - Added ZenUI to launcher. It was deleted by mistake.
 
