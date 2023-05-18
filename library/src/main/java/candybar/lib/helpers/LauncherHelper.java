@@ -482,26 +482,6 @@ public class LauncherHelper {
             case POCO:
                 applyManual(context, launcherPackage, launcherName, "com.miui.home.settings.HomeSettingsActivity");
                 break;
-            case POSIDON:
-                try {
-                    Intent posidon = new Intent(Intent.ACTION_MAIN);
-                    posidon.setComponent(new ComponentName("posidon.launcher", "posidon.launcher.external.ApplyIcons"));
-                    posidon.putExtra("iconpack", context.getPackageName());
-                    posidon.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(posidon);
-                    ((AppCompatActivity) context).finish();
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "confirm");
-                                put("launcher", launcherPackage);
-                            }}
-                    );
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
-                break;
             case ONEUI:
                 applyOneUI(context, launcherName);
                 break;
@@ -554,25 +534,6 @@ public class LauncherHelper {
                     square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
                     square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
                     context.startActivity(square);
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "confirm");
-                                put("launcher", launcherPackage);
-                            }}
-                    );
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
-                break;
-            case NEO:
-                try {
-                    Intent neo = new Intent(Intent.ACTION_MAIN);
-                    neo.setComponent(new ComponentName("com.saggitt.omega", "com.saggitt.omega.preferences.views.PreferencesActivity"));
-                    neo.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(neo);
-                    ((AppCompatActivity) context).finish();
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
                             new HashMap<String, Object>() {{
