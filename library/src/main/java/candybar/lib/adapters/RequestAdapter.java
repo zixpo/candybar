@@ -482,7 +482,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                             .title(mContext.getResources().getString(R.string.request_not_available))
                             .content(mRequests.get(position).getInfoText())
-                            .negativeText(android.R.string.cancel)
+                            .positiveText(android.R.string.yes)
                             .show();
                 }
                 return false;
