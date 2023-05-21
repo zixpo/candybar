@@ -39,6 +39,13 @@
     <string name="kustom_pack_description">Cool Kustom presets</string>
 
     <!--
+        CONFIG: NOVA
+    -->
+    <!-- Control the shape and background of icons in Nova when "direct apply" is used.
+    Valid values are ON, OFF, and AUTO. -->
+    <string name="nova_reshape_legacy_icons">ON</string>
+
+    <!--
         CONFIG: HOME
     -->
     <!-- Home title. This will be shown in the home page -->
