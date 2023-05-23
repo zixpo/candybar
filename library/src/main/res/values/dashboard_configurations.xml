@@ -42,8 +42,13 @@
         CONFIG: NOVA
     -->
     <!-- Control the shape and background of icons in Nova when "direct apply" is used.
-    Valid values are ON, OFF, and AUTO. -->
-    <string name="nova_reshape_legacy_icons">ON</string>
+    Valid values are:
+        KEEP: leave the user's preference in Nova unchanged
+        ON: Allow reshaping. Ideal for icon packs with uniform, solid backgrounds.
+        OFF: Don't allow reshaping at all. Ideal for icons without backgrounds.
+        AUTO: Only reshape unthemed icons.
+    -->
+    <string name="nova_reshape_legacy_icons">KEEP</string>
 
     <!--
         CONFIG: HOME
