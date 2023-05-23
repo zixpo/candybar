@@ -461,8 +461,11 @@ public class LauncherHelper {
                     nova.setPackage("com.teslacoilsw.launcher");
                     nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_TYPE", "GO");
                     nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_PACKAGE", context.getPackageName());
-                    nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_RESHAPE", context.getResources()
-                            .getString(R.string.nova_reshape_legacy_icons));
+                    String reshapeSetting = context.getResources().getString(R.string.nova_reshape_legacy_icons);
+                    if (!reshapeSetting.equals("KEEP")) {
+                        // Allowed values are ON, OFF and AUTO
+                        nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_RESHAPE", reshapeSetting);
+                    }
                     nova.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(nova);
                     ((AppCompatActivity) context).finish();
