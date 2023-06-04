@@ -173,7 +173,7 @@ public class LauncherHelper {
                 new String[]{"fr.neamar.kiss"},
                 true),
         ONEUI(
-                "One UI",
+                "Samsung One UI",
                 R.drawable.ic_launcher_one_ui,
                 new String[]{"com.sec.android.app.launcher"},
                 false),
