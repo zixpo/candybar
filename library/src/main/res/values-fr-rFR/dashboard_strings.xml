@@ -5,7 +5,7 @@
     <string name="navigation_view_home">Accueil</string>
     <string name="navigation_view_apply">Appliquer</string>
     <string name="navigation_view_icons">Icônes</string>
-    <string name="navigation_view_request">Demande d\'icône(s)</string>
+    <string name="navigation_view_request">Demande d\'icônes</string>
     <string name="navigation_view_wallpapers">Fonds d\'écran</string>
     <string name="navigation_view_presets">Modèles</string>
     <string name="navigation_view_settings">Paramètres</string>
@@ -103,8 +103,8 @@ Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications deman
     <string name="home_loud_wallpapers">%d fonds d\'écran Cloud</string>
     <string name="home_muzei">Fond d\'écran animé Muzei</string>
     <string name="home_icon_request_installed_apps">Total\n%d applications installées</string>
-    <string name="home_icon_request_themed_apps">Modifiée(s)\n%d application(s)</string>
-    <string name="home_icon_request_missed_apps">Manquante(s)\n%d application(s)</string>
+    <string name="home_icon_request_themed_apps">Modifiées\n%d applis</string>
+    <string name="home_icon_request_missed_apps">Manquantes\n%d applis</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher(s) installé(s)</string>
     <string name="apply_supported">Launchers supportés</string>
