@@ -109,7 +109,8 @@ Mit Premium Icon-Anfragen kannst du deine gewünschte App schneller erhalten.</s
     <string name="apply_installed">Installierte Launcher</string>
     <string name="apply_supported">Unterstützte Launcher</string>
     <string name="apply_manual">%1$s unterstützt keine direktes Anwenden. Du kannst %2$s manuell über die Launcher-Einstellungen anwenden.</string>
-    <string name="apply_manual_evie">Klicke und halte am Startbildschirm - Einstellungen - Icon Pack - %s auswählen.</string>
+    <string name="apply_manual_kvaesitso_step_4">Wähle %s aus der Liste</string>
+    <string name="apply_manual_kiss_step_4">Wähle %s aus der Liste</string>
     <string name="apply_manual_samsung_oneui">%1$s unterstützt das automatische Anwenden von Icons leider nicht, aber ab Version %2$s können Icons über eine Begleit-App angewendet werden.</string>
     <string name="apply_manual_samsung_oneui_too_old">Deine aktuelle Version %s ist zu alt. Bitte nimm ein Update auf Android 12, vor um Icons automatisch anwenden zu können. Alternativ kannst du einen anderen Launcher installieren.</string>
     <string name="apply_manual_samsung_oneui_step_1">Öffne %s</string>
