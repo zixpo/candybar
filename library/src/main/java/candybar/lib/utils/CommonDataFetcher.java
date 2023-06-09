@@ -13,6 +13,7 @@ import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.util.Log;
 
@@ -87,13 +88,13 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
         Drawable drawable = ContextCompat.getDrawable(mContext, drawableId);
 
         if (drawable instanceof BitmapDrawable) return ((BitmapDrawable) drawable).getBitmap();
-        if (drawable instanceof LayerDrawable) {
-            LayerDrawable layerDrawable = (LayerDrawable) drawable;
-            final int width = layerDrawable.getIntrinsicWidth();
-            final int height = layerDrawable.getIntrinsicHeight();
+        if (drawable instanceof LayerDrawable || drawable instanceof VectorDrawable) {
+            final boolean isVector = drawable instanceof VectorDrawable;
+            final int width = isVector ? 256 : drawable.getIntrinsicWidth();
+            final int height = isVector ? 256 : drawable.getIntrinsicHeight();
             final Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            layerDrawable.setBounds(0, 0, width, height);
-            layerDrawable.draw(new Canvas(bitmap));
+            drawable.setBounds(0, 0, width, height);
+            drawable.draw(new Canvas(bitmap));
             return bitmap;
         }
 
@@ -118,7 +119,6 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
 
     @Nullable
     private Bitmap getAsset(String uri) {
-        LogUtil.d("#####################" + uri.replaceFirst("assets://", ""));
         try (InputStream stream = mContext.getAssets().open(uri.replaceFirst("assets://", ""))) {
             return BitmapFactory.decodeStream(stream);
         } catch (IOException e) {
