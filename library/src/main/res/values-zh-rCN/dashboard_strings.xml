@@ -108,7 +108,8 @@
     <string name="apply_installed">已安装的启动器</string>
     <string name="apply_supported">受支持的启动器</string>
     <string name="apply_manual">%1$s 不支持直接从程序中应用图标，你可以从启动器设置中手动应用 %2$s。</string>
-    <string name="apply_manual_evie">在主屏幕上长按 - 设置 - 图标包 - 选择 %s。</string>
+    <string name="apply_manual_kvaesitso_step_4">从列表中选择 %s</string>
+    <string name="apply_manual_kiss_step_4">从列表中选择 %s</string>
     <string name="apply_manual_samsung_oneui">%1$s 不支持直接应用，但您可以使用%2$s 应用图标。</string>
     <string name="apply_manual_samsung_oneui_too_old">您当前的 %s 版本为旧版。请更新到 Android 12 或更高版本，以便直接应用图标。 您也可以安装另一个启动器。</string>
     <string name="apply_manual_samsung_oneui_step_1">打开 %s</string>
