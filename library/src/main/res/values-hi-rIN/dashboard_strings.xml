@@ -99,7 +99,6 @@
     <!-- Apply -->
     <string name="apply_installed">स्थापित लांचर</string>
     <string name="apply_supported">समर्थित लौन्चेर्स</string>
-    <string name="apply_manual_evie">होमस्क्रीन पर टैप करके रखें - सेटिंग्स - आइकॉन पैक चयन करें %s</string>
     <string name="apply_launch_failed">सेटिंग %s लांच करने में असमर्थ</string>
     <string name="apply_launcher_not_installed">%s  इंस्टॉल नहीं है क्या आप खोलना चाहते हैं
 डाउनलोड और इंस्टॉल करने के लिए गूगल प्ले  स्टोर?</string>
