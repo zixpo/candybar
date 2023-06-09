@@ -1,11 +1,27 @@
+[moertel]: https://github.com/moertel
+
+[Donnnno]: https://github.com/Donnnno
+
+# v3.17.4
+
+- Ability to load wallpapers from `assets`
+- Removed MultiDex (thanks to [@connyduck](https://github.com/connyduck))
+- Added support for visibly disabled requests (thanks to [@moertel][moertel])
+- Updated launchers (thanks to [@Donnnno][Donnnno])
+- Added support for rendering `VectorDrawable`
+- Updated translations
+
 # v3.17.3
+
 - Add support for formatting FAQs
 - Fixed home intro not showing when tutorials are reset using the `Setting` sections
 
 # v3.7.2
+
 - Added ZenUI to launcher. It was deleted by mistake.
 
 # v3.17.1
+
 - Updated Gradle, AGP and dependencies
 
 # v3.17.0
@@ -20,7 +36,7 @@
 - Added option to enable/disable the "Restore purchases" option
 - Updated translations
 
-Big thanks to [@moertel](//moertel) and [@Donnnno](//Donnnno) for their contribution.
+Big thanks to [@moertel][moertel] and [@Donnnno][Donnnno] for their contribution.
 
 # v3.16.2
 - Fixed app crash
@@ -36,7 +52,8 @@ Big thanks to [@moertel](//moertel) and [@Donnnno](//Donnnno) for their contribu
 - Added better fast scroller in icons section
 - Bumped Min SDK to 21
 
-Thanks to [@moertel](//moertel), [@randomvector](//randomvector), [@one4studioicons](//one4studioicons)
+Thanks to [@moertel][moertel], [@randomvector](//randomvector)
+, [@one4studioicons](//one4studioicons)
 for helping with the issues.
 
 # v3.15.0
@@ -58,13 +75,15 @@ for helping with the issues.
 - Updated Android Gradle Plugin
 - Rebuilds only current premium request
 - Ability to render layered drawables
-- Fixed an issue with the request fragment where the first missing app was not showing up when premium request was disabled
-  (Thanks to [@moertel](https://github.com/moertel) for the research)
+- Fixed an issue with the request fragment where the first missing app was not showing up when
+  premium request was disabled
+  (Thanks to [@moertel][moertel] for the research)
 - Updated dependencies
 - Now targets Android S (API 32)
 - Hide old launchers in apply section (I will permanently remove them later)
 - Updated to work with Pacific Manager (Thanks to [@justinkruit](https://github.com/justinkruit))
-- Added support for custom icon request mode which you can configure programmatically using Java (Thanks to [@moertel](https://github.com/moertel))
+- Added support for custom icon request mode which you can configure programmatically using Java (
+  Thanks to [@moertel][moertel])
 
 # v3.13.2
 - Updated Android Gradle Plugin
@@ -224,7 +243,6 @@ for helping with the issues.
 - Added BlackBerry Launcher.
 - Added Flick Launcher.
 
-
 # v3.5.0-beta.6.6
 - Fix wallpaper download issue with Android 10.
 - Show Loader while icon are being loaded.
@@ -250,7 +268,6 @@ for helping with the issues.
 # v3.5.0-beta.6.3
 - Now you can exclude launchers.
 - Fixed Many Small Bugs.
-
 
 # v3.5.0-beta.6.1
 - Added support for Adaptive Icons.
