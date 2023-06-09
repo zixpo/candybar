@@ -1,5 +1,5 @@
 # CandyBar
-[![JitPack](https://img.shields.io/jitpack/v/github/zixpo/candybar?color=4c1&label=JitPack&style=flat-square)](https://jitpack.io/#zixpo/candybar)
+[![JitPack](https://img.shields.io/jitpack/version/com.github.zixpo/candybar?color=20a182&label=JitPack&style=flat-square)](https://jitpack.io/#zixpo/candybar)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/zixpo/candybar/android.yml?branch=main&style=flat-square)](https://github.com/zixpo/candybar/actions/workflows/android.yml)
 [![License](https://img.shields.io/github/license/zixpo/candybar?style=flat-square)](/LICENSE)
 
