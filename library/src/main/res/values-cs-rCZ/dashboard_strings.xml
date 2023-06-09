@@ -109,7 +109,8 @@
     <string name="apply_installed">Nainstalovaný spouštěč</string>
     <string name="apply_supported">Podporované spouštěče</string>
     <string name="apply_manual">Spouštěč %1$s nepodporuje přímé aktivování, ale můžete aktualizovat %2$s ručně v nastavení spouštěče.</string>
-    <string name="apply_manual_evie">Podržte prst na domovské obrazovce –⁠ Nastavení –⁠ Balíček ikon –⁠ vyberte %s.</string>
+    <string name="apply_manual_kvaesitso_step_4">Vyberte %s ze seznamu</string>
+    <string name="apply_manual_kiss_step_4">Vyberte %s ze seznamu</string>
     <string name="apply_manual_samsung_oneui">%1$s nepodporuje přímé použití, ale počínaje %2$s můžete použít ikony pomocí doplňkové aplikace.</string>
     <string name="apply_manual_samsung_oneui_too_old">Vaše aktuální verze %s je příliš stará. Aktualizujte prosím na Android 12 nebo novější, abyste mohli použít ikony přímo. Případně můžete nainstalovat jiný spouštěč.</string>
     <string name="apply_manual_samsung_oneui_step_1">Otevřete %s</string>
