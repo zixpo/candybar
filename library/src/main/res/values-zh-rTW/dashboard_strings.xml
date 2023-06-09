@@ -100,7 +100,6 @@
     <string name="apply_installed">已安裝的啟動器</string>
     <string name="apply_supported">受支援的啟動器</string>
     <string name="apply_manual">%1$s 不支援直接從 App 中啟用 icon ，你可以從啟動器設定中手動啟用 %2$s。</string>
-    <string name="apply_manual_evie">在主螢幕上長按 - 設定 -  icon pack  - 選擇 %s。</string>
     <string name="apply_launch_failed">無法啟動 %s 設定</string>
     <string name="apply_launcher_not_installed">%s 尚未安裝。你想跳轉到 Google Play 商店去下載安裝它嗎？</string>
     <string name="apply_cmtheme_not_available">CM 主題管理器在此裝置上不可用。</string>
