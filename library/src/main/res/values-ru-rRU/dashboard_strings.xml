@@ -107,7 +107,6 @@
     <string name="apply_installed">Установленный лаунчер</string>
     <string name="apply_supported">Поддерживаемые лаунчеры</string>
     <string name="apply_manual">Ничего не выйдет! В %1$s Launcher применить %2$s можно только ручками.</string>
-    <string name="apply_manual_evie">Нажмите и удерживайте кнопку на рабочем столе - параметры - набор значков - выберите %s.</string>
     <string name="apply_launch_failed">Не удалось запустить %s настройки</string>
     <string name="apply_launcher_not_installed">%s не установлен. Вы хотите открыть 
 Магазин Google Play, чтобы загрузить и установить его?</string>
