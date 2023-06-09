@@ -106,7 +106,8 @@
     <string name="apply_installed">स्थापित लन्चर (हरु)</string>
     <string name="apply_supported">समर्थन गर्ने लन्चरहरु</string>
     <string name="apply_manual">%1$s लन्चरबाट सिधै लागु गर्न सकिएन, तर लन्चरको सेटिङ बाट %2$s म्यानुअली लागु गर्न सकिनेछ।</string>
-    <string name="apply_manual_evie">%s चयन गर्नलाई ट्याप गरेर र होमस्क्रीनमा होल्ड गर्नुहोस् - सेटिहरू - आइकन प्याक</string>
+    <string name="apply_manual_kvaesitso_step_4">दिईएको सूचीबाट %s छान्नुहोस्</string>
+    <string name="apply_manual_kiss_step_4">दिईएको सूचीबाट %s छान्नुहोस्</string>
     <string name="apply_manual_samsung_oneui">%1$s लाई प्रत्यक्ष रुपमा लागु गर्न सकिएन भने, %2$s बाट सुरु गरेर तपाईंले मिल्दो जुल्दो एपहरुसँग आइकनसेट प्रयोग गर्न सक्नुहुनेछ।</string>
     <string name="apply_manual_samsung_oneui_too_old">तपाईंको %s को हालको भर्अजन अलि पुरानो रहेछ। आईकनसेट सिधै लागू गर्नलाई कृपया Android 12 वा नयाँ संस्करणमा अद्यावधिक गर्नुहोस्। वैकल्पिक रूपमा, तपाईं फरक लन्चर प्रयोग गर्न सक्नुहुनेछ।</string>
     <string name="apply_manual_samsung_oneui_step_1">%s खोल्नुहोस्</string>
