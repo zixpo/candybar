@@ -38,7 +38,7 @@ Just explore the wiki to get started.
 
 # Features
 - License checker
-- Apply: 32 launchers
+- Apply: Directly apply in supported launcher
 - Icon picker: See all icons
 - Icon request
   - Regular request: Free to request
@@ -57,16 +57,20 @@ Just explore the wiki to get started.
 - Donation
 - Changelog: Shown on every update
 - Muzei live wallpaper
+- Kustom preset support
 - Localization: Supports many languages
 - Support for OneSignal notifications
 - Check for updates
 - Control your dashboard remotely with configuration JSON
+- API for [advanced configurations](https://github.com/zixpo/candybar-sample/wiki/Advanced-dashboard-configurations)
 
 # What's new?
 Check out the [changelog](/CHANGELOG.md) to find out what's new.
 
 # Translation
 Help us translate CandyBar in many other languages. [Translate CandyBar](https://crowdin.com/project/candybar).
+
+Already contributed translation? [Submit your name here](https://github.com/zixpo/candybar/discussions/142).
 
 # Need help?
 Need help in something or maybe you have some question, just head out
@@ -83,8 +87,6 @@ the dashboard.
 You can also donate from the [CandyBar App](https://play.google.com/store/apps/details?id=com.candybar.dev) published on Google Play Store.
 
 ### Social
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/sarsamurmu?color=%231da1f2&label=Follow%20on%20Twitter&logo=twitter&style=for-the-badge)](https://twitter.com/sarsamurmu)\
 [![GitHub Follow](https://img.shields.io/github/followers/sarsamurmu?color=%23dfdfdf&label=Follow%20on%20GitHub&logo=github&style=for-the-badge)](https://github.com/sarsamurmu)
 
 **Thanks! Have fun with the dashboard 😉**
