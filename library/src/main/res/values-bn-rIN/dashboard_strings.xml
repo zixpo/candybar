@@ -92,7 +92,6 @@
     <!-- Apply -->
     <string name="apply_installed">ইনস্টল করা লঞ্চার</string>
     <string name="apply_supported">সমর্থিত লঞ্চার</string>
-    <string name="apply_manual_evie">হোমস্ক্রীন আলতো চাপুন এবং ধরে রাখুন - সেটিংস - আইকন প্যাক - %s নির্বাচন করুন।</string>
     <string name="apply_launch_failed">%s সেটিংস চালু করতে অক্ষম</string>
     <string name="apply_launcher_not_installed">%s ইনস্টল করা নেই। আপনি কি খুলতে চান গুগল প্লে স্টোর? 
 ডাউনলোড এবং ইনস্টল করার জন্য?</string>
