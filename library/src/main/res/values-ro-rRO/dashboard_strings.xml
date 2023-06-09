@@ -109,7 +109,6 @@
     <string name="apply_installed">Lansator instalat</string>
     <string name="apply_supported">Lansatoare suportate</string>
     <string name="apply_manual">Lansatorul %1$s nu acceptă aplicare directă, dar poți aplica %2$s manual din setările lansatorului.</string>
-    <string name="apply_manual_evie">Apasă și ține apăsat pe ecranul de pornire - Setări - Pachet pictograme - alege %s.</string>
     <string name="apply_launch_failed">Imposibil de lansat setările %s</string>
     <string name="apply_launcher_not_installed">Lansatorul %s nu este instalat. Dorești să deschizi
         Magazin Google Play pentru a descărca și instala?</string>
