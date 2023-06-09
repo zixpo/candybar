@@ -108,7 +108,6 @@
     <string name="apply_installed">Yüklü Başlatıcı</string>
     <string name="apply_supported">Desteklenen Başlatıcılar</string>
     <string name="apply_manual">%1$s başlatıcı doğrudan uygulamayı desteklemiyor, fakat %2$s paketini başlatıcı ayarlarından el ile uygulayabilirsiniz.</string>
-    <string name="apply_manual_evie">Ana ekrana dokunun ve basılı tutun - Ayarlar - Simge Paketi - %s\'i seçin.</string>
     <string name="apply_launch_failed">%s ayarları başlatılamıyor</string>
     <string name="apply_launcher_not_installed">%s yüklü değil. İndirmek ve yüklemek için
         Google Play Store\'u açmak istiyor musunuz?</string>

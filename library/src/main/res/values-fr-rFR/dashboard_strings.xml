@@ -5,7 +5,7 @@
     <string name="navigation_view_home">Accueil</string>
     <string name="navigation_view_apply">Appliquer</string>
     <string name="navigation_view_icons">Icônes</string>
-    <string name="navigation_view_request">Demande d\'icône(s)</string>
+    <string name="navigation_view_request">Demande d\'icônes</string>
     <string name="navigation_view_wallpapers">Fonds d\'écran</string>
     <string name="navigation_view_presets">Modèles</string>
     <string name="navigation_view_settings">Paramètres</string>
@@ -103,13 +103,23 @@ Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications deman
     <string name="home_loud_wallpapers">%d fonds d\'écran Cloud</string>
     <string name="home_muzei">Fond d\'écran animé Muzei</string>
     <string name="home_icon_request_installed_apps">Total\n%d applications installées</string>
-    <string name="home_icon_request_themed_apps">Modifiée(s)\n%d application(s)</string>
-    <string name="home_icon_request_missed_apps">Manquante(s)\n%d application(s)</string>
+    <string name="home_icon_request_themed_apps">Modifiées\n%d applis</string>
+    <string name="home_icon_request_missed_apps">Manquantes\n%d applis</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher(s) installé(s)</string>
     <string name="apply_supported">Launchers supportés</string>
     <string name="apply_manual">%1$s ne supporte pas l\'application directe, vous pouvez appliquer %2$s manuellement depuis les paramètres du launcher.</string>
-    <string name="apply_manual_evie">Appuyez ici et maintenez sur l\'écran d\'accueil &gt; Paramètres &gt; Pack d\'icônes &gt; Choisir %s.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso ne supporte pas l\'application directe, mais vous pouvez suivre ces étapes :</string>
+    <string name="apply_manual_kvaesitso_step_1">Ouvrir les paramètres de Kvaesitso</string>
+    <string name="apply_manual_kvaesitso_step_2">Appuyez sur « Grille &amp; Icônes »</string>
+    <string name="apply_manual_kvaesitso_step_3">Appuyez sur le \"Pack d\'icônes\"</string>
+    <string name="apply_manual_kvaesitso_step_4">Choisissez %s depuis la liste</string>
+    <string name="apply_manual_kvaesitso_step_5">Appuyez sur l\'icône pinceau pour activer ou désactiver la forme d\'arrière-plan</string>
+    <string name="apply_manual_kiss">KISS ne prend pas en charge l\'application directe, mais vous pouvez suivre ces étapes :</string>
+    <string name="apply_manual_kiss_step_1">Ouvrir les paramètres de KISS</string>
+    <string name="apply_manual_kiss_step_2">Appuyez sur \"Interface utilisateur\"</string>
+    <string name="apply_manual_kiss_step_3">Appuyez sur le \"Pack d\'icônes\"</string>
+    <string name="apply_manual_kiss_step_4">Choisissez %s depuis la liste</string>
     <string name="apply_manual_samsung_oneui">%1$s ne prend pas en charge l\'application directe, mais en commençant par %2$s , vous pouvez appliquer des icônes avec une application complémentaire.</string>
     <string name="apply_manual_samsung_oneui_too_old">Votre version actuelle de %s est trop ancienne. Veuillez mettre à jour vers Android 12 ou plus récent pour pouvoir appliquer les icônes directement. Vous pouvez également installer un lanceur différent.</string>
     <string name="apply_manual_samsung_oneui_step_1">Ouvrir %s</string>
@@ -141,6 +151,7 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <string name="request_not_selected">Sélectionnez les applications à demander</string>
     <string name="request_not_requested">Non demandée</string>
     <string name="request_already_requested">Déjà demandée</string>
+    <string name="request_not_available">Ne peut pas être demandé</string>
     <string name="request_building">Construction de la demande …</string>
     <string name="request_pacific_sending">Envoi de la demande à Pacific Manager...</string>
     <string name="request_pacific_error">Échec de l\'envoi de la demande à Pacific Manager. L\'erreur est %s</string>

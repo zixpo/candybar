@@ -108,7 +108,6 @@
     <string name="apply_installed">المشغلات المثبتة</string>
     <string name="apply_supported">المشغلات المدعومة</string>
     <string name="apply_manual">المشغل %1$s لا يدعم التطبيق المباشر ولكن بإمكانك تطبيق %2$s يدوياً من إعدادات المشغل.</string>
-    <string name="apply_manual_evie">اضغط مطولاً على الشاشة الرئيسية - الإعدادات - حزمة الأيقونات - اختر %s.</string>
     <string name="apply_launch_failed">تعذر تشغيل إعدادات %s</string>
     <string name="apply_launcher_not_installed">المشغل %s ليس مثبتاً. هل تريد فتح متجر Google Play لتحميله وتثبيته؟</string>
     <string name="apply_launcher_not_installable">المشغل %s ليس مثبتاً. يرجى المحاولة مرة أخرى بعد تثبيت المشغل.</string>

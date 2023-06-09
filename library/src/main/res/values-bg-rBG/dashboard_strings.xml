@@ -100,7 +100,6 @@
     <string name="apply_installed">Инсталиран Лаунчер</string>
     <string name="apply_supported">Поддържани Лаунчери</string>
     <string name="apply_manual">% 1 $ s Лаунчера не поддържа директно прилагане, но можете да приложите% 2 $ s ръчно от настройките на лаунчера.</string>
-    <string name="apply_manual_evie">Чукнете и задръжте на началния екран - Настройки - Пакет икони - изберете% s.</string>
     <string name="apply_launch_failed">Настройките не могат да се стартират</string>
     <string name="apply_launcher_not_installed">Лаунчера не е инсталиран.  Искате ли да отворите Google Play Store, за да го изтеглите и инсталирате?</string>
     <string name="apply_launcher_not_installable">Лаунчера не е инсталиран.  Моля, опитайте отново, след като инсталирате лаунчера.</string>

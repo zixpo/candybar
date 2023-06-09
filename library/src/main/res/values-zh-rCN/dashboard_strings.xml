@@ -7,7 +7,7 @@
     <string name="navigation_view_icons">图标</string>
     <string name="navigation_view_request">申请图标</string>
     <string name="navigation_view_wallpapers">壁纸</string>
-    <string name="navigation_view_presets">默认</string>
+    <string name="navigation_view_presets">Presets（预设）</string>
     <string name="navigation_view_settings">设置</string>
     <string name="navigation_view_faqs">常见问题</string>
     <string name="navigation_view_about">关于</string>
@@ -108,7 +108,14 @@
     <string name="apply_installed">已安装的启动器</string>
     <string name="apply_supported">受支持的启动器</string>
     <string name="apply_manual">%1$s 不支持直接从程序中应用图标，你可以从启动器设置中手动应用 %2$s。</string>
-    <string name="apply_manual_evie">在主屏幕上长按 - 设置 - 图标包 - 选择 %s。</string>
+    <string name="apply_manual_kvaesitso_step_4">从列表中选择 %s</string>
+    <string name="apply_manual_kiss_step_4">从列表中选择 %s</string>
+    <string name="apply_manual_samsung_oneui">%1$s 不支持直接应用，但您可以使用%2$s 应用图标。</string>
+    <string name="apply_manual_samsung_oneui_too_old">您当前的 %s 版本为旧版。请更新到 Android 12 或更高版本，以便直接应用图标。 您也可以安装另一个启动器。</string>
+    <string name="apply_manual_samsung_oneui_step_1">打开 %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">下载 %s</string>
+    <string name="apply_manual_samsung_oneui_step_6">从列表中选择 %s</string>
+    <string name="apply_manual_samsung_oneui_step_7">每次更新 %s 时重复这些步骤，因为启动器不会自动更新图标</string>
     <string name="apply_launch_failed">无法启动 %s 设置</string>
     <string name="apply_launcher_not_installed">%s 尚未安装。你想跳转到 Google Play 商店去下载安装它吗？</string>
     <string name="apply_launcher_not_installable">%s 启动器未安装。请安装启动器后重试。</string>

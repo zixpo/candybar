@@ -109,7 +109,17 @@
     <string name="apply_installed">Nainstalovaný spouštěč</string>
     <string name="apply_supported">Podporované spouštěče</string>
     <string name="apply_manual">Spouštěč %1$s nepodporuje přímé aktivování, ale můžete aktualizovat %2$s ručně v nastavení spouštěče.</string>
-    <string name="apply_manual_evie">Podržte prst na domovské obrazovce –⁠ Nastavení –⁠ Balíček ikon –⁠ vyberte %s.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso nepodporuje přímé použití, ale můžete postupovat podle následujících kroků:</string>
+    <string name="apply_manual_kvaesitso_step_1">Otevřít nastavení Kvaesitso</string>
+    <string name="apply_manual_kvaesitso_step_2">Klepněte na \"Mřížka a ikony\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Klepněte na \"Balíček ikon\"</string>
+    <string name="apply_manual_kvaesitso_step_4">Vyberte %s ze seznamu</string>
+    <string name="apply_manual_kvaesitso_step_5">Klepnutím na ikonu štětce povolíte nebo zakážete tvar pozadí</string>
+    <string name="apply_manual_kiss">KISS nepodporuje přímé použití, ale můžete postupovat podle následujících kroků:</string>
+    <string name="apply_manual_kiss_step_1">Otevřít nastavení KISS</string>
+    <string name="apply_manual_kiss_step_2">Klepněte na \"Uživatelské rozhraní\"</string>
+    <string name="apply_manual_kiss_step_3">Klepněte na \"Balíček ikon\"</string>
+    <string name="apply_manual_kiss_step_4">Vyberte %s ze seznamu</string>
     <string name="apply_manual_samsung_oneui">%1$s nepodporuje přímé použití, ale počínaje %2$s můžete použít ikony pomocí doplňkové aplikace.</string>
     <string name="apply_manual_samsung_oneui_too_old">Vaše aktuální verze %s je příliš stará. Aktualizujte prosím na Android 12 nebo novější, abyste mohli použít ikony přímo. Případně můžete nainstalovat jiný spouštěč.</string>
     <string name="apply_manual_samsung_oneui_step_1">Otevřete %s</string>
@@ -140,6 +150,7 @@
     <string name="request_not_selected">Vyberte aplikace, o které chcete požádat</string>
     <string name="request_not_requested">Nepožádáno</string>
     <string name="request_already_requested">Již požádáno</string>
+    <string name="request_not_available">Nelze požadovat</string>
     <string name="request_building">Připravuji požadavek…</string>
     <string name="request_pacific_sending">Odesílání požadavku do Pacific Manager...</string>
     <string name="request_pacific_error">Při odesílání požadavku do Pacific Manager došlo k chybě. Chyba je %s</string>

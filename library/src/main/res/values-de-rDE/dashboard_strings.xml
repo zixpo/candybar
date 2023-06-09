@@ -109,7 +109,17 @@ Mit Premium Icon-Anfragen kannst du deine gewünschte App schneller erhalten.</s
     <string name="apply_installed">Installierte Launcher</string>
     <string name="apply_supported">Unterstützte Launcher</string>
     <string name="apply_manual">%1$s unterstützt keine direktes Anwenden. Du kannst %2$s manuell über die Launcher-Einstellungen anwenden.</string>
-    <string name="apply_manual_evie">Klicke und halte am Startbildschirm - Einstellungen - Icon Pack - %s auswählen.</string>
+    <string name="apply_manual_kvaesitso_step_4">Wähle %s aus der Liste</string>
+    <string name="apply_manual_kiss_step_4">Wähle %s aus der Liste</string>
+    <string name="apply_manual_samsung_oneui">%1$s unterstützt das automatische Anwenden von Icons leider nicht, aber ab Version %2$s können Icons über eine Begleit-App angewendet werden.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Deine aktuelle Version %s ist zu alt. Bitte nimm ein Update auf Android 12, vor um Icons automatisch anwenden zu können. Alternativ kannst du einen anderen Launcher installieren.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Öffne %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Lade die App %s herunter</string>
+    <string name="apply_manual_samsung_oneui_step_3">Tippe auf \"Icon\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Tippe auf \"Neu erstellen\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Tippe auf den blauen \"Iconpack\"-Button</string>
+    <string name="apply_manual_samsung_oneui_step_6">Wähle %s aus der Liste</string>
+    <string name="apply_manual_samsung_oneui_step_7">Wiederhole diese Schritte nach jedem %s Update, da neue Icons nicht automatisch angewendet werden.</string>
     <string name="apply_launch_failed">%s-Einstellungen können nicht gestartet werden</string>
     <string name="apply_launcher_not_installed">%s ist nicht installiert. Willst du den 
 Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string>
@@ -192,11 +202,13 @@ Einstellungen öffnen, wähle \"Käufe wiederherstellen\", um es wieder zu bekom
     <!-- Presets -->
     <string name="presets_load_failed">Voreinstellung konnte nicht geladen werden</string>
     <string name="presets_storage_permission">Speicher-Berechtigung wird benötigt, um die Wallpaper-Vorschau zu laden</string>
+    <string name="presets_required_apps">Benötigte Apps um diese Voreinstellung zu verwenden</string>
+    <string name="presets_required_apps_not_installed">Die für die Nutzung der Voreinstellungen benötigten Apps sind nicht installiert. Bitte installiere sie und versuche es erneut.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Daten &amp; Cache</string>
     <string name="pref_data_cache">Cache löschen</string>
     <string name="pref_data_cache_desc">Entferne den Bildercache aus deinem Speicher, der beim Wählen eines Bildes
-aus dieser App, beim Anfragen einer fehlenden App und nach dem Laden von Miniaturansichten der Coud-Hintergründe erstellt wurde.</string>
+aus dieser App, beim Anfragen einer fehlenden App, und nach dem Laden von Miniaturansichten der Cloud-Hintergründe erstellt wurde.</string>
     <string name="pref_data_cache_size">Cachegröße: %s</string>
     <string name="pref_data_cache_clear_dialog">Willst du den Cache wirklich löschen?</string>
     <string name="pref_data_cache_cleared">Cache gelöscht</string>

@@ -94,7 +94,6 @@
     <!-- Apply -->
     <string name="apply_installed">インストールされたランチャー</string>
     <string name="apply_supported">対応しているランチャー</string>
-    <string name="apply_manual_evie">ホーム画面でタップして長押し - 設定 - アイコンパック - %sを選択。</string>
     <string name="apply_launch_failed">%sの設定を起動できません</string>
     <string name="apply_launcher_not_installed">%sはインストールされていません。
 Google Playストアを開きダウンロードしてインストールしますか？</string>

@@ -104,7 +104,6 @@
     <string name="apply_installed">Geïnstalleerde Launcher</string>
     <string name="apply_supported">Ondersteunde Launchers</string>
     <string name="apply_manual">%1$s ondersteunt geen directe toepassing, maar je kunt %2$s handmatig toepassen via de launcher instellingen.</string>
-    <string name="apply_manual_evie">Tik en houd het thuisscherm vast - Instellingen - Pictogrampakket - kies %s.</string>
     <string name="apply_launch_failed">Kan %s instellingen niet starten</string>
     <string name="apply_launcher_not_installed">%s is niet geïnstalleerd. Wil je de
         Google Play Store openen om te downloaden en installeren?</string>

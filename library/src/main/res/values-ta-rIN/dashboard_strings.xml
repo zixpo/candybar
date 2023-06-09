@@ -98,7 +98,6 @@
     <string name="apply_installed">நிறுவப்பட்ட லான்ச்சர்</string>
     <string name="apply_supported">ஆதரிக்கப்பட்ட லான்ச்சர்கள்</string>
     <string name="apply_manual">%1$s doesn\'t support direct apply, you can apply %2$s manually from the launcher settings.</string>
-    <string name="apply_manual_evie">ஹோம்ஸ்கிரீனைத் தட்டிப் பிடிக்கவும் - அமைப்புகள் - ஐகான் பேக் - தேர்வு செய்யவும் %s.</string>
     <string name="apply_launch_failed">தொடங்க முடியவில்லை %s அமைப்புகள்</string>
     <string name="apply_launcher_not_installed">%s is not installed. Do you want to open
         Google Play Store to download and install it?</string>
