@@ -3,7 +3,6 @@ package candybar.lib.services;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
-import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
 import androidx.work.Constraints;
@@ -22,8 +21,6 @@ import com.google.android.apps.muzei.api.provider.ProviderContract;
 import java.util.ArrayList;
 import java.util.List;
 
-import candybar.lib.R;
-import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
@@ -52,11 +49,11 @@ public class CandyBarArtWorker extends Worker {
     @Override
     @NonNull
     public Result doWork() {
-        LogUtil.d("Executing doWork() for Muzei");
-        if (!URLUtil.isValidUrl(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(mContext))) {
+        // This code doesn't do much so it's commented
+        /*if (!URLUtil.isValidUrl(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(mContext))) {
             LogUtil.e("Not a valid Wallpaper JSON URL");
             return Result.failure();
-        }
+        }*/
 
         List<Wallpaper> wallpapers = Database.get(mContext).getWallpapers(null);
 

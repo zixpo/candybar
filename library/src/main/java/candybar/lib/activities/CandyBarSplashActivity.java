@@ -16,12 +16,9 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
-import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.JsonHelper;
@@ -146,12 +143,9 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
                     if (WallpaperHelper.getWallpaperType(context.get()) != WallpaperHelper.CLOUD_WALLPAPERS)
                         return true;
 
-                    URL url = new URL(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(context.get()));
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    connection.setConnectTimeout(15000);
+                    InputStream stream = WallpaperHelper.getJSONStream(context.get());
 
-                    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                        InputStream stream = connection.getInputStream();
+                    if (stream != null) {
                         List<?> list = JsonHelper.parseList(stream);
                         if (list == null) {
                             LogUtil.e("Json error, no array with name: "

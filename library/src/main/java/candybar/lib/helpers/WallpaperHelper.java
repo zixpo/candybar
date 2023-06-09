@@ -16,7 +16,11 @@ import androidx.annotation.Nullable;
 
 import com.danimahardhika.android.helpers.core.WindowHelper;
 
-import candybar.lib.R;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.ImageSize;
 
@@ -46,12 +50,37 @@ public class WallpaperHelper {
 
     public static int getWallpaperType(@NonNull Context context) {
         String url = CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(context);
-        if (URLUtil.isValidUrl(url)) {
+        if (url.startsWith("assets://") || URLUtil.isValidUrl(url)) {
             return CLOUD_WALLPAPERS;
         } else if (url.length() > 0) {
             return EXTERNAL_APP;
         }
         return UNKNOWN;
+    }
+
+    public static InputStream getJSONStream(@NonNull Context context) throws IOException {
+        return getStream(context, CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(context));
+    }
+
+    /**
+     * This method adds support for `assets` protocol for loading file from `assets` directory
+     */
+    public static InputStream getStream(Context context, String urlStr) throws IOException {
+        InputStream stream = null;
+
+        if (urlStr.startsWith("assets://")) {
+            stream = context.getAssets().open(urlStr.replaceFirst("assets://", ""));
+        } else {
+            URL url = new URL(urlStr);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setConnectTimeout(15000);
+
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                stream = connection.getInputStream();
+            }
+        }
+
+        return stream;
     }
 
     public static void launchExternalApp(@NonNull Context context) {

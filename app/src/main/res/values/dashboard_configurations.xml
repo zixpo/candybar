@@ -65,6 +65,7 @@
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
     <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/walls_alt.json</string>
+    <!--<string name="wallpaper_json">assets://wallpapers_offline.json</string>-->
     <bool name="enable_wallpaper_download">true</bool>
     <bool name="wallpaper_show_name_author">true</bool>
     <string name="wallpaper_grid_preview_style">square</string>

@@ -41,8 +41,6 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 
@@ -52,6 +50,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.TapIntroHelper;
+import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -248,12 +247,9 @@ public class WallpapersFragment extends Fragment {
                 try {
                     Thread.sleep(1);
 
-                    URL url = new URL(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(getContext()));
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    connection.setConnectTimeout(15000);
+                    InputStream stream = WallpaperHelper.getJSONStream(requireActivity());
 
-                    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                        InputStream stream = connection.getInputStream();
+                    if (stream != null) {
                         List<?> list = JsonHelper.parseList(stream);
                         if (list == null) {
                             LogUtil.e("Json error, no array with name: "
