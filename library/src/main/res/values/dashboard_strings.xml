@@ -163,6 +163,7 @@
     <string name="request_not_selected">Select apps to request</string>
     <string name="request_not_requested">Not requested</string>
     <string name="request_already_requested">Already requested</string>
+    <string name="request_not_available">Cannot be requested</string>
 
     <string name="request_building">Building request …</string>
     <string name="request_pacific_sending">Sending request to Pacific Manager...</string>
