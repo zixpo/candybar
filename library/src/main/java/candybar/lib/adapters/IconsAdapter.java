@@ -30,10 +30,8 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
-import java.util.Set;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
@@ -335,21 +333,15 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     }
 
     public void search(String string) {
-        // Initialize mIconsAll if not initialized
-        // Also remove duplicates
         if (mIconsAll == null) {
-            mIconsAll = new ArrayList<>();
-            Set<String> addedNames = new HashSet<>();
-            Locale defaultLocale = Locale.getDefault();
-            for (int i = 0; i < mIcons.size(); i++) {
-                Icon icon = mIcons.get(i);
-                String name = icon.getTitle();
-                name = name.toLowerCase(defaultLocale);
-                if (!addedNames.contains(name)) {
-                    mIconsAll.add(icon);
-                    addedNames.add(name);
-                }
-            }
+            // For searching, mIcons
+            //      - Contains all icons
+            //      - Icons are sorted
+            // Check IconSearchFragment.java line 205-275
+            // So we don't need to do any sorting here
+
+            // Copy icons to `mIconsAll`
+            mIconsAll = mIcons;
         }
 
         String query = string.toLowerCase(Locale.getDefault()).trim();
@@ -367,6 +359,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
                 }
             }
         }
+
         if (mIcons.size() == 0) {
             CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                     "click",

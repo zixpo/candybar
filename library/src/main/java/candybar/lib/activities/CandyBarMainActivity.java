@@ -697,7 +697,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             int color = ContextCompat.getColor(this, R.color.toolbarIcon);
             toolbar.setNavigationIcon(DrawableHelper.getTintedDrawable(
                     this, R.drawable.ic_toolbar_back, color));
-            toolbar.setNavigationOnClickListener(view -> onBackPressed());
+            // It does not work and causes issue with back press on icon search fragment
+            // toolbar.setNavigationOnClickListener(view -> onBackPressed());
         } else {
             SoftKeyboardHelper.closeKeyboard(this);
             ColorHelper.setStatusBarColor(this, Color.TRANSPARENT, true);
@@ -715,6 +716,12 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         mDrawerLayout.setDrawerLockMode(expand ? DrawerLayout.LOCK_MODE_LOCKED_CLOSED :
                 DrawerLayout.LOCK_MODE_UNLOCKED);
         supportInvalidateOptionsMenu();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        LogUtil.d(">>>>>>>>>>>>>> onOptionsItemSelected: " + item.getItemId());
+        return super.onOptionsItemSelected(item);
     }
 
     public void showSupportDevelopmentDialog() {

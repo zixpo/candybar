@@ -3,9 +3,12 @@ package candybar.lib.fragments;
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -35,7 +38,9 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -44,7 +49,9 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconShapeChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Icon;
+import candybar.lib.utils.AlphanumComparator;
 import candybar.lib.utils.AsyncTaskBase;
+import candybar.lib.utils.listeners.SearchListener;
 
 /*
  * CandyBar - Material Dashboard
@@ -140,7 +147,12 @@ public class IconsSearchFragment extends Fragment {
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                requireActivity().onBackPressed();
+                requireActivity().getSupportFragmentManager().popBackStack();
+
+                Activity activity = requireActivity();
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    ((SearchListener) activity).onSearchExpanded(false);
+                }, 500);
                 return true;
             }
         });
@@ -204,11 +216,12 @@ public class IconsSearchFragment extends Fragment {
 
     private class IconsLoader extends AsyncTaskBase {
 
-        private List<Icon> icons;
+        private Set<Icon> iconSet;
+        private List<Icon> iconList;
 
         @Override
         protected void preRun() {
-            icons = new ArrayList<>();
+            iconSet = new HashSet<>();
         }
 
         @Override
@@ -235,14 +248,25 @@ public class IconsSearchFragment extends Fragment {
                     for (Icon icon : CandyBarMainActivity.sSections) {
                         if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
                             if (!icon.getTitle().equals(CandyBarApplication.getConfiguration().getTabAllIconsTitle())) {
-                                icons.addAll(icon.getIcons());
+                                iconSet.addAll(icon.getIcons());
                             }
                         } else {
-                            icons.addAll(icon.getIcons());
+                            iconSet.addAll(icon.getIcons());
                         }
                     }
 
-                    Collections.sort(icons, Icon.TitleComparator);
+                    iconList = new ArrayList<>(iconSet);
+
+                    // Sort them in lowercase
+                    Collections.sort(iconList, new AlphanumComparator() {
+                        @Override
+                        public int compare(Object o1, Object o2) {
+                            String s1 = ((Icon) o1).getTitle().toLowerCase().trim();
+                            String s2 = ((Icon) o2).getTitle().toLowerCase().trim();
+                            return super.compare(s1, s2);
+                        }
+                    });
+
                     return true;
                 } catch (Exception e) {
                     LogUtil.e(Log.getStackTraceString(e));
@@ -259,7 +283,7 @@ public class IconsSearchFragment extends Fragment {
 
             mAsyncTask = null;
             if (ok) {
-                mAdapter = new IconsAdapter(getActivity(), icons, mFragment, false);
+                mAdapter = new IconsAdapter(getActivity(), iconList, mFragment, false);
                 currentAdapter = new WeakReference<>(mAdapter);
                 mRecyclerView.setAdapter(mAdapter);
                 filterSearch("");
