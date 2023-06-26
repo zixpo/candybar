@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">June 10, 2023</string>
+    <string name="changelog_date" translatable="false">June 26, 2023</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,12 +10,9 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Ability to load wallpapers from `assets`</item>
-        <item>Removed MultiDex (thanks to @connyduck)</item>
-        <item>Added support for visibly disabled requests (thanks to @moertel)</item>
-        <item>Updated launchers (thanks to @Donnnno)</item>
-        <item>Added support for rendering VectorDrawable</item>
-        <item>Updated translations</item>
+        <item>Fix issue related to restore purchases</item>
+        <item>Probably fix issue with icon search when navigating back</item>
+        <item>Minor fixes</item>
     </string-array>
 
 </resources>

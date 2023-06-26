@@ -2,6 +2,12 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.17.5
+
+- Fix issue related to restore purchases
+- Probably fix issue with icon search when navigating back
+- Minor fixes
+
 # v3.17.4
 
 - Ability to load wallpapers from `assets`
@@ -12,16 +18,13 @@
 - Updated translations
 
 # v3.17.3
-
 - Add support for formatting FAQs
 - Fixed home intro not showing when tutorials are reset using the `Setting` sections
 
 # v3.7.2
-
 - Added ZenUI to launcher. It was deleted by mistake.
 
 # v3.17.1
-
 - Updated Gradle, AGP and dependencies
 
 # v3.17.0
