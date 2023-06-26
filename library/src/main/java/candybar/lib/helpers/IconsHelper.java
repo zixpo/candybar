@@ -2,7 +2,7 @@ package candybar.lib.helpers;
 
 import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
 import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
-import static candybar.lib.helpers.DrawableHelper.getRightIcon;
+import static candybar.lib.helpers.DrawableHelper.toBitmap;
 
 import android.app.Activity;
 import android.content.Context;
@@ -263,7 +263,7 @@ public class IconsHelper {
 
     @Nullable
     public static String saveIcon(List<String> files, File directory, Drawable drawable, String name) {
-        Bitmap bitmap = getRightIcon(drawable);
+        Bitmap bitmap = toBitmap(drawable);
         assert bitmap != null;
         return saveBitmap(files, directory, bitmap, name);
     }

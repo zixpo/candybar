@@ -189,7 +189,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
             if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
                 Glide.with(mContext)
-                        .load(candybar.lib.helpers.DrawableHelper.getReqIcon(mContext, mRequests.get(finalPosition).getActivity()))
+                        // Check candybar.lib.utils - CommonDataFetcher and CommonModelLoader
+                        .load("package://" + mRequests.get(finalPosition).getActivity())
                         .override(272)
                         .transition(DrawableTransitionOptions.withCrossFade(300))
                         .diskCacheStrategy(DiskCacheStrategy.NONE)

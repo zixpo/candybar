@@ -1,6 +1,6 @@
 package candybar.lib.fragments;
 
-import static candybar.lib.helpers.DrawableHelper.getReqIcon;
+import static candybar.lib.helpers.DrawableHelper.getPackageIcon;
 import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
 
 import android.content.res.Resources;
@@ -255,7 +255,7 @@ public class SettingsFragment extends Fragment {
                     List<String> files = new ArrayList<>();
 
                     for (Request request : requests) {
-                        Drawable drawable = getReqIcon(requireActivity(), request.getActivity());
+                        Drawable drawable = getPackageIcon(requireActivity(), request.getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
                                 isPacific ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
                         if (icon != null) files.add(icon);
