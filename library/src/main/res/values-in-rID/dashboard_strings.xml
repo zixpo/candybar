@@ -70,7 +70,6 @@ Anda tidak dapat menggunakan aplikasi ini.</string>
     <string name="tap_intro_home_navigation">Panel navigasi</string>
     <string name="tap_intro_home_navigation_desc">Sentuh disini atau usap dari tepi kiri layar untuk membuka panel navigasi</string>
     <string name="tap_intro_home_apply">Terapkan paket ikon</string>
-    <string name="tap_intro_home_apply_desc">Sentuh disini untuk menerapkan %s</string>
     <string name="tap_intro_icons_search">Cari</string>
     <string name="tap_intro_icons_search_desc">Sentuh disini untuk mencari sebuah ikon</string>
     <string name="tap_intro_request_select">Pilih aplikasi yang terlewat</string>
