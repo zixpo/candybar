@@ -446,35 +446,37 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             return;
         }
 
-        CountDownLatch doneSignal = new CountDownLatch(1);
-        AtomicBoolean doesProductIdExist = new AtomicBoolean(false);
-        InAppBillingClient.get(this.getApplicationContext()).getClient()
-                .queryPurchasesAsync(InAppBillingClient.INAPP_PARAMS, (billingResult, purchases) -> {
-                    if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                        for (Purchase purchase : purchases) {
-                            for (String premiumRequestProductId : mConfig.getPremiumRequestProductsId()) {
-                                if (purchase.getProducts().contains(premiumRequestProductId)) {
-                                    doesProductIdExist.set(true);
-                                    break;
+        if (this.getResources().getBoolean(R.bool.enable_restore_purchases)) {
+            CountDownLatch doneSignal = new CountDownLatch(1);
+            AtomicBoolean doesProductIdExist = new AtomicBoolean(false);
+            InAppBillingClient.get(this.getApplicationContext()).getClient()
+                    .queryPurchasesAsync(InAppBillingClient.INAPP_PARAMS, (billingResult, purchases) -> {
+                        if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
+                            for (Purchase purchase : purchases) {
+                                for (String premiumRequestProductId : mConfig.getPremiumRequestProductsId()) {
+                                    if (purchase.getProducts().contains(premiumRequestProductId)) {
+                                        doesProductIdExist.set(true);
+                                        break;
+                                    }
                                 }
                             }
+                        } else {
+                            LogUtil.e("Failed to query purchases. Response Code: " + billingResult.getResponseCode());
                         }
-                    } else {
-                        LogUtil.e("Failed to query purchases. Response Code: " + billingResult.getResponseCode());
-                    }
 
-                    doneSignal.countDown();
-                });
+                        doneSignal.countDown();
+                    });
 
-        try {
-            doneSignal.await();
-        } catch (InterruptedException e) {
-            LogUtil.e(Log.getStackTraceString(e));
-        }
+            try {
+                doneSignal.await();
+            } catch (InterruptedException e) {
+                LogUtil.e(Log.getStackTraceString(e));
+            }
 
-        if (doesProductIdExist.get()) {
-            RequestHelper.showPremiumRequestExist(this);
-            return;
+            if (doesProductIdExist.get()) {
+                RequestHelper.showPremiumRequestExist(this);
+                return;
+            }
         }
 
         InAppBillingFragment.showInAppBillingDialog(getSupportFragmentManager(),
