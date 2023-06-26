@@ -70,7 +70,6 @@
     <string name="tap_intro_home_navigation">Navigační panel</string>
     <string name="tap_intro_home_navigation_desc">Klepnutím sem nebo přejetím z levého okraje obrazovky otevřete navigační panel</string>
     <string name="tap_intro_home_apply">Použít balíček ikon</string>
-    <string name="tap_intro_home_apply_desc">Klepnutím sem použijete %s</string>
     <string name="tap_intro_icons_search">Hledat</string>
     <string name="tap_intro_icons_search_desc">Klepnutím sem vyhledejte ikony</string>
     <string name="tap_intro_request_select">Vybrat chybějící aplikace</string>
