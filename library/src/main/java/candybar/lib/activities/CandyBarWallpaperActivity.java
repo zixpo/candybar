@@ -178,7 +178,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                     PorterDuff.Mode.SRC_IN);
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && savedInstanceState == null) {
+        if (savedInstanceState == null) {
             Transition transition = getWindow().getSharedElementEnterTransition();
 
             if (transition != null) {
@@ -436,22 +436,20 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
         int bottom = 0;
         int right = WindowHelper.getNavigationBarHeight(this);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (mBack.getLayoutParams() instanceof CoordinatorLayout.LayoutParams) {
-                CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) mBack.getLayoutParams();
-                params.topMargin = WindowHelper.getStatusBarHeight(this);
-            }
+        if (mBack.getLayoutParams() instanceof CoordinatorLayout.LayoutParams) {
+            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) mBack.getLayoutParams();
+            params.topMargin = WindowHelper.getStatusBarHeight(this);
+        }
 
-            boolean tabletMode = getResources().getBoolean(com.danimahardhika.android.helpers.core.R.bool.android_helpers_tablet_mode);
-            if (tabletMode || getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                bottom = right;
-                right = 0;
-            }
+        boolean tabletMode = getResources().getBoolean(com.danimahardhika.android.helpers.core.R.bool.android_helpers_tablet_mode);
+        if (tabletMode || getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            bottom = right;
+            right = 0;
+        }
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                if (isInMultiWindowMode()) {
-                    bottom = right = 0;
-                }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            if (isInMultiWindowMode()) {
+                bottom = right = 0;
             }
         }
 

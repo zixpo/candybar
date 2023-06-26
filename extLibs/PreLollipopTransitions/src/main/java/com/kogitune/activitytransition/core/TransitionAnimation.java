@@ -22,7 +22,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -117,21 +116,7 @@ public class TransitionAnimation {
     }
 
     public static void startExitAnimation(MoveData moveData, TimeInterpolator interpolator, final Runnable endAction) {
-        if (Build.VERSION.SDK_INT >= 21) {
-            endAction.run();
-            return;
-        }
-        View view = moveData.toView;
-        int duration = moveData.duration;
-        int leftDelta = moveData.leftDelta;
-        int topDelta = moveData.topDelta;
-        float widthScale = moveData.widthScale;
-        float heightScale = moveData.heightScale;
-        view.animate()
-                .setDuration(duration)
-                .scaleX(widthScale).scaleY(heightScale)
-                .setInterpolator(interpolator).
-                translationX(leftDelta).translationY(topDelta);
-        view.postDelayed(endAction, duration);
+        endAction.run();
+        return;
     }
 }

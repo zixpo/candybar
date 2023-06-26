@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -172,11 +171,9 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
                 card.setCardElevation(0);
             }
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                StateListAnimator stateListAnimator = AnimatorInflater
-                        .loadStateListAnimator(mContext, R.animator.card_lift);
-                card.setStateListAnimator(stateListAnimator);
-            }
+            StateListAnimator stateListAnimator = AnimatorInflater
+                    .loadStateListAnimator(mContext, R.animator.card_lift);
+            card.setStateListAnimator(stateListAnimator);
 
             if (mIsShowName) {
                 name = itemView.findViewById(R.id.name);

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.Build;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
@@ -235,9 +234,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
                     StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        params.setMarginEnd(margin);
-                    }
+                    params.setMarginEnd(margin);
                 }
             }
 
@@ -286,9 +283,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
                     StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        params.setMarginEnd(margin);
-                    }
+                    params.setMarginEnd(margin);
                 }
             }
 
@@ -396,9 +391,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
                     StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        params.setMarginEnd(margin);
-                    }
+                    params.setMarginEnd(margin);
                 }
             }
 

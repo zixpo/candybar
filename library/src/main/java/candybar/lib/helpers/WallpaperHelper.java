@@ -8,7 +8,6 @@ import android.content.res.Configuration;
 import android.graphics.Point;
 import android.graphics.RectF;
 import android.net.Uri;
-import android.os.Build;
 import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
@@ -121,12 +120,6 @@ public class WallpaperHelper {
         if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             targetHeight = point.x;
             targetWidth = point.y;
-        }
-
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            int statusBarHeight = WindowHelper.getStatusBarHeight(context);
-            int navBarHeight = WindowHelper.getNavigationBarHeight(context);
-            targetHeight += (statusBarHeight + navBarHeight);
         }
 
         return new ImageSize(targetWidth, targetHeight);

@@ -194,22 +194,20 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         initNavigationView(toolbar);
         initNavigationViewHeader();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().clearFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION | WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.navigationBar));
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-            mDrawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
-            int visibilityFlags = 0;
-            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)) &&
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-                visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)) &&
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-                visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-            getWindow().getDecorView().setSystemUiVisibility(visibilityFlags);
-        }
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().clearFlags(
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION | WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.navigationBar));
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        mDrawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
+        int visibilityFlags = 0;
+        if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)) &&
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+        if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)) &&
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+        getWindow().getDecorView().setSystemUiVisibility(visibilityFlags);
 
         try {
             startService(new Intent(this, CandyBarService.class));

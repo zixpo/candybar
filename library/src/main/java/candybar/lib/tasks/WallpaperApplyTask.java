@@ -6,7 +6,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.Log;
@@ -21,7 +20,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.WindowHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.cafebar.CafeBar;
 import com.danimahardhika.cafebar.CafeBarTheme;
@@ -153,13 +151,6 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
                 ImageSize imageSize = WallpaperHelper.getTargetSize(mContext.get());
 
                 LogUtil.d("original rectF: " + mRectF);
-
-                if (mRectF != null && Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
-                    Point point = WindowHelper.getScreenSize(mContext.get());
-                    int height = point.y - WindowHelper.getStatusBarHeight(mContext.get()) - WindowHelper.getNavigationBarHeight(mContext.get());
-                    float heightFactor = (float) imageSize.height / (float) height;
-                    mRectF = WallpaperHelper.getScaledRectF(mRectF, heightFactor, 1f);
-                }
 
                 if (mRectF == null && Preferences.get(mContext.get()).isCropWallpaper()) {
                     /*
