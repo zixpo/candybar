@@ -68,7 +68,6 @@
     <string name="tap_intro_home_navigation">नेभिगेसन ड्रअर</string>
     <string name="tap_intro_home_navigation_desc">नेभिगेशन ड्रयर खोल्न यहाँ ट्याप गर्नुहोस् वा स्क्रिनको बायाँ छेउबाट स्वाइप गर्नुहोस्</string>
     <string name="tap_intro_home_apply">आइकन प्याक लागू गर्नुहोस्</string>
-    <string name="tap_intro_home_apply_desc">लागू गर्न यहाँ %s ट्याप गर्नुहोस्</string>
     <string name="tap_intro_icons_search">खोज्नुहोस्</string>
     <string name="tap_intro_icons_search_desc">आइकन खोज्नलाई यहाँ ट्याप गर्नुहोस्</string>
     <string name="tap_intro_request_select">समावेस नगरिएका एपहरु चयन गर्नुहोस्</string>
