@@ -70,7 +70,6 @@
     <string name="tap_intro_home_navigation">درج التنقل</string>
     <string name="tap_intro_home_navigation_desc">اضغط هنا أو اسحب من الحافة اليسرى للشاشة لفتح درج التنقل</string>
     <string name="tap_intro_home_apply">تطبيق حزمة الأيقونات</string>
-    <string name="tap_intro_home_apply_desc">اضغط هنا لتطبيق %s</string>
     <string name="tap_intro_icons_search">بحث</string>
     <string name="tap_intro_icons_search_desc">اضغط هنا للبحث عن أيقونة</string>
     <string name="tap_intro_request_select">تحديد التطبيق المفقود</string>
