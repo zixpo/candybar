@@ -70,7 +70,6 @@
     <string name="tap_intro_home_navigation">导航栏</string>
     <string name="tap_intro_home_navigation_desc">点击这里或者从屏幕左边缘滑动来打开导航抽屉</string>
     <string name="tap_intro_home_apply">应用图标包</string>
-    <string name="tap_intro_home_apply_desc">点此应用 %s</string>
     <string name="tap_intro_icons_search">搜索</string>
     <string name="tap_intro_icons_search_desc">点此搜索图标</string>
     <string name="tap_intro_request_select">选择未适配程序</string>
