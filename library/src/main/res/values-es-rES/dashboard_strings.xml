@@ -70,7 +70,6 @@ No podrás usarlo.</string>
     <string name="tap_intro_home_navigation">Cajón de navegación</string>
     <string name="tap_intro_home_navigation_desc">Pulsa aquí o desliza desde el borde izquierdo de la pantalla para abrir el cajón de navegación</string>
     <string name="tap_intro_home_apply">Establecer el paquete de iconos</string>
-    <string name="tap_intro_home_apply_desc">Pulsa aquí para establecer %s</string>
     <string name="tap_intro_icons_search">Buscar</string>
     <string name="tap_intro_icons_search_desc">Pulsa aquí para buscar un icono</string>
     <string name="tap_intro_request_select">Seleccionar la aplicación perdida</string>
