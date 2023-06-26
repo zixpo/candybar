@@ -54,7 +54,6 @@
     <string name="tap_intro_home_navigation">Oldalak áttekintése</string>
     <string name="tap_intro_home_navigation_desc">Kattints ide, vagy csúsztasd az ujjadat a képernyő bal szélétől a navigációs sáv megnyitásához!</string>
     <string name="tap_intro_home_apply">Ikon csomag engedélyezése</string>
-    <string name="tap_intro_home_apply_desc">A %s engedélyezéséhez kattints ide!</string>
     <string name="tap_intro_icons_search">Keresés</string>
     <string name="tap_intro_icons_search_desc">Az ikon kereséséhez kattints ide!</string>
     <string name="tap_intro_request_select">Hiányzó alkalmazásikonok</string>
