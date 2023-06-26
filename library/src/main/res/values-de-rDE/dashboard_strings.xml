@@ -70,7 +70,6 @@ Du wirst nicht in der der Lage sein sie zu nutzen.</string>
     <string name="tap_intro_home_navigation">Navigationsübrsicht</string>
     <string name="tap_intro_home_navigation_desc">Klicke hier oder wische vom linken Rand des Bildschirms, um die Navigationsübersicht zu öffnen</string>
     <string name="tap_intro_home_apply">Icon Pack anwenden</string>
-    <string name="tap_intro_home_apply_desc">Klicke hier, um %s anzuwenden</string>
     <string name="tap_intro_icons_search">Suchen</string>
     <string name="tap_intro_icons_search_desc">Klicke hier, um nach Icons zu suchen</string>
     <string name="tap_intro_request_select">Fehlende App auswählen</string>
