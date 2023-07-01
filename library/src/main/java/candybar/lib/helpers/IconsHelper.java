@@ -1,8 +1,6 @@
 package candybar.lib.helpers;
 
-import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
 import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
-import static candybar.lib.helpers.DrawableHelper.toBitmap;
 
 import android.app.Activity;
 import android.content.Context;
@@ -85,7 +83,7 @@ public class IconsHelper {
                 } else if (parser.getName().equals("item")) {
                     String drawableName = parser.getAttributeValue(null, "drawable");
                     String customName = parser.getAttributeValue(null, "name");
-                    int id = getResourceId(context, drawableName);
+                    int id = DrawableHelper.getDrawableId(drawableName);
                     if (id > 0) {
                         icons.add(new Icon(drawableName, customName, id));
                     }
@@ -263,7 +261,7 @@ public class IconsHelper {
 
     @Nullable
     public static String saveIcon(List<String> files, File directory, Drawable drawable, String name) {
-        Bitmap bitmap = toBitmap(drawable);
+        Bitmap bitmap = DrawableHelper.toBitmap(drawable);
         assert bitmap != null;
         return saveBitmap(files, directory, bitmap, name);
     }

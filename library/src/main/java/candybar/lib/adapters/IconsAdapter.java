@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -28,6 +29,7 @@ import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.google.android.material.tabs.TabLayout;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -65,13 +67,18 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     private List<Icon> mIcons;
     private List<Icon> mIconsAll;
     private final Fragment mFragment;
-    private final List<ViewHolder> mViewHolders;
+    private WeakReference<RecyclerView> mRecyclerView = null;
 
     private List<Icon> mSelectedIcons = new ArrayList<>();
+
+    private int visibleStart;
+    private int visibleEnd;
 
     private final boolean mIsShowIconName;
     private final boolean mIsBookmarkMode;
 
+    // NOTE: In bookmark mode we don't need to optimize things a lot
+    // It's not like the users are going to bookmark a lot
     private ActionMode actionMode;
     private final ActionMode.Callback actionModeCallback = new ActionMode.Callback() {
         @Override
@@ -99,8 +106,9 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
             ((ViewPager2) activity.findViewById(R.id.pager)).setUserInputEnabled(false);
             ((DrawerLayout) activity.findViewById(R.id.drawer_layout))
                     .setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-            for (ViewHolder holder : mViewHolders) {
-                holder.onActionModeChange();
+            for (int i = 0; i < mIcons.size(); i++) {
+                ViewHolder holder = getViewHolderAt(i);
+                if (holder != null) holder.onActionModeChange();
             }
             return true;
         }
@@ -126,13 +134,15 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
                 return true;
             } else if (itemId == R.id.menu_select_all) {
                 if (mSelectedIcons.size() != mIcons.size()) {
-                    for (ViewHolder holder : mViewHolders) {
-                        holder.setChecked(true, true);
+                    for (int i = 0; i < mIcons.size(); i++) {
+                        ViewHolder holder = getViewHolderAt(i);
+                        if (holder != null) holder.setChecked(true, true);
                     }
                     mSelectedIcons = new ArrayList<>(mIcons);
                 } else {
-                    for (ViewHolder holder : mViewHolders) {
-                        holder.setChecked(false, true);
+                    for (int i = 0; i < mIcons.size(); i++) {
+                        ViewHolder holder = getViewHolderAt(i);
+                        if (holder != null) holder.setChecked(false, true);
                     }
                     mSelectedIcons = new ArrayList<>();
                 }
@@ -157,8 +167,9 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
             ((ViewPager2) activity.findViewById(R.id.pager)).setUserInputEnabled(true);
             ((DrawerLayout) activity.findViewById(R.id.drawer_layout))
                     .setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-            for (ViewHolder holder : mViewHolders) {
-                holder.onActionModeChange();
+            for (int i = 0; i < mIcons.size(); i++) {
+                ViewHolder holder = getViewHolderAt(i);
+                if (holder != null) holder.onActionModeChange();
             }
         }
     };
@@ -168,13 +179,36 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         mFragment = fragment;
         mIcons = icons;
         mIsShowIconName = mContext.getResources().getBoolean(R.bool.show_icon_name);
-        mViewHolders = new ArrayList<>();
         mIsBookmarkMode = isBookmarkMode;
     }
 
     public void setIcons(@NonNull List<Icon> icons) {
         mIcons = icons;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        mRecyclerView = new WeakReference<>(recyclerView);
+        RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
+        if (manager instanceof GridLayoutManager && getItemCount() > 0) {
+            GridLayoutManager glm = (GridLayoutManager) manager;
+            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                    super.onScrollStateChanged(recyclerView, newState);
+                }
+
+                @Override
+                public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                    super.onScrolled(recyclerView, dx, dy);
+                    visibleStart = glm.findFirstVisibleItemPosition();
+                    visibleEnd = glm.findLastVisibleItemPosition();
+                    // LogUtil.d(String.format(Locale.ENGLISH, "[Start, End]: [%d, %d]", visibleStart, visibleEnd));
+                }
+            });
+        }
     }
 
     @NonNull
@@ -189,7 +223,6 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, int position) {
         Icon icon = mIcons.get(position);
         holder.name.setText(icon.getTitle());
-        mViewHolders.add(holder);
         loadIconInto(holder.icon, position);
         if (mIsBookmarkMode) {
             holder.setCheckChangedListener(null);
@@ -207,8 +240,17 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
 
     @Override
     public void onViewRecycled(@NonNull ViewHolder holder) {
-        mViewHolders.remove(holder);
+        Glide.with(mFragment).clear(holder.icon);
         super.onViewRecycled(holder);
+    }
+
+    @Override
+    public int getItemCount() {
+        return mIcons.size();
+    }
+
+    private ViewHolder getViewHolderAt(int position) {
+        return (ViewHolder) mRecyclerView.get().findViewHolderForAdapterPosition(position);
     }
 
     private void loadIconInto(ImageView imageView, int position) {
@@ -222,20 +264,13 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     }
 
     public void reloadIcons() {
-        Glide.get(mContext).clearMemory();
-        for (ViewHolder holder : mViewHolders) {
-            int position = holder.getBindingAdapterPosition();
-            if (position < 0 || position > getItemCount()) continue;
-            loadIconInto(holder.icon, holder.getBindingAdapterPosition());
+        for (int i = visibleStart; i <= visibleEnd; i++) {
+            ViewHolder holder = getViewHolderAt(i);
+            if (holder != null) loadIconInto(holder.icon, i);
         }
     }
 
-    @Override
-    public int getItemCount() {
-        return mIcons.size();
-    }
-
-    interface CheckChangedListener {
+    private interface CheckChangedListener {
         void onCheckChanged(boolean isChecked);
     }
 
@@ -338,22 +373,21 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
             //      - Contains all icons
             //      - Icons are sorted
             // Check IconSearchFragment.java line 205-275
-            // So we don't need to do any sorting here
+            // We don't need to do any sorting here
 
             // Copy icons to `mIconsAll`
             mIconsAll = mIcons;
         }
 
-        String query = string.toLowerCase(Locale.getDefault()).trim();
+        String query = string.toLowerCase(Locale.ENGLISH).trim();
 
         mIcons = new ArrayList<>();
         if (query.length() == 0) mIcons.addAll(mIconsAll);
         else {
-            Locale defaultLocale = Locale.getDefault();
             for (int i = 0; i < mIconsAll.size(); i++) {
                 Icon icon = mIconsAll.get(i);
                 String name = icon.getTitle();
-                name = name.toLowerCase(defaultLocale);
+                name = name.toLowerCase(Locale.ENGLISH);
                 if (name.contains(query)) {
                     mIcons.add(icon);
                 }
@@ -383,6 +417,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
                     }}
             );
         }
+
         notifyDataSetChanged();
     }
 }

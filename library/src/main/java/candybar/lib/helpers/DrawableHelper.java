@@ -28,8 +28,10 @@ import androidx.core.content.res.ResourcesCompat;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.io.ByteArrayOutputStream;
+import java.lang.reflect.Field;
 
 import candybar.lib.R;
+import candybar.lib.applications.CandyBarApplication;
 import sarsamurmu.adaptiveicon.AdaptiveIcon;
 
 /*
@@ -140,5 +142,15 @@ public class DrawableHelper {
         appBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
         String base64Icon = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
         return base64Icon.trim();
+    }
+
+    public static int getDrawableId(String resource) {
+        try {
+            Field idField = CandyBarApplication.mDrawableClass.getDeclaredField(resource);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            LogUtil.e("Reflect resource not found with name - " + resource);
+            return -1;
+        }
     }
 }

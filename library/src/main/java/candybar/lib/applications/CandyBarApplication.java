@@ -49,11 +49,15 @@ public abstract class CandyBarApplication extends Application {
     private static Configuration mConfiguration;
     private Thread.UncaughtExceptionHandler mHandler;
 
+    public static Class<?> mDrawableClass;
     public static Request.Property sRequestProperty;
     public static String sZipPath = null;
 
     @NonNull
     public abstract Configuration onInit();
+
+    @NonNull
+    public abstract Class<?> getDrawableClass();
 
     public static Configuration getConfiguration() {
         if (mConfiguration == null) {
@@ -72,6 +76,7 @@ public abstract class CandyBarApplication extends Application {
         LogUtil.setLoggingEnabled(true);
 
         mConfiguration = onInit();
+        mDrawableClass = getDrawableClass();
 
         if (mConfiguration.mIsCrashReportEnabled) {
             mHandler = Thread.getDefaultUncaughtExceptionHandler();

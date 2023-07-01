@@ -1,5 +1,7 @@
 package candybar.lib.adapters;
 
+import static candybar.lib.helpers.DrawableHelper.getDrawableId;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -221,7 +223,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 headerViewHolder.image.setBackgroundColor(Color.parseColor(uri));
             } else {
                 if (!URLUtil.isValidUrl(uri)) {
-                    uri = "drawable://" + DrawableHelper.getResourceId(mContext, uri);
+                    uri = "drawable://" + getDrawableId(uri);
                 }
 
                 if (CandyBarGlideModule.isValidContextForGlide(mContext)) {

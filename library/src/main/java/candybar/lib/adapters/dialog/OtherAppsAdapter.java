@@ -1,5 +1,7 @@
 package candybar.lib.adapters.dialog;
 
+import static candybar.lib.helpers.DrawableHelper.getDrawableId;
+
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +20,6 @@ import androidx.annotation.NonNull;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.util.List;
@@ -84,7 +85,7 @@ public class OtherAppsAdapter extends BaseAdapter {
         CandyBarApplication.OtherApp otherApp = mOtherApps.get(position);
         String uri = otherApp.getIcon();
         if (!URLUtil.isValidUrl(uri)) {
-            uri = "drawable://" + DrawableHelper.getResourceId(mContext, uri);
+            uri = "drawable://" + getDrawableId(uri);
         }
 
         if (CandyBarGlideModule.isValidContextForGlide(mContext)) {

@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.lifecycle.Lifecycle;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -30,6 +31,7 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.List;
 
@@ -80,6 +82,18 @@ public class IconsBaseFragment extends Fragment {
         mProgress = view.findViewById(R.id.progress);
         initTabs();
         mPager.setOffscreenPageLimit(2);
+        // Reduce sensitivity of ViewPager
+        try {
+            Field recyclerViewField = ViewPager2.class.getDeclaredField("mRecyclerView");
+            recyclerViewField.setAccessible(true);
+            RecyclerView recyclerView = (RecyclerView) recyclerViewField.get(mPager);
+            Field touchSlopField = RecyclerView.class.getDeclaredField("mTouchSlop");
+            touchSlopField.setAccessible(true);
+            int touchSlop = (int) touchSlopField.get(recyclerView);
+            touchSlopField.set(recyclerView, touchSlop * 3);
+        } catch (Exception e) {
+            LogUtil.d(Log.getStackTraceString(e));
+        }
         return view;
     }
 

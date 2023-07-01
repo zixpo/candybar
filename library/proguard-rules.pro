@@ -2,16 +2,6 @@
 -keepattributes SourceFile, LineNumberTable
 -renamesourcefileattribute SourceFile
 
-# Needed for helpers.sharpie classes
-# I guess they doesn't matter because all the methods we are using
-# are part of the `android.**` package and `android` package remains consistent
-# across devices
-#-keepclassmembers class android.content.Context { <methods>; }
-#-keepclassmembers class android.content.pm.PackageManager { <methods>; }
-#-keepclassmembers class android.content.res.Resources { <methods>; }
-#-keepclassmembers class android.widget.Toast { <methods>; }
-#-keepclassmembers class androidx.appcompat.app.AppCompatActivity { <methods>; }
-
 # LoganSquare JSON parser
 -keep class com.bluelinelabs.logansquare.** { *; }
 -keep @com.bluelinelabs.logansquare.annotation.JsonObject class *

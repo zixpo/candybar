@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.ViewHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
@@ -94,6 +95,7 @@ public class IconsSearchFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.icons_grid);
         mFastScroll = view.findViewById(R.id.fastscroll);
         mSearchResult = view.findViewById(R.id.search_result);
+//        Glide.get(getActivity()).setMemoryCategory(MemoryCategory.LOW);
         return view;
     }
 
@@ -192,6 +194,11 @@ public class IconsSearchFragment extends Fragment {
     public void onDestroy() {
         if (mAsyncTask != null) mAsyncTask.cancel(true);
         currentAdapter = null;
+        Activity activity = getActivity();
+        if (activity != null) {
+//            Glide.get(activity).setMemoryCategory(MemoryCategory.NORMAL);
+            Glide.get(activity).clearMemory();
+        }
         super.onDestroy();
     }
 
