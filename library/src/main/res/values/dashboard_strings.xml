@@ -232,6 +232,7 @@
     <string name="wallpaper_already_downloaded">Wallpaper already downloaded</string>
     <string name="wallpaper_downloading">Downloading wallpaper …</string>
     <string name="wallpaper_download_failed">Unable to download wallpaper</string>
+    <string name="wallpaper_download_success">Wallpaper download successful</string>
 
     <string name="wallpaper_loading">Loading wallpaper …</string>
     <string name="wallpaper_applying">Applying wallpaper …</string>

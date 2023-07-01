@@ -10,6 +10,7 @@ import android.util.Log;
 import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
@@ -69,6 +70,35 @@ public class WallpaperDownloader {
                 .show();
     }
 
+    private void showOpenFileCafeBar(@StringRes int textRes, File target) {
+        CafeBar.builder(mContext)
+                .theme(CafeBarTheme.Custom(ContextCompat.getColor(mContext, R.color.cardBackground)))
+                .floating(true)
+                .fitSystemWindow()
+                .duration(CafeBar.Duration.MEDIUM)
+                .typeface(TypefaceHelper.getRegular(mContext), TypefaceHelper.getBold(mContext))
+                .content(textRes)
+                .neutralText(R.string.open)
+                .onNeutral(cafeBar -> {
+                    Uri uri = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
+                            ? Uri.parse(target.toString())
+                            : Uri.fromFile(target);
+
+                    if (uri == null) {
+                        cafeBar.dismiss();
+                        return;
+                    }
+
+                    mContext.startActivity(new Intent()
+                            .setAction(Intent.ACTION_VIEW)
+                            .setDataAndType(uri, "image/*")
+                            .setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
+
+                    cafeBar.dismiss();
+                })
+                .show();
+    }
+
     public void start() {
         String fileName = mWallpaper.getName() + "." + WallpaperHelper.getFormat(mWallpaper.getMimeType());
         String appName = mContext.getResources().getString(R.string.app_name);
@@ -93,32 +123,7 @@ public class WallpaperDownloader {
             File target = new File(directory, fileName);
 
             if (target.exists()) {
-                CafeBar.builder(mContext)
-                        .theme(CafeBarTheme.Custom(ContextCompat.getColor(mContext, R.color.cardBackground)))
-                        .floating(true)
-                        .fitSystemWindow()
-                        .duration(CafeBar.Duration.MEDIUM)
-                        .typeface(TypefaceHelper.getRegular(mContext), TypefaceHelper.getBold(mContext))
-                        .content(R.string.wallpaper_already_downloaded)
-                        .neutralText(R.string.open)
-                        .onNeutral(cafeBar -> {
-                            Uri uri = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
-                                    ? Uri.parse(target.toString())
-                                    : Uri.fromFile(target);
-
-                            if (uri == null) {
-                                cafeBar.dismiss();
-                                return;
-                            }
-
-                            mContext.startActivity(new Intent()
-                                    .setAction(Intent.ACTION_VIEW)
-                                    .setDataAndType(uri, "image/*")
-                                    .setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
-
-                            cafeBar.dismiss();
-                        })
-                        .show();
+                showOpenFileCafeBar(R.string.wallpaper_already_downloaded, target);
                 return;
             }
         } catch (SecurityException e) {
@@ -133,14 +138,16 @@ public class WallpaperDownloader {
         }
 
         if (url.startsWith("assets://")) {
+            showCafeBar(R.string.wallpaper_downloading);
+
             try {
                 InputStream is = mContext.getAssets().open(url.replaceFirst("assets://", ""));
                 File output = new File(directory, fileName);
-                if (!directory.exists() && directory.mkdirs()) {
-                    return;
+                if (!directory.exists()) {
+                    if (!directory.mkdirs()) return;
                 }
-                if (!output.exists() && output.createNewFile()) {
-                    return;
+                if (!output.exists()) {
+                    if (!output.createNewFile()) return;
                 }
                 OutputStream os = new FileOutputStream(output);
                 byte[] buffer = new byte[1024];
@@ -148,11 +155,13 @@ public class WallpaperDownloader {
                 while ((read = is.read(buffer)) != -1) {
                     os.write(buffer, 0, read);
                 }
+
                 mContext.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(output)));
+
+                showOpenFileCafeBar(R.string.wallpaper_download_success, output);
             } catch (Exception e) {
                 LogUtil.e(Log.getStackTraceString(e));
                 showCafeBar(R.string.wallpaper_download_failed);
-                return;
             }
         } else {
             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
@@ -174,9 +183,9 @@ public class WallpaperDownloader {
                 showCafeBar(R.string.wallpaper_download_failed);
                 return;
             }
-        }
 
-        showCafeBar(R.string.wallpaper_downloading);
+            showCafeBar(R.string.wallpaper_downloading);
+        }
     }
 
     public static WallpaperDownloader prepare(@NonNull Context context) {
