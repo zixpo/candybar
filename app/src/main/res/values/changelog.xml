@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="changelog_date" translatable="false">July 1, 2023</string>
 
-    <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">June 26, 2023</string>
-
-    <!-- Changelog support html formatting
-    * <b> for Bold
-    * <i> for Italic
-    * <u> for Underline
-    * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Fix issue related to restore purchases</item>
-        <item>Probably fix issue with icon search when navigating back</item>
-        <item>Minor fixes</item>
+        <item>Improved initial load speed. Now loads all icons under 5 seconds.</item>
+        <item>Fixed memory leak in icon search, uses less memory.</item>
+        <item>Fixed unable to download offline wallpapers.</item>
     </string-array>
 
 </resources>

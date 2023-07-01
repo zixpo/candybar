@@ -2,10 +2,16 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.18.0
+
+- Improved initial load speed. Now loads 30000 icons under 5 seconds.
+- Fixed memory leak in icon search, uses less memory.
+- Fixed unable to download offline wallpapers.
+
 # v3.17.5
 
-- Fix issue related to restore purchases
-- Probably fix issue with icon search when navigating back
+- Fix the issue related to "Restore purchases"
+- Probably fix the issue with icon search when navigating back
 - Minor fixes
 
 # v3.17.4
