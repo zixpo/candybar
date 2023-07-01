@@ -200,6 +200,7 @@
     <string name="wallpaper_already_downloaded">Tapeta je již stažena</string>
     <string name="wallpaper_downloading">Stahování tapety …</string>
     <string name="wallpaper_download_failed">Nelze stáhnout tapetu</string>
+    <string name="wallpaper_download_success">Tapeta úspěšně stažena</string>
     <string name="wallpaper_loading">Načítání tapety …</string>
     <string name="wallpaper_applying">Použití tapety …</string>
     <string name="wallpaper_applied">Tapeta byla použita</string>
