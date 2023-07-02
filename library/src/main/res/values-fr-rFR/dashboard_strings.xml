@@ -204,6 +204,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="wallpaper_already_downloaded">Fond d\'écran déjà téléchargé</string>
     <string name="wallpaper_downloading">Téléchargement du fond d\'écran …</string>
     <string name="wallpaper_download_failed">Impossible de télécharger le fond d\'écran</string>
+    <string name="wallpaper_download_success">Fond d\'écran téléchargé avec succès</string>
     <string name="wallpaper_loading">Chargement du fond d\'écran …</string>
     <string name="wallpaper_applying">Application du fond d\'écran …</string>
     <string name="wallpaper_applied">Fond d\'écran appliqué</string>
