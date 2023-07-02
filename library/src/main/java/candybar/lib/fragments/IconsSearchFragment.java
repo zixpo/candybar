@@ -240,9 +240,7 @@ public class IconsSearchFragment extends Fragment {
                         CandyBarMainActivity.sSections = IconsHelper.getIconsList(requireActivity());
 
                         for (Icon section : CandyBarMainActivity.sSections) {
-                            if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
-                                IconsHelper.computeTitles(requireActivity(), section.getIcons());
-                            }
+                            IconsHelper.computeTitles(requireActivity(), section.getIcons());
                         }
 
                         if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
