@@ -32,7 +32,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.lang.reflect.Field;
-import java.util.Collections;
 import java.util.List;
 
 import candybar.lib.R;
@@ -207,29 +206,7 @@ public class IconsBaseFragment extends Fragment {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    if (CandyBarMainActivity.sSections == null) {
-                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(requireActivity());
-
-                        for (int i = 0; i < CandyBarMainActivity.sSections.size(); i++) {
-                            List<Icon> icons = CandyBarMainActivity.sSections.get(i).getIcons();
-
-                            if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
-                                IconsHelper.computeTitles(requireActivity(), icons);
-                            }
-
-                            if (requireActivity().getResources().getBoolean(R.bool.enable_icons_sort)) {
-                                Collections.sort(icons, Icon.TitleComparator);
-
-                                CandyBarMainActivity.sSections.get(i).setIcons(icons);
-                            }
-                        }
-
-                        if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
-                            List<Icon> icons = IconsHelper.getTabAllIcons();
-                            CandyBarMainActivity.sSections.add(new Icon(
-                                    CandyBarApplication.getConfiguration().getTabAllIconsTitle(), icons));
-                        }
-                    }
+                    IconsHelper.loadIcons(requireActivity(), true);
                     return true;
                 } catch (Exception e) {
                     LogUtil.e(Log.getStackTraceString(e));

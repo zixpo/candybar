@@ -58,6 +58,29 @@ import candybar.lib.utils.CandyBarGlideModule;
  */
 
 public class IconsHelper {
+    public static void loadIcons(Context context, boolean sortIcons) throws Exception {
+        // Load icons only if they are not loaded
+        if (CandyBarMainActivity.sSections == null) {
+            CandyBarMainActivity.sSections = getIconsList(context);
+
+            for (Icon section : CandyBarMainActivity.sSections) {
+                List<Icon> icons = section.getIcons();
+
+                computeTitles(context, icons);
+
+                if (sortIcons && context.getResources().getBoolean(R.bool.enable_icons_sort)) {
+                    Collections.sort(icons, Icon.TitleComparator);
+                    section.setIcons(icons);
+                }
+            }
+
+            if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
+                List<Icon> icons = getTabAllIcons();
+                CandyBarMainActivity.sSections.add(new Icon(
+                        CandyBarApplication.getConfiguration().getTabAllIconsTitle(), icons));
+            }
+        }
+    }
 
     @NonNull
     public static List<Icon> getIconsList(@NonNull Context context) throws Exception {

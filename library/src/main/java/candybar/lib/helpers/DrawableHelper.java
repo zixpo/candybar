@@ -147,7 +147,7 @@ public class DrawableHelper {
     public static int getDrawableId(String resource) {
         try {
             Field idField = CandyBarApplication.mDrawableClass.getDeclaredField(resource);
-            return idField.getInt(idField);
+            return idField.getInt(null);
         } catch (Exception e) {
             LogUtil.e("Reflect resource not found with name - " + resource);
             return -1;

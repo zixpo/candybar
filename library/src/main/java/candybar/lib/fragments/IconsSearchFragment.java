@@ -236,19 +236,8 @@ public class IconsSearchFragment extends Fragment {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    if (CandyBarMainActivity.sSections == null) {
-                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(requireActivity());
 
-                        for (Icon section : CandyBarMainActivity.sSections) {
-                            IconsHelper.computeTitles(requireActivity(), section.getIcons());
-                        }
-
-                        if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
-                            List<Icon> icons = IconsHelper.getTabAllIcons();
-                            CandyBarMainActivity.sSections.add(new Icon(
-                                    CandyBarApplication.getConfiguration().getTabAllIconsTitle(), icons));
-                        }
-                    }
+                    IconsHelper.loadIcons(requireActivity(), false);
 
                     for (Icon icon : CandyBarMainActivity.sSections) {
                         if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
