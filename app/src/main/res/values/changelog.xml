@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="changelog_date" translatable="false">July 1, 2023</string>
+    <string name="changelog_date" translatable="false">July 2, 2023</string>
 
     <string-array name="changelog">
         <item>Improved initial load speed. Now loads all icons under 5 seconds.</item>
         <item>Fixed memory leak in icon search, uses less memory.</item>
         <item>Fixed unable to download offline wallpapers.</item>
+        <item>Fix icon search not loading when `show_icon_name` is set to `false`.</item>
     </string-array>
 
 </resources>

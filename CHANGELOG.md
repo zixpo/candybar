@@ -2,20 +2,20 @@
 
 [Donnnno]: https://github.com/Donnnno
 
-# v3.18.0
+# v3.18.2
+- Fix icon search not loading when `show_icon_name` is set to `false`
 
+# v3.18.0
 - Improved initial load speed. Now loads 30000 icons under 5 seconds.
 - Fixed memory leak in icon search, uses less memory.
 - Fixed unable to download offline wallpapers.
 
 # v3.17.5
-
 - Fix the issue related to "Restore purchases"
 - Probably fix the issue with icon search when navigating back
 - Minor fixes
 
 # v3.17.4
-
 - Ability to load wallpapers from `assets`
 - Removed MultiDex (thanks to [@connyduck](https://github.com/connyduck))
 - Added support for visibly disabled requests (thanks to [@moertel][moertel])
