@@ -68,6 +68,7 @@
     <string name="tap_intro_home_navigation">नेभिगेसन ड्रअर</string>
     <string name="tap_intro_home_navigation_desc">नेभिगेशन ड्रयर खोल्न यहाँ ट्याप गर्नुहोस् वा स्क्रिनको बायाँ छेउबाट स्वाइप गर्नुहोस्</string>
     <string name="tap_intro_home_apply">आइकन प्याक लागू गर्नुहोस्</string>
+    <string name="tap_intro_home_apply_desc">तपाईंको हालको लन्चरमा %s लागू गर्न यहाँ ट्याप गर्नुहोस्। अन्य लन्चरहरूमा लागू गर्न लामो प्रेस गर्नुहोस्।</string>
     <string name="tap_intro_icons_search">खोज्नुहोस्</string>
     <string name="tap_intro_icons_search_desc">आइकन खोज्नलाई यहाँ ट्याप गर्नुहोस्</string>
     <string name="tap_intro_request_select">समावेस नगरिएका एपहरु चयन गर्नुहोस्</string>
@@ -105,9 +106,13 @@
     <string name="apply_installed">स्थापित लन्चर (हरु)</string>
     <string name="apply_supported">समर्थन गर्ने लन्चरहरु</string>
     <string name="apply_manual">%1$s लन्चरबाट सिधै लागु गर्न सकिएन, तर लन्चरको सेटिङ बाट %2$s म्यानुअली लागु गर्न सकिनेछ।</string>
+    <string name="apply_manual_kvaesitso">Kvaesito  सिधै एप्लाई गर्न मिल्दैन तर तपाईंले यी चरणहरूको पालना गर्न सक्नुहुनेछ:</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitso को सेटिङ्हरु खोल्नुहोस </string>
+    <string name="apply_manual_kvaesitso_step_2">\"ग्रिड र आइकनहरू\" ट्याप गर्नुहोस्</string>
     <string name="apply_manual_kvaesitso_step_3">\"आइकन प्याक्\" मा ट्याप गर्नुहोस </string>
     <string name="apply_manual_kvaesitso_step_4">दिईएको सूचीबाट %s छान्नुहोस्</string>
     <string name="apply_manual_kvaesitso_step_5">पृष्ठभूमिको आकार इन्याबल वा डिसबल गर्न पेन्ट ब्रश आइकनमा ट्याप गर्नुहोस्</string>
+    <string name="apply_manual_kiss">KISS सिधै एप्लाई गर्न मिल्दैन तर तपाईंले यी चरणहरूको पालना गर्न सक्नुहुनेछ:</string>
     <string name="apply_manual_kiss_step_1">KISS सेटिङ खोल्नुहोस </string>
     <string name="apply_manual_kiss_step_2">\"युजर एन्टरफेस्\" मा ट्याप गर्नुहोस </string>
     <string name="apply_manual_kiss_step_3">\"आइकन प्याक्\" मा ट्याप गर्नुहोस </string>
