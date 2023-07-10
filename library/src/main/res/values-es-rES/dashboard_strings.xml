@@ -70,6 +70,7 @@ No podrás usarlo.</string>
     <string name="tap_intro_home_navigation">Cajón de navegación</string>
     <string name="tap_intro_home_navigation_desc">Pulsa aquí o desliza desde el borde izquierdo de la pantalla para abrir el cajón de navegación</string>
     <string name="tap_intro_home_apply">Establecer el paquete de iconos</string>
+    <string name="tap_intro_home_apply_desc">Pulsa aquí para aplicar %s a tu lanzador actual. Mantén pulsado para aplicar a otros lanzadores.</string>
     <string name="tap_intro_icons_search">Buscar</string>
     <string name="tap_intro_icons_search_desc">Pulsa aquí para buscar un icono</string>
     <string name="tap_intro_request_select">Seleccionar la aplicación perdida</string>
@@ -107,6 +108,15 @@ No podrás usarlo.</string>
     <string name="apply_installed">Launcher instalado</string>
     <string name="apply_supported">Launchers soportados</string>
     <string name="apply_manual">%1$s Launcher no soporta aplicarlo directamente pero puedes aplicar %2$s manualmente desde los ajustes del Launcher.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso no admite aplicarlo directamente, pero puedes seguir estos pasos:</string>
+    <string name="apply_manual_kvaesitso_step_1">Abrir los ajustes de Kvaesitso</string>
+    <string name="apply_manual_kvaesitso_step_2">Pulsa \"Rejilla &amp; Iconos\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Pulsa en el \"Paquete de iconos\"</string>
+    <string name="apply_manual_kvaesitso_step_5">Pulsa el icono del pincel para activar o desactivar la forma de fondo</string>
+    <string name="apply_manual_kiss">KISS no admite aplicarlo directamente, pero puedes seguir estos pasos:</string>
+    <string name="apply_manual_kiss_step_1">Abrir los ajustes de KISS</string>
+    <string name="apply_manual_kiss_step_2">Pulsa \"Interfaz de usuario\"</string>
+    <string name="apply_manual_kiss_step_3">Pulsa en el \"Paquete de iconos\"</string>
     <string name="apply_launch_failed">No se pueden iniciar los ajustes de %s  </string>
     <string name="apply_launcher_not_installed">%s no está instalado. ¿Quieres abrir Google Play Store para descargarlo e instalarlo?</string>
     <string name="apply_launcher_not_installable">%s Launcher no está instalado. Por favor inténtalo de nuevo despues de instalar el launcher.</string>
@@ -176,6 +186,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="wallpaper_already_downloaded">Fondo de pantalla ya descargado</string>
     <string name="wallpaper_downloading">Descargando fondo de pantalla …</string>
     <string name="wallpaper_download_failed">No se puede descargar el fondo de pantalla</string>
+    <string name="wallpaper_download_success">Fondo descargado correctamente</string>
     <string name="wallpaper_loading">Cargando fondo de pantalla …</string>
     <string name="wallpaper_applying">Estableciendo fondo de pantalla …</string>
     <string name="wallpaper_applied">Fondo de pantalla establecido</string>
