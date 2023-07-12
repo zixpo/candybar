@@ -10,6 +10,7 @@ import android.util.Log;
 import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
@@ -18,6 +19,9 @@ import com.danimahardhika.cafebar.CafeBar;
 import com.danimahardhika.cafebar.CafeBarTheme;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import candybar.lib.R;
 import candybar.lib.helpers.TypefaceHelper;
@@ -66,6 +70,35 @@ public class WallpaperDownloader {
                 .show();
     }
 
+    private void showOpenFileCafeBar(@StringRes int textRes, File target) {
+        CafeBar.builder(mContext)
+                .theme(CafeBarTheme.Custom(ContextCompat.getColor(mContext, R.color.cardBackground)))
+                .floating(true)
+                .fitSystemWindow()
+                .duration(CafeBar.Duration.MEDIUM)
+                .typeface(TypefaceHelper.getRegular(mContext), TypefaceHelper.getBold(mContext))
+                .content(textRes)
+                .neutralText(R.string.open)
+                .onNeutral(cafeBar -> {
+                    Uri uri = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
+                            ? Uri.parse(target.toString())
+                            : Uri.fromFile(target);
+
+                    if (uri == null) {
+                        cafeBar.dismiss();
+                        return;
+                    }
+
+                    mContext.startActivity(new Intent()
+                            .setAction(Intent.ACTION_VIEW)
+                            .setDataAndType(uri, "image/*")
+                            .setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
+
+                    cafeBar.dismiss();
+                })
+                .show();
+    }
+
     public void start() {
         String fileName = mWallpaper.getName() + "." + WallpaperHelper.getFormat(mWallpaper.getMimeType());
         String appName = mContext.getResources().getString(R.string.app_name);
@@ -90,64 +123,69 @@ public class WallpaperDownloader {
             File target = new File(directory, fileName);
 
             if (target.exists()) {
-                CafeBar.builder(mContext)
-                        .theme(CafeBarTheme.Custom(ContextCompat.getColor(mContext, R.color.cardBackground)))
-                        .floating(true)
-                        .fitSystemWindow()
-                        .duration(CafeBar.Duration.MEDIUM)
-                        .typeface(TypefaceHelper.getRegular(mContext), TypefaceHelper.getBold(mContext))
-                        .content(R.string.wallpaper_already_downloaded)
-                        .neutralText(R.string.open)
-                        .onNeutral(cafeBar -> {
-                            Uri uri = Build.VERSION.SDK_INT >= Build.VERSION_CODES.N
-                                    ? Uri.parse(target.toString())
-                                    : Uri.fromFile(target);
-
-                            if (uri == null) {
-                                cafeBar.dismiss();
-                                return;
-                            }
-
-                            mContext.startActivity(new Intent()
-                                    .setAction(Intent.ACTION_VIEW)
-                                    .setDataAndType(uri, "image/*")
-                                    .setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
-
-                            cafeBar.dismiss();
-                        })
-                        .show();
+                showOpenFileCafeBar(R.string.wallpaper_already_downloaded, target);
                 return;
             }
         } catch (SecurityException e) {
             LogUtil.e(Log.getStackTraceString(e));
         }
 
-        if (!URLUtil.isValidUrl(mWallpaper.getURL())) {
+        String url = mWallpaper.getURL();
+
+        if (!(url.startsWith("assets://") || URLUtil.isValidUrl(mWallpaper.getURL()))) {
             LogUtil.e("Download: wallpaper url is not valid");
             return;
         }
 
-        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(mWallpaper.getURL()));
-        request.setMimeType(mWallpaper.getMimeType());
-        request.setTitle(fileName);
-        request.setDescription(mContext.getResources().getString(R.string.wallpaper_downloading));
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_PICTURES,
-                File.separator + appName + File.separator + fileName);
+        if (url.startsWith("assets://")) {
+            showCafeBar(R.string.wallpaper_downloading);
 
-        DownloadManager downloadManager = (DownloadManager) mContext.getSystemService(Context.DOWNLOAD_SERVICE);
+            try {
+                InputStream is = mContext.getAssets().open(url.replaceFirst("assets://", ""));
+                File output = new File(directory, fileName);
+                if (!directory.exists()) {
+                    if (!directory.mkdirs()) return;
+                }
+                if (!output.exists()) {
+                    if (!output.createNewFile()) return;
+                }
+                OutputStream os = new FileOutputStream(output);
+                byte[] buffer = new byte[1024];
+                int read;
+                while ((read = is.read(buffer)) != -1) {
+                    os.write(buffer, 0, read);
+                }
 
-        try {
-            if (downloadManager != null) {
-                downloadManager.enqueue(request);
+                mContext.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(output)));
+
+                showOpenFileCafeBar(R.string.wallpaper_download_success, output);
+            } catch (Exception e) {
+                LogUtil.e(Log.getStackTraceString(e));
+                showCafeBar(R.string.wallpaper_download_failed);
             }
-        } catch (IllegalArgumentException e) {
-            LogUtil.e(Log.getStackTraceString(e));
-            showCafeBar(R.string.wallpaper_download_failed);
-            return;
-        }
+        } else {
+            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+            request.setMimeType(mWallpaper.getMimeType());
+            request.setTitle(fileName);
+            request.setDescription(mContext.getResources().getString(R.string.wallpaper_downloading));
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_PICTURES,
+                    File.separator + appName + File.separator + fileName);
 
-        showCafeBar(R.string.wallpaper_downloading);
+            DownloadManager downloadManager = (DownloadManager) mContext.getSystemService(Context.DOWNLOAD_SERVICE);
+
+            try {
+                if (downloadManager != null) {
+                    downloadManager.enqueue(request);
+                }
+            } catch (IllegalArgumentException e) {
+                LogUtil.e(Log.getStackTraceString(e));
+                showCafeBar(R.string.wallpaper_download_failed);
+                return;
+            }
+
+            showCafeBar(R.string.wallpaper_downloading);
+        }
     }
 
     public static WallpaperDownloader prepare(@NonNull Context context) {

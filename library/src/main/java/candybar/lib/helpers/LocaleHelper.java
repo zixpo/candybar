@@ -16,12 +16,10 @@ import androidx.annotation.Nullable;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
 import candybar.lib.R;
-import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.Language;
 import candybar.lib.preferences.Preferences;
 
@@ -52,10 +50,8 @@ public class LocaleHelper {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             LocaleList.setDefault(new LocaleList(locale));
             configuration.setLocales(new LocaleList(locale));
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            configuration.setLocale(locale);
         } else {
-            configuration.locale = locale;
+            configuration.setLocale(locale);
         }
 
         //Todo:

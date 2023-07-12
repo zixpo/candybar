@@ -89,7 +89,6 @@
     <!-- Apply -->
     <string name="apply_installed">설치되어 있는 런처</string>
     <string name="apply_supported">지원하는 런처</string>
-    <string name="apply_manual_evie">홈 화면을 길게 누른 후 \'설정 - 아이콘 팩\' 메뉴에서 %s 아이콘 팩을 선택하세요.</string>
     <string name="apply_launch_failed">%s의 설정을 실행할 수 없습니다.</string>
     <string name="apply_launcher_not_installed">%s가 설치되어 있지 않습니다. 
         Google Play 스토어를 열고 앱을 설치하시겠습니까?</string>

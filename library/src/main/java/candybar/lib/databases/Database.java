@@ -1,5 +1,7 @@
 package candybar.lib.databases;
 
+import static candybar.lib.helpers.DrawableHelper.getDrawableId;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -13,7 +15,6 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.TimeHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
@@ -633,7 +634,7 @@ public class Database extends SQLiteOpenHelper {
             do {
                 String drawableName = cursor.getString(cursor.getColumnIndex(KEY_NAME));
                 String title = cursor.getString(cursor.getColumnIndex(KEY_TITLE));
-                int resId = DrawableHelper.getResourceId(context, drawableName);
+                int resId = getDrawableId(drawableName);
                 icons.add(new Icon(drawableName, null, resId).setTitle(title));
             } while (cursor.moveToNext());
         }

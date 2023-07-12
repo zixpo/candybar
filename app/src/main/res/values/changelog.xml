@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="changelog_date" translatable="false">July 2, 2023</string>
 
-    <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">May 16, 2023</string>
-
-    <!-- Changelog support html formatting
-    * <b> for Bold
-    * <i> for Italic
-    * <u> for Underline
-    * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Configuration for filtering out apps in requests</item>
-        <item>Configuration for enabling analytics in the app</item>
-        <item>Now supports dynamic configuration for wallpaper and config JSON</item>
-        <item>Option to override TapIntro colors</item>
-        <item>OneUI launcher is now available in apply section</item>
-        <item>Fixed clock widget click not working correctly on Android 12</item>
-        <item>Removed very old launchers</item>
-        <item>Fixed error in appfilter.xml when a activity name contains `$` (dollar sign)</item>
-        <item>Added option to enable/disable "Restore purchases" option</item>
-        <item>Add support for formatting FAQs</item>
-        <item>Fixed home intro not showing</item>
-        <item>Updated translations</item>
-        <item>Updated Gradle, AGP and dependencies</item>
+        <item>Improved initial load speed. Now loads all icons under 5 seconds.</item>
+        <item>Fixed memory leak in icon search, uses less memory.</item>
+        <item>Fixed unable to download offline wallpapers.</item>
+        <item>Fix icon search not loading when `show_icon_name` is set to `false`.</item>
     </string-array>
 
 </resources>

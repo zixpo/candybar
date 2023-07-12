@@ -92,7 +92,6 @@
     <string name="apply_installed">Telepített Launcherek</string>
     <string name="apply_supported">Támogatott Launcherek</string>
     <string name="apply_manual">%1$s direkt módon nem támogatott. Az %2$s kiválasztását és engedélyezését a Launcher beállításain belül tudod elvégezni</string>
-    <string name="apply_manual_evie">Az ujjadat a főképernyőn hosszan nyomva tartva kattints - Beállítások, majd - Ikon csomag, majd - kiválasztás.</string>
     <string name="apply_launch_failed">%s-beállítás indítása hibába ütközött</string>
     <string name="apply_launcher_not_installed">%s nincs telepítve. Szeretnéd a Play Áruházból letölteni és telepíteni?</string>
     <string name="apply_launcher_not_installable">%s nem telepthető. Telepíts újra a Launchert</string>

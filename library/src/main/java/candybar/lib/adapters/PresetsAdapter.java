@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,7 +105,7 @@ public class PresetsAdapter extends RecyclerView.Adapter<PresetsAdapter.ViewHold
             holder.setType(preset.getHeaderText());
         } else if (holder.getItemViewType() == TYPE_CONTENT) {
             PresetInfoLoader.create(new AssetPresetFile(preset.getPath()))
-                    .load(mContext, info -> holder.name.setText(info.getTitle()));
+                    .load(mContext, info -> holder.name.setText(info.getTitle().replaceAll("_", "")));
 
             if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
                 Glide.with(mContext)
@@ -172,11 +171,9 @@ public class PresetsAdapter extends RecyclerView.Adapter<PresetsAdapter.ViewHold
                     card.setCardElevation(0);
                 }
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    StateListAnimator stateListAnimator = AnimatorInflater
-                            .loadStateListAnimator(mContext, R.animator.card_lift);
-                    card.setStateListAnimator(stateListAnimator);
-                }
+                StateListAnimator stateListAnimator = AnimatorInflater
+                        .loadStateListAnimator(mContext, R.animator.card_lift);
+                card.setStateListAnimator(stateListAnimator);
 
                 if (wallpaperDrawable != null) {
                     ((HeaderView) itemView.findViewById(R.id.wallpaper_bg)).setImageDrawable(wallpaperDrawable);

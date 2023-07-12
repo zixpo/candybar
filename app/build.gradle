@@ -35,7 +35,6 @@ android {
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode rootProject.ext.VersionCode * 10 + 0
         versionName rootProject.ext.VersionName
-        multiDexEnabled true
 
         // This code loads the license key from `local.properties` file
         // and saves it as build config field named "LICENSE_KEY"

@@ -109,7 +109,8 @@
     <string name="apply_installed">Lançador instalado</string>
     <string name="apply_supported">Lançadores Suportados</string>
     <string name="apply_manual">%1$s Lançador não suporta a aplicação direta, mas você pode aplicar %2$s manualmente a partir das configurações do lançador.</string>
-    <string name="apply_manual_evie">Toque e segure na tela inicial - Configurações - Pacote de ícones - escolha %s.</string>
+    <string name="apply_manual_kvaesitso_step_4">Escolha %s da lista</string>
+    <string name="apply_manual_kiss_step_4">Escolha %s da lista</string>
     <string name="apply_manual_samsung_oneui">%1$s não suporta aplicação direta, mas começando com %2$s você pode aplicar ícones com um aplicativo complementar.</string>
     <string name="apply_manual_samsung_oneui_too_old">Sua versão atual do %s é muito antiga. Por favor, atualize para o Android 12 ou mais recente para poder aplicar ícones diretamente. Como alternativa, você pode instalar um lançador diferente.</string>
     <string name="apply_manual_samsung_oneui_step_1">Abrir %s</string>

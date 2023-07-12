@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.lifecycle.Lifecycle;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -30,7 +31,7 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import java.util.Collections;
+import java.lang.reflect.Field;
 import java.util.List;
 
 import candybar.lib.R;
@@ -80,6 +81,18 @@ public class IconsBaseFragment extends Fragment {
         mProgress = view.findViewById(R.id.progress);
         initTabs();
         mPager.setOffscreenPageLimit(2);
+        // Reduce sensitivity of ViewPager
+        try {
+            Field recyclerViewField = ViewPager2.class.getDeclaredField("mRecyclerView");
+            recyclerViewField.setAccessible(true);
+            RecyclerView recyclerView = (RecyclerView) recyclerViewField.get(mPager);
+            Field touchSlopField = RecyclerView.class.getDeclaredField("mTouchSlop");
+            touchSlopField.setAccessible(true);
+            int touchSlop = (int) touchSlopField.get(recyclerView);
+            touchSlopField.set(recyclerView, touchSlop * 3);
+        } catch (Exception e) {
+            LogUtil.d(Log.getStackTraceString(e));
+        }
         return view;
     }
 
@@ -193,29 +206,7 @@ public class IconsBaseFragment extends Fragment {
             if (!isCancelled()) {
                 try {
                     Thread.sleep(1);
-                    if (CandyBarMainActivity.sSections == null) {
-                        CandyBarMainActivity.sSections = IconsHelper.getIconsList(requireActivity());
-
-                        for (int i = 0; i < CandyBarMainActivity.sSections.size(); i++) {
-                            List<Icon> icons = CandyBarMainActivity.sSections.get(i).getIcons();
-
-                            if (requireActivity().getResources().getBoolean(R.bool.show_icon_name)) {
-                                IconsHelper.computeTitles(requireActivity(), icons);
-                            }
-
-                            if (requireActivity().getResources().getBoolean(R.bool.enable_icons_sort)) {
-                                Collections.sort(icons, Icon.TitleComparator);
-
-                                CandyBarMainActivity.sSections.get(i).setIcons(icons);
-                            }
-                        }
-
-                        if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
-                            List<Icon> icons = IconsHelper.getTabAllIcons();
-                            CandyBarMainActivity.sSections.add(new Icon(
-                                    CandyBarApplication.getConfiguration().getTabAllIconsTitle(), icons));
-                        }
-                    }
+                    IconsHelper.loadIcons(requireActivity(), true);
                     return true;
                 } catch (Exception e) {
                     LogUtil.e(Log.getStackTraceString(e));

@@ -1,5 +1,7 @@
 package candybar.lib.activities;
 
+import static candybar.lib.helpers.DrawableHelper.getDrawableId;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -60,8 +62,6 @@ import com.google.android.play.core.review.ReviewManagerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -196,22 +196,20 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         initNavigationView(toolbar);
         initNavigationViewHeader();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().clearFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION | WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.navigationBar));
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-            mDrawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
-            int visibilityFlags = 0;
-            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)) &&
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-                visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-            if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)) &&
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-                visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-            getWindow().getDecorView().setSystemUiVisibility(visibilityFlags);
-        }
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        getWindow().clearFlags(
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION | WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.navigationBar));
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        mDrawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
+        int visibilityFlags = 0;
+        if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)) &&
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+        if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)) &&
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+        getWindow().getDecorView().setSystemUiVisibility(visibilityFlags);
 
         try {
             startService(new Intent(this, CandyBarService.class));
@@ -448,35 +446,37 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             return;
         }
 
-        CountDownLatch doneSignal = new CountDownLatch(1);
-        AtomicBoolean doesProductIdExist = new AtomicBoolean(false);
-        InAppBillingClient.get(this.getApplicationContext()).getClient()
-                .queryPurchasesAsync(InAppBillingClient.INAPP_PARAMS, (billingResult, purchases) -> {
-                    if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                        for (Purchase purchase : purchases) {
-                            for (String premiumRequestProductId : mConfig.getPremiumRequestProductsId()) {
-                                if (purchase.getProducts().contains(premiumRequestProductId)) {
-                                    doesProductIdExist.set(true);
-                                    break;
+        if (this.getResources().getBoolean(R.bool.enable_restore_purchases)) {
+            CountDownLatch doneSignal = new CountDownLatch(1);
+            AtomicBoolean doesProductIdExist = new AtomicBoolean(false);
+            InAppBillingClient.get(this.getApplicationContext()).getClient()
+                    .queryPurchasesAsync(InAppBillingClient.INAPP_PARAMS, (billingResult, purchases) -> {
+                        if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
+                            for (Purchase purchase : purchases) {
+                                for (String premiumRequestProductId : mConfig.getPremiumRequestProductsId()) {
+                                    if (purchase.getProducts().contains(premiumRequestProductId)) {
+                                        doesProductIdExist.set(true);
+                                        break;
+                                    }
                                 }
                             }
+                        } else {
+                            LogUtil.e("Failed to query purchases. Response Code: " + billingResult.getResponseCode());
                         }
-                    } else {
-                        LogUtil.e("Failed to query purchases. Response Code: " + billingResult.getResponseCode());
-                    }
 
-                    doneSignal.countDown();
-                });
+                        doneSignal.countDown();
+                    });
 
-        try {
-            doneSignal.await();
-        } catch (InterruptedException e) {
-            LogUtil.e(Log.getStackTraceString(e));
-        }
+            try {
+                doneSignal.await();
+            } catch (InterruptedException e) {
+                LogUtil.e(Log.getStackTraceString(e));
+            }
 
-        if (doesProductIdExist.get()) {
-            RequestHelper.showPremiumRequestExist(this);
-            return;
+            if (doesProductIdExist.get()) {
+                RequestHelper.showPremiumRequestExist(this);
+                return;
+            }
         }
 
         InAppBillingFragment.showInAppBillingDialog(getSupportFragmentManager(),
@@ -699,7 +699,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             int color = ContextCompat.getColor(this, R.color.toolbarIcon);
             toolbar.setNavigationIcon(DrawableHelper.getTintedDrawable(
                     this, R.drawable.ic_toolbar_back, color));
-            toolbar.setNavigationOnClickListener(view -> onBackPressed());
+            // It does not work and causes issue with back press on icon search fragment
+            // toolbar.setNavigationOnClickListener(view -> onBackPressed());
         } else {
             SoftKeyboardHelper.closeKeyboard(this);
             ColorHelper.setStatusBarColor(this, Color.TRANSPARENT, true);
@@ -830,7 +831,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         if (!URLUtil.isValidUrl(imageUrl)) {
-            imageUrl = "drawable://" + DrawableHelper.getResourceId(this, imageUrl);
+            imageUrl = "drawable://" + getDrawableId(imageUrl);
         }
 
         final Context context = this;
@@ -853,13 +854,9 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     if (WallpaperHelper.getWallpaperType(this) != WallpaperHelper.CLOUD_WALLPAPERS)
                         return;
 
-                    String wallpaperUrl = CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(this);
-                    URL url = new URL(wallpaperUrl);
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    connection.setConnectTimeout(15000);
+                    InputStream stream = WallpaperHelper.getJSONStream(this);
 
-                    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                        InputStream stream = connection.getInputStream();
+                    if (stream != null) {
                         List<?> list = JsonHelper.parseList(stream);
                         if (list == null) return;
 

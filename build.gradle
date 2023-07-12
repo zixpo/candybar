@@ -19,7 +19,7 @@ allprojects {
 
     rootProject.ext {
         def major = 3
-        def minor = 17
+        def minor = 18
         def patch = 3
 
         VersionCode = major * 10000 + minor * 100 + patch

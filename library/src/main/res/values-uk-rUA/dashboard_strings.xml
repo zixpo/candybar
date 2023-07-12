@@ -105,7 +105,6 @@
     <string name="apply_installed">Встановлений лаунчер</string>
     <string name="apply_supported">Підтримувані лаунчери</string>
     <string name="apply_manual">%1$s Лаунчер не підтримує пряме застосування, але ви можете застосувати %2$s вручну з налаштувань лаунчера.</string>
-    <string name="apply_manual_evie">Натисніть і утримуйте на головному екрані - Налаштування - Набір іконок - оберіть %s.</string>
     <string name="apply_launch_failed">Не вдалося запустити налаштування %s</string>
     <string name="apply_launcher_not_installed">%s Лаунчер не встановлено. Ви хочете відкрити
         Google Play Маркет для його завантаження та встановлення?</string>

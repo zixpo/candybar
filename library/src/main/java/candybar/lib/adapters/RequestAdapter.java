@@ -2,7 +2,6 @@ package candybar.lib.adapters;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.os.Build;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -17,9 +16,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -33,6 +34,7 @@ import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.CandyBarGlideModule;
@@ -186,7 +188,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
             if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
                 Glide.with(mContext)
-                        .load(candybar.lib.helpers.DrawableHelper.getReqIcon(mContext, mRequests.get(finalPosition).getActivity()))
+                        // Check candybar.lib.utils - CommonDataFetcher and CommonModelLoader
+                        .load("package://" + mRequests.get(finalPosition).getActivity())
                         .override(272)
                         .transition(DrawableTransitionOptions.withCrossFade(300))
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
@@ -194,14 +197,43 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             }
 
             contentViewHolder.title.setText(mRequests.get(finalPosition).getName());
+            contentViewHolder.infoIcon.setVisibility(View.GONE);
 
             if (mRequests.get(finalPosition).isRequested()) {
                 contentViewHolder.content.setTextColor(mTextColorAccent);
                 contentViewHolder.content.setText(mContext.getResources().getString(
                         R.string.request_already_requested));
-            } else {
+            } else if (mRequests.get(finalPosition).isAvailableForRequest()) {
                 contentViewHolder.content.setText(mContext.getResources().getString(
                         R.string.request_not_requested));
+            } else {
+                contentViewHolder.content.setText(mContext.getResources().getString(
+                        R.string.request_not_available));
+            }
+
+            if (!mRequests.get(finalPosition).isAvailableForRequest()) {
+                contentViewHolder.content.setAlpha(0.5f);
+                contentViewHolder.title.setAlpha(0.5f);
+                contentViewHolder.icon.setAlpha(0.5f);
+                contentViewHolder.checkbox.setEnabled(false);
+            } else {
+                contentViewHolder.content.setAlpha(1f);
+                contentViewHolder.title.setAlpha(1f);
+                contentViewHolder.icon.setAlpha(1f);
+                contentViewHolder.checkbox.setEnabled(true);
+            }
+
+            if (!mRequests.get(finalPosition).getInfoText().isEmpty()) {
+                contentViewHolder.infoIcon.setVisibility(View.VISIBLE);
+                contentViewHolder.infoIcon.setImageDrawable(AppCompatResources.getDrawable(mContext, R.drawable.ic_drawer_about));
+                contentViewHolder.infoIcon.setColorFilter(mTextColorSecondary);
+                int pos = finalPosition;
+                contentViewHolder.infoIcon.setOnClickListener(v -> new MaterialDialog.Builder(mContext)
+                        .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
+                        .title(mRequests.get(pos).getName())
+                        .content(mRequests.get(pos).getInfoText())
+                        .positiveText(android.R.string.yes)
+                        .show());
             }
 
             contentViewHolder.checkbox.setChecked(mSelectedItems.get(finalPosition, false));
@@ -276,9 +308,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
                     StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        params.setMarginEnd(margin);
-                    }
+                    params.setMarginEnd(margin);
                 }
             }
 
@@ -342,6 +372,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private final TextView content;
         private final ImageView icon;
         private final CheckBox checkbox;
+        private final ImageView infoIcon;
         private final View divider;
 
         ContentViewHolder(View itemView) {
@@ -350,6 +381,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             content = itemView.findViewById(R.id.requested);
             icon = itemView.findViewById(R.id.icon);
             checkbox = itemView.findViewById(R.id.checkbox);
+            infoIcon = itemView.findViewById(R.id.requestedInfoIcon);
             LinearLayout container = itemView.findViewById(R.id.container);
             divider = itemView.findViewById(R.id.divider);
 
@@ -362,9 +394,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
                     StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                        params.setMarginEnd(margin);
-                    }
+                    params.setMarginEnd(margin);
                 }
             }
 
@@ -442,7 +472,19 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         if (position >= 0 && position < mRequests.size()) {
             if (mSelectedItems.get(position, false))
                 mSelectedItems.delete(position);
-            else mSelectedItems.put(position, true);
+            else if (!mRequests.get(position).isAvailableForRequest()) {
+                if (!mRequests.get(position).getInfoText().isEmpty()) {
+                    new MaterialDialog.Builder(mContext)
+                            .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
+                            .title(mContext.getResources().getString(R.string.request_not_available))
+                            .content(mRequests.get(position).getInfoText())
+                            .positiveText(android.R.string.yes)
+                            .show();
+                }
+                return false;
+            } else {
+                mSelectedItems.put(position, true);
+            }
             try {
                 RequestListener listener = (RequestListener) mContext;
                 listener.onRequestSelected(getSelectedItemsSize());
@@ -462,7 +504,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         mSelectedItems.clear();
         for (int i = 0; i < mRequests.size(); i++) {
-            if (!mRequests.get(i).isRequested())
+            if (!mRequests.get(i).isRequested() && mRequests.get(i).isAvailableForRequest())
                 mSelectedItems.put(i, true);
         }
         mSelectedAll = mSelectedItems.size() > 0;

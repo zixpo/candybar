@@ -1,8 +1,6 @@
 package candybar.lib.helpers;
 
-import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
 import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
-import static candybar.lib.helpers.DrawableHelper.getRightIcon;
 
 import android.app.Activity;
 import android.content.Context;
@@ -60,6 +58,29 @@ import candybar.lib.utils.CandyBarGlideModule;
  */
 
 public class IconsHelper {
+    public static void loadIcons(Context context, boolean sortIcons) throws Exception {
+        // Load icons only if they are not loaded
+        if (CandyBarMainActivity.sSections == null) {
+            CandyBarMainActivity.sSections = getIconsList(context);
+
+            for (Icon section : CandyBarMainActivity.sSections) {
+                List<Icon> icons = section.getIcons();
+
+                computeTitles(context, icons);
+
+                if (sortIcons && context.getResources().getBoolean(R.bool.enable_icons_sort)) {
+                    Collections.sort(icons, Icon.TitleComparator);
+                    section.setIcons(icons);
+                }
+            }
+
+            if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
+                List<Icon> icons = getTabAllIcons();
+                CandyBarMainActivity.sSections.add(new Icon(
+                        CandyBarApplication.getConfiguration().getTabAllIconsTitle(), icons));
+            }
+        }
+    }
 
     @NonNull
     public static List<Icon> getIconsList(@NonNull Context context) throws Exception {
@@ -85,7 +106,7 @@ public class IconsHelper {
                 } else if (parser.getName().equals("item")) {
                     String drawableName = parser.getAttributeValue(null, "drawable");
                     String customName = parser.getAttributeValue(null, "name");
-                    int id = getResourceId(context, drawableName);
+                    int id = DrawableHelper.getDrawableId(drawableName);
                     if (id > 0) {
                         icons.add(new Icon(drawableName, customName, id));
                     }
@@ -263,7 +284,7 @@ public class IconsHelper {
 
     @Nullable
     public static String saveIcon(List<String> files, File directory, Drawable drawable, String name) {
-        Bitmap bitmap = getRightIcon(drawable);
+        Bitmap bitmap = DrawableHelper.toBitmap(drawable);
         assert bitmap != null;
         return saveBitmap(files, directory, bitmap, name);
     }

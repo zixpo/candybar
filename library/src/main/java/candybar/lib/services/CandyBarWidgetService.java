@@ -20,19 +20,16 @@ public class CandyBarWidgetService extends AppWidgetProvider {
         if (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(act)) {
             RemoteViews clockView = new RemoteViews(context.getPackageName(), R.layout.analog_clock);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                Intent clockIntent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
-                clockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            Intent clockIntent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+            clockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                    flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
-                }
-                else {
-                    flags = 0;
-                }
-
-                clockView.setOnClickPendingIntent(R.id.analog_clock, PendingIntent.getActivity(context, 0, clockIntent, flags));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
+            } else {
+                flags = 0;
             }
+
+            clockView.setOnClickPendingIntent(R.id.analog_clock, PendingIntent.getActivity(context, 0, clockIntent, flags));
 
             AppWidgetManager.getInstance(context).updateAppWidget(intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS), clockView);
         }

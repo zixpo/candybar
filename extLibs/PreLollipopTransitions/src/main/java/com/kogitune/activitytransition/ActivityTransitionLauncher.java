@@ -20,7 +20,6 @@ package com.kogitune.activitytransition;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -67,11 +66,7 @@ public class ActivityTransitionLauncher {
     public void launch(Intent intent) {
 
         intent.putExtras(createBundle());
-        if (Build.VERSION.SDK_INT >= 16) {
-            ActivityCompat.startActivity(activity, intent, createOptions());
-            return;
-        }
-        activity.startActivity(intent);
-        activity.overridePendingTransition(0, 0);
+        ActivityCompat.startActivity(activity, intent, createOptions());
+        return;
     }
 }

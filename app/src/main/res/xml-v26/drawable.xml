@@ -224,6 +224,7 @@
     <category title="All Apps" />
     <item drawable="_1_app" />
     <item drawable="layer_icon" />
+    <item drawable="ic_android" />
     <item drawable="icon_1" />
     <item drawable="icon_2" />
     <item drawable="icon_3" />

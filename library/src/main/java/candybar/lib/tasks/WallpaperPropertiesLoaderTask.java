@@ -1,6 +1,7 @@
 package candybar.lib.tasks;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
@@ -13,10 +14,9 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import java.io.File;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 import candybar.lib.databases.Database;
+import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.ImageSize;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.utils.AsyncTaskBase;
@@ -65,21 +65,17 @@ public class WallpaperPropertiesLoaderTask extends AsyncTaskBase {
                 }
 
                 final BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inJustDecodeBounds = true;
 
-                URL url = new URL(mWallpaper.getURL());
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                connection.setConnectTimeout(15000);
+                InputStream stream = WallpaperHelper.getStream(mContext.get(), mWallpaper.getURL());
 
-                if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                    InputStream stream = connection.getInputStream();
-                    BitmapFactory.decodeStream(stream, null, options);
+                if (stream != null) {
+                    Bitmap bitmap = BitmapFactory.decodeStream(stream, null, options);
 
                     ImageSize imageSize = new ImageSize(options.outWidth, options.outHeight);
                     mWallpaper.setDimensions(imageSize);
                     mWallpaper.setMimeType(options.outMimeType);
 
-                    int contentLength = connection.getContentLength();
+                    int contentLength = bitmap.getAllocationByteCount();
                     if (contentLength > 0) {
                         mWallpaper.setSize(contentLength);
                     }

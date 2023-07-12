@@ -103,7 +103,6 @@
     <string name="apply_installed">Zainstalowane Launchery</string>
     <string name="apply_supported">Wspierane Launchery</string>
     <string name="apply_manual">%1$s nie wspiera bezpośredniego zastosowywania zestawów ikon. Zastosuj %2$s ręcznie z ustawień launchera.</string>
-    <string name="apply_manual_evie">Przytrzymaj palec na ekranie głównym - Ustawienia - Paczka Ikon - wybierz %s.</string>
     <string name="apply_launch_failed">Nie udało się uruchomić ustawień %s</string>
     <string name="apply_launcher_not_installed">%s nie jest zainstalowany. Czy chcesz pobrać tę aplikację ze sklepu Google Play?</string>
     <string name="apply_launcher_not_installable">%s nie jest zainstalowany. Zainstaluj launcher i spróbuj ponownie.</string>

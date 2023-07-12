@@ -127,11 +127,6 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_poco,
                 new String[]{"com.mi.android.globallauncher"},
                 false),
-        POSIDON(
-                "Posidon",
-                R.drawable.ic_launcher_posidon,
-                new String[]{"posidon.launcher"},
-                true),
         MICROSOFT(
                 "Microsoft",
                 R.drawable.ic_launcher_microsoft,
@@ -162,18 +157,18 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_hyperion,
                 new String[]{"projekt.launcher"},
                 false),
-        NEO(
-                "Neo",
-                R.drawable.ic_launcher_neo,
-                new String[]{"com.saggitt.omega"},
-                true),
         KISS(
                 "KISS",
                 R.drawable.ic_launcher_kiss,
                 new String[]{"fr.neamar.kiss"},
-                true),
+                false),
+        Kvaesitso(
+                "Kvaesitso",
+                R.drawable.ic_launcher_kvaesitso,
+                new String[]{"de.mm20.launcher2.release"},
+                false),
         ONEUI(
-                "One UI",
+                "Samsung One UI",
                 R.drawable.ic_launcher_one_ui,
                 new String[]{"com.sec.android.app.launcher"},
                 false),
@@ -390,24 +385,10 @@ public class LauncherHelper {
                 applyManual(context, launcherPackage, launcherName, "projekt.launcher.activities.SettingsActivity");
                 break;
             case KISS:
-                try {
-                    Intent kiss = new Intent(Intent.ACTION_MAIN);
-                    kiss.setComponent(new ComponentName("fr.neamar.kiss", "fr.neamar.kiss.SettingsActivity"));
-                    //kiss.putExtra("theme.ThemeManager", context.getPackageName());
-                    kiss.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(kiss);
-                    ((AppCompatActivity) context).finish();
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "confirm");
-                                put("launcher", launcherPackage);
-                            }}
-                    );
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                applyKiss(context, launcherName);
+                break;
+            case Kvaesitso:
+                applyKvaesitso(context, launcherName);
                 break;
             case LAWNCHAIR:
                 if (launcherPackage.startsWith("app")) {
@@ -506,26 +487,6 @@ public class LauncherHelper {
             case POCO:
                 applyManual(context, launcherPackage, launcherName, "com.miui.home.settings.HomeSettingsActivity");
                 break;
-            case POSIDON:
-                try {
-                    Intent posidon = new Intent(Intent.ACTION_MAIN);
-                    posidon.setComponent(new ComponentName("posidon.launcher", "posidon.launcher.external.ApplyIcons"));
-                    posidon.putExtra("iconpack", context.getPackageName());
-                    posidon.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(posidon);
-                    ((AppCompatActivity) context).finish();
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "confirm");
-                                put("launcher", launcherPackage);
-                            }}
-                    );
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
-                break;
             case ONEUI:
                 applyOneUI(context, launcherName);
                 break;
@@ -578,25 +539,6 @@ public class LauncherHelper {
                     square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
                     square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
                     context.startActivity(square);
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "confirm");
-                                put("launcher", launcherPackage);
-                            }}
-                    );
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
-                break;
-            case NEO:
-                try {
-                    Intent neo = new Intent(Intent.ACTION_MAIN);
-                    neo.setComponent(new ComponentName("com.saggitt.omega", "com.saggitt.omega.preferences.views.PreferencesActivity"));
-                    neo.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(neo);
-                    ((AppCompatActivity) context).finish();
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
                             new HashMap<String, Object>() {{
@@ -720,6 +662,87 @@ public class LauncherHelper {
             found = false;
         }
         return found;
+    }
+    private static void applyKvaesitso(Context context, String launcherName) {
+        String compatibleText =
+                "\n\t• " + context.getResources().getString(R.string.apply_manual_kvaesitso_step_1) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_2) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_3) + "\n\t• " +
+                        context.getResources().getString(
+                                R.string.apply_manual_kvaesitso_step_4,
+                                context.getResources().getString(R.string.app_name)
+                        ) + "\n\n" +
+                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_5
+                        );
+        new MaterialDialog.Builder(context)
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
+                .title(launcherName)
+                .content(
+                        context.getResources().getString(R.string.apply_manual_kvaesitso)
+                                + (compatibleText)
+                )
+                .positiveText(android.R.string.yes)
+                .onPositive((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_confirm");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                })
+                .negativeText(android.R.string.cancel)
+                .onNegative(((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_cancel");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                }))
+                .show();
+    }
+    private static void applyKiss(Context context, String launcherName) {
+        String compatibleText =
+                "\n\t• " + context.getResources().getString(R.string.apply_manual_kiss_step_1) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_kiss_step_2) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_kiss_step_3) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_kiss_step_4,
+                                context.getResources().getString(R.string.app_name)
+                        );
+        new MaterialDialog.Builder(context)
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
+                .title(launcherName)
+                .content(
+                        context.getResources().getString(R.string.apply_manual_kiss)
+                                + (compatibleText)
+                )
+                .positiveText(android.R.string.yes)
+                .onPositive((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_confirm");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                })
+                .negativeText(android.R.string.cancel)
+                .onNegative(((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_cancel");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                }))
+                .show();
     }
 
     /**

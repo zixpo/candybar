@@ -1,7 +1,7 @@
 package candybar.lib.helpers;
 
-import static candybar.lib.helpers.DrawableHelper.getReqIcon;
-import static candybar.lib.helpers.DrawableHelper.getRightIcon;
+import static candybar.lib.helpers.DrawableHelper.getPackageIcon;
+import static candybar.lib.helpers.DrawableHelper.toBitmap;
 
 import android.content.Context;
 import android.content.Intent;
@@ -160,7 +160,7 @@ public class RequestHelper {
         sb.append("{ \"projectUID\": \"ENTER UID\",");
         sb.append("\"icons\" : [");
         for (Request request : requests) {
-            Bitmap appBitmap = getRightIcon(getReqIcon(context, request.getActivity()));
+            Bitmap appBitmap = toBitmap(getPackageIcon(context, request.getActivity()));
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             assert appBitmap != null;
             appBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);

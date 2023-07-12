@@ -107,7 +107,6 @@ Scaricala da lì per utilizzarla.</string>
     <string name="apply_installed">Launcher installati</string>
     <string name="apply_supported">Launcher supportati</string>
     <string name="apply_manual">%1$s Launcher non supporta l\'applicazione diretta dei pacchetti icone su questo launcher, puoi però applicare manualmente %2$s dalle impostazioni del launcher.</string>
-    <string name="apply_manual_evie">Clicca e tieni premuto sulla schermata home - Impostazioni - icon pack - scegli %s.</string>
     <string name="apply_launch_failed">Impossibile aprire le impostazioni %s </string>
     <string name="apply_launcher_not_installed">%s non è installato. Vuoi aprire il Play Store e installare questa app?</string>
     <string name="apply_launcher_not_installable">%s Launcher non è installato. Riprova dopo l\'installazione del launcher.</string>

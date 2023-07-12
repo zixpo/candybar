@@ -3,9 +3,7 @@ package candybar.lib.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
@@ -59,15 +57,10 @@ public class Popup {
 
         int width = getMeasuredWidth(builder.mContext);
         mPopupWindow.setWidth(width);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Drawable drawable = mPopupWindow.getBackground();
-            if (drawable != null) {
-                drawable.setColorFilter(ContextCompat.getColor(
-                        builder.mContext, R.color.cardBackground), PorterDuff.Mode.SRC_IN);
-            }
-        } else {
-            mPopupWindow.setBackgroundDrawable(new ColorDrawable(
-                    ContextCompat.getColor(builder.mContext, R.color.cardBackground)));
+        Drawable drawable = mPopupWindow.getBackground();
+        if (drawable != null) {
+            drawable.setColorFilter(ContextCompat.getColor(
+                    builder.mContext, R.color.cardBackground), PorterDuff.Mode.SRC_IN);
         }
 
         mPopupWindow.setAnchorView(builder.mTo);

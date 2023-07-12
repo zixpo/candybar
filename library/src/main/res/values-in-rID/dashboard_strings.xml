@@ -109,7 +109,6 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="apply_installed">Peluncur terpasang</string>
     <string name="apply_supported">Peluncur yang didukung</string>
     <string name="apply_manual">%1$s Peluncur tidak mendukung terapkan langsung tetapi anda bisa menerapkan %2$s manual dari menu pengaturan peluncur.</string>
-    <string name="apply_manual_evie">Sentuh dan tahan pada layar beranda - Pengaturan - Paket Ikon - Pilih %s.</string>
     <string name="apply_launch_failed">Tidak dapat meluncurkan %s pengaturan</string>
     <string name="apply_launcher_not_installed">%s Peluncur tidak terpasang. Apakah anda ingin membuka Google Play Store untuk mengunduh dan menginstalnya?</string>
     <string name="apply_launcher_not_installable">%s Peluncur tidak terpasang. Silakan coba lagi setelah menginstal peluncur.</string>

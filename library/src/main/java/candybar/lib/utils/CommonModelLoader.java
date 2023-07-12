@@ -18,7 +18,7 @@ public final class CommonModelLoader implements ModelLoader<String, Bitmap> {
 
     @Override
     public boolean handles(@NonNull String model) {
-        return model.startsWith("drawable://") || model.startsWith("package://");
+        return model.startsWith("drawable://") || model.startsWith("package://") || model.startsWith("assets://");
     }
 
     @Override

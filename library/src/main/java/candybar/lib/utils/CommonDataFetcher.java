@@ -1,18 +1,13 @@
 package candybar.lib.utils;
 
-import android.content.ComponentName;
+import static candybar.lib.helpers.DrawableHelper.getPackageIcon;
+import static candybar.lib.helpers.DrawableHelper.toBitmap;
+
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.AdaptiveIconDrawable;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
-import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +16,10 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.data.DataFetcher;
+import com.danimahardhika.android.helpers.core.utils.LogUtil;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import candybar.lib.preferences.Preferences;
 import sarsamurmu.adaptiveicon.AdaptiveIcon;
@@ -40,33 +39,18 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
             callback.onDataReady(getDrawable(mModel));
         } else if (mModel.startsWith("package://")) {
             callback.onDataReady(getPackage(mModel));
+        } else if (mModel.startsWith("assets://")) {
+            callback.onDataReady(getAsset(mModel));
         }
     }
 
     @Nullable
     private Bitmap getPackage(String uri) {
-        PackageManager packageManager = mContext.getPackageManager();
         String componentName = uri.replaceFirst("package://", "");
+        Drawable drawable = getPackageIcon(mContext, componentName);
 
-        int slashIndex = componentName.indexOf("/");
-        String packageName = componentName.substring(0, slashIndex);
-        String activityName = componentName.substring(slashIndex + 1);
-
-        Intent intent = new Intent();
-        intent.setComponent(new ComponentName(packageName, activityName));
-        ResolveInfo resolveInfo = packageManager.resolveActivity(intent, 0);
-
-        assert resolveInfo != null;
-        Drawable drawable = resolveInfo.loadIcon(packageManager);
         if (drawable != null) {
-            if (drawable instanceof BitmapDrawable) return ((BitmapDrawable) drawable).getBitmap();
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && drawable instanceof AdaptiveIconDrawable) {
-                return new AdaptiveIcon()
-                        .setDrawable((AdaptiveIconDrawable) drawable)
-                        .setPath(AdaptiveIcon.PATH_CIRCLE)
-                        .render();
-            }
+            return toBitmap(drawable, AdaptiveIcon.PATH_CIRCLE);
         }
 
         return null;
@@ -77,32 +61,15 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
         String drawableIdStr = uri.replaceFirst("drawable://", "");
         int drawableId = Integer.parseInt(drawableIdStr);
         Drawable drawable = ContextCompat.getDrawable(mContext, drawableId);
+        return toBitmap(drawable, Preferences.get(mContext).getIconShape());
+    }
 
-        if (drawable instanceof BitmapDrawable) return ((BitmapDrawable) drawable).getBitmap();
-        if (drawable instanceof LayerDrawable) {
-            LayerDrawable layerDrawable = (LayerDrawable) drawable;
-            final int width = layerDrawable.getIntrinsicWidth();
-            final int height = layerDrawable.getIntrinsicHeight();
-            final Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            layerDrawable.setBounds(0, 0, width, height);
-            layerDrawable.draw(new Canvas(bitmap));
-            return bitmap;
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && drawable instanceof AdaptiveIconDrawable) {
-            if (Preferences.get(mContext).getIconShape() == -1) {
-                // System default icon shape
-                Bitmap bitmap = Bitmap.createBitmap(256, 256, Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(bitmap);
-                drawable.setBounds(new Rect(0, 0, 256, 256));
-                drawable.draw(canvas);
-                return bitmap;
-            }
-
-            return new AdaptiveIcon()
-                    .setDrawable((AdaptiveIconDrawable) drawable)
-                    .setPath(Preferences.get(mContext).getIconShape())
-                    .render();
+    @Nullable
+    private Bitmap getAsset(String uri) {
+        try (InputStream stream = mContext.getAssets().open(uri.replaceFirst("assets://", ""))) {
+            return BitmapFactory.decodeStream(stream);
+        } catch (IOException e) {
+            LogUtil.e(Log.getStackTraceString(e));
         }
 
         return null;

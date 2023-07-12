@@ -82,7 +82,7 @@
     <string name="tap_intro_home_navigation">Navigation drawer</string>
     <string name="tap_intro_home_navigation_desc">Tap here or swipe from left edge of the screen to open navigation drawer</string>
     <string name="tap_intro_home_apply">Apply icon pack</string>
-    <string name="tap_intro_home_apply_desc">Tap here to apply %s</string>
+    <string name="tap_intro_home_apply_desc">Tap here to apply %s to your current launcher. Long press to apply to other launchers.</string>
     <string name="tap_intro_icons_search">Search</string>
     <string name="tap_intro_icons_search_desc">Tap here to search an icon</string>
     <string name="tap_intro_request_select">Select missed app</string>
@@ -126,8 +126,17 @@
     <string name="apply_supported">Supported Launchers</string>
 
     <string name="apply_manual">%1$s Launcher doesn\'t support direct apply but you can apply %2$s manually from the launcher settings.</string>
-    <string name="apply_manual_evie">Tap and hold on homescreen - Settings - Icon Pack - choose %s.</string>
-    <string name="apply_manual_samsung_oneui">%1$s doesn\'t support direct apply but starting with %2$s you can apply icons with a companion app.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso doesn\'t support direct apply but you can follow these steps:</string>
+    <string name="apply_manual_kvaesitso_step_1">Open Kvaesitso\'s settings</string>
+    <string name="apply_manual_kvaesitso_step_2">Tap \"Grid &amp; Icons\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Tap on the \"Icon Pack\"</string>
+    <string name="apply_manual_kvaesitso_step_4">Choose %s from the list</string>
+    <string name="apply_manual_kvaesitso_step_5">Tap the paint brush icon to enable or disable the background shape</string>
+    <string name="apply_manual_kiss">KISS doesn\'t support direct apply but you can follow these steps:</string>
+    <string name="apply_manual_kiss_step_1">Open KISS settings</string>
+    <string name="apply_manual_kiss_step_2">Tap \"User Interface\"</string>
+    <string name="apply_manual_kiss_step_3">Tap on the \"Icon Pack\"</string>
+    <string name="apply_manual_kiss_step_4">Choose %s from the list</string>    <string name="apply_manual_samsung_oneui">%1$s doesn\'t support direct apply but starting with %2$s you can apply icons with a companion app.</string>
     <string name="apply_manual_samsung_oneui_too_old">Your current version of %s is too old. Please update to Android 12 or newer to be able to apply icons directly. Alternatively, you can install a different launcher.</string>
     <string name="apply_manual_samsung_oneui_step_1">Open %s</string>
     <string name="apply_manual_samsung_oneui_step_2">Download the app %s</string>
@@ -163,6 +172,7 @@
     <string name="request_not_selected">Select apps to request</string>
     <string name="request_not_requested">Not requested</string>
     <string name="request_already_requested">Already requested</string>
+    <string name="request_not_available">Cannot be requested</string>
 
     <string name="request_building">Building request …</string>
     <string name="request_pacific_sending">Sending request to Pacific Manager...</string>
@@ -222,6 +232,7 @@
     <string name="wallpaper_already_downloaded">Wallpaper already downloaded</string>
     <string name="wallpaper_downloading">Downloading wallpaper …</string>
     <string name="wallpaper_download_failed">Unable to download wallpaper</string>
+    <string name="wallpaper_download_success">Wallpaper download successful</string>
 
     <string name="wallpaper_loading">Loading wallpaper …</string>
     <string name="wallpaper_applying">Applying wallpaper …</string>

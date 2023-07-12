@@ -12,13 +12,11 @@ import androidx.fragment.app.FragmentManager;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.lang.ref.WeakReference;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
-import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
@@ -58,27 +56,8 @@ public class IconsLoaderTask extends AsyncTaskBase {
         if (!isCancelled()) {
             try {
                 Thread.sleep(1);
-                if (CandyBarMainActivity.sSections == null) {
-                    CandyBarMainActivity.sSections = IconsHelper.getIconsList(mContext.get());
 
-                    for (int i = 0; i < CandyBarMainActivity.sSections.size(); i++) {
-                        List<Icon> icons = CandyBarMainActivity.sSections.get(i).getIcons();
-
-                        IconsHelper.computeTitles(mContext.get(), icons);
-
-                        if (mContext.get().getResources().getBoolean(R.bool.enable_icons_sort) ||
-                                mContext.get().getResources().getBoolean(R.bool.enable_icon_name_replacer)) {
-                            Collections.sort(icons, Icon.TitleComparator);
-                            CandyBarMainActivity.sSections.get(i).setIcons(icons);
-                        }
-                    }
-
-                    if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
-                        List<Icon> icons = IconsHelper.getTabAllIcons();
-                        CandyBarMainActivity.sSections.add(new Icon(
-                                CandyBarApplication.getConfiguration().getTabAllIconsTitle(), icons));
-                    }
-                }
+                IconsHelper.loadIcons(mContext.get(), true);
 
                 if (CandyBarMainActivity.sHomeIcon != null) return true;
 
