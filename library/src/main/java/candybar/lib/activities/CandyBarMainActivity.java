@@ -179,7 +179,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     break;
                 case MATERIAL_YOU:
                     // Display a toast message about Material You availability on Android 12 and up.
-                    Toast.makeText(this, "Material You available only on Android 12 and up!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Material You available only on Android 12 and up! \n Following system theme...", Toast.LENGTH_SHORT).show();
                     nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
                     break;
                 default:
@@ -187,11 +187,22 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     break;
             }
         } else {
-            // Android version is 12 or higher (including future versions)
-            DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
-            nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+            switch (Preferences.get(this).getTheme()) {
+                case LIGHT:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_NO;
+                    break;
+                case DARK:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_YES;
+                    break;
+                case MATERIAL_YOU:
+                    DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
+                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                    break;
+                default:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                    break;
+            }
         }
-
         AppCompatDelegate.setDefaultNightMode(nightMode);
 
         LocaleHelper.setLocale(this);
