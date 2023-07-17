@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="CandyBar.Theme.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="CandyBar.Theme.Base" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
@@ -32,7 +32,7 @@
         <item name="md_item_color">@color/primaryText</item>
     </style>
 
-    <style name="CandyBar.Theme.Splash" parent="Theme.MaterialComponents.DayNight">
+    <style name="CandyBar.Theme.Splash" parent="Theme.Material3.DayNight">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>

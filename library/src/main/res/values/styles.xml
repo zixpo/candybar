@@ -36,7 +36,7 @@
         <item name="colorControlNormal">@color/toolbarIcon</item>
     </style>
 
-    <style name="ToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+    <style name="ToolbarStyle" parent="Widget.Material3.Toolbar">
         <item name="materialThemeOverlay">@style/ToolbarThemeOverlay</item>
     </style>
 
