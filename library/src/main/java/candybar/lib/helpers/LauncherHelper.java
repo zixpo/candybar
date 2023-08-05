@@ -71,6 +71,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_go,
                 new String[]{"com.gau.go.launcherex"},
                 true),
+        HIOS(
+                "HiOS",
+                R.drawable.ic_launcher_hios,
+                new String[]{"com.transsion.hilauncher"},
+                false),
         HOLO(
                 "Holo",
                 R.drawable.ic_launcher_holo,
@@ -376,6 +381,9 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case HIOS:
+                applyHiOSLauncher(context, launcherName);
                 break;
             case HOLO:
             case HOLOHD:
@@ -839,6 +847,45 @@ public class LauncherHelper {
                         } catch (ActivityNotFoundException ignored) {
                         }
                     }
+                })
+                .negativeText(android.R.string.cancel)
+                .onNegative(((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_cancel");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                }))
+                .show();
+    }
+
+    private static void applyHiOSLauncher(Context context, String launcherName) {
+        new MaterialDialog.Builder(context)
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
+                .title(launcherName)
+                .content(
+                        context.getResources().getString(R.string.apply_manual_hios) + "\n\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_hios_step_1) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_hios_step_2) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_hios_step_3) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_hios_step_4) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_hios_step_5,
+                                context.getResources().getString(R.string.app_name)
+                        )
+                )
+                .positiveText(android.R.string.yes)
+                .onPositive((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_confirm");
+                                put("launcher", launcherName);
+                            }}
+                    );
                 })
                 .negativeText(android.R.string.cancel)
                 .onNegative(((dialog, which) -> {
