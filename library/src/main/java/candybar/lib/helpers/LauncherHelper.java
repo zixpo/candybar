@@ -542,34 +542,54 @@ public class LauncherHelper {
                 break;
             case ONEPLUS_OXYGEN_OS:
                 if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // Android 10 and up
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                         applyStockLauncher(context, launcherName);
                     } else {
-                        launcherIncompatible(context, launcherName);
+                        launcherIncompatibleCustomMessage(
+                                context,
+                                launcherName,
+                                context.getResources().getString(
+                                        R.string.apply_launcher_incompatible_depending_on_version, launcherName, 10
+                                )
+                        );
                     }
                 } else {
                     notInstalledError(context, launcherName);
                 }
                 break;
             case ONEPLUS:
-                applyWithInstructions(
-                        context,
-                        launcherName,
-                        context.getResources().getString(
-                                R.string.apply_manual,
+                if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")) {
+                    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+                        launcherIncompatibleCustomMessage(
+                                context,
                                 launcherName,
-                                context.getResources().getString(R.string.app_name)
-                        ),
-                        new String[]{
-                                context.getResources().getString(R.string.apply_manual_oneplus_step_1),
-                                context.getResources().getString(R.string.apply_manual_oneplus_step_2),
-                                context.getResources().getString(R.string.apply_manual_oneplus_step_3),
                                 context.getResources().getString(
-                                        R.string.apply_manual_oneplus_step_4,
+                                        R.string.apply_launcher_incompatible_depending_on_version, launcherName, 10
+                                )
+                        );
+                    } else {
+                        applyWithInstructions(
+                                context,
+                                launcherName,
+                                context.getResources().getString(
+                                        R.string.apply_manual,
+                                        launcherName,
                                         context.getResources().getString(R.string.app_name)
                                 ),
-                        }
-                );
+                                new String[]{
+                                        context.getResources().getString(R.string.apply_manual_oneplus_step_1),
+                                        context.getResources().getString(R.string.apply_manual_oneplus_step_2),
+                                        context.getResources().getString(R.string.apply_manual_oneplus_step_3),
+                                        context.getResources().getString(
+                                                R.string.apply_manual_oneplus_step_4,
+                                                context.getResources().getString(R.string.app_name)
+                                        ),
+                                }
+                        );
+                    }
+                } else {
+                    notInstalledError(context, launcherName);
+                }
                 break;
             case PIXEL:
                 launcherIncompatible(context, launcherName);
@@ -912,10 +932,20 @@ public class LauncherHelper {
     }
 
     private static void launcherIncompatible(Context context, String launcherName) {
+        launcherIncompatibleCustomMessage(
+                context,
+                launcherName,
+                context.getResources().getString(
+                    R.string.apply_launcher_incompatible, launcherName, launcherName
+                )
+        );
+    }
+
+    private static void launcherIncompatibleCustomMessage(Context context, String launcherName, String message) {
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(R.string.apply_launcher_incompatible, launcherName, launcherName)
+                .content(message)
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
