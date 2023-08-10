@@ -388,7 +388,21 @@ public class LauncherHelper {
                 }
                 break;
             case HIOS:
-                applyHiOSLauncher(context, launcherName);
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(R.string.apply_manual_hios),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_hios_step_1),
+                                context.getResources().getString(R.string.apply_manual_hios_step_2),
+                                context.getResources().getString(R.string.apply_manual_hios_step_3),
+                                context.getResources().getString(R.string.apply_manual_hios_step_4),
+                                context.getResources().getString(
+                                        R.string.apply_manual_hios_step_5,
+                                        context.getResources().getString(R.string.app_name)
+                                )
+                        }
+                );
                 break;
             case HOLO:
             case HOLOHD:
@@ -398,10 +412,37 @@ public class LauncherHelper {
                 applyManual(context, launcherPackage, launcherName, "projekt.launcher.activities.SettingsActivity");
                 break;
             case KISS:
-                applyKiss(context, launcherName);
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(R.string.apply_manual_kiss),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_kiss_step_1),
+                                context.getResources().getString(R.string.apply_manual_kiss_step_2),
+                                context.getResources().getString(R.string.apply_manual_kiss_step_3),
+                                context.getResources().getString(
+                                        R.string.apply_manual_kiss_step_4,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                        }
+                );
                 break;
             case Kvaesitso:
-                applyKvaesitso(context, launcherName);
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(R.string.apply_manual_kvaesitso),
+                        new String[]{
+                            context.getResources().getString(R.string.apply_manual_kvaesitso_step_1),
+                            context.getResources().getString(R.string.apply_manual_kvaesitso_step_2),
+                            context.getResources().getString(R.string.apply_manual_kvaesitso_step_3),
+                            context.getResources().getString(
+                                    R.string.apply_manual_kvaesitso_step_4,
+                                    context.getResources().getString(R.string.app_name)
+                            ),
+                            context.getResources().getString(R.string.apply_manual_kvaesitso_step_5),
+                        }
+                );
                 break;
             case LAWNCHAIR:
                 if (launcherPackage.startsWith("app")) {
@@ -683,24 +724,12 @@ public class LauncherHelper {
         }
         return found;
     }
-    private static void applyKvaesitso(Context context, String launcherName) {
-        String compatibleText =
-                "\n\t• " + context.getResources().getString(R.string.apply_manual_kvaesitso_step_1) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_2) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_3) + "\n\t• " +
-                        context.getResources().getString(
-                                R.string.apply_manual_kvaesitso_step_4,
-                                context.getResources().getString(R.string.app_name)
-                        ) + "\n\n" +
-                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_5
-                        );
+
+    private static void applyWithInstructions(Context context, String launcherName, String description, String[] steps) {
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(
-                        context.getResources().getString(R.string.apply_manual_kvaesitso)
-                                + (compatibleText)
-                )
+                .content(description + "\n\n\t• " + String.join("\n\t• ", steps))
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
@@ -727,86 +756,21 @@ public class LauncherHelper {
     }
 
     private static void applyStockLauncher(Context context, String launcherName) {
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcherName)
-                .content(
-                        context.getResources().getString(
-                                R.string.apply_manual_stock_launcher,
-                                launcherName
-                        ) + "\n\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_1) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_2) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_3) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_4) + "\n\t• " +
+        applyWithInstructions(
+                context,
+                launcherName,
+                context.getResources().getString(R.string.apply_manual_stock_launcher),
+                new String[]{
+                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_1),
+                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_2),
+                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_3),
+                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_4),
                         context.getResources().getString(
                                 R.string.apply_manual_stock_launcher_step_5,
                                 context.getResources().getString(R.string.app_name)
                         )
-                )
-                .positiveText(android.R.string.yes)
-                .onPositive((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_confirm");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                })
-                .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_cancel");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                }))
-                .show();
-    }
-
-    private static void applyKiss(Context context, String launcherName) {
-        String compatibleText =
-                "\n\t• " + context.getResources().getString(R.string.apply_manual_kiss_step_1) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kiss_step_2) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kiss_step_3) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kiss_step_4,
-                                context.getResources().getString(R.string.app_name)
-                        );
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcherName)
-                .content(
-                        context.getResources().getString(R.string.apply_manual_kiss)
-                                + (compatibleText)
-                )
-                .positiveText(android.R.string.yes)
-                .onPositive((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_confirm");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                })
-                .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_cancel");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                }))
-                .show();
+                }
+        );
     }
 
     /**
@@ -903,45 +867,6 @@ public class LauncherHelper {
                         } catch (ActivityNotFoundException ignored) {
                         }
                     }
-                })
-                .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_cancel");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                }))
-                .show();
-    }
-
-    private static void applyHiOSLauncher(Context context, String launcherName) {
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcherName)
-                .content(
-                        context.getResources().getString(R.string.apply_manual_hios) + "\n\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_hios_step_1) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_hios_step_2) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_hios_step_3) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_hios_step_4) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_hios_step_5,
-                                context.getResources().getString(R.string.app_name)
-                        )
-                )
-                .positiveText(android.R.string.yes)
-                .onPositive((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_confirm");
-                                put("launcher", launcherName);
-                            }}
-                    );
                 })
                 .negativeText(android.R.string.cancel)
                 .onNegative(((dialog, which) -> {
