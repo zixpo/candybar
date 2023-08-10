@@ -549,7 +549,7 @@ public class LauncherHelper {
                                 context,
                                 launcherName,
                                 context.getResources().getString(
-                                        R.string.apply_launcher_incompatible_depending_on_version, launcherName, 10
+                                        R.string.apply_launcher_incompatible_depending_on_version, launcherName, 9
                                 )
                         );
                     }
@@ -559,15 +559,26 @@ public class LauncherHelper {
                 break;
             case ONEPLUS:
                 if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")) {
-                    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-                        launcherIncompatibleCustomMessage(
+                    if (Build.VERSION.SDK_INT == Build.VERSION_CODES.P) {
+                        applyWithInstructions(
                                 context,
                                 launcherName,
                                 context.getResources().getString(
-                                        R.string.apply_launcher_incompatible_depending_on_version, launcherName, 10
-                                )
+                                        R.string.apply_manual,
+                                        launcherName,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                                new String[]{
+                                        context.getResources().getString(R.string.apply_manual_oneplusold_step_1),
+                                        context.getResources().getString(R.string.apply_manual_oneplusold_step_2),
+                                        context.getResources().getString(R.string.apply_manual_oneplus_step_3),
+                                        context.getResources().getString(
+                                                R.string.apply_manual_oneplus_step_4,
+                                                context.getResources().getString(R.string.app_name)
+                                        ),
+                                }
                         );
-                    } else {
+                    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                         applyWithInstructions(
                                 context,
                                 launcherName,
@@ -585,6 +596,14 @@ public class LauncherHelper {
                                                 context.getResources().getString(R.string.app_name)
                                         ),
                                 }
+                        );
+                    } else {
+                        launcherIncompatibleCustomMessage(
+                                context,
+                                launcherName,
+                                context.getResources().getString(
+                                        R.string.apply_launcher_incompatible_depending_on_version, launcherName, 8
+                                )
                         );
                     }
                 } else {

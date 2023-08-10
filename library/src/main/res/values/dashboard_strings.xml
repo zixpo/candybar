@@ -153,9 +153,11 @@
     <string name="apply_manual_hios_step_4">Tap \"Icon pack\"</string>
     <string name="apply_manual_hios_step_5">Choose %s from the list</string>
     <string name="apply_manual_oneplus_step_1">Open \"Settings\"</string>
-    <string name="apply_manual_oneplus_step_2">Tap \"Customization\"</string>
+    <string name="apply_manual_oneplus_step_2">Tap \"Customization\" or \"Personalizations\"</string>
     <string name="apply_manual_oneplus_step_3">Tap \"Icon pack\"</string>
     <string name="apply_manual_oneplus_step_4">Choose %s from the list</string>
+    <string name="apply_manual_oneplusold_step_1">Long-tap your homescreen</string>
+    <string name="apply_manual_oneplusold_step_2">Tap \"Home Settings\"</string>
     <string name="apply_manual_stock_launcher">Follow the steps below to apply the icons manually:</string>
     <string name="apply_manual_stock_launcher_step_1">Open \"Settings\"</string>
     <string name="apply_manual_stock_launcher_step_2">Tap \"Personalizations\"</string>
@@ -177,7 +179,7 @@
     <string name="apply_lg_home_nougat">LG Home with Android Nougat no longer supports Icon Pack. You need a custom launcher to use Icon Pack.</string>
 
     <string name="apply_launcher_incompatible">%s Launcher doesn\'t support any icon pack, so you can\'t use this icon pack with this launcher. You can try a third-party app to use this icon pack in %2$s launcher. Do you want to install it?</string>
-    <string name="apply_launcher_incompatible_depending_on_version">%s launcher doesn\'t support icon pack on Android %d or lower. Please update your Android version or install a third-party launcher to use this icon pack.</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s launcher doesn\'t support icon packs on Android %d or lower. Please update your Android version or install a third-party launcher to use this icon pack. You can also try a helper app to change individual icons. Do you want to install it?</string>
 
     <!-- Icons -->
     <string name="icons_load_failed">Unable to load icons</string>
