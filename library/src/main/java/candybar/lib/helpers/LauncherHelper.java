@@ -112,10 +112,15 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_nova,
                 new String[]{"com.teslacoilsw.launcher", "com.teslacoilsw.launcher.prime"},
                 true),
-        ONEPLUS(
+        ONEPLUS_OXYGEN_OS(
                 "OnePlus Oxygen OS",
                 R.drawable.ic_launcher_oneplus_oxygen_os,
                 new String[]{"com.android.launcher"},
+                false),
+        ONEPLUS(
+                "OnePlus",
+                R.drawable.ic_launcher_oneplus,
+                new String[]{"net.oneplus.launcher"},
                 false),
         PIXEL(
                 "Pixel",
@@ -535,12 +540,36 @@ public class LauncherHelper {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
-            case ONEPLUS:
+            case ONEPLUS_OXYGEN_OS:
                 if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")) {
-                    applyStockLauncher(context, launcherName);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) { // Android 10 and up
+                        applyStockLauncher(context, launcherName);
+                    } else {
+                        launcherIncompatible(context, launcherName);
+                    }
                 } else {
                     notInstalledError(context, launcherName);
                 }
+                break;
+            case ONEPLUS:
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(
+                                R.string.apply_manual,
+                                launcherName,
+                                context.getResources().getString(R.string.app_name)
+                        ),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_oneplus_step_1),
+                                context.getResources().getString(R.string.apply_manual_oneplus_step_2),
+                                context.getResources().getString(R.string.apply_manual_oneplus_step_3),
+                                context.getResources().getString(
+                                        R.string.apply_manual_oneplus_step_4,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                        }
+                );
                 break;
             case PIXEL:
                 launcherIncompatible(context, launcherName);

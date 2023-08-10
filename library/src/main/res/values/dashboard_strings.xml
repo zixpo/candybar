@@ -136,7 +136,8 @@
     <string name="apply_manual_kiss_step_1">Open KISS settings</string>
     <string name="apply_manual_kiss_step_2">Tap \"User Interface\"</string>
     <string name="apply_manual_kiss_step_3">Tap on the \"Icon Pack\"</string>
-    <string name="apply_manual_kiss_step_4">Choose %s from the list</string>    <string name="apply_manual_samsung_oneui">%1$s doesn\'t support direct apply but starting with %2$s you can apply icons with a companion app.</string>
+    <string name="apply_manual_kiss_step_4">Choose %s from the list</string>
+    <string name="apply_manual_samsung_oneui">%1$s doesn\'t support direct apply but starting with %2$s you can apply icons with a companion app.</string>
     <string name="apply_manual_samsung_oneui_too_old">Your current version of %s is too old. Please update to Android 12 or newer to be able to apply icons directly. Alternatively, you can install a different launcher.</string>
     <string name="apply_manual_samsung_oneui_step_1">Open %s</string>
     <string name="apply_manual_samsung_oneui_step_2">Download the app %s</string>
@@ -151,6 +152,10 @@
     <string name="apply_manual_hios_step_3">Tap \"My theme\"</string>
     <string name="apply_manual_hios_step_4">Tap \"Icon pack\"</string>
     <string name="apply_manual_hios_step_5">Choose %s from the list</string>
+    <string name="apply_manual_oneplus_step_1">Open \"Settings\"</string>
+    <string name="apply_manual_oneplus_step_2">Tap \"Customization\"</string>
+    <string name="apply_manual_oneplus_step_3">Tap \"Icon pack\"</string>
+    <string name="apply_manual_oneplus_step_4">Choose %s from the list</string>
     <string name="apply_manual_stock_launcher">Follow the steps below to apply the icons manually:</string>
     <string name="apply_manual_stock_launcher_step_1">Open \"Settings\"</string>
     <string name="apply_manual_stock_launcher_step_2">Tap \"Personalizations\"</string>
