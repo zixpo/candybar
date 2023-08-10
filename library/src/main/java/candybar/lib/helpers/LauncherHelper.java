@@ -112,6 +112,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_nova,
                 new String[]{"com.teslacoilsw.launcher", "com.teslacoilsw.launcher.prime"},
                 true),
+        ONEPLUS(
+                "OnePlus Oxygen OS",
+                R.drawable.ic_launcher_oneplus_oxygen_os,
+                new String[]{"com.android.launcher"},
+                false),
         PIXEL(
                 "Pixel",
                 R.drawable.ic_launcher_pixel,
@@ -489,6 +494,13 @@ public class LauncherHelper {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
+            case ONEPLUS:
+                if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")) {
+                    applyStockLauncher(context, launcherName);
+                } else {
+                    notInstalledError(context, launcherName);
+                }
+                break;
             case PIXEL:
                 launcherIncompatible(context, launcherName);
                 break;
@@ -713,6 +725,50 @@ public class LauncherHelper {
                 }))
                 .show();
     }
+
+    private static void applyStockLauncher(Context context, String launcherName) {
+        new MaterialDialog.Builder(context)
+                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
+                .title(launcherName)
+                .content(
+                        context.getResources().getString(
+                                R.string.apply_manual_stock_launcher,
+                                launcherName
+                        ) + "\n\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_1) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_2) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_3) + "\n\t• " +
+                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_4) + "\n\t• " +
+                        context.getResources().getString(
+                                R.string.apply_manual_stock_launcher_step_5,
+                                context.getResources().getString(R.string.app_name)
+                        )
+                )
+                .positiveText(android.R.string.yes)
+                .onPositive((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_confirm");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                })
+                .negativeText(android.R.string.cancel)
+                .onNegative(((dialog, which) -> {
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_cancel");
+                                put("launcher", launcherName);
+                            }}
+                    );
+                }))
+                .show();
+    }
+
     private static void applyKiss(Context context, String launcherName) {
         String compatibleText =
                 "\n\t• " + context.getResources().getString(R.string.apply_manual_kiss_step_1) + "\n\t• " +
