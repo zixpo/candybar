@@ -153,8 +153,8 @@
     <string name="apply_manual_hios_step_4">Tap \"Icon pack\"</string>
     <string name="apply_manual_hios_step_5">Choose %s from the list</string>
     <string name="apply_manual_oneplus_step_1">Open \"Settings\"</string>
-    <string name="apply_manual_oneplus_step_2">Tap \"Customization\" or \"Personalizations\"</string>
-    <string name="apply_manual_oneplus_step_3">Tap \"Icon pack\"</string>
+    <string name="apply_manual_oneplus_step_2">Tap \"Customization\" (sometimes called \"Personalizations\" or \"Wallpapers &amp; style\")</string>
+    <string name="apply_manual_oneplus_step_3">Tap \"Icon pack\" or \"Icon styles\"</string>
     <string name="apply_manual_oneplus_step_4">Choose %s from the list</string>
     <string name="apply_manual_oneplusold_step_1">Long-tap your homescreen</string>
     <string name="apply_manual_oneplusold_step_2">Tap \"Home Settings\"</string>
