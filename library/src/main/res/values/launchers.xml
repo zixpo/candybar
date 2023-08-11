@@ -7,6 +7,7 @@
         <item>action</item>
         <item>adw</item>
         <item>apex</item>
+        <item>before</item><!-- Note that Before launcher does NOT support adaptive icons as of version 6.1.0 -->
         <item>blackberry</item>
         <item>cm_theme</item>
         <item>flick</item>

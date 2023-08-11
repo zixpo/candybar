@@ -61,6 +61,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_apex,
                 new String[]{"com.anddoes.launcher", "com.anddoes.launcher.pro"},
                 true),
+        BEFORE(
+                "Before",
+                R.drawable.ic_launcher_before,
+                new String[]{"com.beforesoft.launcher"},
+                true),
         CMTHEME(
                 "CM Theme",
                 R.drawable.ic_launcher_cm,
@@ -319,6 +324,39 @@ public class LauncherHelper {
                     );
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
+                }
+                break;
+            case BEFORE:
+                try {
+                    final Intent before = new Intent("com.beforesoftware.launcher.APPLY_ICONS");
+                    before.putExtra("packageName", context.getPackageName());
+                    before.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(before);
+                    ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    applyWithInstructions(
+                            context,
+                            launcherName,
+                            context.getResources().getString(R.string.apply_manual_before),
+                            new String[]{
+                                    context.getResources().getString(R.string.apply_manual_before_step_1),
+                                    context.getResources().getString(R.string.apply_manual_before_step_2),
+                                    context.getResources().getString(R.string.apply_manual_before_step_3),
+                                    context.getResources().getString(R.string.apply_manual_before_step_4),
+                                    context.getResources().getString(
+                                            R.string.apply_manual_before_step_5,
+                                            context.getResources().getString(R.string.app_name)
+                                    )
+                            }
+                    );
                 }
                 break;
             case BLACKBERRY:
