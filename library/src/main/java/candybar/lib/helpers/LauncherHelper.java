@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
 
 import candybar.lib.R;
@@ -71,6 +72,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_cm,
                 new String[]{"org.cyanogenmod.theme.chooser"},
                 true),
+        COLOR_OS(
+                "ColorOS",
+                R.drawable.ic_launcher_color_os,
+                new String[]{"com.oppo.launcher"},
+                false),
         GO(
                 "GO EX",
                 R.drawable.ic_launcher_go,
@@ -117,14 +123,9 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_nova,
                 new String[]{"com.teslacoilsw.launcher", "com.teslacoilsw.launcher.prime"},
                 true),
-        ONEPLUS_OXYGEN_OS(
-                "OnePlus Oxygen OS",
-                R.drawable.ic_launcher_oneplus_oxygen_os,
-                new String[]{"com.android.launcher"},
-                false),
-        ONEPLUS(
-                "OnePlus",
-                R.drawable.ic_launcher_oneplus,
+        OXYGEN_OS(
+                "OxygenOS",
+                R.drawable.ic_launcher_oxygen_os,
                 new String[]{"net.oneplus.launcher"},
                 false),
         PIXEL(
@@ -142,6 +143,16 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_solo,
                 new String[]{"home.solo.launcher.free"},
                 true),
+        STOCK_LEGACY(
+                /*
+                 * Historically, ColorOS, OxygenOS and realme UI were standalone launcher variants
+                 * but as of Android 12 they're slowly being merged into a single launcher that no
+                 * longer reports as e.g. "com.oppo.launcher" but now as "com.android.launcher".
+                 */
+                isColorOS() ? "ColorOS" : isRealmeUI() ? "realme UI" : "Stock Launcher",
+                isColorOS() ? R.drawable.ic_launcher_color_os : isRealmeUI() ? R.drawable.ic_launcher_realme_ui : R.drawable.ic_launcher_android,
+                new String[]{"com.android.launcher"},
+                false),
         POCO(
                 "POCO",
                 R.drawable.ic_launcher_poco,
@@ -385,6 +396,66 @@ public class LauncherHelper {
                             Toast.LENGTH_LONG).show();
                 }
                 break;
+            case COLOR_OS:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    applyWithInstructions(
+                            context,
+                            launcherName,
+                            context.getResources().getString(
+                                    R.string.apply_manual,
+                                    launcherName,
+                                    context.getResources().getString(R.string.app_name)
+                            ),
+                            new String[]{
+                                    context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_1),
+                                    context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_2),
+                                    context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_3),
+                                    context.getResources().getString(
+                                            R.string.apply_manual_color_os_hybrid_step_4,
+                                            context.getResources().getString(R.string.app_name)
+                                    ),
+                            }
+                    );
+                } else {
+                    launcherIncompatibleCustomMessage(
+                            context,
+                            launcherName,
+                            context.getResources().getString(
+                                    R.string.apply_launcher_incompatible_depending_on_version, launcherName, 10
+                            )
+                    );
+                }
+                break;
+            case OXYGEN_OS:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    applyWithInstructions(
+                            context,
+                            launcherName,
+                            context.getResources().getString(
+                                    R.string.apply_manual,
+                                    launcherName,
+                                    context.getResources().getString(R.string.app_name)
+                            ),
+                            new String[]{
+                                    context.getResources().getString(R.string.apply_manual_oxygen_os_step_1),
+                                    context.getResources().getString(R.string.apply_manual_oxygen_os_step_2),
+                                    context.getResources().getString(R.string.apply_manual_oxygen_os_step_3),
+                                    context.getResources().getString(
+                                            R.string.apply_manual_oxygen_os_step_4,
+                                            context.getResources().getString(R.string.app_name)
+                                    ),
+                            }
+                    );
+                } else {
+                    launcherIncompatibleCustomMessage(
+                            context,
+                            launcherName,
+                            context.getResources().getString(
+                                    R.string.apply_launcher_incompatible_depending_on_version, launcherName, 8
+                            )
+                    );
+                }
+                break;
             case FLICK:
                 try {
                     final Intent flick = context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher");
@@ -578,76 +649,6 @@ public class LauncherHelper {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
-            case ONEPLUS_OXYGEN_OS:
-                if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                        applyStockLauncher(context, launcherName);
-                    } else {
-                        launcherIncompatibleCustomMessage(
-                                context,
-                                launcherName,
-                                context.getResources().getString(
-                                        R.string.apply_launcher_incompatible_depending_on_version, launcherName, 9
-                                )
-                        );
-                    }
-                } else {
-                    notInstalledError(context, launcherName);
-                }
-                break;
-            case ONEPLUS:
-                if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")) {
-                    if (Build.VERSION.SDK_INT == Build.VERSION_CODES.P) {
-                        applyWithInstructions(
-                                context,
-                                launcherName,
-                                context.getResources().getString(
-                                        R.string.apply_manual,
-                                        launcherName,
-                                        context.getResources().getString(R.string.app_name)
-                                ),
-                                new String[]{
-                                        context.getResources().getString(R.string.apply_manual_oneplusold_step_1),
-                                        context.getResources().getString(R.string.apply_manual_oneplusold_step_2),
-                                        context.getResources().getString(R.string.apply_manual_oneplus_step_3),
-                                        context.getResources().getString(
-                                                R.string.apply_manual_oneplus_step_4,
-                                                context.getResources().getString(R.string.app_name)
-                                        ),
-                                }
-                        );
-                    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                        applyWithInstructions(
-                                context,
-                                launcherName,
-                                context.getResources().getString(
-                                        R.string.apply_manual,
-                                        launcherName,
-                                        context.getResources().getString(R.string.app_name)
-                                ),
-                                new String[]{
-                                        context.getResources().getString(R.string.apply_manual_oneplus_step_1),
-                                        context.getResources().getString(R.string.apply_manual_oneplus_step_2),
-                                        context.getResources().getString(R.string.apply_manual_oneplus_step_3),
-                                        context.getResources().getString(
-                                                R.string.apply_manual_oneplus_step_4,
-                                                context.getResources().getString(R.string.app_name)
-                                        ),
-                                }
-                        );
-                    } else {
-                        launcherIncompatibleCustomMessage(
-                                context,
-                                launcherName,
-                                context.getResources().getString(
-                                        R.string.apply_launcher_incompatible_depending_on_version, launcherName, 8
-                                )
-                        );
-                    }
-                } else {
-                    notInstalledError(context, launcherName);
-                }
-                break;
             case PIXEL:
                 launcherIncompatible(context, launcherName);
                 break;
@@ -717,6 +718,26 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case STOCK_LEGACY:
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(
+                                R.string.apply_manual,
+                                launcherName,
+                                context.getResources().getString(R.string.app_name)
+                        ),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_1),
+                                context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_2),
+                                context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_3),
+                                context.getResources().getString(
+                                        R.string.apply_manual_color_os_hybrid_step_4,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                        }
+                );
                 break;
             case NOUGAT:
                 try {
@@ -859,24 +880,6 @@ public class LauncherHelper {
                     );
                 }))
                 .show();
-    }
-
-    private static void applyStockLauncher(Context context, String launcherName) {
-        applyWithInstructions(
-                context,
-                launcherName,
-                context.getResources().getString(R.string.apply_manual_stock_launcher),
-                new String[]{
-                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_1),
-                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_2),
-                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_3),
-                        context.getResources().getString(R.string.apply_manual_stock_launcher_step_4),
-                        context.getResources().getString(
-                                R.string.apply_manual_stock_launcher_step_5,
-                                context.getResources().getString(R.string.app_name)
-                        )
-                }
-        );
     }
 
     /**
@@ -1093,5 +1096,53 @@ public class LauncherHelper {
             return true;
         }
         return false;
+    }
+
+    public static boolean isColorOS() {
+        String version = getSystemProperty("ro.build.version.opporom");
+        boolean isLegacy = (version != null && !version.isEmpty());
+        boolean isHybrid = false;
+
+        /* Starting Android 12 and later, ColorOS is slowly being merged with OxygenOS and
+         * no longer reporting as "com.oppo.launcher" but instead as "com.android.launcher".
+         * Going forward this will likely be the standard launcher for OnePlus, realme
+         * and OPPO devices but as of August 2023 this is not certain.
+         */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus") || Build.MANUFACTURER.equalsIgnoreCase("OPPO")) {
+                isHybrid = true;
+            } else isHybrid = Build.MANUFACTURER.equalsIgnoreCase("realme") && isLegacy;
+        }
+
+        return isLegacy || isHybrid;
+    }
+
+    public static boolean isRealmeUI() {
+        if (Build.MANUFACTURER.equalsIgnoreCase("realme")) {
+            String version = getSystemProperty("ro.build.version.realmeui");
+            return (version != null && !version.isEmpty());
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Relying on SystemProperties is a brittle approach. ROMs vary widely
+     * and properties present on one device might be missing on another.
+     * We use this specifically for customised ROMs of e.g. OPPO, OnePlus
+     * and realme to detect their flavoured launcher versions. If a property
+     * with the expected value is present, this is a strong signal. If the
+     * property is missing, however, this tells us nothing.
+     */
+    public static String getSystemProperty(String property) {
+        String value = "";
+        try {
+            Class<?> systemProperties = Class.forName("android.os.SystemProperties");
+            Method get = systemProperties.getMethod("get", String.class);
+            value = (String) get.invoke(systemProperties, property);
+
+        } catch (Exception ignored) {
+        }
+        return value;
     }
 }
