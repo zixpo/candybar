@@ -407,11 +407,11 @@ public class LauncherHelper {
                                     context.getResources().getString(R.string.app_name)
                             ),
                             new String[]{
-                                    context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_1),
-                                    context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_2),
-                                    context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_3),
+                                    context.getResources().getString(R.string.apply_manual_color_os_step_1),
+                                    context.getResources().getString(R.string.apply_manual_color_os_step_2),
+                                    context.getResources().getString(R.string.apply_manual_color_os_step_3),
                                     context.getResources().getString(
-                                            R.string.apply_manual_color_os_hybrid_step_4,
+                                            R.string.apply_manual_color_os_step_4,
                                             context.getResources().getString(R.string.app_name)
                                     ),
                             }
@@ -729,11 +729,11 @@ public class LauncherHelper {
                                 context.getResources().getString(R.string.app_name)
                         ),
                         new String[]{
-                                context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_1),
-                                context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_2),
-                                context.getResources().getString(R.string.apply_manual_color_os_hybrid_step_3),
+                                context.getResources().getString(R.string.apply_manual_color_os_step_1),
+                                context.getResources().getString(R.string.apply_manual_color_os_step_2),
+                                context.getResources().getString(R.string.apply_manual_color_os_step_3),
                                 context.getResources().getString(
-                                        R.string.apply_manual_color_os_hybrid_step_4,
+                                        R.string.apply_manual_color_os_step_4,
                                         context.getResources().getString(R.string.app_name)
                                 ),
                         }
