@@ -136,7 +136,10 @@ public class ApplyFragment extends Fragment {
                 (Build.VERSION.SDK_INT > Build.VERSION_CODES.R)
                         && (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")
                         || Build.MANUFACTURER.equalsIgnoreCase("OPPO")
-                        || Build.MANUFACTURER.equalsIgnoreCase("realme"));
+                        || Build.MANUFACTURER.equalsIgnoreCase("realme"))
+                || ((Build.VERSION.SDK_INT == Build.VERSION_CODES.R)
+                        && (Build.MANUFACTURER.equalsIgnoreCase("realme")
+                ));
         return true;
     }
 
