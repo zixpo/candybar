@@ -113,6 +113,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_lucid,
                 new String[]{"com.powerpoint45.launcher"},
                 true),
+        NOTHING(
+                "Nothing",
+                R.drawable.ic_launcher_nothing,
+                new String[]{"com.nothing.launcher"},
+                false),
         NOUGAT(
                 "Nougat",
                 R.drawable.ic_launcher_nougat,
@@ -622,6 +627,26 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case NOTHING:
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(
+                                R.string.apply_manual,
+                                launcherName,
+                                context.getResources().getString(R.string.app_name)
+                        ),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_nothing_step_1),
+                                context.getResources().getString(R.string.apply_manual_nothing_step_2),
+                                context.getResources().getString(R.string.apply_manual_nothing_step_3),
+                                context.getResources().getString(
+                                        R.string.apply_manual_nothing_step_4,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                        }
+                );
                 break;
             case NOVA:
                 try {

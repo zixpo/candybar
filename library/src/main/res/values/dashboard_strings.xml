@@ -166,6 +166,10 @@
     <string name="apply_manual_before_step_3">Tap \"Styles &amp; Themes\"</string>
     <string name="apply_manual_before_step_4">Tap \"Icon Styles &amp; Packs\"</string>
     <string name="apply_manual_before_step_5">Tap %s</string>
+    <string name="apply_manual_nothing_step_1">Open \"Settings\"</string>
+    <string name="apply_manual_nothing_step_2">Tap \"Customisation\"</string>
+    <string name="apply_manual_nothing_step_3">Tap \"Icon Pack\"</string>
+    <string name="apply_manual_nothing_step_4">Tap %s</string>
     <string name="apply_launch_failed">Unable to launch %s settings</string>
     <string name="apply_launcher_not_installed">%s Launcher is not installed. Do you want to open
         Google Play Store to download and install it?</string>
