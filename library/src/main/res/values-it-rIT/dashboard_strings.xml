@@ -148,7 +148,7 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_not_requested">Non richiesta</string>
     <string name="request_already_requested">Richiesta già effettuata</string>
     <string name="request_not_available">Non può essere richiesto</string>
-    <string name="request_building">Caricamento richiesta …</string>
+    <string name="request_building">Caricamento richiesta…</string>
     <string name="request_pacific_sending">Invio della richiesta a Pacific Manager...</string>
     <string name="request_pacific_error">Si è verificato un errore durante l\'invio della richiesta a Pacific Manager. L\'errore è %s</string>
     <string name="request_pacific_success">Richiesta inviata con successo a Pacific Manager</string>
@@ -157,10 +157,9 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_fetching_data">Recupero dati più recenti…</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>
-    <string name="request_requested">Per favore, controlla la tua richiesta di icone.
-Stai provando hai selezionato icone già richieste.</string>
-    <string name="request_email_client">Scegli con quale applicazione mail vuoi inviare la tua richiesta</string>
-    <string name="request_app_disabled">Stai usando una versione più vecchia di questo pacchetto icone. Le icone richieste possono essere incluse nell\'ultima versione. Aggiorna l\'app all\'ultima versione per richiedere icone.</string>
+    <string name="request_requested">Si prega di ricontrollare la richiesta poiché si sta tentando di richiedere icone già richieste.</string>
+    <string name="request_email_client">Scegli l\'app che vuoi utilizzare per inviare la richiesta di icone</string>
+    <string name="request_app_disabled">Non stai utilizzando l\'ultima versione dell\'app e siccome le icone richieste potrebbero essere già state aggiunte nell\'ultimo update, devi aggiornare all\'ultima versione prima di effettuare una richiesta.</string>
     <string name="connection_error_long">Impossibile caricare i dati dal server. Per favore, controlla la tua connessione internet.</string>
     <string name="unable_to_load_config">Si è verificato un errore durante l\'acquisizione di informazioni dal server.</string>
     <string name="request_limit">E\' possibile inviare  %d  app con la richiesta free.</string>
