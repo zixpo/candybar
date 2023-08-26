@@ -44,7 +44,7 @@
     <string name="search_icon">Nome Icona</string>
     <string name="search_wallpapers">Nome sfondo</string>
     <!-- Update -->
-    <string name="checking_for_update">Controllo aggiornamento…</string>
+    <string name="checking_for_update">Verifica aggiornamento…</string>
     <string name="update_available">Aggiornamento disponibile!</string>
     <string name="no_update_available">Stai utilizzando la versione più recente!</string>
     <!-- Changelog -->
@@ -60,14 +60,14 @@ Scaricala da lì per utilizzarla.</string>
     <string name="license_check_retry">Impossibile controllare la licenza. Per favore, riprova tra qualche momento.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Check</string>
-    <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store. Divertiti.</string>
-    <string name="playstore_check_failed">Sembra che tu abbia installato questo pacchetto icone al di fuori del Play Store, dunque non potrai utilizzarlo.</string>
+    <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store.</string>
+    <string name="playstore_check_failed">Sembra che tu abbia scaricato questo pacchetto icone di fuori dal Play Store, dunque non potrai utilizzarlo.</string>
     <!-- Share -->
     <string name="share_app_title">Hey! Ti consiglio questa applicazione %s</string>
     <string name="share_app_body">Guarda %1$s, questo pacchetto icone è fantastico! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Menù di navigazione</string>
-    <string name="tap_intro_home_navigation_desc">Tocca qui oppure fai uno swype verso destra per aprire il menù di navigazione</string>
+    <string name="tap_intro_home_navigation_desc">Tocca qui o scorri dal bordo sinistro dello schermo per aprire il menù di navigazione</string>
     <string name="tap_intro_home_apply">Applica Icone</string>
     <string name="tap_intro_home_apply_desc">Tocca qui per applicare %s al launcher in uso. Premi a lungo per applicare agli altri launcher.</string>
     <string name="tap_intro_icons_search">Cerca</string>
@@ -88,7 +88,7 @@ Scaricala da lì per utilizzarla.</string>
     <string name="tap_intro_wallpaper_preview_save">Salva sfondo</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Tocca qui per scaricare e salvare lo sfondo sul tuo dispositivo così potrai utilizzarlo successivamente</string>
     <string name="tap_intro_wallpaper_preview_apply">Applica sfondo</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">Imposta come sfondo della home</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Premi qui per impostare come sfondo della home</string>
     <!-- Home -->
     <string name="home_more_apps_header">Altre App</string>
     <string name="home_more_apps">Guarda le altre app pubblicate sul Play Store</string>
@@ -97,8 +97,8 @@ Scaricala da lì per utilizzarla.</string>
     <string name="home_donate">Dona</string>
     <string name="home_donate_desc">Supporta lo sviluppatore del pacchetto icone</string>
     <string name="home_icons">Icone personalizzate</string>
-    <string name="home_icon_dimension">icone grandi %s pixel</string>
-    <string name="home_loud_wallpapers">%d sfondi in cloud</string>
+    <string name="home_icon_dimension">icone di %s pixel</string>
+    <string name="home_loud_wallpapers">%d sfondi sul cloud</string>
     <string name="home_muzei">Muzei Live Wallpaper</string>
     <string name="home_icon_request_installed_apps">%d app installate in totale</string>
     <string name="home_icon_request_themed_apps">%d app supportate</string>
