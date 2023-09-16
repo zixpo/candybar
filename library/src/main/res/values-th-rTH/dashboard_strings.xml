@@ -1,39 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">แดชบอร์ด CandyBar</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">หน้าแรก</string>
     <string name="navigation_view_apply">ใช้ไอคอน</string>
     <string name="navigation_view_icons">ไอคอน</string>
     <string name="navigation_view_request">คำขอไอคอน</string>
-    <string name="navigation_view_wallpapers">ภาพพื้นหลัง</string>
-    <string name="navigation_view_presets">ชุดไอคอน</string>
+    <string name="navigation_view_wallpapers">วอลเปเปอร์</string>
+    <string name="navigation_view_presets">ชุดรูปแบบ</string>
     <string name="navigation_view_settings">การตั้งค่า</string>
     <string name="navigation_view_faqs">ถาม-ตอบ</string>
     <string name="navigation_view_about">เกี่ยวกับ</string>
     <string name="navigation_view_donate">สนับสนุนการพัฒนาโปรแกรม</string>
     <!-- Muzei -->
+    <string name="muzei_settings">การตั้งค่าวอลเปเปอร์เคลื่อนไหว</string>
     <string name="minute">นาที</string>
     <string name="hour">ชั่วโมง</string>
     <string name="save_setting">บันทึก</string>
+    <string name="muzei_refresh_duration">ความถี่ของการรีเฟรช</string>
+    <string name="muzei_wifi_only">รีเฟรชเมื่อใช้ไวไฟเท่านั้น</string>
+    <string name="muzei_downloaded_only">แสดงวอลเปเปอร์ที่ดาวน์โหลดแล้วเท่านั้น</string>
+    <string name="muzei_settings_ignored">การตั้งค่าไม่มีผลเพราะชุดไอคอนไม่มีวอลเปเปอร์</string>
+    <string name="muzei_settings_saved">บันทึกการตั้งค่าแล้ว</string>
     <!-- Menu -->
+    <string name="menu_search">ค้นหา</string>
+    <string name="menu_save">บันทึกไปที่อุปกรณ์</string>
+    <string name="menu_select_all">เลือกทั้งหมด</string>
+    <string name="menu_delete">ลบ</string>
+    <string name="menu_wallpaper_crop">ครอบตัดวอลเปเปอร์</string>
+    <string name="menu_apply_homescreen">หน้าจอหลัก</string>
+    <string name="menu_apply_lockscreen">หน้าจอล็อก</string>
+    <string name="menu_apply_homescreen_lockscreen">หน้าจอหลัก &amp; หน้าจอล็อก</string>
     <!-- Dialog -->
+    <string name="open">เปิด</string>
+    <string name="close">ปิด</string>
+    <string name="clear">ล้าง</string>
+    <string name="ok">ตกลง</string>
+    <string name="install">ติดตั้ง</string>
+    <string name="donate">บริจาค</string>
+    <string name="update">อัปเดต</string>
+    <string name="search_noresult">ไม่มีผลลัพธ์ใดสำหรับ \'%s\'</string>
+    <string name="search_faqs">คำถาม หรือ คำตอบ</string>
+    <string name="search_icon">ชื่อไอคอน</string>
+    <string name="search_wallpapers">ชื่อวอลเปเปอร์</string>
     <!-- Update -->
+    <string name="checking_for_update">กำลังตรวจสอบการอัพเดต…</string>
+    <string name="update_available">มีอัปเดต!</string>
+    <string name="no_update_available">คุณกำลังใช้งานเวอร์ชั่นล่าสุด!</string>
     <!-- Changelog -->
+    <string name="changelog_version">เวอร์ชั่น</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">ไม่สามารถโหลดสินค้าการซื้อในแอปได้</string>
     <!-- License -->
+    <string name="license_checking">กำลังตรวจสอบสิทธิ์การใช้งาน…</string>
+    <string name="license_check">ตรวจสอบสิทธิ์การใช้งาน</string>
+    <string name="license_check_success">ตรวจสอบสิทธิ์การใช้งานเรียบร้อย ขอบคุณที่ดาวน์โหลดแอปผ่าน Play Store</string>
+    <string name="license_check_failed">ตรวจสอบสิทธิ์การใช้งานล้มเหลว คุณไม่ได้ดาวน์โหลดแอปจาก Play Store
+        คุณไม่สามารถใช้งานแอปได้</string>
+    <string name="license_check_retry">ตรวจสอบสิทธิ์การใช้งานไม่ได้ กรุณาลองใหม่อีกครั้ง</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">ตรวจสอบ Play Store</string>
+    <string name="playstore_check_success">ขอบคุณสำหรับการติดตั้งแอปจาก Google Play Store</string>
+    <string name="playstore_check_failed">ดูเหมือนว่าคุณไม่ได้ติดตั้งชุดไอคอนนี้จาก Google Play Store
+        คุณไม่สามารถใช้งานมันได้</string>
     <!-- Share -->
+    <string name="share_app_title">ลองเช็ค %s ดูสิ!</string>
+    <string name="share_app_body">ลองเช็ค %1$s ดูสิ ชุดไอคอนนี้เท่ดีนะ! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">แถบเมนูนำทาง</string>
+    <string name="tap_intro_home_navigation_desc">แตะที่นี่หรือใช้นิ้วปัดจากด้านซ้ายมือของหน้าจอเพื่อเปิดแถบเมนูนำทาง</string>
+    <string name="tap_intro_home_apply">ใช้ชุดไอคอน</string>
+    <string name="tap_intro_home_apply_desc">แตะที่นี่เพื่อใช้ %s กับตัวเรียกใช้ปัจจุบันของคุณ หรือแตะค้างไว้เพื่อใช้มันกับตัวเรียกใช้อื่น</string>
+    <string name="tap_intro_icons_search">ค้นหา</string>
+    <string name="tap_intro_icons_search_desc">แตะที่นี่เพื่อค้นหาไอคอน</string>
+    <string name="tap_intro_request_select">เลือกแอปที่ขาดไอคอน</string>
+    <string name="tap_intro_request_select_desc">แตะที่นี่เพื่อเลือกแอปที่ขาดไอคอน</string>
+    <string name="tap_intro_request_select_all">เลือกแอปที่ขาดไอคอนทั้งหมด</string>
+    <string name="tap_intro_request_select_all_desc">แตะที่นี่เพื่อเลือกแอปที่ขาดไอคอนทั้งหมด</string>
+    <string name="tap_intro_request_send">ส่งคำขอไอคอน</string>
+    <string name="tap_intro_request_send_desc">แตะที่นี่เพื่อส่งแอปที่ขาดไอคอนที่เลือกไว้</string>
+    <string name="tap_intro_request_premium">คำขอไอคอนแบบพรีเมี่ยม</string>
+    <string name="tap_intro_request_premium_desc">แตะที่นี่เพื่อซื้อแพ็กเกจคำขอไอคอน
+        คำขอไอคอนแบบพรีเมี่ยมจะได้รับการดำเนินการที่รวดเร็วกว่า</string>
+    <string name="tap_intro_wallpapers_option">ตัวเลือกวอลเปเปอร์</string>
+    <string name="tap_intro_wallpapers_option_desc">แตะค้างไว้เพื่อแสดงตัวเลือกวอลเปเปอร์ %s ใช้งานวอลเปเปอร์</string>
+    <string name="tap_intro_wallpapers_option_desc_download">ดาวน์โหลดหรือ</string>
+    <string name="tap_intro_wallpapers_preview">ดูตัวอย่างวอลเปเปอร์</string>
+    <string name="tap_intro_wallpapers_preview_desc">แตะที่นี่เพื่อดูตัวอย่างวอลเปเปอร์ขนาดเต็ม</string>
+    <string name="tap_intro_wallpaper_preview_save">บันทึกวอลเปเปอร์</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">แตะที่นี่เพื่อดาวน์โหลดและบันทึกวอลเปเปอร์ไปยังอุปกรณ์ของคุณเพื่อการใช้งานภายหลัง</string>
+    <string name="tap_intro_wallpaper_preview_apply">ใช้วอลเปเปอร์</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">แตะที่นี่เพื่อใช้วอลเปเปอร์เป็นพื้นหลังหน้าจอหลัก</string>
     <!-- Home -->
+    <string name="home_more_apps_header">แอปอื่นๆ</string>
+    <string name="home_more_apps">ลองเช็คแอปอื่นๆบน Google Play Store</string>
+    <string name="home_rate_and_review">ให้คะแนน &amp; เขียนรีวิว</string>
+    <string name="home_apply_icon_pack">ใช้ %s</string>
+    <string name="home_donate">บริจาค</string>
+    <string name="home_donate_desc">สนับสนุนการพัฒนาชุดไอคอน</string>
+    <string name="home_icons">ไอคอนแบบกำหนดเอง</string>
+    <string name="home_icon_dimension">ขนาดไอคอน %s พิกเซล</string>
+    <string name="home_loud_wallpapers">วอลเปเปอร์บนคลาวด์ %d รูป</string>
+    <string name="home_muzei">วอลเปเปอร์เคลื่อนไหว Muzei</string>
+    <string name="home_icon_request_installed_apps">แอปที่ติดตั้ง\nทั้งหมด %d แอป</string>
+    <string name="home_icon_request_themed_apps">มีไอคอน\n%d แอป</string>
+    <string name="home_icon_request_missed_apps">ขาดไอคอน\n%d แอป</string>
     <!-- Apply -->
+    <string name="apply_installed">ตัวเรียกใช้ที่ติดตั้งแล้ว</string>
+    <string name="apply_supported">ตัวเรียกใช้ที่สนับสนุน</string>
+    <string name="apply_manual">ไม่สามารถเซ็ตตัวใช้งาน %1$s ให้ใช้ชุดไอคอน %2$s จากแอปนี้ได้ คุณสามารถเซ็ตด้วยตัวคุณเองจากเมนูตั้งค่าของตัวใช้งานนั้น</string>
+    <string name="apply_manual_kvaesitso">ไม่สามารถเซ็ตไอคอนให้ตัวใช้งาน Kvaesitso จากแอปนี้ได้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้:</string>
+    <string name="apply_manual_kvaesitso_step_1">เปิดการตั้งค่าตัวใช้งาน Kvaesitso</string>
+    <string name="apply_manual_kvaesitso_step_2">แตะที่ \"กริด &amp; ไอคอน\"</string>
+    <string name="apply_manual_kvaesitso_step_3">แตะที่ \"ชุดไอคอน\"</string>
+    <string name="apply_manual_kvaesitso_step_5">แตะที่ไอคอนพู่กันเพื่อเปิดหรือปิดการใช้งานรูปร่างพื้นหลัง</string>
+    <string name="apply_manual_kiss">ไม่สามารถเซ็ตไอคอนให้ตัวใช้งาน KISS จากแอปนี้ได้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้:</string>
+    <string name="apply_manual_kiss_step_1">เปิดการตั้งค่าตัวใช้งาน KISS</string>
+    <string name="apply_manual_kiss_step_2">แตะที่ \"หน้าจอผู้ใช้งาน\"</string>
+    <string name="apply_manual_kiss_step_3">แตะที่ \"ชุดไอคอน\"</string>
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">คำขอไอคอน</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
+    <string name="premium_request">คำขอไอคอนแบบพรีเมี่ยม</string>
+    <string name="premium_request_no_internet">กรุณาตรวจสอบว่าโทรศัพท์ของคุณเชื่อมต่อกับอินเทอร์เน็ตเรียบร้อยก่อนส่งคำขอไอคอนแบบพรีเมี่ยม</string>
+    <string name="premium_request_desc">คำขอไอคอนแบบพรีเมี่ยมคือการจ่ายเงินเพื่อส่งคำขอ เพื่อให้ทีมพัฒนาสร้างไอคอนให้กับแอปที่คุณขอได้เร็วขึ้น</string>
+    <string name="premium_request_buy">ซื้อ</string>
+    <string name="premium_request_already_purchased">คุณมีคำขอไอคอนแบบพรีเมี่ยมคงเหลือ %d รายการ
+        คุณต้องใช้คำขอเหล่านี้ให้หมดก่อนที่คุณจะสามารถซื้อแพ็กเกจคำขอไอคอนแบบพรีเมี่ยมได้อีกครั้ง</string>
+    <string name="premium_request_limit">คุณมีคำขอไอคอนแบบพรีเมี่ยมเพียง %d รายการเท่านั้น</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_apply">ใช้วอลเปเปอร์</string>
+    <string name="wallpaper_save_to_device">บันทึกวอลเปเปอร์</string>
     <!-- Presets -->
     <!-- Preferences -->
+    <string name="pref_premium_request_header">คำขอไอคอนแบบพรีเมี่ยม</string>
     <!-- Themes -->
     <!-- Permission -->
     <!-- Intent -->
@@ -43,5 +145,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">เปิด</string>
+    <string name="txt_close">ปิด</string>
     <!-- Content descriptions for screen readers -->
 </resources>
