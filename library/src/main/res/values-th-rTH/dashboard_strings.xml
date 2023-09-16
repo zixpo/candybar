@@ -118,34 +118,100 @@
     <string name="apply_manual_kiss_step_1">เปิดการตั้งค่าตัวใช้งาน KISS</string>
     <string name="apply_manual_kiss_step_2">แตะที่ \"หน้าจอผู้ใช้งาน\"</string>
     <string name="apply_manual_kiss_step_3">แตะที่ \"ชุดไอคอน\"</string>
+    <string name="apply_manual_samsung_oneui">ไม่สามารถเซ็ตตัวใช้งาน %1$s ให้ใช้ชุดไอคอนจากแอปนี้ได้ หากคุณใช้ %2$s เป็นต้นไป คุณสามารถใช้แอพควบคู่เพื่อใช้ชุดไอคอนได้</string>
+    <string name="apply_manual_samsung_oneui_too_old">%s ของคุณมีเวอร์ชั่นเก่าเกินไป คุณต้องอัพเดตเป็น Android 12 หรือรุ่นที่ใหม่กว่าจึงจะสามารถเซ็ตชุดไอคอนให้ตัวใช้งานได้โดยตรงได้ หรือไม่เช่นนั้นก็ต้องใช้ตัวใช้งานตัวอื่น</string>
+    <string name="apply_manual_samsung_oneui_step_1">เปิด %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">ดาวน์โหลดแอป %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">แตะที่ \"ไอคอน\"</string>
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">คำขอไอคอน</string>
+    <string name="request_custom_error">เกิดข้อผิดพลาดระหว่างการส่งคำขอไอคอน หากปัญหายังคงเป็นอยู่เรื่อยๆ ให้ติดต่อนักพัฒนา %s</string>
+    <string name="request_custom_success">ส่งคำขอไอคอนสำเร็จแล้ว</string>
+    <string name="request_fetching_data">กำลังดึงข้อมูลใหม่ล่าสุด…</string>
+    <string name="request_build_failed">ไม่สามารถสร้างคำขอไอคอนได้</string>
+    <string name="request_appfilter_failed">ไม่สามารถอ่าน appfilter.xml ได้</string>
+    <string name="request_requested">กรุณาตรวจสอบคำขอของคุณอีกครั้ง
+        เพราะคุณกำลังขอแอปที่คุณเคยขอไปแล้ว</string>
+    <string name="request_email_client">เลือกแอปที่คุณต้องการจะใช้ในการส่งคำขอไอคอน</string>
     <!-- Regular Request -->
+    <string name="regular_request">คำขอไอคอนแบบทั่วไป</string>
+    <string name="regular_request_count">มี\n%d คำขอ</string>
+    <string name="regular_request_used">ใช้ไปแล้ว\n%d คำขอ</string>
+    <string name="regular_request_available">เหลืออีก\n%d คำขอ</string>
     <!-- Premium Request -->
     <string name="premium_request">คำขอไอคอนแบบพรีเมี่ยม</string>
     <string name="premium_request_no_internet">กรุณาตรวจสอบว่าโทรศัพท์ของคุณเชื่อมต่อกับอินเทอร์เน็ตเรียบร้อยก่อนส่งคำขอไอคอนแบบพรีเมี่ยม</string>
     <string name="premium_request_desc">คำขอไอคอนแบบพรีเมี่ยมคือการจ่ายเงินเพื่อส่งคำขอ เพื่อให้ทีมพัฒนาสร้างไอคอนให้กับแอปที่คุณขอได้เร็วขึ้น</string>
     <string name="premium_request_buy">ซื้อ</string>
+    <string name="premium_request_count">มี\n%d คำขอ</string>
+    <string name="premium_request_used">ใช้ไปแล้ว\n%d คำขอ</string>
+    <string name="premium_request_available">เหลืออีก\n%d คำขอ</string>
     <string name="premium_request_already_purchased">คุณมีคำขอไอคอนแบบพรีเมี่ยมคงเหลือ %d รายการ
         คุณต้องใช้คำขอเหล่านี้ให้หมดก่อนที่คุณจะสามารถซื้อแพ็กเกจคำขอไอคอนแบบพรีเมี่ยมได้อีกครั้ง</string>
     <string name="premium_request_limit">คุณมีคำขอไอคอนแบบพรีเมี่ยมเพียง %d รายการเท่านั้น</string>
+    <string name="premium_request_limit1">แต่คุณเลือกไว้ %d แอป
+        \n\nคุณต้องใช้คำขอไอคอนแบบพรีเมี่ยมที่คุณมีทั้งหมดก่อนที่คุณจะใช้คำขอแบบทั่วไปได้อีกครั้ง</string>
+    <string name="premium_request_consume_failed">ไม่สามารถใช้คำขอไอคอนแบบพรีเมี่ยมได้ กรุณาตรวจสอบความเสถียรของการเชื่อมต่ออินเทอร์เน็ตของคุณ และลองใหม่อีกครั้ง
+        ไปที่การตั้งค่าและสร้างคำขอไอคอนแบบพรีเมี่ยมใหม่อีกครั้ง</string>
+    <string name="premium_request_rebuilding">กำลังสร้างคำขอไอคอนแบบพรีเมี่ยมใหม่อีกครั้ง</string>
+    <string name="premium_request_rebuilding_empty">คุณไม่ได้สร้างคำขอไอคอนแบบพรีเมี่ยม</string>
+    <string name="premium_request_exist">คุณยังมีแพ็กเกจคำขอไอคอนแบบพรีเมี่ยมอยู่
+        เปิดการตั้งค่าแล้วเลือก \"กู้คืนคำสั่งซื้อ\" เพื่อกู้คืนแพ็กเกจ</string>
+    <string name="premium_request_required">คุณต้องซื้อแพ็กเกจคำขอไอคอนแบบพรีเมี่ยมก่อน จึงจะสร้างคำขอไอคอนได้</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">วอลเปเปอร์ใหม่</string>
+    <string name="wallpaper_already_downloaded">ดาวน์โหลดวอลเปเปอร์ไปแล้ว</string>
+    <string name="wallpaper_downloading">กำลังดาวน์โหลดวอลเปเปอร์…</string>
+    <string name="wallpaper_download_failed">ไม่สามารถโหลดวอลล์เปเปอร์ได้</string>
+    <string name="wallpaper_download_success">ดาวน์โหลดวอลเปเปอร์สำเร็จ</string>
+    <string name="wallpaper_loading">กำลังโหลดวอลเปเปอร์…</string>
+    <string name="wallpaper_applying">กำลังใช้วอลเปเปอร์…</string>
+    <string name="wallpaper_applied">ใช้งานวอลเปเปอร์แล้ว</string>
+    <string name="wallpaper_apply_failed">ไม่สามารถใช้งานวอลเปเปอร์ได้</string>
+    <string name="wallpaper_apply_cancelled">ยกเลิกการใช้งานวอลเปเปอร์</string>
+    <string name="connection_failed">ไม่สามารถดึงข้อมูลจากเซิร์ฟเวอร์ได้</string>
     <string name="wallpaper_apply">ใช้วอลเปเปอร์</string>
     <string name="wallpaper_save_to_device">บันทึกวอลเปเปอร์</string>
     <!-- Presets -->
+    <string name="presets_load_failed">ไม่สามารถโหลดชุดรูปแบบได้</string>
     <!-- Preferences -->
     <string name="pref_premium_request_header">คำขอไอคอนแบบพรีเมี่ยม</string>
+    <string name="pref_theme_header">ธีม</string>
+    <string name="pref_theme_dark">ธีมมืด</string>
+    <string name="pref_theme_dark_desc">ใช้สีโทนมืดในแอป</string>
+    <string name="pref_wallpaper_header">วอลเปเปอร์</string>
+    <string name="pref_wallpaper_location">ตำแหน่งการบันทึกวอลเปเปอร์</string>
+    <string name="pref_language_header">ภาษา</string>
+    <string name="pref_others_header">อื่นๆ</string>
     <!-- Themes -->
     <!-- Permission -->
     <!-- Intent -->
     <!-- About -->
+    <string name="about_contributors_title">ผู้มีส่วนร่วม</string>
+    <string name="about_privacy_policy_title">นโยบายความเป็นส่วนตัว</string>
+    <string name="about_terms_and_conditions_title">ข้อกำหนดและเงื่อนไข</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">กรุณาอธิบายปัญหาที่คุณต้องการจะรายงาน</string>
+    <string name="report_bugs_desc_hint">คำอธิบาย</string>
+    <string name="report_bugs_desc_empty">กรุณาอธิบาย</string>
+    <string name="report_bugs_building">กำลังสร้างลิสต์ Activity…</string>
     <!-- Support Development -->
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_open_source_licenses">ใบอนุญาตโอเพนซอร์ส</string>
+    <string name="about_dashboard_contributors">ผู้มีส่วนร่วมพัฒนา CandyBar</string>
+    <string name="about_dashboard_translator">ผู้แปลภาษา CandyBar</string>
     <!-- DrawerToggle -->
     <string name="txt_open">เปิด</string>
     <string name="txt_close">ปิด</string>
+    <string name="txt_new">ใหม่</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">เพิ่มไอคอนนี้ไปยังบุ๊กมาร์ก</string>
+    <string name="icon_search_close_button_content_description">ปิดการค้นหาไอคอน</string>
+    <string name="icon_request_submit_button_content_description">ส่งคำขอไอคอน</string>
+    <string name="icon_list_content_description">รายชื่อไอคอนที่มีในชุดไอคอน</string>
+    <string name="icon_search_list_content_description">รายชื่อของไอคอนที่ตรงกับคำค้นหา</string>
+    <string name="about_item_social_content_description">ลิงก์โพรไฟล์ของนักพัฒนาชุดไอคอน: </string>
+    <string name="share_icon_pack_button_content_description">แชร์แอปนี้ให้ผู้อื่น</string>
 </resources>
