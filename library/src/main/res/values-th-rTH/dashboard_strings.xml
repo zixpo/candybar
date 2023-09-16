@@ -175,8 +175,27 @@
     <string name="wallpaper_save_to_device">บันทึกวอลเปเปอร์</string>
     <!-- Presets -->
     <string name="presets_load_failed">ไม่สามารถโหลดชุดรูปแบบได้</string>
+    <string name="presets_storage_permission">คุณต้องอนุญาตการใช้พื้นที่จัดเก็บข้อมูลจึงจะสามารถดูตัวอย่างวอลเปเปอร์ได้</string>
+    <string name="presets_required_apps">แอปที่จำเป็นต้องมีสำหรับการใช้ชุดรูปแบบเหล่านี้</string>
+    <string name="presets_required_apps_not_installed">คุณยังไม่ได้ติดตั้งแอปที่จำเป็นต้องมีสำหรับการใช้ชุดรูปแบบ กรุณาติดตั้งแอปที่ขาดไปและลองใหม่อีกครั้ง</string>
     <!-- Preferences -->
+    <string name="pref_data_header">ข้อมูล &amp; แคช</string>
+    <string name="pref_data_cache">ล้างแคช</string>
+    <string name="pref_data_cache_desc">ลบแคชรูปภาพจากพื้นที่จัดเก็บของคุณ แคชเหล่านี้ถูกสร้างตอนที่คุณเลือกรูปภาพในแอป ขอไอคอนที่ขาดไป และหลังจากที่คุณโหลดภาพขนาดย่อของวอลเปเปอร์บนคลาวด์</string>
+    <string name="pref_data_cache_size">ขนาดแคช: %s</string>
+    <string name="pref_data_cache_clear_dialog">คุณต้องการล้างแคชจริงๆหรือไม่?</string>
+    <string name="pref_data_cache_cleared">แคชถูกล้างแล้ว</string>
+    <string name="pref_data_request">ล้างข้อมูลคำขอไอคอน</string>
+    <string name="pref_data_request_desc">ลบข้อมูลคำขอไอคอนที่ถูกสร้างระหว่างการขอไอคอนที่ขาดไป</string>
+    <string name="pref_data_request_clear_dialog">คุณต้องการล้างข้อมูลคำขอไอคอนจริงๆหรือไม่?</string>
+    <string name="pref_data_request_cleared">ข้อมูลคำขอไอคอนถูกล้างแล้ว</string>
     <string name="pref_premium_request_header">คำขอไอคอนแบบพรีเมี่ยม</string>
+    <string name="pref_premium_request_restore">กู้คืนคำสั่งซื้อ</string>
+    <string name="pref_premium_request_restore_desc">กู้คืนแพ็กเกจคำสั่งซื้อแบบพรีเมี่ยมหลังจากที่ติดตั้งชุดไอคอนใหม่อีกครั้ง</string>
+    <string name="pref_premium_request_restore_success">คำสั่งซื้อถูกกู้คืนแล้ว</string>
+    <string name="pref_premium_request_restore_empty">คุณไม่มีแพ็กเกจคำสั่งซื้อใดๆ</string>
+    <string name="pref_premium_request_rebuild">สร้างคำขอไอคอนแบบพรีเมี่ยมใหม่อีกครั้ง</string>
+    <string name="pref_premium_request_rebuild_desc">รวบรวมข้อมูลคำขอไอคอนแบบพรีเมี่ยมและส่งอีกครั้ง</string>
     <string name="pref_theme_header">ธีม</string>
     <string name="pref_theme_dark">ธีมมืด</string>
     <string name="pref_theme_dark_desc">ใช้สีโทนมืดในแอป</string>
@@ -184,9 +203,25 @@
     <string name="pref_wallpaper_location">ตำแหน่งการบันทึกวอลเปเปอร์</string>
     <string name="pref_language_header">ภาษา</string>
     <string name="pref_others_header">อื่นๆ</string>
+    <string name="pref_others_report_bugs">รายงานข้อบกพร่อง</string>
+    <string name="pref_others_changelog">การเปลี่ยนแปลง</string>
+    <string name="pref_others_reset_tutorial">รีเซ็ตตัวช่วยสอน</string>
+    <string name="pref_others_reset_tutorial_reset">รีเซ็ตตัวช่วยสอนแล้ว</string>
     <!-- Themes -->
+    <string name="theme_name_auto">อัตโนมัติ</string>
+    <string name="theme_name_light">สว่าง</string>
+    <string name="theme_name_dark">มืด</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">คุณต้องอนุญาตการใช้พื้นที่จัดเก็บข้อมูลจึงจะสามารถบันทึกวอลเปเปอร์ได้</string>
     <!-- Intent -->
+    <string name="app_client">เลือกแอป</string>
+    <string name="no_email_app">คุณไม่มีแอปสำหรับส่งอีเมล</string>
+    <string name="no_browser">คุณไม่มีแอปสำหรับเปิดลิงก์</string>
+    <string name="intent_email_failed">ไม่สามารถแสดงแอปอีเมลได้</string>
+    <string name="intent_email_supported">รองรับ</string>
+    <string name="intent_email_recommended">แนะนำ</string>
+    <string name="intent_email_not_supported">ไม่รองรับ</string>
+    <string name="intent_email_not_supported_message">แอปนี้ไม่ได้รองรับแอปอีเมลที่คุณเลือก กรุณาเลือกแอปอีเมลอื่น</string>
     <!-- About -->
     <string name="about_contributors_title">ผู้มีส่วนร่วม</string>
     <string name="about_privacy_policy_title">นโยบายความเป็นส่วนตัว</string>
@@ -196,12 +231,20 @@
     <string name="report_bugs_desc_hint">คำอธิบาย</string>
     <string name="report_bugs_desc_empty">กรุณาอธิบาย</string>
     <string name="report_bugs_building">กำลังสร้างลิสต์ Activity…</string>
+    <string name="report_bugs_failed">ไม่สามารถสร้างลิสต์ Activity ได้</string>
+    <string name="report_bugs_send">ส่งรายงาน</string>
     <!-- Support Development -->
+    <string name="donation_success">ขอบคุณสำหรับการบริจาค เราจะใช้มันในทางที่ดี</string>
     <!-- Crash Report -->
+    <string name="crash_report">รายงานแอปล่ม</string>
+    <string name="crash_report_message">ขออภัย %s ล่ม เลือกส่งรายงานข้างล่างเพื่อช่วยนักพัฒนาแก้ไขปัญหา</string>
+    <string name="crash_report_send">ส่งรายงาน</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">แคนดี้บาร์</string>
+    <string name="about_dashboard_dev">แคนดี้บาร์คือแอปแดชบอร์ดสำหรับชุดไอคอน อยู่ภายใต้ข้อตกลงการใช้งานเสรีสัญญาอนุญาตอะแพชี 2.0        สำหรับระบบแอนดรอยด์ สามารถดาวน์โหลดจาก GitHub ได้ฟรี พัฒนาโดย Dani Mahardhika</string>
     <string name="about_open_source_licenses">ใบอนุญาตโอเพนซอร์ส</string>
-    <string name="about_dashboard_contributors">ผู้มีส่วนร่วมพัฒนา CandyBar</string>
-    <string name="about_dashboard_translator">ผู้แปลภาษา CandyBar</string>
+    <string name="about_dashboard_contributors">ผู้มีส่วนร่วมพัฒนาแคนดี้บาร์</string>
+    <string name="about_dashboard_translator">ผู้แปลภาษาแคนดี้บาร์</string>
     <!-- DrawerToggle -->
     <string name="txt_open">เปิด</string>
     <string name="txt_close">ปิด</string>
