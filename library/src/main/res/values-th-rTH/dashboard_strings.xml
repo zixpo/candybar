@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- Navigation View -->
+    <string name="navigation_view_home">หน้าแรก</string>
+    <string name="navigation_view_apply">ใช้ไอคอน</string>
+    <string name="navigation_view_icons">ไอคอน</string>
+    <string name="navigation_view_request">คำขอไอคอน</string>
+    <string name="navigation_view_wallpapers">ภาพพื้นหลัง</string>
+    <string name="navigation_view_presets">ชุดไอคอน</string>
+    <string name="navigation_view_settings">การตั้งค่า</string>
+    <string name="navigation_view_faqs">ถาม-ตอบ</string>
+    <string name="navigation_view_about">เกี่ยวกับ</string>
+    <string name="navigation_view_donate">สนับสนุนการพัฒนาโปรแกรม</string>
     <!-- Muzei -->
+    <string name="minute">นาที</string>
+    <string name="hour">ชั่วโมง</string>
+    <string name="save_setting">บันทึก</string>
     <!-- Menu -->
     <!-- Dialog -->
     <!-- Update -->
@@ -15,6 +28,7 @@
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">คำขอไอคอน</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
