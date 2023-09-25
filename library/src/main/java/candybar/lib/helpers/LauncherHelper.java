@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
 
 import candybar.lib.R;
@@ -61,16 +62,31 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_apex,
                 new String[]{"com.anddoes.launcher", "com.anddoes.launcher.pro"},
                 true),
+        BEFORE(
+                "Before",
+                R.drawable.ic_launcher_before,
+                new String[]{"com.beforesoft.launcher"},
+                true),
         CMTHEME(
                 "CM Theme",
                 R.drawable.ic_launcher_cm,
                 new String[]{"org.cyanogenmod.theme.chooser"},
                 true),
+        COLOR_OS(
+                "ColorOS",
+                R.drawable.ic_launcher_color_os,
+                new String[]{"com.oppo.launcher"},
+                false),
         GO(
                 "GO EX",
                 R.drawable.ic_launcher_go,
                 new String[]{"com.gau.go.launcherex"},
                 true),
+        HIOS(
+                "HiOS",
+                R.drawable.ic_launcher_hios,
+                new String[]{"com.transsion.hilauncher"},
+                false),
         HOLO(
                 "Holo",
                 R.drawable.ic_launcher_holo,
@@ -97,6 +113,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_lucid,
                 new String[]{"com.powerpoint45.launcher"},
                 true),
+        NOTHING(
+                "Nothing",
+                R.drawable.ic_launcher_nothing,
+                new String[]{"com.nothing.launcher"},
+                false),
         NOUGAT(
                 "Nougat",
                 R.drawable.ic_launcher_nougat,
@@ -107,6 +128,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_nova,
                 new String[]{"com.teslacoilsw.launcher", "com.teslacoilsw.launcher.prime"},
                 true),
+        OXYGEN_OS(
+                "OxygenOS",
+                R.drawable.ic_launcher_oxygen_os,
+                new String[]{"net.oneplus.launcher"},
+                false),
         PIXEL(
                 "Pixel",
                 R.drawable.ic_launcher_pixel,
@@ -122,6 +148,16 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_solo,
                 new String[]{"home.solo.launcher.free"},
                 true),
+        STOCK_LEGACY(
+                /*
+                 * Historically, ColorOS, OxygenOS and realme UI were standalone launcher variants
+                 * but as of Android 12 they're slowly being merged into a single launcher that no
+                 * longer reports as e.g. "com.oppo.launcher" but now as "com.android.launcher".
+                 */
+                isColorOS() ? "ColorOS" : isRealmeUI() ? "realme UI" : "Stock Launcher",
+                isColorOS() ? R.drawable.ic_launcher_color_os : isRealmeUI() ? R.drawable.ic_launcher_realme_ui : R.drawable.ic_launcher_android,
+                new String[]{"com.android.launcher"},
+                false),
         POCO(
                 "POCO",
                 R.drawable.ic_launcher_poco,
@@ -306,6 +342,39 @@ public class LauncherHelper {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
+            case BEFORE:
+                try {
+                    final Intent before = new Intent("com.beforesoftware.launcher.APPLY_ICONS");
+                    before.putExtra("packageName", context.getPackageName());
+                    before.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(before);
+                    ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    applyWithInstructions(
+                            context,
+                            launcherName,
+                            context.getResources().getString(R.string.apply_manual_before),
+                            new String[]{
+                                    context.getResources().getString(R.string.apply_manual_before_step_1),
+                                    context.getResources().getString(R.string.apply_manual_before_step_2),
+                                    context.getResources().getString(R.string.apply_manual_before_step_3),
+                                    context.getResources().getString(R.string.apply_manual_before_step_4),
+                                    context.getResources().getString(
+                                            R.string.apply_manual_before_step_5,
+                                            context.getResources().getString(R.string.app_name)
+                                    )
+                            }
+                    );
+                }
+                break;
             case BLACKBERRY:
                 applyManual(context, launcherPackage, launcherName, "com.blackberry.blackberrylauncher.MainActivity");
                 break;
@@ -330,6 +399,66 @@ public class LauncherHelper {
                 } catch (SecurityException | IllegalArgumentException e) {
                     Toast.makeText(context, R.string.apply_cmtheme_failed,
                             Toast.LENGTH_LONG).show();
+                }
+                break;
+            case COLOR_OS:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    applyWithInstructions(
+                            context,
+                            launcherName,
+                            context.getResources().getString(
+                                    R.string.apply_manual,
+                                    launcherName,
+                                    context.getResources().getString(R.string.app_name)
+                            ),
+                            new String[]{
+                                    context.getResources().getString(R.string.apply_manual_color_os_step_1),
+                                    context.getResources().getString(R.string.apply_manual_color_os_step_2),
+                                    context.getResources().getString(R.string.apply_manual_color_os_step_3),
+                                    context.getResources().getString(
+                                            R.string.apply_manual_color_os_step_4,
+                                            context.getResources().getString(R.string.app_name)
+                                    ),
+                            }
+                    );
+                } else {
+                    launcherIncompatibleCustomMessage(
+                            context,
+                            launcherName,
+                            context.getResources().getString(
+                                    R.string.apply_launcher_incompatible_depending_on_version, launcherName, 10
+                            )
+                    );
+                }
+                break;
+            case OXYGEN_OS:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    applyWithInstructions(
+                            context,
+                            launcherName,
+                            context.getResources().getString(
+                                    R.string.apply_manual,
+                                    launcherName,
+                                    context.getResources().getString(R.string.app_name)
+                            ),
+                            new String[]{
+                                    context.getResources().getString(R.string.apply_manual_oxygen_os_step_1),
+                                    context.getResources().getString(R.string.apply_manual_oxygen_os_step_2),
+                                    context.getResources().getString(R.string.apply_manual_oxygen_os_step_3),
+                                    context.getResources().getString(
+                                            R.string.apply_manual_oxygen_os_step_4,
+                                            context.getResources().getString(R.string.app_name)
+                                    ),
+                            }
+                    );
+                } else {
+                    launcherIncompatibleCustomMessage(
+                            context,
+                            launcherName,
+                            context.getResources().getString(
+                                    R.string.apply_launcher_incompatible_depending_on_version, launcherName, 8
+                            )
+                    );
                 }
                 break;
             case FLICK:
@@ -377,6 +506,23 @@ public class LauncherHelper {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
+            case HIOS:
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(R.string.apply_manual_hios),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_hios_step_1),
+                                context.getResources().getString(R.string.apply_manual_hios_step_2),
+                                context.getResources().getString(R.string.apply_manual_hios_step_3),
+                                context.getResources().getString(R.string.apply_manual_hios_step_4),
+                                context.getResources().getString(
+                                        R.string.apply_manual_hios_step_5,
+                                        context.getResources().getString(R.string.app_name)
+                                )
+                        }
+                );
+                break;
             case HOLO:
             case HOLOHD:
                 applyManual(context, launcherPackage, launcherName, "com.mobint.hololauncher.SettingsActivity");
@@ -385,10 +531,37 @@ public class LauncherHelper {
                 applyManual(context, launcherPackage, launcherName, "projekt.launcher.activities.SettingsActivity");
                 break;
             case KISS:
-                applyKiss(context, launcherName);
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(R.string.apply_manual_kiss),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_kiss_step_1),
+                                context.getResources().getString(R.string.apply_manual_kiss_step_2),
+                                context.getResources().getString(R.string.apply_manual_kiss_step_3),
+                                context.getResources().getString(
+                                        R.string.apply_manual_kiss_step_4,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                        }
+                );
                 break;
             case Kvaesitso:
-                applyKvaesitso(context, launcherName);
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(R.string.apply_manual_kvaesitso),
+                        new String[]{
+                            context.getResources().getString(R.string.apply_manual_kvaesitso_step_1),
+                            context.getResources().getString(R.string.apply_manual_kvaesitso_step_2),
+                            context.getResources().getString(R.string.apply_manual_kvaesitso_step_3),
+                            context.getResources().getString(
+                                    R.string.apply_manual_kvaesitso_step_4,
+                                    context.getResources().getString(R.string.app_name)
+                            ),
+                            context.getResources().getString(R.string.apply_manual_kvaesitso_step_5),
+                        }
+                );
                 break;
             case LAWNCHAIR:
                 if (launcherPackage.startsWith("app")) {
@@ -454,6 +627,26 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case NOTHING:
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(
+                                R.string.apply_manual,
+                                launcherName,
+                                context.getResources().getString(R.string.app_name)
+                        ),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_nothing_step_1),
+                                context.getResources().getString(R.string.apply_manual_nothing_step_2),
+                                context.getResources().getString(R.string.apply_manual_nothing_step_3),
+                                context.getResources().getString(
+                                        R.string.apply_manual_nothing_step_4,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                        }
+                );
                 break;
             case NOVA:
                 try {
@@ -550,6 +743,26 @@ public class LauncherHelper {
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
+                break;
+            case STOCK_LEGACY:
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        context.getResources().getString(
+                                R.string.apply_manual,
+                                launcherName,
+                                context.getResources().getString(R.string.app_name)
+                        ),
+                        new String[]{
+                                context.getResources().getString(R.string.apply_manual_color_os_step_1),
+                                context.getResources().getString(R.string.apply_manual_color_os_step_2),
+                                context.getResources().getString(R.string.apply_manual_color_os_step_3),
+                                context.getResources().getString(
+                                        R.string.apply_manual_color_os_step_4,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                        }
+                );
                 break;
             case NOUGAT:
                 try {
@@ -663,63 +876,12 @@ public class LauncherHelper {
         }
         return found;
     }
-    private static void applyKvaesitso(Context context, String launcherName) {
-        String compatibleText =
-                "\n\t• " + context.getResources().getString(R.string.apply_manual_kvaesitso_step_1) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_2) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_3) + "\n\t• " +
-                        context.getResources().getString(
-                                R.string.apply_manual_kvaesitso_step_4,
-                                context.getResources().getString(R.string.app_name)
-                        ) + "\n\n" +
-                        context.getResources().getString(R.string.apply_manual_kvaesitso_step_5
-                        );
+
+    private static void applyWithInstructions(Context context, String launcherName, String description, String[] steps) {
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(
-                        context.getResources().getString(R.string.apply_manual_kvaesitso)
-                                + (compatibleText)
-                )
-                .positiveText(android.R.string.yes)
-                .onPositive((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_confirm");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                })
-                .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_cancel");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                }))
-                .show();
-    }
-    private static void applyKiss(Context context, String launcherName) {
-        String compatibleText =
-                "\n\t• " + context.getResources().getString(R.string.apply_manual_kiss_step_1) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kiss_step_2) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kiss_step_3) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_kiss_step_4,
-                                context.getResources().getString(R.string.app_name)
-                        );
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcherName)
-                .content(
-                        context.getResources().getString(R.string.apply_manual_kiss)
-                                + (compatibleText)
-                )
+                .content(description + "\n\n\t• " + String.join("\n\t• ", steps))
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
@@ -855,10 +1017,20 @@ public class LauncherHelper {
     }
 
     private static void launcherIncompatible(Context context, String launcherName) {
+        launcherIncompatibleCustomMessage(
+                context,
+                launcherName,
+                context.getResources().getString(
+                    R.string.apply_launcher_incompatible, launcherName, launcherName
+                )
+        );
+    }
+
+    private static void launcherIncompatibleCustomMessage(Context context, String launcherName, String message) {
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(R.string.apply_launcher_incompatible, launcherName, launcherName)
+                .content(message)
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
@@ -949,5 +1121,53 @@ public class LauncherHelper {
             return true;
         }
         return false;
+    }
+
+    public static boolean isColorOS() {
+        String version = getSystemProperty("ro.build.version.opporom");
+        boolean isLegacy = (version != null && !version.isEmpty());
+        boolean isHybrid = false;
+
+        /* Starting Android 12 and later, ColorOS is slowly being merged with OxygenOS and
+         * no longer reporting as "com.oppo.launcher" but instead as "com.android.launcher".
+         * Going forward this will likely be the standard launcher for OnePlus, realme
+         * and OPPO devices but as of August 2023 this is not certain.
+         */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (Build.MANUFACTURER.equalsIgnoreCase("OnePlus") || Build.MANUFACTURER.equalsIgnoreCase("OPPO")) {
+                isHybrid = true;
+            } else isHybrid = Build.MANUFACTURER.equalsIgnoreCase("realme") && isLegacy;
+        }
+
+        return isLegacy || isHybrid;
+    }
+
+    public static boolean isRealmeUI() {
+        if (Build.MANUFACTURER.equalsIgnoreCase("realme")) {
+            String version = getSystemProperty("ro.build.version.realmeui");
+            return (version != null && !version.isEmpty());
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Relying on SystemProperties is a brittle approach. ROMs vary widely
+     * and properties present on one device might be missing on another.
+     * We use this specifically for customised ROMs of e.g. OPPO, OnePlus
+     * and realme to detect their flavoured launcher versions. If a property
+     * with the expected value is present, this is a strong signal. If the
+     * property is missing, however, this tells us nothing.
+     */
+    public static String getSystemProperty(String property) {
+        String value = "";
+        try {
+            Class<?> systemProperties = Class.forName("android.os.SystemProperties");
+            Method get = systemProperties.getMethod("get", String.class);
+            value = (String) get.invoke(systemProperties, property);
+
+        } catch (Exception ignored) {
+        }
+        return value;
     }
 }

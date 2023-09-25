@@ -3,6 +3,7 @@ package candybar.lib.fragments;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -127,6 +128,18 @@ public class ApplyFragment extends Fragment {
             int id = getResources().getIdentifier("theme_resources", "xml", getActivity().getPackageName());
             return id > 0;
         }
+        if ("com.oppo.launcher".equals(packageName)) return
+                (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R)
+                        && (Build.MANUFACTURER.equalsIgnoreCase("OPPO")
+                        || Build.MANUFACTURER.equalsIgnoreCase("realme"));
+        if ("com.android.launcher".equals(packageName)) return
+                (Build.VERSION.SDK_INT > Build.VERSION_CODES.R)
+                        && (Build.MANUFACTURER.equalsIgnoreCase("OnePlus")
+                        || Build.MANUFACTURER.equalsIgnoreCase("OPPO")
+                        || Build.MANUFACTURER.equalsIgnoreCase("realme"))
+                || ((Build.VERSION.SDK_INT == Build.VERSION_CODES.R)
+                        && (Build.MANUFACTURER.equalsIgnoreCase("realme")
+                ));
         return true;
     }
 
