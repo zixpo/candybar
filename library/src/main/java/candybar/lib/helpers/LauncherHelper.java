@@ -208,6 +208,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_one_ui,
                 new String[]{"com.sec.android.app.launcher"},
                 false),
+        TINYBIT(
+                "TinyBit",
+                R.drawable.ic_launcher_tinybit,
+                new String[]{"rocks.tbog.tblauncher"},
+                false),
         ZENUI(
                 "ZenUI",
                 R.drawable.ic_launcher_zenui,
@@ -682,6 +687,9 @@ public class LauncherHelper {
                 break;
             case ONEUI:
                 applyOneUI(context, launcherName);
+                break;
+            case TINYBIT:
+                applyManual(context, launcherPackage, launcherName, "rocks.tbog.tblauncher.SettingsActivity");
                 break;
             case SMART:
                 try {
