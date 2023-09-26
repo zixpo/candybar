@@ -128,6 +128,30 @@
     <string name="apply_manual_samsung_oneui_step_5">点击蓝色的“图标”按钮</string>
     <string name="apply_manual_samsung_oneui_step_6">从列表中选择 %s</string>
     <string name="apply_manual_samsung_oneui_step_7">每次更新 %s 时重复这些步骤，因为启动器不会自动更新图标</string>
+    <string name="apply_manual_hios">HiOS 启动器不支持直接应用，但您可以遵循这些步骤：</string>
+    <string name="apply_manual_hios_step_1">打开设置</string>
+    <string name="apply_manual_hios_step_2">点击 主题锁屏</string>
+    <string name="apply_manual_hios_step_3">点击\"我的主题\"</string>
+    <string name="apply_manual_hios_step_4">点击 \"图标包\"</string>
+    <string name="apply_manual_hios_step_5">点击 %s</string>
+    <string name="apply_manual_oxygen_os_step_1">长按您的主屏幕</string>
+    <string name="apply_manual_oxygen_os_step_2">点击 \"主屏幕设置\"</string>
+    <string name="apply_manual_oxygen_os_step_3">点击 \"图标包\"</string>
+    <string name="apply_manual_oxygen_os_step_4">点击 %s</string>
+    <string name="apply_manual_color_os_step_1">长按您的主屏幕</string>
+    <string name="apply_manual_color_os_step_2">点击 图标</string>
+    <string name="apply_manual_color_os_step_3">滚动到“自定义”按钮右边(这是一个可滚动的列表!)</string>
+    <string name="apply_manual_color_os_step_4">点击 %s</string>
+    <string name="apply_manual_before">此版本的启动器尚不支持直接应用图标，而是按照下面的步骤：</string>
+    <string name="apply_manual_before_step_1">在主屏幕上向左滑动</string>
+    <string name="apply_manual_before_step_2">点击 \"设置\"</string>
+    <string name="apply_manual_before_step_3">点击“样式和主题”</string>
+    <string name="apply_manual_before_step_4">点击 \"图标样式”</string>
+    <string name="apply_manual_before_step_5">点击 %s</string>
+    <string name="apply_manual_nothing_step_1">打开设置</string>
+    <string name="apply_manual_nothing_step_2">点击 \"自定义\"</string>
+    <string name="apply_manual_nothing_step_3">点击 \"图标包\"</string>
+    <string name="apply_manual_nothing_step_4">点击 %s</string>
     <string name="apply_launch_failed">无法启动 %s 设置</string>
     <string name="apply_launcher_not_installed">%s 尚未安装。你想跳转到 Google Play 商店去下载安装它吗？</string>
     <string name="apply_launcher_not_installable">%s 启动器未安装。请安装启动器后重试。</string>
@@ -138,6 +162,7 @@
     <string name="apply_lg_home_failed">无法启动 LG Home 设置，你可以尝试从设置中手动应用图标包。</string>
     <string name="apply_lg_home_nougat">Android Nougat 版本的 LG Home 不再支持图标包了。你需要一个第三方启动器来使用图标包。</string>
     <string name="apply_launcher_incompatible">%s 启动器不支持任何图标包，所以您不能使用此图标包的启动器。 您可以尝试第三方应用在 %2$s 启动器中使用此图标包。您想要安装它吗？</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s 启动器不支持 Android %d 或更低版本的图标包。 请更新您的 Android 版本或安装第三方启动器来使用此图标包。 您也可以尝试帮助程序更改个别图标。您想要安装它吗？</string>
     <!-- Icons -->
     <string name="icons_load_failed">图标加载失败</string>
     <string name="icon_shape">图标形状</string>
@@ -246,6 +271,7 @@
     <string name="theme_name_auto">默认</string>
     <string name="theme_name_light">浅色</string>
     <string name="theme_name_dark">深色</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">需要存储权限以保存壁纸</string>
     <!-- Intent -->
@@ -275,6 +301,7 @@
     <string name="crash_report_message">很抱歉 %s 已停止运行。选择下方的 发送报告 来帮助开发者修复这个问题。</string>
     <string name="crash_report_send">发送错误报告</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar 是 GitHub 上一个受 Apache License 2.0 保护的开源 Android 图标包仪表盘，免费使用，由 Dani Mahardhika 开发。</string>
     <string name="about_open_source_licenses">开放源代码许可</string>
     <string name="about_dashboard_contributors">CandyBar 贡献者</string>
