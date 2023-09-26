@@ -24,6 +24,7 @@
     <string name="menu_search">搜尋</string>
     <string name="menu_save">儲存到裝置</string>
     <string name="menu_select_all">全選</string>
+    <string name="menu_delete">刪除</string>
     <string name="menu_wallpaper_crop">裁剪桌布</string>
     <string name="menu_apply_homescreen">主螢幕</string>
     <string name="menu_apply_lockscreen">鎖定畫面</string>
