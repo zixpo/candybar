@@ -99,6 +99,6 @@ public class AboutFragment extends Fragment {
             }
         }
 
-        mRecyclerView.setPadding(padding, padding, 0, 0);
+        mRecyclerView.setPadding(padding, padding, 0, 150);
     }
 }

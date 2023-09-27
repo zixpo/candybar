@@ -1,8 +1,10 @@
 package candybar.lib.helpers;
 
+import android.app.Activity;
 import android.graphics.Point;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
@@ -64,5 +66,9 @@ public class ViewHelper {
             case "landscape":
                 return new Home.Style(new Point(16, 9), Home.Style.Type.LANDSCAPE);
         }
+    }
+
+    public static void addBottomPadding(Activity actvity, RecyclerView v) {
+        v.setPadding(v.getPaddingLeft(), v.getPaddingTop(), v.getPaddingRight(), 100);
     }
 }

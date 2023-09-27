@@ -10,8 +10,8 @@
         theme colors.
     -->
 
-    <color name="colorPrimary">#FFF</color>
-    <color name="colorPrimaryDark">#FFF</color>
+    <color name="colorPrimary">#35C164</color>
+    <color name="colorPrimaryDark">#4CAF50</color>
     <!--<color name="colorPrimaryDark">#1A73E9</color>-->
     <color name="colorAccent">#1BB96F</color>
 
@@ -50,7 +50,7 @@
     <color name="swipeRefresh">#1BB96F</color>
 
     <!-- Toolbar -->
-    <color name="toolbarIcon">#616161</color>
+    <color name="toolbarIcon">#FFFFFF</color>
     <color name="toolbarIconDark">#FFFFFFFF</color>
 
     <!-- Tab -->

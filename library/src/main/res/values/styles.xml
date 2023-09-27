@@ -9,6 +9,10 @@
     <style name="NavigationViewStyle">
         <item name="textAppearanceSubtitle2">@style/CandyBar.Text.Subtitle2</item>
         <item name="android:listPreferredItemHeightSmall">48dp</item>
+        <item name="android:colorControlHighlight">@android:color/transparent</item>
+        <item name="itemShapeFillColor">@color/navigation_item_background_color</item>
+        <item name="itemTextAppearance">@style/CandyBar.Text.Subtitle2</item>
+        <item name="itemTextAppearanceActiveBoldEnabled">false</item>
     </style>
 
     <style name="RippleStyle">
@@ -47,6 +51,11 @@
 
     <style name="ActionModeStyle" parent="Widget.AppCompat.ActionMode">
         <item name="background">@color/colorPrimary</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
 </resources>

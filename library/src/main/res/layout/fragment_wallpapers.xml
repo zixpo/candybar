@@ -16,6 +16,7 @@
             android:paddingTop="@dimen/card_margin_top"
             android:paddingStart="@dimen/card_margin_left"
             android:paddingLeft="@dimen/card_margin_left"
+            android:paddingBottom="?attr/actionBarSize"
             android:clipToPadding="false" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

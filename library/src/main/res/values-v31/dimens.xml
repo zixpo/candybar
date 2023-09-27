@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="card_corner_radius">18dp</dimen>
+    <dimen name="md_bg_corner_radius" tools:override="true">18dp</dimen>
+    <dimen name="md_action_corner_radius" tools:override="true">100dp</dimen>
+</resources>

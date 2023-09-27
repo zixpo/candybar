@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
     tools:openDrawer="start">
 
     <include
@@ -20,7 +20,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         android:background="@color/cardBackground"
-        android:theme="@style/NavigationViewStyle"
+        android:listDivider="@color/dividerList"
+        style="@style/NavigationViewStyle"
         app:headerLayout="@layout/navigation_view_header"
         app:menu="@menu/menu_navigation_view"
         app:itemIconPadding="25dp" />

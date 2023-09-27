@@ -6,4 +6,60 @@
         <attr name="heightRatio" format="integer" />
     </declare-styleable>
 
+    <attr name="cb_colorPrimary" format="color" />
+    <attr name="cb_colorPrimaryDark" format="color" />
+    <attr name="cb_colorAccent" format="color" />
+
+    <!-- Navigation Bar -->
+    <attr name="cb_navigationBar" format="color" />
+
+    <!-- Splash Screen -->
+    <attr name="cb_splashColor" format="color" />
+
+    <!-- Navigation View -->
+    <attr name="cb_navigationViewHeaderBackground" format="color" />
+    <attr name="cb_navigationViewTitle" format="color" />
+    <attr name="cb_navigationViewTitleBack" format="color" />
+
+    <attr name="cb_navigationViewText" format="color" />
+    <attr name="cb_navigationViewTextSelected" format="color" />
+    <attr name="cb_navigationViewSelectedBackground" format="color" />
+    <attr name="cb_navigationViewRippleColor" format="color" />
+
+    <!-- Swipe Refresh -->
+    <attr name="cb_swipeRefresh" format="color" />
+
+    <!-- Tap Intro -->
+    <attr name="cb_tapIntroTitle" format="color" />
+    <attr name="cb_tapIntroDescription" format="color" />
+    <attr name="cb_tapIntroCircleInner" format="color" />
+    <attr name="cb_tapIntroCircleOuter" format="color" />
+
+    <!-- Toolbar -->
+    <attr name="cb_toolbarIcon" format="color" />
+
+    <!-- Tab -->
+    <attr name="cb_tabIndicator" format="color" />
+    <attr name="cb_tabText" format="color" />
+    <attr name="cb_tabTextSelected" format="color" />
+
+    <!-- Card -->
+    <attr name="cb_cardBackground" format="color" />
+    <attr name="cb_cardStroke" format="color" />
+
+    <!-- Ripple -->
+    <attr name="cb_rippleColor" format="color" />
+    <attr name="cb_rippleAccent" format="color" />
+
+    <!-- Attributes -->
+    <attr name="cb_mainBackground" format="color" />
+    <attr name="cb_primaryText" format="color" />
+    <attr name="cb_secondaryText" format="color" />
+
+    <attr name="cb_dividerList" format="color" />
+
+    <!-- Wallpaper Preview -->
+    <attr name="cb_wallpaperStatusBar" format="color" />
+    <attr name="cb_wallpaperToolbar" format="color" />
+
 </resources>

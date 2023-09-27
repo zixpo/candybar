@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.URLUtil;
 import android.widget.LinearLayout;
@@ -33,12 +33,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.BuildConfig;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.billingclient.api.AcknowledgePurchaseParams;
 import com.android.billingclient.api.BillingClient;
@@ -55,7 +57,6 @@ import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.license.LicenseHelper;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.color.DynamicColors;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
@@ -165,7 +166,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         final int nightMode;
-        int androidVersion = Build.VERSION.SDK_INT;
         switch (Preferences.get(this).getTheme()) {
             case LIGHT:
                 nightMode = AppCompatDelegate.MODE_NIGHT_NO;
@@ -174,7 +174,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 nightMode = AppCompatDelegate.MODE_NIGHT_YES;
                 break;
             /*case MATERIAL_YOU:
-                if (androidVersion < Build.VERSION_CODES.S) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
                     // Display a toast message about Material You availability on Android 12 and up.
                     Toast.makeText(this, "Material You available only on Android 12 and up! \n Following system theme...", Toast.LENGTH_SHORT).show();
                 } else {
@@ -207,12 +207,21 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         initNavigationView(toolbar);
         initNavigationViewHeader();
 
+        ViewCompat.setOnApplyWindowInsetsListener(toolbar, (v, insets) -> {
+            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            params.topMargin = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top;
+            findViewById(R.id.inset_padding).getLayoutParams().height = params.topMargin;
+            return WindowInsetsCompat.CONSUMED;
+        });
+
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         getWindow().clearFlags(
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION | WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.navigationBar));
-        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        mDrawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
+        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        //getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.navigationBar));
+        //getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        //mDrawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
         int visibilityFlags = 0;
         if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)) &&
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
@@ -783,11 +792,11 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                         R.color.navigation_view_item_highlight);
         mNavigationView.setItemTextColor(itemStateList);
         mNavigationView.setItemIconTintList(itemStateList);
-        Drawable background = ContextCompat.getDrawable(this,
-                ThemeHelper.isDarkTheme(this) ?
-                        R.drawable.navigation_view_item_background_dark :
-                        R.drawable.navigation_view_item_background);
-        mNavigationView.setItemBackground(background);
+//        Drawable background = ContextCompat.getDrawable(this,
+//                ThemeHelper.isDarkTheme(this) ?
+//                        R.drawable.navigation_view_item_background_dark :
+//                        R.drawable.navigation_view_item_background);
+//        mNavigationView.setItemBackground(background);
         mNavigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.navigation_view_home) mPosition = Extras.Tag.HOME.idx;

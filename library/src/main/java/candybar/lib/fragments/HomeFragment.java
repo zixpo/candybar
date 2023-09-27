@@ -64,6 +64,9 @@ public class HomeFragment extends Fragment implements HomeListener {
             View shadow = view.findViewById(R.id.shadow);
             if (shadow != null) shadow.setVisibility(View.GONE);
         }
+
+        // ViewHelper.addBottomPadding(mRecyclerView);
+
         return view;
     }
 

@@ -10,6 +10,7 @@
         android:paddingLeft="@dimen/content_padding"
         android:paddingStart="@dimen/content_padding"
         android:paddingTop="@dimen/content_padding"
+        android:paddingBottom="?attr/actionBarSize"
         android:clipToPadding="false" />
 
     <View

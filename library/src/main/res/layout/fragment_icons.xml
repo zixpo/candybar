@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="@dimen/content_padding"
-        android:paddingBottom="@dimen/content_padding"
+        android:paddingBottom="?attr/actionBarSize"
         android:clipToPadding="false" />
 
 </FrameLayout>
