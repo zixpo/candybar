@@ -164,44 +164,27 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        final boolean isDarkTheme = prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
-
         final int nightMode;
         int androidVersion = Build.VERSION.SDK_INT;
-        if (androidVersion < Build.VERSION_CODES.S) {
-            // Android version is less than 12
-            switch (Preferences.get(this).getTheme()) {
-                case LIGHT:
-                    nightMode = AppCompatDelegate.MODE_NIGHT_NO;
-                    break;
-                case DARK:
-                    nightMode = AppCompatDelegate.MODE_NIGHT_YES;
-                    break;
-                case MATERIAL_YOU:
+        switch (Preferences.get(this).getTheme()) {
+            case LIGHT:
+                nightMode = AppCompatDelegate.MODE_NIGHT_NO;
+                break;
+            case DARK:
+                nightMode = AppCompatDelegate.MODE_NIGHT_YES;
+                break;
+            /*case MATERIAL_YOU:
+                if (androidVersion < Build.VERSION_CODES.S) {
                     // Display a toast message about Material You availability on Android 12 and up.
                     Toast.makeText(this, "Material You available only on Android 12 and up! \n Following system theme...", Toast.LENGTH_SHORT).show();
-                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-                    break;
-                default:
-                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-                    break;
-            }
-        } else {
-            switch (Preferences.get(this).getTheme()) {
-                case LIGHT:
-                    nightMode = AppCompatDelegate.MODE_NIGHT_NO;
-                    break;
-                case DARK:
-                    nightMode = AppCompatDelegate.MODE_NIGHT_YES;
-                    break;
-                case MATERIAL_YOU:
+                } else {
                     DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
-                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-                    break;
-                default:
-                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-                    break;
-            }
+                }
+                nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                break;*/
+            default:
+                nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                break;
         }
         AppCompatDelegate.setDefaultNightMode(nightMode);
 
