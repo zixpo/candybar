@@ -163,3 +163,6 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 debug/
 release/
+
+app/src/main/res/drawable-v31/
+app/src/main/res/xml-v31/
