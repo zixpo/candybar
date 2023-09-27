@@ -70,7 +70,7 @@ Du wirst nicht in der der Lage sein sie zu nutzen.</string>
     <string name="tap_intro_home_navigation">Navigationsübrsicht</string>
     <string name="tap_intro_home_navigation_desc">Klicke hier oder wische vom linken Rand des Bildschirms, um die Navigationsübersicht zu öffnen</string>
     <string name="tap_intro_home_apply">Icon Pack anwenden</string>
-    <string name="tap_intro_home_apply_desc">Klicke hier, um %s anzuwenden</string>
+    <string name="tap_intro_home_apply_desc">Tippe hier, um %s in deinem aktuellen Launcher anzuwenden. Halte lange gedrückt für weitere Launcher.</string>
     <string name="tap_intro_icons_search">Suchen</string>
     <string name="tap_intro_icons_search_desc">Klicke hier, um nach Icons zu suchen</string>
     <string name="tap_intro_request_select">Fehlende App auswählen</string>
@@ -109,6 +109,8 @@ Mit Premium Icon-Anfragen kannst du deine gewünschte App schneller erhalten.</s
     <string name="apply_installed">Installierte Launcher</string>
     <string name="apply_supported">Unterstützte Launcher</string>
     <string name="apply_manual">%1$s unterstützt keine direktes Anwenden. Du kannst %2$s manuell über die Launcher-Einstellungen anwenden.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso unterstützt keine direktes Anwenden, aber du kannst diesen Schritten folgen:</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitso Einstellungen öffnen</string>
     <string name="apply_manual_kvaesitso_step_4">Wähle %s aus der Liste</string>
     <string name="apply_manual_kiss_step_4">Wähle %s aus der Liste</string>
     <string name="apply_manual_samsung_oneui">%1$s unterstützt das automatische Anwenden von Icons leider nicht, aber ab Version %2$s können Icons über eine Begleit-App angewendet werden.</string>

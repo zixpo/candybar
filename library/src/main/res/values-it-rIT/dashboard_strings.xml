@@ -44,7 +44,7 @@
     <string name="search_icon">Nome Icona</string>
     <string name="search_wallpapers">Nome sfondo</string>
     <!-- Update -->
-    <string name="checking_for_update">Controllo aggiornamento…</string>
+    <string name="checking_for_update">Verifica aggiornamento…</string>
     <string name="update_available">Aggiornamento disponibile!</string>
     <string name="no_update_available">Stai utilizzando la versione più recente!</string>
     <!-- Changelog -->
@@ -60,16 +60,16 @@ Scaricala da lì per utilizzarla.</string>
     <string name="license_check_retry">Impossibile controllare la licenza. Per favore, riprova tra qualche momento.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Check</string>
-    <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store. Divertiti.</string>
-    <string name="playstore_check_failed">Sembra che tu abbia installato questo pacchetto icone al di fuori del Play Store, dunque non potrai utilizzarlo.</string>
+    <string name="playstore_check_success">Grazie per aver installato l\'app dal Play Store.</string>
+    <string name="playstore_check_failed">Sembra che tu abbia scaricato questo pacchetto icone di fuori dal Play Store, dunque non potrai utilizzarlo.</string>
     <!-- Share -->
     <string name="share_app_title">Hey! Ti consiglio questa applicazione %s</string>
     <string name="share_app_body">Guarda %1$s, questo pacchetto icone è fantastico! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Menù di navigazione</string>
-    <string name="tap_intro_home_navigation_desc">Tocca qui oppure fai uno swype verso destra per aprire il menù di navigazione</string>
+    <string name="tap_intro_home_navigation_desc">Tocca qui o scorri dal bordo sinistro dello schermo per aprire il menù di navigazione</string>
     <string name="tap_intro_home_apply">Applica Icone</string>
-    <string name="tap_intro_home_apply_desc">Tocca qui per applicare %s</string>
+    <string name="tap_intro_home_apply_desc">Tocca qui per applicare %s al launcher in uso. Premi a lungo per applicare agli altri launcher.</string>
     <string name="tap_intro_icons_search">Cerca</string>
     <string name="tap_intro_icons_search_desc">Tocca qui per cercare un\'icona</string>
     <string name="tap_intro_request_select">Seleziona le app mancanti</string>
@@ -88,7 +88,7 @@ Scaricala da lì per utilizzarla.</string>
     <string name="tap_intro_wallpaper_preview_save">Salva sfondo</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Tocca qui per scaricare e salvare lo sfondo sul tuo dispositivo così potrai utilizzarlo successivamente</string>
     <string name="tap_intro_wallpaper_preview_apply">Applica sfondo</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">Imposta come sfondo della home</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Premi qui per impostare come sfondo della home</string>
     <!-- Home -->
     <string name="home_more_apps_header">Altre App</string>
     <string name="home_more_apps">Guarda le altre app pubblicate sul Play Store</string>
@@ -97,8 +97,8 @@ Scaricala da lì per utilizzarla.</string>
     <string name="home_donate">Dona</string>
     <string name="home_donate_desc">Supporta lo sviluppatore del pacchetto icone</string>
     <string name="home_icons">Icone personalizzate</string>
-    <string name="home_icon_dimension">icone grandi %s pixel</string>
-    <string name="home_loud_wallpapers">%d sfondi in cloud</string>
+    <string name="home_icon_dimension">icone di %s pixel</string>
+    <string name="home_loud_wallpapers">%d sfondi sul cloud</string>
     <string name="home_muzei">Muzei Live Wallpaper</string>
     <string name="home_icon_request_installed_apps">%d app installate in totale</string>
     <string name="home_icon_request_themed_apps">%d app supportate</string>
@@ -107,6 +107,26 @@ Scaricala da lì per utilizzarla.</string>
     <string name="apply_installed">Launcher installati</string>
     <string name="apply_supported">Launcher supportati</string>
     <string name="apply_manual">%1$s Launcher non supporta l\'applicazione diretta dei pacchetti icone su questo launcher, puoi però applicare manualmente %2$s dalle impostazioni del launcher.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso non supporta l\'applicazione diretta ma puoi seguire questi passaggi:</string>
+    <string name="apply_manual_kvaesitso_step_1">Apri le impostazioni di Kvaesitso</string>
+    <string name="apply_manual_kvaesitso_step_2">Tocca \"Griglia &amp; Icone\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Tocca su \"Pacchetto Icone\"</string>
+    <string name="apply_manual_kvaesitso_step_4">Scegli %s dalla lista</string>
+    <string name="apply_manual_kvaesitso_step_5">Tocca l\'icona del pennello per abilitare o disabilitare la sfumatura dello sfondo</string>
+    <string name="apply_manual_kiss">KISS non supporta l\'applicazione diretta, ma puoi seguire questi passaggi:</string>
+    <string name="apply_manual_kiss_step_1">Apri impostazioni KISS</string>
+    <string name="apply_manual_kiss_step_2">Tocca \"Interfaccia Utente\"</string>
+    <string name="apply_manual_kiss_step_3">Tocca su \"Pacchetto Icone\"</string>
+    <string name="apply_manual_kiss_step_4">Scegli %s dalla lista</string>
+    <string name="apply_manual_samsung_oneui">%1$s non supporta l\'applicazione diretta, ma a partire da %2$s è possibile applicare le icone utilizzando un\'app di supporto.</string>
+    <string name="apply_manual_samsung_oneui_too_old">La tua versione attuale di %s è troppo vecchia. Per favore aggiorna almeno ad Android 12 per poter applicare direttamente le icone. In alternativa, è possibile installare un launcher diverso.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Apri %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Scarica l\'app %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Tocca \"Icona\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Tocca \"Crea Nuovo\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Tocca il pulsante blu \"Pacchetto icone\"</string>
+    <string name="apply_manual_samsung_oneui_step_6">Scegli %s dalla lista</string>
+    <string name="apply_manual_samsung_oneui_step_7">Ripetere questi passaggi ogni volta che aggiorni %s altrimenti le nuove icone non verranno impostate automaticamente.</string>
     <string name="apply_launch_failed">Impossibile aprire le impostazioni %s </string>
     <string name="apply_launcher_not_installed">%s non è installato. Vuoi aprire il Play Store e installare questa app?</string>
     <string name="apply_launcher_not_installable">%s Launcher non è installato. Riprova dopo l\'installazione del launcher.</string>
@@ -127,7 +147,8 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_not_selected">Selezione le app da richiedere</string>
     <string name="request_not_requested">Non richiesta</string>
     <string name="request_already_requested">Richiesta già effettuata</string>
-    <string name="request_building">Caricamento richiesta …</string>
+    <string name="request_not_available">Non può essere richiesto</string>
+    <string name="request_building">Caricamento richiesta…</string>
     <string name="request_pacific_sending">Invio della richiesta a Pacific Manager...</string>
     <string name="request_pacific_error">Si è verificato un errore durante l\'invio della richiesta a Pacific Manager. L\'errore è %s</string>
     <string name="request_pacific_success">Richiesta inviata con successo a Pacific Manager</string>
@@ -136,10 +157,9 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_fetching_data">Recupero dati più recenti…</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>
-    <string name="request_requested">Per favore, controlla la tua richiesta di icone.
-Stai provando hai selezionato icone già richieste.</string>
-    <string name="request_email_client">Scegli con quale applicazione mail vuoi inviare la tua richiesta</string>
-    <string name="request_app_disabled">Stai usando una versione più vecchia di questo pacchetto icone. Le icone richieste possono essere incluse nell\'ultima versione. Aggiorna l\'app all\'ultima versione per richiedere icone.</string>
+    <string name="request_requested">Si prega di ricontrollare la richiesta poiché si sta tentando di richiedere icone già richieste.</string>
+    <string name="request_email_client">Scegli l\'app che vuoi utilizzare per inviare la richiesta di icone</string>
+    <string name="request_app_disabled">Non stai utilizzando l\'ultima versione dell\'app e siccome le icone richieste potrebbero essere già state aggiunte nell\'ultimo update, devi aggiornare all\'ultima versione prima di effettuare una richiesta.</string>
     <string name="connection_error_long">Impossibile caricare i dati dal server. Per favore, controlla la tua connessione internet.</string>
     <string name="unable_to_load_config">Si è verificato un errore durante l\'acquisizione di informazioni dal server.</string>
     <string name="request_limit">E\' possibile inviare  %d  app con la richiesta free.</string>
@@ -177,6 +197,7 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="wallpaper_already_downloaded">Sfondo già scaricato</string>
     <string name="wallpaper_downloading">Download sfondo …</string>
     <string name="wallpaper_download_failed">Impossibile scaricare lo sfondo</string>
+    <string name="wallpaper_download_success">Sfondo scaricato con successo</string>
     <string name="wallpaper_loading">Caricando lo sfondo …</string>
     <string name="wallpaper_applying">Applicando lo sfondo …</string>
     <string name="wallpaper_applied">Sfondo applicato</string>

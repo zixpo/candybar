@@ -52,7 +52,6 @@
     <string name="tap_intro_home_navigation">내비게이션 서랍</string>
     <string name="tap_intro_home_navigation_desc">내비게이션 서랍을 열려면 여기를 누르거나 화면의 왼쪽 가장자리를 미세요.</string>
     <string name="tap_intro_home_apply">아이콘 팩 적용</string>
-    <string name="tap_intro_home_apply_desc">%s 아이콘 팩을 적용하려면 여기를 누르세요.</string>
     <string name="tap_intro_icons_search">검색</string>
     <string name="tap_intro_icons_search_desc">아이콘을 검색하려면 여기를 누르세요.</string>
     <string name="tap_intro_request_select">빠진 앱 선택</string>

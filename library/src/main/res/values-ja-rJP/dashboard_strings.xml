@@ -56,7 +56,6 @@
     <string name="tap_intro_home_navigation">ナビゲーションドロワー</string>
     <string name="tap_intro_home_navigation_desc">ナビゲーションドロワーを開くにはここをタップするか左端からスワイプします</string>
     <string name="tap_intro_home_apply">アイコンパックを適用</string>
-    <string name="tap_intro_home_apply_desc">%sを適用するにはここをタップします</string>
     <string name="tap_intro_icons_search">検索</string>
     <string name="tap_intro_icons_search_desc">アイコンを検索するにはここをタップします</string>
     <string name="tap_intro_request_select">不足しているアプリを選択</string>

@@ -24,6 +24,7 @@
     <string name="menu_search">搜尋</string>
     <string name="menu_save">儲存到裝置</string>
     <string name="menu_select_all">全選</string>
+    <string name="menu_delete">刪除</string>
     <string name="menu_wallpaper_crop">裁剪桌布</string>
     <string name="menu_apply_homescreen">主螢幕</string>
     <string name="menu_apply_lockscreen">鎖定畫面</string>
@@ -62,7 +63,6 @@
     <string name="tap_intro_home_navigation">導航抽屜</string>
     <string name="tap_intro_home_navigation_desc">點擊這裡或者從螢幕左邊緣滑動來打開導航抽屜</string>
     <string name="tap_intro_home_apply">啟用 icon pack </string>
-    <string name="tap_intro_home_apply_desc">點此啟用 %s</string>
     <string name="tap_intro_icons_search">搜尋</string>
     <string name="tap_intro_icons_search_desc">點此搜尋 icon </string>
     <string name="tap_intro_request_select">選擇未支援的 App </string>

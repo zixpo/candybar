@@ -70,7 +70,7 @@
     <string name="tap_intro_home_navigation">Navigační panel</string>
     <string name="tap_intro_home_navigation_desc">Klepnutím sem nebo přejetím z levého okraje obrazovky otevřete navigační panel</string>
     <string name="tap_intro_home_apply">Použít balíček ikon</string>
-    <string name="tap_intro_home_apply_desc">Klepnutím sem použijete %s</string>
+    <string name="tap_intro_home_apply_desc">Klepnutím sem použijete %s na aktuální spouštěč. Dlouhým stisknutím použijete na jiné spouštěče.</string>
     <string name="tap_intro_icons_search">Hledat</string>
     <string name="tap_intro_icons_search_desc">Klepnutím sem vyhledejte ikony</string>
     <string name="tap_intro_request_select">Vybrat chybějící aplikace</string>
@@ -129,6 +129,30 @@
     <string name="apply_manual_samsung_oneui_step_5">Klepněte na modré tlačítko \"Balíček ikon\"</string>
     <string name="apply_manual_samsung_oneui_step_6">Vyberte %s ze seznamu</string>
     <string name="apply_manual_samsung_oneui_step_7">Tyto kroky opakujte při každé aktualizaci %s, protože nové ikony nebudou namapovány automaticky.</string>
+    <string name="apply_manual_hios">Spouštěš HiOS nepodporuje přímé použití, ale můžete postupovat podle následujících kroků:</string>
+    <string name="apply_manual_hios_step_1">Otevřete \"Nastavení\"</string>
+    <string name="apply_manual_hios_step_2">Klepněte na \"Motiv a Zamykací obrazovka\"</string>
+    <string name="apply_manual_hios_step_3">Klepněte na \"Můj motiv\"</string>
+    <string name="apply_manual_hios_step_4">Klepněte na \"Balíček ikon\"</string>
+    <string name="apply_manual_hios_step_5">Klepněte na %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Dlouze klepněte na plochu</string>
+    <string name="apply_manual_oxygen_os_step_2">Klepněte na \"Domovská nastavení\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Klepněte na \"Balíček ikon\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Klepněte na %s</string>
+    <string name="apply_manual_color_os_step_1">Dlouze klepněte na plochu</string>
+    <string name="apply_manual_color_os_step_2">Klepněte na \"Ikony\"</string>
+    <string name="apply_manual_color_os_step_3">Přejděte na pravou stranu tlačítka \"Vlastní\" (jedná se o rolovací seznam!)</string>
+    <string name="apply_manual_color_os_step_4">Klepněte na %s</string>
+    <string name="apply_manual_before">Tato verze aplikace Before launcher zatím nepodporuje přímé použití ikon. Místo toho postupujte podle níže uvedených kroků:</string>
+    <string name="apply_manual_before_step_1">Potáhněte doleva na Domovské obrazovce</string>
+    <string name="apply_manual_before_step_2">Klepněte na \"Nastavení\"</string>
+    <string name="apply_manual_before_step_3">Klepněte na \"Styly a motivy\"</string>
+    <string name="apply_manual_before_step_4">Klepněte na \"Styly ikon a balíčky\"</string>
+    <string name="apply_manual_before_step_5">Klepněte na %s</string>
+    <string name="apply_manual_nothing_step_1">Otevřete \"Nastavení\"</string>
+    <string name="apply_manual_nothing_step_2">Klepněte na \"Přizpůsobení\"</string>
+    <string name="apply_manual_nothing_step_3">Klepněte na \"Balíček ikon\"</string>
+    <string name="apply_manual_nothing_step_4">Klepněte na %s</string>
     <string name="apply_launch_failed">Nelze otevřít nastavení %s</string>
     <string name="apply_launcher_not_installed">Spouštěč %s není nainstalován. Chcete otevřít
         Obchod Play pro jeho stažení a instalaci?</string>
@@ -140,6 +164,7 @@
     <string name="apply_lg_home_failed">Nelze otevřít nastavení LG Home, můžete zkusit ručně použít balíček ikon v nastavení.</string>
     <string name="apply_lg_home_nougat">LG Home s Android Nougat již nepodporuje vlastní ikony. K použití balíčku ikon potřebujete vlastní spouštěč.</string>
     <string name="apply_launcher_incompatible">Spouštěč %s nepodporuje žádný balíček ikon, takže tento balíček ikon nemůžete s tímto spouštěčem použít. Můžete zkusit aplikaci třetí strany použít tento balíček ikon ve spouštěči %2$s. Chcete nainstalovat?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s spouštěč nepodporuje balíčky ikon v systému Android %d nebo nižším. Chcete-li tento balíček ikon používat, aktualizujte verzi systému Android nebo nainstalujte spouštěč třetí strany. Můžete také vyzkoušet pomocnou aplikaci pro změnu jednotlivých ikon. Chcete si ji nainstalovat?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Ikony nelze načíst</string>
     <string name="icon_shape">Tvar ikon</string>
@@ -201,6 +226,7 @@
     <string name="wallpaper_already_downloaded">Tapeta je již stažena</string>
     <string name="wallpaper_downloading">Stahování tapety …</string>
     <string name="wallpaper_download_failed">Nelze stáhnout tapetu</string>
+    <string name="wallpaper_download_success">Tapeta úspěšně stažena</string>
     <string name="wallpaper_loading">Načítání tapety …</string>
     <string name="wallpaper_applying">Použití tapety …</string>
     <string name="wallpaper_applied">Tapeta byla použita</string>
@@ -249,6 +275,7 @@
     <string name="theme_name_auto">Automaticky</string>
     <string name="theme_name_light">Světlý</string>
     <string name="theme_name_dark">Tmavý</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Pro uložení tapety je třeba udělit oprávnění k úložišti</string>
     <!-- Intent -->

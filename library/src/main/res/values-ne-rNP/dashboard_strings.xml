@@ -68,7 +68,7 @@
     <string name="tap_intro_home_navigation">नेभिगेसन ड्रअर</string>
     <string name="tap_intro_home_navigation_desc">नेभिगेशन ड्रयर खोल्न यहाँ ट्याप गर्नुहोस् वा स्क्रिनको बायाँ छेउबाट स्वाइप गर्नुहोस्</string>
     <string name="tap_intro_home_apply">आइकन प्याक लागू गर्नुहोस्</string>
-    <string name="tap_intro_home_apply_desc">लागू गर्न यहाँ %s ट्याप गर्नुहोस्</string>
+    <string name="tap_intro_home_apply_desc">तपाईंको हालको लन्चरमा %s लागू गर्न यहाँ ट्याप गर्नुहोस्। अन्य लन्चरहरूमा लागू गर्न लामो प्रेस गर्नुहोस्।</string>
     <string name="tap_intro_icons_search">खोज्नुहोस्</string>
     <string name="tap_intro_icons_search_desc">आइकन खोज्नलाई यहाँ ट्याप गर्नुहोस्</string>
     <string name="tap_intro_request_select">समावेस नगरिएका एपहरु चयन गर्नुहोस्</string>
@@ -106,7 +106,16 @@
     <string name="apply_installed">स्थापित लन्चर (हरु)</string>
     <string name="apply_supported">समर्थन गर्ने लन्चरहरु</string>
     <string name="apply_manual">%1$s लन्चरबाट सिधै लागु गर्न सकिएन, तर लन्चरको सेटिङ बाट %2$s म्यानुअली लागु गर्न सकिनेछ।</string>
+    <string name="apply_manual_kvaesitso">Kvaesito  सिधै एप्लाई गर्न मिल्दैन तर तपाईंले यी चरणहरूको पालना गर्न सक्नुहुनेछ:</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitso को सेटिङ्हरु खोल्नुहोस </string>
+    <string name="apply_manual_kvaesitso_step_2">\"ग्रिड र आइकनहरू\" ट्याप गर्नुहोस्</string>
+    <string name="apply_manual_kvaesitso_step_3">\"आइकन प्याक्\" मा ट्याप गर्नुहोस </string>
     <string name="apply_manual_kvaesitso_step_4">दिईएको सूचीबाट %s छान्नुहोस्</string>
+    <string name="apply_manual_kvaesitso_step_5">पृष्ठभूमिको आकार इन्याबल वा डिसबल गर्न पेन्ट ब्रश आइकनमा ट्याप गर्नुहोस्</string>
+    <string name="apply_manual_kiss">KISS सिधै एप्लाई गर्न मिल्दैन तर तपाईंले यी चरणहरूको पालना गर्न सक्नुहुनेछ:</string>
+    <string name="apply_manual_kiss_step_1">KISS सेटिङ खोल्नुहोस </string>
+    <string name="apply_manual_kiss_step_2">\"युजर एन्टरफेस्\" मा ट्याप गर्नुहोस </string>
+    <string name="apply_manual_kiss_step_3">\"आइकन प्याक्\" मा ट्याप गर्नुहोस </string>
     <string name="apply_manual_kiss_step_4">दिईएको सूचीबाट %s छान्नुहोस्</string>
     <string name="apply_manual_samsung_oneui">%1$s लाई प्रत्यक्ष रुपमा लागु गर्न सकिएन भने, %2$s बाट सुरु गरेर तपाईंले मिल्दो जुल्दो एपहरुसँग आइकनसेट प्रयोग गर्न सक्नुहुनेछ।</string>
     <string name="apply_manual_samsung_oneui_too_old">तपाईंको %s को हालको भर्अजन अलि पुरानो रहेछ। आईकनसेट सिधै लागू गर्नलाई कृपया Android 12 वा नयाँ संस्करणमा अद्यावधिक गर्नुहोस्। वैकल्पिक रूपमा, तपाईं फरक लन्चर प्रयोग गर्न सक्नुहुनेछ।</string>
@@ -137,6 +146,7 @@
     <string name="request_not_selected">अनुरोध गर्न एपहरु चयन गर्नुहोस्</string>
     <string name="request_not_requested">अनुरोध गरिएको छैन</string>
     <string name="request_already_requested">पहिले नै अनुरोध गरीसकेको </string>
+    <string name="request_not_available">अनुरोध गर्न सकिएन </string>
     <string name="request_building">अनुरोध निर्माण गरिदैछ…</string>
     <string name="request_pacific_sending">Pacific Manager लाई अनुरोध पठाउदै..</string>
     <string name="request_pacific_error">Pacific Manager लाई अनुरोध पठाउदै गर्दा समस्या देखियो । समस्या चाँही  %s हो ।</string>
@@ -182,6 +192,7 @@
     <string name="wallpaper_already_downloaded">वालपेपर पहिले नै डाउनलोड भाईसकेको छ</string>
     <string name="wallpaper_downloading">वालपेपर डाउनलोड गर्दै…</string>
     <string name="wallpaper_download_failed">वालपेपर डाउनलोड गर्न सकिएन</string>
+    <string name="wallpaper_download_success">वालपेपर सफतापूर्वक डाउनलोड गर्न सकियो </string>
     <string name="wallpaper_loading">वालपेपर लोड गरिदै…</string>
     <string name="wallpaper_applying">वालपेपर लागू गरिदै…</string>
     <string name="wallpaper_applied">वालपेपर लागु गरियो</string>

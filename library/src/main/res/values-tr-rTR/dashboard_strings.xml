@@ -69,7 +69,6 @@
     <string name="tap_intro_home_navigation">Gezinme çekmecesi</string>
     <string name="tap_intro_home_navigation_desc">Gezinme çekmecesini açmak için buraya dokunun veya ekranın sol kenarından kaydırın</string>
     <string name="tap_intro_home_apply">Simge paketini uygula</string>
-    <string name="tap_intro_home_apply_desc">%s uygulamak için buraya dokunun</string>
     <string name="tap_intro_icons_search">Ara</string>
     <string name="tap_intro_icons_search_desc">Bir simgeyi aramak için buraya dokunun</string>
     <string name="tap_intro_request_select">Aranan uygulamayı seçin</string>

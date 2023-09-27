@@ -62,7 +62,6 @@
     <string name="tap_intro_home_navigation">Навигационно чекмедже</string>
     <string name="tap_intro_home_navigation_desc">Докоснете тук или прекарайте пръст от левия ръб на екрана, за да отворите навигационното чекмедже</string>
     <string name="tap_intro_home_apply">Прилагане на пакета с икони</string>
-    <string name="tap_intro_home_apply_desc">Докоснете тук, за да приложите</string>
     <string name="tap_intro_icons_search">Търсене</string>
     <string name="tap_intro_icons_search_desc">Докоснете тук, за да търсите икона</string>
     <string name="tap_intro_request_select">Изберете липсващото приложение</string>

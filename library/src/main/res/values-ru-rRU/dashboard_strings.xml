@@ -69,7 +69,6 @@
     <string name="tap_intro_home_navigation">Навигационное меню</string>
     <string name="tap_intro_home_navigation_desc">Нажмите пальцем здесь или проведите пальцем от левого края экрана что бы открыть меню навигации</string>
     <string name="tap_intro_home_apply">Применить набор иконок</string>
-    <string name="tap_intro_home_apply_desc">Нажмите сюда чтобы применить %s</string>
     <string name="tap_intro_icons_search">Поиск</string>
     <string name="tap_intro_icons_search_desc">Нажмите сюда для поиска иконок</string>
     <string name="tap_intro_request_select">Выберите недостающее приложение</string>

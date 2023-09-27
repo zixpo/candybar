@@ -58,7 +58,6 @@
     <string name="tap_intro_home_navigation">Navigation drawer</string>
     <string name="tap_intro_home_navigation_desc">Tap here or swipe from left edge of the screen to open navigation drawer</string>
     <string name="tap_intro_home_apply">Apply icon pack</string>
-    <string name="tap_intro_home_apply_desc">Tap here to apply %s</string>
     <string name="tap_intro_icons_search">தேடல்</string>
     <string name="tap_intro_icons_search_desc">Tap here to search an icon</string>
     <string name="tap_intro_request_select">Select missed app</string>

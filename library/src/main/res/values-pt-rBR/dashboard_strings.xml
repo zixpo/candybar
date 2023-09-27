@@ -70,7 +70,6 @@
     <string name="tap_intro_home_navigation">Gaveta de navegação</string>
     <string name="tap_intro_home_navigation_desc">Toque aqui ou deslize da borda esquerda da tela para abrir a gaveta de navegação</string>
     <string name="tap_intro_home_apply">Aplicar o pacote de ícones</string>
-    <string name="tap_intro_home_apply_desc">Toque aqui para aplicar %s</string>
     <string name="tap_intro_icons_search">Pesquisar</string>
     <string name="tap_intro_icons_search_desc">Toque aqui para procurar um ícone</string>
     <string name="tap_intro_request_select">Selecione o app ausente</string>

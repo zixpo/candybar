@@ -67,7 +67,6 @@
     <string name="tap_intro_home_navigation">Панель навігації</string>
     <string name="tap_intro_home_navigation_desc">Натисніть тут або проведіть від лівого краю екрану, щоб відкрити панель навігації</string>
     <string name="tap_intro_home_apply">Застосувати набір іконок</string>
-    <string name="tap_intro_home_apply_desc">Натисніть тут, щоб застосувати %s</string>
     <string name="tap_intro_icons_search">Пошук</string>
     <string name="tap_intro_icons_search_desc">Натисніть тут для пошуку іконки</string>
     <string name="tap_intro_request_select">Виберіть пропущений додаток</string>

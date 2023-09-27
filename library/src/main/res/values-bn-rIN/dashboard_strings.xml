@@ -54,7 +54,6 @@
     <string name="tap_intro_home_navigation">নেভিগেশন ড্রয়ার</string>
     <string name="tap_intro_home_navigation_desc">এখানে ট্যাপ করুন বা ন্যাভিগেশন ড্রয়ার খুলতে পর্দার বাম প্রান্ত থেকে সোয়াইপ করুন</string>
     <string name="tap_intro_home_apply">আইকন প্যাকটি প্রয়োগ করুন</string>
-    <string name="tap_intro_home_apply_desc">%s প্রয়োগ করতে এখানে ট্যাপ করুন</string>
     <string name="tap_intro_icons_search">খুঁজুন</string>
     <string name="tap_intro_icons_search_desc">একটি আইকন খুঁজতে এখানে ট্যাপ করুন</string>
     <string name="tap_intro_request_select">মিস করে যাওয়া অ্যাপ নির্বাচন করুন</string>

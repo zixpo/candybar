@@ -65,7 +65,6 @@
     <string name="tap_intro_home_navigation">Navigatiemenu</string>
     <string name="tap_intro_home_navigation_desc">Tik hier of veeg vanuit de linkerkant van het scherm om het navigatiemenu te openen</string>
     <string name="tap_intro_home_apply">Pictogrampakket toepassen</string>
-    <string name="tap_intro_home_apply_desc">Tik hier om %s toe te passen</string>
     <string name="tap_intro_icons_search">Zoeken</string>
     <string name="tap_intro_icons_search_desc">Tik hier om een pictogram te zoeken</string>
     <string name="tap_intro_request_select">Missende apps kiezen</string>

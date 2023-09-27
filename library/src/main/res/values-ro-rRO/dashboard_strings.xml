@@ -70,7 +70,6 @@
     <string name="tap_intro_home_navigation">Sertar navigare</string>
     <string name="tap_intro_home_navigation_desc">Apasă aici sau trage din marginea stângă a ecranului pentru a deschide sertarul de navigare</string>
     <string name="tap_intro_home_apply">Aplică pachetul de pictograme</string>
-    <string name="tap_intro_home_apply_desc">Atinge aici pentru a aplica %s</string>
     <string name="tap_intro_icons_search">Căutare</string>
     <string name="tap_intro_icons_search_desc">Apasă aici pentru a căuta o pictogramă</string>
     <string name="tap_intro_request_select">Selectează aplicația omisă</string>

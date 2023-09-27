@@ -70,7 +70,7 @@ Vous ne pourrez pas utiliser l\'application</string>
     <string name="tap_intro_home_navigation">Tiroir de Navigation</string>
     <string name="tap_intro_home_navigation_desc">Appuyez ici ou faites glisser votre doigt depuis le côté gauche de l\'écran pour ouvrir le Tiroir de Navigation</string>
     <string name="tap_intro_home_apply">Appliquer le pack d\'icônes</string>
-    <string name="tap_intro_home_apply_desc">Appuyez pour appliquer %s</string>
+    <string name="tap_intro_home_apply_desc">Appuyez ici pour appliquer %s à votre lanceur actuel. Appuyez longuement pour appliquer à d\'autres lanceurs.</string>
     <string name="tap_intro_icons_search">Recherche</string>
     <string name="tap_intro_icons_search_desc">Appuyez ici pour rechercher une icône</string>
     <string name="tap_intro_request_select">Sélectionner l\'application manquante</string>
@@ -204,6 +204,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="wallpaper_already_downloaded">Fond d\'écran déjà téléchargé</string>
     <string name="wallpaper_downloading">Téléchargement du fond d\'écran …</string>
     <string name="wallpaper_download_failed">Impossible de télécharger le fond d\'écran</string>
+    <string name="wallpaper_download_success">Fond d\'écran téléchargé avec succès</string>
     <string name="wallpaper_loading">Chargement du fond d\'écran …</string>
     <string name="wallpaper_applying">Application du fond d\'écran …</string>
     <string name="wallpaper_applied">Fond d\'écran appliqué</string>

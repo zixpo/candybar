@@ -65,7 +65,6 @@
     <string name="tap_intro_home_navigation">Szuflada nawigacji</string>
     <string name="tap_intro_home_navigation_desc">Dotknij tutaj lub przejedź palcem od lewej krawędzi ekranu aby otworzyć szufladę nawigacji</string>
     <string name="tap_intro_home_apply">Zastosuj paczkę ikon</string>
-    <string name="tap_intro_home_apply_desc">Dotknij tutaj by zastosować %s</string>
     <string name="tap_intro_icons_search">Wyszukiwanie</string>
     <string name="tap_intro_icons_search_desc">Dotknij tutaj by wyszukać ikonę</string>
     <string name="tap_intro_request_select">Wybierz aplikację niezawartą w paczce ikon</string>
