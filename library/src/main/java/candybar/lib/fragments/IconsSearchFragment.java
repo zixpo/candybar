@@ -37,6 +37,7 @@ import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -225,10 +226,13 @@ public class IconsSearchFragment extends Fragment {
 
         private Set<Icon> iconSet;
         private List<Icon> iconList;
+        private Set<String> excludedCategories;
 
         @Override
         protected void preRun() {
             iconSet = new HashSet<>();
+            String[] exCategories = CandyBarApplication.getConfiguration().getExcludedCategoryForSearch();
+            excludedCategories = exCategories != null ? new HashSet<>(Arrays.asList(exCategories)) : new HashSet<>();
         }
 
         @Override
@@ -244,7 +248,7 @@ public class IconsSearchFragment extends Fragment {
                             if (!icon.getTitle().equals(CandyBarApplication.getConfiguration().getTabAllIconsTitle())) {
                                 iconSet.addAll(icon.getIcons());
                             }
-                        } else {
+                        } else if (!excludedCategories.contains(icon.getTitle())) {
                             iconSet.addAll(icon.getIcons());
                         }
                     }
