@@ -2,6 +2,13 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.18.4
+- Added new launchers
+- Added option to exclude categories from search
+
+# v3.18.3
+- Removed duplicated code, fixes issue with icons not loading when searching icons
+
 # v3.18.2
 - Fix icon search not loading when `show_icon_name` is set to `false`
 
