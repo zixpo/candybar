@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/selectableItemBackground"
-    android:gravity="center_vertical|fill_vertical"
+    android:gravity="center_vertical"
     android:orientation="horizontal"
     android:padding="@dimen/content_margin"
     android:theme="@style/RippleStyle">
@@ -29,7 +29,7 @@
         android:id="@+id/forward_icon"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/content_margin"
-        android:layout_marginStart="@dimen/content_margin" />
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp" />
 
 </LinearLayout>

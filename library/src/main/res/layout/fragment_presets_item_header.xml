@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_marginEnd="@dimen/card_margin_right"
+    android:layout_marginRight="@dimen/card_margin_right"
+    android:layout_marginBottom="@dimen/card_margin_bottom"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:clipToPadding="false">
 
     <View
         android:layout_width="match_parent"
