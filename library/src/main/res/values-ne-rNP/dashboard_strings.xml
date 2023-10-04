@@ -126,6 +126,9 @@
     <string name="apply_manual_samsung_oneui_step_5">निलो \"आइकनप्याक\" बटनलाई ट्याप गर्नुहोस्</string>
     <string name="apply_manual_samsung_oneui_step_6">दिईएको सूचीबाट %s छान्नुहोस्</string>
     <string name="apply_manual_samsung_oneui_step_7">तपाईंले यो अपडेट प्रत्येक पटक दोहोर्याउनुहोला %s यसो नगर्दा नयाँ आइकनहरू स्वचालित रूपमा म्याप न हुन सक्छ ।</string>
+    <string name="apply_manual_hios">HiOS लन्चर सिधै एप्लाई गर्न मिल्दैन तर तपाईंले यी चरणहरूको पालना गर्न सक्नुहुनेछ:</string>
+    <string name="apply_manual_hios_step_1">\"सेटिंग\" खोल्नुहोस् </string>
+    <string name="apply_manual_nothing_step_1">\"सेटिंग\" खोल्नुहोस् </string>
     <string name="apply_launch_failed">%s सेटिंग्स सुरू गर्न असमर्थ</string>
     <string name="apply_launcher_not_installed">लन्चर इन्स्टल गरिएको छैन, के तपाईं लन्चर इन्स्टल गर्नको लागि गूगल प्ले स्टोर खोल्न चाहनुहुन्छ? </string>
     <string name="apply_launcher_not_installable">%s लन्चर इन्टल गरिएको छैन, कृपया लन्चर इन्टल गरीसकेपछी कोसीस गर्नुहोला।</string>
