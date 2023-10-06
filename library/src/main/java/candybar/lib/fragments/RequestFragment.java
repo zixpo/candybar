@@ -229,11 +229,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
             int selected = mAdapter.getSelectedItemsSize();
             if (selected > 0) {
-                if (mAdapter.isContainsRequested()) {
-                    RequestHelper.showAlreadyRequestedDialog(requireActivity());
-                    return;
-                }
-
                 boolean requestLimit = getResources().getBoolean(
                         R.bool.enable_icon_request_limit);
                 boolean iconRequest = getResources().getBoolean(
