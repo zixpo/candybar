@@ -437,7 +437,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 int position = mShowPremiumRequest || mShowRegularRequestLimit ?
                         getBindingAdapterPosition() - 1 : getBindingAdapterPosition();
                 toggleSelection(position, new ToggleResultListener() {
-                    @Override public void onPositiveResult() { checkbox.toggle(); }
+                    @Override public void onPositiveResult() {
+                        checkbox.toggle();
+                        try {
+                            RequestListener listener = (RequestListener) mContext;
+                            listener.onRequestSelected(getSelectedItemsSize());
+                        } catch (Exception ignored) {
+                        }
+                    }
                     @Override public void onNegativeResult() { /* Do nothing */ }
                 });
             }
@@ -450,7 +457,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 int position = mShowPremiumRequest || mShowRegularRequestLimit ?
                         getBindingAdapterPosition() - 1 : getBindingAdapterPosition();
                 toggleSelection(position, new ToggleResultListener() {
-                    @Override public void onPositiveResult() { checkbox.toggle(); }
+                    @Override public void onPositiveResult() {
+                        checkbox.toggle();
+                        try {
+                            RequestListener listener = (RequestListener) mContext;
+                            listener.onRequestSelected(getSelectedItemsSize());
+                        } catch (Exception ignored) {
+                        }
+                    }
                     @Override public void onNegativeResult() { /* Do nothing */ }
                 });
                 return true;
