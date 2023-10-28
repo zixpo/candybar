@@ -41,6 +41,8 @@ public class UrlHelper {
                 return getTintedDrawable(context, R.drawable.ic_toolbar_email, color);
             case BEHANCE:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_behance, color);
+            case BLUESKY:
+                return getTintedDrawable(context, R.drawable.ic_toolbar_bluesky, color);
             case DRIBBBLE:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_dribbble, color);
             case FACEBOOK:
@@ -49,10 +51,14 @@ public class UrlHelper {
                 return getTintedDrawable(context, R.drawable.ic_toolbar_github, color);
             case INSTAGRAM:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_instagram, color);
+            case MASTODON:
+                return getTintedDrawable(context, R.drawable.ic_toolbar_mastodon, color);
             case PINTEREST:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_pinterest, color);
+            case THREADS:
+                return getTintedDrawable(context, R.drawable.ic_toolbar_threads, color);
             case TWITTER:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_twitter, color);
+                return getTintedDrawable(context, R.drawable.ic_toolbar_x, color);
             case TELEGRAM:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_telegram, color);
             default:
@@ -71,6 +77,8 @@ public class UrlHelper {
 
         if (url.contains("behance.")) {
             return Type.BEHANCE;
+        } else if (url.contains("bsky.")) {
+            return Type.BLUESKY;
         } else if (url.contains("dribbble.")) {
             return Type.DRIBBBLE;
         } else if (url.contains("facebook.")) {
@@ -79,10 +87,14 @@ public class UrlHelper {
             return Type.GITHUB;
         } else if (url.contains("instagram.")) {
             return Type.INSTAGRAM;
+        } else if (url.contains("mastodon.")|| url.contains("mstdn.")|| url.contains("mas.")|| url.contains("fosstodon.")|| url.contains("troet.")|| url.contains("chaos.")|| url.contains("floss.")) {
+            return Type.MASTODON;
         } else if (url.contains("pinterest.")) {
             return Type.PINTEREST;
-        } else if (url.contains("twitter.")) {
+        } else if (url.contains("twitter.")|| url.contains("x.")) {
             return Type.TWITTER;
+        } else if (url.contains("threads.")) {
+            return Type.THREADS;
         } else if (url.contains("t.me/") || url.contains("telegram.me/")) {
             return Type.TELEGRAM;
         } else {
@@ -93,11 +105,14 @@ public class UrlHelper {
     public enum Type {
         EMAIL,
         BEHANCE,
+        BLUESKY,
         DRIBBBLE,
         FACEBOOK,
         GITHUB,
         INSTAGRAM,
+        MASTODON,
         PINTEREST,
+        THREADS,
         TWITTER,
         TELEGRAM,
         UNKNOWN,
