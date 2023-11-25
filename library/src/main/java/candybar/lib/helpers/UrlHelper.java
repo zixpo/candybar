@@ -109,7 +109,7 @@ public class UrlHelper {
             return Type.MATRIX;
         } else if (url.contains("pinterest.")) {
             return Type.PINTEREST;
-        } else if (url.contains("twitter.")|| url.contains("x.")) {
+        } else if (url.contains("twitter.")|| url.contains("https://x.com/")) {
             return Type.TWITTER;
         } else if (url.contains("threads.")) {
             return Type.THREADS;
