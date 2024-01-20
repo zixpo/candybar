@@ -211,7 +211,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         R.string.request_not_available));
             }
 
-            if (!mRequests.get(finalPosition).isAvailableForRequest()) {
+            if (mRequests.get(finalPosition).isRequested() && !mContext.getResources().getBoolean(R.bool.enable_icon_request_multiple)) {
+                // This icon was requested before and we do not allow multi-requests, so we
+                // keep it visually enabled in the list but disable the checkbox
+                contentViewHolder.content.setAlpha(1f);
+                contentViewHolder.title.setAlpha(1f);
+                contentViewHolder.icon.setAlpha(1f);
+                contentViewHolder.checkbox.setEnabled(false);
+            } else if (!mRequests.get(finalPosition).isAvailableForRequest()) {
                 contentViewHolder.content.setAlpha(0.5f);
                 contentViewHolder.title.setAlpha(0.5f);
                 contentViewHolder.icon.setAlpha(0.5f);
@@ -366,6 +373,11 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
+    public interface ToggleResultListener {
+        void onPositiveResult();
+        void onNegativeResult();
+    }
+
     private class ContentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         private final TextView title;
@@ -424,9 +436,17 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (id == R.id.container) {
                 int position = mShowPremiumRequest || mShowRegularRequestLimit ?
                         getBindingAdapterPosition() - 1 : getBindingAdapterPosition();
-                if (toggleSelection(position)) {
-                    checkbox.toggle();
-                }
+                toggleSelection(position, new ToggleResultListener() {
+                    @Override public void onPositiveResult() {
+                        checkbox.toggle();
+                        try {
+                            RequestListener listener = (RequestListener) mContext;
+                            listener.onRequestSelected(getSelectedItemsSize());
+                        } catch (Exception ignored) {
+                        }
+                    }
+                    @Override public void onNegativeResult() { /* Do nothing */ }
+                });
             }
         }
 
@@ -436,10 +456,18 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (id == R.id.container) {
                 int position = mShowPremiumRequest || mShowRegularRequestLimit ?
                         getBindingAdapterPosition() - 1 : getBindingAdapterPosition();
-                if (toggleSelection(position)) {
-                    checkbox.toggle();
-                    return true;
-                }
+                toggleSelection(position, new ToggleResultListener() {
+                    @Override public void onPositiveResult() {
+                        checkbox.toggle();
+                        try {
+                            RequestListener listener = (RequestListener) mContext;
+                            listener.onRequestSelected(getSelectedItemsSize());
+                        } catch (Exception ignored) {
+                        }
+                    }
+                    @Override public void onNegativeResult() { /* Do nothing */ }
+                });
+                return true;
             }
             return false;
         }
@@ -468,11 +496,46 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         return null;
     }
 
-    private boolean toggleSelection(int position) {
+    private void toggleSelection(int position, ToggleResultListener toggleListener) {
         if (position >= 0 && position < mRequests.size()) {
-            if (mSelectedItems.get(position, false))
+            boolean isSelected = mSelectedItems.get(position, false);
+            boolean isRequested = mRequests.get(position).isRequested();
+            boolean isDuplicateRequestAllowed = mContext.getResources().getBoolean(R.bool.enable_icon_request_multiple);
+
+            if (isSelected) {
                 mSelectedItems.delete(position);
-            else if (!mRequests.get(position).isAvailableForRequest()) {
+                toggleListener.onPositiveResult();
+            } else if (isRequested) {
+                if (isDuplicateRequestAllowed) {
+                    // Icon was already requested but re-request is allowed
+                    // Ask user if they really want to re-request the icon
+                    new MaterialDialog.Builder(mContext)
+                            .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
+                            .title(R.string.request_already_requested)
+                            .content(R.string.request_requested_possible)
+                            .cancelable(false)
+                            .canceledOnTouchOutside(false)
+                            .negativeText(R.string.request_requested_button_cancel)
+                            .onNegative((dialog, which) -> toggleListener.onNegativeResult())
+                            .positiveText(R.string.request_requested_button_confirm)
+                            .onPositive((dialog, which) -> {
+                                mSelectedItems.put(position, true);
+                                toggleListener.onPositiveResult();
+                            })
+                            .show();
+                } else {
+                    // Re-requesting icons is not allowed
+                    toggleListener.onNegativeResult();
+                    new MaterialDialog.Builder(mContext)
+                            .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
+                            .title(R.string.request_not_available)
+                            .content(R.string.request_requested)
+                            .negativeText(R.string.request_requested_button_cancel)
+                            .show();
+                }
+            } else if (!mRequests.get(position).isAvailableForRequest()) {
+                // Icon is not available for request
+                toggleListener.onNegativeResult();
                 if (!mRequests.get(position).getInfoText().isEmpty()) {
                     new MaterialDialog.Builder(mContext)
                             .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
@@ -481,18 +544,14 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             .positiveText(android.R.string.yes)
                             .show();
                 }
-                return false;
             } else {
+                // If nothing prevents us from reaching this point, we can select the icon
                 mSelectedItems.put(position, true);
+                toggleListener.onPositiveResult();
             }
-            try {
-                RequestListener listener = (RequestListener) mContext;
-                listener.onRequestSelected(getSelectedItemsSize());
-                return true;
-            } catch (Exception ignored) {
-            }
+        } else {
+            toggleListener.onNegativeResult();
         }
-        return false;
     }
 
     public boolean selectAll() {

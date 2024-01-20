@@ -403,15 +403,6 @@ public class RequestHelper {
         return requests;
     }
 
-    public static void showAlreadyRequestedDialog(@NonNull Context context) {
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(R.string.request_title)
-                .content(R.string.request_requested)
-                .positiveText(R.string.close)
-                .show();
-    }
-
     public static void showIconRequestLimitDialog(@NonNull Context context) {
         boolean reset = context.getResources().getBoolean(R.bool.reset_icon_request_limit);
         int limit = context.getResources().getInteger(R.integer.icon_request_limit);

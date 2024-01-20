@@ -209,8 +209,10 @@
     <string name="request_fetching_data">Fetching latest data …</string>
     <string name="request_build_failed">Unable to build icon request</string>
     <string name="request_appfilter_failed">Unable to read appfilter.xml</string>
-    <string name="request_requested">Please check your request again.
-        Because you are trying to request app that was already requested.</string>
+    <string name="request_requested">You already requested this icon and cannot request it again.</string>
+    <string name="request_requested_possible">You already requested this icon. Are you sure you want to spend another request on it?</string>
+    <string name="request_requested_button_cancel">Go back</string>
+    <string name="request_requested_button_confirm">Select anyway</string>
     <string name="request_email_client">Choose the app you want to use to send the icon request</string>
     <string name="request_app_disabled">You\'re using an older version of this icon pack. The requested icons may be included in the latest version. Please update your app to latest version to request icons.</string>
     <string name="connection_error_long">Unable to load data from server. Please, check your network connection.</string>
