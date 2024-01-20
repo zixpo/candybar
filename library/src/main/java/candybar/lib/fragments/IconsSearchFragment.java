@@ -244,11 +244,13 @@ public class IconsSearchFragment extends Fragment {
                     IconsHelper.loadIcons(requireActivity(), false);
 
                     for (Icon icon : CandyBarMainActivity.sSections) {
+                        boolean isExlcuded = excludedCategories.contains(icon.getTitle());
+                        String allIconsTabTitle = CandyBarApplication.getConfiguration().getTabAllIconsTitle();
                         if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
-                            if (!icon.getTitle().equals(CandyBarApplication.getConfiguration().getTabAllIconsTitle())) {
+                            if (!icon.getTitle().equals(allIconsTabTitle) && !isExlcuded) {
                                 iconSet.addAll(icon.getIcons());
                             }
-                        } else if (!excludedCategories.contains(icon.getTitle())) {
+                        } else if (!isExlcuded) {
                             iconSet.addAll(icon.getIcons());
                         }
                     }
