@@ -17,7 +17,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -61,13 +60,13 @@ public class TapIntroHelper {
 
             new Handler().postDelayed(() -> {
                 try {
-                    int titleColor = ContextCompat.getColor(context, R.color.tapIntroTitle);
-                    int descriptionColor = ContextCompat.getColor(context, R.color.tapIntroDescription);
-                    int circleColorInner = ContextCompat.getColor(context, R.color.tapIntroCircleInner);
-                    int circleColorOuter = ContextCompat.getColor(context, R.color.tapIntroCircleOuter);
+                    int titleColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroTitle);
+                    int descriptionColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroDescription);
+                    int circleColorInner = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleInner);
+                    int circleColorOuter = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleOuter);
 
                     if (context.getResources().getBoolean(R.bool.use_legacy_intro_colors)) {
-                        int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
+                        int primary = ColorHelper.getAttributeColor(context, R.attr.cb_toolbarIcon);
                         int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
                         titleColor = primary;
                         descriptionColor = ColorHelper.setColorAlpha(primary, 0.7f);
@@ -185,13 +184,13 @@ public class TapIntroHelper {
 
             new Handler().postDelayed(() -> {
                 try {
-                    int titleColor = ContextCompat.getColor(context, R.color.tapIntroTitle);
-                    int descriptionColor = ContextCompat.getColor(context, R.color.tapIntroDescription);
-                    int circleColorInner = ContextCompat.getColor(context, R.color.tapIntroCircleInner);
-                    int circleColorOuter = ContextCompat.getColor(context, R.color.tapIntroCircleOuter);
+                    int titleColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroTitle);
+                    int descriptionColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroDescription);
+                    int circleColorInner = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleInner);
+                    int circleColorOuter = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleOuter);
 
                     if (context.getResources().getBoolean(R.bool.use_legacy_intro_colors)) {
-                        int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
+                        int primary = ColorHelper.getAttributeColor(context, R.attr.cb_toolbarIcon);
                         int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
                         titleColor = primary;
                         descriptionColor = ColorHelper.setColorAlpha(primary, 0.7f);
@@ -251,13 +250,13 @@ public class TapIntroHelper {
 
             new Handler().postDelayed(() -> {
                 try {
-                    int titleColor = ContextCompat.getColor(context, R.color.tapIntroTitle);
-                    int descriptionColor = ContextCompat.getColor(context, R.color.tapIntroDescription);
-                    int circleColorInner = ContextCompat.getColor(context, R.color.tapIntroCircleInner);
-                    int circleColorOuter = ContextCompat.getColor(context, R.color.tapIntroCircleOuter);
+                    int titleColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroTitle);
+                    int descriptionColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroDescription);
+                    int circleColorInner = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleInner);
+                    int circleColorOuter = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleOuter);
 
                     if (context.getResources().getBoolean(R.bool.use_legacy_intro_colors)) {
-                        int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
+                        int primary = ColorHelper.getAttributeColor(context, R.attr.cb_toolbarIcon);
                         int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
                         titleColor = primary;
                         descriptionColor = ColorHelper.setColorAlpha(primary, 0.7f);
@@ -440,13 +439,13 @@ public class TapIntroHelper {
             }
 
             new Handler().postDelayed(() -> {
-                int titleColor = ContextCompat.getColor(context, R.color.tapIntroTitle);
-                int descriptionColor = ContextCompat.getColor(context, R.color.tapIntroDescription);
-                int circleColorInner = ContextCompat.getColor(context, R.color.tapIntroCircleInner);
-                int circleColorOuter = ContextCompat.getColor(context, R.color.tapIntroCircleOuter);
+                int titleColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroTitle);
+                int descriptionColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroDescription);
+                int circleColorInner = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleInner);
+                int circleColorOuter = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleOuter);
 
                 if (context.getResources().getBoolean(R.bool.use_legacy_intro_colors)) {
-                    int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
+                    int primary = ColorHelper.getAttributeColor(context, R.attr.cb_toolbarIcon);
                     int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
                     titleColor = primary;
                     descriptionColor = ColorHelper.setColorAlpha(primary, 0.7f);
@@ -552,15 +551,15 @@ public class TapIntroHelper {
                 try {
                     int circleColorOuter = color;
                     if (circleColorOuter == 0) {
-                        circleColorOuter = ContextCompat.getColor(context, R.color.tapIntroCircleOuter);
+                        circleColorOuter = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleOuter);
                     }
 
-                    int titleColor = ContextCompat.getColor(context, R.color.tapIntroTitle);
-                    int descriptionColor = ContextCompat.getColor(context, R.color.tapIntroDescription);
-                    int circleColorInner = ContextCompat.getColor(context, R.color.tapIntroCircleInner);
+                    int titleColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroTitle);
+                    int descriptionColor = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroDescription);
+                    int circleColorInner = ColorHelper.getAttributeColor(context, R.attr.cb_tapIntroCircleInner);
 
                     if (context.getResources().getBoolean(R.bool.use_legacy_intro_colors)) {
-                        int primary = ContextCompat.getColor(context, R.color.toolbarIcon);
+                        int primary = ColorHelper.getAttributeColor(context, R.attr.cb_toolbarIcon);
                         int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
                         titleColor = primary;
                         descriptionColor = ColorHelper.setColorAlpha(primary, 0.7f);

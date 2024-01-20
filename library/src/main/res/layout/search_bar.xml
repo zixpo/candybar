@@ -16,7 +16,7 @@
         android:background="@android:color/transparent"
         android:imeOptions="actionSearch"
         android:inputType="text"
-        android:textColor="@color/toolbarIcon"
+        android:textColor="?cb_toolbarIcon"
         android:textCursorDrawable="@drawable/searchbar_cursor"
         android:textColorHint="#66AEAEAE"
         android:maxWidth="250dp"

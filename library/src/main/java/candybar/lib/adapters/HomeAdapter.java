@@ -242,6 +242,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             int finalPosition = position - 1;
 
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
+            LogUtil.d("COLOR IS: " + Integer.toHexString(color));
             if (mHomes.get(finalPosition).getIcon() != -1) {
                 if (mHomes.get(finalPosition).getType() == Home.Type.DIMENSION) {
                     if (CandyBarGlideModule.isValidContextForGlide(mContext)) {

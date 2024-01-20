@@ -1,5 +1,8 @@
 package candybar.lib.adapters;
 
+import static candybar.lib.items.Setting.Type.MATERIAL_YOU;
+
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +23,7 @@ import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.google.android.material.materialswitch.MaterialSwitch;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -130,6 +134,14 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             DrawableHelper.getTintedDrawable(mContext, setting.getIcon(), color), null, null, null);
                 }
             }
+
+            if (setting.getType() == MATERIAL_YOU) {
+                contentViewHolder.materialSwitch.setVisibility(View.VISIBLE);
+                contentViewHolder.container.setClickable(false);
+                int pad = contentViewHolder.container.getPaddingLeft();
+                contentViewHolder.container.setPadding(pad, 0, pad, 0);
+                contentViewHolder.materialSwitch.setChecked(Preferences.get(mContext).isMaterialYou());
+            }
         }
     }
 
@@ -152,6 +164,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private final TextView footer;
         private final LinearLayout container;
         private final View divider;
+        private final MaterialSwitch materialSwitch;
 
         ContentViewHolder(View itemView) {
             super(itemView);
@@ -161,8 +174,18 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             footer = itemView.findViewById(R.id.footer);
             divider = itemView.findViewById(R.id.divider);
             container = itemView.findViewById(R.id.container);
+            materialSwitch = itemView.findViewById(R.id.switch_key);
 
             container.setOnClickListener(this);
+            materialSwitch.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+                // No case required for now as the switch is only for
+                // material you
+                LogUtil.d("CHECK STATUS: " + isChecked);
+                if (isChecked != Preferences.get(mContext).isMaterialYou()) {
+                    Preferences.get(mContext).setMaterialYou(isChecked);
+                    ((Activity) mContext).recreate();
+                }
+            });
         }
 
         @Override

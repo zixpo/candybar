@@ -18,7 +18,7 @@
         android:layout_marginTop="@dimen/content_padding"
         android:layout_marginBottom="@dimen/content_padding"
         android:textSize="@dimen/text_content_header"
-        android:textColor="@color/primaryText"
+        android:textColor="?cb_primaryText"
         app:fontFamily="@font/regular" />
 
     <TextView
@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/content_padding"
         android:textSize="@dimen/text_content"
+        android:textColor="?cb_secondaryText"
         app:fontFamily="@font/monospace" />
 
 </LinearLayout>

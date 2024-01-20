@@ -5,6 +5,7 @@ import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
 
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -176,6 +177,10 @@ public class SettingsFragment extends Fragment {
             settings.add(new Setting(-1, "",
                     Preferences.get(requireActivity()).getTheme().displayName(requireActivity()),
                     "", "", Setting.Type.THEME));
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                settings.add(new Setting(-1, "", "Material You", "", "", Setting.Type.MATERIAL_YOU));
+            }
         }
 
         settings.add(new Setting(R.drawable.ic_toolbar_language,

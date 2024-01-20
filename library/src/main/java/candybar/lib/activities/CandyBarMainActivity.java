@@ -165,6 +165,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        final boolean isMaterialYou = Preferences.get(this).isMaterialYou();
         final int nightMode;
         switch (Preferences.get(this).getTheme()) {
             case LIGHT:
@@ -173,15 +174,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             case DARK:
                 nightMode = AppCompatDelegate.MODE_NIGHT_YES;
                 break;
-            /*case MATERIAL_YOU:
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
-                    // Display a toast message about Material You availability on Android 12 and up.
-                    Toast.makeText(this, "Material You available only on Android 12 and up! \n Following system theme...", Toast.LENGTH_SHORT).show();
-                } else {
-                    DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
-                }
-                nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-                break;*/
             default:
                 nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
                 break;
@@ -189,8 +181,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         AppCompatDelegate.setDefaultNightMode(nightMode);
 
         LocaleHelper.setLocale(this);
-        super.setTheme(R.style.CandyBar_Theme_App);
         super.onCreate(savedInstanceState);
+        super.setTheme(isMaterialYou ? R.style.CandyBar_Theme_App_MaterialYou : R.style.CandyBar_Theme_App_DayNight);
         setContentView(R.layout.activity_main);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -198,7 +190,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         Toolbar toolbar = findViewById(R.id.toolbar);
         mToolbarTitle = findViewById(R.id.toolbar_title);
 
-        toolbar.setPopupTheme(R.style.CandyBar_Theme_App);
+        toolbar.setPopupTheme(isMaterialYou ? R.style.CandyBar_Theme_App_MaterialYou : R.style.CandyBar_Theme_App_DayNight);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
@@ -223,10 +215,10 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         //getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         //mDrawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
         int visibilityFlags = 0;
-        if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)) &&
+        if (ColorHelper.isLightColor(ColorHelper.getAttributeColor(this, R.attr.cb_colorPrimaryDark)) &&
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-        if (ColorHelper.isLightColor(ContextCompat.getColor(this, R.color.navigationBar)) &&
+        if (ColorHelper.isLightColor(ColorHelper.getAttributeColor(this, R.attr.cb_navigationBar)) &&
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
             visibilityFlags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
         getWindow().getDecorView().setSystemUiVisibility(visibilityFlags);
@@ -716,7 +708,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         mIsMenuVisible = !expand;
 
         if (expand) {
-            int color = ContextCompat.getColor(this, R.color.toolbarIcon);
+            int color = ColorHelper.getAttributeColor(this, R.attr.cb_toolbarIcon);
             toolbar.setNavigationIcon(DrawableHelper.getTintedDrawable(
                     this, R.drawable.ic_toolbar_back, color));
             // It does not work and causes issue with back press on icon search fragment
@@ -772,7 +764,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
         if (CandyBarApplication.getConfiguration().getNavigationIcon() == CandyBarApplication.NavigationIcon.DEFAULT) {
             DrawerArrowDrawable drawerArrowDrawable = new DrawerArrowDrawable(this);
-            drawerArrowDrawable.setColor(ContextCompat.getColor(this, R.color.toolbarIcon));
+            drawerArrowDrawable.setColor(ColorHelper.getAttributeColor(this, R.attr.cb_toolbarIcon));
             drawerArrowDrawable.setSpinEnabled(true);
             mDrawerToggle.setDrawerArrowDrawable(drawerArrowDrawable);
             mDrawerToggle.setDrawerIndicatorEnabled(true);
@@ -787,9 +779,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         NavigationViewHelper.initPresets(mNavigationView);
 
         ColorStateList itemStateList = ContextCompat.getColorStateList(this,
-                ThemeHelper.isDarkTheme(this) ?
-                        R.color.navigation_view_item_highlight_dark :
-                        R.color.navigation_view_item_highlight);
+                R.color.navigation_view_item_highlight);
         mNavigationView.setItemTextColor(itemStateList);
         mNavigationView.setItemIconTintList(itemStateList);
 //        Drawable background = ContextCompat.getDrawable(this,

@@ -11,8 +11,8 @@ import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
-import androidx.core.content.ContextCompat;
 
+import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.permission.PermissionHelper;
 import com.danimahardhika.cafebar.CafeBar;
@@ -62,7 +62,7 @@ public class WallpaperDownloader {
 
     private void showCafeBar(int res) {
         CafeBar.builder(mContext)
-                .theme(CafeBarTheme.Custom(ContextCompat.getColor(mContext, R.color.cardBackground)))
+                .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(mContext, R.attr.cb_cardBackground)))
                 .contentTypeface(TypefaceHelper.getRegular(mContext))
                 .content(res)
                 .floating(true)
@@ -72,7 +72,7 @@ public class WallpaperDownloader {
 
     private void showOpenFileCafeBar(@StringRes int textRes, File target) {
         CafeBar.builder(mContext)
-                .theme(CafeBarTheme.Custom(ContextCompat.getColor(mContext, R.color.cardBackground)))
+                .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(mContext, R.attr.cb_cardBackground)))
                 .floating(true)
                 .fitSystemWindow()
                 .duration(CafeBar.Duration.MEDIUM)

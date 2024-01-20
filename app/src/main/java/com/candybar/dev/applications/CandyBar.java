@@ -68,7 +68,8 @@ public class CandyBar extends CandyBarApplication {
 
         // configuration.setFilterRequestHandler((request) -> !request.getPackageName().startsWith("org.chromium.webapk"));
 
-        configuration.setExcludedCategoryForSearch(new String[]{"Apps"});
+        configuration.setShowTabAllIcons(true);
+        configuration.setExcludedCategoryForSearch(new String[]{"All Apps", "Cat 1", "Cat 2", "Cat 3", "Cat 4", "Cat 5", "Cat 6", "Cat 7", "Cat 8", "Cat 9", "Cat 11"});
 
         return configuration;
     }

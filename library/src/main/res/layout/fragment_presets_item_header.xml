@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/card"
-        app:cardBackgroundColor="@color/cardBackground"
+        app:cardBackgroundColor="?cb_cardBackground"
         app:cardElevation="@dimen/card_elevation"
         app:cardUseCompatPadding="@bool/card_use_compat_padding"
         app:cardCornerRadius="@dimen/card_corner_radius"
-        app:strokeColor="@color/cardStroke"
+        app:strokeColor="?cb_cardStroke"
         app:cardPreventCornerOverlap="true">
 
         <LinearLayout

@@ -7,6 +7,7 @@
 
     <!-- CONFIG: DEFAULT THEME -->
     <string name="default_theme">auto</string>
+    <bool name="material_you_by_default">true</bool>
 
     <!-- CONFIG: MUZEI -->
     <string name="muzei_art_source_name">CandyBar</string>

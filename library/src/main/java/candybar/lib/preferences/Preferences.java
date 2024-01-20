@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 
 import androidx.annotation.NonNull;
 
@@ -46,6 +47,7 @@ public class Preferences {
 
     private static final String KEY_FIRST_RUN = "first_run";
     private static final String KEY_THEME = "theme";
+    private static final String KEY_MATERIAL_YOU = "material_you";
     private static final String KEY_ICON_SHAPE = "icon_shape";
     private static final String KEY_APP_VERSION = "app_version";
     private static final String KEY_WIFI_ONLY = "wifi_only";
@@ -179,6 +181,15 @@ public class Preferences {
                 }}
         );
         getSharedPreferences().edit().putInt(KEY_THEME, theme.ordinal()).apply();
+    }
+
+    public boolean isMaterialYou() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return false;
+        return getSharedPreferences().getBoolean(KEY_MATERIAL_YOU, mContext.getResources().getBoolean(R.bool.material_you_by_default));
+    }
+
+    public void setMaterialYou(boolean bool) {
+        getSharedPreferences().edit().putBoolean(KEY_MATERIAL_YOU, bool).apply();
     }
 
     public boolean isToolbarShadowEnabled() {

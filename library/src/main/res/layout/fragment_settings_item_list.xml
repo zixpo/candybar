@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/cardBackground">
+    android:background="?cb_cardBackground">
 
     <View
         android:id="@+id/divider"
@@ -32,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:padding="@dimen/content_margin"
         android:background="?attr/selectableItemBackground"
         android:theme="@style/RippleStyle">
@@ -70,6 +71,13 @@
                 app:fontFamily="@font/regular" />
 
         </LinearLayout>
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:visibility="gone"
+            android:id="@+id/switch_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AccentChange" />
 
     </LinearLayout>
 

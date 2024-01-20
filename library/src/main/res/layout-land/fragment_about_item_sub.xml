@@ -7,23 +7,23 @@
     android:layout_marginRight="@dimen/content_padding"
     android:layout_marginEnd="@dimen/content_padding"
     android:layout_marginBottom="@dimen/content_padding"
-    app:cardBackgroundColor="@color/cardBackground"
+    app:cardBackgroundColor="?cb_cardBackground"
     app:cardElevation="@dimen/card_elevation"
     app:cardUseCompatPadding="@bool/card_use_compat_padding"
     app:cardCornerRadius="@dimen/card_corner_radius"
-    app:strokeColor="@color/cardStroke">
+    app:strokeColor="?cb_cardStroke">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/cardBackground">
+        android:background="?cb_cardBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/cardBackground"
+            android:background="?cb_cardBackground"
             android:id="@+id/contributors">
 
             <TextView
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/cardBackground"
+            android:background="?cb_cardBackground"
             android:id="@+id/privacy_policy">
 
             <TextView
@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/cardBackground"
+            android:background="?cb_cardBackground"
             android:id="@+id/terms">
 
             <TextView

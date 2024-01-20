@@ -25,7 +25,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -117,7 +116,7 @@ public class WallpapersFragment extends Fragment {
                 ColorHelper.getAttributeColor(getActivity(), com.google.android.material.R.attr.colorSecondary),
                 PorterDuff.Mode.SRC_IN);
         mSwipe.setColorSchemeColors(
-                ContextCompat.getColor(requireActivity(), R.color.swipeRefresh));
+                ColorHelper.getAttributeColor(requireActivity(), R.attr.cb_swipeRefresh));
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setHasFixedSize(false);

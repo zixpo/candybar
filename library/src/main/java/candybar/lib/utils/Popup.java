@@ -15,7 +15,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.ListPopupWindow;
-import androidx.core.content.ContextCompat;
 
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
@@ -59,8 +58,8 @@ public class Popup {
         mPopupWindow.setWidth(width);
         Drawable drawable = mPopupWindow.getBackground();
         if (drawable != null) {
-            drawable.setColorFilter(ContextCompat.getColor(
-                    builder.mContext, R.color.cardBackground), PorterDuff.Mode.SRC_IN);
+            drawable.setColorFilter(ColorHelper.getAttributeColor(
+                    builder.mContext, R.attr.cb_cardBackground), PorterDuff.Mode.SRC_IN);
         }
 
         mPopupWindow.setAnchorView(builder.mTo);

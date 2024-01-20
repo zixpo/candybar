@@ -118,7 +118,7 @@ public class PresetsFragment extends Fragment {
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (!isGranted) {
                     CafeBar.builder(requireActivity())
-                            .theme(CafeBarTheme.Custom(ContextCompat.getColor(requireActivity(), R.color.cardBackground)))
+                            .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(requireActivity(), R.attr.cb_cardBackground)))
                             .floating(true)
                             .fitSystemWindow()
                             .duration(CafeBar.Duration.MEDIUM)

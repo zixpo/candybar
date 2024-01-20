@@ -16,7 +16,7 @@
     </style>
 
     <style name="RippleStyle">
-        <item name="colorControlHighlight">@color/rippleColor</item>
+        <item name="colorControlHighlight">?cb_rippleColor</item>
     </style>
 
     <style name="RippleStyleLight">
@@ -24,20 +24,25 @@
     </style>
 
     <style name="RippleAccentStyle">
-        <item name="colorControlHighlight">@color/rippleAccent</item>
+        <item name="colorControlHighlight">?cb_rippleAccent</item>
     </style>
 
     <style name="ButtonStyle">
-        <item name="colorButtonNormal">?colorSecondary</item>
+        <item name="colorButtonNormal">?cb_colorAccent</item>
     </style>
 
     <style name="CheckBoxStyle">
+        <item name="colorPrimary">?cb_colorAccent</item>
         <item name="colorControlNormal">?android:attr/textColorSecondary</item>
-        <item name="colorControlActivated">?colorSecondary</item>
+        <item name="colorControlActivated">?cb_colorAccent</item>
+    </style>
+
+    <style name="AccentChange">
+        <item name="colorPrimary">?cb_colorAccent</item>
     </style>
 
     <style name="ToolbarThemeOverlay">
-        <item name="colorControlNormal">@color/toolbarIcon</item>
+        <item name="colorControlNormal">?cb_toolbarIcon</item>
     </style>
 
     <style name="ToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
@@ -45,12 +50,12 @@
     </style>
 
     <style name="ActionBarOverlay">
-        <item name="colorControlNormal">@color/toolbarIcon</item>
-        <item name="android:textColorPrimary">@color/toolbarIcon</item>
+        <item name="colorControlNormal">?cb_toolbarIcon</item>
+        <item name="android:textColorPrimary">?cb_toolbarIcon</item>
     </style>
 
     <style name="ActionModeStyle" parent="Widget.AppCompat.ActionMode">
-        <item name="background">@color/colorPrimary</item>
+        <item name="background">?cb_colorPrimary</item>
     </style>
 
     <style name="WindowAnimationTransition">

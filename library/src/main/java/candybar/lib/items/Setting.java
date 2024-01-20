@@ -76,6 +76,7 @@ public class Setting {
         RESTORE,
         PREMIUM_REQUEST,
         THEME,
+        MATERIAL_YOU,
         LANGUAGE,
         REPORT_BUGS,
         CHANGELOG,

@@ -62,4 +62,8 @@
     <attr name="cb_wallpaperStatusBar" format="color" />
     <attr name="cb_wallpaperToolbar" format="color" />
 
+    <!-- Shortcut Icons -->
+    <attr name="cb_shortcutIconBackground" format="color" />
+    <attr name="cb_shortcutIconForeground" format="color" />
+
 </resources>

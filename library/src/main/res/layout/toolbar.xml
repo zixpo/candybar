@@ -26,7 +26,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:text="@string/app_name"
-            android:textColor="@color/toolbarIcon"
+            android:textColor="?cb_toolbarIcon"
             android:maxLines="1"
             android:ellipsize="end"
             android:textSize="@dimen/text_toolbar_title"

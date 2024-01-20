@@ -7,17 +7,17 @@
     android:layout_marginRight="@dimen/content_padding"
     android:layout_marginEnd="@dimen/content_padding"
     android:layout_marginBottom="@dimen/content_padding"
-    app:cardBackgroundColor="@color/cardBackground"
+    app:cardBackgroundColor="?cb_cardBackground"
     app:cardElevation="@dimen/card_elevation"
     app:cardUseCompatPadding="@bool/card_use_compat_padding"
     app:cardCornerRadius="@dimen/card_corner_radius"
-    app:strokeColor="@color/cardStroke">
+    app:strokeColor="?cb_cardStroke">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/cardBackground">
+        android:background="?cb_cardBackground">
 
         <candybar.lib.utils.views.HeaderView
             android:id="@+id/image"
@@ -33,7 +33,7 @@
             android:layout_height="@dimen/about_profile"
             android:layout_marginTop="@dimen/about_profile_margin_top"
             android:layout_gravity="center_horizontal"
-            app:civ_border_color="@color/cardBackground"
+            app:civ_border_color="?cb_cardBackground"
             app:civ_border_width="@dimen/about_profile_border"
             app:civ_shadow="true"
             app:civ_shadow_radius="12"
@@ -66,7 +66,8 @@
             android:gravity="center_horizontal"
             android:textColor="?android:attr/textColorSecondary"
             android:textSize="@dimen/text_content"
-            app:fontFamily="@font/regular" />
+            app:fontFamily="@font/regular"
+            android:theme="@style/AccentChange"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
