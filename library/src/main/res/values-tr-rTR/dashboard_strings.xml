@@ -165,8 +165,6 @@
     <string name="request_fetching_data">En son veriler getiriliyor…</string>
     <string name="request_build_failed">Simge isteği oluşturulamadı</string>
     <string name="request_appfilter_failed">Appfilter.xml okunamadı</string>
-    <string name="request_requested">Lütfen isteğinizi tekrar kontrol edin.
-        Zaten talep edilen uygulamayı istemeye çalıştığınız için.</string>
     <string name="request_email_client">Simge isteğini göndermek için kullanmak istediğiniz e-posta istemcisini seçin</string>
     <string name="request_app_disabled">Bu simge paketinin daha eski bir sürümünü kullanıyorsunuz. İstenen simgeler en son sürüme dahil edilmiş olabilir. Simge istemek için lütfen uygulamanızı en son sürüme güncelleyin.</string>
     <string name="connection_error_long">Sunucudan veri yüklenemiyor. Lütfen ağ bağlantınızı kontrol edin.</string>
