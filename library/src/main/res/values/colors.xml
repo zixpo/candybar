@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shortcut Icons -->
+    <color name="shortcutIconBackground">#26C484</color>
+    <color name="shortcutIconForeground">#FFF</color>
+</resources>

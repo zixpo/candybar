@@ -74,10 +74,6 @@
         <item name="cb_wallpaperStatusBar">#66000000</item>
         <item name="cb_wallpaperToolbar">#66000000</item>
 
-        <!-- Shortcut Icons -->
-        <item name="cb_shortcutIconBackground">#26C484</item>
-        <item name="cb_shortcutIconForeground">#FFF</item>
-
         <!--
         =====================
             Other Stuff

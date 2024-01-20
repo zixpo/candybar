@@ -34,9 +34,9 @@
         <item name="cb_toolbarIcon">#FFFFFF</item>
 
         <!-- Tab -->
-        <item name="cb_tabIndicator">#757575</item>
-        <item name="cb_tabText">#BDBDBD</item>
-        <item name="cb_tabTextSelected">#757575</item>
+        <item name="cb_tabIndicator">#FFF</item>
+        <item name="cb_tabText">#99FFFFFF</item>
+        <item name="cb_tabTextSelected">#FFF</item>
 
         <!-- Card -->
         <item name="cb_cardBackground">#FFFFFF</item>
