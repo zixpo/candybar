@@ -152,8 +152,6 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_fetching_data">Rufe neueste Daten ab…</string>
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>
-    <string name="request_requested">Bitte überprüfe deine Anfrage.
-Du versuchst gerade eine App anzufragen, die bereits angefragt wurde.</string>
     <string name="request_email_client">Wähle den E-Mail-Klienten aus, mit dem du die Icon-Anfrage senden möchtest</string>
     <string name="request_app_disabled">Sie verwenden eine ältere Version dieses Symbolpakets. Die angeforderten Icons könnten in der neuesten Version enthalten sein. Bitte aktualisieren Sie Ihre App auf die neueste Version, um Symbole anzufordern.</string>
     <string name="connection_error_long">Daten konnten nicht vom Server heruntergeladen werden. Bitte überprüfen Sie Ihre Internetverbindung.</string>

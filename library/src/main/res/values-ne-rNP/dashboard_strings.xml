@@ -178,7 +178,6 @@
     <string name="request_fetching_data">भर्खरैको डाटा ल्याउँदै...</string>
     <string name="request_build_failed">आइकनको अनुरोध निर्माण गर्न सकिएन</string>
     <string name="request_appfilter_failed">appfilter.xml पढ्न सकिएन</string>
-    <string name="request_requested">कृपया तपाइँको अनुरोध फेरि जाँच गर्नुहोस्। किनभने तपाईं एप अनुरोध गर्नको लागी कोशिश गर्दै हुनुहुन्छ जुन पहिले नै अनुरोध गरिएको थियो।</string>
     <string name="request_email_client">तपाईंले चाहेको एपको आइकन परिवर्तन गर्न र् अनुरोध पठाउनको लागि छनोट गर्नुहोस्</string>
     <string name="request_app_disabled">तपाईं यो आइकन प्याकको पुरानो संस्करण प्रयोग गर्दै हुनुहुन्छ। अनुरोध गरिएको आइकनहरू नयाँ संस्करणमा समावेश हुन सक्छ। आइकन अनुरोध गर्न कृपया नौलो संस्करणमा अपडेट गर्नुहोस्।</string>
     <string name="connection_error_long">सर्भरबाट डाटा लोड गर्न सकिएन। कृपया तपाईंको नेटवर्क एक पटक जाँच्नुहोस्।</string>

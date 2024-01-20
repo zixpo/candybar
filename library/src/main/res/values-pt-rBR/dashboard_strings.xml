@@ -149,8 +149,6 @@
     <string name="request_fetching_data">Buscando dados mais recentes…</string>
     <string name="request_build_failed">Não foi possível criar a solicitação do ícone</string>
     <string name="request_appfilter_failed">Não foi possível ler appfilter.xml</string>
-    <string name="request_requested">Por favor, verifique seu pedido novamente.
-        Porque você está tentando solicitar o aplicativo que já foi solicitado.</string>
     <string name="request_email_client">Escolha o aplicativo que você deseja usar para enviar a solicitação de ícone</string>
     <string name="request_app_disabled">Você está usando uma versão antiga deste pacote de ícones. Os ícones solicitados podem ser incluídos na versão mais recente. Por favor, atualize seu aplicativo para a versão mais recente para solicitar ícones.</string>
     <string name="connection_error_long">Não foi possível carregar dados do servidor. Por favor, verifique sua conexão de rede.</string>

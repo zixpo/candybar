@@ -158,7 +158,6 @@ No podrás usarlo.</string>
     <string name="request_fetching_data">Obteniendo actualizaciones mas recientes …</string>
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
-    <string name="request_requested">Por favor comprueba tu solicitud de nuevo, porque estás solicitando una aplicación que ya ha sido solicitada anteriormente.</string>
     <string name="request_email_client">Elige el cliente de correo que quieras usar para enviar la solicitud del icono</string>
     <string name="request_app_disabled">Estás utilizando una versión anterior de este pack de iconos. La solicitud de iconos solo se puede hacer en la ultima versión. Actualice su aplicación a la última versión para solicitar iconos.</string>
     <string name="connection_error_long">No se pueden cargar datos del servidor. Por favor, verifique su conexión de red.</string>

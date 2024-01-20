@@ -116,7 +116,6 @@
     <string name="request_fetching_data">Adatok betöltése…</string>
     <string name="request_build_failed">Ikonkérés nem hozható létre</string>
     <string name="request_appfilter_failed">appfilter.xml nem található</string>
-    <string name="request_requested">Kérjük, ellenőrizd a kérésedet! Olyan alkalmazásikont próbálsz kérni, amelyet már kértek.</string>
     <string name="request_email_client">Válassza ki azt az e-mail klienst, amelyet használni szeretne az ikonkérés elküldéséhez</string>
     <string name="request_app_disabled">Ennek az ikoncsomagnak egy régebbi verzióját használja. A kért ikonok a legújabb verzióban lehetnek. Az ikonok kéréséhez frissítse az alkalmazást a legújabb verzióra.</string>
     <string name="connection_error_long">Daten konnten nicht vom Server heruntergeladen werden. Bitte überprüfen Sie Ihre Internetverbindung.</string>

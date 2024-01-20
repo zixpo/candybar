@@ -119,8 +119,6 @@
     <string name="request_building">產生申請文件中……</string>
     <string name="request_build_failed">無法產生申請文件</string>
     <string name="request_appfilter_failed">無法讀取 appfilter.xml</string>
-    <string name="request_requested">請重新檢查您的申請。
-因為您試圖申請的 icon 已被您申請了。</string>
     <string name="request_email_client">選擇您想用來提交 icon 申請的郵件 App</string>
     <string name="request_limit">您在常規 icon 申請權狀態下僅能提交 %d 個適配申請。</string>
     <string name="request_used">您已申請適配 %d 個 icon 。</string>

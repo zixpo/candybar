@@ -136,8 +136,6 @@
     <string name="request_fetching_data">Получение последних данных …</string>
     <string name="request_build_failed">Не удалось собрать запрос</string>
     <string name="request_appfilter_failed">Не удалось считать appfilter.xml</string>
-    <string name="request_requested">Пожалуйста, проверьте еще раз ваш запрос. 
-Потому что вы пытаетесь запросить приложение, которое уже было предложено.</string>
     <string name="request_email_client">Выберите клиент электронной почты для отправки запроса</string>
     <string name="request_app_disabled">Вы используете старую версию этого пакета иконок.  Запрос иконок работает только в последней версии.  Пожалуйста, обновите ваше приложение до последней версии. Либо они временно отключены.</string>
     <string name="connection_error_long">Не удается загрузить данные с сервера. Пожалуйста, проверьте подключение к сети.</string>

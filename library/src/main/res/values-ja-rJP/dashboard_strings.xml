@@ -112,8 +112,6 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="request_building">リクエストを構築しています…</string>
     <string name="request_build_failed">アイコンリクエストを構築できません</string>
     <string name="request_appfilter_failed">appfilter.xmlを読み取れません</string>
-    <string name="request_requested">リクエストをもう一度確認してください。
-既にリクエストされているアプリをリクエストしようとしています。</string>
     <string name="request_email_client">アイコンリクエストを送信したいメールクライアントを選択してください</string>
     <string name="request_limit">普通のリクエストでは%d件のリクエストのみ作成できます。</string>
     <string name="request_used">あなたは%d個のアイコンをリクエストしています。</string>
