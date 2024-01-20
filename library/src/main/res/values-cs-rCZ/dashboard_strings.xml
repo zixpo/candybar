@@ -185,8 +185,6 @@
     <string name="request_fetching_data">Načítání nejnovějších dat…</string>
     <string name="request_build_failed">Nelze sestavit požadavek</string>
     <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
-    <string name="request_requested">Zkontrolujte prosím znovu svůj požadavek.
-        Protože se pokoušíte požádat o aplikaci, která již byla vyžádána.</string>
     <string name="request_email_client">Vyberte aplikaci, kterou chcete použít k odeslání žádosti o ikonu</string>
     <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon aktualizujte aplikaci na nejnovější verzi.</string>
     <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
