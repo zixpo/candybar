@@ -157,7 +157,6 @@ Scaricala da lì per utilizzarla.</string>
     <string name="request_fetching_data">Recupero dati più recenti…</string>
     <string name="request_build_failed">Impossibile caricare la richiesta delle icone</string>
     <string name="request_appfilter_failed">impossibile leggere appfilter.xml</string>
-    <string name="request_requested">Si prega di ricontrollare la richiesta poiché si sta tentando di richiedere icone già richieste.</string>
     <string name="request_email_client">Scegli l\'app che vuoi utilizzare per inviare la richiesta di icone</string>
     <string name="request_app_disabled">Non stai utilizzando l\'ultima versione dell\'app e siccome le icone richieste potrebbero essere già state aggiunte nell\'ultimo update, devi aggiornare all\'ultima versione prima di effettuare una richiesta.</string>
     <string name="connection_error_long">Impossibile caricare i dati dal server. Per favore, controlla la tua connessione internet.</string>
