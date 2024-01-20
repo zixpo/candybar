@@ -129,6 +129,30 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="apply_manual_samsung_oneui_step_5">Ketuk tombol biru \"Paket ikon\"</string>
     <string name="apply_manual_samsung_oneui_step_6">Pilih %s dari daftar</string>
     <string name="apply_manual_samsung_oneui_step_7">Ulangi langkah ini setiap kali anda memperbarui %s karena ikon baru tidak akan dipetakan secara otomatis.</string>
+    <string name="apply_manual_hios">Peluncur HiOS tidak mendukung penerapan secara langsung, anda dapat mengikuti langkah berikut:</string>
+    <string name="apply_manual_hios_step_1">Buka \"Pengaturan\"</string>
+    <string name="apply_manual_hios_step_2">Tap \" Tema &amp; Kunci layar\"</string>
+    <string name="apply_manual_hios_step_3">Tap \"Tema saya\"</string>
+    <string name="apply_manual_hios_step_4">Tap \"Paket ikon\"</string>
+    <string name="apply_manual_hios_step_5">Tap %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Tap dan tahan layar beranda anda</string>
+    <string name="apply_manual_oxygen_os_step_2">Tap \"Pengaturan Beranda\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Tap \"Paket Ikon\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Tap %s</string>
+    <string name="apply_manual_color_os_step_1">Tap dan tahan layar beranda anda</string>
+    <string name="apply_manual_color_os_step_2">Tap \"Ikon\"</string>
+    <string name="apply_manual_color_os_step_3">Gulir ke sebelah kanan \"Kostum\" (ini adalah daftar yang dapat digulir!)</string>
+    <string name="apply_manual_color_os_step_4">Tap %s</string>
+    <string name="apply_manual_before">Versi peluncur sebelum ini belum mendukung untuk menerapkan ikon secara langsung. Sebagai gantinya, ikuti langkah-langkah di bawah ini:</string>
+    <string name="apply_manual_before_step_1">Usap sebelah kiri layar beranda</string>
+    <string name="apply_manual_before_step_2">Tap \"Pengaturan\"</string>
+    <string name="apply_manual_before_step_3">Tap \"Gaya &amp; Tema\"</string>
+    <string name="apply_manual_before_step_4">Tap \"Gaya Ikon &amp; Paket\"</string>
+    <string name="apply_manual_before_step_5">Tap %s</string>
+    <string name="apply_manual_nothing_step_1">Buka \"Pengaturan\"</string>
+    <string name="apply_manual_nothing_step_2">Tap \"Kustomisasi\"</string>
+    <string name="apply_manual_nothing_step_3">Tap \"Paket Ikon\"</string>
+    <string name="apply_manual_nothing_step_4">Tap %s</string>
     <string name="apply_launch_failed">Tidak dapat meluncurkan %s pengaturan</string>
     <string name="apply_launcher_not_installed">%s Peluncur tidak terpasang. Apakah anda ingin membuka Google Play Store untuk mengunduh dan menginstalnya?</string>
     <string name="apply_launcher_not_installable">%s Peluncur tidak terpasang. Silakan coba lagi setelah menginstal peluncur.</string>
@@ -139,6 +163,7 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="apply_lg_home_failed">Tidak dapat membuka Pengaturan Beranda LG, anda dapat mencoba menerapkan Paket Ikon secara manual dari Pengaturan.</string>
     <string name="apply_lg_home_nougat">Beranda LG dengan Android Nougat tidak lagi mendukung Paket ikon, Anda membutuhkan sebuah peluncur kostum untuk menggunakan Paket Ikon.</string>
     <string name="apply_launcher_incompatible">%s Peluncur tidak mendukung paket ikon apapun, jadi anda tidak dapat menggunakan paket ikon dengan peluncur ini. Anda bisa mencoba sebuah aplikasi pihak ketiga agar dapat menggunakan paket ikon ini pada Peluncur %2$s. Apakah anda ingin menginstalnya?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s Peluncur tidak mendukung paket ikon pada Android %d atau lebih rendah. Silahkan perbarui versi Android Anda atau instal peluncur pihak ketiga untuk menggunakan paket ikon ini. Anda juga dapat mencoba aplikasi pembantu untuk mengubah ikon secara individual. Apakah Anda ingin menginstalnya?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Tidak dapat memuat ikon</string>
     <string name="icon_shape">Bentuk Ikon</string>
@@ -246,6 +271,7 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="theme_name_auto">Otomatis</string>
     <string name="theme_name_light">Terang</string>
     <string name="theme_name_dark">Gelap</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Izin penyimpanan diperlukan untuk menyimpan wallpaper</string>
     <!-- Intent -->

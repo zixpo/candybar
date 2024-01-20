@@ -18,7 +18,7 @@
     <string name="hour">Saat</string>
     <string name="save_setting">Kaydet</string>
     <string name="muzei_refresh_duration">Yenileme Süresi</string>
-    <string name="muzei_wifi_only">Sadece Wifi bağlantısında Yenile</string>
+    <string name="muzei_wifi_only">Sadece Wifi ile Yenile</string>
     <string name="muzei_downloaded_only">Sadece İndirilen Duvar Kağıtlarını Yükle</string>
     <string name="muzei_settings_ignored">Simge Paketi duvar kağıtları içermiyor, ayarlar dikkate alınmıyor.</string>
     <string name="muzei_settings_saved">Ayarlar Kaydedildi</string>
@@ -107,6 +107,33 @@
     <string name="apply_installed">Yüklü Başlatıcı</string>
     <string name="apply_supported">Desteklenen Başlatıcılar</string>
     <string name="apply_manual">%1$s başlatıcı doğrudan uygulamayı desteklemiyor, fakat %2$s paketini başlatıcı ayarlarından el ile uygulayabilirsiniz.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso direkt olarak uygulamayı desteklemiyor ama bu adımları takip edebilirsiniz:</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitso\'nun ayarlarını açın</string>
+    <string name="apply_manual_kvaesitso_step_2">\"Düzen &amp; İkonlar\" a tıklayın</string>
+    <string name="apply_manual_kvaesitso_step_3">\"İkon Paketi\" ne tıklayın</string>
+    <string name="apply_manual_kvaesitso_step_4">Listeden %s seçin</string>
+    <string name="apply_manual_kvaesitso_step_5">Arka plan şeklini açmak ya da kapatmak için boya fırçası ikonuna tıklayın</string>
+    <string name="apply_manual_kiss">KISS direkt olarak uygulamayı desteklemiyor ama bu adımları takip edebilirsiniz:</string>
+    <string name="apply_manual_kiss_step_1">KISS\'in ayarlarını açın</string>
+    <string name="apply_manual_kiss_step_2">\"Kullanıcı Arayüzü\" ne tıklayın</string>
+    <string name="apply_manual_kiss_step_3">\"İkon Paketi\" ne tıklayın</string>
+    <string name="apply_manual_kiss_step_4">Listeden %s seçin</string>
+    <string name="apply_manual_samsung_oneui">%1$s direkt olarak uygulamayı desteklemiyor ancak %2$s den başlayarak yan uygulama ile ikonları uygulayabilirsiniz.</string>
+    <string name="apply_manual_samsung_oneui_too_old">%s versiyonunuz çok eski. Lütfen ikonları uygulayabilmek için Android 12 ya da daha üst versiyonlara güncelleyin. Alternatif olarak başka bir launcher indirebilirsiniz.</string>
+    <string name="apply_manual_samsung_oneui_step_1">%s\'i açınız</string>
+    <string name="apply_manual_samsung_oneui_step_2">%s uygulamasını indiriniz</string>
+    <string name="apply_manual_samsung_oneui_step_3">\"İkon\" a tıklayın</string>
+    <string name="apply_manual_samsung_oneui_step_4">\"Yeni Oluştur\" a tıklayın</string>
+    <string name="apply_manual_samsung_oneui_step_5">Mavi \"İkon Paketi\" düğmesine tıklayın</string>
+    <string name="apply_manual_samsung_oneui_step_6">Listeden %s seçin</string>
+    <string name="apply_manual_samsung_oneui_step_7">Yeni ikonlar otomatik tanımlanmayacağından her %s güncellemesinde bu adımları tekrarlayın.</string>
+    <string name="apply_manual_hios">HiOSdirekt olarak uygulamayı desteklemiyor ama bu adımları takip edebilirsiniz:</string>
+    <string name="apply_manual_hios_step_1">\"Ayarlar\" ı Açın</string>
+    <string name="apply_manual_hios_step_2">\"Tema &amp; Kilit Ekranı\" na tıklayın</string>
+    <string name="apply_manual_hios_step_3">\"Benim Temam\" a tıklayın</string>
+    <string name="apply_manual_before_step_1">Ana ekranda sola kaydırın</string>
+    <string name="apply_manual_before_step_2">\"Ayarlar\" a tıklayın</string>
+    <string name="apply_manual_nothing_step_1">\"Ayarlar\" ı Açın</string>
     <string name="apply_launch_failed">%s ayarları başlatılamıyor</string>
     <string name="apply_launcher_not_installed">%s yüklü değil. İndirmek ve yüklemek için
         Google Play Store\'u açmak istiyor musunuz?</string>
@@ -128,6 +155,7 @@
     <string name="request_not_selected">İstenecek uygulamaları seçin</string>
     <string name="request_not_requested">İstenmedi</string>
     <string name="request_already_requested">Daha önceden istendi</string>
+    <string name="request_not_available">İstenemez</string>
     <string name="request_building">Simge isteği oluşturuluyor …</string>
     <string name="request_pacific_sending">Pacific Manager\'a istek gönderiliyor...</string>
     <string name="request_pacific_error">Pacific Manager\'a istek gönderilirken hata oluştu. Hata: %s</string>
@@ -178,6 +206,7 @@
     <string name="wallpaper_already_downloaded">Duvar kağıdı zaten indirildi</string>
     <string name="wallpaper_downloading">Duvar kağıdı indiriliyor …</string>
     <string name="wallpaper_download_failed">Duvar kağıdı indirilemiyor</string>
+    <string name="wallpaper_download_success">Duvar kağıdı başarıyla indirildi</string>
     <string name="wallpaper_loading">Duvar kağıdı yükleniyor …</string>
     <string name="wallpaper_applying">Duvar kağıdı uygulanıyor …</string>
     <string name="wallpaper_applied">Duvar kağıdı uygulandı</string>
@@ -226,6 +255,7 @@
     <string name="theme_name_auto">Otomatik</string>
     <string name="theme_name_light">Aydınlık</string>
     <string name="theme_name_dark">Karanlık</string>
+    <string name="theme_name_material_you">Malzeme Siz</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Duvar kağıdını kaydetmek için depolama izni gerekli</string>
     <!-- Intent -->
