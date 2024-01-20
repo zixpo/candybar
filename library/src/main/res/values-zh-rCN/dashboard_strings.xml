@@ -183,8 +183,6 @@
     <string name="request_fetching_data">正在获取最新更新……</string>
     <string name="request_build_failed">无法构建申请文件</string>
     <string name="request_appfilter_failed">无法读取 appfilter.xml 文件...</string>
-    <string name="request_requested">请重新检查您的申请。
-因为您试图申请的图标已被您申请了。</string>
     <string name="request_email_client">选择您想用来提交图标申请的邮件客户端</string>
     <string name="request_app_disabled">您正在使用此图标包的旧版本。所请求的图标可能会包含在最新版本中。 请更新您的应用到最新版本以请求图标。</string>
     <string name="connection_error_long">无法连接服务器，请检查您的网络连接。</string>
