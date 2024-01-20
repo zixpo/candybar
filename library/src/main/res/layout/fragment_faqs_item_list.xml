@@ -31,6 +31,7 @@
         android:paddingStart="@dimen/content_margin"
         android:paddingRight="@dimen/content_margin"
         android:paddingEnd="@dimen/content_margin"
+        android:theme="@style/AccentChange"
         app:fontFamily="@font/regular" />
 
     <View

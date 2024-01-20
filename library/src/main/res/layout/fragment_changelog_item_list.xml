@@ -13,4 +13,5 @@
     android:drawablePadding="@dimen/content_padding"
     android:textColor="?android:attr/textColorPrimary"
     android:textSize="@dimen/text_content_title"
+    android:theme="@style/AccentChange"
     app:fontFamily="@font/regular" />
