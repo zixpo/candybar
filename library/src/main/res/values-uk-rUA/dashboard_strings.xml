@@ -130,8 +130,6 @@
     <string name="request_fetching_data">Отримання останніх даних …</string>
     <string name="request_build_failed">Неможливо створити запит іконок</string>
     <string name="request_appfilter_failed">Неможливо прочитати appfilter.xml</string>
-    <string name="request_requested">Будь ласка, перевірте запит ще раз.
-        Тому що ви намагаєтеся запитати додаток, який вже було запропоновано.</string>
     <string name="request_email_client">Виберіть додаток, за допомогою якого ви хочете надіслати запит іконок</string>
     <string name="request_app_disabled">Ви використовуєте стару версію цього пакета іконок. Іконки можуть бути включені в останню версію. Будь ласка, оновіть додаток до останньої версії, щоб надіслати запит іконок.</string>
     <string name="connection_error_long">Не вдалося завантажити дані з сервера. Будь ласка, перевірте ваше мережеве з\'єднання.</string>
