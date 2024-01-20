@@ -2,6 +2,15 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.19.0
+- Upgraded to new SplashScreen API
+- Updated AGP and dependencies
+- Added Material You themes (thanks to [@GitGitro](https://github.com/GitGitro))
+- Fixed issue with icon category exclusion from icon search
+- New social icons in About section. Credit goes to [@Donnnno][Donnnno]
+- Added support for re-requesting icons. Credit goes to [@moertel][moertel]
+- Updated translations
+
 # v3.18.4
 - Added new launchers
 - Added option to exclude categories from search

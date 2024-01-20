@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="changelog_date" translatable="false">September 27, 2023</string>
+    <string name="changelog_date" translatable="false">January 21, 2024</string>
 
     <string-array name="changelog">
-        <item>Added new launchers</item>
-        <item>Added option to exclude categories from search</item>
+        <item>Upgraded to new SplashScreen API</item>
+        <item>Updated AGP and dependencies</item>
+        <item>
+            <![CDATA[
+                Added Material You themes (thanks to <a href="https://github.com/GitGitro">@GitGitro</a>)
+            ]]>
+        </item>
+        <item>Fixed issue with icon category exclusion from icon search</item>
+        <item>
+            <![CDATA[
+                New social icons in About section. Credit goes to <a href="https://github.com/Donnnno">@Donnnno</a>
+            ]]>
+        </item>
+        <item>
+            <![CDATA[
+                Added support for re-requesting icons. Credit goes to <a href="https://github.com/moertel">@moertel</a>
+            ]]>
+        </item>
+        <item>Updated translations</item>
     </string-array>
 
 </resources>

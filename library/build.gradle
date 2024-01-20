@@ -42,7 +42,7 @@ allprojects {
 }
 
 android {
-    compileSdkVersion rootProject.ext.CompileSdk
+    compileSdk rootProject.ext.CompileSdk
 
     namespace 'candybar.lib'
 

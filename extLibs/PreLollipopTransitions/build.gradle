@@ -35,7 +35,7 @@ publishing {
 }
 
 android {
-    compileSdkVersion rootProject.ext.CompileSdk
+    compileSdk rootProject.ext.CompileSdk
 
     namespace 'com.kogitune.activity_transition'
 
