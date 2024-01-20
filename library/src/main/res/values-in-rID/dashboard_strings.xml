@@ -184,7 +184,6 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="request_fetching_data">Mengambil data terbaru…</string>
     <string name="request_build_failed">Tidak dapat membuat pesanan ikon</string>
     <string name="request_appfilter_failed">Tidak dapat membaca appfilter.xml</string>
-    <string name="request_requested">Mohon periksa kembali pesanan anda.</string>
     <string name="request_email_client">Pilih aplikasi yang ingin anda gunakan untuk kirim pesanan ikon</string>
     <string name="request_app_disabled">Anda sedang menggunakan aplikasi paket ikon versi lawas. Ikon pesanan mungkin disertakan dalam versi terbaru. Silakan perbarui aplikasi anda ke versi terbaru untuk memesan ikon.</string>
     <string name="connection_error_long">Tidak dapat memuat data dari server. Mohon periksa koneksi jaringan anda.</string>
