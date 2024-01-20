@@ -13,6 +13,8 @@ This is the library of CandyBar Dashboard. It is only used for development purpo
   <img height="80" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
 </a>
 
+Subscribe to [***CandyBar Builds Telegram Channel***](https://t.me/candybar_builds)
+
 <details>
 <summary>App screenshots <i>(Click to expand)</i></summary>
 <p>Tip: Click image to enlarge it</p>
@@ -50,7 +52,7 @@ Just explore the wiki to get started.
   - Download wallpaper
 - Settings
   - Clear cache
-  - Switch themes - Auto/Light/Dark
+  - Switch themes - Auto/Light/Dark/Material You
   - Restore purchases: Restore premium requests after reinstalling
 - Frequently asked questions with search
 - About
