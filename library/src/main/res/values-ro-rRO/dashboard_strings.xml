@@ -138,8 +138,6 @@
     <string name="request_fetching_data">Preluarea celor mai recente date …</string>
     <string name="request_build_failed">Imposibil de creat cererea de pictograme</string>
     <string name="request_appfilter_failed">Nu se poate citi appfilter.xml</string>
-    <string name="request_requested">Verificați cererea din nou.
-        Pentru că încercați să solicitați o aplicație, care a fost deja solicitată.</string>
     <string name="request_email_client">Alegeți aplicația pe care doriți să o utilizați pentru a trimite solicitarea de pictograme</string>
     <string name="request_app_disabled">Utilizezi o versiune mai veche a acestui pachet de pictograme. Pictogramele solicitate pot fi incluse în ultima versiune. Actualizează aplicația la cea mai recentă versiune pentru a solicita pictograme.</string>
     <string name="connection_error_long">Nu s-au putut încărca datele de la server. Verifică conexiunea la rețea.</string>
