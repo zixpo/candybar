@@ -118,8 +118,6 @@
     <string name="request_building">अनुरोध कर रहा है …</string>
     <string name="request_build_failed">आइकॉन निवदेन करने में असमर्थ</string>
     <string name="request_appfilter_failed">appfilter.xml को पढ़ने में असमर्थ</string>
-    <string name="request_requested">कृपया अपना निवदेन फिर से जाँच ले.
-क्युकी आप उन एप्प का पुनः निवदेन कर रहे है जिहें आप पहले निवेदित कर चुके.</string>
     <string name="request_email_client">उस ईमेल क्लाइंट को चुनें, जिससे आप आइकन निवेदन भेजने के लिए उपयोग करना चाहते हैं</string>
     <string name="request_limit">आप केवल नियमित अनुरोध के साथ %d अनुरोध (अनुरोधों) करने में सक्षम हैं।</string>
     <string name="request_used">आपने %d आइकन (ओं) का अनुरोध किया है</string>
