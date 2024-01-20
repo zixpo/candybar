@@ -161,8 +161,6 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <string name="request_fetching_data">Récupération des dernières données...</string>
     <string name="request_build_failed">Impossible de construire la demande d\'icône(s)</string>
     <string name="request_appfilter_failed">Impossible de lire le fichier appfilter.xml</string>
-    <string name="request_requested">Vérifiez votre demande à nouveau.
-Car vous êtes en train de demander des applications déjà demandées.</string>
     <string name="request_email_client">Choisissez la plateforme de messagerie que vous souhaitez utiliser pour envoyer la demande d\'icône(s)</string>
     <string name="request_app_disabled">Vous utilisez une ancienne version de ce pack d\'icônes, les icônes demandées peuvent être déjà incluses dans la dernière version. Veuillez mettre à jour l\'application pour demander des icônes.</string>
     <string name="connection_error_long">Impossible de charger les données du serveur. Veuillez vérifier votre connexion.</string>
