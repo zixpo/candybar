@@ -129,8 +129,6 @@
     <string name="request_fetching_data">Laatste gegevens ophalen…</string>
     <string name="request_build_failed">Kan pictogramaanvraag niet aanmaken</string>
     <string name="request_appfilter_failed">Kan appfilter.xml niet lezen</string>
-    <string name="request_requested">Controleer je verzoek opnieuw.
-        Je probeert een reeds aangevraagde app te versturen.</string>
     <string name="request_email_client">Kies een app die je wilt meesturen in de pictogramaanvraag</string>
     <string name="request_app_disabled">Je gebruikt een oudere versie van dit pictogrampakket. De verzochte pictogrammen zijn mogelijk al toegevoegd. Applicatie bijwerken om pictogrammen aan te vragen.</string>
     <string name="connection_error_long">Kan geen gegevens laden van de server. Controleer je netwerkverbinding.</string>
