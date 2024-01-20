@@ -110,8 +110,6 @@
     <string name="request_building">অনুরোধ তৈরী করা হচ্ছে …</string>
     <string name="request_build_failed">আইকনের জন্য অনুরোধ জানাতে সক্ষম হয় নি</string>
     <string name="request_appfilter_failed">Appfilter.xml পড়তে অক্ষম</string>
-    <string name="request_requested">দয়া করে আবার আপনার অনুরোধ চেক করুন।
-কারণ আপনি ইতিমধ্যে অনুরোধ করা হয়েছিল যে অ্যাপ্লিকেশন অনুরোধ করার চেষ্টা করছেন।</string>
     <string name="request_email_client">আইকন অনুরোধ পাঠাতে আপনি ব্যবহার করতে চান এমন ইমেইল ক্লায়েন্ট নির্বাচন করুন</string>
     <string name="request_limit">আপনি শুধুমাত্র নিয়মিত অনুরোধের সাথে %d টি অনুরোধ (গুলি) করতে সক্ষম।</string>
     <string name="request_used">আপনি %d টি আইকন অনুরোধ করেছেন।</string>
