@@ -183,7 +183,6 @@
     <string name="request_fetching_data">جار جلب أحدث البيانات …</string>
     <string name="request_build_failed">تعذر بناء طلب الأيقونات</string>
     <string name="request_appfilter_failed">تعذر قراءة appfilter.xml</string>
-    <string name="request_requested">يرجى التحقق من طلبك مرة أخرى. لأنك تحاول طلب تطبيق تم طلبه بالفعل.</string>
     <string name="request_email_client">اختر التطبيق الذي تريد استعماله لإرسال طلب الأيقونات</string>
     <string name="request_app_disabled">أنت تستعمل إصداراً أقدم من حزمة الأيقونات هذه. الأيقونات التي قمت بطلبها قد تكون مضمنة في الإصدار الأحدث. يرجى تحديث تطبيقك إلى أحدث إصدار لطلب الأيقونات.</string>
     <string name="connection_error_long">تعذر تحميل البيانات من الخادم. رجاءاً، تحقق من اتصالك بالشبكة.</string>
