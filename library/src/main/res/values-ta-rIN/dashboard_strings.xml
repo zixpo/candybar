@@ -116,8 +116,6 @@
     <string name="request_building">கட்டிட கோரிக்கை …</string>
     <string name="request_build_failed">ஐகான் கோரிக்கையை உருவாக்க முடியவில்லை</string>
     <string name="request_appfilter_failed">appfilter.xml படிக்க முடியவில்லை</string>
-    <string name="request_requested">உங்கள் கோரிக்கையை மீண்டும் சரிபார்க்கவும்.
-         ஏனெனில் ஏற்கனவே கோரப்பட்ட பயன்பாட்டைக் கோர முயற்சிக்கிறீர்கள்.</string>
     <string name="request_email_client">ஐகான் கோரிக்கையை அனுப்ப நீங்கள் பயன்படுத்த விரும்பும் மின்னஞ்சல் கிளையண்டைத் தேர்வுசெய்க</string>
     <string name="request_limit">You are only able to make %d request(s) with regular request.</string>
     <string name="request_used">நீங்கள் கோரியுள்ளீர்கள் %d ஐகான்(கள்).</string>
