@@ -130,7 +130,6 @@
     <string name="request_fetching_data">Pobieranie najnowszych danych …</string>
     <string name="request_build_failed">Budowanie pliku prośby nie powiodło się</string>
     <string name="request_appfilter_failed">Czytanie pliku appfilter.xml nie powiodło się</string>
-    <string name="request_requested">Przejrzyj swoją prośbę jeszcze raz. Próbujesz wysłać prośbę o aplikację, która już została zawarta w poprzedniej prośbie.</string>
     <string name="request_email_client">Wybierz aplikację email, przy pomocy której chcesz wysłać prośbę</string>
     <string name="request_app_disabled">Używasz starej wersji zestawu ikon. Ikony z twojej prośby mogą już znajdować się w nowszej wersji. Zaktualizuj aplikację, aby móc wysyłać prośby o ikony.</string>
     <string name="connection_error_long">Nie udało się wczytać danych z serwera. Sprawdź swoje połączenie sieciowe.</string>
