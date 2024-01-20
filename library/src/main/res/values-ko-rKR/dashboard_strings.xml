@@ -107,8 +107,6 @@
     <string name="request_building">요청 메일을 만드는 중…</string>
     <string name="request_build_failed">아이콘 요청 메일을 만들 수 없습니다.</string>
     <string name="request_appfilter_failed">appfilter.xml 파일을 읽을 수 없습니다.</string>
-    <string name="request_requested">요청을 다시 한 번 확인해 주세요.
-이미 요청한 아이콘을 다시 요청했을 수도 있습니다.</string>
     <string name="request_email_client">아이콘 요청 메일을 보낼 메일 앱을 선택하세요.</string>
     <string name="request_limit">기본 요청은 %d개까지만 가능합니다.</string>
     <string name="request_used">현재 %d개 아이콘을 요청했습니다.</string>
