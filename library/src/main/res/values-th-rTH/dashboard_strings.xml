@@ -131,8 +131,6 @@
     <string name="request_fetching_data">กำลังดึงข้อมูลใหม่ล่าสุด…</string>
     <string name="request_build_failed">ไม่สามารถสร้างคำขอไอคอนได้</string>
     <string name="request_appfilter_failed">ไม่สามารถอ่าน appfilter.xml ได้</string>
-    <string name="request_requested">กรุณาตรวจสอบคำขอของคุณอีกครั้ง
-        เพราะคุณกำลังขอแอปที่คุณเคยขอไปแล้ว</string>
     <string name="request_email_client">เลือกแอปที่คุณต้องการจะใช้ในการส่งคำขอไอคอน</string>
     <!-- Regular Request -->
     <string name="regular_request">คำขอไอคอนแบบทั่วไป</string>
