@@ -128,6 +128,24 @@ No podrás usarlo.</string>
     <string name="apply_manual_samsung_oneui_step_5">Pulsa el botón azul \"Iconpack\"</string>
     <string name="apply_manual_samsung_oneui_step_6">Elige %s de la lista</string>
     <string name="apply_manual_samsung_oneui_step_7">Repite estos pasos cada vez que actualices %s ya que los nuevos iconos no serán mapeados automáticamente.</string>
+    <string name="apply_manual_hios">El lanzador HiOS no soporta aplicar directamente, pero puedes seguir estos pasos:</string>
+    <string name="apply_manual_hios_step_1">Abrir \"Ajustes\"</string>
+    <string name="apply_manual_hios_step_3">Pulsa \"Mi tema\"</string>
+    <string name="apply_manual_hios_step_4">Pulsa \"Paquete de iconos\"</string>
+    <string name="apply_manual_hios_step_5">Pulsa %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Mantenga presionado en la pantalla de inicio</string>
+    <string name="apply_manual_oxygen_os_step_2">Pulsa \"Ajustes de inicio\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Pulsa \"Paquete de iconos\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Pulsa %s</string>
+    <string name="apply_manual_color_os_step_1">Mantenga presionado en la pantalla de inicio</string>
+    <string name="apply_manual_color_os_step_2">Pulsa \"Iconos\"</string>
+    <string name="apply_manual_color_os_step_4">Pulsa %s</string>
+    <string name="apply_manual_before_step_2">Pulsa \"Ajustes\"</string>
+    <string name="apply_manual_before_step_5">Pulsa %s</string>
+    <string name="apply_manual_nothing_step_1">Abrir \"Ajustes\"</string>
+    <string name="apply_manual_nothing_step_2">Pulse \"Personalización\"</string>
+    <string name="apply_manual_nothing_step_3">Pulsa \"Paquete de iconos\"</string>
+    <string name="apply_manual_nothing_step_4">Pulsa %s</string>
     <string name="apply_launch_failed">No se pueden iniciar los ajustes de %s  </string>
     <string name="apply_launcher_not_installed">%s no está instalado. ¿Quieres abrir Google Play Store para descargarlo e instalarlo?</string>
     <string name="apply_launcher_not_installable">%s Launcher no está instalado. Por favor inténtalo de nuevo despues de instalar el launcher.</string>
@@ -158,6 +176,10 @@ No podrás usarlo.</string>
     <string name="request_fetching_data">Obteniendo actualizaciones mas recientes …</string>
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
     <string name="request_appfilter_failed">No se puede leer appfilter.xml</string>
+    <string name="request_requested">Ya has solicitado este icono y no puedes solicitarlo de nuevo.</string>
+    <string name="request_requested_possible">Ya has solicitado este icono. ¿Estás seguro de que quieres gastar otra petición?</string>
+    <string name="request_requested_button_cancel">Volver</string>
+    <string name="request_requested_button_confirm">Seleccionar de todos modos</string>
     <string name="request_email_client">Elige el cliente de correo que quieras usar para enviar la solicitud del icono</string>
     <string name="request_app_disabled">Estás utilizando una versión anterior de este pack de iconos. La solicitud de iconos solo se puede hacer en la ultima versión. Actualice su aplicación a la última versión para solicitar iconos.</string>
     <string name="connection_error_long">No se pueden cargar datos del servidor. Por favor, verifique su conexión de red.</string>
@@ -244,6 +266,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="theme_name_auto">Automático</string>
     <string name="theme_name_light">Claro</string>
     <string name="theme_name_dark">Oscuro</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">El permiso de almacenamiento se necesita para guardar fondos de pantalla</string>
     <!-- Intent -->
