@@ -29,7 +29,7 @@
         <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
-        <item>¿Qué es un launcher?</item>
+        <item>¿Qué es un lanzador?</item>
         <item>¿Qué es un paquete de iconos?</item>
         <item>¿Cómo uso un paquete de iconos?</item>
         <item>¿Cómo puedo establecer un paquete de iconos?</item>
@@ -37,12 +37,12 @@
         <item>No puedo ver el nombre completo de un icono</item>
         <item>¿Cómo puedo reemplazar íconos con uno diferente?</item>
         <item>¿Cómo solicito un ícono?</item>
-        <item>¿Cómo puedo restablecer las compras Premium después de reinstalar la aplicación?</item>
+        <item>¿Cómo puedo restablecer las compras Prémium después de reinstalar la aplicación?</item>
         <item>Después de reiniciar mi teléfono, el paquete de iconos no está establecido, ¿se restableció a los valores predeterminados?</item>
         <item>¿Por qué los iconos parecen dentados o pixelados en mi teléfono?</item>
         <item>Puedo ver el icono incluido dentro de todos los iconos pero, ¿por qué no se ha cambiado el icono real en el cajón de la aplicación?</item>
         <item>¿Qué es la opción de \"reportar errores\"?</item>
-        <item>Mi launcher aparece en la sección de descripción de Google Play pero, ¿por qué no aparece en la sección de establecer?</item>
+        <item>Mi lanzador aparece en la sección de descripción de Google Play, pero ¿por qué no aparece en la sección de establecer?</item>
         <item>El fondo de pantalla no se puede establecer, ¿sólo muestra la pantalla en negro?</item>
         <item>Muzei: ¿Cómo cargar solo los fondos de pantalla descargados?</item>
         <item>Muzei: No quiero estar descargando los fondos de pantalla cada vez que el fondo de pantalla cambie.</item>
@@ -83,7 +83,7 @@ Establecerlo llevará algún tiempo y también necesitará una cantidad enorme d
 Los errores de \"Pantalla negra\" pueden aparecer porque tu teléfono no tiene suficiente memoria RAM libre para establecer el fondo de pantalla.
 Reiniciar el teléfono solucionará este problema. Después de reiniciar, tu teléfono tendrá más memoria RAM disponible.
 Como alternativa, puedes abrir el fondo de pantalla descargado de tu galería y establecerlo como fondo de pantalla desde allí.</item>
-        <item>Abre Muzei, selecciona los ajustes del paquete de iconos. Verás una opción de cargar sólo los fondos de pantalla descargados.
+        <item>Abre Muzei, selecciona los ajustes del paquete de iconos. Verás una opción de cargar solo los fondos de pantalla descargados.
 Primero necesitarás descargar los fondos de pantalla desde el panel de control.</item>
         <item>Si un fondo de pantalla ya ha sido descargado, será cargado automáticamente desde la memoria de tu teléfono.
 Muzei no permanecerá descargándolo cuando el fondo de pantalla cambie. Primero necesitarás descargar los fondos de pantalla desde el panel de control.</item>
