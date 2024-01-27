@@ -249,6 +249,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="theme_name_auto">Auto</string>
     <string name="theme_name_light">Clair</string>
     <string name="theme_name_dark">Sombre</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">La permission Espace de stockage est requise pour enregistrer le fond d\'écran</string>
     <!-- Intent -->
