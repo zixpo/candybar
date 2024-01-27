@@ -129,6 +129,30 @@ Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications deman
     <string name="apply_manual_samsung_oneui_step_5">Tapez sur le bouton bleu \"Pack d\'icônes\"</string>
     <string name="apply_manual_samsung_oneui_step_6">Choisissez %s depuis la liste</string>
     <string name="apply_manual_samsung_oneui_step_7">Répétez ces étapes à chaque fois que vous mettez à jour %s, car les nouvelles icônes ne seront pas appliquées automatiquement.</string>
+    <string name="apply_manual_hios">Le lanceur HiOS ne prend pas en charge l\'application directe, mais vous pouvez suivre ces étapes :</string>
+    <string name="apply_manual_hios_step_1">Ouvrir les \"Paramètres\"</string>
+    <string name="apply_manual_hios_step_2">Appuyer sur \"Thème &amp; Écran de verrouillage\"</string>
+    <string name="apply_manual_hios_step_3">Appuyer sur \"Mon thème\"</string>
+    <string name="apply_manual_hios_step_4">Appuyer sur \"Pack d\'icônes\"</string>
+    <string name="apply_manual_hios_step_5">Appuyer sur %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Appui long sur votre écran d\'accueil</string>
+    <string name="apply_manual_oxygen_os_step_2">Appuyer sur \"Paramètres de la maison\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Appuyer sur \"Pack d\'icônes\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Appuyer sur %s</string>
+    <string name="apply_manual_color_os_step_1">Appui long sur votre écran d\'accueil</string>
+    <string name="apply_manual_color_os_step_2">Appuyer sur \"Icônes\"</string>
+    <string name="apply_manual_color_os_step_3">Faire défiler vers la droite du bouton \"Personnalisé\" (c\'est une liste déroulante !)</string>
+    <string name="apply_manual_color_os_step_4">Appuyer sur %s</string>
+    <string name="apply_manual_before">Cette version du lanceur Before ne supporte pas encore d\'appliquer les icônes directement. Au lieu de cela, suivez les étapes ci-dessous :</string>
+    <string name="apply_manual_before_step_1">Balayer vers la gauche sur l\'écran d\'accueil</string>
+    <string name="apply_manual_before_step_2">Appuyer sur \"Paramètres\"</string>
+    <string name="apply_manual_before_step_3">Appuyer sur \"Styles &amp; Thèmes\"</string>
+    <string name="apply_manual_before_step_4">Appuyer sur \"Styles d\'icônes &amp; Packs\"</string>
+    <string name="apply_manual_before_step_5">Appuyer sur %s</string>
+    <string name="apply_manual_nothing_step_1">Ouvrir les \"Paramètres\"</string>
+    <string name="apply_manual_nothing_step_2">Appuyer sur \"Personnalisation\"</string>
+    <string name="apply_manual_nothing_step_3">Appuyer sur \"Pack d\'icônes\"</string>
+    <string name="apply_manual_nothing_step_4">Appuyer sur %s</string>
     <string name="apply_launch_failed">Impossible d\'accéder aux paramètres de %s</string>
     <string name="apply_launcher_not_installed">%s n\'est pas installé. 
 Voulez-vous l\'ouvrir sur le Google Play Store pour le télécharger et l\'installer ?</string>
@@ -141,6 +165,7 @@ Voulez-vous l\'ouvrir sur le Google Play Store pour le télécharger et l\'insta
     <string name="apply_lg_home_nougat">LG Home sur Android Nougat ne supporte plus les packs d\'icônes.
 Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <string name="apply_launcher_incompatible">%s Launcher ne supporte aucun pack d\'icônes, alors vous ne pouvez pas utiliser ce pack d\'icônes avec ce launcher. Vous pouvez essayer une application tierce pour utiliser ce pack d\'icônes avec %2$s launcher. Voulez-vous l\'installer ?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">Le lanceur %s ne prend pas en charge les packs d\'icônes sur Android %d ou moins. Veuillez mettre à jour votre version d\'Android ou installer un lanceur tiers pour utiliser ce pack d\'icônes. Vous pouvez également essayer une application d\'aide pour changer les icônes individuelles. Voulez-vous l\'installer ?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossible de charger les icônes</string>
     <string name="icon_shape">Forme des icônes</string>
@@ -161,6 +186,10 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <string name="request_fetching_data">Récupération des dernières données...</string>
     <string name="request_build_failed">Impossible de construire la demande d\'icône(s)</string>
     <string name="request_appfilter_failed">Impossible de lire le fichier appfilter.xml</string>
+    <string name="request_requested">Vous avez déjà demandé cette icône et ne pouvez pas la demander à nouveau.</string>
+    <string name="request_requested_possible">Vous avez déjà demandé cette icône. Êtes-vous sûr(e) de vouloir consommer une autre requête ?</string>
+    <string name="request_requested_button_cancel">Retour</string>
+    <string name="request_requested_button_confirm">Confirmer</string>
     <string name="request_email_client">Choisissez la plateforme de messagerie que vous souhaitez utiliser pour envoyer la demande d\'icône(s)</string>
     <string name="request_app_disabled">Vous utilisez une ancienne version de ce pack d\'icônes, les icônes demandées peuvent être déjà incluses dans la dernière version. Veuillez mettre à jour l\'application pour demander des icônes.</string>
     <string name="connection_error_long">Impossible de charger les données du serveur. Veuillez vérifier votre connexion.</string>
