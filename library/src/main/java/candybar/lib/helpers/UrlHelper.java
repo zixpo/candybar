@@ -57,6 +57,8 @@ public class UrlHelper {
                 return getTintedDrawable(context, R.drawable.ic_toolbar_googleplay, color);
             case INSTAGRAM:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_instagram, color);
+            case KOFI:
+                return getTintedDrawable(context, R.drawable.ic_toolbar_kofi, color);
             case MASTODON:
                 return getTintedDrawable(context, R.drawable.ic_toolbar_mastodon, color);
             case MATRIX:
@@ -103,6 +105,8 @@ public class UrlHelper {
             return Type.GOOGLEPLAY;
         } else if (url.contains("instagram.")) {
             return Type.INSTAGRAM;
+        } else if (url.contains("ko-fi.")) {
+            return Type.KOFI;
         } else if (url.contains("mastodon.")|| url.contains("mstdn.")|| url.contains("mas.")|| url.contains("todon.")|| url.contains("fosstodon.")|| url.contains("troet.")|| url.contains("chaos.")|| url.contains("floss.")) {
             return Type.MASTODON;
         } else if (url.contains("matrix.")) {
@@ -133,6 +137,7 @@ public class UrlHelper {
         GITLAB,
         GOOGLEPLAY,
         INSTAGRAM,
+        KOFI,
         MASTODON,
         MATRIX,
         PINTEREST,
