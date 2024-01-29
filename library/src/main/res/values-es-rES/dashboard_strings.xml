@@ -140,6 +140,8 @@ No podrás usarlo.</string>
     <string name="apply_manual_color_os_step_1">Mantenga presionado en la pantalla de inicio</string>
     <string name="apply_manual_color_os_step_2">Pulsa \"Iconos\"</string>
     <string name="apply_manual_color_os_step_4">Pulsa %s</string>
+    <string name="apply_manual_before">Esta versión de Before Launcher aún no soporta aplicar íconos directamente. En cambio, sigue estos pasos a continuación:</string>
+    <string name="apply_manual_before_step_1">Deslízate a la izquierda en la pantalla de inicio</string>
     <string name="apply_manual_before_step_2">Pulsa \"Ajustes\"</string>
     <string name="apply_manual_before_step_5">Pulsa %s</string>
     <string name="apply_manual_nothing_step_1">Abrir \"Ajustes\"</string>
