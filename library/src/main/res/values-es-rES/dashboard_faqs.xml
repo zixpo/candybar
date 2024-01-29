@@ -58,9 +58,9 @@
     <string-array name="answers">
         <item>El launcher es la parte de la interfaz de usuario de Android que permite personalizar la pantalla de inicio, abrir aplicaciones, hacer llamadas telefónicas y desarrollar otras tareas en dispositivos Android.</item>
         <item>Un conjunto de gráficos que cambiarán el aspecto de los iconos de tu cajón de aplicaciones.</item>
-        <item>Necesitarás un launcher que soporte los paquetes de iconos personalizados.
-Los launchers que los soportan están listados en la descripción de la Play Store.
-Si no sabes qué launcher debes usar, tan sólo ve a la sección de \"Establecer\" e instálalo desde allí.</item>
+        <item>Necesitarás un lanzador que soporte los paquetes de iconos personalizados.
+Los lanzadores que los soportan están listados en la descripción de la Play Store.
+Si no sabes qué lanzador debes usar, tan solo ve a la sección \"Establecer\" e instálalo desde allí.</item>
         <item>Puedes abrir el cajón de navegación y posteriormente abrir \"Establecer\". Escoge tu launcher de la lista.
 Si tu launcher no está en la lista pero este paquete de iconos es compatible con él (comprobar en la descripción de Google Play los launchers compatibles), puedes aplicar el paquete de iconos manualmente desde los ajustes de tu launcher.</item>
         <item>Puedes abrir el cajón de navegación y abrir \"Iconos\"</item>
