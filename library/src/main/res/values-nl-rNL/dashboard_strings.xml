@@ -159,6 +159,7 @@
     <!-- Intent -->
     <!-- About -->
     <!-- Report Bugs -->
+    <string name="report_bugs_desc_empty">Voer een beschrijving in</string>
     <string name="report_bugs_failed">Kan activiteitenlijst niet bouwen</string>
     <string name="report_bugs_send">Rapport versturen</string>
     <!-- Support Development -->
@@ -178,4 +179,11 @@
     <string name="txt_close">Sluiten</string>
     <string name="txt_new">Nieuw</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Dit pictogram toevoegen aan de bladwijzersectie</string>
+    <string name="icon_search_close_button_content_description">Sluit het zoeken naar pictogram</string>
+    <string name="icon_request_submit_button_content_description">Dien een pictogramaanvraag in</string>
+    <string name="icon_list_content_description">De lijst met pictogrammen opgenomen in het pictogrampakket</string>
+    <string name="icon_search_list_content_description">De lijst met pictogrammen die overeenkomen met de zoekterm</string>
+    <string name="about_item_social_content_description">Een link naar een online profiel van de auteur van het pictogrampakket: </string>
+    <string name="share_icon_pack_button_content_description">Deel deze app met iemand</string>
 </resources>
