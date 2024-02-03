@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Pictogrammen</string>
     <string name="navigation_view_request">Pictogramaanvraag</string>
     <string name="navigation_view_wallpapers">Achtergronden</string>
+    <string name="navigation_view_presets">Voorinstellingen</string>
     <string name="navigation_view_settings">Instellingen</string>
     <string name="navigation_view_faqs">Veelgestelde vragen</string>
     <string name="navigation_view_about">Over</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Zoeken</string>
     <string name="menu_save">Opslaan op apparaat</string>
     <string name="menu_select_all">Alle selecteren</string>
+    <string name="menu_delete">Verwijderen</string>
     <string name="menu_wallpaper_crop">Achtergrond bijsnijden</string>
     <string name="menu_apply_homescreen">Thuisscherm</string>
     <string name="menu_apply_lockscreen">Vergrendelscherm</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Geen resultaten voor \"%s\"</string>
     <string name="search_faqs">Vraag of antwoord</string>
     <string name="search_icon">Pictorgramnaam</string>
+    <string name="search_wallpapers">Achtergrond naam</string>
     <!-- Update -->
     <string name="checking_for_update">Controleren op update…</string>
     <string name="update_available">Update beschikbaar!</string>
@@ -65,6 +68,7 @@
     <string name="tap_intro_home_navigation">Navigatiemenu</string>
     <string name="tap_intro_home_navigation_desc">Tik hier of veeg vanuit de linkerkant van het scherm om het navigatiemenu te openen</string>
     <string name="tap_intro_home_apply">Pictogrampakket toepassen</string>
+    <string name="tap_intro_home_apply_desc">Tik hier om %s toe te passen op je huidige launcher. Druk lang om toe te passen op andere launchers.</string>
     <string name="tap_intro_icons_search">Zoeken</string>
     <string name="tap_intro_icons_search_desc">Tik hier om een pictogram te zoeken</string>
     <string name="tap_intro_request_select">Missende apps kiezen</string>
@@ -103,6 +107,12 @@
     <string name="apply_installed">Geïnstalleerde Launcher</string>
     <string name="apply_supported">Ondersteunde Launchers</string>
     <string name="apply_manual">%1$s ondersteunt geen directe toepassing, maar je kunt %2$s handmatig toepassen via de launcher instellingen.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso ondersteunt geen directe toepassing, maar je kunt deze stappen volgen:</string>
+    <string name="apply_manual_kvaesitso_step_1">Open Kvaesitso\'s instellingen</string>
+    <string name="apply_manual_kvaesitso_step_2">Tik op \"Raster &amp; pictogrammen\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Tik op \"Pictogrammenpakket\"</string>
+    <string name="apply_manual_kvaesitso_step_5">Tik op het penseelpictogram om de achtergrondvorm in of uit te schakelen</string>
+    <string name="apply_manual_kiss_step_3">Tik op \"Pictogrammenpakket\"</string>
     <string name="apply_launch_failed">Kan %s instellingen niet starten</string>
     <string name="apply_launcher_not_installed">%s is niet geïnstalleerd. Wil je de
         Google Play Store openen om te downloaden en installeren?</string>
@@ -154,12 +164,32 @@
     <!-- Presets -->
     <!-- Preferences -->
     <string name="pref_premium_request_header">Premium Pictogramaanvraag</string>
+    <string name="pref_others_reset_tutorial_reset">Intro resetten</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automatisch</string>
+    <string name="theme_name_light">Licht</string>
+    <string name="theme_name_dark">Donker</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Opslagrechten nodig om achtergrond op te slaan</string>
     <!-- Intent -->
+    <string name="app_client">App kiezen</string>
+    <string name="no_email_app">Geen toepassing om e-mail te verzenden</string>
+    <string name="no_browser">Geen toepassing om url te openen</string>
+    <string name="intent_email_failed">Kan e-mailtoepassing niet weergeven</string>
+    <string name="intent_email_supported">Ondersteund</string>
+    <string name="intent_email_recommended">Aanbevolen</string>
+    <string name="intent_email_not_supported">Niet ondersteund</string>
+    <string name="intent_email_not_supported_message">Niet ondersteunde e-mailclient geselecteerd, selecteer een andere e-mailclient</string>
     <!-- About -->
+    <string name="about_contributors_title">Bijdragers</string>
+    <string name="about_privacy_policy_title">Privacybeleid</string>
+    <string name="about_terms_and_conditions_title">Algemene voorwaarden</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Geef alsjeblieft een omschrijving van wat voor soort probleem je wilt melden</string>
+    <string name="report_bugs_desc_hint">Omschrijving</string>
     <string name="report_bugs_desc_empty">Voer een beschrijving in</string>
+    <string name="report_bugs_building">Activiteitenlijst opbouwen…</string>
     <string name="report_bugs_failed">Kan activiteitenlijst niet bouwen</string>
     <string name="report_bugs_send">Rapport versturen</string>
     <!-- Support Development -->
