@@ -112,6 +112,9 @@
     <string name="apply_manual_kvaesitso_step_2">Tik op \"Raster &amp; pictogrammen\"</string>
     <string name="apply_manual_kvaesitso_step_3">Tik op \"Pictogrammenpakket\"</string>
     <string name="apply_manual_kvaesitso_step_5">Tik op het penseelpictogram om de achtergrondvorm in of uit te schakelen</string>
+    <string name="apply_manual_kiss">Kvaesitso ondersteunt geen directe toepassing, maar je kunt deze stappen volgen:</string>
+    <string name="apply_manual_kiss_step_1">Open KISS instellingen</string>
+    <string name="apply_manual_kiss_step_2">Tik op \"Uiterlijk en bediening\"</string>
     <string name="apply_manual_kiss_step_3">Tik op \"Pictogrammenpakket\"</string>
     <string name="apply_launch_failed">Kan %s instellingen niet starten</string>
     <string name="apply_launcher_not_installed">%s is niet geïnstalleerd. Wil je de
