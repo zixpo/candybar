@@ -116,6 +116,10 @@
     <string name="apply_manual_kiss_step_1">Open KISS instellingen</string>
     <string name="apply_manual_kiss_step_2">Tik op \"Uiterlijk en bediening\"</string>
     <string name="apply_manual_kiss_step_3">Tik op \"Pictogrammenpakket\"</string>
+    <string name="apply_manual_samsung_oneui">%1$s ondersteunt geen directe toepassing, maar vanaf %2$s kunt u pictogrammen toepassen met een companion-app.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Je huidige versie van %s is te oud. Gelieve te updaten naar Android 12 of nieuwer om direct pictogrammen toe te kunnen passen. Als alternatief kun je een andere launcher installeren.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Open %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Download de app %s</string>
     <string name="apply_launch_failed">Kan %s instellingen niet starten</string>
     <string name="apply_launcher_not_installed">%s is niet geïnstalleerd. Wil je de
         Google Play Store openen om te downloaden en installeren?</string>
@@ -130,18 +134,27 @@
     <!-- Icons -->
     <string name="icons_load_failed">Kan pictogrammen niet laden</string>
     <string name="icon_shape">Pictogramvorm</string>
+    <string name="bookmark_icons_empty">Geen bladwijzers gevonden. Geef pictogrammen een bladwijzer om ze hier snel te openen.</string>
+    <string name="items_selected">%d geselecteerd</string>
     <!-- Request -->
     <string name="request_title">Pictogramaanvraag</string>
     <string name="request_not_selected">Kies apps voor aanvraag</string>
     <string name="request_not_requested">Niet aangevraagd</string>
     <string name="request_already_requested">Reeds aangevraagd</string>
+    <string name="request_not_available">Kan niet worden aangevraagd</string>
     <string name="request_building">Aanvraag aanmaken…</string>
     <string name="request_pacific_sending">Aanvraag versturen naar Pacific Manager...</string>
     <string name="request_pacific_error">Fout tijdens het versturen van de aanvraag naar Pacific Manager. Fout is %s</string>
     <string name="request_pacific_success">Aanvraag succesvol verstuurt naar Pacific Manager</string>
+    <string name="request_custom_error">Fout opgetreden tijdens het verzenden van de aanvraag. Neem contact op met de ontwikkelaar. %s</string>
+    <string name="request_custom_success">Pictogramaanvraag succesvol verzonden</string>
     <string name="request_fetching_data">Laatste gegevens ophalen…</string>
     <string name="request_build_failed">Kan pictogramaanvraag niet aanmaken</string>
     <string name="request_appfilter_failed">Kan appfilter.xml niet lezen</string>
+    <string name="request_requested">Je hebt dit pictogram al aangevraagd en kunt het niet opnieuw aanvragen.</string>
+    <string name="request_requested_possible">Je hebt dit pictogram al aangevraagd. Weet je zeker dat je er een ander verzoek aan wilt besteden?</string>
+    <string name="request_requested_button_cancel">Terug</string>
+    <string name="request_requested_button_confirm">Toch selecteren</string>
     <string name="request_email_client">Kies een app die je wilt meesturen in de pictogramaanvraag</string>
     <string name="request_app_disabled">Je gebruikt een oudere versie van dit pictogrampakket. De verzochte pictogrammen zijn mogelijk al toegevoegd. Applicatie bijwerken om pictogrammen aan te vragen.</string>
     <string name="connection_error_long">Kan geen gegevens laden van de server. Controleer je netwerkverbinding.</string>
@@ -158,9 +171,17 @@
     <string name="regular_request_available">Beschikbaar\n%d aanvragen</string>
     <!-- Premium Request -->
     <string name="premium_request">Premium Pictogramaanvraag</string>
+    <string name="premium_request_no_internet">Zorg ervoor dat je telefoon verbonden is met internet voordat je een premium verzoek verstuurt</string>
+    <string name="premium_request_desc">Premium pictogramaanvraag is betaald. Je kunt je aangevraagde apps sneller krijgen door gebruik te maken van premium pictogramaanvraag.</string>
+    <string name="premium_request_buy">Kopen</string>
     <string name="premium_request_count">Totaal\n%d aanvragen</string>
     <string name="premium_request_used">Gebruikt\n%d aanvragen</string>
     <string name="premium_request_available">Beschikbaar\n%d aanvragen</string>
+    <string name="premium_request_already_purchased">Je hebt nog %d premium aanvragen.
+        Je moet ze allemaal gebruiken voordat je weer een premium aanvraagpakket koopt.</string>
+    <string name="premium_request_limit">Je hebt nog maar %d premium aanvragen,</string>
+    <string name="premium_request_limit1">maar je hebt %d app(s) geselecteerd.
+        \n\nJe moet al je premium aanvragen gebruiken voordat je het verzoek opnieuw gebruikt.</string>
     <!-- Wallpapers -->
     <string name="wallpaper_apply">Achtergrond toepassen</string>
     <string name="wallpaper_save_to_device">Achtergrond opslaan</string>
