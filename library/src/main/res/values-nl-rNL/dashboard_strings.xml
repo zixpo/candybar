@@ -71,15 +71,15 @@
     <string name="tap_intro_home_apply_desc">Tik hier om %s toe te passen op je huidige launcher. Druk lang om toe te passen op andere launchers.</string>
     <string name="tap_intro_icons_search">Zoeken</string>
     <string name="tap_intro_icons_search_desc">Tik hier om een pictogram te zoeken</string>
-    <string name="tap_intro_request_select">Missende apps kiezen</string>
-    <string name="tap_intro_request_select_desc">Tik hier om missende apps te kiezen voor pictogramaanvraag</string>
-    <string name="tap_intro_request_select_all">Alle missende apps kiezen</string>
-    <string name="tap_intro_request_select_all_desc">Tik hier om alle missende apps te kiezen voor pictogramaanvraag</string>
+    <string name="tap_intro_request_select">Ontbrekende apps kiezen</string>
+    <string name="tap_intro_request_select_desc">Tik hier om ontbrekende apps te kiezen voor pictogramaanvraag</string>
+    <string name="tap_intro_request_select_all">Alle ontbrekende apps kiezen</string>
+    <string name="tap_intro_request_select_all_desc">Tik hier om alle ontbrekende apps te kiezen voor pictogramaanvraag</string>
     <string name="tap_intro_request_send">Pictogramaanvraag versturen</string>
-    <string name="tap_intro_request_send_desc">Tik hier om gekozen missende apps te versturen</string>
+    <string name="tap_intro_request_send_desc">Tik hier om gekozen ontbrekende apps te versturen</string>
     <string name="tap_intro_request_premium">Premium pictogramaanvraag</string>
-    <string name="tap_intro_request_premium_desc">Tik hier om een premium pictogramverzoek pakket te kopen,
-        met een premium pictogramverzoek kun je je gevraagde apps sneller krijgen.</string>
+    <string name="tap_intro_request_premium_desc">Tik hier om een Premium pictogramaanvraagpakket te kopen,
+        met een Premium pictogramaanvraag kun je je gevraagde apps sneller krijgen.</string>
     <string name="tap_intro_wallpapers_option">Achtergrond opties</string>
     <string name="tap_intro_wallpapers_option_desc">Tik hier en houd vast om achtergrond opties te weergeven, %s achtergrond toepassen.</string>
     <string name="tap_intro_wallpapers_option_desc_download">downloaden of</string>
@@ -102,7 +102,7 @@
     <string name="home_muzei">Muzei live achtergrond</string>
     <string name="home_icon_request_installed_apps">Totaal\n%d geïnstalleerde apps</string>
     <string name="home_icon_request_themed_apps">Gethematiseerd\n%d apps</string>
-    <string name="home_icon_request_missed_apps">Missend\n%d apps</string>
+    <string name="home_icon_request_missed_apps">Ontbrekende\n%d apps</string>
     <!-- Apply -->
     <string name="apply_installed">Geïnstalleerde Launcher</string>
     <string name="apply_supported">Ondersteunde Launchers</string>
@@ -161,7 +161,7 @@
     <string name="unable_to_load_config">Fout bij het ophalen/lezen van gegevens van de server.</string>
     <string name="request_limit">Je kunt slechts %d verzoek(en) maken met reguliere aanvraag.</string>
     <string name="request_used">Je hebt %d pictogram(men) aangevraagd.</string>
-    <string name="request_limit_buy">Je kunt Premium Aanvragen kopen om meer pictogrammen aan te vragen.</string>
+    <string name="request_limit_buy">Je kunt Premium aanvragen kopen om meer pictogrammen aan te vragen.</string>
     <string name="request_limit_reset">Pictogram aanvraaglimiet wordt gereset bij iedere update.</string>
     <!-- Regular Request -->
     <string name="regular_request">Reguliere Pictogramaanvraag</string>
@@ -171,24 +171,72 @@
     <string name="regular_request_available">Beschikbaar\n%d aanvragen</string>
     <!-- Premium Request -->
     <string name="premium_request">Premium Pictogramaanvraag</string>
-    <string name="premium_request_no_internet">Zorg ervoor dat je telefoon verbonden is met internet voordat je een premium verzoek verstuurt</string>
+    <string name="premium_request_no_internet">Zorg ervoor dat je telefoon verbonden is met internet voordat je een Premium aanvraag verstuurt</string>
     <string name="premium_request_desc">Premium pictogramaanvraag is betaald. Je kunt je aangevraagde apps sneller krijgen door gebruik te maken van premium pictogramaanvraag.</string>
     <string name="premium_request_buy">Kopen</string>
     <string name="premium_request_count">Totaal\n%d aanvragen</string>
     <string name="premium_request_used">Gebruikt\n%d aanvragen</string>
     <string name="premium_request_available">Beschikbaar\n%d aanvragen</string>
     <string name="premium_request_already_purchased">Je hebt nog %d premium aanvragen.
-        Je moet ze allemaal gebruiken voordat je weer een premium aanvraagpakket koopt.</string>
-    <string name="premium_request_limit">Je hebt nog maar %d premium aanvragen,</string>
+        Je moet ze allemaal gebruiken voordat je weer een Premium aanvraagpakket koopt.</string>
+    <string name="premium_request_limit">Je hebt nog maar %d Premium aanvragen,</string>
     <string name="premium_request_limit1">maar je hebt %d app(s) geselecteerd.
-        \n\nJe moet al je premium aanvragen gebruiken voordat je het verzoek opnieuw gebruikt.</string>
+        \n\nJe moet al je Premium aanvragen gebruiken voordat je het verzoek opnieuw gebruikt.</string>
+    <string name="premium_request_consume_failed">Kon Premium aanvraag niet gebruiken, zorg ervoor dat je een stabiele internetverbinding hebt en probeer het opnieuw.
+        Ga naar instellingen om Premium aanvragen opnieuw op te bouwen.</string>
+    <string name="premium_request_rebuilding">Premium aanvraag opnieuw opbouwen …</string>
+    <string name="premium_request_rebuilding_empty">Je hebt nog geen Premium aanvraag gebruikt</string>
+    <string name="premium_request_exist">Je hebt nog een Premium pictogramaanvraagpakket.
+        Open Instellingen, kies \"Aankopen Herstellen\" om te herstellen.</string>
+    <string name="premium_request_required">Je moet een Premium pictogramaanvraagpakket kopen om aanvragen te kunnen doen</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Nieuwe achtergrond</string>
+    <string name="wallpaper_already_downloaded">Achtergrond is al gedownload</string>
+    <string name="wallpaper_downloading">Achtergrond downloaden …</string>
+    <string name="wallpaper_download_failed">Achtergrond downloaden mislukt</string>
+    <string name="wallpaper_download_success">Achtergrond succesvol gedownload</string>
+    <string name="wallpaper_loading">Achtergrond laden …</string>
+    <string name="wallpaper_applying">Achtergrond toepassen …</string>
+    <string name="wallpaper_applied">Achtergrond toegepast</string>
+    <string name="wallpaper_apply_failed">Achtergrond toepassen mislukt</string>
+    <string name="wallpaper_apply_cancelled">Achtergrond toepassen geannuleerd</string>
+    <string name="connection_failed">Gegevens ophalen van server mislukt</string>
     <string name="wallpaper_apply">Achtergrond toepassen</string>
     <string name="wallpaper_save_to_device">Achtergrond opslaan</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Voorinstellingen laden mislukt</string>
+    <string name="presets_storage_permission">Opslagrechten nodig om achtergrond op te slaan</string>
+    <string name="presets_required_apps">Vereiste apps om deze voorinstellingen te gebruiken</string>
+    <string name="presets_required_apps_not_installed">Vereiste app om de voorinstelling te gebruiken niet geïnstalleerd. Installeer de vereiste app(s) en probeer het opnieuw.</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Gegevens &amp; Cache</string>
+    <string name="pref_data_cache">Cache wissen</string>
+    <string name="pref_data_cache_desc">Wis afbeeldingscache uit je opslag; aangemaakt wanneer je een afbeelding kiest, ontbrekende apps aanvraagt en na het laden van achtergronden uit de cloud.</string>
+    <string name="pref_data_cache_size">Cachegrootte: %s</string>
+    <string name="pref_data_cache_clear_dialog">Weet je zeker dat je de cache wilt wissen?</string>
+    <string name="pref_data_cache_cleared">Cache gewist</string>
+    <string name="pref_data_request">Wis pictogramaanvraaggegevens</string>
+    <string name="pref_data_request_desc">Pictogramaanvraaggegevens wissen na het verzoeken van een ontbrekende app.</string>
+    <string name="pref_data_request_clear_dialog">Weet je zeker dat je de pictogramaanvraaggegevens wilt wissen?</string>
+    <string name="pref_data_request_cleared">Pictogramaanvraaggegevens gewist</string>
     <string name="pref_premium_request_header">Premium Pictogramaanvraag</string>
-    <string name="pref_others_reset_tutorial_reset">Intro resetten</string>
+    <string name="pref_premium_request_restore">Aankopen herstellen</string>
+    <string name="pref_premium_request_restore_desc">Herstel Premium aanvraagpakket na het opnieuw installeren van het pictogrampakket</string>
+    <string name="pref_premium_request_restore_success">Premium aanvraag hersteld</string>
+    <string name="pref_premium_request_restore_empty">Je hebt geen aangeschafte pakketten</string>
+    <string name="pref_premium_request_rebuild">Premium pictogramaanvraag opnieuw opbouwen</string>
+    <string name="pref_premium_request_rebuild_desc">Verzamel alle Premium pictogramaanvragen om ze opnieuw te verzenden</string>
+    <string name="pref_theme_header">Thema</string>
+    <string name="pref_theme_dark">Donker thema</string>
+    <string name="pref_theme_dark_desc">Donkere kleur gebruiken voor appthema</string>
+    <string name="pref_wallpaper_header">Achtergrond</string>
+    <string name="pref_wallpaper_location">Opslaglocatie voor achtergronden</string>
+    <string name="pref_language_header">Taal</string>
+    <string name="pref_others_header">Overige</string>
+    <string name="pref_others_report_bugs">Fouten rapporteren</string>
+    <string name="pref_others_changelog">Wijzigingslogboek</string>
+    <string name="pref_others_reset_tutorial">Handleiding opnieuw instellen</string>
+    <string name="pref_others_reset_tutorial_reset">Handleiding opnieuw instellen</string>
     <!-- Themes -->
     <string name="theme_name_auto">Automatisch</string>
     <string name="theme_name_light">Licht</string>
