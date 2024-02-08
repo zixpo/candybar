@@ -120,7 +120,7 @@ Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications deman
     <string name="apply_manual_kiss_step_2">Appuyez sur \"Interface utilisateur\"</string>
     <string name="apply_manual_kiss_step_3">Appuyez sur le \"Pack d\'icônes\"</string>
     <string name="apply_manual_kiss_step_4">Choisissez %s depuis la liste</string>
-    <string name="apply_manual_samsung_oneui">%1$s ne prend pas en charge l\'application directe, mais en commençant par %2$s , vous pouvez appliquer des icônes avec une application complémentaire.</string>
+    <string name="apply_manual_samsung_oneui">%1$s ne prend pas en charge l\'application directe, mais avec %2$s , vous pouvez appliquer des icônes avec une application complémentaire.</string>
     <string name="apply_manual_samsung_oneui_too_old">Votre version actuelle de %s est trop ancienne. Veuillez mettre à jour vers Android 12 ou plus récent pour pouvoir appliquer les icônes directement. Vous pouvez également installer un lanceur différent.</string>
     <string name="apply_manual_samsung_oneui_step_1">Ouvrir %s</string>
     <string name="apply_manual_samsung_oneui_step_2">Télécharger l\'application %s</string>
