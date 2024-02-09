@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <item
+        component="ComponentInfo{some.app/some.app.MainActivity}"
+        drawable="icon_1" />
+</resources>
