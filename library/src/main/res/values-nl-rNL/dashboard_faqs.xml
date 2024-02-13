@@ -30,39 +30,39 @@
     </string-array>
     <string-array name="questions">
         <item>Wat is een launcher?</item>
-        <item>Wat is een pictogrampakket?</item>
-        <item>Hoe gebruik ik een pictogrampakket?</item>
-        <item>Hoe pas ik een pictogrampakket toe?</item>
-        <item>Hoe zie ik alle pictogrammen inbegrepen?</item>
-        <item>Ik kan geen volledige pictogramnaam zien</item>
-        <item>Hoe kan ik pictogrammen vervangen door een alternatief pictogram?</item>
-        <item>Hoe vraag ik om een pictogram?</item>
+        <item>Wat is een icoonpakket?</item>
+        <item>Hoe gebruik ik een icoonpakket?</item>
+        <item>Hoe pas ik een icoonpakket toe?</item>
+        <item>Hoe zie ik alle iconen inbegrepen?</item>
+        <item>Ik kan geen volledige icoonnaam zien</item>
+        <item>Hoe kan ik iconen vervangen door een alternatief icoon?</item>
+        <item>Hoe vraag ik om een icoon?</item>
         <item>Hoe kan ik overige Premium Aanvragen herstellen na het opnieuw installeren van de app?</item>
-        <item>After restarting my phone, the icon pack is not applied, it restore to defaults?</item>
-        <item>Why do the icons looks jaggy or pixelated on my phone?</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed?</item>
-        <item>What is the \"report bugs\" option?</item>
-        <item>My launcher is listed in the google play description, but why isn\'t it included in apply section?</item>
-        <item>Wallpaper can\'t be applied, just showing black screen?</item>
-        <item>Muzei: How to load downloaded wallpapers only?</item>
-        <item>Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes?</item>
-        <item>Muzei: I only want to use specific wallpapers?</item>
-        <item>Why are Read &amp; Write External Storage permission needed?</item>
+        <item>Na het herstarten van mijn telefoon wordt het iconenpakket niet toegepast, is het teruggezet naar de standaardinstellingen?</item>
+        <item>Waarom zien iconen er hoekerig of gepixeled uit op mijn telefoon?</item>
+        <item>Ik kan het icoon zien in alle iconen,
+            maar waarom is het icoon in de app drawer niet gewijzigd?</item>
+        <item>Wat is de optie \"bugs rapporteren\"?</item>
+        <item>Mijn launcher staat vermeld in de Google Play omschrijving, maar waarom is het niet opgenomen in de toepas-sectie?</item>
+        <item>Achtergrond kan niet toegepast worden, het toont alleen het zwarte scherm?</item>
+        <item>Muzei: Hoe laad je alleen gedownloade achtergronden?</item>
+        <item>Muzei: Ik wil geen achtergronden blijven downloaden, telkens als de achtergrond verandert?</item>
+        <item>Muzei: Ik wil alleen specifieke achtergronden gebruiken?</item>
+        <item>Waarom is de Lees &amp; Schrijf Externe Opslag-toestemming nodig?</item>
         <item>Waarom is internettoestemming nodig?</item>
         <item>Waarom is toegang tot netwerkstatus nodig?</item>
         <item>Waarom is toegang tot netwerkstatus nodig?</item>
         <item>Waarom is Achtergrond Instellen toestemming nodig?</item>
-        <item>Why is Wake Lock permission needed?</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>Waarom is Wake Lock-toestemming nodig?</item>
+        <item>Waarom is alarmtoestemming nodig?</item>
     </string-array>
     <string-array name="answers">
-        <item>Launcher is the part of the Android user interface that lets users customize the home screen,
-            launch mobile apps, make phone calls, and perform other tasks on Android devices.</item>
-        <item>A set of graphics that will change the look of your app drawer icons</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play store description.
-            If you are confused which launchers should be used, just go to the \"Apply\" section, then install from there.</item>
+        <item>De launcher is de interface waarmee gebruikers het startscherm kunnen aanpassen.,
+            start mobiele apps, start telefoongesprekken, en andere taken uitvoeren op Androidapparaten.</item>
+        <item>Een grafische set die het uiterlijk van je app-iconen wijzigt</item>
+        <item>Je hebt een launcher nodig die aangepaste icoonpakketten ondersteunt.
+            Ondersteunde launchers staan vermeld in de beschrijving van de Play Store.
+            Als je niet weet welke launchers gebruikt moeten worden, ga gewoon naar het \"Toepassen\" gedeelte en installeer het vanaf daar.</item>
         <item>You can open the navigation drawer then open \"Apply\". Choose your launcher from the list.
             If your launcher is not listed there but this icon pack is compatible with it
             (see on Google Play Store description for supported launchers),
@@ -89,13 +89,13 @@
             Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
         <item>Open muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
             You will need to download wallpapers from the dashboard first.</item>
-        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
-            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
-        <item>Open Dashboard, download wallpapers that you want to use in Muzei.
-            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
-        <item>It is used to write &amp; read cache, and collect the icon request data.</item>
-        <item>It is used to load Cloud Based Wallpapers &amp; download them.</item>
-        <item>It is used to check if your phone has an internet connection or not.</item>
+        <item>Als een achtergrond al is gedownload, zal deze automatisch vanuit je telefoongeheugen worden geladen.
+            Muzei zal het niet blijven downloaden wanneer de achtergrond verandert. Je moet eerst achtergronden downloaden vanaf het dashboard.</item>
+        <item>Open Dashboard, download de achtergronden die je wilt gebruiken in Muzei.
+            Open Muzei-instellingen en kies \"Load Downloaded Wallpapers Only\".</item>
+        <item>Het wordt gebruikt voor het schrijven &amp; lezen van de cache en de icoonverzoek data op te halen.</item>
+        <item>Het wordt gebruikt om Achtergronden uit de cloud &amp; te downloaden.</item>
+        <item>Het wordt gebruikt om te controleren of je telefoon een internetverbinding heeft of niet.</item>
         <item>Het wordt gebruikt om te controleren of je telefoon een internetverbinding heeft of niet, om cloud achtergronden van Muzei te laden.</item>
         <item>Het wordt gebruikt om achtergronden rechtstreeks vanuit de dashboardapp toe te passen.</item>
         <item>Het is nodig voor Muzei Live Wallpaper.</item>
