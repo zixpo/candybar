@@ -4,8 +4,8 @@
     <!-- Navigation View -->
     <string name="navigation_view_home">Thuis</string>
     <string name="navigation_view_apply">Toepassen</string>
-    <string name="navigation_view_icons">Pictogrammen</string>
-    <string name="navigation_view_request">Pictogramaanvraag</string>
+    <string name="navigation_view_icons">Iconen</string>
+    <string name="navigation_view_request">Icoonverzoek</string>
     <string name="navigation_view_wallpapers">Achtergronden</string>
     <string name="navigation_view_presets">Voorinstellingen</string>
     <string name="navigation_view_settings">Instellingen</string>
@@ -111,15 +111,36 @@
     <string name="apply_manual_kvaesitso_step_1">Open Kvaesitso\'s instellingen</string>
     <string name="apply_manual_kvaesitso_step_2">Tik op \"Raster &amp; pictogrammen\"</string>
     <string name="apply_manual_kvaesitso_step_3">Tik op \"Pictogrammenpakket\"</string>
+    <string name="apply_manual_kvaesitso_step_4">Kies %s uit de lijst</string>
     <string name="apply_manual_kvaesitso_step_5">Tik op het penseelpictogram om de achtergrondvorm in of uit te schakelen</string>
     <string name="apply_manual_kiss">Kvaesitso ondersteunt geen directe toepassing, maar je kunt deze stappen volgen:</string>
     <string name="apply_manual_kiss_step_1">Open KISS instellingen</string>
     <string name="apply_manual_kiss_step_2">Tik op \"Uiterlijk en bediening\"</string>
     <string name="apply_manual_kiss_step_3">Tik op \"Pictogrammenpakket\"</string>
+    <string name="apply_manual_kiss_step_4">Kies %s uit de lijst</string>
     <string name="apply_manual_samsung_oneui">%1$s ondersteunt geen directe toepassing, maar vanaf %2$s kunt u pictogrammen toepassen met een companion-app.</string>
     <string name="apply_manual_samsung_oneui_too_old">Je huidige versie van %s is te oud. Gelieve te updaten naar Android 12 of nieuwer om direct pictogrammen toe te kunnen passen. Als alternatief kun je een andere launcher installeren.</string>
     <string name="apply_manual_samsung_oneui_step_1">Open %s</string>
     <string name="apply_manual_samsung_oneui_step_2">Download de app %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Klik op \"Icoon\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Klik op \"Nieuwe Aanmaken\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Klik op de blauwe \"Iconpack\" knop</string>
+    <string name="apply_manual_samsung_oneui_step_6">Kies %s uit de lijst</string>
+    <string name="apply_manual_samsung_oneui_step_7">Herhaal deze stappen elke keer dat u %s bijwerkt, nieuwe iconen worden niet automatisch toegewezen.</string>
+    <string name="apply_manual_hios">HiOS Launcher ondersteunt geen directe toepassing, maar je kunt de volgende stappen volgen:</string>
+    <string name="apply_manual_hios_step_1">Open \"Instellingen\"</string>
+    <string name="apply_manual_hios_step_2">Klik op \"Thema &amp; Vergrendelscherm\"</string>
+    <string name="apply_manual_hios_step_3">Klik op \"Mijn thema\"</string>
+    <string name="apply_manual_hios_step_4">Klik op \"Icoonpakket\"</string>
+    <string name="apply_manual_hios_step_5">Klik %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Klik lang op je homescreen</string>
+    <string name="apply_manual_oxygen_os_step_2">Klik op \"Home Settings\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Klik %s</string>
+    <string name="apply_manual_color_os_step_1">Klik lang op je homescreen</string>
+    <string name="apply_manual_color_os_step_4">Klik %s</string>
+    <string name="apply_manual_before_step_5">Klik %s</string>
+    <string name="apply_manual_nothing_step_1">Open \"Instellingen\"</string>
+    <string name="apply_manual_nothing_step_4">Klik %s</string>
     <string name="apply_launch_failed">Kan %s instellingen niet starten</string>
     <string name="apply_launcher_not_installed">%s is niet geïnstalleerd. Wil je de
         Google Play Store openen om te downloaden en installeren?</string>
@@ -137,7 +158,7 @@
     <string name="bookmark_icons_empty">Geen bladwijzers gevonden. Geef pictogrammen een bladwijzer om ze hier snel te openen.</string>
     <string name="items_selected">%d geselecteerd</string>
     <!-- Request -->
-    <string name="request_title">Pictogramaanvraag</string>
+    <string name="request_title">Icoonverzoek</string>
     <string name="request_not_selected">Kies apps voor aanvraag</string>
     <string name="request_not_requested">Niet aangevraagd</string>
     <string name="request_already_requested">Reeds aangevraagd</string>
