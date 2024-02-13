@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
-    <string name="navigation_view_home">Thuis</string>
+    <string name="navigation_view_home">Home</string>
     <string name="navigation_view_apply">Toepassen</string>
     <string name="navigation_view_icons">Iconen</string>
     <string name="navigation_view_request">Icoonverzoek</string>
@@ -13,14 +13,14 @@
     <string name="navigation_view_about">Over</string>
     <string name="navigation_view_donate">Ontwikkeling steunen</string>
     <!-- Muzei -->
-    <string name="muzei_settings">Muzei instellingen</string>
+    <string name="muzei_settings">Muzei-instellingen</string>
     <string name="minute">Minuut</string>
     <string name="hour">Uur</string>
     <string name="save_setting">Opslaan</string>
     <string name="muzei_refresh_duration">Verversingsduur</string>
     <string name="muzei_wifi_only">Alleen verversen via wifi</string>
     <string name="muzei_downloaded_only">Alleen gedownloade achtergronden laden</string>
-    <string name="muzei_settings_ignored">Pictorgrampakket bevat geen achtergronden, instellingen genegeerd.</string>
+    <string name="muzei_settings_ignored">Icoonpakket bevat geen achtergronden, instellingen genegeerd.</string>
     <string name="muzei_settings_saved">Instellingen opgeslagen</string>
     <!-- Menu -->
     <string name="menu_search">Zoeken</string>
@@ -28,9 +28,9 @@
     <string name="menu_select_all">Alle selecteren</string>
     <string name="menu_delete">Verwijderen</string>
     <string name="menu_wallpaper_crop">Achtergrond bijsnijden</string>
-    <string name="menu_apply_homescreen">Thuisscherm</string>
+    <string name="menu_apply_homescreen">Beginscherm</string>
     <string name="menu_apply_lockscreen">Vergrendelscherm</string>
-    <string name="menu_apply_homescreen_lockscreen">Thuisscherm &amp; vergrendelscherm</string>
+    <string name="menu_apply_homescreen_lockscreen">Beginscherm &amp; vergrendelscherm</string>
     <!-- Dialog -->
     <string name="open">Openen</string>
     <string name="close">Sluiten</string>
@@ -41,18 +41,18 @@
     <string name="update">Bijwerken</string>
     <string name="search_noresult">Geen resultaten voor \"%s\"</string>
     <string name="search_faqs">Vraag of antwoord</string>
-    <string name="search_icon">Pictorgramnaam</string>
-    <string name="search_wallpapers">Achtergrond naam</string>
+    <string name="search_icon">Icoon-naam</string>
+    <string name="search_wallpapers">Achtergrondnaam</string>
     <!-- Update -->
-    <string name="checking_for_update">Controleren op update…</string>
+    <string name="checking_for_update">Controleren op update …</string>
     <string name="update_available">Update beschikbaar!</string>
     <string name="no_update_available">Je gebruikt de laatste versie!</string>
     <!-- Changelog -->
     <string name="changelog_version">Versie</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">Kan in-app aankoopproducten niet laden</string>
+    <string name="billing_load_product_failed">Kan in-app-aankopen niet laden</string>
     <!-- License -->
-    <string name="license_checking">Licentie controleren…</string>
+    <string name="license_checking">Licentie controleren …</string>
     <string name="license_check">Licentie controleren</string>
     <string name="license_check_success">Licentiecontrole succesvol. Bedankt voor het downloaden van de app via de Play Store.</string>
     <string name="license_check_failed">Licentiecontrole mislukt. Je hebt de app niet gedownload van de Play Store. Je kunt het niet gebruiken.</string>
@@ -72,14 +72,14 @@
     <string name="tap_intro_icons_search">Zoeken</string>
     <string name="tap_intro_icons_search_desc">Tik hier om een pictogram te zoeken</string>
     <string name="tap_intro_request_select">Ontbrekende apps kiezen</string>
-    <string name="tap_intro_request_select_desc">Tik hier om ontbrekende apps te kiezen voor pictogramaanvraag</string>
+    <string name="tap_intro_request_select_desc">Klik hier om ontbrekende apps te kiezen voor icoonaanvraag</string>
     <string name="tap_intro_request_select_all">Alle ontbrekende apps kiezen</string>
-    <string name="tap_intro_request_select_all_desc">Tik hier om alle ontbrekende apps te kiezen voor pictogramaanvraag</string>
-    <string name="tap_intro_request_send">Pictogramaanvraag versturen</string>
+    <string name="tap_intro_request_select_all_desc">Klik hier om alle ontbrekende apps te kiezen voor icoonaanvraag</string>
+    <string name="tap_intro_request_send">Icoonaanvraag versturen</string>
     <string name="tap_intro_request_send_desc">Tik hier om gekozen ontbrekende apps te versturen</string>
-    <string name="tap_intro_request_premium">Premium pictogramaanvraag</string>
-    <string name="tap_intro_request_premium_desc">Tik hier om een Premium pictogramaanvraagpakket te kopen,
-        met een Premium pictogramaanvraag kun je je gevraagde apps sneller krijgen.</string>
+    <string name="tap_intro_request_premium">Premium icoonaanvraag</string>
+    <string name="tap_intro_request_premium_desc">Klik hier om een Premium icoonaanvraag-pakket te kopen,
+        met een Premium icoonaanvraag kun je sneller je apps krijgen.</string>
     <string name="tap_intro_wallpapers_option">Achtergrond opties</string>
     <string name="tap_intro_wallpapers_option_desc">Tik hier en houd vast om achtergrond opties te weergeven, %s achtergrond toepassen.</string>
     <string name="tap_intro_wallpapers_option_desc_download">downloaden of</string>
@@ -88,16 +88,16 @@
     <string name="tap_intro_wallpaper_preview_save">Achtergrond opslaan</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Tik hier om de achtergrond te downloaden en bewaren op jouw apparaat, zodat je het later kunt gebruiken</string>
     <string name="tap_intro_wallpaper_preview_apply">Achtergrond toepassen</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">Tik hier om de achtergrond in te stellen voor je thuisscherm</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Klik hier om de achtergrond in te stellen voor je beginscherm</string>
     <!-- Home -->
     <string name="home_more_apps_header">Meer apps</string>
     <string name="home_more_apps">Bekijk andere apps gepubliceerd op de Google Play Store</string>
     <string name="home_rate_and_review">Beoordeel ons</string>
     <string name="home_apply_icon_pack">%s toepassen</string>
     <string name="home_donate">Doneren</string>
-    <string name="home_donate_desc">Steun de ontwikkeling van het pictogrampakket</string>
-    <string name="home_icons">Aangepaste pictogrammen</string>
-    <string name="home_icon_dimension">%s pixels pictogramafmeting</string>
+    <string name="home_donate_desc">Steun de ontwikkeling van het icoonpakket</string>
+    <string name="home_icons">Aangepaste iconen</string>
+    <string name="home_icon_dimension">%s pixels icoonafmeting</string>
     <string name="home_loud_wallpapers">%d cloud achtergronden</string>
     <string name="home_muzei">Muzei live achtergrond</string>
     <string name="home_icon_request_installed_apps">Totaal\n%d geïnstalleerde apps</string>
@@ -109,17 +109,17 @@
     <string name="apply_manual">%1$s ondersteunt geen directe toepassing, maar je kunt %2$s handmatig toepassen via de launcher instellingen.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso ondersteunt geen directe toepassing, maar je kunt deze stappen volgen:</string>
     <string name="apply_manual_kvaesitso_step_1">Open Kvaesitso\'s instellingen</string>
-    <string name="apply_manual_kvaesitso_step_2">Tik op \"Raster &amp; pictogrammen\"</string>
-    <string name="apply_manual_kvaesitso_step_3">Tik op \"Pictogrammenpakket\"</string>
+    <string name="apply_manual_kvaesitso_step_2">Klik \"Raster &amp; iconen\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Tik op \"Icoonpakket\"</string>
     <string name="apply_manual_kvaesitso_step_4">Kies %s uit de lijst</string>
-    <string name="apply_manual_kvaesitso_step_5">Tik op het penseelpictogram om de achtergrondvorm in of uit te schakelen</string>
+    <string name="apply_manual_kvaesitso_step_5">Tik op het penseel-icoon om de achtergrondvorm in of uit te schakelen</string>
     <string name="apply_manual_kiss">Kvaesitso ondersteunt geen directe toepassing, maar je kunt deze stappen volgen:</string>
-    <string name="apply_manual_kiss_step_1">Open KISS instellingen</string>
-    <string name="apply_manual_kiss_step_2">Tik op \"Uiterlijk en bediening\"</string>
-    <string name="apply_manual_kiss_step_3">Tik op \"Pictogrammenpakket\"</string>
+    <string name="apply_manual_kiss_step_1">Open KISS-instellingen</string>
+    <string name="apply_manual_kiss_step_2">Tik \"Gebruikersinterface\"</string>
+    <string name="apply_manual_kiss_step_3">Tik op \"Icoonpakket\"</string>
     <string name="apply_manual_kiss_step_4">Kies %s uit de lijst</string>
-    <string name="apply_manual_samsung_oneui">%1$s ondersteunt geen directe toepassing, maar vanaf %2$s kunt u pictogrammen toepassen met een companion-app.</string>
-    <string name="apply_manual_samsung_oneui_too_old">Je huidige versie van %s is te oud. Gelieve te updaten naar Android 12 of nieuwer om direct pictogrammen toe te kunnen passen. Als alternatief kun je een andere launcher installeren.</string>
+    <string name="apply_manual_samsung_oneui">%1$s ondersteunt geen directe toepassing, maar vanaf %2$s kunt u iconen toepassen met een companion-app.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Je huidige versie van %s is te oud. Gebruik Android 12 of nieuwer om direct iconen te kunnen gebruiken. Als alternatief kun je een andere launcher installeren.</string>
     <string name="apply_manual_samsung_oneui_step_1">Open %s</string>
     <string name="apply_manual_samsung_oneui_step_2">Download de app %s</string>
     <string name="apply_manual_samsung_oneui_step_3">Klik op \"Icoon\"</string>
@@ -135,23 +135,34 @@
     <string name="apply_manual_hios_step_5">Klik %s</string>
     <string name="apply_manual_oxygen_os_step_1">Klik lang op je homescreen</string>
     <string name="apply_manual_oxygen_os_step_2">Klik op \"Home Settings\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Klik op \"Icon pack\"</string>
     <string name="apply_manual_oxygen_os_step_4">Klik %s</string>
     <string name="apply_manual_color_os_step_1">Klik lang op je homescreen</string>
+    <string name="apply_manual_color_os_step_2">Klik op \"Icons\"</string>
+    <string name="apply_manual_color_os_step_3">Scrol naar rechts van de \"Custom\" knop (dit is een scrolbare lijst!)</string>
     <string name="apply_manual_color_os_step_4">Klik %s</string>
+    <string name="apply_manual_before">Deze versie van Before launcher kan nog niet direct iconen toepassen. Volg in plaats daarvan onderstaande stappen:</string>
+    <string name="apply_manual_before_step_1">Veeg naar links op het beginscherm</string>
+    <string name="apply_manual_before_step_2">Klik op \"Instellingen\"</string>
+    <string name="apply_manual_before_step_3">Klik op \"Stijlen &amp; Thema\"</string>
+    <string name="apply_manual_before_step_4">Klik op \"Icon Styles &amp; Packs\"</string>
     <string name="apply_manual_before_step_5">Klik %s</string>
     <string name="apply_manual_nothing_step_1">Open \"Instellingen\"</string>
+    <string name="apply_manual_nothing_step_2">Klik op \"Aanpassingen\"</string>
+    <string name="apply_manual_nothing_step_3">Klik op \"Icon pack\"</string>
     <string name="apply_manual_nothing_step_4">Klik %s</string>
     <string name="apply_launch_failed">Kan %s instellingen niet starten</string>
     <string name="apply_launcher_not_installed">%s is niet geïnstalleerd. Wil je de
         Google Play Store openen om te downloaden en installeren?</string>
     <string name="apply_launcher_not_installable">%s is niet geïnstalleerd. Probeer het opnieuw na het installeren van de launcher.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager is niet beschikbaar op dit apparaat</string>
-    <string name="apply_cmtheme_failed">Kan CM Theme Manager niet starten. Je kunt proberen het pictogrampakket handmatig toe te passen vanuit de instellingen.</string>
-    <string name="apply_lg_home">Om dit pictogrampakket toe te passen, open Instellingen - Display - Thuisscherm - Thema</string>
+    <string name="apply_cmtheme_failed">Kan CM Theme Manager niet starten. Je kunt proberen het icoonpakket handmatig aanpassen vanuit de instellingen.</string>
+    <string name="apply_lg_home">Om dit icoonpakket toe te passen, open Instellingen - Display - Beginscherm - Thema</string>
     <string name="apply_lg_home_not_available">LG Home is niet beschikbaar op dit apparaat</string>
     <string name="apply_lg_home_failed">Kan LG Home Instellingen niet starten. Je kunt proberen het pictogrampakket handmatig toe te passen vanuit de instellingen.</string>
     <string name="apply_lg_home_nougat">LG Home met Android Nougat ondersteunt geen pictogrampakketten. Je hebt een andere launcher nodig om pictogrampakketten te gebruiken.</string>
     <string name="apply_launcher_incompatible">%s ondersteunt geen pictogrampakketten. Je kunt dit pictogrampakket niet gebruiken met deze launcher. Je kunt een third-party app proberen om dit pictogrampakket te gebruiken in %2$s launcher. Wil je het installeren?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s launcher ondersteunt geen icoonpakketten op Android %d of lager. Update je Androidversie of installeer een andere launcher om dit icoonpakket te gebruiken. Je kunt ook een helper-app proberen om de individuele iconen te wijzigen. Wil je deze installeren?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Kan pictogrammen niet laden</string>
     <string name="icon_shape">Pictogramvorm</string>
