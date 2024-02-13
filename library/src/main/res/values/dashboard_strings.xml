@@ -19,7 +19,7 @@
     <string name="hour">Hour</string>
     <string name="save_setting">Save</string>
     <string name="muzei_refresh_duration">Refresh Duration</string>
-    <string name="muzei_wifi_only">Refresh from Wifi Only</string>
+    <string name="muzei_wifi_only">Refresh from Wi-Fi Only</string>
     <string name="muzei_downloaded_only">Load Downloaded Wallpapers Only</string>
     <string name="muzei_settings_ignored">Icon Pack doesn\'t contain wallpapers, settings ignored.</string>
     <string name="muzei_settings_saved">Settings Saved</string>
@@ -58,20 +58,20 @@
     <string name="changelog_version">Version</string>
 
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">Unable to load InApp Purchase products</string>
+    <string name="billing_load_product_failed">Unable to load In-app Purchase products</string>
 
     <!-- License -->
     <string name="license_checking">Checking license …</string>
     <string name="license_check">License Check</string>
-    <string name="license_check_success">License check success, thank you for downloading the app from Play Store.</string>
-    <string name="license_check_failed">License check failed, you didn\'t download the app from Play Store.
+    <string name="license_check_success">License check success. Thank you for downloading the app from the Play Store.</string>
+    <string name="license_check_failed">License check failed; you didn\'t download the app from the Play Store.
         You will not be able to use it.</string>
     <string name="license_check_retry">Unable to check license, please try again in a few moments.</string>
 
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Check</string>
-    <string name="playstore_check_success">Thanks you for installing the app from Google Play Store. Enjoy.</string>
-    <string name="playstore_check_failed">It seems like you have installed this icon pack from outside of Google Play Store.
+    <string name="playstore_check_success">Thank you for installing the app from the Google Play Store. Enjoy!</string>
+    <string name="playstore_check_failed">It seems like you have installed this icon pack from outside of the Google Play Store.
         You will not be able to use it.</string>
 
     <!-- Share -->
@@ -80,11 +80,11 @@
 
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Navigation drawer</string>
-    <string name="tap_intro_home_navigation_desc">Tap here or swipe from left edge of the screen to open navigation drawer</string>
+    <string name="tap_intro_home_navigation_desc">Tap here or swipe from the left edge of the screen to open the navigation drawer</string>
     <string name="tap_intro_home_apply">Apply icon pack</string>
     <string name="tap_intro_home_apply_desc">Tap here to apply %s to your current launcher. Long press to apply to other launchers.</string>
     <string name="tap_intro_icons_search">Search</string>
-    <string name="tap_intro_icons_search_desc">Tap here to search an icon</string>
+    <string name="tap_intro_icons_search_desc">Tap here to search for an icon</string>
     <string name="tap_intro_request_select">Select missed app</string>
     <string name="tap_intro_request_select_desc">Tap here to select missed app for icon request</string>
     <string name="tap_intro_request_select_all">Select all missed apps</string>
@@ -92,21 +92,21 @@
     <string name="tap_intro_request_send">Send icon request</string>
     <string name="tap_intro_request_send_desc">Tap here to send selected missed apps</string>
     <string name="tap_intro_request_premium">Premium icon request</string>
-    <string name="tap_intro_request_premium_desc">Tap here to buy premium icon request package,
-        with premium icon request you can get your requested apps faster.</string>
+    <string name="tap_intro_request_premium_desc">Tap here to buy the premium icon request package,
+        with a premium icon request, you can get your requested apps faster.</string>
     <string name="tap_intro_wallpapers_option">Wallpaper options</string>
-    <string name="tap_intro_wallpapers_option_desc">Tap and hold here to show wallpaper options, %s apply wallpaper.</string>
+    <string name="tap_intro_wallpapers_option_desc">Tap and hold here to show wallpaper options; %s apply wallpaper.</string>
     <string name="tap_intro_wallpapers_option_desc_download">download or</string>
     <string name="tap_intro_wallpapers_preview">Preview wallpaper</string>
-    <string name="tap_intro_wallpapers_preview_desc">Tap here to preview full size of the wallpaper</string>
+    <string name="tap_intro_wallpapers_preview_desc">Tap here to preview the full size of the wallpaper</string>
     <string name="tap_intro_wallpaper_preview_save">Save wallpaper</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Tap here to download and save wallpaper to your device so you can use it later</string>
     <string name="tap_intro_wallpaper_preview_apply">Apply wallpaper</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">Tap here to set wallpaper as homescreen background</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Tap here to set wallpaper as the homescreen background</string>
 
     <!-- Home -->
     <string name="home_more_apps_header">More Apps</string>
-    <string name="home_more_apps">Check other apps published on Google Play Store</string>
+    <string name="home_more_apps">Check other apps published on the Google Play Store</string>
     <string name="home_rate_and_review">Rate &amp; Review</string>
 
     <string name="home_apply_icon_pack">Apply %s</string>
@@ -125,19 +125,19 @@
     <string name="apply_installed">Installed Launcher</string>
     <string name="apply_supported">Supported Launchers</string>
 
-    <string name="apply_manual">%1$s Launcher doesn\'t support direct apply but you can apply %2$s manually from the launcher settings.</string>
+    <string name="apply_manual">%1$s Launcher doesn\'t support direct apply, but you can apply %2$s manually from the launcher settings.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso doesn\'t support direct apply but you can follow these steps:</string>
     <string name="apply_manual_kvaesitso_step_1">Open Kvaesitso\'s settings</string>
     <string name="apply_manual_kvaesitso_step_2">Tap \"Grid &amp; Icons\"</string>
     <string name="apply_manual_kvaesitso_step_3">Tap on the \"Icon Pack\"</string>
     <string name="apply_manual_kvaesitso_step_4">Choose %s from the list</string>
     <string name="apply_manual_kvaesitso_step_5">Tap the paint brush icon to enable or disable the background shape</string>
-    <string name="apply_manual_kiss">KISS doesn\'t support direct apply but you can follow these steps:</string>
+    <string name="apply_manual_kiss">KISS doesn\'t support direct apply, but you can follow these steps:</string>
     <string name="apply_manual_kiss_step_1">Open KISS settings</string>
     <string name="apply_manual_kiss_step_2">Tap \"User Interface\"</string>
     <string name="apply_manual_kiss_step_3">Tap on the \"Icon Pack\"</string>
     <string name="apply_manual_kiss_step_4">Choose %s from the list</string>
-    <string name="apply_manual_samsung_oneui">%1$s doesn\'t support direct apply but starting with %2$s you can apply icons with a companion app.</string>
+    <string name="apply_manual_samsung_oneui">%1$s doesn\'t support direct apply, but starting with %2$s you can apply icons with a companion app.</string>
     <string name="apply_manual_samsung_oneui_too_old">Your current version of %s is too old. Please update to Android 12 or newer to be able to apply icons directly. Alternatively, you can install a different launcher.</string>
     <string name="apply_manual_samsung_oneui_step_1">Open %s</string>
     <string name="apply_manual_samsung_oneui_step_2">Download the app %s</string>
@@ -146,7 +146,7 @@
     <string name="apply_manual_samsung_oneui_step_5">Tap the blue \"Iconpack\" button</string>
     <string name="apply_manual_samsung_oneui_step_6">Choose %s from the list</string>
     <string name="apply_manual_samsung_oneui_step_7">Repeat these steps each time you update %s as new icons won\'t be mapped automatically.</string>
-    <string name="apply_manual_hios">HiOS launcher doesn\'t support direct apply but you can follow these steps:</string>
+    <string name="apply_manual_hios">HiOS launcher doesn\'t support direct apply, but you can follow these steps:</string>
     <string name="apply_manual_hios_step_1">Open \"Settings\"</string>
     <string name="apply_manual_hios_step_2">Tap \"Theme &amp; Lockscreen\"</string>
     <string name="apply_manual_hios_step_3">Tap \"My theme\"</string>
@@ -160,14 +160,14 @@
     <string name="apply_manual_color_os_step_2">Tap \"Icons\"</string>
     <string name="apply_manual_color_os_step_3">Scroll to the right of the \"Custom\" button (this is a scrollable list!)</string>
     <string name="apply_manual_color_os_step_4">Tap %s</string>
-    <string name="apply_manual_before">This version of Before launcher does not yet support to apply icons directly. Instead, follow the steps below:</string>
+    <string name="apply_manual_before">This version of Before Launcher does not yet support applying icons directly. Instead, follow the steps below:</string>
     <string name="apply_manual_before_step_1">Swipe left on homescreen</string>
     <string name="apply_manual_before_step_2">Tap \"Settings\"</string>
     <string name="apply_manual_before_step_3">Tap \"Styles &amp; Themes\"</string>
     <string name="apply_manual_before_step_4">Tap \"Icon Styles &amp; Packs\"</string>
     <string name="apply_manual_before_step_5">Tap %s</string>
     <string name="apply_manual_nothing_step_1">Open \"Settings\"</string>
-    <string name="apply_manual_nothing_step_2">Tap \"Customisation\"</string>
+    <string name="apply_manual_nothing_step_2">Tap \"Customization\"</string>
     <string name="apply_manual_nothing_step_3">Tap \"Icon Pack\"</string>
     <string name="apply_manual_nothing_step_4">Tap %s</string>
     <string name="apply_launch_failed">Unable to launch %s settings</string>
@@ -177,14 +177,14 @@
     <string name="apply_launcher_not_installable">%s Launcher is not installed. Please try again after installing the launcher.</string>
 
     <string name="apply_cmtheme_not_available">CM Theme Manager is not available on this device</string>
-    <string name="apply_cmtheme_failed">Unable to launch CM Theme Manager, you can try to apply Icon Pack manually from Settings.</string>
+    <string name="apply_cmtheme_failed">Unable to launch CM Theme Manager, you can try to apply the Icon Pack manually from Settings.</string>
 
     <string name="apply_lg_home">To apply this Icon Pack open Settings - Display - Home Screen - Theme</string>
     <string name="apply_lg_home_not_available">LG Home is not available on this device</string>
-    <string name="apply_lg_home_failed">Unable to launch LG Home Settings, you can try to apply Icon Pack manually from Settings.</string>
+    <string name="apply_lg_home_failed">Unable to launch LG Home Settings, you can try to apply the Icon Pack manually from Settings.</string>
     <string name="apply_lg_home_nougat">LG Home with Android Nougat no longer supports Icon Pack. You need a custom launcher to use Icon Pack.</string>
 
-    <string name="apply_launcher_incompatible">%s Launcher doesn\'t support any icon pack, so you can\'t use this icon pack with this launcher. You can try a third-party app to use this icon pack in %2$s launcher. Do you want to install it?</string>
+    <string name="apply_launcher_incompatible">%s Launcher doesn\'t support any icon packs, so you can\'t use this icon pack with this launcher. You can try a third-party app to use this icon pack in the %2$s launcher. Do you want to install it?</string>
     <string name="apply_launcher_incompatible_depending_on_version">%s launcher doesn\'t support icon packs on Android %d or lower. Please update your Android version or install a third-party launcher to use this icon pack. You can also try a helper app to change individual icons. Do you want to install it?</string>
 
     <!-- Icons -->
@@ -202,9 +202,9 @@
 
     <string name="request_building">Building request …</string>
     <string name="request_pacific_sending">Sending request to Pacific Manager...</string>
-    <string name="request_pacific_error">Error occurred while sending request to Pacific Manager. Error is %s</string>
+    <string name="request_pacific_error">Error occurred while sending a request to Pacific Manager. Error is %s</string>
     <string name="request_pacific_success">Successfully sent request to Pacific Manager</string>
-    <string name="request_custom_error">Error occurred while sending icon request. If this error persists, contact the developer. %s</string>
+    <string name="request_custom_error">Error occurred while sending an icon request. If this error persists, contact the developer. %s</string>
     <string name="request_custom_success">Successfully sent icon request</string>
     <string name="request_fetching_data">Fetching latest data …</string>
     <string name="request_build_failed">Unable to build icon request</string>
@@ -214,26 +214,26 @@
     <string name="request_requested_button_cancel">Go back</string>
     <string name="request_requested_button_confirm">Select anyway</string>
     <string name="request_email_client">Choose the app you want to use to send the icon request</string>
-    <string name="request_app_disabled">You\'re using an older version of this icon pack. The requested icons may be included in the latest version. Please update your app to latest version to request icons.</string>
+    <string name="request_app_disabled">You\'re using an older version of this icon pack. The requested icons may be included in the latest version. Please update your app to the latest version to request icons.</string>
     <string name="connection_error_long">Unable to load data from server. Please, check your network connection.</string>
-    <string name="unable_to_load_config">An error occurred while fetching/reading data from the server.</string>
+    <string name="unable_to_load_config">An error occurred while fetching or reading data from the server.</string>
 
-    <string name="request_limit">You are only able to make %d request(s) with regular request.</string>
+    <string name="request_limit">You can only make %d request(s) with regular request.</string>
     <string name="request_used">You have requested %d icon(s).</string>
     <string name="request_limit_buy">You can buy Premium Requests to request more icons.</string>
     <string name="request_limit_reset">Icon request limit will be reset on every update.</string>
 
     <!-- Regular Request -->
     <string name="regular_request">Regular Icon Request</string>
-    <string name="regular_request_desc">Get your icon requested and developer will try to include icons you requested.</string>
+    <string name="regular_request_desc">Get your icon requested, and the developer will try to include icons you requested.</string>
     <string name="regular_request_count">Total\n%d request</string>
     <string name="regular_request_used">Used\n%d request</string>
     <string name="regular_request_available">Available\n%d request</string>
 
     <!-- Premium Request -->
     <string name="premium_request">Premium Icon Request</string>
-    <string name="premium_request_no_internet">Make sure your phone connected to internet before sending a premium request</string>
-    <string name="premium_request_desc">Premium icon request is pay to request. You can get your requested apps faster by using premium icon request.</string>
+    <string name="premium_request_no_internet">Make sure your phone is connected to the internet before sending a premium request</string>
+    <string name="premium_request_desc">Premium icon request is a pay-to request. You can get your requested apps faster by using a premium icon request.</string>
     <string name="premium_request_buy">Buy</string>
     <string name="premium_request_count">Total\n%d request</string>
     <string name="premium_request_used">Used\n%d request</string>
@@ -244,7 +244,7 @@
     <string name="premium_request_limit1">but you selected %d app(s).
         \n\nYou need to use all of your premium requests before using regular request again.</string>
 
-    <string name="premium_request_consume_failed">Unable to use Premium Request, make sure you have stable internet connection and try again.
+    <string name="premium_request_consume_failed">Unable to use Premium Request, make sure you have a stable internet connection and try again.
         Go to Settings to rebuild Premium Requests.</string>
 
     <string name="premium_request_rebuilding">Rebuilding Premium Request …</string>
@@ -276,7 +276,7 @@
     <string name="presets_load_failed">Unable to load presets</string>
     <string name="presets_storage_permission">Storage permission is needed to load the preview wallpaper</string>
     <string name="presets_required_apps">Required apps to use these presets</string>
-    <string name="presets_required_apps_not_installed">Required apps to use the preset is not installed. Please install missing required apps and try again.</string>
+    <string name="presets_required_apps_not_installed">Required apps to use the preset are not installed. Please install the missing required apps and try again.</string>
 
     <!-- Preferences -->
     <string name="pref_data_header">Data &amp; Cache</string>
@@ -327,7 +327,7 @@
     <!-- Intent -->
     <string name="app_client">Choose App</string>
     <string name="no_email_app">No application to send email</string>
-    <string name="no_browser">No application to open url</string>
+    <string name="no_browser">No application to open URL</string>
     <string name="intent_email_failed">Unable to display email application</string>>
     <string name="intent_email_supported">Supported</string>
     <string name="intent_email_recommended">Recommended</string>
@@ -340,7 +340,7 @@
     <string name="about_terms_and_conditions_title">Terms and Conditions</string>
 
     <!-- Report Bugs -->
-    <string name="report_bugs_desc">Please give a description about what kind of problem that you want to report</string>
+    <string name="report_bugs_desc">Please give a description of the kind of problem that you want to report</string>
     <string name="report_bugs_desc_hint">Description</string>
     <string name="report_bugs_desc_empty">Please give a description</string>
     <string name="report_bugs_building">Building activity list …</string>
@@ -352,14 +352,14 @@
 
     <!-- Crash Report -->
     <string name="crash_report">Crash Report</string>
-    <string name="crash_report_message">Unfortunately %s has crashed. Choose send report below to help developer fix the issue.</string>
+    <string name="crash_report_message">Unfortunately, %s has crashed. Choose Send Report below to help the developer fix the issue.</string>
     <string name="crash_report_send">Send Report</string>
 
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
-    <string name="about_dashboard_dev">CandyBar is open source icon pack dashboard licensed under Apache License 2.0 for
-        Android available at GitHub and free to use, developed by Dani Mahardhika.</string>
-    <string name="about_open_source_licenses">Open Source Licenses</string>
+    <string name="about_dashboard_dev">CandyBar is an open-source icon pack dashboard licensed under Apache License 2.0 for
+        Android available on GitHub and free to use, developed by Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Open-Source Licenses</string>
     <string name="about_dashboard_contributors">CandyBar Contributors</string>
     <string name="about_dashboard_translator">CandyBar Translator</string>
 
