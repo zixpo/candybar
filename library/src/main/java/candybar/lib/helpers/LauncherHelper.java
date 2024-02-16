@@ -163,7 +163,7 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_poco,
                 new String[]{"com.mi.android.globallauncher"},
                 false),
-		MOTO(
+        MOTO(
                 "Moto Launcher",
                 R.drawable.ic_launcher_moto,
                 new String[]{"com.motorola.launcher3"},
