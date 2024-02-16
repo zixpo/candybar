@@ -123,6 +123,12 @@
                 <action android:name="com.gridappsinc.launcher.theme.apk_action" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+			<!-- Moto Launcher -->
+            <intent-filter>
+                <action android:name="com.motorola.launcher.ACTION_ICON_PACK" />
+                <action android:name="com.motorola.launcher3.ICON_PACK_CHANGED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <!-- Lawnchair -->
             <intent-filter>
                 <action android:name="ch.deletescape.lawnchair.ICONPACK" />
