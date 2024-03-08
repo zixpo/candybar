@@ -30,15 +30,16 @@
             android:layout_gravity="end"
             android:visibility="gone" />
 
-        <me.grantland.widget.AutofitTextView
+        <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/button_margin"
             android:gravity="center_vertical"
-            android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/text_max_size"
-            app:minTextSize="@dimen/text_content_title" />
+            android:textColor="?android:attr/textColorPrimary"
+            app:autoSizeMaxTextSize="@dimen/text_max_size"
+            app:autoSizeMinTextSize="@dimen/text_content_title" />
 
         <TextView
             android:id="@+id/subtitle"
