@@ -35,6 +35,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.core.text.HtmlCompat;
+import androidx.core.widget.TextViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -78,7 +79,6 @@ import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.views.HeaderView;
-import me.grantland.widget.AutofitTextView;
 
 /*
  * CandyBar - Material Dashboard
@@ -182,7 +182,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             contentViewHolder.title.setSingleLine(false);
             contentViewHolder.title.setMaxLines(10);
-            contentViewHolder.title.setSizeToFit(false);
+            TextViewCompat.setAutoSizeTextTypeWithDefaults(contentViewHolder.title, TextViewCompat.AUTO_SIZE_TEXT_TYPE_NONE);
             contentViewHolder.title.setGravity(Gravity.CENTER_VERTICAL);
             contentViewHolder.title.setIncludeFontPadding(true);
             contentViewHolder.title.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
@@ -288,13 +288,12 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     contentViewHolder.title.setVisibility(View.VISIBLE);
                 }
 
-                contentViewHolder.title.setSingleLine(true);
-                contentViewHolder.title.setMaxLines(1);
+                contentViewHolder.title.setLines(1);
                 contentViewHolder.title.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                         mContext.getResources().getDimension(R.dimen.text_max_size));
                 contentViewHolder.title.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
                 contentViewHolder.title.setIncludeFontPadding(false);
-                contentViewHolder.title.setSizeToFit(true);
+                TextViewCompat.setAutoSizeTextTypeWithDefaults(contentViewHolder.title, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
 
                 contentViewHolder.subtitle.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
             } else {
@@ -642,7 +641,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private class ContentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         private final TextView subtitle;
-        private final AutofitTextView title;
+        private final TextView title;
         private final ProgressBar progressBar;
         private final boolean quickApply;
 
