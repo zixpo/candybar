@@ -27,17 +27,15 @@
             app:heightRatio="7"
             app:widthRatio="16" />
 
-        <com.mikhaellopez.circularimageview.CircularImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profile"
             android:layout_width="@dimen/about_profile"
             android:layout_height="@dimen/about_profile"
-            android:layout_marginTop="@dimen/about_profile_margin_top"
             android:layout_gravity="center_horizontal"
-            app:civ_border_color="?cb_cardBackground"
-            app:civ_border_width="@dimen/about_profile_border"
-            app:civ_shadow="true"
-            app:civ_shadow_radius="12"
-            app:civ_shadow_color="#22000000" />
+            android:layout_marginTop="@dimen/about_profile_margin_top"
+            android:background="?cb_cardBackground"
+            android:elevation="4dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
         <TextView
             android:layout_width="match_parent"
