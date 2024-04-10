@@ -18,7 +18,6 @@
     <string name="hour">Oră</string>
     <string name="save_setting">Salvare</string>
     <string name="muzei_refresh_duration">Durată reîmprospătare</string>
-    <string name="muzei_wifi_only">Reîmprospătare doar prin Wi-Fi</string>
     <string name="muzei_downloaded_only">Încarcă doar imaginile descărcate</string>
     <string name="muzei_settings_ignored">Pachetul de pictograme nu conține imagini de fundal, setările sunt ignorate.</string>
     <string name="muzei_settings_saved">Setări salvate</string>
@@ -50,28 +49,19 @@
     <!-- Changelog -->
     <string name="changelog_version">Versiune</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">Nu se pot încărca produsele InApp Purchase</string>
     <!-- License -->
     <string name="license_checking">Verificare licență …</string>
     <string name="license_check">Verificare Licență</string>
-    <string name="license_check_success">Verificarea licenței a reușit, mulțumim pentru descărcarea aplicației din Magazin Play.</string>
-    <string name="license_check_failed">Verificarea licenței a eșuat, nu ai descărcat aplicația din Magazin Play.
-        Nu o vei putea folosi.</string>
     <string name="license_check_retry">Imposibil de verificat licența, încearcă din nou în câteva momente.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Verificare Magazin Play</string>
-    <string name="playstore_check_success">Vă mulțumim pentru instalarea aplicației din Magazinul Google Play. Bucurați-vă de ea.</string>
-    <string name="playstore_check_failed">Se pare că ai instalat acest pachet de pictograme din afara Magazinului Google Play.
-        Nu îl vei putea folosi.</string>
     <!-- Share -->
     <string name="share_app_title">Yo! Verifică %s</string>
     <string name="share_app_body">Verifică %1$s, acest pachet de pictograme este foarte interesant! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Sertar navigare</string>
-    <string name="tap_intro_home_navigation_desc">Apasă aici sau trage din marginea stângă a ecranului pentru a deschide sertarul de navigare</string>
     <string name="tap_intro_home_apply">Aplică pachetul de pictograme</string>
     <string name="tap_intro_icons_search">Căutare</string>
-    <string name="tap_intro_icons_search_desc">Apasă aici pentru a căuta o pictogramă</string>
     <string name="tap_intro_request_select">Selectează aplicația omisă</string>
     <string name="tap_intro_request_select_desc">Atinge aici pentru a selecta aplicația omisă pentru solicitarea de pictograme</string>
     <string name="tap_intro_request_select_all">Selectează toate aplicațiile omise</string>
@@ -79,20 +69,14 @@
     <string name="tap_intro_request_send">Trimite cererea de pictograme</string>
     <string name="tap_intro_request_send_desc">Apasă aici pentru a trimite aplicațiile selectate omise</string>
     <string name="tap_intro_request_premium">Cerere premium de pictograme</string>
-    <string name="tap_intro_request_premium_desc">Apasă aici pentru a cumpăra pachetul de cereri cu pictograme premium,
-        cu o solicitare de pictograme premium poți obține mai rapid aplicațiile solicitate.</string>
     <string name="tap_intro_wallpapers_option">Opțiuni fundal</string>
-    <string name="tap_intro_wallpapers_option_desc">Apasă și țineți apăsat aici pentru a afișa opțiunile de tapet, %s aplică imaginea de fundal.</string>
     <string name="tap_intro_wallpapers_option_desc_download">descărcare sau</string>
     <string name="tap_intro_wallpapers_preview">Previzualizare fundal</string>
-    <string name="tap_intro_wallpapers_preview_desc">Apasă aici pentru a previzualiza dimensiunea completă a imaginii de fundal</string>
     <string name="tap_intro_wallpaper_preview_save">Salvează imaginea de fundal</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Apasă aici pentru a descărca și salva imaginea de fundal pe dispozitivul tău astfel încât să o poți folosi mai târziu</string>
     <string name="tap_intro_wallpaper_preview_apply">Aplică imaginea de fundal</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">Apasă aici pentru a seta imaginea ca fundal de ecran principal</string>
     <!-- Home -->
     <string name="home_more_apps_header">Mai multe aplicații</string>
-    <string name="home_more_apps">Verifică alte aplicații publicate în Magazinul Google Play</string>
     <string name="home_rate_and_review">Evaluare și Recenzie</string>
     <string name="home_apply_icon_pack">Aplicare %s</string>
     <string name="home_donate">Donează</string>
@@ -107,18 +91,14 @@
     <!-- Apply -->
     <string name="apply_installed">Lansator instalat</string>
     <string name="apply_supported">Lansatoare suportate</string>
-    <string name="apply_manual">Lansatorul %1$s nu acceptă aplicare directă, dar poți aplica %2$s manual din setările lansatorului.</string>
     <string name="apply_launch_failed">Imposibil de lansat setările %s</string>
     <string name="apply_launcher_not_installed">Lansatorul %s nu este instalat. Dorești să deschizi
         Magazin Google Play pentru a descărca și instala?</string>
     <string name="apply_launcher_not_installable">Lansatorul %s nu este instalat. Încearcă din nou după instalarea lansatorului.</string>
     <string name="apply_cmtheme_not_available">Managerul de teme CM nu este disponibil pe acest dispozitiv</string>
-    <string name="apply_cmtheme_failed">Imposibil de lansat Managerul de Teme CM, poți încerca să aplici Pachetul de pictograme manual din Setări.</string>
     <string name="apply_lg_home">Pentru a aplica acest pachet de pictograme deschide Setări - Afișare - Ecran de pornire - Temă</string>
     <string name="apply_lg_home_not_available">LG Home nu este disponibil pe acest dispozitiv</string>
-    <string name="apply_lg_home_failed">Imposibil de lansat setările LG Home, poți încerca să aplici Pachetul de pictograme manual din Setări.</string>
     <string name="apply_lg_home_nougat">LG Home cu Android Nougat nu mai acceptă Pachete de pictograme. Aveți nevoie de un lansator personalizat pentru a utiliza Pachete de pictograme.</string>
-    <string name="apply_launcher_incompatible">Lansatorul %s nu acceptă nici un pachet de pictograme, așa că nu puteți utiliza acest pachet de pictograme cu acest lansator. Puteți încerca o aplicație externă pentru a utiliza acest pachet de pictograme în lansatorul %2$s. Doriți să îl instalați?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Imposibil de încărcat pictogramele</string>
     <string name="icon_shape">Formă pictogramă</string>
@@ -131,30 +111,23 @@
     <string name="request_already_requested">Deja solicitată</string>
     <string name="request_building">Construire solicitare …</string>
     <string name="request_pacific_sending">Se trimite cererea către Pacific Manager...</string>
-    <string name="request_pacific_error">Eroare în timpul trimiterii cererii la Pacific Manager. Eroare este %s</string>
     <string name="request_pacific_success">Cerere trimisă cu succes către Pacific Manager</string>
-    <string name="request_custom_error">A apărut o eroare la trimiterea cererii de pictograme. Dacă această eroare persistă, contactați dezvoltatorul. %s</string>
     <string name="request_custom_success">Cerere pictograme trimisă cu succes</string>
     <string name="request_fetching_data">Preluarea celor mai recente date …</string>
     <string name="request_build_failed">Imposibil de creat cererea de pictograme</string>
     <string name="request_appfilter_failed">Nu se poate citi appfilter.xml</string>
     <string name="request_email_client">Alegeți aplicația pe care doriți să o utilizați pentru a trimite solicitarea de pictograme</string>
-    <string name="request_app_disabled">Utilizezi o versiune mai veche a acestui pachet de pictograme. Pictogramele solicitate pot fi incluse în ultima versiune. Actualizează aplicația la cea mai recentă versiune pentru a solicita pictograme.</string>
     <string name="connection_error_long">Nu s-au putut încărca datele de la server. Verifică conexiunea la rețea.</string>
-    <string name="unable_to_load_config">A aparut o eroare la preluarea datelor de pe server.</string>
-    <string name="request_limit">Puteți face doar %d cereri cu solicitarea obișnuită.</string>
     <string name="request_used">Ați solicitat %d pictograme.</string>
     <string name="request_limit_buy">Poți cumpăra Cereri Premium pentru a solicita mai multe pictograme.</string>
     <string name="request_limit_reset">Limita cererii de pictograme va fi resetată la fiecare actualizare.</string>
     <!-- Regular Request -->
     <string name="regular_request">Cerere obișnuită de pictograme</string>
-    <string name="regular_request_desc">Solicitați pictograme și dezvoltatorul va încerca să includă pictogramele pe care le-ați solicitat.</string>
     <string name="regular_request_count">Total\n%d solicitări</string>
     <string name="regular_request_used">Utilizat\n%d solicitări</string>
     <string name="regular_request_available">Disponibil\n%d solicitări</string>
     <!-- Premium Request -->
     <string name="premium_request">Cerere premium de pictograme</string>
-    <string name="premium_request_no_internet">Asigurați-vă că telefonul este conectat la internet înainte de a trimite o cerere premium</string>
     <string name="premium_request_buy">Cumpărare</string>
     <string name="premium_request_count">Total\n%d solicitări</string>
     <string name="premium_request_used">Utilizat\n%d solicitări</string>
@@ -176,7 +149,6 @@
     <string name="presets_load_failed">Imposibil de încărcat presetările</string>
     <string name="presets_storage_permission">Permisiunea de stocare este necesară pentru a încărca imaginea de fundal</string>
     <string name="presets_required_apps">Aplicații necesare pentru utilizarea acestor presetări</string>
-    <string name="presets_required_apps_not_installed">Aplicațiile necesare pentru utilizarea presetării nu sunt instalate. Instalează aplicațiile necesare care lipsesc și încearcă din nou.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Date și Cache</string>
     <string name="pref_data_cache">Golește memoria cache</string>
@@ -215,7 +187,6 @@
     <!-- Intent -->
     <string name="app_client">Alege Aplicația</string>
     <string name="no_email_app">Nicio aplicație pentru a trimite e-mail</string>
-    <string name="no_browser">Nicio aplicație pentru a deschide url-ul</string>
     <string name="intent_email_failed">Imposibil de afișat aplicația de e-mail</string>
     <string name="intent_email_supported">Suportat</string>
     <string name="intent_email_recommended">Recomandat</string>
@@ -234,9 +205,6 @@
     <string name="crash_report_send">Trimite raportul</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
-    <string name="about_dashboard_dev">CandyBar este un tablou de bord open source sub licența Apache Licențe 2. pentru
-        Android disponibil pe GitHub și gratuit de utilizat, dezvoltat de Dani Mahardhika.</string>
-    <string name="about_open_source_licenses">Licențe cu sursă deschisă</string>
     <string name="about_dashboard_contributors">Contribuitori CandyBar</string>
     <string name="about_dashboard_translator">Traducători CandyBar</string>
     <!-- DrawerToggle -->
