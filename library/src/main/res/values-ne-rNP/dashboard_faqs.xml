@@ -9,13 +9,13 @@
         <!-- I can\'t see a complete icon name -->
         <!-- How can i replace icons with an alternate icon? -->
         <!-- How do i request an icon? -->
-        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- How can i restore the remaining Premium Requests after reinstalling the app? -->
         <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
         <!-- Why do the icons looks jaggy or pixelated on my phone? -->
         <!-- I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed? -->
+            but why isn\'t the actual icon on the app drawer changed? -->
         <!-- What is the \"report bugs\" option? -->
-        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- My launcher is listed in the Google Play description, but why isn\'t it included in apply section? -->
         <!-- Wallpaper can\'t be applied, just showing black screen? -->
         <!-- Muzei: How to load downloaded wallpapers only? -->
         <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
@@ -23,7 +23,7 @@
         <!-- Why are Read &amp; Write External Storage permission needed? -->
         <!-- Why is Internet permission needed? -->
         <!-- Why is Access Network State permission needed? -->
-        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Access Wi-Fi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
@@ -37,12 +37,13 @@
         <item>मैले किन आइकनको पुरा नाम देखेन</item>
         <item>म कुनै आइकनमा कसरी वैकल्पिक आइकन रोज्न सक्छु?</item>
         <item>आइकनको अनुरोध कसरी गर्न सकिन्छ ?</item>
-        <item>एप्लीकेशन रिइन्सटल पछि, कसरी बाँकी प्रिमियम अनुरोधहरू पुनर्स्थापना गर्न सक्छु?</item>
-        <item>फोन रिस्टार्ट गर्दा, आइकन किन लागु भएन, किन डिफल्ट आइकन नै लागु भयो?</item>
+        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
+        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
         <item>मेरो फोनमा आइकन धमिलो र फाटेको जस्तो किन देखिएको होला?</item>
-        <item>मैले सबै समावेश गरिएका आइकनहरुमा आइकन देखे, तर किन ड्रयरमा एपको वास्तविक आइकन परिवर्तन भएन ?</item>
+        <item>I can see the icon included in all icons,
+            but why isn\'t the actual icon on the app drawer changed?</item>
         <item>\"बग रिपोर्ट\" के हो?</item>
-        <item>मैले एन्सटल गरेको लन्चर गुगल प्लेमा सूचीबद्ध छ, तर किन यो लागू सेक्सनमा समावेश गरिएको छैन?</item>
+        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
         <item>वालपेपर लागू गर्न सकिँदैन, किन कालो स्क्रिन मात्र देखाउँछ?</item>
         <item>Muzei: डाउनलोड गरिएका वालपेपर मात्र कसरी लोड गर्ने?</item>
         <item>Muzei: म प्रत्येक पटक वालपेपर परिवर्तन हुँदा वालपेपर डाउनलोड गरी राख्न चाहदैन ?</item>
@@ -58,33 +59,39 @@
     <string-array name="answers">
         <item>लन्चर एन्ड्रोइड युजर ईन्टरफेसको अंश हो, जसले गर्दा प्रयोगकर्ताले फोनको होम स्क्रिन आफ्नो अनुकुल गर्न, मोबाइल मा रहेका एपहरु खोल्न, फोन कल गर्न, र एन्ड्रोइड उपकरणहरूमा भएका अन्य कार्यहरू गर्न मद्दत पुर्‍याउँछ।</item>
         <item>आइकन प्याक भनेको एक किसिमको ग्राफिक्स सेट हो, जस्ले तपाईंको फोन ड्रअर भएका आइकनको रूप परिवर्तन गर्दछ।</item>
-        <item>तपाइँलाई कस्टम आईकन प्याकलाई समर्थन गर्ने लन्चर चाहिन्छ । समर्थन गर्ने लन्चरहरू प्ले स्टोरमा उपलब्ध छन्। यदि तपाईं कुन लन्चर प्रयोग गर्ने भनेर अल्मलिनु भएको छ भने, तपाईं \"लागू गर्नुहोस्\" सेक्सनमा गएर त्यहाँ कुनै एउटा लन्चरमा चएन गर्नुहोस्।</item>
-        <item>नेभिगेसन ड्रयर खोल्नुहोस, त्यसपछि \"लागू गर्नुहोस्\" चएन गर्न सक्नुहुन्छ। सूचीबाट तपाईंले इन्स्टल गरेको लन्चर चएन गर्नुहोस्। यदि तपाईंको लन्चर त्यहाँ सूचीबद्ध छैन, तर यो आइकन प्याकलाई लन्चरले सँग उपयुक्त छ भने (समर्थित लन्चरहरूको लागि गुगल प्ले स्टोर विवरण हेर्नुहोस्), तपाईं आइकन प्याकलाई आफ्नो लन्चर सेटिंग्सबाट लागू गर्न सक्नुहुनेछ।</item>
-        <item>नेभिगेसन ड्रयर खोल्नुहोस त्यसपछि \"आइकनहरु\" खोल्न सक्नुहुनेछ</item>
+        <item>You will need a launcher that supports custom icon packs.
+            Supported launchers are listed in the Play Store description.
+            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
+        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
+            If your launcher is not listed there, but this icon pack is compatible with it
+            (see on Google Play Store description for supported launchers),
+            you can apply the icon pack manually in your launcher settings.</item>
+        <item>You can open the navigation drawer and then open \"Icons\"</item>
         <item>सर्बप्रथम आइकनलाई ट्याप गर्नुहोस्। आइकन पूर्वावलोकनको लागी, ठूलो छवि जसमा नाम सहितको ठुलो आइकन देखिनेछ।</item>
         <item>यो त तपाईं कुन लन्चर प्रयोग गर्दै हुनुहुन्छ भन्नेमा भर पर्दछ। सबै लन्चरमा आइकन सम्पादन गर्न सकिदैन। प्राय: तपाईं आइकन ट्याप र होल्ड गरेर वा दुई पटक ट्याप गरेर आईकन सम्पादन गर्न सक्नुहुनेछ।</item>
-        <item>यसको लागि तपाईं नेभिगेसन ड्रयर खोलेर, त्यसपछि \"आइकन अनुरोध\" खोल्न सक्नुहुन्छ।</item>
-        <item>तपाईं नेभिगेसन ड्रयर गएर \"सेटिंग्स\" खोल्नुहोस् , \"खरीदहरू पुनर्स्थापना गर्नुहोस्\" लाई छनौट गर्नुहोस्। यदि तपाईंसँग पुन: स्थापना गर्नु अघि बाँकी रहेका कुनै  प्रिमियम अनुरोधहरू छन् भने तिनीहरू पुनर्स्थापना हुनेछन्।</item>
-        <item>यो आइकन प्याक एसडी कार्डमा सारिएको हुनाले यस्तो भएको हो, यसलाई तपाईंले आन्तरिक मेमोरीमा स्थापना गर्नुपर्नेछ।</item>
-        <item>यो समस्या लन्चरबाट आउन सक्छ जुन तपाईंले आइकनको ठूलो रिजोलुसन प्रयोग गर्दा भएको हो ।
-तपाईं यसलाई आइकनको आकार १५० - १२०% मा बढाउँदै यसलाई ठीक पार्न सक्नुहुनेछ।
-वा वैकल्पिक रूपमा तपाईं आफ्नो फोनमा भएको लन्चर परिवर्तन पनि गर्न सक्नु हुनेछ।</item>
-        <item>सेटिंग्स खोल्नुहोस्, तल स्क्रोल गर्नुहोस्, त्यसपछि \"बग रिपोर्ट\" छनौट गर्नुहोस्।</item>
+        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
+        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
+            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
+        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
+        <item>The problem might come from the launcher that you used when handling big icon resolution.
+       	    You can fix it by increasing the icon size to 115–120%.
+       	    Alternatively, you might change your launcher.</item>
+        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
         <item>\"रिपोर्ट बगहरू\" आइकन प्याकमा सम्बन्धित बगहरू रिपोर्ट गर्न प्रयोग गरिन्छ तर ड्याशबोर्ड सम्बन्धित बगहरू रिपोर्ट गर्न को लागि चाँही होइन।</item>
-        <item>कुनै कुनै लन्चरले प्रत्यक्ष समर्थन गर्दैन, र ती मध्ये केही ड्यासबोर्डबाट सीधा प्रबेश गर्न पनि सकिदैन।
-तपाईं यो आइकन प्याकलाई तपाईंको फोनमा भएको कुनै लन्चरको सेटिंग्सबाट मैन्युअल्ली लागू गर्न सक्नुहुनेछ।</item>
+        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
+      	    You can apply this icon pack manually in the individual launcher settings.</item>
         <item>जब तपाईं एपबाट सिधा \"वालपेपर सेट गर्नुहोस्\" गर्नुहुन्छ भने, यो क्यासमा डाउनलोड हुनेछ, त्यसो भए ड्यासबोर्ड एपले यसलाई लागू गर्न प्रयास गर्नेछ। लागू हुन केहि समय लिने छ र छोटो समय को लागी केही मात्रामा र्याम मेमोरी को आवश्यक पर्नेछ।
 तपाईंको फोनमा वालपेपर प्रशोधन गर्न पर्याप्त र्याम छैन भने \"कालो स्क्रिन\" को समस्या देखा पर्न सक्छ।
 फोन पुन: सुरु गर्नाले यो समस्याको समाधान हुनेछ। पुनः सुरु गर्नाले, तपाईंको फोनमा धेरै र्याम उपलब्ध हुनेछ।
 वैकल्पिक रूपमा, तपाईं ग्यालरीबाट डाउनलोड गरिएको वालपेपर, त्यहाँबाट वालपेपरको रूपमा सेट गर्न सक्नुहुनेछ।</item>
-        <item>Muzei खोल्नुहोस, आइकन प्याक चयन गरेर, सेटिंग्स मा जानुहोस। तपाईंले डाउनलोड गरेका वालपेपरलाई लोड गर्ने विकल्प देख्नुहुनेछ।
-पहिले तपाईंले ड्यासबोर्डबाट वालपेपर डाउनलोड गर्नु पर्नेछ।</item>
+        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
+            You will need to download wallpapers from the dashboard first.</item>
         <item>यदि वालपेपर पहिले नै डाउनलोड गरिएको छ भने, त्यो तपाईंको फोन मेमोरीबाट स्वत लोड हुनेछ।
 वालपेपर परिवर्तन हुँदा Muzei ले यसलाई डाउनलोड गर्न चाँही छोड्दैन। सर्वप्रथम तपाईंले ड्यासबोर्डबाट वालपेपर डाउनलोड गर्नु पर्नेछ।</item>
         <item>ड्यासबोर्ड खोल्नुहोस्, जुन तपाईं वालपेपर Muzei मा प्रयोग गर्न चाहानुहुन्छ त्यसलाई डाउनलोड गर्नुहोस।
 Muzei सेटिंग्स खोल्नुहोस्, त्यसपछी डाउनलोड गरिएका वालपेपर मात्र चयन गर्नुहोस।</item>
         <item>यो क्यास मेमोरी रिड राइट गर्न, र आइकनको अनुरोध डाटा संकलन प्रयोग गर्न चाहिन्छ।</item>
-        <item>क्लाउडमा आधारित वालपेपर लोड र डाउनलोड गर्नको लागि यसको आवश्यकता हुन्छ।</item>
+        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
         <item>यो तपाईंको फोनसँग इन्टरनेट जोडिएको छ वा छैन जाँच्न प्रयोग गरिन्छ।</item>
         <item>यो Muzei बाट क्लाउड वालपेपर लोड गर्नको निमित्त, तपाईको फोन इन्टरनेट सँग जोडिएको छ या छैन निश्चित गर्न  प्रयोग गरिएको हुन्छ ।</item>
         <item>यो ड्यासबोर्ड एपबाट सिधै वालपेपर लागू गर्न प्रयोग गरिन्छ।</item>
