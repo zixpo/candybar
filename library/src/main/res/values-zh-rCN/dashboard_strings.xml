@@ -18,7 +18,6 @@
     <string name="hour">小时</string>
     <string name="save_setting">保存</string>
     <string name="muzei_refresh_duration">刷新时间间隔</string>
-    <string name="muzei_wifi_only">仅在 Wifi 下刷新</string>
     <string name="muzei_downloaded_only">只使用已下载的壁纸</string>
     <string name="muzei_settings_ignored">图标包不包含任何壁纸，设置将被忽略。</string>
     <string name="muzei_settings_saved">设置已保存</string>
@@ -50,29 +49,20 @@
     <!-- Changelog -->
     <string name="changelog_version">版本</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">无法加载应用内购买内容。</string>
     <!-- License -->
     <string name="license_checking">检查许可中……</string>
     <string name="license_check">许可证检查</string>
-    <string name="license_check_success">许可证检查成功，感谢您从Play商店下载应用程序。</string>
-    <string name="license_check_failed">许可证检查未通过，您不是从 Play 商店中下载的本程序。
-您无法使用本程序。</string>
     <string name="license_check_retry">无法检查许可证，请稍后重试。</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play商店检查</string>
-    <string name="playstore_check_success">感谢您从Google Play商店安装应用。祝您愉快！</string>
-    <string name="playstore_check_failed">看起来您已经从Google Play商店之外安装了这个图标包。
-        您将无法使用它。</string>
     <!-- Share -->
     <string name="share_app_title">快来看看 %s</string>
     <string name="share_app_body">来看看 %1$s，这个图标包超酷的！%2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">导航栏</string>
-    <string name="tap_intro_home_navigation_desc">点击此处或从屏幕左侧滑动以打开导航栏</string>
     <string name="tap_intro_home_apply">应用图标包</string>
     <string name="tap_intro_home_apply_desc">点击此处将 %s 应用于您当前的启动器。长按可应用于其他启动器</string>
     <string name="tap_intro_icons_search">搜索</string>
-    <string name="tap_intro_icons_search_desc">点此搜索图标</string>
     <string name="tap_intro_request_select">选择未适配程序</string>
     <string name="tap_intro_request_select_desc">点此选择未适配程序来申请图标</string>
     <string name="tap_intro_request_select_all">全选未适配程序</string>
@@ -80,19 +70,14 @@
     <string name="tap_intro_request_send">提交图标申请</string>
     <string name="tap_intro_request_send_desc">点此提交未适配程序</string>
     <string name="tap_intro_request_premium">高级图标申请权</string>
-    <string name="tap_intro_request_premium_desc">点此购买高级图标申请权，拥有它你所申请的程序将享有图标适配更高的优先权。</string>
     <string name="tap_intro_wallpapers_option">壁纸选项</string>
-    <string name="tap_intro_wallpapers_option_desc">按住这里显示壁纸选项，%s 应用壁纸。</string>
     <string name="tap_intro_wallpapers_option_desc_download">下载或者</string>
     <string name="tap_intro_wallpapers_preview">预览壁纸</string>
-    <string name="tap_intro_wallpapers_preview_desc">点此预览壁纸原图</string>
     <string name="tap_intro_wallpaper_preview_save">保存壁纸</string>
     <string name="tap_intro_wallpaper_preview_save_desc">点此下载壁纸并保存到设备以便之后使用</string>
     <string name="tap_intro_wallpaper_preview_apply">应用壁纸</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">点此将壁纸设定为主屏幕背景</string>
     <!-- Home -->
     <string name="home_more_apps_header">更多应用</string>
-    <string name="home_more_apps">查看我在 Google Play 商店中发布的其它程序</string>
     <string name="home_rate_and_review">评分 &amp; 评论</string>
     <string name="home_apply_icon_pack">应用 %s</string>
     <string name="home_donate">捐赠</string>
@@ -107,19 +92,16 @@
     <!-- Apply -->
     <string name="apply_installed">已安装的启动器</string>
     <string name="apply_supported">受支持的启动器</string>
-    <string name="apply_manual">%1$s 不支持直接从程序中应用图标，你可以从启动器设置中手动应用 %2$s。</string>
     <string name="apply_manual_kvaesitso">Kvaesitso 不支持直接应用，但您可以按照这些步骤：</string>
     <string name="apply_manual_kvaesitso_step_1">打开 Kvaesitso 的设置</string>
     <string name="apply_manual_kvaesitso_step_2">点击网格和图标</string>
     <string name="apply_manual_kvaesitso_step_3">点击图标包</string>
     <string name="apply_manual_kvaesitso_step_4">从列表中选择 %s</string>
     <string name="apply_manual_kvaesitso_step_5">点击画笔图标启用或禁用背景形状</string>
-    <string name="apply_manual_kiss">KISS不支持直接应用，但你可以按照以下步骤进行：</string>
     <string name="apply_manual_kiss_step_1">打开 KISS 设置</string>
     <string name="apply_manual_kiss_step_2">点击 用户界面</string>
     <string name="apply_manual_kiss_step_3">点击图标包</string>
     <string name="apply_manual_kiss_step_4">从列表中选择 %s</string>
-    <string name="apply_manual_samsung_oneui">%1$s 不支持直接应用，但您可以使用%2$s 应用图标。</string>
     <string name="apply_manual_samsung_oneui_too_old">您当前的 %s 版本为旧版。请更新到 Android 12 或更高版本，以便直接应用图标。 您也可以安装另一个启动器。</string>
     <string name="apply_manual_samsung_oneui_step_1">打开 %s</string>
     <string name="apply_manual_samsung_oneui_step_2">下载APP %s</string>
@@ -128,7 +110,6 @@
     <string name="apply_manual_samsung_oneui_step_5">点击蓝色的“图标”按钮</string>
     <string name="apply_manual_samsung_oneui_step_6">从列表中选择 %s</string>
     <string name="apply_manual_samsung_oneui_step_7">每次更新 %s 时重复这些步骤，因为启动器不会自动更新图标</string>
-    <string name="apply_manual_hios">HiOS 启动器不支持直接应用，但您可以遵循这些步骤：</string>
     <string name="apply_manual_hios_step_1">打开设置</string>
     <string name="apply_manual_hios_step_2">点击 主题锁屏</string>
     <string name="apply_manual_hios_step_3">点击\"我的主题\"</string>
@@ -142,26 +123,21 @@
     <string name="apply_manual_color_os_step_2">点击 图标</string>
     <string name="apply_manual_color_os_step_3">滚动到“自定义”按钮右边(这是一个可滚动的列表!)</string>
     <string name="apply_manual_color_os_step_4">点击 %s</string>
-    <string name="apply_manual_before">此版本的启动器尚不支持直接应用图标，而是按照下面的步骤：</string>
     <string name="apply_manual_before_step_1">在主屏幕上向左滑动</string>
     <string name="apply_manual_before_step_2">点击 \"设置\"</string>
     <string name="apply_manual_before_step_3">点击“样式和主题”</string>
     <string name="apply_manual_before_step_4">点击 \"图标样式”</string>
     <string name="apply_manual_before_step_5">点击 %s</string>
     <string name="apply_manual_nothing_step_1">打开设置</string>
-    <string name="apply_manual_nothing_step_2">点击 \"自定义\"</string>
     <string name="apply_manual_nothing_step_3">点击 \"图标包\"</string>
     <string name="apply_manual_nothing_step_4">点击 %s</string>
     <string name="apply_launch_failed">无法启动 %s 设置</string>
     <string name="apply_launcher_not_installed">%s 尚未安装。你想跳转到 Google Play 商店去下载安装它吗？</string>
     <string name="apply_launcher_not_installable">%s 启动器未安装。请安装启动器后重试。</string>
     <string name="apply_cmtheme_not_available">CM 主题管理器在此设备上不可用。</string>
-    <string name="apply_cmtheme_failed">无法启动 CM 主题管理器，你可以尝试从设置中你手动应用图标包。</string>
     <string name="apply_lg_home">打开设置 - 显示 - 主屏幕 - 主题  来应用本图标包</string>
     <string name="apply_lg_home_not_available">LG Home 在此设备上不可用。</string>
-    <string name="apply_lg_home_failed">无法启动 LG Home 设置，你可以尝试从设置中手动应用图标包。</string>
     <string name="apply_lg_home_nougat">Android Nougat 版本的 LG Home 不再支持图标包了。你需要一个第三方启动器来使用图标包。</string>
-    <string name="apply_launcher_incompatible">%s 启动器不支持任何图标包，所以您不能使用此图标包的启动器。 您可以尝试第三方应用在 %2$s 启动器中使用此图标包。您想要安装它吗？</string>
     <string name="apply_launcher_incompatible_depending_on_version">%s 启动器不支持 Android %d 或更低版本的图标包。 请更新您的 Android 版本或安装第三方启动器来使用此图标包。 您也可以尝试帮助程序更改个别图标。您想要安装它吗？</string>
     <!-- Icons -->
     <string name="icons_load_failed">图标加载失败</string>
@@ -176,9 +152,7 @@
     <string name="request_not_available">无法请求</string>
     <string name="request_building">构建申请文件中……</string>
     <string name="request_pacific_sending">正在向Arctic Manager发送请求...</string>
-    <string name="request_pacific_error">向Arctic Manager发送请求时发生错误。错误是 %s</string>
     <string name="request_pacific_success">成功地将请求发送给Arctic Manager</string>
-    <string name="request_custom_error">发送图标请求时发生错误。如果此错误仍然存在，请联系开发者   %s</string>
     <string name="request_custom_success">成功发送图标请求</string>
     <string name="request_fetching_data">正在获取最新更新……</string>
     <string name="request_build_failed">无法构建申请文件</string>
@@ -188,23 +162,17 @@
     <string name="request_requested_button_cancel">知道了</string>
     <string name="request_requested_button_confirm">仍然选择吗？</string>
     <string name="request_email_client">选择您想用来提交图标申请的邮件客户端</string>
-    <string name="request_app_disabled">您正在使用此图标包的旧版本。所请求的图标可能会包含在最新版本中。 请更新您的应用到最新版本以请求图标。</string>
     <string name="connection_error_long">无法连接服务器，请检查您的网络连接。</string>
-    <string name="unable_to_load_config">从服务器获取/读取数据时出错。</string>
-    <string name="request_limit">您在常规图标申请权状态下仅能提交 %d 个适配申请。</string>
     <string name="request_used">您已申请适配 %d 个图标。</string>
     <string name="request_limit_buy">您可以购买高级图标申请权来提交更多个图标申请。</string>
     <string name="request_limit_reset">图标申请限制将在每次更新后重置。</string>
     <!-- Regular Request -->
     <string name="regular_request">常规图标请求</string>
-    <string name="regular_request_desc">获取请求的图标，开发者将尝试包含您请求的图标。</string>
     <string name="regular_request_count">已使用\n%d 请求</string>
     <string name="regular_request_used">已使用\n%d 请求</string>
     <string name="regular_request_available">可用的\n%d 请求</string>
     <!-- Premium Request -->
     <string name="premium_request">高级图标申请</string>
-    <string name="premium_request_no_internet">在提交高级图标申请前请确保您的手机已连接到网络</string>
-    <string name="premium_request_desc">高级图标申请是付费申请。您可以通过高级图标申请来更快的得到您所申请的图标。</string>
     <string name="premium_request_buy">购买</string>
     <string name="premium_request_count">已使用\n%d 请求</string>
     <string name="premium_request_used">已使用\n%d 请求</string>
@@ -214,8 +182,6 @@
     <string name="premium_request_limit">您只拥有 %d 个高级图标申请数，</string>
     <string name="premium_request_limit1">但您选择了 %d 个程序。
 \n\n您需要在用完所有剩余的高级图标申请数后才可以使用常规申请。</string>
-    <string name="premium_request_consume_failed">无法使用高级图标申请，请确保您的网络环境稳定并重试。
-去设置里重建高级图标申请数。</string>
     <string name="premium_request_rebuilding">重建高级请求 …</string>
     <string name="premium_request_rebuilding_empty">您还没有提出高级请求</string>
     <string name="premium_request_exist">您仍有一个高级图标申请的安装包。
@@ -239,7 +205,6 @@
     <string name="presets_load_failed">无法加载预设文件</string>
     <string name="presets_storage_permission">保存壁纸需要储存器权限</string>
     <string name="presets_required_apps">使用这些预设所需的应用</string>
-    <string name="presets_required_apps_not_installed">未安装预设应用。请安装缺少所需的应用，然后重试。</string>
     <!-- Preferences -->
     <string name="pref_data_header">数据 &amp; 缓存</string>
     <string name="pref_data_cache">清除缓存</string>
@@ -279,7 +244,6 @@
     <!-- Intent -->
     <string name="app_client">选择邮件客户端</string>
     <string name="no_email_app">没有程序可以发送邮件</string>
-    <string name="no_browser">没有程序可以打开 url 地址</string>
     <string name="intent_email_failed">无法显示邮件程序</string>
     <string name="intent_email_supported">支持</string>
     <string name="intent_email_recommended">推荐</string>
@@ -290,7 +254,6 @@
     <string name="about_privacy_policy_title">隐私条款</string>
     <string name="about_terms_and_conditions_title">服务条款</string>
     <!-- Report Bugs -->
-    <string name="report_bugs_desc">请给予我一些关于你想要报告的问题种类的描述</string>
     <string name="report_bugs_desc_hint">问题描述</string>
     <string name="report_bugs_desc_empty">请给予一些描述</string>
     <string name="report_bugs_building">构建 activity 列表中……</string>
@@ -300,12 +263,9 @@
     <string name="donation_success">感谢您的捐赠。我会好好利用它的。</string>
     <!-- Crash Report -->
     <string name="crash_report">崩溃报告</string>
-    <string name="crash_report_message">很抱歉 %s 已停止运行。选择下方的 发送报告 来帮助开发者修复这个问题。</string>
     <string name="crash_report_send">发送错误报告</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
-    <string name="about_dashboard_dev">CandyBar 是 GitHub 上一个受 Apache License 2.0 保护的开源 Android 图标包仪表盘，免费使用，由 Dani Mahardhika 开发。</string>
-    <string name="about_open_source_licenses">开放源代码许可</string>
     <string name="about_dashboard_contributors">CandyBar 贡献者</string>
     <string name="about_dashboard_translator">CandyBar 翻译者</string>
     <!-- DrawerToggle -->
