@@ -9,13 +9,13 @@
         <!-- I can\'t see a complete icon name -->
         <!-- How can i replace icons with an alternate icon? -->
         <!-- How do i request an icon? -->
-        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- How can i restore the remaining Premium Requests after reinstalling the app? -->
         <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
         <!-- Why do the icons looks jaggy or pixelated on my phone? -->
         <!-- I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed? -->
+            but why isn\'t the actual icon on the app drawer changed? -->
         <!-- What is the \"report bugs\" option? -->
-        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- My launcher is listed in the Google Play description, but why isn\'t it included in apply section? -->
         <!-- Wallpaper can\'t be applied, just showing black screen? -->
         <!-- Muzei: How to load downloaded wallpapers only? -->
         <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
@@ -23,7 +23,7 @@
         <!-- Why are Read &amp; Write External Storage permission needed? -->
         <!-- Why is Internet permission needed? -->
         <!-- Why is Access Network State permission needed? -->
-        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Access Wi-Fi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
@@ -37,13 +37,13 @@
         <item>Tam bir simge adı göremiyorum</item>
         <item>Simgeleri alternatif bir simgeyle nasıl değiştirebilirim?</item>
         <item>Nasıl bir simge isteyebilirim?</item>
-        <item>Uygulamayı yeniden yükledikten sonra kalan Premium İstekleri nasıl geri yükleyebilirim?</item>
-        <item>Telefonumu yeniden başlattıktan sonra, simge paketi uygulanmadı, neden varsayılanlara geri dönüldü?</item>
+        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
+        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
         <item>Simgeler neden telefonumda pürüzlü veya pikselli görünüyor?</item>
-        <item>Tüm simgelere dahil olan simgeyi görebiliyorum,
-            ama neden uygulama çekmecesinde gerçek simge değişmedi?</item>
+        <item>I can see the icon included in all icons,
+            but why isn\'t the actual icon on the app drawer changed?</item>
         <item>\"Hataları raporla\" seçeneği nedir?</item>
-        <item>Başlatıcım Google Play açıklamasında listeleniyor, ancak neden uygulama bölümüne dahil edilmiyor?</item>
+        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
         <item>Duvar kağıdı, sadece siyah ekranı göstererek uygulanamaz mı?</item>
         <item>Muzei: Sadece indirilen duvar kağıtlarını nasıl yükleyebilirim?</item>
         <item>Muzei: Duvar kağıdı her değiştiğinde duvar kağıdı indirmeye devam etmek istemiyorum?</item>
@@ -60,41 +60,41 @@
         <item>Başlatıcısı, kullanıcıların ana ekranı kişiselleştirmelerine, mobil uygulamaları başlatmalarına,
 		    telefon görüşmeleri yapmalarına ve Android cihazlarında diğer görevleri gerçekleştirmelerine olanak sağlayan Android kullanıcı arayüzünün bir parçasıdır.</item>
         <item>Uygulama çekmecesi simgelerinizin görünümünü değiştirecek bir grafik seti</item>
-        <item>Özel simge paketlerini destekleyen bir başlatıcıya ihtiyacınız olacak.
-            Desteklenen Başlatıcılar Google Play Store açıklamasında listelenmiştir.
-            Hangi başlatıcıların kullanılması gerektiği konusunda kafanız karışıksa, \"Uygula\" bölümüne gidin ve oradan yükleyin.</item>
-        <item>Gezinme çekmecesini açıp ardından \"Uygula\" yı açabilirsiniz. Başlatıcıyı listeden seçin.
-            Başlatıcınız orada listelenmemişse ancak bu simge paketi uyumluysa
-            (desteklenen başlatıcılar için Google Play Store açıklamasına bakın),
-            simge paketini başlatıcı ayarlarınızdan elle uygulayabilirsiniz.</item>
-        <item>Gezinme çekmecesini açıp \"Simgeleri\" açabilirsiniz.</item>
+        <item>You will need a launcher that supports custom icon packs.
+            Supported launchers are listed in the Play Store description.
+            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
+        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
+            If your launcher is not listed there, but this icon pack is compatible with it
+            (see on Google Play Store description for supported launchers),
+            you can apply the icon pack manually in your launcher settings.</item>
+        <item>You can open the navigation drawer and then open \"Icons\"</item>
         <item>Sadece simgeye dokunun. Daha büyük görüntü ve tam simge adı ile bir önizleme iletişim kutusu görünecektir.</item>
         <item>Hangi başlatıcı kullandığınıza bağlıdır. Her başlatıcı simge düzenlemeyi desteklemez.
        	    Çoğunlukla bir simgeyi, dokunup basılı tutarak ya da iki kez dokunarak düzenleyebilirsiniz.</item>
-        <item>Gezinme çekmecesini açıp \"Simge İsteğini\" açabilirsiniz.</item>
-        <item>Gezinme çekmecesini açıp \"Ayarlar\" ardından \"Alımları Geri Yükle\" seçeneğini seçin.
-            Yeniden yüklemeden önce Premium İstekleriniz kaldıysanız, geri yüklenir</item>
-        <item>Çünkü bu simge paketi SD Karta taşındı, onu dahili belleğe yüklemelisiniz.</item>
-        <item>Sorun, büyük simge çözünürlüğünü kullanırken kullandığınız başlatıcıdan gelebilir.
-       	    Simge boyutunu% 115 - 120 arasında artırarak düzeltebilirsiniz.
-       	    Alternatif olarak, başlatıcınızı değiştirebilirsiniz.</item>
-        <item>Ayarları açın, aşağı kaydırın, sonra \"Hataları Bildiri\" seçin.</item>
+        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
+        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
+            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
+        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
+        <item>The problem might come from the launcher that you used when handling big icon resolution.
+       	    You can fix it by increasing the icon size to 115–120%.
+       	    Alternatively, you might change your launcher.</item>
+        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
         <item>\"Hata Bildir\"\, bu arayüz ile ilgili değil simge paketiyle ilgili hataları bildirmek için kullanılır.</item>
-        <item>Her başlatıcı doğrudan uygulamayı desteklemez ve bazılarına doğrudan arayüzden erişilemez.
-      	    Bu simge paketini ayrı ayrı başlatıcı ayarlarından el ile uygulayabilirsiniz.</item>
+        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
+      	    You can apply this icon pack manually in the individual launcher settings.</item>
         <item>Doğrudan uygulamadan \ \"Duvar Kağıdını Ayarla \" seçeneğini kullandığınızda uygulama önbelleğe indirilir,
       	    daha sonra arayüz uygulaması duvar kağıdını uygulamayı dener. Uygulamak biraz zaman alacak ve aynı zamanda kısa bir süre için çok miktarda RAM\'e de ihtiyaç duyacaktır.
       	    Telefonunuzda duvar kağıdını işlemek için yeterli boş RAM\'e sahip olmadığında \"Siyah Ekran\" hataları görünebilir.
       	    Telefonunuzu yeniden başlatmak bu sorunu çözecektir. Yeniden başlattıktan sonra, telefonunuzda daha fazla RAM mevcut olacaktır.
             Alternatif olarak, indirilen duvar kağıdını Galeri\’nizden açabilir ve oradan duvar kağıdı olarak ayarlayabilirsiniz.</item>
-        <item>Muzei\'yi açın, ayarlardan bu simge paketini seçin. Sadece indirilen duvar kağıtlarını yükleme seçeneği göreceksiniz.
-            Öncelikle bu arayüzden duvar kağıtları indirmeniz gerekir.</item>
+        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
+            You will need to download wallpapers from the dashboard first.</item>
         <item>Duvar kağıdı önceden indirilmişse, telefon hafızasından otomatik olarak yüklenir.
             Muzei duvar kağıdı değiştiğinde indirmeye devam etmeyecek. Öncelikle arayüzden duvar kağıtları indirmeniz gerekir.</item>
         <item>Uygulamanın arayüzünü açın, Muzei\'de kullanmak istediğiniz duvar kağıtlarını indirin.
             Muzei ayarlarını açtıktan sonra Yalnızca İndirilen Duvar Kağıtlarını Yükle\'yi seçin.</item>
         <item>Önbelleği yazmak ve okumak ve simge istek verilerini toplamak için kullanılır.</item>
-        <item>Bulut Tabanlı Duvar Kağıtları yüklemek ve bunları indirmek için kullanılır.</item>
+        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
         <item>Telefonunuzun internet bağlantısı olup olmadığını kontrol etmek için kullanılır.</item>
         <item>Telefonunuzun Muzei\'den bulut duvar kağıtları yüklemek için bir wifi ile internet bağlantısı olup olmadığını kontrol etmek için kullanılır.</item>
         <item>Doğrudan arayüz uygulamasından duvar kağıtlarını uygulamak için kullanılır.</item>
