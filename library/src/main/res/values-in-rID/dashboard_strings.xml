@@ -18,7 +18,6 @@
     <string name="hour">Jam</string>
     <string name="save_setting">Simpan</string>
     <string name="muzei_refresh_duration">Durasi menyegarkan</string>
-    <string name="muzei_wifi_only">Segarkan dari Wifi saja</string>
     <string name="muzei_downloaded_only">Muat Wallpaper terunduh Saja</string>
     <string name="muzei_settings_ignored">Paket Ikon tidak menyertakan wallpaper, pengaturan di abaikan.</string>
     <string name="muzei_settings_saved">Pengaturan Tersimpan</string>
@@ -50,29 +49,20 @@
     <!-- Changelog -->
     <string name="changelog_version">Versi</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">Tidak dapat memuat produk Pembelian Dalam Aplikasi</string>
     <!-- License -->
     <string name="license_checking">Memeriksa lisensi…</string>
     <string name="license_check">Pemeriksaan Lisensi</string>
-    <string name="license_check_success">Pemeriksaan lisensi berhasil, terima kasih telah mengunduh aplikasi ini dari Play Store.</string>
-    <string name="license_check_failed">Pemeriksaan lisensi gagal, anda tidak mengunduh aplikasi ini dari Play Store.
-Anda tidak akan dapat menggunakan aplikasi ini.</string>
     <string name="license_check_retry">Tidak dapat memeriksa lisensi, cobalah beberapa saat lagi.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Pemeriksaan Play Store</string>
-    <string name="playstore_check_success">Terimakasih telah menginstal aplikasi dari Google Play Store. Enjoy.</string>
-    <string name="playstore_check_failed">Sepertinya anda menginstal paket ikon ini di luar Google Play Store.
-Anda tidak dapat menggunakan aplikasi ini.</string>
     <!-- Share -->
     <string name="share_app_title">Hei! Lihatlah %s</string>
     <string name="share_app_body">Lihatlah %1$s, paket ikon ini sangat keren! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Panel navigasi</string>
-    <string name="tap_intro_home_navigation_desc">Sentuh disini atau usap dari tepi kiri layar untuk membuka panel navigasi</string>
     <string name="tap_intro_home_apply">Terapkan paket ikon</string>
     <string name="tap_intro_home_apply_desc">Ketuk disini untuk menerapkan %s ke peluncur saat ini. Ketuk dan tahan untuk menerapkan ke peluncur lain.</string>
     <string name="tap_intro_icons_search">Cari</string>
-    <string name="tap_intro_icons_search_desc">Sentuh disini untuk mencari sebuah ikon</string>
     <string name="tap_intro_request_select">Pilih aplikasi yang terlewat</string>
     <string name="tap_intro_request_select_desc">Sentuh disini untuk memilih aplikasi yang terlewat untuk memesan ikon</string>
     <string name="tap_intro_request_select_all">Pilih semua aplikasi yang terlewat</string>
@@ -80,20 +70,14 @@ Anda tidak dapat menggunakan aplikasi ini.</string>
     <string name="tap_intro_request_send">Kirim permintaan ikon</string>
     <string name="tap_intro_request_send_desc">Sentuh disini untuk memilih aplikasi terlewat</string>
     <string name="tap_intro_request_premium">Pesanan Ikon Premium</string>
-    <string name="tap_intro_request_premium_desc">Sentuh disini untuk membeli paket pemesanan ikon premium,
-dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.</string>
     <string name="tap_intro_wallpapers_option">Opsi wallpaper</string>
-    <string name="tap_intro_wallpapers_option_desc">Sentuh dan tahan disini untuk menampilkan opsi, %s terapkan wallpaper.</string>
     <string name="tap_intro_wallpapers_option_desc_download">unduh atau</string>
     <string name="tap_intro_wallpapers_preview">Pratinjau wallpaper</string>
-    <string name="tap_intro_wallpapers_preview_desc">Sentuh di sini untuk melihat pratinjau ukuran asli wallpaper</string>
     <string name="tap_intro_wallpaper_preview_save">Simpan wallpaper</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Sentuh di sini untuk mengunduh dan menyimpan wallpaper ke penyimpanan perangkat agar anda bisa menggunakannya nanti</string>
     <string name="tap_intro_wallpaper_preview_apply">Terapkan wallpaper</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">Sentuh di sini untuk menetapkan wallpaper sebagai latar belakang layar beranda</string>
     <!-- Home -->
     <string name="home_more_apps_header">Aplikasi lainnya</string>
-    <string name="home_more_apps">Lihat aplikasi lainnya yang diterbitkan di Play Store</string>
     <string name="home_rate_and_review">Nilai &amp; Berikan ulasan</string>
     <string name="home_apply_icon_pack">Terapkan %s</string>
     <string name="home_donate">Donasi</string>
@@ -108,19 +92,16 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <!-- Apply -->
     <string name="apply_installed">Peluncur terpasang</string>
     <string name="apply_supported">Peluncur yang didukung</string>
-    <string name="apply_manual">%1$s Peluncur tidak mendukung terapkan langsung tetapi anda bisa menerapkan %2$s manual dari menu pengaturan peluncur.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso tidak mendukung penerapan secara langsung, anda dapat mengikuti langkah berikut:</string>
     <string name="apply_manual_kvaesitso_step_1">Buka setelan Kvaesitso\'s</string>
     <string name="apply_manual_kvaesitso_step_2">Ketuk \"Kisi &amp; Ikon\"</string>
     <string name="apply_manual_kvaesitso_step_3">Ketuk pada \"Paket Ikon\"</string>
     <string name="apply_manual_kvaesitso_step_4">Pilih %s dari daftar</string>
     <string name="apply_manual_kvaesitso_step_5">Ketuk ikon kuas cat untuk mengaktifkan atau mematikan bentuk latar belakang</string>
-    <string name="apply_manual_kiss">KISS tidak mendukung penerapan secara langsung, anda dapat mengikuti langkah berikut:</string>
     <string name="apply_manual_kiss_step_1">Buka setelan KISS</string>
     <string name="apply_manual_kiss_step_2">Ketuk \"Antar Muka\"</string>
     <string name="apply_manual_kiss_step_3">Ketuk pada \"Paket Ikon\"</string>
     <string name="apply_manual_kiss_step_4">Pilih %s dari daftar</string>
-    <string name="apply_manual_samsung_oneui">%1$s tidak mendukung penerapan langsung tapi dimulai dengan %2$s anda dapat menerapkan ikon dengan aplikasi pendamping.</string>
     <string name="apply_manual_samsung_oneui_too_old">Versi %s saat ini sudah terlalu lawas. Silahkan perbarui ke Android 12 atau yang terbaru agar dapat menerapkan ikon secara langsung. Alternatifnya, anda dapat mencoba menginstal peluncur yang lain.</string>
     <string name="apply_manual_samsung_oneui_step_1">Buka %s</string>
     <string name="apply_manual_samsung_oneui_step_2">Unduh aplikasi %s</string>
@@ -129,7 +110,6 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="apply_manual_samsung_oneui_step_5">Ketuk tombol biru \"Paket ikon\"</string>
     <string name="apply_manual_samsung_oneui_step_6">Pilih %s dari daftar</string>
     <string name="apply_manual_samsung_oneui_step_7">Ulangi langkah ini setiap kali anda memperbarui %s karena ikon baru tidak akan dipetakan secara otomatis.</string>
-    <string name="apply_manual_hios">Peluncur HiOS tidak mendukung penerapan secara langsung, anda dapat mengikuti langkah berikut:</string>
     <string name="apply_manual_hios_step_1">Buka \"Pengaturan\"</string>
     <string name="apply_manual_hios_step_2">Tap \" Tema &amp; Kunci layar\"</string>
     <string name="apply_manual_hios_step_3">Tap \"Tema saya\"</string>
@@ -143,26 +123,21 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="apply_manual_color_os_step_2">Tap \"Ikon\"</string>
     <string name="apply_manual_color_os_step_3">Gulir ke sebelah kanan \"Kostum\" (ini adalah daftar yang dapat digulir!)</string>
     <string name="apply_manual_color_os_step_4">Tap %s</string>
-    <string name="apply_manual_before">Versi peluncur sebelum ini belum mendukung untuk menerapkan ikon secara langsung. Sebagai gantinya, ikuti langkah-langkah di bawah ini:</string>
     <string name="apply_manual_before_step_1">Usap sebelah kiri layar beranda</string>
     <string name="apply_manual_before_step_2">Tap \"Pengaturan\"</string>
     <string name="apply_manual_before_step_3">Tap \"Gaya &amp; Tema\"</string>
     <string name="apply_manual_before_step_4">Tap \"Gaya Ikon &amp; Paket\"</string>
     <string name="apply_manual_before_step_5">Tap %s</string>
     <string name="apply_manual_nothing_step_1">Buka \"Pengaturan\"</string>
-    <string name="apply_manual_nothing_step_2">Tap \"Kustomisasi\"</string>
     <string name="apply_manual_nothing_step_3">Tap \"Paket Ikon\"</string>
     <string name="apply_manual_nothing_step_4">Tap %s</string>
     <string name="apply_launch_failed">Tidak dapat meluncurkan %s pengaturan</string>
     <string name="apply_launcher_not_installed">%s Peluncur tidak terpasang. Apakah anda ingin membuka Google Play Store untuk mengunduh dan menginstalnya?</string>
     <string name="apply_launcher_not_installable">%s Peluncur tidak terpasang. Silakan coba lagi setelah menginstal peluncur.</string>
     <string name="apply_cmtheme_not_available">Pengelola Tema CM tidak tersedia pada perangkat ini</string>
-    <string name="apply_cmtheme_failed">Tidak dapat membuka Pengelola Tema CM, anda dapat mencoba menerapkan Paket Ikon secara manual dari Pengaturan.</string>
     <string name="apply_lg_home">Untuk menerapkan Paket Ikon buka pengaturan - Layar - Layar beranda - Tema</string>
     <string name="apply_lg_home_not_available">Beranda LG tidak tersedia di perangkat ini</string>
-    <string name="apply_lg_home_failed">Tidak dapat membuka Pengaturan Beranda LG, anda dapat mencoba menerapkan Paket Ikon secara manual dari Pengaturan.</string>
     <string name="apply_lg_home_nougat">Beranda LG dengan Android Nougat tidak lagi mendukung Paket ikon, Anda membutuhkan sebuah peluncur kostum untuk menggunakan Paket Ikon.</string>
-    <string name="apply_launcher_incompatible">%s Peluncur tidak mendukung paket ikon apapun, jadi anda tidak dapat menggunakan paket ikon dengan peluncur ini. Anda bisa mencoba sebuah aplikasi pihak ketiga agar dapat menggunakan paket ikon ini pada Peluncur %2$s. Apakah anda ingin menginstalnya?</string>
     <string name="apply_launcher_incompatible_depending_on_version">%s Peluncur tidak mendukung paket ikon pada Android %d atau lebih rendah. Silahkan perbarui versi Android Anda atau instal peluncur pihak ketiga untuk menggunakan paket ikon ini. Anda juga dapat mencoba aplikasi pembantu untuk mengubah ikon secara individual. Apakah Anda ingin menginstalnya?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Tidak dapat memuat ikon</string>
@@ -177,31 +152,23 @@ dengan memesan ikon premium anda bisa mendapatkan pesanan aplikasi lebih cepat.<
     <string name="request_not_available">Tidak dapat diminta</string>
     <string name="request_building">Membuat pesanan…</string>
     <string name="request_pacific_sending">Mengirim pesanan ke Pacific Manager...</string>
-    <string name="request_pacific_error">Terjadi kesalahan ketika mengirim pesanan ke Pacific Manager. Kesalahan %s</string>
     <string name="request_pacific_success">Berhasil kirim pesanan ke Pacific Manager</string>
-    <string name="request_custom_error">Terjadi eror saat mengirim permintaan ikon. Jika eror ini terus terjadi, hubungi pengembang. %s</string>
     <string name="request_custom_success">Berhasil mengirim permintaan ikon</string>
     <string name="request_fetching_data">Mengambil data terbaru…</string>
     <string name="request_build_failed">Tidak dapat membuat pesanan ikon</string>
     <string name="request_appfilter_failed">Tidak dapat membaca appfilter.xml</string>
     <string name="request_email_client">Pilih aplikasi yang ingin anda gunakan untuk kirim pesanan ikon</string>
-    <string name="request_app_disabled">Anda sedang menggunakan aplikasi paket ikon versi lawas. Ikon pesanan mungkin disertakan dalam versi terbaru. Silakan perbarui aplikasi anda ke versi terbaru untuk memesan ikon.</string>
     <string name="connection_error_long">Tidak dapat memuat data dari server. Mohon periksa koneksi jaringan anda.</string>
-    <string name="unable_to_load_config">Terjadi galat saat mengambil/membaca data dari server.</string>
-    <string name="request_limit">Anda hanya bisa membuat %d permintaan dengan pesanan reguler.</string>
     <string name="request_used">Anda telah memesan %d ikon.</string>
     <string name="request_limit_buy">Anda bisa membeli Pesanan Premium untuk memesan lebih banyak ikon.</string>
     <string name="request_limit_reset">Batas pemesanan ikon akan di set ulang pada setiap pembaruan.</string>
     <!-- Regular Request -->
     <string name="regular_request">Pesan ikon Reguler</string>
-    <string name="regular_request_desc">Dapatkan ikon pesanan anda dan pengembang akan mencoba untuk menyertakan ikon yang anda pesan.</string>
     <string name="regular_request_count">Total\n%dPesanan</string>
     <string name="regular_request_used">Terpakai\n%d pesanan</string>
     <string name="regular_request_available">Tersedia\n%d pesanan</string>
     <!-- Premium Request -->
     <string name="premium_request">Pesanan Ikon Premium</string>
-    <string name="premium_request_no_internet">Pastikan telepon anda terhubung ke internet sebelum mengirim sebuah pesanan premium</string>
-    <string name="premium_request_desc">Pesanan ikon premium adalah pemesanan berbayar. Anda bisa mendapat aplikasi pesanan yang dipesan lebih cepat dengan menggunakan Pesanan ikon premium.</string>
     <string name="premium_request_buy">Beli</string>
     <string name="premium_request_count">Total\n%dPesanan</string>
     <string name="premium_request_used">Terpakai\n%d pesanan</string>
@@ -211,8 +178,6 @@ Anda harus menggunakan semuanya sebelum membeli paket pesanan premium lagi.</str
     <string name="premium_request_limit">Anda hanya memiliki %d pesanan premium,</string>
     <string name="premium_request_limit1">tapi anda memilih %d aplikasi.
 \n\nAnda harus menggunakan semua pesanan premium sebelum menggunakan pesanan reguler lagi.</string>
-    <string name="premium_request_consume_failed">Tidak dapat menggunakan Pesanan Premium, pastikan anda memiliki koneksi internet yang stabil dan coba lagi.
-Pergi ke Pengaturan untuk membuat ulang Pesanan Premium.</string>
     <string name="premium_request_rebuilding">Membuat ulang Pesanan Premium…</string>
     <string name="premium_request_rebuilding_empty">Anda belum membuat sebuah Pesanan Premium</string>
     <string name="premium_request_exist">Anda masih memiliki paket permintaan ikon premium.
@@ -236,7 +201,6 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="presets_load_failed">Tidak dapat memuat setelan</string>
     <string name="presets_storage_permission">Izin penyimpanan diperlukan untuk memuat pratinjau wallpaper</string>
     <string name="presets_required_apps">Dibutuhkan aplikasi untuk menggunakan setelan ini</string>
-    <string name="presets_required_apps_not_installed">Dibutuhkan aplikasi untuk menggunakan setelan yang tidak terpasang. Silahkan instal aplikasi yang diperlukan dan coba lagi.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Data &amp; Cache</string>
     <string name="pref_data_cache">Bersihkan Cache</string>
@@ -276,7 +240,6 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <!-- Intent -->
     <string name="app_client">Pilih Aplikasi</string>
     <string name="no_email_app">Tidak ada aplikasi untuk kirim email</string>
-    <string name="no_browser">Tidak ada aplikasi untuk membuka url</string>
     <string name="intent_email_failed">Tidak dapat menampilkan aplikasi email</string>
     <string name="intent_email_supported">Didukung</string>
     <string name="intent_email_recommended">Direkomendasikan</string>
@@ -287,7 +250,6 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="about_privacy_policy_title">Kebijakan Privasi</string>
     <string name="about_terms_and_conditions_title">Syarat dan Ketentuan</string>
     <!-- Report Bugs -->
-    <string name="report_bugs_desc">Mohon berikan penjelasan tentang masalah jenis apa yang anda ingin laporkan</string>
     <string name="report_bugs_desc_hint">Deskripsi</string>
     <string name="report_bugs_desc_empty">Harap berikan deskripsi</string>
     <string name="report_bugs_building">Membuat daftar aktivitas…</string>
@@ -297,12 +259,9 @@ Buka Pengaturan, pilih \"Pulihkan Pembelian\" untuk memulihkan.</string>
     <string name="donation_success">Terima kasih atas donasi yang anda berikan. Saya akan menggunakannya untuk kebaikan.</string>
     <!-- Crash Report -->
     <string name="crash_report">Laporkan Kerusakan</string>
-    <string name="crash_report_message">Sayangnya %s terjadi kerusakan, Pilih kirim laporan di bawah untuk membantu pengembang perbaiki persoalan tersebut.</string>
     <string name="crash_report_send">Kirim Laporan</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
-    <string name="about_dashboard_dev">CandyBar merupakan dashboard paket ikon sumber terbuka di bawah lisensi Apache License 2.0 untuk Android tersedia di GitHub dan bebas untuk digunakan, Dikembangkan oleh Dani Mahardhika.</string>
-    <string name="about_open_source_licenses">Lisensi Sumber Terbuka</string>
     <string name="about_dashboard_contributors">Kontributor CandyBar</string>
     <string name="about_dashboard_translator">Penerjemah CandyBar</string>
     <!-- DrawerToggle -->
