@@ -37,13 +37,13 @@
         <item>Nevidím úplný název ikony</item>
         <item>Jak můžu nahradit stávající ikony ikonou alternativní?</item>
         <item>Jak mám vytvořit požadavek na další ikony?</item>
-        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
-        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
+        <item>Jak můžu obnovit zbývající prémiové požadavky po reinstalaci aplikace?</item>
+        <item>Po restartování telefonu se balíček ikon neaplikuje; použijí se ikony výchozí?</item>
         <item>Proč vypadají ikony v mém telefonu zubaté nebo jinak deformované?</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on the app drawer changed?</item>
+        <item>Vidím ikonu obsaženou ve všech ikonách,
+            ale proč se nezmění skutečná ikona v seznamu aplikací?</item>
         <item>Co se skrývá pod možností \"nahlásit chybu\"?</item>
-        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
+        <item>Můj spouštěč je uveden v popisu Obchodu Play, ale proč není zahrnut v sekci \"použít\"?</item>
         <item>Tapetu nelze použít, pouze zobrazuje černou obrazovku?</item>
         <item>Muzei: Jak načíst pouze stažené tapety?</item>
         <item>Muzei: Nechci stahovat tapety pokaždé, když se tapeta změní?</item>
@@ -60,41 +60,41 @@
         <item>Spouštěč je součástí uživatelského rozhraní systému Android, které umožňuje uživatelům přizpůsobit si domovskou obrazovku,
             spouštět aplikace, uskutečňovat telefonní hovory a provádět další úkoly na zařízeních Android.</item>
         <item>Sbírka grafiky, která změní vzhled ikon v seznamu aplikací</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play Store description.
-            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
-        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
-            If your launcher is not listed there, but this icon pack is compatible with it
-            (see on Google Play Store description for supported launchers),
-            you can apply the icon pack manually in your launcher settings.</item>
-        <item>You can open the navigation drawer and then open \"Icons\"</item>
+        <item>Budete potřebovat spouštěč, který podporuje vlastní balíčky ikon.
+            Podporované spouštěče jsou uvedeny v popisu Obchodu Play.
+            Pokud jste zmateni, které spouštěče by měly být použity, přejděte do sekce \"Použít\", pak nainstalujte.</item>
+        <item>Můžete otevřít navigační panel a poté otevřít \"Použít\". Vyberte svůj spouštěč ze seznamu.
+            Pokud zde není uveden váš spouštěč, ale tato sada ikon je s ním kompatibilní
+            (pro podporované spouštěče se podívejte na popis v Obchodu Play),
+            můžete balíček ikon použít ručně z nastavení spouštěče.</item>
+        <item>Můžete otevřít navigační panel a poté otevřít \"Ikony\"</item>
         <item>Stačí klepnout na ikonu. Dialog náhledu se zobrazí s větším obrázkem a celým názvem ikony.</item>
         <item>Záleží na tom, který spouštěč jste použili. Ne každý spouštěč podporuje úpravy ikon.
        	    Většinou můžete upravit ikonu klepnutím a přidržením nebo dvojitým klepnutím na ni.</item>
-        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
+        <item>Můžete otevřít navigační panel a poté otevřít \"Žádost o ikony\".</item>
+        <item>Můžete otevřít navigační panel, poté otevřít \"Nastavení\" a vybrat \"Obnovit nákupy\".
+            Pokud jste před opětovnou instalací měli jakékoliv zbývající prémiové požadavky, budou obnoveny.</item>
+        <item>K tomu došlo, protože sada ikon byla přesunuta na SD kartu. Měli byste ji nainstalovat do vnitřního úložiště.</item>
+        <item>Problém může pocházet ze spouštěče, který jste použili při zpracování rozlišení velkých ikon.
+       	    Můžete to opravit zvýšením velikosti ikony na 115–120%.
+       	    Případně můžete změnit spouštěč.</item>
+        <item>Otevřete nastavení, přesuňte se dolů a vyberte \"Nahlásit chyby\".</item>
         <item>\"Nahlásit chyby\" se používá k hlášení chyb souvisejících s balíčkem ikon, ne s hlavním panelem.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
+        <item>Ne každý spouštěč podporuje přímé použití a některé z nich nemohou být přístupné přímo z hlavního panelu.
+      	    Tento balíček ikon můžete použít ručně z jednotlivých nastavení spouštěče.</item>
         <item>Když \"Nastavíte tapetu\" přímo z aplikace, bude stažena do mezipaměti,
       	    pak se ji aplikace v hlavním panelu pokusí použít. Aplikaci bude nějakou dobu trvat a také bude potřebovat obrovské množství RAM po krátkou dobu.
       	    Chyba \"Černá obrazovka\" se může objevit, protože váš telefon nemá dostatek volné RAM ke zpracování tapety.
       	    Restartování telefonu tento problém vyřeší. Po restartu bude mít váš telefon k dispozici více RAM.
             Staženou tapetu můžete také otevřít v galerii a odtud ji nastavit.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>Otevřete Muzei, vyberte tuto sadu ikon. Uvidíte možnost \"načíst pouze stažené tapety\".
+            Nejprve si budete muset stáhnout tapety z hlavního panelu.</item>
         <item>Pokud je tapeta již stažena, automaticky se načte z paměti telefonu.
             Muzei nebude nic stahovat, když se změní tapeta. Nejprve si budete muset stáhnout tapety z hlavního panelu.</item>
         <item>Otevřete hlavní panel, stáhněte si tapety, které chcete použít v Muzei.
             Otevřete nastavení Muzei, poté vyberte \"Načíst pouze stažené tapety\".</item>
         <item>Používá se pro zápis a čtení mezipaměti a shromažďování údajů o žádost o ikony.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>Používá se k načtení tapet z cloudu a jejich stažení.</item>
         <item>Používá se ke kontrole, zda je váš telefon připojen k Internetu nebo ne.</item>
         <item>Používá se ke kontrole, zda je váš telefon připojen k Wi-Fi nebo ne, k načtení cloudových tapet z Muzei.</item>
         <item>Používá se k použití tapet přímo z hlavního panelu aplikace.</item>
