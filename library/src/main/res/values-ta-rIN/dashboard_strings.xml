@@ -16,7 +16,6 @@
     <string name="hour">Hour</string>
     <string name="save_setting">Save</string>
     <string name="muzei_refresh_duration">Refresh Duration</string>
-    <string name="muzei_wifi_only">Refresh from Wifi Only</string>
     <string name="muzei_downloaded_only">Load Downloaded Wallpapers Only</string>
     <string name="muzei_settings_ignored">Icon Pack doesn\'t contain wallpapers, settings ignored.</string>
     <string name="muzei_settings_saved">Settings Saved</string>
@@ -42,13 +41,9 @@
     <!-- Changelog -->
     <string name="changelog_version">பதிப்பு</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">Unable to load InApp Purchase products</string>
     <!-- License -->
     <string name="license_checking">Checking license …</string>
     <string name="license_check">License Check</string>
-    <string name="license_check_success">License check success, thank you for downloading the app from Play Store.</string>
-    <string name="license_check_failed">License check failed, you didn\'t download the app from Play Store.
-        You will not be able to use it.</string>
     <string name="license_check_retry">Unable to check license, please try again in a few moments.</string>
     <!-- Play Store Installation Check -->
     <!-- Share -->
@@ -56,10 +51,8 @@
     <string name="share_app_body">இதைப் பாரு %1$s, இந்த ஐகான் பேக் மிகவும் அருமையாக இருக்கிறது! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Navigation drawer</string>
-    <string name="tap_intro_home_navigation_desc">Tap here or swipe from left edge of the screen to open navigation drawer</string>
     <string name="tap_intro_home_apply">Apply icon pack</string>
     <string name="tap_intro_icons_search">தேடல்</string>
-    <string name="tap_intro_icons_search_desc">Tap here to search an icon</string>
     <string name="tap_intro_request_select">Select missed app</string>
     <string name="tap_intro_request_select_desc">Tap here to select missed app for icon request</string>
     <string name="tap_intro_request_select_all">Select all missed apps</string>
@@ -67,20 +60,14 @@
     <string name="tap_intro_request_send">Send icon request</string>
     <string name="tap_intro_request_send_desc">Tap here to send selected missed apps</string>
     <string name="tap_intro_request_premium">Premium icon request</string>
-    <string name="tap_intro_request_premium_desc">Tap here to buy premium icon request package,
-        with premium icon request you can get your requested apps faster.</string>
     <string name="tap_intro_wallpapers_option">Wallpaper options</string>
-    <string name="tap_intro_wallpapers_option_desc">Tap and hold here to show wallpaper options, %s apply wallpaper.</string>
     <string name="tap_intro_wallpapers_option_desc_download">download or</string>
     <string name="tap_intro_wallpapers_preview">Preview wallpaper</string>
-    <string name="tap_intro_wallpapers_preview_desc">Tap here to preview full size of the wallpaper</string>
     <string name="tap_intro_wallpaper_preview_save">Save wallpaper</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Tap here to download and save wallpaper to your device so you can use it later</string>
     <string name="tap_intro_wallpaper_preview_apply">Apply wallpaper</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">Tap here to set wallpaper as homescreen background</string>
     <!-- Home -->
     <string name="home_more_apps_header">மேலும் பயன்பாடுகள்</string>
-    <string name="home_more_apps">கூகிள் பிலே ஸ்டோர் இல் வெளியிடப்பட்ட பிற பயன்பாடுகளைச் பார்க்கவும் </string>
     <string name="home_rate_and_review">வீதம் &amp; விமர்சனம்</string>
     <string name="home_apply_icon_pack">உபயோகி %s</string>
     <string name="home_donate">நன்கொடை</string>
@@ -96,15 +83,12 @@
     <!-- Apply -->
     <string name="apply_installed">நிறுவப்பட்ட லான்ச்சர்</string>
     <string name="apply_supported">ஆதரிக்கப்பட்ட லான்ச்சர்கள்</string>
-    <string name="apply_manual">%1$s doesn\'t support direct apply, you can apply %2$s manually from the launcher settings.</string>
     <string name="apply_launch_failed">தொடங்க முடியவில்லை %s அமைப்புகள்</string>
     <string name="apply_launcher_not_installed">%s is not installed. Do you want to open
         Google Play Store to download and install it?</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager is not available on this device</string>
-    <string name="apply_cmtheme_failed">Unable to launch CM Theme Manager, you can try to apply Icon Pack manually from Settings.</string>
     <string name="apply_lg_home">To apply this Icon Pack open Settings - Display - Home Screen - Theme</string>
     <string name="apply_lg_home_not_available">LG Home is not available on this device</string>
-    <string name="apply_lg_home_failed">Unable to launch LG Home Settings, you can try to apply Icon Pack manually from Settings.</string>
     <string name="apply_lg_home_nougat">LG Home with Android Nougat no longer supports Icon Pack. You need a custom launcher to use Icon Pack.</string>
     <!-- Icons -->
     <string name="icons_load_failed">ஐகானை ஏற்ற முடியவில்லை</string>
@@ -117,23 +101,18 @@
     <string name="request_build_failed">ஐகான் கோரிக்கையை உருவாக்க முடியவில்லை</string>
     <string name="request_appfilter_failed">appfilter.xml படிக்க முடியவில்லை</string>
     <string name="request_email_client">ஐகான் கோரிக்கையை அனுப்ப நீங்கள் பயன்படுத்த விரும்பும் மின்னஞ்சல் கிளையண்டைத் தேர்வுசெய்க</string>
-    <string name="request_limit">You are only able to make %d request(s) with regular request.</string>
     <string name="request_used">நீங்கள் கோரியுள்ளீர்கள் %d ஐகான்(கள்).</string>
     <string name="request_limit_buy">You can buy Premium Requests to request more icons.</string>
     <string name="request_limit_reset">ஒவ்வொரு புதுப்பிப்பிலும் ஐகான் கோரிக்கை வரம்பு மீட்டமைக்கப்படும்.</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <string name="premium_request">Premium Icon Request</string>
-    <string name="premium_request_no_internet">Make sure your phone connected to internet before sending a premium request</string>
-    <string name="premium_request_desc">Premium icon request is pay to request. You can get your requested apps faster by using premium icon request.</string>
     <string name="premium_request_buy">Buy</string>
     <string name="premium_request_already_purchased">You still have %d premium request.
         You need to use all of them before buying a premium request package again.</string>
     <string name="premium_request_limit">You only have %d premium request(s),</string>
     <string name="premium_request_limit1">but you selected %d app(s).
         \n\nYou need to use all of your premium requests before using regular request again.</string>
-    <string name="premium_request_consume_failed">Unable to use Premium Request, make sure you have stable internet connection and try again.
-        Go to Settings to rebuild Premium Requests.</string>
     <string name="premium_request_rebuilding">Rebuilding Premium Request …</string>
     <string name="premium_request_rebuilding_empty">You have not made a Premium Request</string>
     <string name="premium_request_exist">You still have a Premium Icon Request package.
@@ -187,7 +166,6 @@
     <string name="permission_storage_denied">வால்பேப்பரைச் சேமிக்க சேமிப்பு அனுமதி தேவை</string>
     <!-- Intent -->
     <string name="no_email_app">No application to send email</string>
-    <string name="no_browser">No application to open url</string>
     <string name="intent_email_failed">Unable to display email application</string>
     <string name="intent_email_supported">Supported</string>
     <string name="intent_email_recommended">Recommended</string>
@@ -196,7 +174,6 @@
     <!-- About -->
     <string name="about_contributors_title">பங்களிப்பாளர்கள்</string>
     <!-- Report Bugs -->
-    <string name="report_bugs_desc">Please give a description about what kind of problem that you want to report</string>
     <string name="report_bugs_desc_hint">Description</string>
     <string name="report_bugs_desc_empty">Please give a description</string>
     <string name="report_bugs_building">Building activity list …</string>
@@ -206,13 +183,9 @@
     <string name="donation_success">Thank you for making a donation. I will use it for good.</string>
     <!-- Crash Report -->
     <string name="crash_report">Crash Report</string>
-    <string name="crash_report_message">Unfortunately %s has crashed. Choose send report below to help developer fix the issue.</string>
     <string name="crash_report_send">Send Report</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
-    <string name="about_dashboard_dev">CandyBar is open source icon pack dashboard licensed under Apache License 2.0 for
-        Android available at GitHub and free to use, developed by Dani Mahardhika.</string>
-    <string name="about_open_source_licenses">Open Source Licenses</string>
     <string name="about_dashboard_contributors">CandyBar Contributors</string>
     <string name="about_dashboard_translator">CandyBar Translator</string>
     <!-- DrawerToggle -->
