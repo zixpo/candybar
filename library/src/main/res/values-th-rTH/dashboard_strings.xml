@@ -18,7 +18,6 @@
     <string name="hour">ชั่วโมง</string>
     <string name="save_setting">บันทึก</string>
     <string name="muzei_refresh_duration">ความถี่ของการรีเฟรช</string>
-    <string name="muzei_wifi_only">รีเฟรชเมื่อใช้ไวไฟเท่านั้น</string>
     <string name="muzei_downloaded_only">แสดงวอลเปเปอร์ที่ดาวน์โหลดแล้วเท่านั้น</string>
     <string name="muzei_settings_ignored">การตั้งค่าไม่มีผลเพราะชุดไอคอนไม่มีวอลเปเปอร์</string>
     <string name="muzei_settings_saved">บันทึกการตั้งค่าแล้ว</string>
@@ -50,29 +49,20 @@
     <!-- Changelog -->
     <string name="changelog_version">เวอร์ชั่น</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">ไม่สามารถโหลดสินค้าการซื้อในแอปได้</string>
     <!-- License -->
     <string name="license_checking">กำลังตรวจสอบสิทธิ์การใช้งาน…</string>
     <string name="license_check">ตรวจสอบสิทธิ์การใช้งาน</string>
-    <string name="license_check_success">ตรวจสอบสิทธิ์การใช้งานเรียบร้อย ขอบคุณที่ดาวน์โหลดแอปผ่าน Play Store</string>
-    <string name="license_check_failed">ตรวจสอบสิทธิ์การใช้งานล้มเหลว คุณไม่ได้ดาวน์โหลดแอปจาก Play Store
-        คุณไม่สามารถใช้งานแอปได้</string>
     <string name="license_check_retry">ตรวจสอบสิทธิ์การใช้งานไม่ได้ กรุณาลองใหม่อีกครั้ง</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">ตรวจสอบ Play Store</string>
-    <string name="playstore_check_success">ขอบคุณสำหรับการติดตั้งแอปจาก Google Play Store</string>
-    <string name="playstore_check_failed">ดูเหมือนว่าคุณไม่ได้ติดตั้งชุดไอคอนนี้จาก Google Play Store
-        คุณไม่สามารถใช้งานมันได้</string>
     <!-- Share -->
     <string name="share_app_title">ลองเช็ค %s ดูสิ!</string>
     <string name="share_app_body">ลองเช็ค %1$s ดูสิ ชุดไอคอนนี้เท่ดีนะ! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">แถบเมนูนำทาง</string>
-    <string name="tap_intro_home_navigation_desc">แตะที่นี่หรือใช้นิ้วปัดจากด้านซ้ายมือของหน้าจอเพื่อเปิดแถบเมนูนำทาง</string>
     <string name="tap_intro_home_apply">ใช้ชุดไอคอน</string>
     <string name="tap_intro_home_apply_desc">แตะที่นี่เพื่อใช้ %s กับตัวเรียกใช้ปัจจุบันของคุณ หรือแตะค้างไว้เพื่อใช้มันกับตัวเรียกใช้อื่น</string>
     <string name="tap_intro_icons_search">ค้นหา</string>
-    <string name="tap_intro_icons_search_desc">แตะที่นี่เพื่อค้นหาไอคอน</string>
     <string name="tap_intro_request_select">เลือกแอปที่ขาดไอคอน</string>
     <string name="tap_intro_request_select_desc">แตะที่นี่เพื่อเลือกแอปที่ขาดไอคอน</string>
     <string name="tap_intro_request_select_all">เลือกแอปที่ขาดไอคอนทั้งหมด</string>
@@ -80,20 +70,14 @@
     <string name="tap_intro_request_send">ส่งคำขอไอคอน</string>
     <string name="tap_intro_request_send_desc">แตะที่นี่เพื่อส่งแอปที่ขาดไอคอนที่เลือกไว้</string>
     <string name="tap_intro_request_premium">คำขอไอคอนแบบพรีเมี่ยม</string>
-    <string name="tap_intro_request_premium_desc">แตะที่นี่เพื่อซื้อแพ็กเกจคำขอไอคอน
-        คำขอไอคอนแบบพรีเมี่ยมจะได้รับการดำเนินการที่รวดเร็วกว่า</string>
     <string name="tap_intro_wallpapers_option">ตัวเลือกวอลเปเปอร์</string>
-    <string name="tap_intro_wallpapers_option_desc">แตะค้างไว้เพื่อแสดงตัวเลือกวอลเปเปอร์ %s ใช้งานวอลเปเปอร์</string>
     <string name="tap_intro_wallpapers_option_desc_download">ดาวน์โหลดหรือ</string>
     <string name="tap_intro_wallpapers_preview">ดูตัวอย่างวอลเปเปอร์</string>
-    <string name="tap_intro_wallpapers_preview_desc">แตะที่นี่เพื่อดูตัวอย่างวอลเปเปอร์ขนาดเต็ม</string>
     <string name="tap_intro_wallpaper_preview_save">บันทึกวอลเปเปอร์</string>
     <string name="tap_intro_wallpaper_preview_save_desc">แตะที่นี่เพื่อดาวน์โหลดและบันทึกวอลเปเปอร์ไปยังอุปกรณ์ของคุณเพื่อการใช้งานภายหลัง</string>
     <string name="tap_intro_wallpaper_preview_apply">ใช้วอลเปเปอร์</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">แตะที่นี่เพื่อใช้วอลเปเปอร์เป็นพื้นหลังหน้าจอหลัก</string>
     <!-- Home -->
     <string name="home_more_apps_header">แอปอื่นๆ</string>
-    <string name="home_more_apps">ลองเช็คแอปอื่นๆบน Google Play Store</string>
     <string name="home_rate_and_review">ให้คะแนน &amp; เขียนรีวิว</string>
     <string name="home_apply_icon_pack">ใช้ %s</string>
     <string name="home_donate">บริจาค</string>
@@ -108,17 +92,14 @@
     <!-- Apply -->
     <string name="apply_installed">ตัวเรียกใช้ที่ติดตั้งแล้ว</string>
     <string name="apply_supported">ตัวเรียกใช้ที่สนับสนุน</string>
-    <string name="apply_manual">ไม่สามารถเซ็ตตัวใช้งาน %1$s ให้ใช้ชุดไอคอน %2$s จากแอปนี้ได้ คุณสามารถเซ็ตด้วยตัวคุณเองจากเมนูตั้งค่าของตัวใช้งานนั้น</string>
     <string name="apply_manual_kvaesitso">ไม่สามารถเซ็ตไอคอนให้ตัวใช้งาน Kvaesitso จากแอปนี้ได้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้:</string>
     <string name="apply_manual_kvaesitso_step_1">เปิดการตั้งค่าตัวใช้งาน Kvaesitso</string>
     <string name="apply_manual_kvaesitso_step_2">แตะที่ \"กริด &amp; ไอคอน\"</string>
     <string name="apply_manual_kvaesitso_step_3">แตะที่ \"ชุดไอคอน\"</string>
     <string name="apply_manual_kvaesitso_step_5">แตะที่ไอคอนพู่กันเพื่อเปิดหรือปิดการใช้งานรูปร่างพื้นหลัง</string>
-    <string name="apply_manual_kiss">ไม่สามารถเซ็ตไอคอนให้ตัวใช้งาน KISS จากแอปนี้ได้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้:</string>
     <string name="apply_manual_kiss_step_1">เปิดการตั้งค่าตัวใช้งาน KISS</string>
     <string name="apply_manual_kiss_step_2">แตะที่ \"หน้าจอผู้ใช้งาน\"</string>
     <string name="apply_manual_kiss_step_3">แตะที่ \"ชุดไอคอน\"</string>
-    <string name="apply_manual_samsung_oneui">ไม่สามารถเซ็ตตัวใช้งาน %1$s ให้ใช้ชุดไอคอนจากแอปนี้ได้ หากคุณใช้ %2$s เป็นต้นไป คุณสามารถใช้แอพควบคู่เพื่อใช้ชุดไอคอนได้</string>
     <string name="apply_manual_samsung_oneui_too_old">%s ของคุณมีเวอร์ชั่นเก่าเกินไป คุณต้องอัพเดตเป็น Android 12 หรือรุ่นที่ใหม่กว่าจึงจะสามารถเซ็ตชุดไอคอนให้ตัวใช้งานได้โดยตรงได้ หรือไม่เช่นนั้นก็ต้องใช้ตัวใช้งานตัวอื่น</string>
     <string name="apply_manual_samsung_oneui_step_1">เปิด %s</string>
     <string name="apply_manual_samsung_oneui_step_2">ดาวน์โหลดแอป %s</string>
@@ -126,7 +107,6 @@
     <!-- Icons -->
     <!-- Request -->
     <string name="request_title">คำขอไอคอน</string>
-    <string name="request_custom_error">เกิดข้อผิดพลาดระหว่างการส่งคำขอไอคอน หากปัญหายังคงเป็นอยู่เรื่อยๆ ให้ติดต่อนักพัฒนา %s</string>
     <string name="request_custom_success">ส่งคำขอไอคอนสำเร็จแล้ว</string>
     <string name="request_fetching_data">กำลังดึงข้อมูลใหม่ล่าสุด…</string>
     <string name="request_build_failed">ไม่สามารถสร้างคำขอไอคอนได้</string>
@@ -139,8 +119,6 @@
     <string name="regular_request_available">เหลืออีก\n%d คำขอ</string>
     <!-- Premium Request -->
     <string name="premium_request">คำขอไอคอนแบบพรีเมี่ยม</string>
-    <string name="premium_request_no_internet">กรุณาตรวจสอบว่าโทรศัพท์ของคุณเชื่อมต่อกับอินเทอร์เน็ตเรียบร้อยก่อนส่งคำขอไอคอนแบบพรีเมี่ยม</string>
-    <string name="premium_request_desc">คำขอไอคอนแบบพรีเมี่ยมคือการจ่ายเงินเพื่อส่งคำขอ เพื่อให้ทีมพัฒนาสร้างไอคอนให้กับแอปที่คุณขอได้เร็วขึ้น</string>
     <string name="premium_request_buy">ซื้อ</string>
     <string name="premium_request_count">มี\n%d คำขอ</string>
     <string name="premium_request_used">ใช้ไปแล้ว\n%d คำขอ</string>
@@ -150,8 +128,6 @@
     <string name="premium_request_limit">คุณมีคำขอไอคอนแบบพรีเมี่ยมเพียง %d รายการเท่านั้น</string>
     <string name="premium_request_limit1">แต่คุณเลือกไว้ %d แอป
         \n\nคุณต้องใช้คำขอไอคอนแบบพรีเมี่ยมที่คุณมีทั้งหมดก่อนที่คุณจะใช้คำขอแบบทั่วไปได้อีกครั้ง</string>
-    <string name="premium_request_consume_failed">ไม่สามารถใช้คำขอไอคอนแบบพรีเมี่ยมได้ กรุณาตรวจสอบความเสถียรของการเชื่อมต่ออินเทอร์เน็ตของคุณ และลองใหม่อีกครั้ง
-        ไปที่การตั้งค่าและสร้างคำขอไอคอนแบบพรีเมี่ยมใหม่อีกครั้ง</string>
     <string name="premium_request_rebuilding">กำลังสร้างคำขอไอคอนแบบพรีเมี่ยมใหม่อีกครั้ง</string>
     <string name="premium_request_rebuilding_empty">คุณไม่ได้สร้างคำขอไอคอนแบบพรีเมี่ยม</string>
     <string name="premium_request_exist">คุณยังมีแพ็กเกจคำขอไอคอนแบบพรีเมี่ยมอยู่
@@ -175,7 +151,6 @@
     <string name="presets_load_failed">ไม่สามารถโหลดชุดรูปแบบได้</string>
     <string name="presets_storage_permission">คุณต้องอนุญาตการใช้พื้นที่จัดเก็บข้อมูลจึงจะสามารถดูตัวอย่างวอลเปเปอร์ได้</string>
     <string name="presets_required_apps">แอปที่จำเป็นต้องมีสำหรับการใช้ชุดรูปแบบเหล่านี้</string>
-    <string name="presets_required_apps_not_installed">คุณยังไม่ได้ติดตั้งแอปที่จำเป็นต้องมีสำหรับการใช้ชุดรูปแบบ กรุณาติดตั้งแอปที่ขาดไปและลองใหม่อีกครั้ง</string>
     <!-- Preferences -->
     <string name="pref_data_header">ข้อมูล &amp; แคช</string>
     <string name="pref_data_cache">ล้างแคช</string>
@@ -214,7 +189,6 @@
     <!-- Intent -->
     <string name="app_client">เลือกแอป</string>
     <string name="no_email_app">คุณไม่มีแอปสำหรับส่งอีเมล</string>
-    <string name="no_browser">คุณไม่มีแอปสำหรับเปิดลิงก์</string>
     <string name="intent_email_failed">ไม่สามารถแสดงแอปอีเมลได้</string>
     <string name="intent_email_supported">รองรับ</string>
     <string name="intent_email_recommended">แนะนำ</string>
@@ -225,7 +199,6 @@
     <string name="about_privacy_policy_title">นโยบายความเป็นส่วนตัว</string>
     <string name="about_terms_and_conditions_title">ข้อกำหนดและเงื่อนไข</string>
     <!-- Report Bugs -->
-    <string name="report_bugs_desc">กรุณาอธิบายปัญหาที่คุณต้องการจะรายงาน</string>
     <string name="report_bugs_desc_hint">คำอธิบาย</string>
     <string name="report_bugs_desc_empty">กรุณาอธิบาย</string>
     <string name="report_bugs_building">กำลังสร้างลิสต์ Activity…</string>
@@ -235,12 +208,9 @@
     <string name="donation_success">ขอบคุณสำหรับการบริจาค เราจะใช้มันในทางที่ดี</string>
     <!-- Crash Report -->
     <string name="crash_report">รายงานแอปล่ม</string>
-    <string name="crash_report_message">ขออภัย %s ล่ม เลือกส่งรายงานข้างล่างเพื่อช่วยนักพัฒนาแก้ไขปัญหา</string>
     <string name="crash_report_send">ส่งรายงาน</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">แคนดี้บาร์</string>
-    <string name="about_dashboard_dev">แคนดี้บาร์คือแอปแดชบอร์ดสำหรับชุดไอคอน อยู่ภายใต้ข้อตกลงการใช้งานเสรีสัญญาอนุญาตอะแพชี 2.0        สำหรับระบบแอนดรอยด์ สามารถดาวน์โหลดจาก GitHub ได้ฟรี พัฒนาโดย Dani Mahardhika</string>
-    <string name="about_open_source_licenses">ใบอนุญาตโอเพนซอร์ส</string>
     <string name="about_dashboard_contributors">ผู้มีส่วนร่วมพัฒนาแคนดี้บาร์</string>
     <string name="about_dashboard_translator">ผู้แปลภาษาแคนดี้บาร์</string>
     <!-- DrawerToggle -->
