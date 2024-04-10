@@ -163,6 +163,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_poco,
                 new String[]{"com.mi.android.globallauncher"},
                 false),
+        MOTO(
+                "Moto Launcher",
+                R.drawable.ic_launcher_moto,
+                new String[]{"com.motorola.launcher3"},
+                false),
         MICROSOFT(
                 "Microsoft",
                 R.drawable.ic_launcher_microsoft,
@@ -690,6 +695,9 @@ public class LauncherHelper {
                 break;
             case TINYBIT:
                 applyManual(context, launcherPackage, launcherName, "rocks.tbog.tblauncher.SettingsActivity");
+                break;
+            case MOTO:
+                applyManual(context, launcherPackage, launcherName, "com.motorola.personalize.app.IconPacksActivity");
                 break;
             case SMART:
                 try {
