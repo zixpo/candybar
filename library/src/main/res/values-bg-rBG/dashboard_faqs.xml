@@ -9,13 +9,13 @@
         <!-- I can\'t see a complete icon name -->
         <!-- How can i replace icons with an alternate icon? -->
         <!-- How do i request an icon? -->
-        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- How can i restore the remaining Premium Requests after reinstalling the app? -->
         <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
         <!-- Why do the icons looks jaggy or pixelated on my phone? -->
         <!-- I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed? -->
+            but why isn\'t the actual icon on the app drawer changed? -->
         <!-- What is the \"report bugs\" option? -->
-        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- My launcher is listed in the Google Play description, but why isn\'t it included in apply section? -->
         <!-- Wallpaper can\'t be applied, just showing black screen? -->
         <!-- Muzei: How to load downloaded wallpapers only? -->
         <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
@@ -23,7 +23,7 @@
         <!-- Why are Read &amp; Write External Storage permission needed? -->
         <!-- Why is Internet permission needed? -->
         <!-- Why is Access Network State permission needed? -->
-        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Access Wi-Fi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
@@ -37,12 +37,13 @@
         <item>Не мога да видя пълното име на иконата</item>
         <item>Как мога да заменя икона с алтернативна икона?</item>
         <item>Как мога да направя заявка за икона?</item>
-        <item>Как мога да възстановя Платената Заявка след преинсталиране на приложението?</item>
-        <item>След рестартиране на телефонът ми, пакетът с икони не се прилага, той се възстановява по подразбиране. Какво да правя?</item>
+        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
+        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
         <item>Защо иконите изглеждат размазани или пикселирани на моя телефон?</item>
-        <item>Виждам иконата, включена във всички икони, но защо не е променена действителната икона в чекмеджето на приложението?</item>
+        <item>I can see the icon included in all icons,
+            but why isn\'t the actual icon on the app drawer changed?</item>
         <item>Каква е опцията \"доклад за грешки\"?</item>
-        <item>Моят лаунчер е посочен в описанието на приложението в Google, но защо не е включен в раздела за прилагане?</item>
+        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
         <item>Тапетът не може да се приложи, показва само черен екран?</item>
         <item>Muzei: Как да зареждате само изтеглени тапети?</item>
         <item>Muzei: Не искам да продължа да тегля тапети всеки път, когато тапетът се промени?</item>
@@ -58,24 +59,34 @@
     <string-array name="answers">
         <item>Лаунчер е частта от потребителския интерфейс на Андроид, която позволява на потребителите да персонализират началния екран, да стартират мобилни приложения, да извършват телефонни обаждания и да изпълняват други задачи на устройства с Андроид.</item>
         <item>Набор графики, които ще променят външния вид на иконите на чекмеджето на приложението ви</item>
-        <item>Ще ви е необходим лаунчер, който поддържа персонализирани пакети с икони.  Поддържаните лаунчери са изброени в описанието на приложението в Google Play магазина.  Ако се объркате кой лаунчер трябва да използвате, просто отидете в секцията \"Прилагане\", след което инсталирайте желания лаунчер.</item>
-        <item>Можете да отворите чекмеджето за навигация и след това да отворите „Прилагане“.  Изберете вашия лаунчер от списъка.  Ако вашият лаунчер не е посочен там, но този пакет с икони е съвместим с него (вижте в описанието на приложението в  Google Play магазин за поддържаните лаунчери), можете да приложите пакета с икони ръчно от настройките на лаунчера.</item>
-        <item>Можете да отворите чекмеджето за навигация и след това да отворите категорията „Икони“</item>
+        <item>You will need a launcher that supports custom icon packs.
+            Supported launchers are listed in the Play Store description.
+            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
+        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
+            If your launcher is not listed there, but this icon pack is compatible with it
+            (see on Google Play Store description for supported launchers),
+            you can apply the icon pack manually in your launcher settings.</item>
+        <item>You can open the navigation drawer and then open \"Icons\"</item>
         <item>Просто докоснете иконата.  Ще се появи диалогов прозорец за преглед с по-голямо изображение и пълно име на иконата.</item>
         <item>Зависи кой лаунчер  използвате.  Не всеки лаунчер поддържа редактиране на икони.  Най-често можете да редактирате икона, като докоснете и задържите иконата.</item>
-        <item>Можете да отворите чекмеджето за навигация, след което да отворите „Заявка за икони“.</item>
-        <item>Можете да отворите чекмеджето за навигация, след което да отворите „Настройки“, да изберете „Възстановяване на покупките“.  Ако сте имали останали Платени заявки преди преинсталиране, те ще бъдат възстановени.</item>
-        <item>Това се случва, защото  пакета с икони е бил преместен на SD картата, трябва да го инсталирате във вътрешната памет.</item>
-        <item>Проблемът може да дойде от лаунчера, който  използвате, ако в настройките е зададена твърде голяма разделителна способност.  Можете да го поправите, като увеличите размера на иконата до 115 - 120%.  Като алтернатива можете да смените лаунчера.</item>
-        <item>Отворете настройките, превъртете надолу и след това изберете „Съобщи за грешки“.</item>
+        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
+        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
+            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
+        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
+        <item>The problem might come from the launcher that you used when handling big icon resolution.
+       	    You can fix it by increasing the icon size to 115–120%.
+       	    Alternatively, you might change your launcher.</item>
+        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
         <item>\"Докладвай Грешки\" се използва за докладване на грешки, свързани с пакета с икони, а не с таблото за управление.</item>
-        <item>Не всички лаунчери поддържат директно прилагане,някои от тях не могат да бъдат достъпни директно от таблото за управление.  Можете да приложите ръчно този пакет с икони от отделните настройки на лаунчера,който използвате.</item>
+        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
+      	    You can apply this icon pack manually in the individual launcher settings.</item>
         <item>Когато \"Зададете Тапет\" директно от приложението, той ще бъде изтеглен в кеша, след което приложението на таблото ще се опита да го приложи.  Задаването на тапета ще отнеме известно време, и също така се нуждае от огромно количество оперативна памет за кратък период от време.  Възможно е да се появят грешки в „Черен екран“, защото телефонът ви няма достатъчно свободна RAM памет, за да обработи тапета.  Рестартирането на телефона ви ще отстрани този проблем.  След рестартиране телефонът ви ще има на разположение повече RAM памет.  Освен това можете да отворите изтегления тапет от вашата Галерия и да го зададете като тапет от там.</item>
-        <item>Отворете muzei, изберете този пакет с икони, настройки.  Ще видите опция за зареждане само на изтеглени тапети.  Първо ще трябва да изтеглите тапети от таблото за управление.</item>
+        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
+            You will need to download wallpapers from the dashboard first.</item>
         <item>Ако тапетът вече е изтеглен, той ще се зареди автоматично от паметта на вашия телефон.  Muzei няма да продължи да го изтегля, когато тапетът се промени.  Първо ще трябва да изтеглите тапети от таблото за управление.</item>
         <item>Отворете таблото за управление, изтеглете тапети, които искате да използвате в Muzei.  Отворете настройките на Muzei, след това изберете- Зареди свалените тапети.</item>
         <item>Използва се за писане и четене на кеш и събиране на данни за заявките за икони.</item>
-        <item>Използва се за зареждане на тапети, базирани на облак, и изтеглянето им.</item>
+        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
         <item>Използва се за проверка дали телефонът ви има интернет връзка или не.</item>
         <item>Използва се за проверка дали телефонът ви има интернет връзка към wifi или не, за да зареди облачни тапети от Muzei.</item>
         <item>Използва се за прилагане на тапети директно от приложението на таблото.</item>
