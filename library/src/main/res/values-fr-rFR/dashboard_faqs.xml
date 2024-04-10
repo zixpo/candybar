@@ -9,13 +9,13 @@
         <!-- I can\'t see a complete icon name -->
         <!-- How can i replace icons with an alternate icon? -->
         <!-- How do i request an icon? -->
-        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- How can i restore the remaining Premium Requests after reinstalling the app? -->
         <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
         <!-- Why do the icons looks jaggy or pixelated on my phone? -->
         <!-- I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed? -->
+            but why isn\'t the actual icon on the app drawer changed? -->
         <!-- What is the \"report bugs\" option? -->
-        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- My launcher is listed in the Google Play description, but why isn\'t it included in apply section? -->
         <!-- Wallpaper can\'t be applied, just showing black screen? -->
         <!-- Muzei: How to load downloaded wallpapers only? -->
         <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
@@ -23,7 +23,7 @@
         <!-- Why are Read &amp; Write External Storage permission needed? -->
         <!-- Why is Internet permission needed? -->
         <!-- Why is Access Network State permission needed? -->
-        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Access Wi-Fi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
@@ -37,12 +37,13 @@
         <item>Je ne peux voir le nom complet d\'une icône</item>
         <item>Comment puis-je remplacer des icônes par un icône alternatif ?</item>
         <item>Comment puis-je demander une icône ?</item>
-        <item>Comment puis-je restaurer les Demandes Premium restantes après avoir réinstallé l\'application ?</item>
-        <item>Après avoir redémarré mon téléphone, le pack d\'icônes n\'est plus appliqué, les icônes ont était restaurées par par défaut ?</item>
+        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
+        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
         <item>Pourquoi les icônes semblent floues ou pixelisées sur mon téléphone ?</item>
-        <item>Je peux voir une icône dans la liste des icônes disponibles, alors pourquoi cette même icône ne change pas dans le tiroir des applications ?</item>
+        <item>I can see the icon included in all icons,
+            but why isn\'t the actual icon on the app drawer changed?</item>
         <item>Qu\'est-ce que l\'option \"Rapport de bugs\" ?</item>
-        <item>Mon launcher est listé dans la description Google Play alors pourquoi n\'est-il pas inclus dans la section Appliquer ?</item>
+        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
         <item>Le fond d\'écran ne peut pas être appliqué, je n\'ai qu\'un écran noir ?</item>
         <item>Muzei : comment uniquement charger les fonds d\'écran téléchargés ?</item>
         <item>Muzei : Je ne veux pas continuer à télécharger des fonds d\'écran à chaque fois que le fond d\'écran change.</item>
@@ -58,36 +59,40 @@
     <string-array name="answers">
         <item>Le launcher est une partie de l\'interface utilisateur Android qui permet aux utilisateurs de personnaliser l\'écran d\'accueil, démarrer des applications mobile, passer des appels téléphoniques et effectuer d\'autres tâches.</item>
         <item>Un ensemble d\'éléments graphiques qui changera l\'aspect des icônes de votre tiroir d\'applications</item>
-        <item>Vous avez besoin d\'un Lanceur avec un support de Pack d\'icônes. Vérifiez la description de votre lanceur sur le Google Play Store pour vérifier si votre lanceur supporte les packs d\'icônes. Si vous ne savez pas quels lanceurs utiliser, allez dans la section Appliquer, et en choisissez un parmi celles qui figures.</item>
-        <item>Vous pouvez ouvrir le panneau de navigation puis sélectionner \"Appliquer\". Choisir un launcher dans la liste.
-Si votre launcher n\'est pas listé ici mais que ce pack d\'icônes est compatible (voir la description Google Play pour les launchers supportés), alors vous pouvez appliquer le pack d\'icônes manuellement depuis les paramètres de votre launcher.</item>
-        <item>Vous pouvez ouvrir le panneau de navigation puis sélectionner \"Icônes\"</item>
+        <item>You will need a launcher that supports custom icon packs.
+            Supported launchers are listed in the Play Store description.
+            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
+        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
+            If your launcher is not listed there, but this icon pack is compatible with it
+            (see on Google Play Store description for supported launchers),
+            you can apply the icon pack manually in your launcher settings.</item>
+        <item>You can open the navigation drawer and then open \"Icons\"</item>
         <item>Appuyez simplement sur l\'icône. Une prévisualisation apparaitra avec une image plus grande et le nom de l\'icône au complet.</item>
         <item>Cela dépend du launcher utilisé. Tous les launchers ne supportent pas la modification d\'icône.
 Généralement, vous pouvez modifier un icône en maintenant votre doigt dessus ou en faisant un double appui.</item>
-        <item>Vous pouvez ouvrir le panneau de navigation puis sélectionner \"Demande d\'icône\"</item>
-        <item>Vous pouvez ouvrir le panneau de navigation puis sélectionner \"Paramètres\" &gt; \"Restaurer les achats\".
-Si vous aviez des Demandes Premium restantes avant la réinstallation, alors elles seront restaurées.</item>
-        <item>C\'est arrivé car ce pack d\'icônes a été déplacé sur la SD Card, vous devriez l\'installer sur la mémoire interne.</item>
-        <item>Le problème peut venir du launcher que vous utilisez lors de la gestion de la résolution de gros icônes.
-Vous pouvez corriger cela en augmentant la taille des icônes à 115 - 120%.
-Sinon, vous pouvez changer de launcher.</item>
-        <item>Ouvrir les paramètres, allez en bas pour choir \"Rapport de bugs\".</item>
+        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
+        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
+            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
+        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
+        <item>The problem might come from the launcher that you used when handling big icon resolution.
+       	    You can fix it by increasing the icon size to 115–120%.
+       	    Alternatively, you might change your launcher.</item>
+        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
         <item>\"Rapport de bugs\" est utilisé pour remonter des problèmes relatifs au pack d\'icônes, pas le tableau de bord.</item>
-        <item>Tous les launchers ne supportent pas l\'application instantanée et certains ne sont pas accessibles depuis le tableau de bord.
-Vous pouvez appliquer ce pack d\'icônes manuellement depuis les paramètres dédiés du launcher.</item>
+        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
+      	    You can apply this icon pack manually in the individual launcher settings.</item>
         <item>Quand vous \"Appliquer un fond d\'écran\" depuis l\'application, il sera téléchargé dans le cache, puis le tableau de bord essaiera de l\'appliquer. L\'application peut prendre du temps et requiert beaucoup de RAM pendant une faible durée.
 Les erreurs \"Écran noir\" peuvent survenir car votre téléphone n\'a pas assez de RAM disponible pour traiter le fond d\'écran.
 Redémarrer votre téléphone pour régler le problème. Au redémarrage, votre téléphone aura plus de RAM disponible.
 Sinon, vous pouvez ouvrir le fond d\'écran téléchargé depuis votre Galerie et le définir en tant que fond d\'écran depuis cette application.</item>
-        <item>Ouvrir Muzei &gt; Choisir ce pack d\'icônes &gt; Paramètres. Vous verrez une option pour charger uniquement les fonds d\'écran téléchargés.
-Vous aurez au préalable besoin de télécharger les fonds d\'écran depuis le tableau de bord.</item>
+        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
+            You will need to download wallpapers from the dashboard first.</item>
         <item>Si un fond d\'écran est déjà téléchargé, il sera automatiquement chargé depuis la mémoire du téléphone.
 Muzei n\'essaiera pas de le télécharger quand le fond d\'écran change. Vous aurez au préalable besoin de télécharger les fonds d\'écran depuis le tableau de bord.</item>
         <item>Ouvrir le tableau de bord, télécharger les fonds d\'écran que vous souhaitez utiliser dans Muzei.
 Ouvrir les paramètres de Muzei puis choisir \"Charger uniquement les fonds d\'écran téléchargés\".</item>
         <item>Nécessaire pour écrire et lire le cache et collecter les données lors de demande d\'icône•s.</item>
-        <item>Nécessaire pour charger les fonds d\'écran stockés dans le cloud et les télécharger.</item>
+        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
         <item>Nécessaire pour savoir si votre téléphone a une connexion Internet ou pas.</item>
         <item>Nécessaire pour savoir si votre téléphone a une connexion Internet WiFi ou pas, pour charger les fonds d\'écran du cloud depuis Muzei.</item>
         <item>Nécessaire pour directement appliquer les fonds d\'écran depuis le tableau de bord.</item>
