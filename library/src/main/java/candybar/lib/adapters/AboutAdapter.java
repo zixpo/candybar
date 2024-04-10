@@ -33,7 +33,6 @@ import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
-import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.HashMap;
 
@@ -194,7 +193,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private class HeaderViewHolder extends RecyclerView.ViewHolder {
 
         private final ImageView image;
-        private final CircularImageView profile;
+        private final ImageView profile;
 
         HeaderViewHolder(View itemView) {
             super(itemView);
@@ -254,9 +253,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
             if (!Preferences.get(mContext).isCardShadowEnabled()) {
                 if (card != null) card.setCardElevation(0);
-
-                profile.setShadowRadius(0f);
-                profile.setShadowColor(Color.TRANSPARENT);
+                profile.setElevation(0);
             }
 
             subtitle.setText(HtmlCompat.fromHtml(
