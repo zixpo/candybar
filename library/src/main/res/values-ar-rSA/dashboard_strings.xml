@@ -18,6 +18,7 @@
     <string name="hour">ساعة</string>
     <string name="save_setting">حفظ</string>
     <string name="muzei_refresh_duration">تحديث المدة</string>
+    <string name="muzei_wifi_only">تحديث عبر Wi-Fi فقط</string>
     <string name="muzei_downloaded_only">عرض الخلفيات المحملة فقط</string>
     <string name="muzei_settings_ignored">لا تحتوي حزمة الأيقونات على خلفيات، تم تجاهل الإعدادات.</string>
     <string name="muzei_settings_saved">تم حفظ الإعدادات</string>
@@ -49,20 +50,29 @@
     <!-- Changelog -->
     <string name="changelog_version">الإصدار</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">غير قادر على تحميل منتجات الشراء في التطبيق</string>
     <!-- License -->
     <string name="license_checking">جار التحقق من الترخيص ...</string>
     <string name="license_check">التحقق من الترخيص</string>
+    <string name="license_check_success">نجاح التحقق من الترخيص. شكرا لك على تنزيل التطبيق من متجر Play.</string>
+    <string name="license_check_failed">فشل التحقق من الترخيص، أنت لم تقم بتحميل التطبيق من متجر Play.
+        لن تتمكن من استخدامه.</string>
     <string name="license_check_retry">تعذر التحقق من الترخيص، يرجى المحاولة مرة أخرى بعد لحظات.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">التحقق من متجر Play</string>
+    <string name="playstore_check_success">شكرا لك لتثبيت التطبيق من متجر جوجل. استمتع!</string>
+    <string name="playstore_check_failed">يبدو أنك قمت بتثبيت حزمة الأيقونات هذه من خارج متجر Google Play.
+        لذلك لن تتمكن من استخدامها.</string>
     <!-- Share -->
     <string name="share_app_title">مرحباً! تفقد %s</string>
     <string name="share_app_body">تفقد %1$s، حزمة الأيقونات هذه رائعة جداً! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">درج التنقل</string>
+    <string name="tap_intro_home_navigation_desc">اضغط هنا أو اسحب من الحافة اليسرى للشاشة لفتح قائمة التنقل</string>
     <string name="tap_intro_home_apply">تطبيق حزمة الأيقونات</string>
     <string name="tap_intro_home_apply_desc">اضغط هنا لتطبيق %s على المشغل الحالي. اضغط مطولاً للتطبيق على المشغلات الأخرى.</string>
     <string name="tap_intro_icons_search">بحث</string>
+    <string name="tap_intro_icons_search_desc">انقر هنا للبحث عن أيقونة</string>
     <string name="tap_intro_request_select">تحديد التطبيق المفقود</string>
     <string name="tap_intro_request_select_desc">اضغط هنا لتحديد التطبيق المفقود لطلب الأيقونات</string>
     <string name="tap_intro_request_select_all">تحديد جميع التطبيقات المفقودة</string>
@@ -70,9 +80,13 @@
     <string name="tap_intro_request_send">إرسال طلب الأيقونات</string>
     <string name="tap_intro_request_send_desc">اضغط هنا لإرسال التطبيقات المفقودة المحددة</string>
     <string name="tap_intro_request_premium">طلب أيقونات متميز</string>
+    <string name="tap_intro_request_premium_desc">اضغط هنا لشراء حزمة طلب الأيقونات المتميزة،
+        مع طلب رمز مميز، يمكنك الحصول على تطبيقاتك المطلوبة بشكل أسرع.</string>
     <string name="tap_intro_wallpapers_option">خيارات الخلفية</string>
+    <string name="tap_intro_wallpapers_option_desc">اضغط مع الاستمرار هنا لإظهار خيارات الخلفية؛ %s تطبيق الخلفية.</string>
     <string name="tap_intro_wallpapers_option_desc_download">تحميل أو</string>
     <string name="tap_intro_wallpapers_preview">معاينة الخلفية</string>
+    <string name="tap_intro_wallpapers_preview_desc">اضغط هنا لمعاينة الحجم الكامل للخلفية</string>
     <string name="tap_intro_wallpaper_preview_save">حفظ الخلفية</string>
     <string name="tap_intro_wallpaper_preview_save_desc">اضغط هنا لتحميل وحفظ الخلفية إلى جهازك لكي يتسنى لك استعمالها لاحقاً</string>
     <string name="tap_intro_wallpaper_preview_apply">تطبيق الخلفية</string>
