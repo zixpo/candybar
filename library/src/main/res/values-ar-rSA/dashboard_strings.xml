@@ -90,8 +90,10 @@
     <string name="tap_intro_wallpaper_preview_save">حفظ الخلفية</string>
     <string name="tap_intro_wallpaper_preview_save_desc">اضغط هنا لتحميل وحفظ الخلفية إلى جهازك لكي يتسنى لك استعمالها لاحقاً</string>
     <string name="tap_intro_wallpaper_preview_apply">تطبيق الخلفية</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">انقر هنا لتعيين الخلفية كخلفية للشاشة الرئيسية</string>
     <!-- Home -->
     <string name="home_more_apps_header">المزيد من التطبيقات</string>
+    <string name="home_more_apps">تحقق من التطبيقات الأخرى المنشورة في متجر Google Play</string>
     <string name="home_rate_and_review">التقييم والمراجعة</string>
     <string name="home_apply_icon_pack">تطبيق %s</string>
     <string name="home_donate">التبرع</string>
@@ -106,16 +108,19 @@
     <!-- Apply -->
     <string name="apply_installed">المشغلات المثبتة</string>
     <string name="apply_supported">المشغلات المدعومة</string>
+    <string name="apply_manual">%1$s Launcher لا يدعم التطبيق المباشر، ولكن يمكنك تطبيق %2$s يدوياً من إعدادات المشغل.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso لا يدعم التطبيق المباشر ولكن يمكنك اتباع هذه الخطوات:</string>
     <string name="apply_manual_kvaesitso_step_1">فتح إعدادات Kvaesitso</string>
     <string name="apply_manual_kvaesitso_step_2">انقر فوق \"الشبكة &amp; Icons\"</string>
     <string name="apply_manual_kvaesitso_step_3">اضغط على \"حزمة الأيقونة\"</string>
     <string name="apply_manual_kvaesitso_step_4">اختر %s من القائمة</string>
     <string name="apply_manual_kvaesitso_step_5">اضغط على أيقونة فرشاة الطلاء لتمكين أو تعطيل شكل الخلفية</string>
+    <string name="apply_manual_kiss">KISS لا يدعم التطبيق المباشر، ولكن يمكنك اتباع هذه الخطوات:</string>
     <string name="apply_manual_kiss_step_1">فتح إعدادات KISS</string>
     <string name="apply_manual_kiss_step_2">انقر فوق \"واجهة المستخدم\"</string>
     <string name="apply_manual_kiss_step_3">اضغط على \"حزمة الأيقونة\"</string>
     <string name="apply_manual_kiss_step_4">اختر %s من القائمة</string>
+    <string name="apply_manual_samsung_oneui">%1$s لا يدعم التطبيق المباشر، ولكن بدءاً من %2$s يمكنك تطبيق الأيقونات مع تطبيق مرافق.</string>
     <string name="apply_manual_samsung_oneui_too_old">الإصدار الحالي من %s قديم جداً. الرجاء التحديث إلى Android 12 أو أحدث لتتمكن من تطبيق الأيقونات مباشرة. بدلاً من ذلك، يمكنك تثبيت واجهة مختلفة.</string>
     <string name="apply_manual_samsung_oneui_step_1">فتح %s</string>
     <string name="apply_manual_samsung_oneui_step_2">تحميل التطبيق %s</string>
@@ -124,6 +129,7 @@
     <string name="apply_manual_samsung_oneui_step_5">اضغط على الزر الأزرق \"أيقونة الحزمة\"</string>
     <string name="apply_manual_samsung_oneui_step_6">اختر %s من القائمة</string>
     <string name="apply_manual_samsung_oneui_step_7">كرر هذه الخطوات في كل مرة تقوم فيها بتحديث %s حيث لن يتم تعيين الأيقونات الجديدة تلقائياً.</string>
+    <string name="apply_manual_hios">مشغل HiOS لا يدعم التطبيق المباشر، ولكن يمكنك اتباع هذه الخطوات:</string>
     <string name="apply_manual_hios_step_1">فتح \"الإعدادات\"</string>
     <string name="apply_manual_hios_step_2">انقر فوق \"السمة &amp; قفل الشاشة\"</string>
     <string name="apply_manual_hios_step_3">انقر فوق \"السمات\"</string>
@@ -137,21 +143,26 @@
     <string name="apply_manual_color_os_step_2">اضغط على \"أيقونة\"</string>
     <string name="apply_manual_color_os_step_3">مرر إلى يمين الزر \"مخصص\" (هذه قائمة قابلة للتمرير!)</string>
     <string name="apply_manual_color_os_step_4">اضغط %s</string>
+    <string name="apply_manual_before">هذا الإصدار من قبل Launcher لا يدعم بعد تطبيق الأيقونات مباشرة. بدلاً من ذلك، اتبع الخطوات أدناه:</string>
     <string name="apply_manual_before_step_1">مرر لليسار على الشاشة الرئيسية</string>
     <string name="apply_manual_before_step_2">انقر فوق \"إعدادات\"</string>
     <string name="apply_manual_before_step_3">انقر فوق \"الأنماط &amp; السمات\"</string>
     <string name="apply_manual_before_step_4">انقر فوق \"أنماط الأيقونة &amp; الحزم\"</string>
     <string name="apply_manual_before_step_5">اضغط %s</string>
     <string name="apply_manual_nothing_step_1">فتح \"الإعدادات\"</string>
+    <string name="apply_manual_nothing_step_2">انقر فوق \"تخصيص\"</string>
     <string name="apply_manual_nothing_step_3">انقر فوق \"حزمة الأيقونة\"</string>
     <string name="apply_manual_nothing_step_4">اضغط %s</string>
     <string name="apply_launch_failed">تعذر تشغيل إعدادات %s</string>
     <string name="apply_launcher_not_installed">المشغل %s ليس مثبتاً. هل تريد فتح متجر Google Play لتحميله وتثبيته؟</string>
     <string name="apply_launcher_not_installable">المشغل %s ليس مثبتاً. يرجى المحاولة مرة أخرى بعد تثبيت المشغل.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager ليس متاحاً على هذا الجهاز</string>
+    <string name="apply_cmtheme_failed">غير قادر على تشغيل مدير سمات CM، يمكنك محاولة تطبيق حزمة الأيقونات يدوياً من الإعدادات.</string>
     <string name="apply_lg_home">لتطبيق حزمة الأيقونات هذه قم بفتح الإعدادات - العرض - الشاشة الرئيسية - التنسيق</string>
     <string name="apply_lg_home_not_available">LG Home ليس متاحاً على هذا الجهاز</string>
+    <string name="apply_lg_home_failed">غير قادر على تشغيل إعدادات LG الرئيسية ، يمكنك محاولة تطبيق حزمة الأيقونات يدوياً من الإعدادات.</string>
     <string name="apply_lg_home_nougat">LG Home على أندرويد Nougat لم يعد يدعم حزم الأيقونات. أنت تحتاج إلى مشغل مخصص لاستعمال حزمة الأيقونات.</string>
+    <string name="apply_launcher_incompatible">%s Launcher لا يدعم أي حزم أيقونات ، لذلك لا يمكنك استخدام حزمة الأيقونات هذه مع هذا المشغل. يمكنك تجربة تطبيق طرف ثالث لاستخدام حزمة الأيقونات هذه في مشغل %2$s. هل تريد تثبيته؟</string>
     <string name="apply_launcher_incompatible_depending_on_version">%s مشغل لا يدعم حزم الأيقونات على أندرويد %d أو أقل. الرجاء تحديث إصدار الأندرويد الخاص بك أو تثبيت مشغل طرف ثالث لاستخدام حزمة الأيقونة. يمكنك أيضًا تجربة تطبيق مساعد لتغيير الأيقونات الفردية. هل تريد تثبيته؟</string>
     <!-- Icons -->
     <string name="icons_load_failed">تعذر تحميل الأيقونات</string>
@@ -166,7 +177,9 @@
     <string name="request_not_available">لا يمكن الطلب</string>
     <string name="request_building">جار بناء الطلب ...</string>
     <string name="request_pacific_sending">جار إرسال الطلب إلى Pacific Manager...</string>
+    <string name="request_pacific_error">حدث خطأ أثناء إرسال الطلب إلى Pacific Manager. الخطأ هو %s</string>
     <string name="request_pacific_success">تم إرسال الطلب بنجاح إلى Pacific Manager</string>
+    <string name="request_custom_error">حدث خطأ أثناء إرسال طلب أيقونة. إذا استمر هذا الخطأ، اتصل بالمطور. %s</string>
     <string name="request_custom_success">تم إرسال طلب الأيقونات بنجاح</string>
     <string name="request_fetching_data">جار جلب أحدث البيانات …</string>
     <string name="request_build_failed">تعذر بناء طلب الأيقونات</string>
@@ -176,17 +189,23 @@
     <string name="request_requested_button_cancel">الرجوع</string>
     <string name="request_requested_button_confirm">حدد على أي حال</string>
     <string name="request_email_client">اختر التطبيق الذي تريد استعماله لإرسال طلب الأيقونات</string>
+    <string name="request_app_disabled">أنت تستخدم إصدار قديم من حزمة الأيقونات هذه. يمكن تضمين الأيقونات المطلوبة في الإصدار الأخير. الرجاء تحديث التطبيق الخاص بك إلى أحدث إصدار لطلب الأيقونة.</string>
     <string name="connection_error_long">تعذر تحميل البيانات من الخادم. رجاءاً، تحقق من اتصالك بالشبكة.</string>
+    <string name="unable_to_load_config">حدث خطأ أثناء جلب أو قراءة البيانات من الخادم.</string>
+    <string name="request_limit">يمكنك فقط تقديم طلب %d مع طلب منتظم.</string>
     <string name="request_used">لقد قمت بعمل %d طلب(ات) أيقونات.</string>
     <string name="request_limit_buy">يمكنك شراء الطلبات المتميزة لطلب المزيد من الأيقونات.</string>
     <string name="request_limit_reset">سيتم إعادة تعيين حد طلب الأيقونات عند كل تحديث.</string>
     <!-- Regular Request -->
     <string name="regular_request">طلب الأيقونات العادي</string>
+    <string name="regular_request_desc">احصل على الرمز الخاص بك، وسوف يحاول المطور تضمين الرموز التي طلبتها.</string>
     <string name="regular_request_count">الإجمالي\n%d طلب(ات)</string>
     <string name="regular_request_used">تم استخدام\n%d طلب(ات)</string>
     <string name="regular_request_available">المتاح\n%d طلب(ات)</string>
     <!-- Premium Request -->
     <string name="premium_request">طلب الأيقونات المتميز</string>
+    <string name="premium_request_no_internet">تأكد من أن هاتفك متصل بالإنترنت قبل إرسال طلب مميز</string>
+    <string name="premium_request_desc">طلب الأيقونة المتميزة هو طلب دفع للطلب. يمكنك الحصول على التطبيقات المطلوبة بشكل أسرع باستخدام طلب أيقونة مميزة.</string>
     <string name="premium_request_buy">شراء</string>
     <string name="premium_request_count">الإجمالي\n%d طلب(ات)</string>
     <string name="premium_request_used">تم استخدام\n%d طلب(ات)</string>
@@ -194,6 +213,7 @@
     <string name="premium_request_already_purchased">ما يزال لديك %d طلب(ات) متميز(ة). عليك استعمالهم جميعهم قبل شراء حزمة طلب متميز مرة أخرى.</string>
     <string name="premium_request_limit">لديك فقط %d طلب(ات) متميز(ة)،</string>
     <string name="premium_request_limit1">ولكنك قمت بتحديد %d تطبيق(ات). \n\nعليك استعمال جميع طلباتك المتميزة قبل استعمال الطلب العادي مرة أخرى.</string>
+    <string name="premium_request_consume_failed">تعذر استعمال الطلب المتميز، تأكد بأن لديك اتصال مستقر بالإنترنت وحاول مرة أخرى. اذهب إلى الإعدادات لإعادة بناء الطلبات المتميزة.</string>
     <string name="premium_request_rebuilding">جار إعادة بناء الطلبات المتميزة ...</string>
     <string name="premium_request_rebuilding_empty">لم تقم بعمل طلب متميز</string>
     <string name="premium_request_exist">ما يزال لديك حزمة طلب أيقونات متميزة. قم بفتح الإعدادات، اختر \"استعادة المشتريات\" لاستعادتها.</string>
@@ -216,6 +236,7 @@
     <string name="presets_load_failed">تعذر تحميل الإعدادات المسبقة</string>
     <string name="presets_storage_permission">صلاحية التخزين مطلوبة لتحميل معاينة الخلفية</string>
     <string name="presets_required_apps">التطبيقات المطلوبة لاستخدام هذه الإعدادات المسبقة</string>
+    <string name="presets_required_apps_not_installed">التطبيقات المطلوبة لاستخدام الإعداد المسبق لم يتم تثبيتها. الرجاء تثبيت التطبيقات غير المطلوبة والمحاولة مرة أخرى.</string>
     <!-- Preferences -->
     <string name="pref_data_header">البيانات والتخزين المؤقت</string>
     <string name="pref_data_cache">مسح المخزن المؤقت</string>
@@ -255,6 +276,7 @@
     <!-- Intent -->
     <string name="app_client">اختر التطبيق</string>
     <string name="no_email_app">لا يوجد تطبيق لإرسال بريد إلكتروني</string>
+    <string name="no_browser">لا يوجد تطبيق لفتح URL</string>
     <string name="intent_email_failed">تعذر عرض تطبيق البريد الإلكتروني</string>
     <string name="intent_email_supported">مدعوم</string>
     <string name="intent_email_recommended">مستحسن</string>
@@ -265,6 +287,7 @@
     <string name="about_privacy_policy_title">سياسة الخصوصية</string>
     <string name="about_terms_and_conditions_title">الشروط والأحكام</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">يرجى تقديم وصف لنوع المشكلة التي تريد الإبلاغ عنها</string>
     <string name="report_bugs_desc_hint">الوصف</string>
     <string name="report_bugs_desc_empty">يرجى إدخال وصف</string>
     <string name="report_bugs_building">جار بناء قائمة النشاطات ...</string>
@@ -274,9 +297,13 @@
     <string name="donation_success">شكراً لك على تبرعك. سوف يستخدم للخير.</string>
     <!-- Crash Report -->
     <string name="crash_report">تقرير الأعطال</string>
+    <string name="crash_report_message">للأسف، تحطم %s. اختر إرسال التقرير أدناه لمساعدة المطور على حل المشكلة.</string>
     <string name="crash_report_send">إرسال البلاغ</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">كاندي بار هي لوحة تحكم للرموز مفتوح المصدر مرخصة بموجب رخصة أباتشي 2. ل
+        أندرويد متوفر على GitHub ومجاني للاستخدام، تم تطويره من قبل داني ماهارديكا.</string>
+    <string name="about_open_source_licenses">تراخيص مفتوحة المصدر</string>
     <string name="about_dashboard_contributors">المساهمون في CandyBar</string>
     <string name="about_dashboard_translator">المترجمون في CandyBar</string>
     <!-- DrawerToggle -->
