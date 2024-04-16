@@ -37,13 +37,13 @@
         <item>لا أستطيع رؤية اسم الأيقونة بالكامل</item>
         <item>كيف يمكنني استبدال الأيقونات بأيقونات بديلة؟</item>
         <item>كيف أقوم بطلب أيقونة؟</item>
-        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
-        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
+        <item>كيف يمكنني استعادة الطلبات المتميزة المتبقية بعد إعادة تثبيت التطبيق؟</item>
+        <item>بعد إعادة تشغيل هاتفي، لم يتم تطبيق حزمة الأيقونات ؛ تستعيد الإعدادات الافتراضية؟</item>
         <item>لماذا تبدو الأيقونات مشوشة أو متقطعة على هاتفي؟</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on the app drawer changed?</item>
+        <item>يمكنني أن أرى الأيقونة المضمنة في جميع الأيقونات
+            ولكن لماذا لم يتم تغيير الأيقونة الفعلية في درج التطبيقات؟</item>
         <item>ما هو خيار \"الإبلاغ عن أخطاء\"؟</item>
-        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
+        <item>المشغل الخاص بي مدرج في وصف Google Play، ولكن لماذا لم يتم تضمينه في قسم التطبيق؟</item>
         <item>لا يمكن تطبيق الخلفية، يتم عرض شاشة سوداء فقط؟</item>
         <item>Muzei: كيف يمكن عرض الخلفيات المحملة فقط؟</item>
         <item>Muzei: لا أريد أن يتم تحميل الخلفيات في كل مرة تتغير الخلفية؟</item>
@@ -59,34 +59,27 @@
     <string-array name="answers">
         <item>المشغل هو جزء من واجهة مستخدم أندرويد يسمح للمستخدمين بتخصيص الشاشة الرئيسية، تشغيل تطبيقات الهاتف، إجراء مكالمات هاتفية، وتنفيذ مهام أخرى على أجهزة أندرويد.</item>
         <item>هي مجموعة من الرسومات تقوم بتغيير مظهر الأيقونات في درج التطبيقات.</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play Store description.
-            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
-        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
-            If your launcher is not listed there, but this icon pack is compatible with it
-            (see on Google Play Store description for supported launchers),
-            you can apply the icon pack manually in your launcher settings.</item>
-        <item>You can open the navigation drawer and then open \"Icons\"</item>
+        <item>ستحتاج إلى مشغل يدعم حزم الأيقونات المخصصة.
+            تم إدراج الواجهات المدعومة في وصف متجر بلاي.
+            إذا كان لديك خلط حول أي واجهات يجب استخدامها، فقط انتقل إلى قسم \"Apply\" وقم بالتثبيت من هناك.</item>
+        <item>يمكنك فتح درج التنقل ثم فتح \"تطبيق\". اختر المشغل الخاص بك من القائمة. إذا لم يكن المشغل الخاص بك موجوداً هناك ولكن حزمة الأيقونات هذه متوافقة معه (أنظر في وصف متجر Google Play للمشغلات المدعومة)، فبإمكانك تطبيق حزمة الأيقونات يدوياً من إعدادات المشغل الخاص بك.</item>
+        <item>يمكنك فتح قائمة التنقل ثم فتح \"Icons\"</item>
         <item>فقط اضغط على الأيقونة. ستظهر نافذة معاينة بها صورة أكبر واسم الأيقونة بالكامل.</item>
         <item>يعتمد على المشغل الذي استخدمته. ليست جميع المشغلات تدعم تعديل الأيقونات. في الغالب يمكنك تعديل الأيقونة عبر الضغط مطولاً على الأيقونة أو الضغط عليها مرتين.</item>
-        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
+        <item>يمكنك فتح قائمة التنقل، ثم فتح \"أيقونة الطلب\".</item>
+        <item>يمكنك فتح درج التنقل ثم فتح \"الإعدادات\"، واختيار \"استعادة المشتريات\". إذا كانت لديك أي طلبات متميزة متبقية قبل إعادة التثبيت، فسيتم استعادتها.</item>
+        <item>حدث ذلك لأن حزمة الأيقونات هذه نُقلت إلى بطاقة الذاكرة SD ، يجب عليك تثبيتها في الذاكرة الداخلية.</item>
+        <item>قد تكون المشكلة بسبب المشغل الذي استعملته عند التعامل مع أيقونات ذات أبعاد كبيرة. يمكنك إصلاح ذلك عن طريق زيادة حجم الأيقونات إلى 115 - 120%. بدلاً من ذلك يمكنك تغيير المشغل الخاص بك.</item>
+        <item>فتح الإعدادات، التمرير للأسفل، ثم حدد \"الإبلاغ عن الأخطاء\".</item>
         <item>\"الإبلاغ عن أخطاء\" تستخدم للإبلاغ عن الأخطاء المتعلقة بحزمة الأيقونات، وليست لوحة المعلومات.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
+        <item>ليس كل مشغل يدعم التطبيق المباشر، وبعضها لا يمكن الوصول إليه مباشرة من لوحة التحكم.
+      	    يمكنك تطبيق حزمة الأيقونات هذه يدوياً في إعدادات المشغل الفردية.</item>
         <item>عند \"تعيين الخلفية\" مباشرة من التطبيق، فسيتم تحميلها إلى المخزن المؤقت، ثم سيقوم تطبيق لوحة المعلومات بمحاولة تطبيقها. تطبيق الخلفية يأخذ بعضاً من الوقت وأيضاً يحتاج إلى كم كبير من الذاكرة العشوائية لفترة زمنية قصيرة. أخطاء \"الشاشة السوداء\" قد تظهر عند عدم توفر مساحة كافية في الذاكرة العشوائية على هاتفك لمعالجة الخلفية. إعادة تشغيل هاتفك ستحل هذه المشكلة. بعد إعادة التشغيل، سيتوفر لدى هاتفك مساحة أكبر في الذاكرة العشوائية. بدلاً من ذلك، يمكنك فتح الخلفية المحملة في المعرض الخاص بك وتعيين الخلفية من هناك.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>قم بفتح muzei، اختر حزمة الأيقونات هذه، الإعدادات. سترى خياراً لعرض الخلفيات المحملة فقط. ستحتاج إلى تحميل الخلفيات من لوحة المعلومات أولاً.</item>
         <item>إذا كانت خلفية ما محملة بالفعل، فسيتم عرضها من ذاكرة هاتفك تلقائياً. لن يقوم Muzei بالاستمرار في التحميل عندما تتغير الخلفية. ستحتاج إلى تحميل الخلفيات من لوحة المعلومات أولاً.</item>
         <item>قم بفتح لوحة المعلومات، وقم بتحميل الخلفيات التي تريد استعمالها في Muzei. قم بفتح إعدادات Muzei، ثم اختر عرض الخلفيات المحملة فقط.</item>
         <item>يتم استعمالها للقراءة والكتابة في المخزن المؤقت، وتجميع بيانات طلبات الأيقونات.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>يستخدم لتحميل الخلفيات القائمة على السحابة &amp; وتحميلها.</item>
         <item>يتم استعمالها للتحقق من أن هاتفك لديه اتصال بالإنترنت أم لا.</item>
         <item>يتم استعمالها للتحقق من أن هاتفك لديه اتصال بالإنترنت عبر wifi أم لا، ولعرض الخلفيات في السحابة من Muzei.</item>
         <item>يتم استعمالها لتطبيق الخلفيات مباشرة من تطبيق لوحة المعلومات.</item>
