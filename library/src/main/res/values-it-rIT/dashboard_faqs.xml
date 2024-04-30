@@ -76,23 +76,23 @@ Per risolvere basta spostarla sulla memoria interna del tuo dispositivo.</item>
         <item>Il problema potrebbe dipendere dal launcher che hai usato, nello gestire la risoluzione delle grandi icone.
        	    È possibile risolvere il problema aumentando la dimensione delle icone al 115–120%.
        	    In alternativa, potresti cambiare launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
+        <item>Apri le impostazioni, scorri verso il basso, quindi seleziona \"Segnala Bug\".</item>
         <item>Apri le Impostazioni e cerca la voce \"Riporta Bug\"</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
+        <item>Non tutti i launcher supportano l\'applicazione diretta e alcuni di essi non possono essere accessibili direttamente dalla dashboard.
+      	    Puoi applicare questo pacchetto icone manualmente nelle impostazioni del launcher.</item>
         <item>Quando imposti uno sfondo direttamente dall\'applicazione, questo viene scaricato dai server in cloud.
 Questo richiede una buona connessione e una buona RAM.
 Lo schermo nero appare perché il tuo dispositivo non dispone di abbastanza RAM libera.
 Riavviando il tuo dispositivo puoi risolvere questo problema.
 In alternativa puoi scaricare lo sfondo sul tuo dispositivo, quindi dalle galleria puoi applicarlo.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>Apri Muzei, clicca su questo pacchetto icone e poi su impostazioni. Vedrai un\'opzione per caricare solo gli sfondi scaricati.
+            Dovrai prima scaricare gli sfondi dalla dashboard.</item>
         <item>Se hai già scaricato uno sfondo, questo verrà caricato direttamente nella memoria interna del tuo dispositivo.
             Muzei quindi non scaricherà più gli sfondi dal cloud, ma li caricherà direttamente dalla memoria interna del tuo dispositivo.</item>
         <item>Apri l\'app e scarica gli sfondi che vuoi usare in Muzei.
             Apri le impostazioni di Muzei quindi scegli l\'opzione per caricare solo gli sfondi scaricati.</item>
         <item>È usata per leggere e scrive la cache e memorizzare i dati sulla richiesta di icone.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>È usata per caricare gli sfondi presenti sul cloud e per poterli scaricare.</item>
         <item>Questa funzione serve per verificare se il tuo dispositivo ha una connessione internet attiva oppure no.</item>
         <item>Questa funzione serve a vedere se il tuo dispositivo è connesso ad una rete WiFi oppure no, e per poter caricare gli sfondi su Muzei.</item>
         <item>Questa funzione serve ad applicare gli sfondi direttamente dall\'interno dell\'applicazione.</item>
