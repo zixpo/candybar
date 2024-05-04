@@ -99,9 +99,9 @@
     <string name="home_icon_dimension">%s 图标分辨率</string>
     <string name="home_loud_wallpapers">%d 云端壁纸</string>
     <string name="home_muzei">Muzei 动态壁纸</string>
-    <string name="home_icon_request_installed_apps">总计\n%d 个已安装程序</string>
-    <string name="home_icon_request_themed_apps">已适配\n%d 个程序</string>
-    <string name="home_icon_request_missed_apps">未适配\n%d 个程序</string>
+    <string name="home_icon_request_installed_apps">总计%d 个已安装程序</string>
+    <string name="home_icon_request_themed_apps">已适配%d 个程序</string>
+    <string name="home_icon_request_missed_apps">未适配%d 个程序</string>
     <!-- Apply -->
     <string name="apply_installed">已安装的启动器</string>
     <string name="apply_supported">受支持的启动器</string>
@@ -196,17 +196,17 @@
     <!-- Regular Request -->
     <string name="regular_request">常规图标请求</string>
     <string name="regular_request_desc">获取您的图标，开发者将尝试包含您请求的图标。</string>
-    <string name="regular_request_count">已使用\n%d 请求</string>
-    <string name="regular_request_used">已使用\n%d 请求</string>
-    <string name="regular_request_available">可用的\n%d 请求</string>
+    <string name="regular_request_count">已使用%d 请求</string>
+    <string name="regular_request_used">已使用%d 请求</string>
+    <string name="regular_request_available">可用的%d 请求</string>
     <!-- Premium Request -->
     <string name="premium_request">高级图标申请</string>
     <string name="premium_request_no_internet">在发送高级请求之前请确保您的手机已连接到网络</string>
     <string name="premium_request_desc">高级图标请求是一个付费请求。您可以通过使用高级图标请求来更快地获取您所请求的应用。</string>
     <string name="premium_request_buy">购买</string>
-    <string name="premium_request_count">已使用\n%d 请求</string>
-    <string name="premium_request_used">已使用\n%d 请求</string>
-    <string name="premium_request_available">可用的\n%d 请求</string>
+    <string name="premium_request_count">已使用%d 请求</string>
+    <string name="premium_request_used">已使用%d 请求</string>
+    <string name="premium_request_available">可用的%d 请求</string>
     <string name="premium_request_already_purchased">您仍剩余 %d 个高级申请数。
 在再次购买高级图标申请权之前，您需要用光当前剩余的高级申请次数。</string>
     <string name="premium_request_limit">您只拥有 %d 个高级图标申请数，</string>
