@@ -18,6 +18,7 @@
     <string name="hour">小时</string>
     <string name="save_setting">保存</string>
     <string name="muzei_refresh_duration">刷新时间间隔</string>
+    <string name="muzei_wifi_only">仅在 Wi-Fi 环境下刷新</string>
     <string name="muzei_downloaded_only">只使用已下载的壁纸</string>
     <string name="muzei_settings_ignored">图标包不包含任何壁纸，设置将被忽略。</string>
     <string name="muzei_settings_saved">设置已保存</string>
@@ -49,17 +50,23 @@
     <!-- Changelog -->
     <string name="changelog_version">版本</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">无法加载应用内购买产品</string>
     <!-- License -->
     <string name="license_checking">检查许可中……</string>
     <string name="license_check">许可证检查</string>
+    <string name="license_check_success">许可证检查成功, 感谢您从 Play 商店下载此应用</string>
+    <string name="license_check_failed">许可证检查未通过，您不是从 Play 商店中下载的本程序。您无法使用本程序。</string>
     <string name="license_check_retry">无法检查许可证，请稍后重试。</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play商店检查</string>
+    <string name="playstore_check_success">感谢您从Google Play商店安装应用。祝您愉快！</string>
+    <string name="playstore_check_failed">检测到您从Google Play商店之外安装了这个图标包。您无法继续使用它。</string>
     <!-- Share -->
     <string name="share_app_title">快来看看 %s</string>
     <string name="share_app_body">来看看 %1$s，这个图标包超酷的！%2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">导航栏</string>
+    <string name="tap_intro_home_navigation_desc">点击这里或者从屏幕左边缘滑动来打开导航抽屉</string>
     <string name="tap_intro_home_apply">应用图标包</string>
     <string name="tap_intro_home_apply_desc">点击此处将 %s 应用于您当前的启动器。长按可应用于其他启动器</string>
     <string name="tap_intro_icons_search">搜索</string>
