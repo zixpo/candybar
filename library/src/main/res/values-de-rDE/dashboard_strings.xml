@@ -18,6 +18,7 @@
     <string name="hour">Stunde</string>
     <string name="save_setting">Speichern</string>
     <string name="muzei_refresh_duration">Aktualierungsdauer</string>
+    <string name="muzei_wifi_only">Nur über WLAN aktualisieren</string>
     <string name="muzei_downloaded_only">Nur heruntergeladene Hintergrundbilder laden</string>
     <string name="muzei_settings_ignored">Das Icon Pack beinhaltet keine Hintergrundbilder, Einstellungen wurden ignoriert.</string>
     <string name="muzei_settings_saved">Einstellungen gespeichert</string>
@@ -49,17 +50,25 @@
     <!-- Changelog -->
     <string name="changelog_version">Version</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">In-App-Käufe können nicht geladen werden</string>
     <!-- License -->
     <string name="license_checking">Lizenz wird überprüft …</string>
     <string name="license_check">Lizenzüberprüfung</string>
+    <string name="license_check_success">Lizenzüberprüfung erfolgreich. Danke, dass du die App vom Play Store heruntergeladen hast.</string>
+    <string name="license_check_failed">Lizenzüberprüfung fehlgeschlagen. Du hast die App nicht vom Play Store heruntergeladen.
+Du wirst sie nicht benutzen können.</string>
     <string name="license_check_retry">Lizenz kann nicht überprüft werden. Bitte später erneut versuchen.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Überprüfung</string>
+    <string name="playstore_check_success">Vielen Dank, dass du die App aus dem Play Store installiert hast. Viel Spaß damit!</string>
+    <string name="playstore_check_failed">Es scheint, als hättest du dieses Icon Pack von außerhalb des Google Play Store installiert.
+        Du wirst es nicht verwenden können.</string>
     <!-- Share -->
     <string name="share_app_title">Yo! Sieh dir %s an</string>
     <string name="share_app_body">Sieh dir %1$s an. Dieses Icon Pack ist echt cool! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Navigationsübrsicht</string>
+    <string name="tap_intro_home_navigation_desc">Klicke hier oder wische vom linken Rand des Bildschirms, um die Navigationsübersicht zu öffnen</string>
     <string name="tap_intro_home_apply">Icon Pack anwenden</string>
     <string name="tap_intro_home_apply_desc">Tippe hier, um %s in deinem aktuellen Launcher anzuwenden. Halte lange gedrückt für weitere Launcher.</string>
     <string name="tap_intro_icons_search">Suchen</string>
