@@ -18,6 +18,7 @@
     <string name="hour">Uur</string>
     <string name="save_setting">Opslaan</string>
     <string name="muzei_refresh_duration">Verversingsduur</string>
+    <string name="muzei_wifi_only">Alleen verversen via wifi</string>
     <string name="muzei_downloaded_only">Alleen gedownloade achtergronden laden</string>
     <string name="muzei_settings_ignored">Icoonpakket bevat geen achtergronden, instellingen genegeerd.</string>
     <string name="muzei_settings_saved">Instellingen opgeslagen</string>
@@ -49,9 +50,11 @@
     <!-- Changelog -->
     <string name="changelog_version">Versie</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Kan in-app-aankopen niet laden</string>
     <!-- License -->
     <string name="license_checking">Licentie controleren …</string>
     <string name="license_check">Licentie controleren</string>
+    <string name="license_check_success">Licentiecontrole succesvol. Bedankt voor het downloaden van de app via de Play Store.</string>
     <string name="license_check_retry">Kan licentie niet controleren, probeer het over enkele ogenblikken opnieuw.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store controle</string>
@@ -138,12 +141,12 @@
     <string name="apply_cmtheme_not_available">CM Theme Manager is niet beschikbaar op dit apparaat</string>
     <string name="apply_lg_home">Om dit icoonpakket toe te passen, open Instellingen - Display - Beginscherm - Thema</string>
     <string name="apply_lg_home_not_available">LG Home is niet beschikbaar op dit apparaat</string>
-    <string name="apply_lg_home_nougat">LG Home met Android Nougat ondersteunt geen pictogrampakketten. Je hebt een andere launcher nodig om pictogrampakketten te gebruiken.</string>
+    <string name="apply_lg_home_nougat">LG Home met Android Nougat ondersteunt geen icoonpakketten. Je hebt een andere launcher nodig om icoonpakketten te gebruiken.</string>
     <string name="apply_launcher_incompatible_depending_on_version">%s launcher ondersteunt geen icoonpakketten op Android %d of lager. Update je Androidversie of installeer een andere launcher om dit icoonpakket te gebruiken. Je kunt ook een helper-app proberen om de individuele iconen te wijzigen. Wil je deze installeren?</string>
     <!-- Icons -->
-    <string name="icons_load_failed">Kan pictogrammen niet laden</string>
-    <string name="icon_shape">Pictogramvorm</string>
-    <string name="bookmark_icons_empty">Geen bladwijzers gevonden. Geef pictogrammen een bladwijzer om ze hier snel te openen.</string>
+    <string name="icons_load_failed">Kan iconen niet laden</string>
+    <string name="icon_shape">Icoonvorm</string>
+    <string name="bookmark_icons_empty">Geen bladwijzers gevonden. Geef iconen een bladwijzer om ze hier snel te openen.</string>
     <string name="items_selected">%d geselecteerd</string>
     <!-- Request -->
     <string name="request_title">Icoonverzoek</string>
@@ -154,26 +157,26 @@
     <string name="request_building">Aanvraag aanmaken…</string>
     <string name="request_pacific_sending">Aanvraag versturen naar Pacific Manager...</string>
     <string name="request_pacific_success">Aanvraag succesvol verstuurt naar Pacific Manager</string>
-    <string name="request_custom_success">Pictogramaanvraag succesvol verzonden</string>
+    <string name="request_custom_success">Icoonaanvraag succesvol verzonden</string>
     <string name="request_fetching_data">Laatste gegevens ophalen…</string>
-    <string name="request_build_failed">Kan pictogramaanvraag niet aanmaken</string>
+    <string name="request_build_failed">Kan icoonaanvraag niet aanmaken</string>
     <string name="request_appfilter_failed">Kan appfilter.xml niet lezen</string>
-    <string name="request_requested">Je hebt dit pictogram al aangevraagd en kunt het niet opnieuw aanvragen.</string>
-    <string name="request_requested_possible">Je hebt dit pictogram al aangevraagd. Weet je zeker dat je er een ander verzoek aan wilt besteden?</string>
+    <string name="request_requested">Je hebt dit icoon al aangevraagd en kunt het niet opnieuw aanvragen.</string>
+    <string name="request_requested_possible">Je hebt dit icoon al aangevraagd. Weet je zeker dat je er een ander verzoek aan wilt besteden?</string>
     <string name="request_requested_button_cancel">Terug</string>
     <string name="request_requested_button_confirm">Toch selecteren</string>
-    <string name="request_email_client">Kies een app die je wilt meesturen in de pictogramaanvraag</string>
+    <string name="request_email_client">Kies een app die je wilt meesturen in de icoonaanvraag</string>
     <string name="connection_error_long">Kan geen gegevens laden van de server. Controleer je netwerkverbinding.</string>
-    <string name="request_used">Je hebt %d pictogram(men) aangevraagd.</string>
-    <string name="request_limit_buy">Je kunt Premium aanvragen kopen om meer pictogrammen aan te vragen.</string>
-    <string name="request_limit_reset">Pictogram aanvraaglimiet wordt gereset bij iedere update.</string>
+    <string name="request_used">Je hebt %d iconen aangevraagd.</string>
+    <string name="request_limit_buy">Je kunt Premium aanvragen kopen om meer iconen aan te vragen.</string>
+    <string name="request_limit_reset">Icoonaanvraaglimiet wordt gereset bij iedere update.</string>
     <!-- Regular Request -->
-    <string name="regular_request">Reguliere Pictogramaanvraag</string>
+    <string name="regular_request">Reguliere icoonaanvraag</string>
     <string name="regular_request_count">Totaal\n%d aanvragen</string>
     <string name="regular_request_used">Gebruikt\n%d aanvragen</string>
     <string name="regular_request_available">Beschikbaar\n%d aanvragen</string>
     <!-- Premium Request -->
-    <string name="premium_request">Premium Pictogramaanvraag</string>
+    <string name="premium_request">Premium icoonaanvraag</string>
     <string name="premium_request_buy">Kopen</string>
     <string name="premium_request_count">Totaal\n%d aanvragen</string>
     <string name="premium_request_used">Gebruikt\n%d aanvragen</string>
@@ -185,9 +188,9 @@
         \n\nJe moet al je Premium aanvragen gebruiken voordat je het verzoek opnieuw gebruikt.</string>
     <string name="premium_request_rebuilding">Premium aanvraag opnieuw opbouwen …</string>
     <string name="premium_request_rebuilding_empty">Je hebt nog geen Premium aanvraag gebruikt</string>
-    <string name="premium_request_exist">Je hebt nog een Premium pictogramaanvraagpakket.
+    <string name="premium_request_exist">Je hebt nog een Premium icoonaanvraagpakket.
         Open Instellingen, kies \"Aankopen Herstellen\" om te herstellen.</string>
-    <string name="premium_request_required">Je moet een Premium pictogramaanvraagpakket kopen om aanvragen te kunnen doen</string>
+    <string name="premium_request_required">Je moet een Premium icoonaanvraagpakket kopen om aanvragen te kunnen doen</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">Nieuwe achtergrond</string>
     <string name="wallpaper_already_downloaded">Achtergrond is al gedownload</string>
@@ -213,17 +216,17 @@
     <string name="pref_data_cache_size">Cachegrootte: %s</string>
     <string name="pref_data_cache_clear_dialog">Weet je zeker dat je de cache wilt wissen?</string>
     <string name="pref_data_cache_cleared">Cache gewist</string>
-    <string name="pref_data_request">Wis pictogramaanvraaggegevens</string>
-    <string name="pref_data_request_desc">Pictogramaanvraaggegevens wissen na het verzoeken van een ontbrekende app.</string>
-    <string name="pref_data_request_clear_dialog">Weet je zeker dat je de pictogramaanvraaggegevens wilt wissen?</string>
-    <string name="pref_data_request_cleared">Pictogramaanvraaggegevens gewist</string>
-    <string name="pref_premium_request_header">Premium Pictogramaanvraag</string>
+    <string name="pref_data_request">Wis icoonaanvraaggegevens</string>
+    <string name="pref_data_request_desc">Icoonaanvraaggegevens wissen na het verzoeken van een ontbrekende app.</string>
+    <string name="pref_data_request_clear_dialog">Weet je zeker dat je de icoonaanvraaggegevens wilt wissen?</string>
+    <string name="pref_data_request_cleared">Icoonaanvraaggegevens gewist</string>
+    <string name="pref_premium_request_header">Premium icoonaanvraag</string>
     <string name="pref_premium_request_restore">Aankopen herstellen</string>
-    <string name="pref_premium_request_restore_desc">Herstel Premium aanvraagpakket na het opnieuw installeren van het pictogrampakket</string>
+    <string name="pref_premium_request_restore_desc">Herstel Premium aanvraagpakket na het opnieuw installeren van het icoonpakket</string>
     <string name="pref_premium_request_restore_success">Premium aanvraag hersteld</string>
     <string name="pref_premium_request_restore_empty">Je hebt geen aangeschafte pakketten</string>
-    <string name="pref_premium_request_rebuild">Premium pictogramaanvraag opnieuw opbouwen</string>
-    <string name="pref_premium_request_rebuild_desc">Verzamel alle Premium pictogramaanvragen om ze opnieuw te verzenden</string>
+    <string name="pref_premium_request_rebuild">Premium icoonaanvraag opnieuw opbouwen</string>
+    <string name="pref_premium_request_rebuild_desc">Verzamel alle Premium icoonaanvragen om ze opnieuw te verzenden</string>
     <string name="pref_theme_header">Thema</string>
     <string name="pref_theme_dark">Donker thema</string>
     <string name="pref_theme_dark_desc">Donkere kleur gebruiken voor appthema</string>
@@ -274,11 +277,11 @@
     <string name="txt_close">Sluiten</string>
     <string name="txt_new">Nieuw</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">Dit pictogram toevoegen aan de bladwijzersectie</string>
-    <string name="icon_search_close_button_content_description">Sluit het zoeken naar pictogram</string>
-    <string name="icon_request_submit_button_content_description">Dien een pictogramaanvraag in</string>
-    <string name="icon_list_content_description">De lijst met pictogrammen opgenomen in het pictogrampakket</string>
-    <string name="icon_search_list_content_description">De lijst met pictogrammen die overeenkomen met de zoekterm</string>
-    <string name="about_item_social_content_description">Een link naar een online profiel van de auteur van het pictogrampakket: </string>
+    <string name="bookmark_button_content_description">Dit icoon toevoegen aan de bladwijzersectie</string>
+    <string name="icon_search_close_button_content_description">Sluit het zoeken naar icoon</string>
+    <string name="icon_request_submit_button_content_description">Dien een icoon-aanvraag in</string>
+    <string name="icon_list_content_description">De lijst met iconen opgenomen in het icoonpakket</string>
+    <string name="icon_search_list_content_description">De lijst met iconen die overeenkomen met de zoekterm</string>
+    <string name="about_item_social_content_description">Een link naar een online profiel van de auteur van het icoonpakket: </string>
     <string name="share_icon_pack_button_content_description">Deel deze app met iemand</string>
 </resources>
