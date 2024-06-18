@@ -18,6 +18,7 @@
     <string name="hour">Hora</string>
     <string name="save_setting">Salve</string>
     <string name="muzei_refresh_duration">Duração da Atualização</string>
+    <string name="muzei_wifi_only">Atualizar somente no Wi-Fi</string>
     <string name="muzei_downloaded_only">Carregar apenas os Papéis de Parede baixados</string>
     <string name="muzei_settings_ignored">Pacote de ícones não contém papéis de parede, as configurações são ignoradas.</string>
     <string name="muzei_settings_saved">Configurações Salvas</string>
