@@ -256,6 +256,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <!-- Intent -->
     <string name="app_client">Elige el Cliente de Correo</string>
     <string name="no_email_app">No hay aplicación para enviar el correo</string>
+    <string name="no_browser">No hay aplicación para abrir el URL</string>
     <string name="intent_email_failed">No se puede mostrar la aplicación de correo</string>
     <string name="intent_email_supported">Soportado</string>
     <string name="intent_email_recommended">Recomendado</string>
@@ -278,6 +279,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="crash_report_send">Enviar Informe</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_open_source_licenses">Licencias de código abierto</string>
     <string name="about_dashboard_contributors">Ayudantes de CandyBar</string>
     <string name="about_dashboard_translator">Traductor de CandyBar</string>
     <!-- DrawerToggle -->
