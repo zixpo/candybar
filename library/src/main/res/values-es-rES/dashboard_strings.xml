@@ -182,16 +182,20 @@ No podrás usarlo.</string>
     <string name="request_requested_button_confirm">Seleccionar de todos modos</string>
     <string name="request_email_client">Elige el cliente de correo que quieras usar para enviar la solicitud del icono</string>
     <string name="connection_error_long">No se pueden cargar datos del servidor. Por favor, verifique su conexión de red.</string>
+    <string name="unable_to_load_config">Se ha producido un error al recuperar o leer los datos del servidor.</string>
+    <string name="request_limit">Sólo puedes hacer %d solicitud(es) con la solicitud normal.</string>
     <string name="request_used">Has solicitado %d icono(s).</string>
     <string name="request_limit_buy">Puedes comprar \"Solicitudes Premium\" para solicitar más iconos.</string>
     <string name="request_limit_reset">El límite de solicitud de iconos se reseteará con cada actualización.</string>
     <!-- Regular Request -->
     <string name="regular_request">Solicitud de icono normal</string>
+    <string name="regular_request_desc">Haz tu solicitud de iconos, y el desarrollador intentará incluir los iconos solicitados.</string>
     <string name="regular_request_count">Total\n%d solicitud</string>
     <string name="regular_request_used">Usado\n%d solicitud</string>
     <string name="regular_request_available">Disponible\n%d solicitud</string>
     <!-- Premium Request -->
     <string name="premium_request">Solicitud Premium de Iconos</string>
+    <string name="premium_request_no_internet">Asegúrate de que tu teléfono está conectado a internet antes de enviar una solicitud premium</string>
     <string name="premium_request_buy">Comprar</string>
     <string name="premium_request_count">Total\n%d solicitud</string>
     <string name="premium_request_used">Usado\n%d solicitud</string>
