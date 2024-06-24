@@ -135,12 +135,14 @@ No podrás usarlo.</string>
     <string name="apply_manual_color_os_step_2">Pulsa \"Iconos\"</string>
     <string name="apply_manual_color_os_step_3">Desliza a la derecha del botón \"Personalizado\" (es una lista desplazable!)</string>
     <string name="apply_manual_color_os_step_4">Pulsa %s</string>
+    <string name="apply_manual_before">Esta versión de Before Launcher aún no soporta aplicar íconos directamente. En cambio, sigue estos pasos a continuación:</string>
     <string name="apply_manual_before_step_1">Deslízate a la izquierda en la pantalla de inicio</string>
     <string name="apply_manual_before_step_2">Pulsa \"Ajustes\"</string>
     <string name="apply_manual_before_step_3">Pulsa \"Estilos y Temas\"</string>
     <string name="apply_manual_before_step_4">Pulsa \"Estilos de Íconos y Paquetes\"</string>
     <string name="apply_manual_before_step_5">Pulsa %s</string>
     <string name="apply_manual_nothing_step_1">Abrir \"Ajustes\"</string>
+    <string name="apply_manual_nothing_step_2">Pulsa \"Personalización\"</string>
     <string name="apply_manual_nothing_step_3">Pulsa \"Paquete de iconos\"</string>
     <string name="apply_manual_nothing_step_4">Pulsa %s</string>
     <string name="apply_launch_failed">No se pueden iniciar los ajustes de %s  </string>
