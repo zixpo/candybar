@@ -107,12 +107,14 @@ No podrás usarlo.</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher instalado</string>
     <string name="apply_supported">Launchers soportados</string>
+    <string name="apply_manual">El launcher %1$s no soporta aplicación directa, pero puedes aplicar %2$s manualmente desde los ajustes del launcher.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso no admite aplicarlo directamente, pero puedes seguir estos pasos:</string>
     <string name="apply_manual_kvaesitso_step_1">Abrir los ajustes de Kvaesitso</string>
     <string name="apply_manual_kvaesitso_step_2">Pulsa \"Cuadrícula e Iconos\"</string>
     <string name="apply_manual_kvaesitso_step_3">Pulsa en el \"Paquete de iconos\"</string>
     <string name="apply_manual_kvaesitso_step_4">Elige %s de la lista</string>
     <string name="apply_manual_kvaesitso_step_5">Pulsa el icono del pincel para activar o desactivar la forma de fondo</string>
+    <string name="apply_manual_kiss">KISS no soporta la aplicación directa, pero puedes seguir estos pasos:</string>
     <string name="apply_manual_kiss_step_1">Abrir los ajustes de KISS</string>
     <string name="apply_manual_kiss_step_2">Pulsa \"Interfaz de usuario\"</string>
     <string name="apply_manual_kiss_step_3">Pulsa en el \"Paquete de iconos\"</string>
