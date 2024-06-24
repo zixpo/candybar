@@ -171,7 +171,9 @@ No podrás usarlo.</string>
     <string name="request_not_available">No se puede solicitar</string>
     <string name="request_building">Preparando la solicitud …</string>
     <string name="request_pacific_sending">Enviando solicitud al Pacific Manager...</string>
+    <string name="request_pacific_error">Ocurrió un error al enviar una solicitud al Pacific Manager. El error es %s</string>
     <string name="request_pacific_success">Solicitud enviada correctamente al Pacific Manager</string>
+    <string name="request_custom_error">Ocurrió un error al enviar una solicitud de iconos. Si el error persiste, contacta al desarrollador. %s</string>
     <string name="request_custom_success">Solicitud de íconos enviada exitosamente</string>
     <string name="request_fetching_data">Obteniendo actualizaciones mas recientes …</string>
     <string name="request_build_failed">No se puede preparar la solicitud del icono</string>
@@ -181,6 +183,7 @@ No podrás usarlo.</string>
     <string name="request_requested_button_cancel">Volver</string>
     <string name="request_requested_button_confirm">Seleccionar de todos modos</string>
     <string name="request_email_client">Elige el cliente de correo que quieras usar para enviar la solicitud del icono</string>
+    <string name="request_app_disabled">Está usando una versión anterior de este paquete de iconos. Los iconos solicitados pueden estas incluídos en la última versión. Por favor, actualiza tu aplicación a la última versión para solicitar iconos.</string>
     <string name="connection_error_long">No se pueden cargar datos del servidor. Por favor, verifique su conexión de red.</string>
     <string name="unable_to_load_config">Se ha producido un error al recuperar o leer los datos del servidor.</string>
     <string name="request_limit">Sólo puedes hacer %d solicitud(es) con la solicitud normal.</string>
