@@ -29,7 +29,7 @@
         <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
-        <item>¿Qué es un lanzador?</item>
+        <item>¿Qué es un launcher?</item>
         <item>¿Qué es un paquete de iconos?</item>
         <item>¿Cómo uso un paquete de iconos?</item>
         <item>¿Cómo puedo establecer un paquete de iconos?</item>
@@ -42,7 +42,7 @@
         <item>¿Por qué los iconos parecen dentados o pixelados en mi teléfono?</item>
         <item>Puedo ver el ícono incluido en todos los íconos pero, ¿por qué no se ha cambiado el ícono real en el cajón de la aplicación?</item>
         <item>¿Qué es la opción de \"reportar errores\"?</item>
-        <item>Mi lanzador es listado en la descripción de Google Play, ¿pero por qué no está incluído en la sección de establecer?</item>
+        <item>Mi launcher está listado en la descripción de Google Play, ¿pero por qué no está incluído en la sección de establecer?</item>
         <item>El fondo de pantalla no se puede establecer, ¿sólo muestra la pantalla en negro?</item>
         <item>Muzei: ¿Cómo cargar solo los fondos de pantalla descargados?</item>
         <item>Muzei: No quiero estar descargando los fondos de pantalla cada vez que el fondo de pantalla cambie.</item>
@@ -58,41 +58,41 @@
     <string-array name="answers">
         <item>El launcher es la parte de la interfaz de usuario de Android que permite personalizar la pantalla de inicio, abrir aplicaciones, hacer llamadas telefónicas y desarrollar otras tareas en dispositivos Android.</item>
         <item>Un conjunto de gráficos que cambiarán el aspecto de los iconos de tu cajón de aplicaciones.</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play Store description.
-            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
-        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
-            If your launcher is not listed there, but this icon pack is compatible with it
-            (see on Google Play Store description for supported launchers),
-            you can apply the icon pack manually in your launcher settings.</item>
-        <item>You can open the navigation drawer and then open \"Icons\"</item>
+        <item>Necesitarás un launcher que soporte los paquetes de íconos personalizados.
+            Los lanzadores soportados están listados en la descripción de Play Store.
+            Si no sabes qué launchers deberías usar, tan solo ve a la sección \"Establecer\" e instálalos desde allí.</item>
+        <item>Puedes abrir el cajón de navegación, y posteriormente abrir \"Establecer\". Escoge tu launcher de la lista.
+            Si tu launcher no está en la lista, pero este paquete de iconos es compatible con él (comprobar en la
+            descripción de Google Play los launchers compatibles), puedes aplicar el paquete de iconos
+            manualmente en los ajustes de tu launcher.</item>
+        <item>Puedes abrir el cajón de navegación y luego abrir \"Iconos\"</item>
         <item>Tan sólo presiona el icono. Aparecerá un diálogo de vista previa con una imagen más grande y un nombre de icono completo.</item>
         <item>Depende del launcher que uses. No todos los launchers soportan la edición de iconos.
 Principalmente puedes editar un icono presionando y manteniendo el icono o presionando dos veces sobre él.</item>
-        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
+        <item>Puedes abrir el cajón de navegación y abrir \"Solicitud de iconos\".</item>
+        <item>Puedes abrir el cajón de navegación, luego abrir \"Ajustes\", y elegir \"Restablecer compras\".
+            Si tenías solicitudes premium antes de reinstalar, estas serán restablecidas.</item>
+        <item>Esto ocurrió porque el paquete de iconos fue movido a la tarjeta SD; deberías instalarlo en la memoria interna.</item>
+        <item>Este problema puede provenir del launcher que usas cuando maneja iconos de alta resolución.
+       	    Puedes arreglarlo incrementando el tamaño de los iconos al 115% - 120%.
+       	    También puedes cambiar de launcher.</item>
+        <item>Abre los ajustes, desplázate hacia abajo y luego, selecciona \"Reportar bugs \".</item>
         <item>Abre \"Ajustes\", desplázate hacia abajo y elige \"Reportar fallos\".</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
+        <item>No todos los launchers soportan aplicación directa, y algunos de ellos no pueden accederse directamente desde el panel de control.
+      	    Puedes aplicar este paquete de iconos manualmente en los ajustes individuales del launcher.</item>
         <item>Cuando \"Estableces un fondo de pantalla\" directamente desde la aplicación, se descargará a la caché, y el panel de control de la aplicación intentará establecerlo.
 Establecerlo llevará algún tiempo y también necesitará una cantidad enorme de memoria RAM durante un momento.
 Los errores de \"Pantalla negra\" pueden aparecer porque tu teléfono no tiene suficiente memoria RAM libre para establecer el fondo de pantalla.
 Reiniciar el teléfono solucionará este problema. Después de reiniciar, tu teléfono tendrá más memoria RAM disponible.
 Como alternativa, puedes abrir el fondo de pantalla descargado de tu galería y establecerlo como fondo de pantalla desde allí.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>Abre Muzei, selecciona los ajustes del paquete de iconos. Verás una opción de cargar solo los fondos de pantalla descargados.
+            Primero, necesitarás descargar los fondos de pantalla desde el panel de control.</item>
         <item>Si un fondo de pantalla ya ha sido descargado, será cargado automáticamente desde la memoria de tu teléfono.
 Muzei no permanecerá descargándolo cuando el fondo de pantalla cambie. Primero necesitarás descargar los fondos de pantalla desde el panel de control.</item>
         <item>Abre el panel de control y descarga los fondos de pantalla que quieras usar en Muzei.
 Abre los ajustes de Muzei y selecciona \"Cargar sólo los fondos de pantalla descargados\".</item>
         <item>Se utiliza para escribir y leer en la memoria caché, y recopilar los datos de la solicitud de iconos.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>Se utiliza para cargar los fondos de pantalla basados en la nube y descargarlos.</item>
         <item>Se utiliza para comprobar si tu teléfono dispone de conexión a internet o no.</item>
         <item>Se utiliza para comprobar si tu teléfono está conectado a una red WiFi o no y cargar los fondos de pantalla basados en la nube desde Muzei.</item>
         <item>Se utiliza para establecer los fondos de pantalla directamente desde el panel de control de la aplicación.</item>
