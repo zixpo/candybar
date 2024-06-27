@@ -159,6 +159,7 @@ No podrás usarlo.</string>
     <string name="apply_lg_home">Para establecer este paquete de iconos abre Ajustes - Pantalla - Pantalla de Inicio - Tema</string>
     <string name="apply_lg_home_not_available">LG Home no está disponible en este dispositivo</string>
     <string name="apply_lg_home_nougat">LG Home con Android Nougat ya no soporta el paquete de iconos. Necesitas un launcher personalizado para usar el paquete de iconos.</string>
+    <string name="apply_launcher_incompatible">El launcher %s no soporta ningún paquete de iconos, por lo que no puedes usar este paquete de iconos con este launcher. Puedes probar una aplicación de terceros para usar este paquete de iconos en el launcher %2$s. ¿Quieres instalarlo?</string>
     <string name="apply_launcher_incompatible_depending_on_version">El launcher %s no soporta paquetes de íconos en Android %d o anterior. Por favor actualiza tu versión de Android o instala un lanzador de terceros para usar este paquete de íconos. También puedes probar una aplicación de ayuda para cambiar íconos individuales. ¿Quieres instalarla?</string>
     <!-- Icons -->
     <string name="icons_load_failed">No se pueden cargar los iconos</string>
@@ -233,6 +234,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="presets_load_failed">No fue posible cargar los preajustes</string>
     <string name="presets_storage_permission">Se necesita \"Permiso de almacenamiento\" para cargar la vista previa del fondo de pantalla</string>
     <string name="presets_required_apps">Aplicaciones requeridas para usar estos preajustes</string>
+    <string name="presets_required_apps_not_installed">Las aplicaciones requeridas para usar el preajuste no están instaladas. Por favor, instala las aplicaciones requeridas faltantes y vuelve a intentarlo.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Datos y Caché</string>
     <string name="pref_data_cache">Limpiar Caché</string>
@@ -283,6 +285,7 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="about_privacy_policy_title">Política de privacidad</string>
     <string name="about_terms_and_conditions_title">Terminos y Condiciones</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Por favor, da una descripción sobre el tipo de problema que quieres informar</string>
     <string name="report_bugs_desc_hint">Descripción</string>
     <string name="report_bugs_desc_empty">Por favor deja una descripción</string>
     <string name="report_bugs_building">Creando lista de actividad …</string>
@@ -292,9 +295,13 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="donation_success">Gracias por realizar una donación. La usaré para mejorar.</string>
     <!-- Crash Report -->
     <string name="crash_report">Informe de Cierre Inesperado</string>
+    <string name="crash_report_message">Desafortunadamente, %s ha fallado. Elige Enviar Informe para ayudar al desarrollador a reparar el problema.</string>
     <string name="crash_report_send">Enviar Informe</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar es un panel de control de paquetes de iconos de código abierto bajo la licencia 
+        Apache 2.0 para Android, disponible en GitHub y libre de usar. Desarrollado por Dani 
+        Mahardhika.</string>
     <string name="about_open_source_licenses">Licencias de código abierto</string>
     <string name="about_dashboard_contributors">Ayudantes de CandyBar</string>
     <string name="about_dashboard_translator">Traductor de CandyBar</string>
