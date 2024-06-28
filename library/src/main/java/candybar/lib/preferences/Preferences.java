@@ -48,6 +48,7 @@ public class Preferences {
     private static final String KEY_FIRST_RUN = "first_run";
     private static final String KEY_THEME = "theme";
     private static final String KEY_MATERIAL_YOU = "material_you";
+    private static final String KEY_NOTIFICATIONS = "notifications";
     private static final String KEY_ICON_SHAPE = "icon_shape";
     private static final String KEY_APP_VERSION = "app_version";
     private static final String KEY_WIFI_ONLY = "wifi_only";
@@ -190,6 +191,14 @@ public class Preferences {
 
     public void setMaterialYou(boolean bool) {
         getSharedPreferences().edit().putBoolean(KEY_MATERIAL_YOU, bool).apply();
+    }
+
+    public boolean isNotificationsEnabled() {
+        return getSharedPreferences().getBoolean(KEY_NOTIFICATIONS, true);
+    }
+
+    public void setNotificationsEnabled(boolean bool) {
+        getSharedPreferences().edit().putBoolean(KEY_NOTIFICATIONS, bool).apply();
     }
 
     public boolean isToolbarShadowEnabled() {

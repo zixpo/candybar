@@ -77,6 +77,7 @@ public class Setting {
         PREMIUM_REQUEST,
         THEME,
         MATERIAL_YOU,
+        NOTIFICATIONS,
         LANGUAGE,
         REPORT_BUGS,
         CHANGELOG,

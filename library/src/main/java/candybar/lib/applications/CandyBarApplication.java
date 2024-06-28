@@ -148,6 +148,10 @@ public abstract class CandyBarApplication extends Application {
             boolean filterRequest(Request request);
         }
 
+        public interface NotificationHandler {
+            void setMode(boolean isEnable);
+        }
+
         private EmailBodyGenerator mEmailBodyGenerator;
 
         private IconRequestHandler iconRequestHandler;
@@ -157,6 +161,9 @@ public abstract class CandyBarApplication extends Application {
         private AnalyticsHandler analyticsHandler;
 
         private FilterRequestHandler mFilterRequestHandler = (request) -> true;
+
+        private boolean mIsNotificationEnabled = false;
+        private NotificationHandler mNotificationHandler;
 
         private NavigationIcon mNavigationIcon = NavigationIcon.STYLE_1;
         private NavigationViewHeader mNavigationViewHeader = NavigationViewHeader.NORMAL;
@@ -215,6 +222,12 @@ public abstract class CandyBarApplication extends Application {
 
         public Configuration setFilterRequestHandler(@NonNull FilterRequestHandler filterRequestHandler) {
             this.mFilterRequestHandler = filterRequestHandler;
+            return this;
+        }
+
+        public Configuration setNotificationEnabled(boolean isEnabled, NotificationHandler handler) {
+            this.mIsNotificationEnabled = isEnabled;
+            this.mNotificationHandler = handler;
             return this;
         }
 
@@ -413,6 +426,14 @@ public abstract class CandyBarApplication extends Application {
 
         public FilterRequestHandler getFilterRequestHandler() {
             return mFilterRequestHandler;
+        }
+
+        public boolean isNotificationEnabled() {
+            return mIsNotificationEnabled;
+        }
+
+        public NotificationHandler getNotificationHandler() {
+            return mNotificationHandler;
         }
 
         public List<DonationLink> getDonationLinks() {

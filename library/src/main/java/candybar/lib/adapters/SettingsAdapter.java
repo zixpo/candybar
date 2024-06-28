@@ -1,6 +1,7 @@
 package candybar.lib.adapters;
 
 import static candybar.lib.items.Setting.Type.MATERIAL_YOU;
+import static candybar.lib.items.Setting.Type.NOTIFICATIONS;
 
 import android.app.Activity;
 import android.content.Context;
@@ -135,12 +136,21 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 }
             }
 
-            if (setting.getType() == MATERIAL_YOU) {
+            if (setting.getType() == MATERIAL_YOU || setting.getType() == NOTIFICATIONS) {
                 contentViewHolder.materialSwitch.setVisibility(View.VISIBLE);
                 contentViewHolder.container.setClickable(false);
                 int pad = contentViewHolder.container.getPaddingLeft();
                 contentViewHolder.container.setPadding(pad, 0, pad, 0);
+            }
+
+            if (setting.getType() == MATERIAL_YOU) {
                 contentViewHolder.materialSwitch.setChecked(Preferences.get(mContext).isMaterialYou());
+            }
+
+            if (setting.getType() == NOTIFICATIONS) {
+                contentViewHolder.materialSwitch.setChecked(Preferences.get(mContext).isNotificationsEnabled());
+                int pad = contentViewHolder.container.getPaddingLeft();
+                contentViewHolder.container.setPadding(pad, pad, pad, 0);
             }
         }
     }
@@ -178,12 +188,23 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             container.setOnClickListener(this);
             materialSwitch.setOnCheckedChangeListener((compoundButton, isChecked) -> {
-                // No case required for now as the switch is only for
-                // material you
-                LogUtil.d("CHECK STATUS: " + isChecked);
-                if (isChecked != Preferences.get(mContext).isMaterialYou()) {
-                    Preferences.get(mContext).setMaterialYou(isChecked);
-                    ((Activity) mContext).recreate();
+                int position = getBindingAdapterPosition();
+                switch (mSettings.get(position).getType()) {
+                    case MATERIAL_YOU:
+                        if (isChecked != Preferences.get(mContext).isMaterialYou()) {
+                            Preferences.get(mContext).setMaterialYou(isChecked);
+                            ((Activity) mContext).recreate();
+                        }
+                        break;
+                    case NOTIFICATIONS:
+                        if (isChecked != Preferences.get(mContext).isNotificationsEnabled()) {
+                            Preferences.get(mContext).setNotificationsEnabled(isChecked);
+                            // TODO: Method to do stuff
+                            CandyBarApplication.Configuration.NotificationHandler handler = CandyBarApplication.getConfiguration().getNotificationHandler();
+                            if (handler != null) {
+                                handler.setMode(isChecked);
+                            }
+                        }
                 }
             });
         }

@@ -183,6 +183,14 @@ public class SettingsFragment extends Fragment {
             }
         }
 
+        if (CandyBarApplication.getConfiguration().isNotificationEnabled()) {
+            settings.add(new Setting(R.drawable.ic_toolbar_notifications,
+                    resources.getString(R.string.pref_notifications_header),
+                    "", "", "", Setting.Type.HEADER));
+
+            settings.add(new Setting(-1, "", resources.getString(R.string.pref_notifications), "", "", Setting.Type.NOTIFICATIONS));
+        }
+
         settings.add(new Setting(R.drawable.ic_toolbar_language,
                 resources.getString(R.string.pref_language_header),
                 "", "", "", Setting.Type.HEADER));

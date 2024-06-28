@@ -9,6 +9,9 @@
     <!-- If you are not using license checker, you need to remove CHECK_LICENSE permission -->
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
 
+    <!-- If you are using OneSignal then you need to uncomment this line -->
+    <!--<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />-->
+
     <supports-screens
         android:smallScreens="true"
         android:normalScreens="true"
@@ -49,6 +52,9 @@
             android:theme="@style/Theme.App.Starting"
             android:configChanges="uiMode|orientation|keyboardHidden|screenSize">
 
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

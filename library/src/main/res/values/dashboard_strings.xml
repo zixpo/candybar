@@ -305,6 +305,9 @@
     <string name="pref_theme_dark">Dark Theme</string>
     <string name="pref_theme_dark_desc">Use dark color for application theme</string>
 
+    <string name="pref_notifications_header">Notifications</string>
+    <string name="pref_notifications">Receive Notifications</string>
+
     <string name="pref_wallpaper_header">Wallpaper</string>
     <string name="pref_wallpaper_location">Wallpaper Save Location</string>
 
