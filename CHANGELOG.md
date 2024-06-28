@@ -2,6 +2,16 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.20.0
+- Updated AGP and dependencies
+- Updated Play Billing Library to v7
+- Updated OneSignal to v5. Better notification support.
+- Fixed duplicated icon file naming in XMLs
+- Updated translations
+- Update layout components by [@connyduck](https://github.com/connyduck)
+- Added Motorola launcher by [@maxtron95](https://github.com/maxtron95)
+- Added Ko-fi icon in about section by [@OSHeden](https://github.com/OSHeden)
+
 # v3.19.0
 - Upgraded to new SplashScreen API
 - Updated AGP and dependencies
