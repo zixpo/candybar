@@ -16,7 +16,6 @@
     <string name="hour">ঘণ্টা</string>
     <string name="save_setting">সংরক্ষণ করুন</string>
     <string name="muzei_refresh_duration">সতেজীকরণ ব্যাপ্তি</string>
-    <string name="muzei_wifi_only">শুধু ওয়াই ফাই এ সতেজীকরণ করুন</string>
     <string name="muzei_downloaded_only">শুধুমাত্র ডাউনলোড করা ওয়ালপেপার লোড করুন</string>
     <string name="muzei_settings_ignored">আইকন প্যাকটিতে ওয়ালপেপার নেই, সেটিংস টি এড়িয়ে যান।</string>
     <string name="muzei_settings_saved">সেটিংস সংরক্ষিত</string>
@@ -38,13 +37,9 @@
     <!-- Changelog -->
     <string name="changelog_version">সংস্করণ</string>
     <!-- InAppBilling -->
-    <string name="billing_load_product_failed">অ্যাপ মধ্যস্থ ক্রয় লোড করতে অক্ষম</string>
     <!-- License -->
     <string name="license_checking">লাইসেন্স পরীক্ষা করা হচ্ছে …</string>
     <string name="license_check">লাইসেন্স পরীক্ষা</string>
-    <string name="license_check_success">লাইসেন্স পরীক্ষা সফল, প্লে স্টোর থেকে অ্যাপ্লিকেশন ডাউনলোড করার জন্য আপনাকে ধন্যবাদ।</string>
-    <string name="license_check_failed">লাইসেন্স পরীক্ষা ব্যর্থ হয়েছে, আপনি প্লে স্টোর থেকে অ্যাপ্লিকেশন ডাউনলোড করেন নি।
-আপনি এটি ব্যবহার করতে পারবেন না।</string>
     <string name="license_check_retry">লাইসেন্সটি চেক করতে অক্ষম, অনুগ্রহ করে কিছুক্ষণ পরে আবার চেষ্টা করুন।</string>
     <!-- Play Store Installation Check -->
     <!-- Share -->
@@ -52,10 +47,8 @@
     <string name="share_app_body">%1$s চেক করে দেখুন, এই আইকন প্যাকটি অসাধারণ! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">নেভিগেশন ড্রয়ার</string>
-    <string name="tap_intro_home_navigation_desc">এখানে ট্যাপ করুন বা ন্যাভিগেশন ড্রয়ার খুলতে পর্দার বাম প্রান্ত থেকে সোয়াইপ করুন</string>
     <string name="tap_intro_home_apply">আইকন প্যাকটি প্রয়োগ করুন</string>
     <string name="tap_intro_icons_search">খুঁজুন</string>
-    <string name="tap_intro_icons_search_desc">একটি আইকন খুঁজতে এখানে ট্যাপ করুন</string>
     <string name="tap_intro_request_select">মিস করে যাওয়া অ্যাপ নির্বাচন করুন</string>
     <string name="tap_intro_request_select_desc">আইকন অনুরোধের জন্য মিস করে যাওয়া অ্যাপ নির্বাচন করতে এখানে ট্যাপ করুন</string>
     <string name="tap_intro_request_select_all">সব মিস করে যাওয়া অ্যাপ নির্বাচন</string>
@@ -63,20 +56,14 @@
     <string name="tap_intro_request_send">আইকনের জন্য অনুরোধ পাঠান</string>
     <string name="tap_intro_request_send_desc">নির্বাচিত মিস করে যাওয়া অ্যাপ এর অনুরোধ পাঠানোর জন্য এখানে ট্যাপ করুন</string>
     <string name="tap_intro_request_premium">প্রিমিয়াম আইকন অনুরোধ</string>
-    <string name="tap_intro_request_premium_desc">প্রিমিয়াম আইকন অনুরোধ প্যাকেজ কিনতে এখানে আলতো চাপুন,
-প্রিমিয়াম আইকন অনুরোধ সঙ্গে আপনি আপনার অনুরোধ করা অ্যাপ দ্রুত পেতে পারেন।</string>
     <string name="tap_intro_wallpapers_option">ওয়ালপেপার অপশন</string>
-    <string name="tap_intro_wallpapers_option_desc">ওয়ালপেপার বিকল্পগুলি প্রদর্শন করতে এখানে ট্যাপ করুন এবং ধরে থাকুন, %s ওয়ালপেপারটি প্রয়োগ করুন।</string>
     <string name="tap_intro_wallpapers_option_desc_download">ডাউনলোড করুন অথবা</string>
     <string name="tap_intro_wallpapers_preview">ওয়ালপেপার প্রিভিউ দেখান</string>
-    <string name="tap_intro_wallpapers_preview_desc">ওয়ালপেপারের সম্পূর্ণ আকারের পূর্বরূপ দেখার জন্য এখানে আলতো চাপুন</string>
     <string name="tap_intro_wallpaper_preview_save">ওয়ালপেপার সংরক্ষণ করুন</string>
     <string name="tap_intro_wallpaper_preview_save_desc">আপনার ডিভাইসে ওয়ালপেপার ডাউনলোড এবং সংরক্ষণ করতে এখানে আলতো চাপুন যাতে আপনি পরে এটি ব্যবহার করতে পারেন</string>
     <string name="tap_intro_wallpaper_preview_apply">ওয়ালপেপার প্রয়োগ করুন</string>
-    <string name="tap_intro_wallpaper_preview_apply_desc">হোম স্ক্রীন ব্যাকগ্রাউন্ড হিসাবে ওয়ালপেপার সেট করতে এখানে আলতো চাপুন</string>
     <!-- Home -->
     <string name="home_more_apps_header">আরো অ্যাপস</string>
-    <string name="home_more_apps">গুগল প্লে স্টোর এ প্রকাশিত অন্যান্য অ্যাপগুলি দেখুন</string>
     <string name="home_rate_and_review">রেটিং দিন ও রিভিউ লিখুন</string>
     <string name="home_apply_icon_pack">%s প্রয়োগ করুন</string>
     <string name="home_donate">অনুদান দিন</string>
@@ -95,10 +82,8 @@
     <string name="apply_launcher_not_installed">%s ইনস্টল করা নেই। আপনি কি খুলতে চান গুগল প্লে স্টোর? 
 ডাউনলোড এবং ইনস্টল করার জন্য?</string>
     <string name="apply_cmtheme_not_available">CM থিম ম্যানেজার এই ডিভাইসে পাওয়া যায় নি।</string>
-    <string name="apply_cmtheme_failed">CM থিম ম্যানেজার আরম্ভ করা যায় নি, আপনি সেটিংস থেকে আইকন প্যাক প্রয়োগ করতে চেষ্টা করতে পারেন।</string>
     <string name="apply_lg_home">এই আইকন প্যাকটি প্রয়োগ করতে খুলুন সেটিংস - প্রদর্শন - হোম স্ক্রিন - থিম</string>
     <string name="apply_lg_home_not_available">এলজি হোম এই ডিভাইসে পাওয়া যায় না</string>
-    <string name="apply_lg_home_failed">এলজি হোম সেটিংস চালু করতে সক্ষম হয়নি, আপনি সেটিংস থেকে আইকন প্যাক প্রয়োগ করার চেষ্টা করতে পারেন।</string>
     <string name="apply_lg_home_nougat">অ্যান্ড্রয়েড নওগ্যাটের সাথে এলজি হোম আইকন প্যাক সমর্থন করে না। আইকন প্যাক ব্যবহার করতে আপনার একটি কাস্টম লঞ্চারের প্রয়োজন।</string>
     <!-- Icons -->
     <string name="icons_load_failed">আইকন লোড করতে সক্ষম হয়নি</string>
@@ -111,15 +96,12 @@
     <string name="request_build_failed">আইকনের জন্য অনুরোধ জানাতে সক্ষম হয় নি</string>
     <string name="request_appfilter_failed">Appfilter.xml পড়তে অক্ষম</string>
     <string name="request_email_client">আইকন অনুরোধ পাঠাতে আপনি ব্যবহার করতে চান এমন ইমেইল ক্লায়েন্ট নির্বাচন করুন</string>
-    <string name="request_limit">আপনি শুধুমাত্র নিয়মিত অনুরোধের সাথে %d টি অনুরোধ (গুলি) করতে সক্ষম।</string>
     <string name="request_used">আপনি %d টি আইকন অনুরোধ করেছেন।</string>
     <string name="request_limit_buy">আপনি আরো আইকন অনুরোধ পাঠাতে প্রিমিয়াম অনুরোধ কিনতে পারেন।</string>
     <string name="request_limit_reset">প্রতিটি আপডেট এর পর আইকন অনুরোধ সীমা পুনরায় সেট করা হবে।</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <string name="premium_request">প্রিমিয়াম আইকন অনুরোধ</string>
-    <string name="premium_request_no_internet">একটি প্রিমিয়াম অনুরোধ পাঠানোর আগে আপনার ফোন ইন্টারনেটে সংযুক্ত কিনা নিশ্চিত করুন</string>
-    <string name="premium_request_desc">প্রিমিয়াম আইকন অনুরোধটি অনুরোধের জন্য অর্থ ব্যয় করা লাগে। আপনি প্রিমিয়াম আইকন অনুরোধ ব্যবহার করে আপনার অনুরোধকৃত অ্যাপ্লিকেশনগুলি দ্রুত পেতে পারেন।</string>
     <string name="premium_request_buy">কিনুন</string>
     <string name="premium_request_already_purchased">আপনার কাছে এখনও %d প্রিমিয়াম অনুরোধ রয়েছে।
 আপনি আবার একটি প্রিমিয়াম অনুরোধ প্যাকেজ কেনার আগে তাদের সব ব্যবহার করতে হবে।</string>
@@ -128,8 +110,6 @@
 
 
 নিয়মিত অনুরোধ পুনরায় ব্যবহার করার আগে আপনাকে আপনার সমস্ত প্রিমিয়াম অনুরোধগুলি ব্যবহার করতে হবে।</string>
-    <string name="premium_request_consume_failed">প্রিমিয়াম অনুরোধ ব্যবহার করতে অক্ষম, নিশ্চিত করুন আপনার কাছে স্থিতিশীল ইন্টারনেট সংযোগ রয়েছে এবং আবার চেষ্টা করুন।
-প্রিমিয়াম অনুরোধ পুনর্নির্মাণ করতে সেটিংসে যান।</string>
     <string name="premium_request_rebuilding">প্রিমিয়াম অনুরোধ পুনর্নির্মাণ করা হচ্ছে …</string>
     <string name="premium_request_rebuilding_empty">আপনি একটিও প্রিমিয়াম অনুরোধ করেন নি</string>
     <string name="premium_request_exist">আপনার এখনও একটি প্রিমিয়াম আইকন অনুরোধ প্যাকেজ আছে।
@@ -185,7 +165,6 @@
     <!-- Intent -->
     <string name="app_client">ইমেল ক্লায়েন্ট নির্বাচন করুন</string>
     <string name="no_email_app">ইমেল পাঠাতে কোন অ্যাপ নেই</string>
-    <string name="no_browser">Url টি খুলতে কোনও অ্যাপ্লিকেশন নেই</string>
     <string name="intent_email_failed">ইমেল অ্যাপ্লিকেশন প্রদর্শন করতে অক্ষম</string>
     <string name="intent_email_supported">সমর্থিত</string>
     <string name="intent_email_recommended">সুপারিশকৃত</string>
@@ -194,7 +173,6 @@
     <!-- About -->
     <string name="about_contributors_title">অবদানকারীগণ</string>
     <!-- Report Bugs -->
-    <string name="report_bugs_desc">আপনি কোনও ধরনের সমস্যা সম্পর্কে রিপোর্ট করতে চান দয়া করে একটি বিবরণ দিন</string>
     <string name="report_bugs_desc_hint">বর্ণনা</string>
     <string name="report_bugs_desc_empty">একটি বিবরণ দিন দয়া করে</string>
     <string name="report_bugs_building">কার্যকলাপ তালিকা তৈরি করা হচ্ছে …</string>
@@ -204,13 +182,9 @@
     <string name="donation_success">একটি অনুদান রাখার জন্য আপনাকে ধন্যবাদ।  আমি এটি ভালো কাজে  ব্যবহার করব।</string>
     <!-- Crash Report -->
     <string name="crash_report">ক্র্যাশ রিপোর্ট</string>
-    <string name="crash_report_message">দুর্ভাগ্যবশত %s ক্র্যাশ করেছে। বিকাশকারীকে সমস্যাটির সমাধান করতে সহায়তা করার জন্য নীচের প্রতিবেদনটি নির্বাচন করুন।</string>
     <string name="crash_report_send">রিপোর্ট পাঠান</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">ক্যান্ডি বার</string>
-    <string name="about_dashboard_dev">ক্যান্ডিব্যাপার ওপেন সোর্স আইকন প্যাক ড্যাশবোর্ডটি অ্যাপাচে লাইসেন্স 2.0 এর জন্য অনুমোদিত
-GitHub এ অ্যান্ড্রয়েড উপলব্ধ এবং ব্যবহারের জন্য বিনামূল্যে, Dani Mahardhika দ্বারা উন্নয়নকৃত।</string>
-    <string name="about_open_source_licenses">ওপেন সোর্স লাইসেন্স</string>
     <string name="about_dashboard_contributors">ক্যান্ডিবারে অবদানকারীগণ</string>
     <string name="about_dashboard_translator">ক্যান্ডিবারে অনুবাদকগণ</string>
     <!-- DrawerToggle -->

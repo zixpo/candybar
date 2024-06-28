@@ -9,13 +9,13 @@
         <!-- I can\'t see a complete icon name -->
         <!-- How can i replace icons with an alternate icon? -->
         <!-- How do i request an icon? -->
-        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- How can i restore the remaining Premium Requests after reinstalling the app? -->
         <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
         <!-- Why do the icons looks jaggy or pixelated on my phone? -->
         <!-- I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed? -->
+            but why isn\'t the actual icon on the app drawer changed? -->
         <!-- What is the \"report bugs\" option? -->
-        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- My launcher is listed in the Google Play description, but why isn\'t it included in apply section? -->
         <!-- Wallpaper can\'t be applied, just showing black screen? -->
         <!-- Muzei: How to load downloaded wallpapers only? -->
         <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
@@ -23,7 +23,7 @@
         <!-- Why are Read &amp; Write External Storage permission needed? -->
         <!-- Why is Internet permission needed? -->
         <!-- Why is Access Network State permission needed? -->
-        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Access Wi-Fi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
@@ -37,12 +37,12 @@
         <item>我看不到图标完整的名称</item>
         <item>如何使用图标包替换启动器图标？</item>
         <item>我该如何申请图标？</item>
-        <item>重新安装应用后，我怎样才能恢复剩余的高级申请数？</item>
-        <item>重启手机后，图标们被重置回默认，图标包未能应用？</item>
+        <item>我如何在重新安装应用程序后恢复剩余的高级请求？</item>
+        <item>重启手机后图标恢复默认，图标包未能应用？</item>
         <item>为什么图标在我的设备上显示效果不好（失真）？</item>
-        <item>我在所有图标中能够看到某个图标，但为什么应用抽屉里的那个应用的图标没有变化？</item>
+        <item>我可以看到包含在所有图标中的图标，但为什么应用抽屉上的图标没有改变？</item>
         <item>“反馈问题” 选项是什么？</item>
-        <item>Google Play 描述中包含了我使用的启动器，但为什么在应用图标屏里没有？</item>
+        <item>我的启动器列于Google Play描述中，但为什么它没有包含在应用部分？</item>
         <item>壁纸无法应用，只是黑屏？</item>
         <item>Muzei: 如何仅加载下载的壁纸？</item>
         <item>Muzei: 不想每次壁纸变化的时候都要下载它们？</item>
@@ -83,14 +83,13 @@
 重启之后你的手机有更多可用的运行内存。
 或者，你可以在图库程序中打开之前下载的壁纸图片，从那里设定为壁纸。</item>
         <item>打开 muzei，选择本图标包，设置。
-接着你就能看到只使用已下载的壁纸的选项了。
-当然，你首先需要在 Dashboard 中下载壁纸。</item>
+接着你就能看到只使用已下载的壁纸的选项了。</item>
         <item>如果一张壁纸已下载了，那么它将被自动载入到你的手机内存中。
 Muzei 并不会在每次壁纸变化的时候下载壁纸。你需要先在 Dashboard 中下载壁纸才行。</item>
         <item>打开 Dashboard 程序，下载那些你想要在 Muzei 中使用的壁纸。
 打开 Muzei 设置，然后选择只使用已下载的壁纸。</item>
         <item>是用来读写缓存，以及收集图标申请数据的。</item>
-        <item>是用来载入以及下载云端壁纸的。</item>
+        <item>加载壁纸</item>
         <item>是用来检查你的手机是否拥有互联网连接的。</item>
         <item>是用来检查你的手机是否连接到 Wifi 网络的，以便载入 Muzei 上的云端壁纸。</item>
         <item>是用来从 Dashboard 程序中直接应用壁纸的。</item>

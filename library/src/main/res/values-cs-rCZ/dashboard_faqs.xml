@@ -9,13 +9,13 @@
         <!-- I can\'t see a complete icon name -->
         <!-- How can i replace icons with an alternate icon? -->
         <!-- How do i request an icon? -->
-        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- How can i restore the remaining Premium Requests after reinstalling the app? -->
         <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
         <!-- Why do the icons looks jaggy or pixelated on my phone? -->
         <!-- I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed? -->
+            but why isn\'t the actual icon on the app drawer changed? -->
         <!-- What is the \"report bugs\" option? -->
-        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- My launcher is listed in the Google Play description, but why isn\'t it included in apply section? -->
         <!-- Wallpaper can\'t be applied, just showing black screen? -->
         <!-- Muzei: How to load downloaded wallpapers only? -->
         <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
@@ -23,7 +23,7 @@
         <!-- Why are Read &amp; Write External Storage permission needed? -->
         <!-- Why is Internet permission needed? -->
         <!-- Why is Access Network State permission needed? -->
-        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Access Wi-Fi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
@@ -38,7 +38,7 @@
         <item>Jak můžu nahradit stávající ikony ikonou alternativní?</item>
         <item>Jak mám vytvořit požadavek na další ikony?</item>
         <item>Jak můžu obnovit zbývající prémiové požadavky po reinstalaci aplikace?</item>
-        <item>Po restartování telefonu se balíček ikon neaplikuje, použijí se ikony výchozí?</item>
+        <item>Po restartování telefonu se balíček ikon neaplikuje; použijí se ikony výchozí?</item>
         <item>Proč vypadají ikony v mém telefonu zubaté nebo jinak deformované?</item>
         <item>Vidím ikonu obsaženou ve všech ikonách,
             ale proč se nezmění skutečná ikona v seznamu aplikací?</item>
@@ -73,10 +73,10 @@
        	    Většinou můžete upravit ikonu klepnutím a přidržením nebo dvojitým klepnutím na ni.</item>
         <item>Můžete otevřít navigační panel a poté otevřít \"Žádost o ikony\".</item>
         <item>Můžete otevřít navigační panel, poté otevřít \"Nastavení\" a vybrat \"Obnovit nákupy\".
-            Pokud jste před opětovnou instalací měli zbývající prémiové požadavky, budou obnoveny.</item>
+            Pokud jste před opětovnou instalací měli jakékoliv zbývající prémiové požadavky, budou obnoveny.</item>
         <item>K tomu došlo, protože sada ikon byla přesunuta na SD kartu. Měli byste ji nainstalovat do vnitřního úložiště.</item>
         <item>Problém může pocházet ze spouštěče, který jste použili při zpracování rozlišení velkých ikon.
-       	    Můžete to opravit zvýšením velikosti ikony na 115 – 120%.
+       	    Můžete to opravit zvýšením velikosti ikony na 115–120%.
        	    Případně můžete změnit spouštěč.</item>
         <item>Otevřete nastavení, přesuňte se dolů a vyberte \"Nahlásit chyby\".</item>
         <item>\"Nahlásit chyby\" se používá k hlášení chyb souvisejících s balíčkem ikon, ne s hlavním panelem.</item>

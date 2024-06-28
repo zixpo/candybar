@@ -18,7 +18,7 @@
     <string name="hour">Hodina</string>
     <string name="save_setting">Uložit</string>
     <string name="muzei_refresh_duration">Rychlost aktualizace</string>
-    <string name="muzei_wifi_only">Aktualizovat pouze na WiFi</string>
+    <string name="muzei_wifi_only">Aktualizovat pouze na Wi-Fi</string>
     <string name="muzei_downloaded_only">Načíst pouze stažené tapety</string>
     <string name="muzei_settings_ignored">Balíček ikon neobsahuje tapety, nastavení ignorováno.</string>
     <string name="muzei_settings_saved">Nastavení uložena</string>
@@ -54,13 +54,13 @@
     <!-- License -->
     <string name="license_checking">Kontrolování licence…</string>
     <string name="license_check">Kontrola licence</string>
-    <string name="license_check_success">Kontrola licence byla úspěšná, děkujeme za stažení aplikace z Obchodu Play.</string>
+    <string name="license_check_success">Kontrola licence je dokončena. Děkujeme vám za zakoupení této aplikace.</string>
     <string name="license_check_failed">Kontrola licence selhala, tuto aplikaci jste nestáhli z Obchodu Play.
         Aplikaci nebude možné používat.</string>
     <string name="license_check_retry">Nelze zkontrolovat licenci, zkuste to znovu za chvíli.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Kontrola Obchodu Play</string>
-    <string name="playstore_check_success">Děkujeme za instalaci aplikace z Obchodu Play. Užijte si to. Užívejte si.</string>
+    <string name="playstore_check_success">Děkujeme za instalaci aplikace z Obchodu Play. Užívejte si!</string>
     <string name="playstore_check_failed">Vypadá to, že jste nainstalovali tento balíček ikon mimo Obchod Play.
         Nebudete jej moci používat.</string>
     <!-- Share -->
@@ -83,7 +83,7 @@
     <string name="tap_intro_request_premium_desc">Klepnutím sem zakoupíte balíček prémiových ikon,
         to znamená že můžete rychleji získat ikony pro požadované aplikace.</string>
     <string name="tap_intro_wallpapers_option">Možnosti tapety</string>
-    <string name="tap_intro_wallpapers_option_desc">Klepnutím a podržením zobrazíte možnosti pro tapetu %s.</string>
+    <string name="tap_intro_wallpapers_option_desc">Klepnutím a podržením zobrazíte možnosti pro použití tapety %s.</string>
     <string name="tap_intro_wallpapers_option_desc_download">stáhnout nebo</string>
     <string name="tap_intro_wallpapers_preview">Náhled tapety</string>
     <string name="tap_intro_wallpapers_preview_desc">Klepnutím sem zobrazíte plnou velikost tapety</string>
@@ -108,7 +108,7 @@
     <!-- Apply -->
     <string name="apply_installed">Nainstalovaný spouštěč</string>
     <string name="apply_supported">Podporované spouštěče</string>
-    <string name="apply_manual">Spouštěč %1$s nepodporuje přímé aktivování, ale můžete aktualizovat %2$s ručně v nastavení spouštěče.</string>
+    <string name="apply_manual">Spouštěč %1$s nepodporuje přímé použití, ale můžete použít %2$s ručně v nastavení spouštěče.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso nepodporuje přímé použití, ale můžete postupovat podle následujících kroků:</string>
     <string name="apply_manual_kvaesitso_step_1">Otevřít nastavení Kvaesitso</string>
     <string name="apply_manual_kvaesitso_step_2">Klepněte na \"Mřížka a ikony\"</string>
@@ -129,7 +129,7 @@
     <string name="apply_manual_samsung_oneui_step_5">Klepněte na modré tlačítko \"Balíček ikon\"</string>
     <string name="apply_manual_samsung_oneui_step_6">Vyberte %s ze seznamu</string>
     <string name="apply_manual_samsung_oneui_step_7">Tyto kroky opakujte při každé aktualizaci %s, protože nové ikony nebudou namapovány automaticky.</string>
-    <string name="apply_manual_hios">Spouštěš HiOS nepodporuje přímé použití, ale můžete postupovat podle následujících kroků:</string>
+    <string name="apply_manual_hios">Spouštěč HiOS nepodporuje přímé použití, ale můžete postupovat podle následujících kroků:</string>
     <string name="apply_manual_hios_step_1">Otevřete \"Nastavení\"</string>
     <string name="apply_manual_hios_step_2">Klepněte na \"Motiv a Zamykací obrazovka\"</string>
     <string name="apply_manual_hios_step_3">Klepněte na \"Můj motiv\"</string>
@@ -143,7 +143,7 @@
     <string name="apply_manual_color_os_step_2">Klepněte na \"Ikony\"</string>
     <string name="apply_manual_color_os_step_3">Přejděte na pravou stranu tlačítka \"Vlastní\" (jedná se o rolovací seznam!)</string>
     <string name="apply_manual_color_os_step_4">Klepněte na %s</string>
-    <string name="apply_manual_before">Tato verze aplikace Before launcher zatím nepodporuje přímé použití ikon. Místo toho postupujte podle níže uvedených kroků:</string>
+    <string name="apply_manual_before">Tato verze aplikace spoštěče Before zatím nepodporuje přímé použití ikon. Místo toho postupujte podle níže uvedených kroků:</string>
     <string name="apply_manual_before_step_1">Potáhněte doleva na Domovské obrazovce</string>
     <string name="apply_manual_before_step_2">Klepněte na \"Nastavení\"</string>
     <string name="apply_manual_before_step_3">Klepněte na \"Styly a motivy\"</string>
@@ -192,7 +192,7 @@
     <string name="request_email_client">Vyberte aplikaci, kterou chcete použít k odeslání žádosti o ikonu</string>
     <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon aktualizujte aplikaci na nejnovější verzi.</string>
     <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
-    <string name="unable_to_load_config">Při načítání/čtení dat ze serveru došlo k chybě.</string>
+    <string name="unable_to_load_config">Při načítání nebo čtení dat ze serveru došlo k chybě.</string>
     <string name="request_limit">Počet ikon, o které můžete zdarma požádat: %d.</string>
     <string name="request_used">Počet ikon, o které jste již požádali: %d.</string>
     <string name="request_limit_buy">Pro více požadavků na ikony si můžete zakoupit prémiový požadavek.</string>
@@ -308,8 +308,8 @@
     <string name="crash_report_send">Odeslat hlášení</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
-    <string name="about_dashboard_dev">CandyBar je vyvíjen jako open source projekt pro Android, který je licencován pod Apache License 2.0. Je k dispozici na GitHub pro volné použití, autor Dani Mahardhika.</string>
-    <string name="about_open_source_licenses">Open Source licence</string>
+    <string name="about_dashboard_dev">CandyBar je vyvíjen jako open-source projekt pro Android, který je licencován pod Apache License 2.0. Je k dispozici na GitHub pro volné použití, autor Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Open-source licence</string>
     <string name="about_dashboard_contributors">Přispěvatelé CandyBar</string>
     <string name="about_dashboard_translator">Překladatelé CandyBar</string>
     <!-- DrawerToggle -->

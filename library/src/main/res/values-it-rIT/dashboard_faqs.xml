@@ -9,13 +9,13 @@
         <!-- I can\'t see a complete icon name -->
         <!-- How can i replace icons with an alternate icon? -->
         <!-- How do i request an icon? -->
-        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- How can i restore the remaining Premium Requests after reinstalling the app? -->
         <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
         <!-- Why do the icons looks jaggy or pixelated on my phone? -->
         <!-- I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed? -->
+            but why isn\'t the actual icon on the app drawer changed? -->
         <!-- What is the \"report bugs\" option? -->
-        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- My launcher is listed in the Google Play description, but why isn\'t it included in apply section? -->
         <!-- Wallpaper can\'t be applied, just showing black screen? -->
         <!-- Muzei: How to load downloaded wallpapers only? -->
         <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
@@ -23,7 +23,7 @@
         <!-- Why are Read &amp; Write External Storage permission needed? -->
         <!-- Why is Internet permission needed? -->
         <!-- Why is Access Network State permission needed? -->
-        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Access Wi-Fi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
@@ -38,7 +38,7 @@
         <item>Come posso sostituire le icone con una alternativa?</item>
         <item>Come posso richiedere un\'icona mancante?</item>
         <item>Come posso resettare la funzione \"Richiesta Premium\" dopo aver reinstallato l\'app?</item>
-        <item>Dopo aver riavviato il mio dispositivo, l\'icon pack non è applicato, ripristina i valori predefiniti?</item>
+        <item>Dopo aver riavviato il telefono, il pacchetto icone non viene applicato, ritorna ai valori predefiniti?</item>
         <item>Perche le icone si vedono sgranate o pixellate sul mio telefono?</item>
         <item>Perché l\'icona è presente all\'interno dell\'icon pack ma non si applica automaticamente?</item>
         <item>Che cosa è l\'opzione \"Riporta bug\"?</item>
@@ -59,35 +59,34 @@
         <item>Un Launcher è l\'interfaccia utente di Android che permette di modificarne l\'aspetto, aprire le applicazioni e fare tutte le altre operazioni che abitualmente usi sul dispositivo.</item>
         <item>Una raccolta grafica che cambia l\'aspetto delle icone delle app installate sul tuo dispositivo.</item>
         <item>Per usare un icon pack hai bisogno di scaricare un launcher che supporti tale funzione.
-La lista completa dei launcher supportati è visibile nella descrizione del PlayStore.
-Se non sai che Launcher usare, basta andare nella sezione \"Applica\" ed installarne uno da quella lista.</item>
-        <item>Basta aprire il menù laterale dell\'app quindi scegliere \"Applica\".
-Da qui scegli il launcher che hai installato.
-Se il tuo Launcher non è presente nella lista ma è compatibile, puoi applicare l\'icon pack manualmente andando nelle impostazioni del Launcher (guarda la lista sul PlayStore per vedere se il tuo Launcher è compatibile).</item>
-        <item>Basta aprire il menù laterale dell\'app quindi scegliere \"Icone\"</item>
+La lista completa dei launcher supportati è visibile nella descrizione del Play Store.
+Se non sai che launcher usare, basta andare nella sezione \"Applica\" ed installarne uno da quella lista.</item>
+        <item>Basta aprire il menù laterale dell\'app quindi scegliere \"Applica\". Da qui scegli il launcher che hai installato.
+Se il tuo launcher non è presente nella lista ma è compatibile, puoi applicare l\'icon pack manualmente andando nelle impostazioni del launcher (guarda la lista sul Play Store per vedere se il tuo launcher è compatibile).</item>
+        <item>Basta aprire il menù laterale dell\'app e cliccare su \"Icone\".</item>
         <item>Basta cliccare sull\'icona e un effetto pop-up farà apparire l\'intero nome dell\'icona insieme ad un\'anteprima grafica.</item>
         <item>Dipende dal Launcher che stai usando.
 Non tutti i Launcher permettono di modificare manualmente le icone.
 In molti Launcher, se la funzione è presente, basta fare una lunga pressione sull\'icona, quindi un menù con la voce \"modifica\" (o simile) apparirà, da qui puoi scegliere una delle icone presenti nell\'icon pack.</item>
-        <item>Basta aprire il menù laterale dell\'app quindi scegliere \"Richiedi Icone\".</item>
+        <item>Basta aprire il menù laterale dell\'app e cliccare su \"Richiedi Icone\".</item>
         <item>Basta aprire il menù laterale dell\'app quindi scegliere \"Impostazioni\", poi scegliere \"Ripristina Acquisti\".
-Se questo non funziona, probabilmente hai esaurito le \"Richieste Premium\" a tua disposizione.</item>
+Se avevi delle richieste premium residue, esse saranno disponibili dopo il ripristino.</item>
         <item>Questo accade perché hai spostato questa applicazione sull\'SD esterna.
 Per risolvere basta spostarla sulla memoria interna del tuo dispositivo.</item>
-        <item>il problema potrebbe essere dato dal tuo Launcher che non gestisce bene le alte risoluzioni.
-Puoi ovviare a questo problema scalando la dimensione delle icone (115 / 120%) o cambiando il launcher che stai usando.</item>
-        <item>\"Riporta Bug\" è una funzione che serve a riportare eventuali errori riscontrati durante il normale utilizzo dell\'icon pack.</item>
+        <item>Il problema potrebbe dipendere dal launcher che hai usato, nello gestire la risoluzione delle grandi icone.
+       	    È possibile risolvere il problema aumentando la dimensione delle icone al 115–120%.
+       	    In alternativa, potresti cambiare launcher.</item>
+        <item>Apri le impostazioni, scorri verso il basso, quindi seleziona \"Segnala Bug\".</item>
         <item>Apri le Impostazioni e cerca la voce \"Riporta Bug\"</item>
-        <item>Non tutti i Launcher permettono di applicare direttamente l\'icon pack da questa applicazione.
-In questo caso puoi applicare l\'icon pack manualmente dalle impostazioni del launcher che stai usando.</item>
+        <item>Non tutti i launcher supportano l\'applicazione diretta e alcuni di essi non possono essere accessibili direttamente dalla dashboard.
+      	    Puoi applicare questo pacchetto icone manualmente nelle impostazioni del launcher.</item>
         <item>Quando imposti uno sfondo direttamente dall\'applicazione, questo viene scaricato dai server in cloud.
 Questo richiede una buona connessione e una buona RAM.
 Lo schermo nero appare perché il tuo dispositivo non dispone di abbastanza RAM libera.
 Riavviando il tuo dispositivo puoi risolvere questo problema.
 In alternativa puoi scaricare lo sfondo sul tuo dispositivo, quindi dalle galleria puoi applicarlo.</item>
-        <item>Apri Muzei e scegli questo Icon Pack.
-Qui vedrai un\'opzione che ti permetterà di caricare solo gli sfondi scaricati.
-            Ricorda che prima devi scaricare gli sfondi dall\'applicazione.</item>
+        <item>Apri Muzei, clicca su questo pacchetto icone e poi su impostazioni. Vedrai un\'opzione per caricare solo gli sfondi scaricati.
+            Dovrai prima scaricare gli sfondi dalla dashboard.</item>
         <item>Se hai già scaricato uno sfondo, questo verrà caricato direttamente nella memoria interna del tuo dispositivo.
             Muzei quindi non scaricherà più gli sfondi dal cloud, ma li caricherà direttamente dalla memoria interna del tuo dispositivo.</item>
         <item>Apri l\'app e scarica gli sfondi che vuoi usare in Muzei.

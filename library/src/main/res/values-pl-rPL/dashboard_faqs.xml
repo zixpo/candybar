@@ -9,13 +9,13 @@
         <!-- I can\'t see a complete icon name -->
         <!-- How can i replace icons with an alternate icon? -->
         <!-- How do i request an icon? -->
-        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- How can i restore the remaining Premium Requests after reinstalling the app? -->
         <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
         <!-- Why do the icons looks jaggy or pixelated on my phone? -->
         <!-- I can see the icon included in all icons,
-            but why isn\'t the actual icon on app drawer changed? -->
+            but why isn\'t the actual icon on the app drawer changed? -->
         <!-- What is the \"report bugs\" option? -->
-        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- My launcher is listed in the Google Play description, but why isn\'t it included in apply section? -->
         <!-- Wallpaper can\'t be applied, just showing black screen? -->
         <!-- Muzei: How to load downloaded wallpapers only? -->
         <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
@@ -23,7 +23,7 @@
         <!-- Why are Read &amp; Write External Storage permission needed? -->
         <!-- Why is Internet permission needed? -->
         <!-- Why is Access Network State permission needed? -->
-        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Access Wi-Fi State permission needed? -->
         <!-- Why is Set Wallpaper permission needed? -->
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
@@ -37,12 +37,13 @@
         <item>Nie widzę pełnej nazwy ikony</item>
         <item>Jak mogę wymienić ikonę na alternatywną?</item>
         <item>Jak wysłać prośbę o ikonę?</item>
-        <item>Jak odzyskać nieużyte tokeny płatnych próśb o ikony po ponownym zainstalowaniu aplikacji?</item>
-        <item>Po ponownym uruchomieniu mojego telefonu, paczka ikon nie jest zastosowana - została przywrócona do stanu domyślnego. Dlaczego?</item>
+        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
+        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
         <item>Dlaczego ikony są rozpikselizowane lub niewyraźne na moim telefonie?</item>
-        <item>Widzę ikonę w aplikacji, ale nie jest ona widoczna na pulpicie.</item>
+        <item>I can see the icon included in all icons,
+            but why isn\'t the actual icon on the app drawer changed?</item>
         <item>Do czego służy opcja \"Zgłoś błędy\"?</item>
-        <item>Launcher, którego używam jest oznaczony jako wspierany w opisie aplikacji w sklepie Google Play, ale nie ma go w sekcji zastosowania paczki ikon.</item>
+        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
         <item>Nie mogę zastosować tapety, widzę tylko czarny ekran.</item>
         <item>Muzei: Jak ładować tylko pobrane tapety?</item>
         <item>Muzei: Nie chcę, aby tapety były pobierane przy każdej automatycznej zmianie tła.</item>
@@ -58,25 +59,34 @@
     <string-array name="answers">
         <item>Launcher to część interfejsu użytkownika systemu Android, która pozwala użytkownikom personalizować swój ekran główny, uruchamiać aplikacje, wykonywać połączenia telefoniczne, oraz wykonywać inne zadania na urządzeniu.</item>
         <item>Zestaw grafik, które zmienią wygląd ikon na pulpicie twojego urządzenia.</item>
-        <item>Będzie konieczny laucher, który wspiera zewnętrzne paczki ikon. Wspierane launchery są oznaczone w opisie aplikacji w sklepie Google Play. Jeżeli nie wiesz których launcherów użyć, po prostu przejdź do sekcji \"Zastosuj\" w aplikacji, i zainstaluj wybrany laucher stamtąd.</item>
-        <item>Możesz otworzyć szufladę nawigacji i wybrać sekcję \"Zastosuj\". Wybierz swój launcher z listy. Jeżeli twój launcher nie jest na liście ale jest wspierany przez paczkę ikon (patrz - opis aplikacji w sklepie Google Play), zastosuj paczkę manualnie przez ustawienia launchera.</item>
-        <item>Z szuflady nawigacji wybierz sekcję \"Ikony\".</item>
+        <item>You will need a launcher that supports custom icon packs.
+            Supported launchers are listed in the Play Store description.
+            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
+        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
+            If your launcher is not listed there, but this icon pack is compatible with it
+            (see on Google Play Store description for supported launchers),
+            you can apply the icon pack manually in your launcher settings.</item>
+        <item>You can open the navigation drawer and then open \"Icons\"</item>
         <item>Po prostu dotknij ikonę. Zobaczysz wtedy okno z większym obrazkiem oraz całą jej nazwę.</item>
         <item>To zależy od launchera, którego używasz - nie każdy launcher wspiera edytowanie ikon. W większości przypadków opcja ta jest dostępna po przytrzymaniu palca na ikonie bądź jej podwójnym dotknięciu.</item>
-        <item>W szufladzie nawigacji, wybierz opcję \"Prośba o ikony\".</item>
-        <item>W szufladzie nawigacji, wybierz sekcję \"Ustawienia\", a następnie dotknij opcję \"Przywróć zakup\"</item>
-        <item>Stało się tak ponieważ paczka ikon została przeniesiona na kartę SD. Aplikacja powinna być zainstalowana w pamięci wewnętrznej.</item>
-        <item>Ten problem może być związany z launcherem, który ma problemy z obsługą ikon w wysokiej rozdzielczości. Można to naprawić zmieniając rozmiar ikon na 115% - 120%. Alternatywnie, możesz zmienić swój launcher.</item>
-        <item>Otwórz ustawienia, a na dole listy opcji wybierz \"Zgłoś błędy\".</item>
+        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
+        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
+            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
+        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
+        <item>The problem might come from the launcher that you used when handling big icon resolution.
+       	    You can fix it by increasing the icon size to 115–120%.
+       	    Alternatively, you might change your launcher.</item>
+        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
         <item>Opcja \"Zgłoś błędy\" jest używana by zgłosić problemy z paczką ikon, a nie aplikacją.</item>
-        <item>Nie każdy launcher wspiera bezpośrednie zastosowanie paczki ikon, przez co
-niektóre nie mogą być w sekcji \"Zastosuj\" w aplikacji. W przypadku takich launcherów, aby zastosować paczkę ikon, użyj ustawień launchera.</item>
+        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
+      	    You can apply this icon pack manually in the individual launcher settings.</item>
         <item>Gdy ustawisz tapetę bezpośrednio z aplikacji, zostanie ona pobrana do pamieći cache, a następnie aplikacja podejmie próbę zastosowania tła pulpity. Ten proces może chwilę potrwać. Używa on także wielkiej ilości pamięci RAM w którkim czasie. Błędy z czarnym ekranem mogą być związane z niewystarczającą ilością wolnej pamięci RAM w telefonie. Ten problem można naprawić uruchamiając ponownie telefon - spowoduje to oczyszczenie pamięci RAM. Alternatywnie, możesz otworzyć pobraną tapetę w galerii i zastosować ją stamtąd.</item>
-        <item>Otwórz Muzei, wybierz tę paczkę ikon, wejdź w ekran ustawień. Zobaczysz tam opcję ładowania tylko pobranych tapet. Będzie konieczne pobranie tapet z aplikacji aby ta opcja działała.</item>
+        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
+            You will need to download wallpapers from the dashboard first.</item>
         <item>Jeżeli tapeta jest już pobrana, zostanie ona automatycznie załadowana z pamięci urządzenia. Muzei nie będzie pobierało ponownie obrazka w przypadku automatycznej zmiany tła pulpitu. Będzie konieczne pobranie tapet z aplikacji aby ta opcja działała.</item>
         <item>Otwórz aplikację, pobierz tapety których chcesz użyć w Muzei. Otwórz ustawienia Muzei i wybierz opcję ładowania tylko pobranych tapet.</item>
         <item>Jest używane aby zapisywać i czytać pamięć cache, oraz zbierać informacje dotyczące próśb o ikony.</item>
-        <item>Jest używane aby ładować i pobierać tapety przechowywane w chmurze.</item>
+        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
         <item>Jest używane aby sprawdzić, czy telefon jest połączony z internetem.</item>
         <item>Jest używane aby sprawdzić czy telefon ma połączenie z siecią WiFi, w celu ładowania przechowywanych w chmurze tapet w Muzei.</item>
         <item>Jest używane aby zastosowywać tapety bezpośrednio z aplikacji.</item>

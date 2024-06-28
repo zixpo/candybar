@@ -60,9 +60,9 @@ Du wirst sie nicht benutzen können.</string>
     <string name="license_check_retry">Lizenz kann nicht überprüft werden. Bitte später erneut versuchen.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Play Store Überprüfung</string>
-    <string name="playstore_check_success">Vielen Dank, dass du die App aus dem Play Store installiert hast. Viel Spaß damit.</string>
-    <string name="playstore_check_failed">Es scheint als hättest du die App von außerhalb des Play Stores installiert.
-Du wirst nicht in der der Lage sein sie zu nutzen.</string>
+    <string name="playstore_check_success">Vielen Dank, dass du die App aus dem Play Store installiert hast. Viel Spaß damit!</string>
+    <string name="playstore_check_failed">Es scheint, als hättest du dieses Icon Pack von außerhalb des Google Play Store installiert.
+        Du wirst es nicht verwenden können.</string>
     <!-- Share -->
     <string name="share_app_title">Yo! Sieh dir %s an</string>
     <string name="share_app_body">Sieh dir %1$s an. Dieses Icon Pack ist echt cool! %2$s</string>
@@ -83,7 +83,7 @@ Du wirst nicht in der der Lage sein sie zu nutzen.</string>
     <string name="tap_intro_request_premium_desc">Klicke hier, um eine Premium Icon-Anfrage zu kaufen. 
 Mit Premium Icon-Anfragen kannst du deine gewünschte App schneller erhalten.</string>
     <string name="tap_intro_wallpapers_option">Hintergrundbildoptionen</string>
-    <string name="tap_intro_wallpapers_option_desc">Klicke und halte hier, um Hintergrundbildoptionen anzuzeigen, %s Hintergrundbilder anzuwenden.</string>
+    <string name="tap_intro_wallpapers_option_desc">Tippe hier und halte, um Hintergrundbildoptionen anzuzeigen sowie %s Hintergrundbild anzuwenden.</string>
     <string name="tap_intro_wallpapers_option_desc_download">herunterzuladen oder</string>
     <string name="tap_intro_wallpapers_preview">eine Vorschau des Hintergrundbilds zu sehen</string>
     <string name="tap_intro_wallpapers_preview_desc">Klicke hier, für eine Vorschau in voller Größe</string>
@@ -108,10 +108,17 @@ Mit Premium Icon-Anfragen kannst du deine gewünschte App schneller erhalten.</s
     <!-- Apply -->
     <string name="apply_installed">Installierte Launcher</string>
     <string name="apply_supported">Unterstützte Launcher</string>
-    <string name="apply_manual">%1$s unterstützt keine direktes Anwenden. Du kannst %2$s manuell über die Launcher-Einstellungen anwenden.</string>
+    <string name="apply_manual">%1$s Launcher unterstützt kein direktes Anwenden. Du kannst %2$s manuell über die Launcher-Einstellungen anwenden.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso unterstützt keine direktes Anwenden, aber du kannst diesen Schritten folgen:</string>
     <string name="apply_manual_kvaesitso_step_1">Kvaesitso Einstellungen öffnen</string>
+    <string name="apply_manual_kvaesitso_step_2">Tippe auf \"Raster &amp; Icons\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Tippe auf \"Symbolpaket\"</string>
     <string name="apply_manual_kvaesitso_step_4">Wähle %s aus der Liste</string>
+    <string name="apply_manual_kvaesitso_step_5">Tippen Sie auf das Pinsel-Symbol, um die Hintergrundform zu aktivieren oder zu deaktivieren</string>
+    <string name="apply_manual_kiss">KISS unterstützt keine direkte Anwendung, aber Sie können folgenden Schritten folgen:</string>
+    <string name="apply_manual_kiss_step_1">KISS-Einstellungen öffnen</string>
+    <string name="apply_manual_kiss_step_2">Tippe auf \"Benutzeroberfläche\"</string>
+    <string name="apply_manual_kiss_step_3">Tippe auf \"Symbolpaket\"</string>
     <string name="apply_manual_kiss_step_4">Wähle %s aus der Liste</string>
     <string name="apply_manual_samsung_oneui">%1$s unterstützt das automatische Anwenden von Icons leider nicht, aber ab Version %2$s können Icons über eine Begleit-App angewendet werden.</string>
     <string name="apply_manual_samsung_oneui_too_old">Deine aktuelle Version %s ist zu alt. Bitte nimm ein Update auf Android 12, vor um Icons automatisch anwenden zu können. Alternativ kannst du einen anderen Launcher installieren.</string>
@@ -122,6 +129,30 @@ Mit Premium Icon-Anfragen kannst du deine gewünschte App schneller erhalten.</s
     <string name="apply_manual_samsung_oneui_step_5">Tippe auf den blauen \"Iconpack\"-Button</string>
     <string name="apply_manual_samsung_oneui_step_6">Wähle %s aus der Liste</string>
     <string name="apply_manual_samsung_oneui_step_7">Wiederhole diese Schritte nach jedem %s Update, da neue Icons nicht automatisch angewendet werden.</string>
+    <string name="apply_manual_hios">HiOS Launcher unterstützt keine direkte Anwendung, aber Sie können folgende Schritte machen:</string>
+    <string name="apply_manual_hios_step_1">Öffne \"Einstellungen\"</string>
+    <string name="apply_manual_hios_step_2">Tippe auf \"Theme &amp; Sperrbildschirm\"</string>
+    <string name="apply_manual_hios_step_3">Tippe auf \"Mein Theme\"</string>
+    <string name="apply_manual_hios_step_4">Tippe auf \"Symbolpaket\"</string>
+    <string name="apply_manual_hios_step_5">Tippe %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Deinen Startbildschirm lange tippen</string>
+    <string name="apply_manual_oxygen_os_step_2">Tippe auf \"Home-Einstellungen\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Tippe auf \"Symbolpaket\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Tippe %s</string>
+    <string name="apply_manual_color_os_step_1">Deinen Startbildschirm lange tippen</string>
+    <string name="apply_manual_color_os_step_2">Tippe auf \"Icons\"</string>
+    <string name="apply_manual_color_os_step_3">Scrolle nach rechts vom \"Custom\" Button (dies ist eine scrollbare Liste!)</string>
+    <string name="apply_manual_color_os_step_4">Tippe %s</string>
+    <string name="apply_manual_before">Diese Version von Before Launcher unterstützt noch keine direkte Anwendung der Icons. Folge stattdessen den folgenden Schritten:</string>
+    <string name="apply_manual_before_step_1">Auf dem Startbildschirm nach links wischen</string>
+    <string name="apply_manual_before_step_2">Tippe auf \"Einstellungen\"</string>
+    <string name="apply_manual_before_step_3">Tippe auf \"Stile &amp; Themes\"</string>
+    <string name="apply_manual_before_step_4">Tippe auf \"Symbolstile &amp; Pakete\"</string>
+    <string name="apply_manual_before_step_5">Tippe %s</string>
+    <string name="apply_manual_nothing_step_1">Öffne \"Einstellungen\"</string>
+    <string name="apply_manual_nothing_step_2">Tippe auf \"Anpassung\"</string>
+    <string name="apply_manual_nothing_step_3">Tippe auf \"Symbolpaket\"</string>
+    <string name="apply_manual_nothing_step_4">Tippe %s</string>
     <string name="apply_launch_failed">%s-Einstellungen können nicht gestartet werden</string>
     <string name="apply_launcher_not_installed">%s ist nicht installiert. Willst du den 
 Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string>
@@ -133,6 +164,7 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="apply_lg_home_failed">LG Home kann nicht gestartet werden. Du kannst versuchen das Icon Pack manuell aus den Einstellungen anzuwenden.</string>
     <string name="apply_lg_home_nougat">LG Home unterstützt unter Android Nougat keine Icon Packs mehr. Du brauchst einen alternativen Launcher, um Icon Packs zu benutzen.</string>
     <string name="apply_launcher_incompatible">%s Launcher unterstützt keine Icon Packs, daher kannst du dieses Icon Pack nicht verwenden. Du kannst jedoch versuchen mit Hilfe einer externen App %2$s mit diesem Launcher zu verwenden. Möchtest du es ausprobieren?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s Launcher unterstützt keine Icon-Pakete auf Android %d oder niedriger. Bitte aktualisieren Sie Ihre Android-Version oder installieren Sie einen Drittanbieter-Launcher, um dieses Icon-Paket zu verwenden. Sie können auch eine Helfer-App versuchen, einzelne Symbole zu ändern. Möchten Sie sie installieren?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Icons können nicht geladen werden</string>
     <string name="icon_shape">Symbolform</string>
@@ -143,6 +175,7 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_not_selected">Wähle Apps aus, um eine Anfrage zu senden</string>
     <string name="request_not_requested">Nicht angefragt</string>
     <string name="request_already_requested">Bereits angefragt</string>
+    <string name="request_not_available">Kann nicht angefordert werden</string>
     <string name="request_building">Anfrage erstellen …</string>
     <string name="request_pacific_sending">Sende Request an Pacific Manager...</string>
     <string name="request_pacific_error">Fehler beim Senden des Requests an Pacific Manager. Die Fehlermeldung ist %s</string>
@@ -152,17 +185,21 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <string name="request_fetching_data">Rufe neueste Daten ab…</string>
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>
+    <string name="request_requested">Sie haben dieses Symbol bereits angefordert und können es nicht erneut anfordern.</string>
+    <string name="request_requested_possible">Du hast dieses Symbol bereits angefordert. Bist du sicher, dass du eine weitere Anfrage dafür ausgeben möchtest?</string>
+    <string name="request_requested_button_cancel">Zurück</string>
+    <string name="request_requested_button_confirm">Trotzdem auswählen</string>
     <string name="request_email_client">Wähle den E-Mail-Klienten aus, mit dem du die Icon-Anfrage senden möchtest</string>
     <string name="request_app_disabled">Sie verwenden eine ältere Version dieses Symbolpakets. Die angeforderten Icons könnten in der neuesten Version enthalten sein. Bitte aktualisieren Sie Ihre App auf die neueste Version, um Symbole anzufordern.</string>
     <string name="connection_error_long">Daten konnten nicht vom Server heruntergeladen werden. Bitte überprüfen Sie Ihre Internetverbindung.</string>
     <string name="unable_to_load_config">Während des Abrufs der Daten vom Server ist ein Fehler aufgetreten.</string>
-    <string name="request_limit">Du kannst nur %d Anfrage(n) ohne die Premium Icon-Anfrage tätigen.</string>
+    <string name="request_limit">Sie können nur %d Anfrage(n) mit regulären Anfragen stellen.</string>
     <string name="request_used">Du hast %d Icon(s) angefragt.</string>
     <string name="request_limit_buy">Du kannst Premium-Anfragen kaufen, um mehr Icons anzufragen.</string>
     <string name="request_limit_reset">Das Limit der Icon-Anfrage wird mit jedem Update zurückgesetzt.</string>
     <!-- Regular Request -->
     <string name="regular_request">Reguläre Symbolanfrage</string>
-    <string name="regular_request_desc">Fordere dein Icon an und der Entwickler wird versuchen, Icons einzubinden, die Du angefordert hast.</string>
+    <string name="regular_request_desc">Fordere dein Icon an und der Entwickler wird versuchen, Icons einzubinden, die du angefordert hast.</string>
     <string name="regular_request_count">Insgesamt\n%d Anfragen</string>
     <string name="regular_request_used">\n%d Anfragen genutzt</string>
     <string name="regular_request_available">Verfügbare\n%d Anfragen</string>
@@ -191,6 +228,7 @@ Einstellungen öffnen, wähle \"Käufe wiederherstellen\", um es wieder zu bekom
     <string name="wallpaper_already_downloaded">Hintergrundbild bereits heruntergeladen</string>
     <string name="wallpaper_downloading">Hintergrundbild wird heruntergeladen …</string>
     <string name="wallpaper_download_failed">Hintergrundbild kann nicht heruntergeladen werden</string>
+    <string name="wallpaper_download_success">Hintergrundbild erfolgreich heruntergeladen</string>
     <string name="wallpaper_loading">Hintergrundbild wird geladen …</string>
     <string name="wallpaper_applying">Hintergrundbild wird angewandt …</string>
     <string name="wallpaper_applied">Hintergrundbild angewandt</string>
@@ -239,6 +277,7 @@ fehlenden Icons erstellt wurde.</string>
     <string name="theme_name_auto">Automatisch</string>
     <string name="theme_name_light">Hell</string>
     <string name="theme_name_dark">Dunkel</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Zugang zum Speicher nötig, um das Hintergrundbild zu speichern</string>
     <!-- Intent -->
@@ -265,7 +304,7 @@ fehlenden Icons erstellt wurde.</string>
     <string name="donation_success">Danke, dass du gespendet hast. Ich werde es klug verwenden.</string>
     <!-- Crash Report -->
     <string name="crash_report">Absturzbericht</string>
-    <string name="crash_report_message">Leider ist %s abgestürzt. Wähle unterhalb \"Bericht senden\", um den Entwickler bei der Behebung des Fehlers zu helfen.</string>
+    <string name="crash_report_message">Leider ist %s abgestürzt. Wähle unten \"Bericht senden\", um den Entwickler bei der Fehlerbehebung zu unterstützen.</string>
     <string name="crash_report_send">Bericht senden</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
