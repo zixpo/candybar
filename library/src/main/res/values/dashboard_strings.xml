@@ -123,6 +123,7 @@
 
     <!-- Apply -->
     <string name="apply_installed">Installed Launcher</string>
+    <string name="apply_installed_launchers">Installed Launchers</string>
     <string name="apply_supported">Supported Launchers</string>
 
     <string name="apply_manual">%1$s Launcher doesn\'t support direct apply, but you can apply %2$s manually from the launcher settings.</string>

@@ -105,7 +105,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public int getItemViewType(int position) {
-        if (position == getFirstHeaderPosition() || position == getLastHeaderPosition()) {
+        if (position == getFirstHeaderPosition() || position == getLastHeaderPosition() || position == getMiddleHeaderPosition()) {
             return TYPE_HEADER;
         }
         if (position == getItemCount() - 1) return TYPE_FOOTER;
@@ -165,6 +165,11 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public int getFirstHeaderPosition() {
         return mLaunchers.indexOf(new Icon(
                 mContext.getResources().getString(R.string.apply_installed), -1, null));
+    }
+
+    public int getMiddleHeaderPosition() {
+        return mLaunchers.indexOf(new Icon(
+                mContext.getResources().getString(R.string.apply_installed_launchers), -3, null));
     }
 
     public int getLastHeaderPosition() {
