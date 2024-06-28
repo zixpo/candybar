@@ -566,28 +566,29 @@ public class RequestHelper {
         }
 
         private String getContent(@NonNull Context context, @NonNull Request request) {
+            String fileName = request.getFileName() != null ? request.getFileName() : fixNameForRequest(request.getName());
             switch (this) {
                 case APPFILTER:
                     return "\t<!-- " + request.getName() + " -->" +
                             "\n" +
                             "\t" + context.getString(R.string.appfilter_item)
                             .replaceAll("\\{\\{component\\}\\}", Matcher.quoteReplacement(request.getActivity()))
-                            .replaceAll("\\{\\{drawable\\}\\}", fixNameForRequest(request.getName())) +
+                            .replaceAll("\\{\\{drawable\\}\\}", fileName) +
                             "\n\n";
                 case APPMAP:
-                    String packageName = "" + request.getPackageName() + "/";
+                    String packageName = request.getPackageName() + "/";
                     String className = request.getActivity().replaceFirst(packageName, "");
                     return "\t<!-- " + request.getName() + " -->" +
                             "\n" +
                             "\t<item class=\"" + className + "\" name=\"" +
-                            fixNameForRequest(request.getName()) +
+                            fileName +
                             "\"/>" +
                             "\n\n";
                 case THEME_RESOURCES:
                     return "\t<!-- " + request.getName() + " -->" +
                             "\n" +
                             "\t<AppIcon name=\"" + request.getActivity() + "\" image=\"" +
-                            fixNameForRequest(request.getName()) +
+                            fileName +
                             "\"/>" +
                             "\n\n";
                 default:

@@ -282,14 +282,18 @@ public class IconsHelper {
         }
     }
 
-    @Nullable
-    public static String saveIcon(List<String> files, File directory, Drawable drawable, String name) {
-        Bitmap bitmap = DrawableHelper.toBitmap(drawable);
-        assert bitmap != null;
-        return saveBitmap(files, directory, bitmap, name);
+    public interface OnFileNameChange {
+        public void call(String newName);
     }
 
-    public static String saveBitmap(List<String> files, File directory, Bitmap bitmap, String name) {
+    @Nullable
+    public static String saveIcon(List<String> files, File directory, Drawable drawable, String name, OnFileNameChange onFileNameChange) {
+        Bitmap bitmap = DrawableHelper.toBitmap(drawable);
+        assert bitmap != null;
+        return saveBitmap(files, directory, bitmap, name, onFileNameChange);
+    }
+
+    public static String saveBitmap(List<String> files, File directory, Bitmap bitmap, String name, OnFileNameChange onFileNameChange) {
         String fileName = name + ".png";
         File file = new File(directory, fileName);
         try {
@@ -298,7 +302,7 @@ public class IconsHelper {
             if (files.contains(file.toString())) {
                 fileName = fileName.replace(".png", "_" + System.currentTimeMillis() + ".png");
                 file = new File(directory, fileName);
-
+                onFileNameChange.call(fileName);
                 LogUtil.e("Duplicate File name, Renamed: " + fileName);
             }
 

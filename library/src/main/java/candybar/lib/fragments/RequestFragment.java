@@ -441,7 +441,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     for (Request request : requests) {
                         Drawable drawable = getPackageIcon(requireActivity(), request.getActivity());
                         String icon = IconsHelper.saveIcon(files, directory, drawable,
-                                isPacific ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()));
+                                isPacific ? request.getPackageName() : RequestHelper.fixNameForRequest(request.getName()),
+                                request::setFileName);
                         if (icon != null) files.add(icon);
                         if (isCustom) {
                             request.setIconBase64(getReqIconBase64(drawable));

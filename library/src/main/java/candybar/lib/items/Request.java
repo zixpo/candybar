@@ -34,6 +34,7 @@ public class Request {
     private boolean mRequested;
     private boolean mIsAvailableForRequest;
     private String mInfoText;
+    private String mFileName;
 
     private Request(String name, String activity) {
         mName = name;
@@ -80,6 +81,10 @@ public class Request {
 
     public String getInfoText() { return mInfoText; }
 
+    public String getFileName() {
+        return mFileName;
+    }
+
     public void setPackageName(String packageName) {
         mPackageName = packageName;
     }
@@ -105,6 +110,10 @@ public class Request {
     public void setAvailableForRequest(boolean isAvailable) { mIsAvailableForRequest = isAvailable; }
 
     public void setInfoText(String infoText) { mInfoText = infoText; }
+
+    public void setFileName(String name) {
+        mFileName = name;
+    }
 
     public static Builder Builder() {
         return new Builder();
