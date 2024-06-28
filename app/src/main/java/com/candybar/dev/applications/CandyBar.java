@@ -16,10 +16,8 @@ public class CandyBar extends CandyBarApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
         // OneSignal Initialization
-        OneSignal.initWithContext(this);
-        OneSignal.setAppId("YOUR_ONESIGNAL_APP_ID_HERE");
+        OneSignal.initWithContext(this, "YOUR_ONESIGNAL_APP_ID");
     }
     */
 
@@ -70,6 +68,17 @@ public class CandyBar extends CandyBarApplication {
 
         configuration.setShowTabAllIcons(true);
         configuration.setExcludedCategoryForSearch(new String[]{"All Apps", "Cat 1", "Cat 2", "Cat 3", "Cat 4", "Cat 5", "Cat 6", "Cat 7", "Cat 8", "Cat 9", "Cat 11"});
+
+        // TODO: Remove `/*` and `*/` below to Enable OneSignal
+        /*
+        configuration.setNotificationEnabled(true, (isEnable) -> {
+            if (isEnable) {
+                OneSignal.getUser().getPushSubscription().optIn();
+            } else {
+                OneSignal.getUser().getPushSubscription().optOut();
+            }
+        });
+        */
 
         return configuration;
     }
