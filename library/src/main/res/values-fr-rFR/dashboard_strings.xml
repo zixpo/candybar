@@ -107,6 +107,7 @@
     <string name="home_icon_request_missed_apps">Manquantes\n%d applis</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher(s) installé(s)</string>
+    <string name="apply_installed_launchers">Launcher(s) installé(s)</string>
     <string name="apply_supported">Launchers supportés</string>
     <string name="apply_manual">Le lanceur %1$s ne prend pas en charge l\'application directe, mais vous pouvez appliquer %2$s manuellement depuis les paramètres du lanceur.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso ne supporte pas l\'application directe, mais vous pouvez suivre ces étapes :</string>
