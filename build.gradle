@@ -20,7 +20,7 @@ allprojects {
     rootProject.ext {
         def major = 3
         def minor = 20
-        def patch = 0
+        def patch = 1
 
         VersionCode = major * 10000 + minor * 100 + patch
         VersionName = "$major.$minor.$patch"

@@ -456,8 +456,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        LogUtil.e("Request Code: " + requestCode);
-        LogUtil.e("Storage Code: " + PermissionCode.STORAGE);
         if (requestCode == PermissionCode.STORAGE) {
             if (grantResults.length > 0 &&
                     grantResults[0] == PackageManager.PERMISSION_GRANTED) {
