@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar マテリアルダッシュボード</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">ホーム</string>
     <string name="navigation_view_apply">適用</string>
     <string name="navigation_view_icons">アイコン</string>
     <string name="navigation_view_request">アイコンリクエスト</string>
     <string name="navigation_view_wallpapers">壁紙</string>
+    <string name="navigation_view_presets">プリセット</string>
     <string name="navigation_view_settings">設定</string>
     <string name="navigation_view_faqs">よくある質問</string>
     <string name="navigation_view_about">概要</string>
@@ -65,7 +67,9 @@
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">ナビゲーションドロワー</string>
     <string name="tap_intro_home_apply">アイコンパックを適用</string>
+    <string name="tap_intro_home_apply_desc">ここをタップして %s を現在のランチャーに適用します。長押しして他のランチャーに適用します。</string>
     <string name="tap_intro_icons_search">検索</string>
+    <string name="tap_intro_icons_search_desc">アイコンを検索するにはここをタップします</string>
     <string name="tap_intro_request_select">不足しているアプリを選択</string>
     <string name="tap_intro_request_select_desc">アイコンリクエストのために不足しているアプリを選択するにはここをタップします</string>
     <string name="tap_intro_request_select_all">すべての不足しているアプリを選択</string>
@@ -73,12 +77,16 @@
     <string name="tap_intro_request_send">アイコンリクエストを送信</string>
     <string name="tap_intro_request_send_desc">選択した不足しているアプリを送信するにはここをタップします</string>
     <string name="tap_intro_request_premium">プレミアムアイコンリクエスト</string>
+    <string name="tap_intro_request_premium_desc">プレミアムアイコンリクエストパッケージを購入するにはここをタップします。
+プレミアムアイコンリクエストではあなたがリクエストしたアイコンを早く手に入れることができます。</string>
     <string name="tap_intro_wallpapers_option">壁紙オプション</string>
     <string name="tap_intro_wallpapers_option_desc_download">ダウンロードまたは</string>
     <string name="tap_intro_wallpapers_preview">壁紙をプレビュー</string>
+    <string name="tap_intro_wallpapers_preview_desc">フルサイズの壁紙をプレビューするにはここをタップします</string>
     <string name="tap_intro_wallpaper_preview_save">壁紙を保存</string>
     <string name="tap_intro_wallpaper_preview_save_desc">後で使用するために壁紙をダウンロードして端末に保存するにはここをタップします</string>
     <string name="tap_intro_wallpaper_preview_apply">壁紙を適用</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">壁紙をホーム画面の背景に設定するにはここをタップします</string>
     <!-- Home -->
     <string name="home_more_apps_header">他のアプリ</string>
     <string name="home_more_apps">Google Playストアで公開されている他のアプリを確認する</string>
@@ -95,6 +103,7 @@
     <string name="home_icon_request_missed_apps">不足している\n%d個のアプリ</string>
     <!-- Apply -->
     <string name="apply_installed">インストールされたランチャー</string>
+    <string name="apply_installed_launchers">インストール済みのランチャー</string>
     <string name="apply_supported">対応しているランチャー</string>
     <string name="apply_manual">%1$sはこのアプリから直接適用することはできませんが、%s$sのランチャー設定から手動で適用することができます。</string>
     <string name="apply_manual_kvaesitso">Kvaesitsoはこのアプリから直接適用することはできませんが、次の手順で適用することができます。</string>
@@ -242,6 +251,7 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="crash_report_message">残念なことに、%sがクラッシュしました。以下の「レポートを送信」を選択して、開発者が問題を修正できるようにしてください。</string>
     <string name="crash_report_send">レポートを送信</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBarは、Dani Mahardhikaによって開発され、GitHubで入手して自由に利用することのできる、Apache License 2.0に基づきライセンスされたAndroid向けオープンソースアイコンパックダッシュボードです。</string>
     <string name="about_open_source_licenses">オープンソースライセンス</string>
     <string name="about_dashboard_contributors">CandyBarの貢献者</string>
