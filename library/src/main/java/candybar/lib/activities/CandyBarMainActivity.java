@@ -31,6 +31,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -161,6 +162,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     private Handler mTimesVisitedHandler;
     private Runnable mTimesVisitedRunnable;
 
+    private static final int NOTIFICATION_PERMISSION_CODE = 10;
+
     @NonNull
     public abstract ActivityConfiguration onInit();
 
@@ -279,8 +282,34 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             Preferences.get(this).setFirstRun(true);
         }
 
+        final Runnable askNotificationPermission = () -> {
+            final Runnable showToast = () -> {
+                Toast.makeText(this, getResources().getString(R.string.permission_notification_denied_1), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.permission_notification_denied_2), Toast.LENGTH_LONG).show();
+            };
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && CandyBarApplication.getConfiguration().isNotificationEnabled()) {
+                if (NotificationManagerCompat.from(this).areNotificationsEnabled()) {
+                    CandyBarApplication.getConfiguration().getNotificationHandler().setMode(Preferences.get(this).isNotificationsEnabled());
+                } else {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                        int permissionState = ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS);
+                        if (permissionState != PackageManager.PERMISSION_GRANTED) {
+                            if (shouldShowRequestPermissionRationale(android.Manifest.permission.POST_NOTIFICATIONS)) {
+                                showToast.run();
+                            } else {
+                                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, NOTIFICATION_PERMISSION_CODE);
+                            }
+                        }
+                    } else {
+                        showToast.run();
+                    }
+                }
+            }
+        };
+
         final Runnable onNewVersion = () -> {
-            ChangelogFragment.showChangelog(mFragManager);
+            ChangelogFragment.showChangelog(mFragManager, askNotificationPermission);
             File cache = getCacheDir();
             FileHelper.clearDirectory(cache);
         };
@@ -336,12 +365,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             mTimesVisitedHandler.postDelayed(mTimesVisitedRunnable, getResources().getInteger(R.integer.in_app_review_visit_time) * 1000L);
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && CandyBarApplication.getConfiguration().isNotificationEnabled()) {
-            int permissionState = ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS);
-            if (permissionState == PackageManager.PERMISSION_DENIED) {
-                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 10);
-            }
-        }
+        askNotificationPermission.run();
     }
 
     @Override
@@ -441,6 +465,15 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 return;
             }
             Toast.makeText(this, R.string.permission_storage_denied, Toast.LENGTH_LONG).show();
+        }
+        if (requestCode == NOTIFICATION_PERMISSION_CODE) {
+            if (grantResults.length > 0 &&
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                CandyBarApplication.getConfiguration().getNotificationHandler().setMode(Preferences.get(this).isNotificationsEnabled());
+            } else {
+                Toast.makeText(this, getResources().getString(R.string.permission_notification_denied_1), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.permission_notification_denied_2), Toast.LENGTH_LONG).show();
+            }
         }
     }
 

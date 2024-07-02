@@ -327,6 +327,8 @@
 
     <!-- Permission -->
     <string name="permission_storage_denied">Storage permission needed to save wallpaper</string>
+    <string name="permission_notification_denied_1">Notification permission is needed to receive notifications from the developer</string>
+    <string name="permission_notification_denied_2">Enable notifications from the app settings</string>
 
     <!-- Intent -->
     <string name="app_client">Choose App</string>
