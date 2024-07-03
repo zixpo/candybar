@@ -35,6 +35,7 @@
     <string name="open">開く</string>
     <string name="close">閉じる</string>
     <string name="clear">クリア</string>
+    <string name="ok">OK</string>
     <string name="install">インストール</string>
     <string name="donate">寄付</string>
     <string name="update">更新</string>
@@ -49,6 +50,7 @@
     <!-- Changelog -->
     <string name="changelog_version">バージョン</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">アプリ内購入商品を読み込むことができません</string>
     <!-- License -->
     <string name="license_checking">ライセンスを確認しています…</string>
     <string name="license_check">ライセンスの確認</string>
@@ -66,6 +68,7 @@
     <string name="share_app_body">%1$sをチェックしよう、このアイコンパックはかなりクールだよ！ %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">ナビゲーションドロワー</string>
+    <string name="tap_intro_home_navigation_desc">ここをタップするか、画面の左端からスワイプしてナビゲーションドロワーを開きます</string>
     <string name="tap_intro_home_apply">アイコンパックを適用</string>
     <string name="tap_intro_home_apply_desc">ここをタップして %s を現在のランチャーに適用します。長押しして他のランチャーに適用します。</string>
     <string name="tap_intro_icons_search">検索</string>
@@ -80,6 +83,7 @@
     <string name="tap_intro_request_premium_desc">プレミアムアイコンリクエストパッケージを購入するにはここをタップします。
 プレミアムアイコンリクエストではあなたがリクエストしたアイコンを早く手に入れることができます。</string>
     <string name="tap_intro_wallpapers_option">壁紙オプション</string>
+    <string name="tap_intro_wallpapers_option_desc">壁紙オプションを開き、壁紙を%s適用するにはタップして長押しします。</string>
     <string name="tap_intro_wallpapers_option_desc_download">ダウンロードまたは</string>
     <string name="tap_intro_wallpapers_preview">壁紙をプレビュー</string>
     <string name="tap_intro_wallpapers_preview_desc">フルサイズの壁紙をプレビューするにはここをタップします</string>
@@ -107,10 +111,49 @@
     <string name="apply_supported">対応しているランチャー</string>
     <string name="apply_manual">%1$sはこのアプリから直接適用することはできませんが、%s$sのランチャー設定から手動で適用することができます。</string>
     <string name="apply_manual_kvaesitso">Kvaesitsoはこのアプリから直接適用することはできませんが、次の手順で適用することができます。</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitsoの設定を開く</string>
+    <string name="apply_manual_kvaesitso_step_2">「グリッド &amp; アイコン」をタップする</string>
+    <string name="apply_manual_kvaesitso_step_3">「アイコンパック」をタップする</string>
+    <string name="apply_manual_kvaesitso_step_4">リストから %s を選択する</string>
+    <string name="apply_manual_kvaesitso_step_5">背景の形状を有効または無効にするには、ブラシアイコンをタップする</string>
     <string name="apply_manual_kiss">KISSはこのアプリから直接適用することはできませんが、次の手順で適用することができます。</string>
+    <string name="apply_manual_kiss_step_1">KISS の設定を開く</string>
+    <string name="apply_manual_kiss_step_2">「ユーザーインターフェイス」をタップする</string>
+    <string name="apply_manual_kiss_step_3">「アイコンパック」をタップする</string>
+    <string name="apply_manual_kiss_step_4">リストから %s を選択する</string>
     <string name="apply_manual_samsung_oneui">%1$sはこのアプリから直接適用することはできませんが、 but starting with %2$s you can apply icons with a companion app.</string>
+    <string name="apply_manual_samsung_oneui_too_old">現在のバージョンの %s は古すぎます。直接アイコンを適用するには、Android 12 以降にアップデートしてください。 または、別のランチャーをインストールすることもできます。</string>
+    <string name="apply_manual_samsung_oneui_step_1">%s を開く</string>
+    <string name="apply_manual_samsung_oneui_step_2">%s アプリをダウンロードする</string>
+    <string name="apply_manual_samsung_oneui_step_3">「アイコン」をタップする</string>
+    <string name="apply_manual_samsung_oneui_step_4">「新規作成」をタップする</string>
+    <string name="apply_manual_samsung_oneui_step_5">青色の 「アイコンパック」 ボタンをタップする</string>
+    <string name="apply_manual_samsung_oneui_step_6">リストから %s を選択する</string>
+    <string name="apply_manual_samsung_oneui_step_7">新しいアイコンが自動的に適用されないため、 %s を更新するたびにこれらの手順を繰り返します。</string>
     <string name="apply_manual_hios">HiOSはこのアプリから直接適用することはできませんが、次の手順で適用することができます。</string>
+    <string name="apply_manual_hios_step_1">「設定」を開く</string>
+    <string name="apply_manual_hios_step_2">「テーマ &amp; ロック画面」をタップする</string>
+    <string name="apply_manual_hios_step_3">「マイテーマ」をタップする</string>
+    <string name="apply_manual_hios_step_4">「アイコンパック」をタップする</string>
+    <string name="apply_manual_hios_step_5">%s をタップする</string>
+    <string name="apply_manual_oxygen_os_step_1">ホーム画面を長押しする</string>
+    <string name="apply_manual_oxygen_os_step_2">「ホーム設定」をタップする</string>
+    <string name="apply_manual_oxygen_os_step_3">「アイコンパック」をタップする</string>
+    <string name="apply_manual_oxygen_os_step_4">%s をタップする</string>
+    <string name="apply_manual_color_os_step_1">ホーム画面を長押しする</string>
+    <string name="apply_manual_color_os_step_2">「アイコン」をタップする</string>
+    <string name="apply_manual_color_os_step_3">「カスタム」ボタンを右にスクロールする(これはスクロール可能なリストです!)</string>
+    <string name="apply_manual_color_os_step_4">%s をタップする</string>
     <string name="apply_manual_before">Before Launcherのこのバージョンではこのアプリから直接適用することはできません。次の手順で適用させてください。</string>
+    <string name="apply_manual_before_step_1">ホーム画面で左にスワイプする</string>
+    <string name="apply_manual_before_step_2">「設定」をタップする</string>
+    <string name="apply_manual_before_step_3">\"スタイル &amp; テーマ\" をタップする</string>
+    <string name="apply_manual_before_step_4">「アイコンのスタイル &amp; パック」 をタップする</string>
+    <string name="apply_manual_before_step_5">%s をタップする</string>
+    <string name="apply_manual_nothing_step_1">「設定」を開く</string>
+    <string name="apply_manual_nothing_step_2">「カスタマイズ」をタップする</string>
+    <string name="apply_manual_nothing_step_3">「アイコンパック」をタップする</string>
+    <string name="apply_manual_nothing_step_4">%s をタップする</string>
     <string name="apply_launch_failed">%sの設定を起動できません</string>
     <string name="apply_launcher_not_installed">%sはインストールされていません。
 Google Playストアを開きダウンロードしてインストールしますか？</string>
@@ -136,7 +179,9 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="request_not_available">リクエストできません</string>
     <string name="request_building">リクエストを構築しています…</string>
     <string name="request_pacific_sending">Pacific Managerにリクエストを送信中…</string>
+    <string name="request_pacific_error">Pacific Managerへのリクエストの送信中にエラーが発生しました。エラー内容: %s</string>
     <string name="request_pacific_success">Pacific Managerへアイコンリクエストの送信に成功しました</string>
+    <string name="request_custom_error">アイコンリクエストの送信中にエラーが発生しました。このエラーが解決しない場合は、開発者に連絡してください。 %s</string>
     <string name="request_custom_success">アイコンリクエストの送信に成功しました</string>
     <string name="request_fetching_data">最新のデータを取得中…</string>
     <string name="request_build_failed">アイコンリクエストを構築できません</string>
@@ -147,11 +192,13 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="request_email_client">アイコンリクエストを送信したいメールクライアントを選択してください</string>
     <string name="request_app_disabled">あなたは古いバージョンのアイコンパックを使用しています。リクエストしたアイコンは最新のバージョンに含まれている可能性があります。アイコンをリクエストするにはアプリを最新のバージョンに更新してください。</string>
     <string name="connection_error_long">サーバーからデータを読み込むことができませんでした。申し訳ありませんが、ネットワーク接続を確認してください。</string>
+    <string name="unable_to_load_config">サーバーからのデータの取得中または読み込み中にエラーが発生しました。</string>
     <string name="request_limit">主要アイコンリクエストでは%d個までリクエストすることができます。</string>
     <string name="request_used">あなたは%d個のアイコンをリクエストしています。</string>
     <string name="request_limit_buy">プレミアムリクエストを購入することでさらにアイコンをリクエストすることができます。</string>
     <string name="request_limit_reset">アイコンリクエストの制限数はアップデート毎にリセットされます。</string>
     <!-- Regular Request -->
+    <string name="regular_request">標準のアイコンリクエスト</string>
     <string name="regular_request_desc">アイコンリクエストを受け取り、開発者が申請されたアイコンを含めることができるか試します。</string>
     <string name="regular_request_count">合計\n%d件の申請</string>
     <string name="regular_request_used">%d件が\n申請済み</string>
@@ -191,6 +238,10 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="wallpaper_apply">壁紙を適用</string>
     <string name="wallpaper_save_to_device">壁紙を保存</string>
     <!-- Presets -->
+    <string name="presets_load_failed">プリセットを読み込めません</string>
+    <string name="presets_storage_permission">壁紙のプレビューを読み込むにはストレージの権限が必要です</string>
+    <string name="presets_required_apps">これらのプリセットを使用するために必要なアプリ</string>
+    <string name="presets_required_apps_not_installed">プリセットを使用するために必要なアプリがインストールされていません。不足している必要なアプリをインストールして、もう一度お試しください。</string>
     <!-- Preferences -->
     <string name="pref_data_header">データ &amp; キャッシュ</string>
     <string name="pref_data_cache">キャッシュを消去</string>
@@ -214,6 +265,8 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="pref_theme_header">テーマ</string>
     <string name="pref_theme_dark">ダークテーマ</string>
     <string name="pref_theme_dark_desc">アプリケーションのテーマでダークカラーを使用します</string>
+    <string name="pref_notifications_header">通知</string>
+    <string name="pref_notifications">通知を受け取る</string>
     <string name="pref_wallpaper_header">壁紙</string>
     <string name="pref_wallpaper_location">壁紙の保存場所</string>
     <string name="pref_language_header">言語</string>
@@ -223,8 +276,14 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="pref_others_reset_tutorial">チュートリアルをリセット</string>
     <string name="pref_others_reset_tutorial_reset">チュートリアルのリセット</string>
     <!-- Themes -->
+    <string name="theme_name_auto">自動</string>
+    <string name="theme_name_light">ライト</string>
+    <string name="theme_name_dark">ダーク</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">壁紙を保存するにはストレージの権限が必要です</string>
+    <string name="permission_notification_denied_1">開発者から通知を受け取るには通知の許可が必要です</string>
+    <string name="permission_notification_denied_2">アプリの設定からの通知を有効にする</string>
     <!-- Intent -->
     <string name="app_client">メールクライアントを選択</string>
     <string name="no_email_app">メールを送信するアプリケーションがありません</string>
@@ -237,6 +296,7 @@ Google Playストアを開きダウンロードしてインストールします
     <!-- About -->
     <string name="about_contributors_title">貢献者</string>
     <string name="about_privacy_policy_title">プライバシーポリシー</string>
+    <string name="about_terms_and_conditions_title">利用規約</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc">どのような問題が起きたのかについての概要を記載して報告してください</string>
     <string name="report_bugs_desc_hint">概要</string>
@@ -265,5 +325,6 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="icon_request_submit_button_content_description">アイコンリクエストを提出します</string>
     <string name="icon_list_content_description">このリスト上のアイコンはアイコンパックに含まれています</string>
     <string name="icon_search_list_content_description">このリスト上のアイコンは検索範囲に一致したものです</string>
+    <string name="about_item_social_content_description">アイコンパックの著者のオンラインプロフィールへのリンク: </string>
     <string name="share_icon_pack_button_content_description">このアプリを他の人に共有します</string>
 </resources>
