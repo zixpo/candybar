@@ -276,6 +276,8 @@
     <string name="theme_name_material_you">المواد الخاصة بك</string>
     <!-- Permission -->
     <string name="permission_storage_denied">صلاحية التخزين مطلوبة لحفظ الخلفية</string>
+    <string name="permission_notification_denied_1">مطلوب إذن الإشعارات لتلقي الإشعارات من المطور</string>
+    <string name="permission_notification_denied_2">تمكين الإشعارات من إعدادات التطبيق</string>
     <!-- Intent -->
     <string name="app_client">اختر التطبيق</string>
     <string name="no_email_app">لا يوجد تطبيق لإرسال بريد إلكتروني</string>
