@@ -87,9 +87,10 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             contentViewHolder.name.setText(mLaunchers.get(position).getTitle());
 
             if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+                int resourceId = R.drawable.discord_navy;
                 Glide.with(mContext)
                         .asBitmap()
-                        .load("drawable://" + mLaunchers.get(position).getRes())
+                        .load("drawable://" + mLaunchers.get(position).getRes()) // This is for the launcher icons in the apply menu
                         .transition(BitmapTransitionOptions.withCrossFade(300))
                         .skipMemoryCache(true)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)

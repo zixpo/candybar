@@ -68,6 +68,7 @@ import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.dialog.ChangelogAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.DonationLinksFragment;
+import candybar.lib.fragments.dialog.ChangeIconColorFragment;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.fragments.dialog.OtherAppsFragment;
 import candybar.lib.helpers.LauncherHelper;
@@ -79,6 +80,7 @@ import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.views.HeaderView;
+import candybar.lib.helpers.RequestHelper;
 
 /*
  * CandyBar - Material Dashboard
@@ -223,7 +225,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 headerViewHolder.image.setBackgroundColor(Color.parseColor(uri));
             } else {
                 if (!URLUtil.isValidUrl(uri)) {
-                    uri = "drawable://" + getDrawableId(uri);
+                    uri = "drawable://" + getDrawableId(uri); // This is for the home top image
                 }
 
                 if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
@@ -242,12 +244,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             int finalPosition = position - 1;
 
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
+            LogUtil.d("COLOR IS: " + Integer.toHexString(color));
             if (mHomes.get(finalPosition).getIcon() != -1) {
                 if (mHomes.get(finalPosition).getType() == Home.Type.DIMENSION) {
                     if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
                         Glide.with(mContext)
                                 .asBitmap()
-                                .load("drawable://" + mHomes.get(finalPosition).getIcon())
+                                .load("drawable://" + mHomes.get(finalPosition).getIcon()) // This is for the icon preview in the home item
                                 .skipMemoryCache(true)
                                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                                 .listener(new RequestListener<Bitmap>() {
@@ -741,6 +744,27 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                 ((AppCompatActivity) mContext).getSupportFragmentManager(),
                                 home.getTitle(), home.getIcon(), null);
                         break;
+                     case CHANGEICONCOLOR:
+                        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                "click",
+                                new HashMap<String, Object>() {{
+                                    put("section", "home");
+                                    put("action", "open_dialog");
+                                    put("item", "custom");
+                                }}
+                        );
+
+                        if (mContext instanceof CandyBarMainActivity) {
+                            // ToDo: Change iconPack to current used iconpack, or use default when none selected
+                            String iconPack = RequestHelper.getDefaultIconPack(mContext);
+                            // ToDo: Change coloroptions accordingly with the iconPack selected,
+                            // and remove getChangeIconColorsArray and the values
+                            // ToDo: When long press => check next function, open the navigation view
+                            String[] colorOptions = RequestHelper.getChangeIconColorsArray(mContext);
+                            ChangeIconColorFragment.showChangeIconColorDialog(((AppCompatActivity) mContext).getSupportFragmentManager(), colorOptions, iconPack);
+
+                        }
+                         break;
                 }
             }
         }
@@ -831,7 +855,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                             put("item", "icon_request");
                         }}
                 );
-                ((CandyBarMainActivity) mContext).selectPosition(3);
+                ((CandyBarMainActivity) mContext).selectPosition(4);
             }
         }
     }
@@ -888,7 +912,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.title) {
-                ((CandyBarMainActivity) mContext).selectPosition(4);
+                ((CandyBarMainActivity) mContext).selectPosition(5);
             } else if (id == R.id.muzei) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(
                         "https://play.google.com/store/apps/details?id=net.nurik.roman.muzei"));

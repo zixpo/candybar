@@ -105,4 +105,43 @@
     <bool name="quick_apply">true</bool>
     <bool name="show_random_icon">true</bool>
 
+    <bool name="enable_icon_packs">true</bool>
+
+    <string-array name="change_icon_colors_array">
+        <item>Blue</item>
+        <item>Cyan</item>
+        <item>Dark Blue</item>
+        <item>Light Blue</item>
+        <item>Navy Blue</item>
+        <item>Purple</item>
+    </string-array>
+
+    <string name="default_icon_pack">hydro</string>
+    <string name="default_icon_pack_color">blue</string>
+
+    <string-array name="icon_pack_names">
+        <item>Hydro</item>
+        <item>Pyro</item>
+        <item>Electro</item>
+    </string-array>
+
+    <string-array name="icon_pack_hydro">
+        <item>Blue</item>
+        <item>Cyan</item>
+        <item>Dark Blue</item>
+        <item>Light Blue</item>
+        <item>Navy Blue</item>
+        <item>Purple</item>
+    </string-array>
+
+    <string-array name="icon_pack_pyro">
+        <item>Red</item>
+        <item>Dark Red</item>
+        <item>Light Red</item>
+    </string-array>
+
+    <string-array name="icon_pack_electro">
+        <item>Default</item>
+    </string-array>
+
 </resources>

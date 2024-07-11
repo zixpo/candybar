@@ -179,7 +179,7 @@ public class SettingsFragment extends Fragment {
                     "", "", Setting.Type.THEME));
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                settings.add(new Setting(-1, "", resources.getString(R.string.theme_name_material_you), "", "", Setting.Type.MATERIAL_YOU));
+                settings.add(new Setting(-1, "", "Material You", "", "", Setting.Type.MATERIAL_YOU));
             }
         }
 

@@ -42,18 +42,12 @@ import candybar.lib.utils.listeners.HomeListener;
 public class ChangelogFragment extends DialogFragment {
 
     private static final String TAG = "candybar.dialog.changelog";
-    private Runnable onPositive;
 
-    private static ChangelogFragment newInstance(Runnable onPositive) {
-        return new ChangelogFragment(onPositive);
+    private static ChangelogFragment newInstance() {
+        return new ChangelogFragment();
     }
 
-    ChangelogFragment(Runnable onPositive) {
-        super();
-        this.onPositive = onPositive;
-    }
-
-    public static void showChangelog(FragmentManager fm, Runnable onPositive) {
+    public static void showChangelog(FragmentManager fm) {
         FragmentTransaction ft = fm.beginTransaction();
         Fragment prev = fm.findFragmentByTag(TAG);
         if (prev != null) {
@@ -61,7 +55,7 @@ public class ChangelogFragment extends DialogFragment {
         }
 
         try {
-            DialogFragment dialog = ChangelogFragment.newInstance(onPositive);
+            DialogFragment dialog = ChangelogFragment.newInstance();
             dialog.show(ft, TAG);
         } catch (IllegalArgumentException | IllegalStateException ignored) {
         }
@@ -74,7 +68,6 @@ public class ChangelogFragment extends DialogFragment {
                 .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                 .customView(R.layout.fragment_changelog, false)
                 .positiveText(R.string.close)
-                .onPositive((d, which) -> this.onPositive.run())
                 .build();
         dialog.show();
 

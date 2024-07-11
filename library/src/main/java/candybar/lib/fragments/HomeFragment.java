@@ -1,5 +1,8 @@
 package candybar.lib.fragments;
 
+import android.content.Context; // Import Context class
+import candybar.lib.helpers.RequestHelper;
+
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -172,7 +175,7 @@ public class HomeFragment extends Fragment implements HomeListener {
                     Home.Type.DONATE,
                     false));
         }
-
+        
         homes.add(new Home(
                 -1,
                 CandyBarApplication.getConfiguration().isAutomaticIconsCountEnabled() ?
@@ -186,19 +189,24 @@ public class HomeFragment extends Fragment implements HomeListener {
             homes.add(CandyBarMainActivity.sHomeIcon);
         }
 
+        if (resources.getBoolean(R.bool.enable_icon_packs)) {
+            homes.add(new Home(
+                    R.drawable.ic_toolbar_changeiconcolor,
+                    resources.getString(R.string.change_icon_color_title),
+                    resources.getString(R.string.change_icon_color_desc),
+                    Home.Type.CHANGEICONCOLOR,
+                    false));
+        }
+
         mRecyclerView.setAdapter(new HomeAdapter(requireActivity(), homes,
                 resources.getConfiguration().orientation));
 
-        // By default `onHomeIntroInit` is called by the ChangelogFragment,
-        // so that the intro starts after the changelog dialog is dismissed
-        // But when intros are reset using the settings, there's no changelog
-        // that would call `onHomeIntroInit`, so in that case we are calling
-        // it from here
         if (Preferences.get(requireActivity()).isIntroReset()) {
             onHomeIntroInit();
             Preferences.get(requireActivity()).setIntroReset(false);
         }
     }
+
 
     public void resetWallpapersCount() {
         if (WallpaperHelper.getWallpaperType(requireActivity()) == WallpaperHelper.CLOUD_WALLPAPERS) {

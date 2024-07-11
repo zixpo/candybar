@@ -255,8 +255,9 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
 
     private void loadIconInto(ImageView imageView, int position) {
         if (mFragment.getActivity() == null) return;
+        int resourceId = R.drawable.discord_navy;
         Glide.with(mFragment)
-                .load("drawable://" + mIcons.get(position).getRes())
+                .load("drawable://" + mIcons.get(position).getRes()) // This is for the icons in the groups in the sidebar menu
                 .skipMemoryCache(true)
                 .transition(DrawableTransitionOptions.withCrossFade(300))
                 .diskCacheStrategy(DiskCacheStrategy.NONE)

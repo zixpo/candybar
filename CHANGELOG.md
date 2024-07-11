@@ -2,9 +2,6 @@
 
 [Donnnno]: https://github.com/Donnnno
 
-# v3.20.1
-- Improve notification support
-
 # v3.20.0
 - Updated AGP and dependencies
 - Updated Play Billing Library to v7

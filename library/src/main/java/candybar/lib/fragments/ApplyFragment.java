@@ -143,7 +143,7 @@ public class ApplyFragment extends Fragment {
         return true;
     }
 
-    private class LaunchersLoader extends AsyncTaskBase {
+private class LaunchersLoader extends AsyncTaskBase {
 
         private List<Icon> launchers;
 

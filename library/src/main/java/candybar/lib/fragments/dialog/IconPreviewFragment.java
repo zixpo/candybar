@@ -120,7 +120,7 @@ public class IconPreviewFragment extends DialogFragment {
         name.setText(mIconTitle);
 
         Glide.with(this)
-                .load("drawable://" + mIconId)
+                .load("drawable://" + mIconId) // Couldn't find out what this did
                 .transition(DrawableTransitionOptions.withCrossFade(300))
                 .skipMemoryCache(true)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)

@@ -26,6 +26,7 @@ public abstract class Extras {
     public enum Tag {
         HOME("home"),
         APPLY("apply"),
+        ICON_PACK("icon_pack"),
         ICONS("icons"),
         REQUEST("request"),
         WALLPAPERS("wallpapers"),

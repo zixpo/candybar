@@ -31,7 +31,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -77,6 +76,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.fragments.AboutFragment;
 import candybar.lib.fragments.ApplyFragment;
+import candybar.lib.fragments.IconPackFragment;
 import candybar.lib.fragments.FAQsFragment;
 import candybar.lib.fragments.HomeFragment;
 import candybar.lib.fragments.IconsBaseFragment;
@@ -161,8 +161,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     private Handler mTimesVisitedHandler;
     private Runnable mTimesVisitedRunnable;
-
-    private static final int NOTIFICATION_PERMISSION_CODE = 10;
 
     @NonNull
     public abstract ActivityConfiguration onInit();
@@ -282,34 +280,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             Preferences.get(this).setFirstRun(true);
         }
 
-        final Runnable askNotificationPermission = () -> {
-            final Runnable showToast = () -> {
-                Toast.makeText(this, getResources().getString(R.string.permission_notification_denied_1), Toast.LENGTH_LONG).show();
-                Toast.makeText(this, getResources().getString(R.string.permission_notification_denied_2), Toast.LENGTH_LONG).show();
-            };
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && CandyBarApplication.getConfiguration().isNotificationEnabled()) {
-                if (NotificationManagerCompat.from(this).areNotificationsEnabled()) {
-                    CandyBarApplication.getConfiguration().getNotificationHandler().setMode(Preferences.get(this).isNotificationsEnabled());
-                } else {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                        int permissionState = ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS);
-                        if (permissionState != PackageManager.PERMISSION_GRANTED) {
-                            if (shouldShowRequestPermissionRationale(android.Manifest.permission.POST_NOTIFICATIONS)) {
-                                showToast.run();
-                            } else {
-                                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, NOTIFICATION_PERMISSION_CODE);
-                            }
-                        }
-                    } else {
-                        showToast.run();
-                    }
-                }
-            }
-        };
-
         final Runnable onNewVersion = () -> {
-            ChangelogFragment.showChangelog(mFragManager, askNotificationPermission);
+            ChangelogFragment.showChangelog(mFragManager);
             File cache = getCacheDir();
             FileHelper.clearDirectory(cache);
         };
@@ -365,7 +337,12 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             mTimesVisitedHandler.postDelayed(mTimesVisitedRunnable, getResources().getInteger(R.integer.in_app_review_visit_time) * 1000L);
         }
 
-        askNotificationPermission.run();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && CandyBarApplication.getConfiguration().isNotificationEnabled()) {
+            int permissionState = ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS);
+            if (permissionState == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 10);
+            }
+        }
     }
 
     @Override
@@ -456,6 +433,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        LogUtil.e("Request Code: " + requestCode);
+        LogUtil.e("Storage Code: " + PermissionCode.STORAGE);
         if (requestCode == PermissionCode.STORAGE) {
             if (grantResults.length > 0 &&
                     grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -463,15 +442,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 return;
             }
             Toast.makeText(this, R.string.permission_storage_denied, Toast.LENGTH_LONG).show();
-        }
-        if (requestCode == NOTIFICATION_PERMISSION_CODE) {
-            if (grantResults.length > 0 &&
-                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                CandyBarApplication.getConfiguration().getNotificationHandler().setMode(Preferences.get(this).isNotificationsEnabled());
-            } else {
-                Toast.makeText(this, getResources().getString(R.string.permission_notification_denied_1), Toast.LENGTH_LONG).show();
-                Toast.makeText(this, getResources().getString(R.string.permission_notification_denied_2), Toast.LENGTH_LONG).show();
-            }
         }
     }
 
@@ -829,6 +799,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 //                        R.drawable.navigation_view_item_background_dark :
 //                        R.drawable.navigation_view_item_background);
 //        mNavigationView.setItemBackground(background);
+        boolean isIconPacksEnabled = getApplicationContext().getResources().getBoolean(R.bool.enable_icon_packs);
         mNavigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.navigation_view_home) mPosition = Extras.Tag.HOME.idx;
@@ -840,11 +811,18 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             else if (id == R.id.navigation_view_settings) mPosition = Extras.Tag.SETTINGS.idx;
             else if (id == R.id.navigation_view_faqs) mPosition = Extras.Tag.FAQS.idx;
             else if (id == R.id.navigation_view_about) mPosition = Extras.Tag.ABOUT.idx;
+            else if (id == R.id.navigation_view_icon_pack && isIconPacksEnabled) mPosition = Extras.Tag.ICON_PACK.idx;
 
             item.setChecked(true);
             mDrawerLayout.closeDrawers();
             return true;
         });
+
+        if (isIconPacksEnabled) {
+            mNavigationView.getMenu().findItem(R.id.navigation_view_icon_pack).setVisible(true);
+        } else {
+            mNavigationView.getMenu().findItem(R.id.navigation_view_icon_pack).setVisible(false);
+        }
     }
 
     private void initNavigationViewHeader() {
@@ -883,7 +861,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         if (!URLUtil.isValidUrl(imageUrl)) {
-            imageUrl = "drawable://" + getDrawableId(imageUrl);
+            int resourceId = R.drawable.discord_navy;
+            imageUrl = "drawable://" + getDrawableId(imageUrl); // This is for the menu top image
         }
 
         final Context context = this;
@@ -995,12 +974,16 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     private Fragment getFragment(int position) {
         mFragmentTag = Extras.Tag.HOME;
+        boolean isIconPacksEnabled = getApplicationContext().getResources().getBoolean(R.bool.enable_icon_packs);
         if (position == Extras.Tag.HOME.idx) {
             mFragmentTag = Extras.Tag.HOME;
             return new HomeFragment();
         } else if (position == Extras.Tag.APPLY.idx) {
             mFragmentTag = Extras.Tag.APPLY;
             return new ApplyFragment();
+        } else if (position == Extras.Tag.ICON_PACK.idx && isIconPacksEnabled) {
+            mFragmentTag = Extras.Tag.ICON_PACK;
+            return new IconPackFragment();
         } else if (position == Extras.Tag.ICONS.idx) {
             mFragmentTag = Extras.Tag.ICONS;
             return new IconsBaseFragment();
@@ -1023,6 +1006,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             mFragmentTag = Extras.Tag.ABOUT;
             return new AboutFragment();
         }
+
         return new HomeFragment();
     }
 
