@@ -3,6 +3,18 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword 'candybar'
+            storeFile file('candybar.jks')
+            storePassword 'candybar'
+
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
     namespace 'com.candybar.dev.hydro_navy_blue'
     compileSdk 34
 

@@ -1,10 +1,10 @@
 package candybar.lib.helpers;
 
-import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -24,9 +24,11 @@ import com.bumptech.glide.request.target.Target;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -39,25 +41,10 @@ import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.CandyBarGlideModule;
 
-/*
- * CandyBar - Material Dashboard
- *
- * Copyright (c) 2014-2016 Dani Mahardhika
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
 
 public class IconsHelper {
+
     public static void loadIcons(Context context, boolean sortIcons) throws Exception {
         // Load icons only if they are not loaded
         if (CandyBarMainActivity.sSections == null) {
@@ -84,48 +71,85 @@ public class IconsHelper {
 
     @NonNull
     public static List<Icon> getIconsList(@NonNull Context context) throws Exception {
-        XmlResourceParser parser = context.getResources().getXml(R.xml.drawable);
-        int eventType = parser.getEventType();
-        String sectionTitle = "";
-        List<Icon> icons = new ArrayList<>();
         List<Icon> sections = new ArrayList<>();
 
-        int count = 0;
+        // Fetch icons from main app (com.candybar.dev)
+        Resources mainAppResources = context.getResources();
+        XmlResourceParser parser = mainAppResources.getXml(R.xml.drawable);
+        sections.addAll(parseIconsFromXml(parser, context, mainAppResources, context.getPackageName()));
+        parser.close();
+
+        // Fetch icons from side app (com.candybar.dev.hydro_navy_blue)
+        String sideAppPackageName = "com.candybar.dev.hydro_navy_blue";
+        List<Icon> sideAppIcons = getIconsFromSideApp(context, sideAppPackageName);
+        sections.addAll(sideAppIcons);
+
+        return sections;
+    }
+
+    private static List<Icon> getIconsFromSideApp(Context context, String packageName) {
+        List<Icon> icons = new ArrayList<>();
+        PackageManager pm = context.getPackageManager();
+
+        try {
+            // Get the Resources object for the side app
+            Resources sideAppResources = pm.getResourcesForApplication(packageName);
+
+            // Accessing drawable resources
+            int resourceId = sideAppResources.getIdentifier("drawable", "xml", packageName);
+            XmlResourceParser parser = sideAppResources.getXml(resourceId);
+
+            icons.addAll(parseIconsFromXml(parser, context, sideAppResources, packageName));
+
+            // Log the size of the icons list
+            System.out.println("SideAppIcons: " + icons.size());
+
+            parser.close();
+        } catch (PackageManager.NameNotFoundException | Resources.NotFoundException | XmlPullParserException | IOException e) {
+            e.printStackTrace();
+            // Handle exceptions while fetching icons from side app
+        }
+
+        return icons;
+    }
+
+    private static List<Icon> parseIconsFromXml(XmlPullParser parser, Context context, Resources resources, String packageName) throws XmlPullParserException, IOException {
+        List<Icon> icons = new ArrayList<>();
+        int eventType = parser.getEventType();
+        String sectionTitle = "";
+        List<Icon> sectionIcons = new ArrayList<>();
+
         while (eventType != XmlPullParser.END_DOCUMENT) {
             if (eventType == XmlPullParser.START_TAG) {
                 if (parser.getName().equals("category")) {
-                    String title = parser.getAttributeValue(null, "title");
-                    if (!sectionTitle.equals(title)) {
-                        if (sectionTitle.length() > 0 && icons.size() > 0) {
-                            count += icons.size();
-                            sections.add(new Icon(sectionTitle, icons));
-                        }
-                    }
-                    sectionTitle = title;
-                    icons = new ArrayList<>();
+                    sectionTitle = parser.getAttributeValue(null, "title");
+                    sectionIcons = new ArrayList<>();
                 } else if (parser.getName().equals("item")) {
                     String drawableName = parser.getAttributeValue(null, "drawable");
                     String customName = parser.getAttributeValue(null, "name");
-                    int id = DrawableHelper.getDrawableId(drawableName);
+
+                    // Log the drawable name
+                    Log.d("DrawableName", "Drawable name: " + drawableName);
+
+                    // Fetch the drawable ID from the provided resources
+                    int id = resources.getIdentifier(drawableName, "drawable", packageName);
                     if (id > 0) {
-                        icons.add(new Icon(drawableName, customName, id));
+                        sectionIcons.add(new Icon(drawableName, customName, id));
                     }
                 }
+            } else if (eventType == XmlPullParser.END_TAG && parser.getName().equals("category")) {
+                if (!sectionTitle.isEmpty() && !sectionIcons.isEmpty()) {
+                    icons.add(new Icon(sectionTitle, sectionIcons));
+                }
             }
-
             eventType = parser.next();
         }
-        count += icons.size();
-        CandyBarMainActivity.sIconsCount = count;
-        if (!CandyBarApplication.getConfiguration().isAutomaticIconsCountEnabled() &&
-                CandyBarApplication.getConfiguration().getCustomIconsCount() == 0) {
-            CandyBarApplication.getConfiguration().setCustomIconsCount(count);
+
+        if (!sectionTitle.isEmpty() && !sectionIcons.isEmpty()) {
+            icons.add(new Icon(sectionTitle, sectionIcons));
         }
-        if (icons.size() > 0) {
-            sections.add(new Icon(sectionTitle, icons));
-        }
-        parser.close();
-        return sections;
+
+        return icons;
     }
 
     public static List<Icon> getTabAllIcons() {

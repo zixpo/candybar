@@ -34,6 +34,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.io.File;
+
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
@@ -255,14 +257,22 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
 
     private void loadIconInto(ImageView imageView, int position) {
         if (mFragment.getActivity() == null) return;
-        int resourceId = R.drawable.discord_navy;
+
+        Icon icon = mIcons.get(position);
+        String drawableName = icon.getDrawableName();
+
+        // Construct the path to the saved icon file
+        File savedIconFile = new File(mFragment.getActivity().getExternalFilesDir(null), drawableName + ".png");
+
+        // Load the icon into imageView using Glide
         Glide.with(mFragment)
-                .load("drawable://" + mIcons.get(position).getRes()) // This is for the icons in the groups in the sidebar menu
+                .load(savedIconFile)
                 .skipMemoryCache(true)
                 .transition(DrawableTransitionOptions.withCrossFade(300))
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(imageView);
     }
+
 
     public void reloadIcons() {
         for (int i = visibleStart; i <= visibleEnd; i++) {

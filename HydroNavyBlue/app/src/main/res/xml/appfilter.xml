@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-   <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord"/>
-
-
+   <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord_nb"/>
 
 </resources>

@@ -2,8 +2,7 @@
 <resources>
     <version>1</version>
 
-    <category title="Hydro Blue" />
-    <item drawable="discord"/>
-
+    <category title="Hydro Navy Blue" />
+    <item drawable="discord_nb"/>
 
 </resources>
