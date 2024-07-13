@@ -104,6 +104,7 @@
     <string name="home_icon_request_missed_apps">未适配%d 个程序</string>
     <!-- Apply -->
     <string name="apply_installed">已安装的启动器</string>
+    <string name="apply_installed_launchers">已安装的启动器</string>
     <string name="apply_supported">受支持的启动器</string>
     <string name="apply_manual">%1$s 启动器不支持直接应用，但您可以从启动器设置手动应用 %2$s。</string>
     <string name="apply_manual_kvaesitso">Kvaesitso 不支持直接应用，但您可以按照这些步骤：</string>
@@ -259,6 +260,8 @@
     <string name="pref_theme_header">主题</string>
     <string name="pref_theme_dark">暗色主题</string>
     <string name="pref_theme_dark_desc">使用暗色程序主题</string>
+    <string name="pref_notifications_header">通知栏</string>
+    <string name="pref_notifications">接收通知</string>
     <string name="pref_wallpaper_header">壁纸</string>
     <string name="pref_wallpaper_location">壁纸保存位置</string>
     <string name="pref_language_header">语言</string>
@@ -274,6 +277,8 @@
     <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">需要存储权限以保存壁纸</string>
+    <string name="permission_notification_denied_1">接收开发者的通知需要通知权限</string>
+    <string name="permission_notification_denied_2">启用应用设置中的通知</string>
     <!-- Intent -->
     <string name="app_client">选择邮件客户端</string>
     <string name="no_email_app">没有程序可以发送邮件</string>
