@@ -742,7 +742,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         Home home = mHomes.get(position);
                         IconPreviewFragment.showIconPreview(
                                 ((AppCompatActivity) mContext).getSupportFragmentManager(),
-                                home.getTitle(), home.getIcon(), null);
+                                home.getTitle(), home.getIcon(), null, null);
                         break;
                      case CHANGEICONCOLOR:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(

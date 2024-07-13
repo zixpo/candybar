@@ -33,10 +33,11 @@ public class Icon {
     private String mPackageName;
     private List<Icon> mIcons;
 
-    public Icon(String drawableName, String customName, int res) {
+    public Icon(String drawableName, String customName, int res, String packageName) {
         mDrawableName = drawableName;
         mCustomName = customName;
         mRes = res;
+        mPackageName = packageName;
     }
 
     public Icon(String title, int res, String packageName) {

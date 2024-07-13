@@ -1,11 +1,15 @@
 package candybar.lib.helpers;
 
+import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -23,16 +27,13 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.io.IOException;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -41,10 +42,25 @@ import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.CandyBarGlideModule;
 
-import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
+/*
+ * CandyBar - Material Dashboard
+ *
+ * Copyright (c) 2014-2016 Dani Mahardhika
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 public class IconsHelper {
-
     public static void loadIcons(Context context, boolean sortIcons) throws Exception {
         // Load icons only if they are not loaded
         if (CandyBarMainActivity.sSections == null) {
@@ -71,12 +87,46 @@ public class IconsHelper {
 
     @NonNull
     public static List<Icon> getIconsList(@NonNull Context context) throws Exception {
+        XmlResourceParser parser = context.getResources().getXml(R.xml.drawable);
+        int eventType = parser.getEventType();
+        String sectionTitle = "";
+        List<Icon> icons = new ArrayList<>();
         List<Icon> sections = new ArrayList<>();
 
-        // Fetch icons from main app (com.candybar.dev)
-        Resources mainAppResources = context.getResources();
-        XmlResourceParser parser = mainAppResources.getXml(R.xml.drawable);
-        sections.addAll(parseIconsFromXml(parser, context, mainAppResources, context.getPackageName()));
+        int count = 0;
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            if (eventType == XmlPullParser.START_TAG) {
+                if (parser.getName().equals("category")) {
+                    String title = parser.getAttributeValue(null, "title");
+                    if (!sectionTitle.equals(title)) {
+                        if (sectionTitle.length() > 0 && icons.size() > 0) {
+                            count += icons.size();
+                            sections.add(new Icon(sectionTitle, icons));
+                        }
+                    }
+                    sectionTitle = title;
+                    icons = new ArrayList<>();
+                } else if (parser.getName().equals("item")) {
+                    String drawableName = parser.getAttributeValue(null, "drawable");
+                    String customName = parser.getAttributeValue(null, "name");
+                    int id = DrawableHelper.getDrawableId(drawableName);
+                    if (id > 0) {
+                        icons.add(new Icon(drawableName, customName, id, context.getPackageName()));
+                    }
+                }
+            }
+
+            eventType = parser.next();
+        }
+        count += icons.size();
+        CandyBarMainActivity.sIconsCount = count;
+        if (!CandyBarApplication.getConfiguration().isAutomaticIconsCountEnabled() &&
+                CandyBarApplication.getConfiguration().getCustomIconsCount() == 0) {
+            CandyBarApplication.getConfiguration().setCustomIconsCount(count);
+        }
+        if (icons.size() > 0) {
+            sections.add(new Icon(sectionTitle, icons));
+        }
         parser.close();
 
         // Fetch icons from side app (com.candybar.dev.hydro_navy_blue)
@@ -113,11 +163,12 @@ public class IconsHelper {
         return icons;
     }
 
-    private static List<Icon> parseIconsFromXml(XmlPullParser parser, Context context, Resources resources, String packageName) throws XmlPullParserException, IOException {
+    private static List<Icon> parseIconsFromXml(XmlPullParser parser, Context context, Resources sideAppResources, String packageName) throws XmlPullParserException, IOException {
         List<Icon> icons = new ArrayList<>();
         int eventType = parser.getEventType();
         String sectionTitle = "";
         List<Icon> sectionIcons = new ArrayList<>();
+        File directory = context.getExternalFilesDir(null); // Example directory, adjust as needed
 
         while (eventType != XmlPullParser.END_DOCUMENT) {
             if (eventType == XmlPullParser.START_TAG) {
@@ -131,10 +182,23 @@ public class IconsHelper {
                     // Log the drawable name
                     Log.d("DrawableName", "Drawable name: " + drawableName);
 
-                    // Fetch the drawable ID from the provided resources
-                    int id = resources.getIdentifier(drawableName, "drawable", packageName);
+                    // Fetch the drawable ID from the side app's resources
+                    int id = sideAppResources.getIdentifier(drawableName, "drawable", packageName);
                     if (id > 0) {
-                        sectionIcons.add(new Icon(drawableName, customName, id));
+//                        // Get the drawable from resources
+//                        Drawable drawable = sideAppResources.getDrawable(id);
+//
+//                        // Call saveIcon with the correct parameters
+//                        String savedIconPath = saveIcon(new ArrayList<>(), directory, drawable, drawableName, new OnFileNameChange() {
+//                            @Override
+//                            public void call(String newName) {
+//                                // Handle the callback if needed
+//                            }
+//                        });
+
+//                        if (savedIconPath != null) {
+                            sectionIcons.add(new Icon(drawableName, customName, id, packageName));
+//                        }
                     }
                 }
             } else if (eventType == XmlPullParser.END_TAG && parser.getName().equals("category")) {
@@ -224,10 +288,19 @@ public class IconsHelper {
                     put("item", icon.getDrawableName());
                 }}
         );
+
+        int resId = icon.getRes();
+        String packageName = icon.getPackageName();
+
+        String glideLoadUrl = "android.resource://" + packageName + "/" + resId;
+
+        Log.d("loadurl", glideLoadUrl);
+
         if (action == IntentHelper.ICON_PICKER && CandyBarGlideModule.isValidContextForGlide(context)) {
+            // This is where the icon gets picked when trying to change icon through the launcher, then opening the app
             Glide.with(context)
                     .asBitmap()
-                    .load("drawable://" + icon.getRes())
+                    .load(Uri.parse(glideLoadUrl))
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .listener(new RequestListener<Bitmap>() {
@@ -253,10 +326,9 @@ public class IconsHelper {
                     })
                     .submit();
         } else if (action == IntentHelper.IMAGE_PICKER && CandyBarGlideModule.isValidContextForGlide(context)) {
-
             Glide.with(context)
                     .asBitmap()
-                    .load("drawable://" + icon.getRes())
+                    .load(Uri.parse(glideLoadUrl))
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .listener(new RequestListener<Bitmap>() {
@@ -302,7 +374,7 @@ public class IconsHelper {
         } else {
             IconPreviewFragment.showIconPreview(((AppCompatActivity) context)
                             .getSupportFragmentManager(),
-                    icon.getTitle(), icon.getRes(), icon.getDrawableName());
+                    icon.getTitle(), icon.getRes(), icon.getDrawableName(), icon.getPackageName());
         }
     }
 

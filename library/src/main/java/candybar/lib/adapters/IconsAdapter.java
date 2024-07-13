@@ -34,8 +34,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.io.File;
-
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
@@ -44,6 +42,13 @@ import candybar.lib.fragments.IconsFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.IntentHelper;
 import candybar.lib.items.Icon;
+
+import android.content.res.Resources;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+
+import android.util.Log;
+
 
 /*
  * CandyBar - Material Dashboard
@@ -258,21 +263,19 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
     private void loadIconInto(ImageView imageView, int position) {
         if (mFragment.getActivity() == null) return;
 
-        Icon icon = mIcons.get(position);
-        String drawableName = icon.getDrawableName();
+        int resId = mIcons.get(position).getRes();
+        String packageName = mIcons.get(position).getPackageName();
 
-        // Construct the path to the saved icon file
-        File savedIconFile = new File(mFragment.getActivity().getExternalFilesDir(null), drawableName + ".png");
+        String glideLoadUrl = "android.resource://" + packageName + "/" + resId;
 
-        // Load the icon into imageView using Glide
+        // Load the drawable using Glide
         Glide.with(mFragment)
-                .load(savedIconFile)
+                .load(Uri.parse(glideLoadUrl))
                 .skipMemoryCache(true)
                 .transition(DrawableTransitionOptions.withCrossFade(300))
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(imageView);
     }
-
 
     public void reloadIcons() {
         for (int i = visibleStart; i <= visibleEnd; i++) {

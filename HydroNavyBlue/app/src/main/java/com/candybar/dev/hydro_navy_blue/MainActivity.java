@@ -6,12 +6,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import android.os.Build;
 import android.view.Window;
 
-import com.candybar.dev.hydro_navy_blue.R;
 
 public class MainActivity extends Activity {
 
@@ -54,9 +52,12 @@ public class MainActivity extends Activity {
         super.onResume();
 
         // Determine the appropriate status bar color based on dark mode
-        int statusBarColor = getResources().getConfiguration().isNightModeActive()
-                ? ContextCompat.getColor(this, R.color.black)
-                : ContextCompat.getColor(this, R.color.white);
+        int statusBarColor = 0;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+            statusBarColor = getResources().getConfiguration().isNightModeActive()
+                    ? ContextCompat.getColor(this, R.color.black)
+                    : ContextCompat.getColor(this, R.color.white);
+        }
 
         // Set status bar color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

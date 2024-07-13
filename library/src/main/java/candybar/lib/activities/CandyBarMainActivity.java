@@ -116,6 +116,15 @@ import candybar.lib.utils.listeners.SearchListener;
 import candybar.lib.utils.listeners.WallpapersListener;
 import candybar.lib.utils.views.HeaderView;
 
+import android.content.res.XmlResourceParser;
+import android.os.Bundle;
+import android.util.Log;
+
+import androidx.annotation.XmlRes;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.xmlpull.v1.XmlPullParser;
+
 /*
  * CandyBar - Material Dashboard
  *
@@ -342,6 +351,32 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             if (permissionState == PackageManager.PERMISSION_DENIED) {
                 ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 10);
             }
+        }
+        logDrawableReferences(R.xml.drawable);
+    }
+
+
+    private void logDrawableReferences(@XmlRes int xmlResId) {
+        XmlResourceParser parser = getResources().getXml(xmlResId);
+        try {
+            int eventType = parser.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                if (eventType == XmlPullParser.START_TAG) {
+                    String tagName = parser.getName();
+                    if ("item".equals(tagName)) {
+                        String drawableAttr = parser.getAttributeValue(null, "drawable");
+                        if (drawableAttr != null) {
+                            int resId = getResources().getIdentifier(drawableAttr, "drawable", getPackageName());
+                            Log.d("LogDrawableIcons", "Drawable name: " + drawableAttr + ", ID: " + resId);
+                        }
+                    }
+                }
+                eventType = parser.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            parser.close();
         }
     }
 

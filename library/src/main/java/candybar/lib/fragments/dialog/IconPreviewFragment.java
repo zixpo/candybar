@@ -2,6 +2,7 @@ package candybar.lib.fragments.dialog;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -55,26 +56,29 @@ public class IconPreviewFragment extends DialogFragment {
     private String mIconTitle;
     private String mDrawableName;
     private int mIconId;
+    private String mIconPackageName;
 
     private boolean prevIsBookmarked, currentIsBookmarked;
 
     private static final String TITLE = "title";
     private static final String DRAWABLE_NAME = "drawable_name";
     private static final String ID = "id";
+    private static final String PACKAGE_NAME = "package_name";
 
     private static final String TAG = "candybar.dialog.icon.preview";
 
-    private static IconPreviewFragment newInstance(String title, int id, String drawableName) {
+    private static IconPreviewFragment newInstance(String title, int id, String drawableName, String packageName) {
         IconPreviewFragment fragment = new IconPreviewFragment();
         Bundle bundle = new Bundle();
         bundle.putString(TITLE, title);
         bundle.putString(DRAWABLE_NAME, drawableName);
         bundle.putInt(ID, id);
+        bundle.putString(PACKAGE_NAME, packageName);
         fragment.setArguments(bundle);
         return fragment;
     }
 
-    public static void showIconPreview(@NonNull FragmentManager fm, @NonNull String title, int id, @Nullable String drawableName) {
+    public static void showIconPreview(@NonNull FragmentManager fm, @NonNull String title, int id, @Nullable String drawableName, @Nullable String packageName) {
         FragmentTransaction ft = fm.beginTransaction();
         Fragment prev = fm.findFragmentByTag(TAG);
         if (prev != null) {
@@ -82,7 +86,7 @@ public class IconPreviewFragment extends DialogFragment {
         }
 
         try {
-            DialogFragment dialog = IconPreviewFragment.newInstance(title, id, drawableName);
+            DialogFragment dialog = IconPreviewFragment.newInstance(title, id, drawableName, packageName);
             dialog.show(ft, TAG);
         } catch (IllegalArgumentException | IllegalStateException ignored) {
         }
@@ -94,6 +98,7 @@ public class IconPreviewFragment extends DialogFragment {
         mIconTitle = requireArguments().getString(TITLE);
         mDrawableName = requireArguments().getString(DRAWABLE_NAME);
         mIconId = requireArguments().getInt(ID);
+        mIconPackageName = requireArguments().getString(PACKAGE_NAME);
     }
 
     @NonNull
@@ -111,6 +116,7 @@ public class IconPreviewFragment extends DialogFragment {
             mIconTitle = savedInstanceState.getString(TITLE);
             mDrawableName = savedInstanceState.getString(DRAWABLE_NAME);
             mIconId = savedInstanceState.getInt(ID);
+            mIconPackageName = savedInstanceState.getString(PACKAGE_NAME);
         }
 
         TextView name = (TextView) dialog.findViewById(R.id.name);
@@ -118,9 +124,10 @@ public class IconPreviewFragment extends DialogFragment {
         ImageView bookmark = (ImageView) dialog.findViewById(R.id.bookmark_button);
 
         name.setText(mIconTitle);
+        String glideLoadUrl = "android.resource://" + mIconPackageName + "/" + mIconId;
 
         Glide.with(this)
-                .load("drawable://" + mIconId) // Couldn't find out what this did
+                .load(Uri.parse(glideLoadUrl))
                 .transition(DrawableTransitionOptions.withCrossFade(300))
                 .skipMemoryCache(true)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)

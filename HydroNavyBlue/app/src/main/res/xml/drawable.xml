@@ -3,6 +3,6 @@
     <version>1</version>
 
     <category title="Hydro Navy Blue" />
-    <item drawable="discord_nb"/>
+    <item name="Discord" drawable="discord_nb"/>
 
 </resources>
