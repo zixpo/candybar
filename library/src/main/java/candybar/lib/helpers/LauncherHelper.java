@@ -300,7 +300,7 @@ public class LauncherHelper {
                 try {
                     final Intent action = context.getPackageManager().getLaunchIntentForPackage(
                             launcherPackage);
-                    action.putExtra("apply_icon_pack", context.getPackageName());
+                    action.putExtra("apply_icon_pack", context.getPackageName() + selectedIconPackId);
                     action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(action);
                     ((AppCompatActivity) context).finish();
@@ -319,7 +319,7 @@ public class LauncherHelper {
             case ADW:
                 try {
                     final Intent adw = new Intent("org.adw.launcher.SET_THEME");
-                    adw.putExtra("org.adw.launcher.theme.NAME", context.getPackageName());
+                    adw.putExtra("org.adw.launcher.theme.NAME", context.getPackageName() + selectedIconPackId);
                     adw.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(adw);
                     ((AppCompatActivity) context).finish();
@@ -338,7 +338,7 @@ public class LauncherHelper {
             case APEX:
                 try {
                     final Intent apex = new Intent("com.anddoes.launcher.SET_THEME");
-                    apex.putExtra("com.anddoes.launcher.THEME_PACKAGE_NAME", context.getPackageName());
+                    apex.putExtra("com.anddoes.launcher.THEME_PACKAGE_NAME", context.getPackageName() + selectedIconPackId);
                     apex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(apex);
                     ((AppCompatActivity) context).finish();
@@ -357,7 +357,7 @@ public class LauncherHelper {
             case BEFORE:
                 try {
                     final Intent before = new Intent("com.beforesoftware.launcher.APPLY_ICONS");
-                    before.putExtra("packageName", context.getPackageName());
+                    before.putExtra("packageName", context.getPackageName() + selectedIconPackId);
                     before.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(before);
                     ((AppCompatActivity) context).finish();
@@ -395,7 +395,7 @@ public class LauncherHelper {
                     final Intent cmtheme = new Intent("android.intent.action.MAIN");
                     cmtheme.setComponent(new ComponentName(launcherPackage,
                             "org.cyanogenmod.theme.chooser.ChooserActivity"));
-                    cmtheme.putExtra("pkgName", context.getPackageName());
+                    cmtheme.putExtra("pkgName", context.getPackageName() + selectedIconPackId);
                     context.startActivity(cmtheme);
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
@@ -477,7 +477,7 @@ public class LauncherHelper {
                 try {
                     final Intent flick = context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher");
                     final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
-                    flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
+                    flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName() + selectedIconPackId);
                     flickAction.setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
                     flick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(flickAction);
@@ -501,7 +501,7 @@ public class LauncherHelper {
                             "com.gau.go.launcherex");
                     final Intent go = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
                     go.putExtra("type", 1);
-                    go.putExtra("pkgname", context.getPackageName());
+                    go.putExtra("pkgname", context.getPackageName() + selectedIconPackId);
                     goex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(go);
                     context.startActivity(goex);
@@ -584,7 +584,7 @@ public class LauncherHelper {
 
                 try {
                     final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
-                    lawnchair.putExtra("packageName", context.getPackageName());
+                    lawnchair.putExtra("packageName", context.getPackageName() + selectedIconPackId);
                     context.startActivity(lawnchair);
                     ((AppCompatActivity) context).finish();
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
@@ -605,7 +605,7 @@ public class LauncherHelper {
             case LUCID:
                 try {
                     final Intent lucid = new Intent("com.powerpoint45.action.APPLY_THEME", null);
-                    lucid.putExtra("icontheme", context.getPackageName());
+                    lucid.putExtra("icontheme", context.getPackageName() + selectedIconPackId);
                     context.startActivity(lucid);
                     ((AppCompatActivity) context).finish();
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
@@ -626,7 +626,7 @@ public class LauncherHelper {
             case NIAGARA:
                 try {
                     final Intent niagara = new Intent("bitpit.launcher.APPLY_ICONS");
-                    niagara.putExtra("packageName", context.getPackageName());
+                    niagara.putExtra("packageName", context.getPackageName() + selectedIconPackId);
                     context.startActivity(niagara);
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
@@ -704,7 +704,7 @@ public class LauncherHelper {
             case SMART:
                 try {
                     final Intent smart = new Intent("ginlemon.smartlauncher.setGSLTHEME");
-                    smart.putExtra("package", context.getPackageName());
+                    smart.putExtra("package", context.getPackageName() + selectedIconPackId);
                     smart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(smart);
                     ((AppCompatActivity) context).finish();
@@ -727,7 +727,7 @@ public class LauncherHelper {
                     final Intent soloAction = new Intent("home.solo.launcher.free.APPLY_THEME");
                     soloAction.putExtra("EXTRA_THEMENAME", context.getResources().getString(
                             R.string.app_name));
-                    soloAction.putExtra("EXTRA_PACKAGENAME", context.getPackageName());
+                    soloAction.putExtra("EXTRA_PACKAGENAME", context.getPackageName() + selectedIconPackId);
                     solo.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(soloAction);
                     context.startActivity(solo);
@@ -748,7 +748,7 @@ public class LauncherHelper {
                 try {
                     final Intent square = new Intent("com.ss.squarehome2.ACTION_APPLY_ICONPACK");
                     square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
-                    square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
+                    square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName() + selectedIconPackId);
                     context.startActivity(square);
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
@@ -792,7 +792,7 @@ public class LauncherHelper {
                      */
                     final Intent nougat = new Intent("me.craftsapp.nlauncher");
                     nougat.setAction("me.craftsapp.nlauncher.SET_THEME");
-                    nougat.putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName());
+                    nougat.putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName() + selectedIconPackId);
                     nougat.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(nougat);
                     ((AppCompatActivity) context).finish();
@@ -813,7 +813,7 @@ public class LauncherHelper {
                     final Intent asus = new Intent("com.asus.launcher");
                     asus.setAction("com.asus.launcher.intent.action.APPLY_ICONPACK");
                     asus.addCategory(Intent.CATEGORY_DEFAULT);
-                    asus.putExtra("com.asus.launcher.iconpack.PACKAGE_NAME", context.getPackageName());
+                    asus.putExtra("com.asus.launcher.iconpack.PACKAGE_NAME", context.getPackageName() + selectedIconPackId);
                     asus.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(asus);
                     ((AppCompatActivity) context).finish();
@@ -1129,7 +1129,7 @@ public class LauncherHelper {
     }
 
     public static boolean quickApply(Context context) {
-        PackageManager pm = context.getPackageManager();
+        PackageManager pm = context.getPackageManager() ;
         Intent intent = new Intent("android.intent.action.MAIN");
         intent.addCategory("android.intent.category.HOME");
         String packageName = pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;

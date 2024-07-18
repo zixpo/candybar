@@ -107,17 +107,8 @@
 
     <bool name="enable_icon_packs">true</bool>
 
-    <string-array name="change_icon_colors_array">
-        <item>Blue</item>
-        <item>Cyan</item>
-        <item>Dark Blue</item>
-        <item>Light Blue</item>
-        <item>Navy Blue</item>
-        <item>Purple</item>
-    </string-array>
-
-    <string name="default_icon_pack">hydro</string>
-    <string name="default_icon_pack_color">blue</string>
+    <string name="icon_pack">hydro</string>
+    <string name="icon_pack_color">blue</string>
 
     <string-array name="icon_pack_names">
         <item>Hydro</item>

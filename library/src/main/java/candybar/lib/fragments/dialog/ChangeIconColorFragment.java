@@ -3,7 +3,6 @@ package candybar.lib.fragments.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -18,17 +17,18 @@ import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.applications.CandyBarApplication;
 import java.util.HashMap;
 import candybar.lib.helpers.LauncherHelper;
+import candybar.lib.helpers.ThemeHelper;
+
 
 public class ChangeIconColorFragment extends DialogFragment {
 
-    private static final String TAG = "ChangeIconColorFragment"; // Tag for logging
     private static final String ARG_COLOR_OPTIONS = "color_options";
     private static final String ARG_ICON_PACK_NAME = "icon_pack_name";
 
     private String selectedOption;
     private String selectedIconPackName;
 
-    // Static method to show the ChangeIconColorFragment dialog
+
     public static void showChangeIconColorDialog(@NonNull FragmentManager fm, @NonNull String[] colorOptions, @NonNull String iconPackName) {
         ChangeIconColorFragment fragment = new ChangeIconColorFragment();
         Bundle args = new Bundle();
@@ -47,9 +47,9 @@ public class ChangeIconColorFragment extends DialogFragment {
 
         MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
                 .customView(R.layout.dialog_change_icon_color, false)
-                .title(R.string.change_icon_color_dialog_title) // Set the dialog title
-                .positiveText(R.string.change_icon_color_dialog_confirm) // Confirm button text
-                .negativeText(R.string.change_icon_color_dialog_close) // Close button text
+                .title(R.string.change_icon_color_dialog_title)
+                .positiveText(R.string.change_icon_color_dialog_confirm)
+                .negativeText(R.string.change_icon_color_dialog_close)
                 .onNegative((dialog1, which) -> dismiss())
                 .onPositive((dialog1, which) -> {
                     handleOptionSelected(selectedOption, selectedIconPackName);
@@ -57,16 +57,18 @@ public class ChangeIconColorFragment extends DialogFragment {
                 })
                 .build();
 
-        // Initialize views from custom layout
         View dialogView = dialog.getCustomView();
         if (dialogView != null) {
             RadioGroup radioGroup = dialogView.findViewById(R.id.radio_group_options);
+            int textColor = getResources().getColor(
+                    ThemeHelper.isDarkTheme(requireContext()) ? android.R.color.white : android.R.color.black);
 
             for (String color : colorOptions) {
                 RadioButton radioButton = new RadioButton(requireActivity());
                 radioButton.setText(color);
                 radioButton.setId(View.generateViewId());
                 radioGroup.addView(radioButton);
+                radioButton.setTextColor(textColor);
 
                 radioButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
                     if (isChecked) {
@@ -80,7 +82,6 @@ public class ChangeIconColorFragment extends DialogFragment {
     }
 
     private void handleOptionSelected(String option, String iconPackName) {
-        // Convert the selected color option to lowercase and replace spaces with underscores
         String iconPackId;
         option = option.toLowerCase().replace(" ", "_");
         Context context = requireContext();
@@ -94,10 +95,6 @@ public class ChangeIconColorFragment extends DialogFragment {
         }
         Preferences.get(requireContext()).setSelectedIconPackId(iconPackId);
 
-        // Log the formatted drawable name for verification
-        Log.d(TAG, "Drawable name:" + iconPackId);
-
-        // Log the event and navigate to the apply section
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
                 new HashMap<String, Object>() {{

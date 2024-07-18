@@ -5,11 +5,8 @@ import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -33,7 +30,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.io.IOException;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -41,6 +37,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.CandyBarGlideModule;
+
 
 /*
  * CandyBar - Material Dashboard
@@ -99,7 +96,7 @@ public class IconsHelper {
                 if (parser.getName().equals("category")) {
                     String title = parser.getAttributeValue(null, "title");
                     if (!sectionTitle.equals(title)) {
-                        if (sectionTitle.length() > 0 && icons.size() > 0) {
+                        if (!sectionTitle.isEmpty() && !icons.isEmpty()) {
                             count += icons.size();
                             sections.add(new Icon(sectionTitle, icons));
                         }
@@ -124,96 +121,18 @@ public class IconsHelper {
                 CandyBarApplication.getConfiguration().getCustomIconsCount() == 0) {
             CandyBarApplication.getConfiguration().setCustomIconsCount(count);
         }
-        if (icons.size() > 0) {
+        if (!icons.isEmpty()) {
             sections.add(new Icon(sectionTitle, icons));
         }
         parser.close();
 
-        // Fetch icons from side app (com.candybar.dev.hydro_navy_blue)
-        String sideAppPackageName = "com.candybar.dev.hydro_navy_blue";
-        List<Icon> sideAppIcons = getIconsFromSideApp(context, sideAppPackageName);
-        sections.addAll(sideAppIcons);
+        boolean enableIconPacks = context.getResources().getBoolean(R.bool.enable_icon_packs);
+        if (enableIconPacks) {
+            IconPackAppHelper.loadIconPackApps(context, sections);
+        }
+
 
         return sections;
-    }
-
-    private static List<Icon> getIconsFromSideApp(Context context, String packageName) {
-        List<Icon> icons = new ArrayList<>();
-        PackageManager pm = context.getPackageManager();
-
-        try {
-            // Get the Resources object for the side app
-            Resources sideAppResources = pm.getResourcesForApplication(packageName);
-
-            // Accessing drawable resources
-            int resourceId = sideAppResources.getIdentifier("drawable", "xml", packageName);
-            XmlResourceParser parser = sideAppResources.getXml(resourceId);
-
-            icons.addAll(parseIconsFromXml(parser, context, sideAppResources, packageName));
-
-            // Log the size of the icons list
-            System.out.println("SideAppIcons: " + icons.size());
-
-            parser.close();
-        } catch (PackageManager.NameNotFoundException | Resources.NotFoundException | XmlPullParserException | IOException e) {
-            e.printStackTrace();
-            // Handle exceptions while fetching icons from side app
-        }
-
-        return icons;
-    }
-
-    private static List<Icon> parseIconsFromXml(XmlPullParser parser, Context context, Resources sideAppResources, String packageName) throws XmlPullParserException, IOException {
-        List<Icon> icons = new ArrayList<>();
-        int eventType = parser.getEventType();
-        String sectionTitle = "";
-        List<Icon> sectionIcons = new ArrayList<>();
-        File directory = context.getExternalFilesDir(null); // Example directory, adjust as needed
-
-        while (eventType != XmlPullParser.END_DOCUMENT) {
-            if (eventType == XmlPullParser.START_TAG) {
-                if (parser.getName().equals("category")) {
-                    sectionTitle = parser.getAttributeValue(null, "title");
-                    sectionIcons = new ArrayList<>();
-                } else if (parser.getName().equals("item")) {
-                    String drawableName = parser.getAttributeValue(null, "drawable");
-                    String customName = parser.getAttributeValue(null, "name");
-
-                    // Log the drawable name
-                    Log.d("DrawableName", "Drawable name: " + drawableName);
-
-                    // Fetch the drawable ID from the side app's resources
-                    int id = sideAppResources.getIdentifier(drawableName, "drawable", packageName);
-                    if (id > 0) {
-//                        // Get the drawable from resources
-//                        Drawable drawable = sideAppResources.getDrawable(id);
-//
-//                        // Call saveIcon with the correct parameters
-//                        String savedIconPath = saveIcon(new ArrayList<>(), directory, drawable, drawableName, new OnFileNameChange() {
-//                            @Override
-//                            public void call(String newName) {
-//                                // Handle the callback if needed
-//                            }
-//                        });
-
-//                        if (savedIconPath != null) {
-                            sectionIcons.add(new Icon(drawableName, customName, id, packageName));
-//                        }
-                    }
-                }
-            } else if (eventType == XmlPullParser.END_TAG && parser.getName().equals("category")) {
-                if (!sectionTitle.isEmpty() && !sectionIcons.isEmpty()) {
-                    icons.add(new Icon(sectionTitle, sectionIcons));
-                }
-            }
-            eventType = parser.next();
-        }
-
-        if (!sectionTitle.isEmpty() && !sectionIcons.isEmpty()) {
-            icons.add(new Icon(sectionTitle, sectionIcons));
-        }
-
-        return icons;
     }
 
     public static List<Icon> getTabAllIcons() {
@@ -246,7 +165,7 @@ public class IconsHelper {
                 // Title is already computed, so continue
                 continue;
             }
-            if (icon.getCustomName() != null && !icon.getCustomName().equals("")) {
+            if (icon.getCustomName() != null && !icon.getCustomName().isEmpty()) {
                 icon.setTitle(icon.getCustomName());
             } else {
                 icon.setTitle(replaceName(context, iconReplacer, icon.getDrawableName()));
@@ -297,18 +216,23 @@ public class IconsHelper {
         Log.d("loadurl", glideLoadUrl);
 
         if (action == IntentHelper.ICON_PICKER && CandyBarGlideModule.isValidContextForGlide(context)) {
-            // This is where the icon gets picked when trying to change icon through the launcher, then opening the app
             Glide.with(context)
                     .asBitmap()
                     .load(Uri.parse(glideLoadUrl))
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .listener(new RequestListener<Bitmap>() {
+
                         public void handleResult(Bitmap resource) {
-                            Intent intent = new Intent();
-                            intent.putExtra("icon", resource);
-                            ((AppCompatActivity) context).setResult(resource != null ?
-                                    Activity.RESULT_OK : Activity.RESULT_CANCELED, intent);
+                            if (resource != null) {
+                                Bitmap resizedBitmap = resizeBitmap(resource, 288);
+                                Intent intent = new Intent();
+                                intent.putExtra("icon", resizedBitmap);
+                                ((AppCompatActivity) context).setResult(Activity.RESULT_OK, intent);
+                            } else {
+                                ((AppCompatActivity) context).setResult(Activity.RESULT_CANCELED);
+                            }
+
                             ((AppCompatActivity) context).finish();
                         }
 
@@ -335,11 +259,12 @@ public class IconsHelper {
                         private void handleResult(Bitmap bitmap) {
                             Intent intent = new Intent();
                             if (bitmap != null) {
+                                Bitmap resizedBitmap = resizeBitmap(bitmap, 288);
                                 File file = new File(context.getCacheDir(), icon.getTitle() + ".png");
                                 FileOutputStream outStream;
                                 try {
                                     outStream = new FileOutputStream(file);
-                                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+                                    resizedBitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
                                     outStream.flush();
                                     outStream.close();
 
@@ -379,7 +304,7 @@ public class IconsHelper {
     }
 
     public interface OnFileNameChange {
-        public void call(String newName);
+        void call(String newName);
     }
 
     @Nullable
@@ -411,5 +336,21 @@ public class IconsHelper {
             LogUtil.e(Log.getStackTraceString(e));
         }
         return null;
+    }
+
+    private static Bitmap resizeBitmap(Bitmap bitmap, int maxDimension) {
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+
+        if (width <= maxDimension && height <= maxDimension) {
+            return bitmap;
+        }
+
+        float scale = Math.min((float) maxDimension / width, (float) maxDimension / height);
+
+        int newWidth = Math.round(scale * width);
+        int newHeight = Math.round(scale * height);
+
+        return Bitmap.createScaledBitmap(bitmap, newWidth, newHeight, true);
     }
 }

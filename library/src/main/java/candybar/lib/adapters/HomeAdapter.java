@@ -736,7 +736,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                     put("item", "icons");
                                 }}
                         );
-                        ((CandyBarMainActivity) mContext).selectPosition(2);
+                        ((CandyBarMainActivity) mContext).selectPosition(3);
                         break;
                     case DIMENSION:
                         Home home = mHomes.get(position);
@@ -760,8 +760,8 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                             // ToDo: Change coloroptions accordingly with the iconPack selected,
                             // and remove getChangeIconColorsArray and the values
                             // ToDo: When long press => check next function, open the navigation view
-                            String[] colorOptions = RequestHelper.getChangeIconColorsArray(mContext);
-                            ChangeIconColorFragment.showChangeIconColorDialog(((AppCompatActivity) mContext).getSupportFragmentManager(), colorOptions, iconPack);
+//                            String[] colorOptions = RequestHelper.getChangeIconColorsArray(mContext);
+//                            ChangeIconColorFragment.showChangeIconColorDialog(((AppCompatActivity) mContext).getSupportFragmentManager(), colorOptions, iconPack);
 
                         }
                          break;

@@ -3,6 +3,7 @@ package candybar.lib.fragments;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Map;
 
 import candybar.lib.R;
 import candybar.lib.adapters.IconPackAdapter;
@@ -24,7 +29,8 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.items.IconPack;
 import candybar.lib.utils.AsyncTaskBase;
-import android.graphics.drawable.Drawable;
+import candybar.lib.helpers.IconPackAppHelper;
+
 
 public class IconPackFragment extends Fragment {
 
@@ -96,15 +102,29 @@ public class IconPackFragment extends Fragment {
                 try {
                     Thread.sleep(1);
 
-                    // Load icon packs from the RequestHelper
-                    String[] iconPackNames = RequestHelper.getIconPackNames(context);
-                    for (String iconPackName : iconPackNames) {
-                        String[] colors = RequestHelper.getIconPackColors(context, iconPackName);
-                        if (colors.length > 0) {
-                            int drawableId = RequestHelper.getIconPackDrawableId(context, iconPackName);
-                            iconPacks.add(new IconPack(iconPackName,  drawableId, colors));
-                        }
-                    }
+//                    String[] iconPackNames = RequestHelper.getIconPackNames(context);
+//                    for (String iconPackName : iconPackNames) {
+//                        String[] colors = RequestHelper.getIconPackColors(context, iconPackName);
+//                        if (colors.length > 0) {
+//                            int drawableId = RequestHelper.getIconPackDrawableId(context, iconPackName);
+//                            iconPacks.add(new IconPack(iconPackName,  drawableId, colors));
+//                        }
+//                    }
+
+                    collectIconPacks(context, iconPacks);
+//                    String mainIconPackName = context.getString(R.string.icon_pack);
+//                    String mainIconPackColor = context.getString(R.string.icon_pack_color);
+//                    int mainIconPackDrawableId = RequestHelper.getIconPackDrawableId(context, mainIconPackName);
+//                    List<String> iconPackNames =
+//
+//                    List<String> extraIconPackNames = IconPackAppHelper.getIconPackAppPackageNames(context);
+//                    for (String iconPackName : iconPackNames) {
+//                        String[] colors = RequestHelper.getIconPackColors(context, iconPackName);
+//                        if (colors.length > 0) {
+//                            int drawableId = RequestHelper.getIconPackDrawableId(context, iconPackName);
+//                            iconPacks.add(new IconPack(iconPackName,  drawableId, colors));
+//                        }
+//                    }
 
                     return true;
                 } catch (Exception e) {
@@ -130,10 +150,37 @@ public class IconPackFragment extends Fragment {
     public static Drawable getIconPackDrawable(Context context, String iconPackName) {
         int drawableId = RequestHelper.getIconPackDrawableId(context, iconPackName);
         if (drawableId != 0) {
-            // Return the drawable
             return context.getResources().getDrawable(drawableId, context.getTheme());
         }
         return null;
+    }
+
+    public static void collectIconPacks(Context context, List<IconPack> iconPacks) {
+        // Initialize a map to store icon pack names and their respective colors
+        Map<String, Set<String>> iconPackColorsMap = new HashMap<>();
+
+        // Add main app icon pack name and color to the map
+        String mainIconPackName = context.getString(R.string.icon_pack);
+        String mainIconPackColor = context.getString(R.string.icon_pack_color);
+        iconPackColorsMap.computeIfAbsent(mainIconPackName, k -> new TreeSet<>()).add(mainIconPackColor);
+
+        // Collect side app icon pack names and their colors
+        List<String> sideAppIconPackageNames = IconPackAppHelper.getIconPackAppPackageNames(context);
+        for (String sideAppPackageName : sideAppIconPackageNames) {
+            String sideAppIconPackName = IconPackAppHelper.getIconPackName(context, sideAppPackageName);
+            String sideAppColor = IconPackAppHelper.getIconPackColor(context, sideAppPackageName);
+            iconPackColorsMap.computeIfAbsent(sideAppIconPackName, k -> new TreeSet<>()).add(sideAppColor);
+        }
+
+        // Convert the map entries to IconPack objects and add them to the iconPacks list
+        for (Map.Entry<String, Set<String>> entry : iconPackColorsMap.entrySet()) {
+            String iconPackName = entry.getKey();
+            Set<String> colors = entry.getValue();
+            int drawableId = RequestHelper.getIconPackDrawableId(context, iconPackName); // Replace with actual drawable retrieval
+
+            // Create IconPack object and add to iconPacks list
+            iconPacks.add(new IconPack(iconPackName, drawableId, colors.toArray(new String[0])));
+        }
     }
 
 }

@@ -620,15 +620,11 @@ public class RequestHelper {
     }
 
     public static String getDefaultIconPack(Context context) {
-        return context.getResources().getString(R.string.default_icon_pack);
+        return context.getResources().getString(R.string.icon_pack);
     }
 
     public static String getDefaultIconPackColor(Context context) {
-        return context.getResources().getString(R.string.default_icon_pack_color);
-    }
-
-    public static String[] getChangeIconColorsArray(Context context) {
-        return context.getResources().getStringArray(R.array.change_icon_colors_array);
+        return context.getResources().getString(R.string.icon_pack_color);
     }
 
     public static String[] getIconPackNames(Context context) {
