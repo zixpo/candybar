@@ -107,6 +107,7 @@
     <string name="home_icon_request_missed_apps">Manquantes\n%d applis</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher(s) installé(s)</string>
+    <string name="apply_installed_launchers">Launcher(s) installé(s)</string>
     <string name="apply_supported">Launchers supportés</string>
     <string name="apply_manual">Le lanceur %1$s ne prend pas en charge l\'application directe, mais vous pouvez appliquer %2$s manuellement depuis les paramètres du lanceur.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso ne supporte pas l\'application directe, mais vous pouvez suivre ces étapes :</string>
@@ -266,6 +267,8 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="pref_theme_header">Thème</string>
     <string name="pref_theme_dark">Thème sombre</string>
     <string name="pref_theme_dark_desc">Utiliser des couleurs sombres pour le thème de l\'application</string>
+    <string name="pref_notifications_header">Notifications</string>
+    <string name="pref_notifications">Recevoir les notifications</string>
     <string name="pref_wallpaper_header">Fond d\'écran</string>
     <string name="pref_wallpaper_location">Emplacement de sauvegarde du fond d\'écran</string>
     <string name="pref_language_header">Langue</string>
@@ -281,6 +284,8 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">La permission Espace de stockage est requise pour enregistrer le fond d\'écran</string>
+    <string name="permission_notification_denied_1">La permission des notifications est requis pour recevoir des notifications du développeur</string>
+    <string name="permission_notification_denied_2">Activer les notifications dans les paramètres de l\'application</string>
     <!-- Intent -->
     <string name="app_client">Choisir le client e-mail</string>
     <string name="no_email_app">Aucune application trouvée pour envoyer un e-mail</string>

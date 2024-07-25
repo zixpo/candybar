@@ -280,6 +280,8 @@
     <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Pro uložení tapety je třeba udělit oprávnění k úložišti</string>
+    <string name="permission_notification_denied_1">Oprávnění k oznámení je potřeba pro příjem oznámení od vývojáře</string>
+    <string name="permission_notification_denied_2">Zapnout oznámení z nastavení aplikace</string>
     <!-- Intent -->
     <string name="app_client">Vybrat aplikaci</string>
     <string name="no_email_app">Nebyla nalezena aplikace umožňující zaslání e-mailu</string>
