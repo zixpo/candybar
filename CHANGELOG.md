@@ -2,6 +2,10 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.20.2
+- Updated Muzei to v3.4.2 (thanks to [Donnnno][Donnnno])
+- Updated translations
+
 # v3.20.1
 - Improve notification support
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="changelog_date" translatable="false">June 28, 2024</string>
+    <string name="changelog_date" translatable="false">July 25, 2024</string>
 
     <string-array name="changelog">
         <item>Updated AGP and dependencies</item>
         <item>Updated Play Billing Library to v7</item>
+        <item>Updated Muzei to v3.4.2</item>
         <item>Updated OneSignal to v5. Better notification support</item>
         <item>Fixed duplicated icon file naming in XMLs</item>
         <item>Updated translations</item>
