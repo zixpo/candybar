@@ -36,8 +36,10 @@ publishing {
 }
 
 allprojects {
-    tasks.withType(JavaCompile) {
-        // options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    tasks.withType(JavaCompile).tap {
+        configureEach {
+            // options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
     }
 }
 
@@ -95,7 +97,7 @@ dependencies {
 
     api 'androidx.annotation:annotation:1.8.0'
     api 'androidx.appcompat:appcompat:1.7.0'
-    api 'com.google.android.apps.muzei:muzei-api:3.4.0'
+    api 'com.google.android.apps.muzei:muzei-api:3.4.2'
     api 'com.android.billingclient:billing:7.0.0'
     api 'dev.jahir.KustomAPI:api:6369c37'
     api 'dev.jahir.KustomAPI:preset:6369c37'
