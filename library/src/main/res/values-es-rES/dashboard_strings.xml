@@ -106,6 +106,7 @@ No podrás usarlo.</string>
     <string name="home_icon_request_missed_apps">%d aplicaciones perdidas</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher instalado</string>
+    <string name="apply_installed_launchers">Launchers instalados</string>
     <string name="apply_supported">Launchers soportados</string>
     <string name="apply_manual">El launcher %1$s no soporta aplicación directa, pero puedes aplicar %2$s manualmente desde los ajustes del launcher.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso no soporta aplicación directa, pero puedes seguir estos pasos:</string>
@@ -156,8 +157,10 @@ No podrás usarlo.</string>
     <string name="apply_launcher_not_installed">%s no está instalado. ¿Quieres abrir Google Play Store para descargarlo e instalarlo?</string>
     <string name="apply_launcher_not_installable">%s Launcher no está instalado. Por favor inténtalo de nuevo despues de instalar el launcher.</string>
     <string name="apply_cmtheme_not_available">El gestor de temas CM no está disponible en este dispositivo</string>
+    <string name="apply_cmtheme_failed">No se puede iniciar el gestor de temas CM. Puedes intentar establecer el paquete de iconos manualmente desde los ajustes.</string>
     <string name="apply_lg_home">Para establecer este paquete de iconos abre Ajustes - Pantalla - Pantalla de Inicio - Tema</string>
     <string name="apply_lg_home_not_available">LG Home no está disponible en este dispositivo</string>
+    <string name="apply_lg_home_failed">No se pueden iniciar los ajustes de Inicio de LG. Puedes intentar establecer el paquete de iconos manualmente desde los ajustes.</string>
     <string name="apply_lg_home_nougat">LG Home con Android Nougat ya no soporta el paquete de iconos. Necesitas un launcher personalizado para usar el paquete de iconos.</string>
     <string name="apply_launcher_incompatible">El launcher %s no soporta ningún paquete de iconos, por lo que no puedes usar este paquete de iconos con este launcher. Puedes probar una aplicación de terceros para usar este paquete de iconos en el launcher %2$s. ¿Quieres instalarlo?</string>
     <string name="apply_launcher_incompatible_depending_on_version">El launcher %s no soporta paquetes de íconos en Android %d o anterior. Por favor actualiza tu versión de Android o instala un lanzador de terceros para usar este paquete de íconos. También puedes probar una aplicación de ayuda para cambiar íconos individuales. ¿Quieres instalarla?</string>
@@ -202,6 +205,7 @@ No podrás usarlo.</string>
     <!-- Premium Request -->
     <string name="premium_request">Solicitud Premium de Iconos</string>
     <string name="premium_request_no_internet">Asegúrate de que tu teléfono está conectado a internet antes de enviar una solicitud premium</string>
+    <string name="premium_request_desc">La solicitud premium de iconos es de pago. Puedes obtener tus aplicaciones solicitadas más rápido usando la solicitud premium de iconos.</string>
     <string name="premium_request_buy">Comprar</string>
     <string name="premium_request_count">Total\n%d solicitud</string>
     <string name="premium_request_used">Usado\n%d solicitud</string>
@@ -211,6 +215,8 @@ Tienes que usar todas antes de comprar de nuevo un paquete de solicitudes premiu
     <string name="premium_request_limit">Sólo dispones de %d solicitud(es) premium,</string>
     <string name="premium_request_limit1">pero seleccionaste %d aplicación(es).
 \n\nTienes que usar todas tus solicitudes premium antes de usar de nuevo la solicitud normal.</string>
+    <string name="premium_request_consume_failed">No se puede usar la solicitud premium. Asegúrate de tener una conexión estable a internet y vuelve a intentarlo.
+        Ve a los ajustes para volver a hacer las solicitudes premium.</string>
     <string name="premium_request_rebuilding">Reintentando la Solicitud Premium …</string>
     <string name="premium_request_rebuilding_empty">No has realizado una Solicitud Premium</string>
     <string name="premium_request_exist">Aún te queda un paquete Premium de Solicitud de Iconos.
@@ -256,6 +262,8 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="pref_theme_header">Tema</string>
     <string name="pref_theme_dark">Tema Oscuro</string>
     <string name="pref_theme_dark_desc">Usar color oscuro para el tema de la aplicación</string>
+    <string name="pref_notifications_header">Notificaciones</string>
+    <string name="pref_notifications">Recibir notificaciones</string>
     <string name="pref_wallpaper_header">Fondo de pantalla</string>
     <string name="pref_wallpaper_location">Localización de fondos de pantalla guardados</string>
     <string name="pref_language_header">Idioma</string>
