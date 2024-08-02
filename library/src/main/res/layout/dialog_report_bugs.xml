@@ -24,6 +24,7 @@
         app:boxStrokeColor="?colorSecondary">
 
         <EditText
+            android:importantForAutofill="no"
             android:id="@+id/input_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

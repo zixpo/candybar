@@ -209,9 +209,9 @@
     <string name="txt_open">Otwórz</string>
     <string name="txt_close">Zamknij</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">Dodaj zakładkę do tej ikony</string>
-    <string name="icon_list_content_description">Lista ikon wchodzących w skład zestawu</string>
-    <string name="icon_search_list_content_description">Lista ikon pasujących do wyszukiwanego terminu</string>
-    <string name="about_item_social_content_description">Link do profilu autora zestawu ikon: </string>
-    <string name="share_icon_pack_button_content_description">Udostępnij tę aplikację</string>
+    <string name="desc_bookmark_button_content">Dodaj zakładkę do tej ikony</string>
+    <string name="desc_icon_list_content">Lista ikon wchodzących w skład zestawu</string>
+    <string name="desc_icon_search_list_content">Lista ikon pasujących do wyszukiwanego terminu</string>
+    <string name="desc_about_item_social_content">Link do profilu autora zestawu ikon: </string>
+    <string name="desc_share_icon_pack_button_content">Udostępnij tę aplikację</string>
 </resources>

@@ -212,6 +212,6 @@
     <string name="txt_close">Închidere</string>
     <string name="txt_new">Nou</string>
     <!-- Content descriptions for screen readers -->
-    <string name="icon_request_submit_button_content_description">Trimite o cerere de pictograme</string>
-    <string name="share_icon_pack_button_content_description">Distribuie această aplicație cuiva</string>
+    <string name="desc_icon_request_submit_button_content">Trimite o cerere de pictograme</string>
+    <string name="desc_share_icon_pack_button_content">Distribuie această aplicație cuiva</string>
 </resources>

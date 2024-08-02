@@ -218,11 +218,11 @@
     <string name="txt_close">ปิด</string>
     <string name="txt_new">ใหม่</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">เพิ่มไอคอนนี้ไปยังบุ๊กมาร์ก</string>
-    <string name="icon_search_close_button_content_description">ปิดการค้นหาไอคอน</string>
-    <string name="icon_request_submit_button_content_description">ส่งคำขอไอคอน</string>
-    <string name="icon_list_content_description">รายชื่อไอคอนที่มีในชุดไอคอน</string>
-    <string name="icon_search_list_content_description">รายชื่อของไอคอนที่ตรงกับคำค้นหา</string>
-    <string name="about_item_social_content_description">ลิงก์โพรไฟล์ของนักพัฒนาชุดไอคอน: </string>
-    <string name="share_icon_pack_button_content_description">แชร์แอปนี้ให้ผู้อื่น</string>
+    <string name="desc_bookmark_button_content">เพิ่มไอคอนนี้ไปยังบุ๊กมาร์ก</string>
+    <string name="desc_icon_search_close_button_content">ปิดการค้นหาไอคอน</string>
+    <string name="desc_icon_request_submit_button_content">ส่งคำขอไอคอน</string>
+    <string name="desc_icon_list_content">รายชื่อไอคอนที่มีในชุดไอคอน</string>
+    <string name="desc_icon_search_list_content">รายชื่อของไอคอนที่ตรงกับคำค้นหา</string>
+    <string name="desc_about_item_social_content">ลิงก์โพรไฟล์ของนักพัฒนาชุดไอคอน: </string>
+    <string name="desc_share_icon_pack_button_content">แชร์แอปนี้ให้ผู้อื่น</string>
 </resources>

@@ -316,11 +316,11 @@
     <string name="txt_close">إغلاق</string>
     <string name="txt_new">جديد</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">إضافة هذه الأيقونة إلى قسم الإشارات المرجعية</string>
-    <string name="icon_search_close_button_content_description">إغلاق بحث الأيقونات</string>
-    <string name="icon_request_submit_button_content_description">تقديم طلب أيقونات</string>
-    <string name="icon_list_content_description">قائمة الأيقونات المضمنة في حزمة الأيقونات</string>
-    <string name="icon_search_list_content_description">قائمة الأيقونات التي تتطابق مع مصطلح البحث</string>
-    <string name="about_item_social_content_description">رابط إلى الملف الشخصي لمطور حزمة الأيقونات: </string>
-    <string name="share_icon_pack_button_content_description">مشاركة هذا التطبيق مع شخص ما</string>
+    <string name="desc_bookmark_button_content">إضافة هذه الأيقونة إلى قسم الإشارات المرجعية</string>
+    <string name="desc_icon_search_close_button_content">إغلاق بحث الأيقونات</string>
+    <string name="desc_icon_request_submit_button_content">تقديم طلب أيقونات</string>
+    <string name="desc_icon_list_content">قائمة الأيقونات المضمنة في حزمة الأيقونات</string>
+    <string name="desc_icon_search_list_content">قائمة الأيقونات التي تتطابق مع مصطلح البحث</string>
+    <string name="desc_about_item_social_content">رابط إلى الملف الشخصي لمطور حزمة الأيقونات: </string>
+    <string name="desc_share_icon_pack_button_content">مشاركة هذا التطبيق مع شخص ما</string>
 </resources>

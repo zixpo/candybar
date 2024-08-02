@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/content_padding_reverse"
-    android:layout_marginLeft="@dimen/content_padding_reverse"
     android:layout_marginStart="@dimen/content_padding_reverse"
     android:orientation="vertical">
 
@@ -95,7 +94,7 @@
 
                 <ImageView
                     android:id="@+id/share"
-                    android:contentDescription="@string/share_icon_pack_button_content_description"
+                    android:contentDescription="@string/desc_share_icon_pack_button_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/button_margin_merged"
@@ -104,6 +103,7 @@
                     android:theme="@style/RippleStyle" />
 
                 <ImageView
+                    android:contentDescription="@string/desc_home_update"
                     android:id="@+id/update"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

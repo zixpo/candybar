@@ -435,7 +435,7 @@ public class TapIntroHelper {
             AppCompatActivity activity = (AppCompatActivity) context;
 
             if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
             }
 
             new Handler().postDelayed(() -> {

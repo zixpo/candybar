@@ -319,11 +319,11 @@
     <string name="txt_close">Zavřít</string>
     <string name="txt_new">Nový</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">Přidat tuto ikonu do sekce Záložky</string>
-    <string name="icon_search_close_button_content_description">Zavřít vyhledávání ikon</string>
-    <string name="icon_request_submit_button_content_description">Odeslat požadavek na ikonu</string>
-    <string name="icon_list_content_description">Seznam ikon obsažených v balíčku ikon</string>
-    <string name="icon_search_list_content_description">Seznam ikon, které odpovídají hledanému výrazu</string>
-    <string name="about_item_social_content_description">Odkaz na online profil autora balíčku ikon: </string>
-    <string name="share_icon_pack_button_content_description">Sdílet tuto aplikaci</string>
+    <string name="desc_bookmark_button_content">Přidat tuto ikonu do sekce Záložky</string>
+    <string name="desc_icon_search_close_button_content">Zavřít vyhledávání ikon</string>
+    <string name="desc_icon_request_submit_button_content">Odeslat požadavek na ikonu</string>
+    <string name="desc_icon_list_content">Seznam ikon obsažených v balíčku ikon</string>
+    <string name="desc_icon_search_list_content">Seznam ikon, které odpovídají hledanému výrazu</string>
+    <string name="desc_about_item_social_content">Odkaz na online profil autora balíčku ikon: </string>
+    <string name="desc_share_icon_pack_button_content">Sdílet tuto aplikaci</string>
 </resources>

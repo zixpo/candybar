@@ -4,7 +4,6 @@
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginRight="@dimen/content_padding"
     android:layout_marginEnd="@dimen/content_padding"
     android:layout_marginBottom="@dimen/content_padding"
     app:cardBackgroundColor="?cb_cardBackground"

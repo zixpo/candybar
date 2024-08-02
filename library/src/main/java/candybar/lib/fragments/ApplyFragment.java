@@ -204,13 +204,9 @@ public class ApplyFragment extends Fragment {
                     } catch (Exception ignored) {
                     }
 
-                    if (installed.size() == 1) {
+                    if (!installed.isEmpty()) {
                         launchers.add(new Icon(getResources().getString(
                                 R.string.apply_installed), -1, null));
-                    }
-                    else{
-                        launchers.add(new Icon(getResources().getString(
-                                R.string.apply_installed_launchers), -3, null));
                     }
 
                     launchers.addAll(installed);

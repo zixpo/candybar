@@ -226,11 +226,11 @@
     <string name="txt_close">Закрыть</string>
     <string name="txt_new">Новый</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">Добавить эту иконку в закладки</string>
-    <string name="icon_search_close_button_content_description">Закрыть поиск иконок</string>
-    <string name="icon_request_submit_button_content_description">Отправить запрос на иконку</string>
-    <string name="icon_list_content_description">Список иконок, включенных в пакет</string>
-    <string name="icon_search_list_content_description">Список иконок, соответствующие поисковому запросу</string>
-    <string name="about_item_social_content_description">Ссылка на онлайн профиль автора пакета иконок: </string>
-    <string name="share_icon_pack_button_content_description">Поделитесь этим приложением с другими</string>
+    <string name="desc_bookmark_button_content">Добавить эту иконку в закладки</string>
+    <string name="desc_icon_search_close_button_content">Закрыть поиск иконок</string>
+    <string name="desc_icon_request_submit_button_content">Отправить запрос на иконку</string>
+    <string name="desc_icon_list_content">Список иконок, включенных в пакет</string>
+    <string name="desc_icon_search_list_content">Список иконок, соответствующие поисковому запросу</string>
+    <string name="desc_about_item_social_content">Ссылка на онлайн профиль автора пакета иконок: </string>
+    <string name="desc_share_icon_pack_button_content">Поделитесь этим приложением с другими</string>
 </resources>

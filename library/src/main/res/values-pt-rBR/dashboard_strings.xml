@@ -239,5 +239,5 @@
     <string name="txt_close">Fechar</string>
     <string name="txt_new">Novo</string>
     <!-- Content descriptions for screen readers -->
-    <string name="share_icon_pack_button_content_description">Compartilhe este app com alguém</string>
+    <string name="desc_share_icon_pack_button_content">Compartilhe este app com alguém</string>
 </resources>

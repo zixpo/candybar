@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <LinearLayout
         android:id="@+id/no_bookmarks_found_container"
         android:layout_width="match_parent"
@@ -15,7 +16,8 @@
         <ImageView
             android:id="@+id/bookmark_image"
             android:layout_width="112dp"
-            android:layout_height="112dp" />
+            android:layout_height="112dp"
+            android:contentDescription="@string/desc_bookmark" />
 
         <TextView
             android:layout_width="match_parent"
@@ -33,7 +35,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/icons_grid"
-        android:contentDescription="@string/icon_list_content_description"
+        android:contentDescription="@string/desc_icon_list_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="@dimen/content_padding"

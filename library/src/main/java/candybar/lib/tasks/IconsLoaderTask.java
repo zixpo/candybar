@@ -102,7 +102,6 @@ public class IconsLoaderTask extends AsyncTaskBase {
             if (mContext.get() == null) return;
 
             FragmentManager fm = ((AppCompatActivity) mContext.get()).getSupportFragmentManager();
-            if (fm == null) return;
 
             Fragment fragment = fm.findFragmentByTag("home");
             if (fragment == null) return;

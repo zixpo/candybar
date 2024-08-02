@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,8 +8,8 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="@dimen/content_padding"
         android:paddingStart="@dimen/content_padding"
+        android:paddingEnd="@dimen/content_padding"
         android:paddingTop="@dimen/content_padding"
         android:paddingBottom="?attr/actionBarSize"
         android:clipToPadding="false" />

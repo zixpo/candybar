@@ -135,10 +135,7 @@ public class Popup {
             return minWidth;
         }
 
-        if (measuredWidth >= minWidth && measuredWidth <= maxWidth) {
-            return measuredWidth;
-        }
-        return maxWidth;
+        return Math.min(measuredWidth, maxWidth);
     }
 
     public static class Builder {

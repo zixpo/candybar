@@ -302,7 +302,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             p.updateItem(position, item);
                             if (Preferences.get(this).isCropWallpaper()) {
                                 if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
                                 }
                                 return;
                             }
@@ -524,7 +524,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
             if (Preferences.get(CandyBarWallpaperActivity.this).isCropWallpaper()) {
                 if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
                 }
             }
         }

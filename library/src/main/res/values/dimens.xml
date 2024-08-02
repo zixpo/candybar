@@ -8,6 +8,7 @@
     <dimen name="content_divider_size">1dp</dimen>
 
     <dimen name="content_item_list_margin_start">40dp</dimen>
+    <dimen name="content_item_list_margin_end">20dp</dimen>
     <dimen name="content_item_list_padding_start">56dp</dimen>
 
     <!-- Card Global -->
@@ -77,7 +78,7 @@
     <dimen name="popup_max_width">190dp</dimen>
 
     <!-- Icon -->
-    <dimen name="icon_size_medium">40dp</dimen>
+    <dimen name="icon_size_medium">48dp</dimen>
     <dimen name="icon_size_small">24dp</dimen>
     <dimen name="icon_size_tiny">8dp</dimen>
 

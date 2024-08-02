@@ -43,7 +43,8 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:paddingStart="@dimen/content_item_list_margin_start"
-            android:paddingLeft="@dimen/content_item_list_margin_start">
+            android:paddingEnd="@dimen/content_item_list_margin_end"
+            >
 
             <TextView
                 android:id="@+id/subtitle"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -12,11 +13,12 @@
         android:gravity="end"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:paddingRight="12dp">
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
 
         <ImageView
             android:id="@+id/bookmark_button"
-            android:contentDescription="@string/bookmark_button_content_description"
+            android:contentDescription="@string/desc_bookmark_button_content"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
@@ -29,7 +31,8 @@
     <ImageView
         android:id="@+id/icon"
         android:layout_width="@dimen/icon_preview"
-        android:layout_height="@dimen/icon_preview" />
+        android:layout_height="@dimen/icon_preview"
+        android:contentDescription="@string/desc_icon_preview" />
 
     <TextView
         android:id="@+id/name"

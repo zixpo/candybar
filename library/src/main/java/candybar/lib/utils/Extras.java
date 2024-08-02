@@ -34,8 +34,8 @@ public abstract class Extras {
         FAQS("faqs"),
         ABOUT("about");
 
-        public String value;
-        public int idx;
+        public final String value;
+        public final int idx;
 
         Tag(String name) {
             value = name;
