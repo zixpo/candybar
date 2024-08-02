@@ -318,11 +318,11 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="txt_close">Cerrar</string>
     <string name="txt_new">Nuevo</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">Añade este icono a la sección de marcadores</string>
-    <string name="icon_search_close_button_content_description">Cerrar la búsqueda de íconos</string>
-    <string name="icon_request_submit_button_content_description">Enviar una solicitud de íconos</string>
-    <string name="icon_list_content_description">La lista de íconos incluidos en el paquete</string>
-    <string name="icon_search_list_content_description">La lista de íconos que coincide con el término de búsqueda</string>
-    <string name="about_item_social_content_description">Un enlace a un perfil en línea del autor del paquete de iconos: </string>
-    <string name="share_icon_pack_button_content_description">Comparte esta aplicación con alguien</string>
+    <string name="desc_bookmark_button_content">Añade este icono a la sección de marcadores</string>
+    <string name="desc_icon_search_close_button_content">Cerrar la búsqueda de íconos</string>
+    <string name="desc_icon_request_submit_button_content">Enviar una solicitud de íconos</string>
+    <string name="desc_icon_list_content">La lista de íconos incluidos en el paquete</string>
+    <string name="desc_icon_search_list_content">La lista de íconos que coincide con el término de búsqueda</string>
+    <string name="desc_about_item_social_content">Un enlace a un perfil en línea del autor del paquete de iconos: </string>
+    <string name="desc_share_icon_pack_button_content">Comparte esta aplicación con alguien</string>
 </resources>

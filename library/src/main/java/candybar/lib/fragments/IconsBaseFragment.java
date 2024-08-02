@@ -105,9 +105,8 @@ public class IconsBaseFragment extends Fragment {
 
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
-            public boolean onMenuItemActionExpand(MenuItem item) {
+            public boolean onMenuItemActionExpand(@NonNull MenuItem item) {
                 FragmentManager fm = requireActivity().getSupportFragmentManager();
-                if (fm == null) return false;
 
                 setHasOptionsMenu(false);
                 View view = requireActivity().findViewById(R.id.shadow);
@@ -144,7 +143,7 @@ public class IconsBaseFragment extends Fragment {
             }
 
             @Override
-            public boolean onMenuItemActionCollapse(MenuItem item) {
+            public boolean onMenuItemActionCollapse(@NonNull MenuItem item) {
                 return true;
             }
         });

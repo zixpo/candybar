@@ -5,6 +5,7 @@
         android:checkableBehavior="single">
 
         <item
+            android:contentDescription="@string/desc_home"
             android:id="@+id/navigation_view_home"
             android:icon="@drawable/ic_drawer_home"
             android:checked="true"

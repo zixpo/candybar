@@ -6,7 +6,7 @@
         android:id="@+id/menu_delete"
         android:title="@string/menu_delete"
         android:icon="@drawable/ic_toolbar_delete"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/menu_select_all"

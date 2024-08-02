@@ -20,14 +20,14 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
             app:cardElevation="0dp"
             app:cardCornerRadius="8dp">
 
             <ImageView
                 android:id="@+id/icon"
                 android:layout_width="@dimen/icon_size_medium"
-                android:layout_height="@dimen/icon_size_medium" />
+                android:layout_height="@dimen/icon_size_medium"
+                android:contentDescription="@string/desc_apply_icon" />
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -36,7 +36,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center_vertical"
-            android:layout_marginLeft="@dimen/content_margin"
             android:layout_marginStart="@dimen/content_margin">
 
             <TextView

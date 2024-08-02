@@ -124,8 +124,8 @@ public class LicensesFragment extends DialogFragment {
 
                             case XmlPullParser.TEXT:
                                 String[] parts = xpp.getText().split("\n");
-                                for (int i = 0; i < parts.length; i++) {
-                                    licenseText += parts[i].trim() + "\n";
+                                for (String part : parts) {
+                                    licenseText += part.trim() + "\n";
                                 }
                                 licenseText = licenseText.trim();
                                 licenseText = licenseText.replaceAll("(.)\\n(.)", "$1 $2");

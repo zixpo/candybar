@@ -324,11 +324,11 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="txt_close">Fermer</string>
     <string name="txt_new">Nouveau</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">Ajouter cette icône à la section des favoris</string>
-    <string name="icon_search_close_button_content_description">Fermer la recherche d\'icône</string>
-    <string name="icon_request_submit_button_content_description">Soumettre une demande d\'icône</string>
-    <string name="icon_list_content_description">La liste des icônes incluses dans le pack d\'icônes</string>
-    <string name="icon_search_list_content_description">La liste des icônes qui correspondent au terme recherché</string>
-    <string name="about_item_social_content_description">Un lien vers un profil en ligne de l\'auteur du pack d\'icônes : </string>
-    <string name="share_icon_pack_button_content_description">Partager cette application avec une connaissance</string>
+    <string name="desc_bookmark_button_content">Ajouter cette icône à la section des favoris</string>
+    <string name="desc_icon_search_close_button_content">Fermer la recherche d\'icône</string>
+    <string name="desc_icon_request_submit_button_content">Soumettre une demande d\'icône</string>
+    <string name="desc_icon_list_content">La liste des icônes incluses dans le pack d\'icônes</string>
+    <string name="desc_icon_search_list_content">La liste des icônes qui correspondent au terme recherché</string>
+    <string name="desc_about_item_social_content">Un lien vers un profil en ligne de l\'auteur du pack d\'icônes : </string>
+    <string name="desc_share_icon_pack_button_content">Partager cette application avec une connaissance</string>
 </resources>

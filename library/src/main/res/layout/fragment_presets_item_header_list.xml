@@ -13,8 +13,8 @@
         android:id="@+id/kustom_icon"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginRight="@dimen/content_padding"
-        android:layout_marginEnd="@dimen/content_padding" />
+        android:layout_marginEnd="@dimen/content_padding"
+        android:contentDescription="@string/desc_presets_kustom" />
 
     <TextView
         android:id="@+id/name"
@@ -29,7 +29,7 @@
         android:id="@+id/forward_icon"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginStart="0dp" />
+        android:layout_marginStart="0dp"
+        android:contentDescription="@string/desc_presets_forward" />
 
 </LinearLayout>

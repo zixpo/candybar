@@ -865,7 +865,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             image.setRatio(16, 9);
         }
 
-        if (titleText.length() == 0) {
+        if (titleText.isEmpty()) {
             container.setVisibility(View.GONE);
         } else {
             title.setText(titleText);
@@ -996,7 +996,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     private Fragment getFragment(int position) {
         mFragmentTag = Extras.Tag.HOME;
         if (position == Extras.Tag.HOME.idx) {
-            mFragmentTag = Extras.Tag.HOME;
             return new HomeFragment();
         } else if (position == Extras.Tag.APPLY.idx) {
             mFragmentTag = Extras.Tag.APPLY;

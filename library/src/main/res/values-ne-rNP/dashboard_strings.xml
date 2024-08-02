@@ -264,11 +264,11 @@
     <string name="txt_close">बन्द गर्नुहोस्</string>
     <string name="txt_new">नयाँ</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">यस आइकनलाई बुकमार्क क्षेत्रमा समावेस गर्ने</string>
-    <string name="icon_search_close_button_content_description">आइकन खोजि बन्द गर्ने </string>
-    <string name="icon_request_submit_button_content_description">आइकनको अनुरोध समावेस गर्ने </string>
-    <string name="icon_list_content_description">यस आइकन प्याकमा समावेश आइकनहरूको सूची</string>
-    <string name="icon_search_list_content_description">खोजी गरिएको शब्दसँग मेल खाने आइकनहरूको सूची</string>
-    <string name="about_item_social_content_description">आइकन प्याक निर्माणकर्ताको अनलाइन प्रोफाइल लिङ्क:</string>
-    <string name="share_icon_pack_button_content_description">यस एपलाई साथीहरु माझ शेयर गर्नुहोस </string>
+    <string name="desc_bookmark_button_content">यस आइकनलाई बुकमार्क क्षेत्रमा समावेस गर्ने</string>
+    <string name="desc_icon_search_close_button_content">आइकन खोजि बन्द गर्ने </string>
+    <string name="desc_icon_request_submit_button_content">आइकनको अनुरोध समावेस गर्ने </string>
+    <string name="desc_icon_list_content">यस आइकन प्याकमा समावेश आइकनहरूको सूची</string>
+    <string name="desc_icon_search_list_content">खोजी गरिएको शब्दसँग मेल खाने आइकनहरूको सूची</string>
+    <string name="desc_about_item_social_content">आइकन प्याक निर्माणकर्ताको अनलाइन प्रोफाइल लिङ्क:</string>
+    <string name="desc_share_icon_pack_button_content">यस एपलाई साथीहरु माझ शेयर गर्नुहोस </string>
 </resources>

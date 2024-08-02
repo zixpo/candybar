@@ -14,6 +14,10 @@ public class PresetsHelper {
             String[] wallpapers = context.getAssets().list("wallpapers");
             String[] widgets = context.getAssets().list("widgets");
 
+            assert komponents != null;
+            assert lockscreens != null;
+            assert wallpapers != null;
+            assert widgets != null;
             return komponents.length + lockscreens.length + wallpapers.length + widgets.length;
         } catch (Exception e) {
             LogUtil.e(Log.getStackTraceString(e));

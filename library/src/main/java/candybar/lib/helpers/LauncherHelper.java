@@ -18,6 +18,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.Objects;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
@@ -298,6 +299,7 @@ public class LauncherHelper {
                 try {
                     final Intent action = context.getPackageManager().getLaunchIntentForPackage(
                             launcherPackage);
+                    assert action != null;
                     action.putExtra("apply_icon_pack", context.getPackageName());
                     action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(action);
@@ -477,6 +479,7 @@ public class LauncherHelper {
                     final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
                     flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
                     flickAction.setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
+                    assert flick != null;
                     flick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(flickAction);
                     context.startActivity(flick);
@@ -500,6 +503,7 @@ public class LauncherHelper {
                     final Intent go = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
                     go.putExtra("type", 1);
                     go.putExtra("pkgname", context.getPackageName());
+                    assert goex != null;
                     goex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(go);
                     context.startActivity(goex);
@@ -598,6 +602,7 @@ public class LauncherHelper {
                 }
                 break;
             case LGHOME:
+            case PIXEL:
                 launcherIncompatible(context, launcherName);
                 break;
             case LUCID:
@@ -684,9 +689,6 @@ public class LauncherHelper {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
-            case PIXEL:
-                launcherIncompatible(context, launcherName);
-                break;
             case POCO:
                 applyManual(context, launcherPackage, launcherName, "com.miui.home.settings.HomeSettingsActivity");
                 break;
@@ -726,6 +728,7 @@ public class LauncherHelper {
                     soloAction.putExtra("EXTRA_THEMENAME", context.getResources().getString(
                             R.string.app_name));
                     soloAction.putExtra("EXTRA_PACKAGENAME", context.getPackageName());
+                    assert solo != null;
                     solo.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(soloAction);
                     context.startActivity(solo);
@@ -866,16 +869,14 @@ public class LauncherHelper {
                         }
                     })
                     .negativeText(android.R.string.cancel)
-                    .onNegative(((dialog, which) -> {
-                        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                                "click",
-                                new HashMap<String, Object>() {{
-                                    put("section", "apply");
-                                    put("action", "manual_open_cancel");
-                                    put("launcher", launcherPackage);
-                                }}
-                        );
-                    }))
+                    .onNegative(((dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "manual_open_cancel");
+                                put("launcher", launcherPackage);
+                            }}
+                    )))
                     .show();
         } else {
             openGooglePlay(context, launcherPackage, launcherName);
@@ -899,27 +900,23 @@ public class LauncherHelper {
                 .title(launcherName)
                 .content(description + "\n\n\t• " + String.join("\n\t• ", steps))
                 .positiveText(android.R.string.yes)
-                .onPositive((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_confirm");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                })
+                .onPositive((dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "apply");
+                            put("action", "manual_open_confirm");
+                            put("launcher", launcherName);
+                        }}
+                ))
                 .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_cancel");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                }))
+                .onNegative(((dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "apply");
+                            put("action", "manual_open_cancel");
+                            put("launcher", launcherName);
+                        }}
+                )))
                 .show();
     }
 
@@ -1019,16 +1016,14 @@ public class LauncherHelper {
                     }
                 })
                 .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_cancel");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                }))
+                .onNegative(((dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "apply");
+                            put("action", "manual_open_cancel");
+                            put("launcher", launcherName);
+                        }}
+                )))
                 .show();
     }
 
@@ -1066,16 +1061,14 @@ public class LauncherHelper {
                     }
                 })
                 .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "incompatible_third_party_cancel");
-                                put("launcher", launcherName);
-                            }}
-                    );
-                }))
+                .onNegative(((dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "apply");
+                            put("action", "incompatible_third_party_cancel");
+                            put("launcher", launcherName);
+                        }}
+                )))
                 .show();
     }
 
@@ -1113,16 +1106,14 @@ public class LauncherHelper {
                     }
                 })
                 .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "not_installed_google_play_cancel");
-                                put("launcher", packageName);
-                            }}
-                    );
-                }))
+                .onNegative(((dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<String, Object>() {{
+                            put("section", "apply");
+                            put("action", "not_installed_google_play_cancel");
+                            put("launcher", packageName);
+                        }}
+                )))
                 .show();
     }
 
@@ -1130,7 +1121,7 @@ public class LauncherHelper {
         PackageManager pm = context.getPackageManager();
         Intent intent = new Intent("android.intent.action.MAIN");
         intent.addCategory("android.intent.category.HOME");
-        String packageName = pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;
+        String packageName = Objects.requireNonNull(pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)).activityInfo.packageName;
         Launcher launcher = getLauncher(packageName);
         if (launcher.supportsDirectApply(packageName)) {
             applyLauncher(context, packageName, launcher.name, launcher);

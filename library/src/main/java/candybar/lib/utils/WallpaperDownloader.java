@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
 
 import candybar.lib.R;
 import candybar.lib.helpers.TypefaceHelper;
@@ -149,10 +150,14 @@ public class WallpaperDownloader {
                 if (!output.exists()) {
                     if (!output.createNewFile()) return;
                 }
-                OutputStream os = new FileOutputStream(output);
+                OutputStream os = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    os = Files.newOutputStream(output.toPath());
+                }
                 byte[] buffer = new byte[1024];
                 int read;
                 while ((read = is.read(buffer)) != -1) {
+                    assert os != null;
                     os.write(buffer, 0, read);
                 }
 

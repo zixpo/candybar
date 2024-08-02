@@ -24,6 +24,7 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/desc_wallpaper_back"
         android:padding="@dimen/content_margin"
         android:layout_gravity="top|start"
         android:background="?attr/selectableItemBackgroundBorderless"
@@ -85,6 +86,7 @@
                 android:id="@+id/menu_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/desc_wallpaper_save"
                 android:padding="@dimen/content_margin"
                 android:visibility="gone"
                 android:background="?attr/selectableItemBackgroundBorderless"
@@ -94,6 +96,7 @@
                 android:id="@+id/menu_apply"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/desc_wallpaper_apply"
                 android:padding="@dimen/content_margin"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:theme="@style/RippleStyle" />

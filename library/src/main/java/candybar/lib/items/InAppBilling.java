@@ -22,6 +22,8 @@ import androidx.annotation.NonNull;
 
 import com.android.billingclient.api.ProductDetails;
 
+import java.util.Objects;
+
 public class InAppBilling {
 
     private final String mProductId;
@@ -52,7 +54,7 @@ public class InAppBilling {
     }
 
     public String getPrice() {
-        return mProductDetails.getOneTimePurchaseOfferDetails().getFormattedPrice();
+        return Objects.requireNonNull(mProductDetails.getOneTimePurchaseOfferDetails()).getFormattedPrice();
     }
 
     public String getProductId() {

@@ -75,6 +75,7 @@ public class WallpaperPropertiesLoaderTask extends AsyncTaskBase {
                     mWallpaper.setDimensions(imageSize);
                     mWallpaper.setMimeType(options.outMimeType);
 
+                    assert bitmap != null;
                     int contentLength = bitmap.getAllocationByteCount();
                     if (contentLength > 0) {
                         mWallpaper.setSize(contentLength);

@@ -57,7 +57,6 @@ public class IconsFragment extends Fragment {
 
     private List<Icon> mIcons;
     private boolean isBookmarksFragment;
-    private boolean prevIsEmpty = false;
 
     private static final String INDEX = "index";
 
@@ -91,7 +90,7 @@ public class IconsFragment extends Fragment {
             mIcons = Database.get(requireActivity()).getBookmarkedIcons(requireActivity());
             bookmarksIconFragment = new WeakReference<>(this);
             isBookmarksFragment = true;
-            prevIsEmpty = mIcons.size() == 0;
+            boolean prevIsEmpty = mIcons.isEmpty();
         } else if (CandyBarMainActivity.sSections != null) {
             mIcons = CandyBarMainActivity.sSections.get(index).getIcons();
         }
@@ -138,7 +137,7 @@ public class IconsFragment extends Fragment {
     }
 
     private void setupViewVisibility() {
-        if (isBookmarksFragment && mIcons.size() == 0) {
+        if (isBookmarksFragment && mIcons.isEmpty()) {
             mNoBookmarksFoundView.setVisibility(View.VISIBLE);
             mRecyclerView.setVisibility(View.GONE);
         } else {

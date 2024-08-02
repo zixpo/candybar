@@ -196,7 +196,7 @@ public class IntentChooserFragment extends DialogFragment {
 
                                     List<ResolveInfo> list = requireActivity().getPackageManager().queryIntentActivities(
                                             inbox, PackageManager.MATCH_DEFAULT_ONLY);
-                                    if (list.size() > 0) {
+                                    if (!list.isEmpty()) {
                                         apps.add(new IntentChooser(resolveInfo, IntentChooser.TYPE_SUPPORTED));
                                         break;
                                     }
@@ -234,7 +234,7 @@ public class IntentChooserFragment extends DialogFragment {
                 mAdapter = new IntentAdapter(getActivity(), apps, mType);
                 mIntentList.setAdapter(mAdapter);
 
-                if (apps.size() == 0) {
+                if (apps.isEmpty()) {
                     mNoApp.setVisibility(View.VISIBLE);
                     setCancelable(true);
                 }

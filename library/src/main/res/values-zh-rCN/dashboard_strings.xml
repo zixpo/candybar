@@ -316,11 +316,11 @@
     <string name="txt_close">关闭</string>
     <string name="txt_new">新</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">将此图标添加到书签</string>
-    <string name="icon_search_close_button_content_description">关闭图标搜索</string>
-    <string name="icon_request_submit_button_content_description">提交图标请求</string>
-    <string name="icon_list_content_description">图标包中包含的图标列表</string>
-    <string name="icon_search_list_content_description">搜索到的图标列表</string>
-    <string name="about_item_social_content_description">图标包作者个人资料： </string>
-    <string name="share_icon_pack_button_content_description">与您的朋友分享这个图标包</string>
+    <string name="desc_bookmark_button_content">将此图标添加到书签</string>
+    <string name="desc_icon_search_close_button_content">关闭图标搜索</string>
+    <string name="desc_icon_request_submit_button_content">提交图标请求</string>
+    <string name="desc_icon_list_content">图标包中包含的图标列表</string>
+    <string name="desc_icon_search_list_content">搜索到的图标列表</string>
+    <string name="desc_about_item_social_content">图标包作者个人资料： </string>
+    <string name="desc_share_icon_pack_button_content">与您的朋友分享这个图标包</string>
 </resources>

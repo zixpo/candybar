@@ -9,7 +9,7 @@
     <!-- This view covers the gap created by inset margin of toolbar -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:id="@+id/inset_padding"/>
 

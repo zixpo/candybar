@@ -51,7 +51,7 @@ public class WallpaperHelper {
         String url = CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(context);
         if (url.startsWith("assets://") || URLUtil.isValidUrl(url)) {
             return CLOUD_WALLPAPERS;
-        } else if (url.length() > 0) {
+        } else if (!url.isEmpty()) {
             return EXTERNAL_APP;
         }
         return UNKNOWN;

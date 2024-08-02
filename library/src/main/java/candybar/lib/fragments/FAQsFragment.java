@@ -108,6 +108,7 @@ public class FAQsFragment extends Fragment {
         MenuItem search = menu.findItem(R.id.menu_search);
 
         View searchView = search.getActionView();
+        assert searchView != null;
         EditText searchInput = searchView.findViewById(R.id.search_input);
         View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
 
@@ -134,7 +135,7 @@ public class FAQsFragment extends Fragment {
 
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
-            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+            public boolean onMenuItemActionExpand(@NonNull MenuItem menuItem) {
                 searchInput.requestFocus();
 
                 new Handler(Looper.getMainLooper()).postDelayed(() -> {
@@ -147,7 +148,7 @@ public class FAQsFragment extends Fragment {
             }
 
             @Override
-            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+            public boolean onMenuItemActionCollapse(@NonNull MenuItem menuItem) {
                 searchInput.setText("");
                 return true;
             }

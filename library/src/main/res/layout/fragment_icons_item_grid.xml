@@ -23,7 +23,8 @@
             <ImageView
                 android:id="@+id/checkmark"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:contentDescription="@string/desc_icons_checkmark" />
 
         </FrameLayout>
 

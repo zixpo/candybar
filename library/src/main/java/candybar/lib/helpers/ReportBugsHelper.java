@@ -17,9 +17,10 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -57,7 +58,6 @@ public class ReportBugsHelper {
     private static final String BROKEN_DRAWABLES = "broken_drawables.xml";
     private static final String ACTIVITY_LIST = "activity_list.xml";
     private static final String CRASHLOG = "crashlog.txt";
-    private static String UTF8 = "UTF8";
 
     public static void prepareReportBugs(@NonNull Context context) {
         MaterialDialog dialog = new MaterialDialog.Builder(context)
@@ -88,13 +88,17 @@ public class ReportBugsHelper {
         try {
             HashMap<String, String> activities = RequestHelper.getAppFilter(context, RequestHelper.Key.ACTIVITY);
             File brokenAppFilter = new File(context.getCacheDir(), BROKEN_APPFILTER);
-            Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(brokenAppFilter), UTF8));
+            Writer writer = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                writer = new BufferedWriter(new OutputStreamWriter(
+                        Files.newOutputStream(brokenAppFilter.toPath()), StandardCharsets.UTF_8));
+            }
 
             boolean first = true;
             for (Map.Entry<String, String> entry : activities.entrySet()) {
                 if (first) {
                     first = false;
+                    assert writer != null;
                     writer.append("<!-- BROKEN APPFILTER -->")
                             .append("\r\n").append("<!-- Broken appfilter will check for activities that included in appfilter but doesn't have a drawable")
                             .append("\r\n").append("* ").append("The reason could because misnamed drawable or the drawable not copied to the project -->")
@@ -111,6 +115,7 @@ public class ReportBugsHelper {
                 }
             }
 
+            assert writer != null;
             writer.flush();
             writer.close();
             return brokenAppFilter;
@@ -128,8 +133,11 @@ public class ReportBugsHelper {
             List<Icon> icons = new ArrayList<>();
 
             File brokenDrawables = new File(context.getCacheDir(), BROKEN_DRAWABLES);
-            Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(brokenDrawables), UTF8));
+            Writer writer = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                writer = new BufferedWriter(new OutputStreamWriter(
+                        Files.newOutputStream(brokenDrawables.toPath()), StandardCharsets.UTF_8));
+            }
 
             for (Icon icon : iconList) {
                 if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
@@ -146,6 +154,7 @@ public class ReportBugsHelper {
             for (Icon icon : icons) {
                 if (first) {
                     first = false;
+                    assert writer != null;
                     writer.append("<!-- BROKEN DRAWABLES -->")
                             .append("\r\n").append("<!-- Broken drawables will read drawables that listed in drawable.xml")
                             .append("\r\n").append("* ").append("and try to match them with drawables that used in appfilter.xml")
@@ -154,13 +163,14 @@ public class ReportBugsHelper {
                 }
 
                 String drawable = drawables.get(icon.getDrawableName());
-                if ((drawable == null || drawable.length() == 0) && !addedIcons.contains(icon.getDrawableName())) {
+                if ((drawable == null || drawable.isEmpty()) && !addedIcons.contains(icon.getDrawableName())) {
                     addedIcons.add(icon.getDrawableName());
                     writer.append("Drawable: ").append(icon.getDrawableName()).append(".png")
                             .append("\r\n\r\n");
                 }
             }
 
+            assert writer != null;
             writer.flush();
             writer.close();
             return brokenDrawables;
@@ -174,8 +184,11 @@ public class ReportBugsHelper {
     public static File buildActivityList(@NonNull Context context) {
         try {
             File activityList = new File(context.getCacheDir(), ACTIVITY_LIST);
-            Writer out = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(activityList), UTF8));
+            Writer out = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                out = new BufferedWriter(new OutputStreamWriter(
+                        Files.newOutputStream(activityList.toPath()), StandardCharsets.UTF_8));
+            }
 
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
@@ -192,6 +205,7 @@ public class ReportBugsHelper {
 
                 if (first) {
                     first = false;
+                    assert out != null;
                     out.append("<!-- ACTIVITY LIST -->")
                             .append("\r\n").append("<!-- Activity list is a list that contains all activity from installed apps -->")
                             .append("\r\n\r\n\r\n");
@@ -204,6 +218,7 @@ public class ReportBugsHelper {
                 out.append("\r\n\r\n");
             }
 
+            assert out != null;
             out.flush();
             out.close();
             return activityList;
@@ -216,12 +231,16 @@ public class ReportBugsHelper {
     @Nullable
     public static File buildCrashLog(@NonNull Context context, @NonNull String stackTrace) {
         try {
-            if (stackTrace.length() == 0) return null;
+            if (stackTrace.isEmpty()) return null;
 
             File crashLog = new File(context.getCacheDir(), CRASHLOG);
             String deviceInfo = DeviceHelper.getDeviceInfoForCrashReport(context);
-            Writer out = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(crashLog), UTF8));
+            Writer out = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                out = new BufferedWriter(new OutputStreamWriter(
+                        Files.newOutputStream(crashLog.toPath()), StandardCharsets.UTF_8));
+            }
+            assert out != null;
             out.append(deviceInfo).append(stackTrace);
             out.flush();
             out.close();

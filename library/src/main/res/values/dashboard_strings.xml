@@ -376,11 +376,29 @@
     <string name="txt_new">New</string>
 
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">Add this icon to the bookmarks section</string>
-    <string name="icon_search_close_button_content_description">Close the icon search</string>
-    <string name="icon_request_submit_button_content_description">Submit an icon request</string>
-    <string name="icon_list_content_description">The list of icons included in the icon pack</string>
-    <string name="icon_search_list_content_description">The list of icons that match the search term</string>
-    <string name="about_item_social_content_description">A link to an online profile of the author of the icon pack: </string>
-    <string name="share_icon_pack_button_content_description">Share this app with someone</string>
+    <string name="desc_bookmark_button_content">Add this icon to the bookmarks section</string>
+    <string name="desc_icon_search_close_button_content">Close the icon search</string>
+    <string name="desc_icon_request_submit_button_content">Submit an icon request</string>
+    <string name="desc_icon_list_content">The list of icons included in the icon pack</string>
+    <string name="desc_icon_search_list_content">The list of icons that match the search term</string>
+    <string name="desc_about_item_social_content">A link to an online profile of the author of the icon pack: </string>
+    <string name="desc_share_icon_pack_button_content">Share this app with someone</string>
+    <string name="desc_social_icon">Social media icon</string>
+    <string name="desc_about_github">Candybar GitHub page</string>
+    <string name="desc_about_instagram">Instagram</string>
+    <string name="desc_about_image">Image</string>
+    <string name="desc_apply_icon">Icon</string>
+    <string name="desc_credits_item">Avatar</string>
+    <string name="desc_home_update">Update this app</string>
+    <string name="desc_icon_preview">Preview of the currenty selected icon</string>
+    <string name="desc_bookmark">Bookmark icon</string>
+    <string name="desc_chooser_icon">App icon</string>
+    <string name="desc_presets_forward">Forward</string>
+    <string name="desc_presets_kustom">Kustom</string>
+    <string name="desc_request_item">App icon</string>
+    <string name="desc_wallpaper_back">Go back</string>
+    <string name="desc_wallpaper_save">Save wallpaper</string>
+    <string name="desc_wallpaper_apply">Apply wallpaper</string>
+    <string name="desc_icons_checkmark">Checkmark</string>
+    <string name="desc_home">Home menu</string>
 </resources>

@@ -133,9 +133,11 @@ public class IconsSearchFragment extends Fragment {
                 !requireActivity().getResources().getBoolean(R.bool.includes_adaptive_icons)) {
             iconShape.setVisible(false);
         } else {
+            assert searchView != null;
             searchView.findViewById(R.id.container).setPadding(0, 0, 0, 0);
         }
 
+        assert searchView != null;
         View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
         mSearchInput = searchView.findViewById(R.id.search_input);
         mSearchInput.setHint(R.string.search_icon);
@@ -144,18 +146,16 @@ public class IconsSearchFragment extends Fragment {
 
         search.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
-            public boolean onMenuItemActionExpand(MenuItem item) {
+            public boolean onMenuItemActionExpand(@NonNull MenuItem item) {
                 return true;
             }
 
             @Override
-            public boolean onMenuItemActionCollapse(MenuItem item) {
+            public boolean onMenuItemActionCollapse(@NonNull MenuItem item) {
                 requireActivity().getSupportFragmentManager().popBackStack();
 
                 Activity activity = requireActivity();
-                new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    ((SearchListener) activity).onSearchExpanded(false);
-                }, 500);
+                new Handler(Looper.getMainLooper()).postDelayed(() -> ((SearchListener) activity).onSearchExpanded(false), 500);
                 return true;
             }
         });

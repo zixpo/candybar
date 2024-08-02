@@ -20,7 +20,8 @@
         <ImageView
             android:id="@+id/icon"
             android:layout_width="@dimen/icon_size_medium"
-            android:layout_height="@dimen/icon_size_medium" />
+            android:layout_height="@dimen/icon_size_medium"
+            android:contentDescription="@string/desc_request_item" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -28,7 +29,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center_vertical"
-            android:layout_marginLeft="@dimen/content_margin"
             android:layout_marginStart="@dimen/content_margin">
 
             <TextView
@@ -64,7 +64,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/content_margin"
             android:layout_marginStart="@dimen/content_margin"
             android:clickable="false"
             android:background="@android:color/transparent"

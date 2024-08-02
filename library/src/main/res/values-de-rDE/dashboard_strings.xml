@@ -318,11 +318,11 @@ Für Android bei GitHub verfügbar und kostenlos zur Benutzung freigegeben, entw
     <string name="txt_close">Schließen</string>
     <string name="txt_new">Neu</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">Fügen Sie dieses Icon zu den Lesezeichen hinzu</string>
-    <string name="icon_search_close_button_content_description">Iconsuche schließen</string>
-    <string name="icon_request_submit_button_content_description">Eine Icon-Anfrage senden</string>
-    <string name="icon_list_content_description">Die Liste der Icons, die im Icon-Pack enthalten sind</string>
-    <string name="icon_search_list_content_description">Die Liste der Icons, die mit dem Suchbegriff übereinstimmen</string>
-    <string name="about_item_social_content_description">Ein Link zu einem Online-Profil des Autors des Icon-Packs: </string>
-    <string name="share_icon_pack_button_content_description">Teile diese App mit anderen</string>
+    <string name="desc_bookmark_button_content">Fügen Sie dieses Icon zu den Lesezeichen hinzu</string>
+    <string name="desc_icon_search_close_button_content">Iconsuche schließen</string>
+    <string name="desc_icon_request_submit_button_content">Eine Icon-Anfrage senden</string>
+    <string name="desc_icon_list_content">Die Liste der Icons, die im Icon-Pack enthalten sind</string>
+    <string name="desc_icon_search_list_content">Die Liste der Icons, die mit dem Suchbegriff übereinstimmen</string>
+    <string name="desc_about_item_social_content">Ein Link zu einem Online-Profil des Autors des Icon-Packs: </string>
+    <string name="desc_share_icon_pack_button_content">Teile diese App mit anderen</string>
 </resources>

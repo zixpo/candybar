@@ -137,7 +137,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
         String link = mContext.getResources().getString(R.string.google_play_dev);
-        if (link.length() > 0) {
+        if (!link.isEmpty()) {
             mItemsCount += 1;
             mShowMoreApps = true;
         }
@@ -195,11 +195,9 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         try {
-            if (holder.itemView != null) {
-                StaggeredGridLayoutManager.LayoutParams layoutParams = (StaggeredGridLayoutManager.LayoutParams)
-                        holder.itemView.getLayoutParams();
-                layoutParams.setFullSpan(isFullSpan(holder.getItemViewType()));
-            }
+            StaggeredGridLayoutManager.LayoutParams layoutParams = (StaggeredGridLayoutManager.LayoutParams)
+                    holder.itemView.getLayoutParams();
+            layoutParams.setFullSpan(isFullSpan(holder.getItemViewType()));
         } catch (Exception e) {
             LogUtil.d(Log.getStackTraceString(e));
         }
@@ -208,7 +206,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             HeaderViewHolder headerViewHolder = (HeaderViewHolder) holder;
 
             String home_title_text = mContext.getResources().getString(R.string.home_title);
-            if (home_title_text.length() > 0) {
+            if (!home_title_text.isEmpty()) {
                 headerViewHolder.title.setText(home_title_text);
             } else {
                 headerViewHolder.title.setVisibility(View.GONE);
@@ -303,7 +301,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             contentViewHolder.title.setTypeface(TypefaceHelper.getMedium(mContext));
             contentViewHolder.title.setText(mHomes.get(finalPosition).getTitle());
 
-            if (mHomes.get(finalPosition).getSubtitle().length() > 0) {
+            if (!mHomes.get(finalPosition).getSubtitle().isEmpty()) {
                 contentViewHolder.subtitle.setText(mHomes.get(finalPosition).getSubtitle());
                 contentViewHolder.subtitle.setVisibility(View.VISIBLE);
             }
@@ -428,15 +426,15 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 card.setCardElevation(0);
             }
 
-            if (mContext.getResources().getString(R.string.rate_and_review_link).length() == 0) {
+            if (mContext.getResources().getString(R.string.rate_and_review_link).isEmpty()) {
                 rate.setVisibility(View.GONE);
             }
 
-            if (mContext.getResources().getString(R.string.share_link).length() == 0) {
+            if (mContext.getResources().getString(R.string.share_link).isEmpty()) {
                 share.setVisibility(View.GONE);
             }
 
-            if ((!mContext.getResources().getBoolean(R.bool.enable_check_update)) || (CandyBarApplication.getConfiguration().getConfigHandler().configJson(mContext).length() == 0)) {
+            if ((!mContext.getResources().getBoolean(R.bool.enable_check_update)) || (CandyBarApplication.getConfiguration().getConfigHandler().configJson(mContext).isEmpty())) {
                 update.setVisibility(View.GONE);
             }
 

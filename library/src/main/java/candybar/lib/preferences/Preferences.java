@@ -4,8 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Build;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 
 import androidx.annotation.NonNull;
 
@@ -411,8 +412,21 @@ public class Preferences {
             ConnectivityManager connectivityManager = (ConnectivityManager)
                     mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
             assert connectivityManager != null;
-            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-            return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+
+            Network network = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                network = connectivityManager.getActiveNetwork();
+            }
+            if (network == null) {
+                return false;
+            }
+
+            NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(network);
+            return networkCapabilities != null &&
+                    (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+                            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) ||
+                            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN));
         } catch (Exception e) {
             return false;
         }
@@ -420,16 +434,28 @@ public class Preferences {
 
     public boolean isConnectedAsPreferred() {
         try {
-            if (isWifiOnly()) {
-                ConnectivityManager connectivityManager = (ConnectivityManager)
-                        mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-                assert connectivityManager != null;
-                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-                assert activeNetworkInfo != null;
-                return activeNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI &&
-                        activeNetworkInfo.isConnected();
+            ConnectivityManager connectivityManager = (ConnectivityManager)
+                    mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+            assert connectivityManager != null;
+
+            Network network = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                network = connectivityManager.getActiveNetwork();
             }
-            return true;
+            if (network == null) {
+                return false;
+            }
+
+            NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(network);
+            if (networkCapabilities == null) {
+                return false;
+            }
+
+            if (isWifiOnly()) {
+                return networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
+            }
+
+            return networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET);
         } catch (Exception e) {
             return false;
         }
