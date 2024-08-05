@@ -636,13 +636,4 @@ public class RequestHelper {
         int drawableId = context.getResources().getIdentifier(drawableName, "drawable", context.getPackageName());
         return drawableId;
     }
-
-
-    public static String[] getIconPackColors(Context context, String iconPackName) {
-        int arrayId = context.getResources().getIdentifier("icon_pack_" + iconPackName.toLowerCase(), "array", context.getPackageName());
-        if (arrayId != 0) {
-            return context.getResources().getStringArray(arrayId);
-        }
-        return new String[0];
-    }
 }

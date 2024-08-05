@@ -1,6 +1,8 @@
 package candybar.lib.adapters;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,9 @@ import java.util.List;
 import candybar.lib.R;
 import candybar.lib.fragments.dialog.ChangeIconColorFragment;
 import candybar.lib.items.IconPack;
+import candybar.lib.helpers.StringUtils;
+
+import java.util.Arrays;
 
 public class IconPackAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -69,17 +74,62 @@ public class IconPackAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         } else if (holder.getItemViewType() == TYPE_CONTENT) {
             ContentViewHolder contentHolder = (ContentViewHolder) holder;
             IconPack iconPack = mIconPacks.get(position - 1);
-            contentHolder.title.setText(iconPack.getTitle());
-            Glide.with(mContext)
-                    .load(iconPack.getIconResId())
-                    .into(contentHolder.icon);
+
+            String iconPackTitle = iconPack.getTitle();
+            String[] iconPackPackages = iconPack.getPackageNames();
+            String matchingPackageName = findMatchingPackageName(iconPackTitle, iconPackPackages, mContext);
+
+            // Check if the iconPackTitle matches the value from resources
+            String mainIconPackTitle = mContext.getString(R.string.icon_pack);
+            if (iconPackTitle.equals(mainIconPackTitle)) {
+                // Load drawable from the main app
+                Glide.with(mContext)
+                        .load(R.drawable.ic_icon_pack)
+                        .into(contentHolder.icon);
+            } else {
+                // Load drawable from the other app
+                loadIconFromOtherApp(matchingPackageName, contentHolder.icon);
+            }
+
+            contentHolder.title.setText(StringUtils.capitalize(iconPack.getTitle()));
             contentHolder.itemView.setOnClickListener(v -> {
                 String[] colors = iconPack.getColors();
                 String iconPackName = iconPack.getTitle();
+                String[] packageNames = iconPack.getPackageNames();
                 ChangeIconColorFragment.showChangeIconColorDialog(
-                        ((FragmentActivity) mContext).getSupportFragmentManager(), colors, iconPackName);
-                });
+                        ((FragmentActivity) mContext).getSupportFragmentManager(), colors, iconPackName, packageNames);
+            });
         }
+    }
+
+
+    private void loadIconFromOtherApp(String packageName, ImageView imageView) {
+        try {
+            Context otherAppContext = mContext.createPackageContext(packageName, 0);
+            int drawableId = otherAppContext.getResources().getIdentifier("ic_icon_pack", "drawable", packageName);
+            Drawable drawable = otherAppContext.getResources().getDrawable(drawableId, otherAppContext.getTheme());
+
+            Glide.with(mContext)
+                    .load(drawable)
+                    .into(imageView);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            // Handle the exception, maybe load a default image or show an error
+        }
+    }
+
+    private static String findMatchingPackageName(String iconPackTitle, String[] iconPackPackages, Context context) {
+        String baseIdentifier = context.getPackageName(); // Dynamically get the package name
+
+        for (String packageName : iconPackPackages) {
+            if (packageName.startsWith(baseIdentifier)) {
+                String remainingPart = packageName.substring(baseIdentifier.length());
+                if (remainingPart.startsWith("." + iconPackTitle)) {
+                    return packageName;
+                }
+            }
+        }
+        return null; // Return null if no match is found
     }
 
     @Override

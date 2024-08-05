@@ -294,7 +294,7 @@ public class LauncherHelper {
     }
 
     private static void applyLauncher(@NonNull Context context, String launcherPackage, String launcherName, Launcher launcher) {
-        String selectedIconPackId = Preferences.get(context).getSelectedIconPackId ();
+        String selectedIconPackId = Preferences.get(context).getSelectedIconPackId();
         switch (launcher) {
             case ACTION:
                 try {
@@ -665,6 +665,7 @@ public class LauncherHelper {
                     final Intent nova = new Intent("com.teslacoilsw.launcher.APPLY_ICON_THEME");
                     nova.setPackage("com.teslacoilsw.launcher");
                     nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_TYPE", "GO");
+                    System.out.println("selectedIconPackId: " + context.getPackageName() + selectedIconPackId);
                     nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_PACKAGE", context.getPackageName() + selectedIconPackId);
                     String reshapeSetting = context.getResources().getString(R.string.nova_reshape_legacy_icons);
                     if (!reshapeSetting.equals("KEEP")) {

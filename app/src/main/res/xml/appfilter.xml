@@ -4,12 +4,6 @@
         component="ComponentInfo{some.app/some.app.MainActivity}"
         drawable="icon_1" /> -->
 
-    <!-- Discord -->
-	<!-- <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord_blue" />
-    <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord_cyan" />
-    <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord_light_blue" />
-	<item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord_dark_blue" />
-    <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord_navy_blue" /> -->
     <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord"/>
 
 

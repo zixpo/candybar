@@ -896,7 +896,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         if (!URLUtil.isValidUrl(imageUrl)) {
-            int resourceId = R.drawable.discord_navy;
             imageUrl = "drawable://" + getDrawableId(imageUrl); // This is for the menu top image
         }
 
