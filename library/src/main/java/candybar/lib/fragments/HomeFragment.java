@@ -194,7 +194,7 @@ public class HomeFragment extends Fragment implements HomeListener {
                     R.drawable.ic_toolbar_changeiconcolor,
                     resources.getString(R.string.change_icon_color_title),
                     resources.getString(R.string.change_icon_color_desc),
-                    Home.Type.CHANGEICONCOLOR,
+                    Home.Type.CHANGEICONPACK,
                     false));
         }
 

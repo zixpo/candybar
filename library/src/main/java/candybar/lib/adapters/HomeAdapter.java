@@ -36,6 +36,7 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.core.text.HtmlCompat;
 import androidx.core.widget.TextViewCompat;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -76,6 +77,7 @@ import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.ViewHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
+import candybar.lib.items.IconPack;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.CandyBarGlideModule;
@@ -744,27 +746,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                 ((AppCompatActivity) mContext).getSupportFragmentManager(),
                                 home.getTitle(), home.getIcon(), null, null);
                         break;
-                     case CHANGEICONCOLOR:
-                        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                                "click",
-                                new HashMap<String, Object>() {{
-                                    put("section", "home");
-                                    put("action", "open_dialog");
-                                    put("item", "custom");
-                                }}
-                        );
-
-                        if (mContext instanceof CandyBarMainActivity) {
-                            // ToDo: Change iconPack to current used iconpack, or use default when none selected
-                            String iconPack = RequestHelper.getDefaultIconPack(mContext);
-                            // ToDo: Change coloroptions accordingly with the iconPack selected,
-                            // and remove getChangeIconColorsArray and the values
-                            // ToDo: When long press => check next function, open the navigation view
-//                            String[] colorOptions = RequestHelper.getChangeIconColorsArray(mContext);
-//                            ChangeIconColorFragment.showChangeIconColorDialog(((AppCompatActivity) mContext).getSupportFragmentManager(), colorOptions, iconPack);
-
-                        }
-                         break;
+                    case CHANGEICONPACK:
+                        position = 2;
+                        ((CandyBarMainActivity) mContext).selectPosition(position);
+                        break;
                 }
             }
         }

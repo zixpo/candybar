@@ -73,7 +73,7 @@ public class Home {
         DONATE,
         ICONS,
         DIMENSION,
-        CHANGEICONCOLOR
+        CHANGEICONPACK
     }
 
     public static class Style {

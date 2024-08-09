@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <!-- <item
+    <item
         component="ComponentInfo{some.app/some.app.MainActivity}"
-        drawable="icon_1" /> -->
-
-    <item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord"/>
-
-
-
+        drawable="icon_1" />
 </resources>

@@ -2,7 +2,7 @@
 <resources>
     <version>1</version>
 
-    <category title="Hydro Navy Blue" />
-    <item name="Discord" drawable="discord"/>
+    <category title="Extra Icon Pack" />
+    <item name="Extra Icon" drawable="ic_icon_pack_color"/>
 
 </resources>

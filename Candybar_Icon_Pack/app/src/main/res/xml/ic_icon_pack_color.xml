@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <version>1</version>
-    <item name="Theme Logo" drawable="theme_logo"/>
+    <item drawable="ic_icon_pack_color"/>
 
 </resources>

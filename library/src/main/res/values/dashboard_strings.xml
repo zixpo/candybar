@@ -14,11 +14,10 @@
     <string name="navigation_view_about">About</string>
     <string name="navigation_view_donate">Support Development</string>
 
-    <string name="change_icon_color_title">Select Icon Color</string>
-    <string name="change_icon_color_desc">Select one of the colors for your icons before applying.</string>
+    <!-- Icon Packs -->
+    <string name="change_icon_color_title">Select Icon Pack</string>
+    <string name="change_icon_color_desc">Apply a different icon pack.</string>
     <string name="change_icon_color_dialog_title">Select a color</string>
-    <string name="change_icon_color_dialog_close">Close</string>
-    <string name="change_icon_color_dialog_confirm">Confirm</string>
 
 
     <!-- Muzei -->
@@ -46,6 +45,7 @@
     <!-- Dialog -->
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="confirm">Confirm</string>
     <string name="clear">Clear</string>
     <string name="ok">OK</string>
     <string name="install">Install</string>

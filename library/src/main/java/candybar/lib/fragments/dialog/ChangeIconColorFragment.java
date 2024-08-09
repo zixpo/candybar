@@ -63,8 +63,8 @@ public class ChangeIconColorFragment extends DialogFragment {
         MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
                 .customView(R.layout.dialog_change_icon_color, false)
                 .title(R.string.change_icon_color_dialog_title)
-                .positiveText(R.string.change_icon_color_dialog_confirm)
-                .negativeText(R.string.change_icon_color_dialog_close)
+                .positiveText(R.string.confirm)
+                .negativeText(R.string.close)
                 .onNegative((dialog1, which) -> dismiss())
                 .onPositive((dialog1, which) -> {
                     handleOptionSelected(selectedOption, selectedIconPackName);
@@ -82,50 +82,40 @@ public class ChangeIconColorFragment extends DialogFragment {
                 String color = colorOptions[i];
                 String packageName = selectedPackageNames[i]; // Get the corresponding package name for the color
 
-                LinearLayout itemLayout = new LinearLayout(requireActivity());
-                itemLayout.setOrientation(LinearLayout.HORIZONTAL);
-                itemLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT));
-
-                ImageView logoView = new ImageView(requireActivity());
-                Drawable logoDrawable;
-
-                // Check if the package name is the main app
-                if (packageName.equals(requireContext().getPackageName())) {
-                    Log.d("ChangeIconColorFragment", "Main app package: " + packageName);
-                    logoDrawable = requireContext().getDrawable(R.drawable.theme_logo); // Main app logo
-                } else {
-                    try {
-                        Log.d("ChangeIconColorFragment", "Side app package: " + packageName);
-                        Context packageContext = requireContext().createPackageContext(packageName, 0);
-                        int logoId = packageContext.getResources().getIdentifier("theme_logo", "drawable", packageName);
-                        logoDrawable = packageContext.getDrawable(logoId);
-                    } catch (PackageManager.NameNotFoundException e) {
-                        e.printStackTrace();
-                        logoDrawable = requireContext().getDrawable(R.drawable.theme_logo); // Fallback logo
-                    } catch (Resources.NotFoundException e) {
-                        e.printStackTrace();
-                        logoDrawable = requireContext().getDrawable(R.drawable.theme_logo); // Fallback logo
-                    }
-                }
-                logoView.setImageDrawable(logoDrawable);
-
-                LinearLayout.LayoutParams logoParams = new LinearLayout.LayoutParams(
-                        80, // width in dp
-                        80  // height in dp
-                );
-                logoParams.setMargins(0, 0, 16, 0); // margin right
-                logoView.setLayoutParams(logoParams);
-
+                // Create the RadioButton and set its properties
                 RadioButton radioButton = new RadioButton(requireActivity());
                 radioButton.setText(StringUtils.capitalize(color));
                 radioButton.setId(View.generateViewId());
                 radioButton.setTextColor(textColor);
 
-                itemLayout.addView(logoView);
-                itemLayout.addView(radioButton);
-                radioGroup.addView(itemLayout);
+                Drawable logoDrawable;
+
+                // Check if the package name is the main app
+                if (packageName.equals(requireContext().getPackageName())) {
+                    logoDrawable = requireContext().getDrawable(R.drawable.ic_icon_pack_color); // Main app logo
+                } else {
+                    try {
+                        Context packageContext = requireContext().createPackageContext(packageName, 0);
+                        int logoId = packageContext.getResources().getIdentifier("ic_icon_pack_color", "drawable", packageName);
+                        logoDrawable = packageContext.getDrawable(logoId);
+                    } catch (PackageManager.NameNotFoundException e) {
+                        e.printStackTrace();
+                        logoDrawable = requireContext().getDrawable(R.drawable.ic_icon_pack_color); // Fallback logo
+                    } catch (Resources.NotFoundException e) {
+                        e.printStackTrace();
+                        logoDrawable = requireContext().getDrawable(R.drawable.ic_icon_pack_color); // Fallback logo
+                    }
+                }
+
+                // Resize the drawable to 80dp
+                int iconSize = 80;
+                logoDrawable.setBounds(0, 0, iconSize, iconSize);
+
+                // Set the drawable as a compound drawable for the RadioButton (left side)
+                radioButton.setCompoundDrawables(logoDrawable, null, null, null);
+                radioButton.setCompoundDrawablePadding(16); // Set padding between the drawable and text
+
+                radioGroup.addView(radioButton); // Add the RadioButton directly to the RadioGroup
 
                 radioButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
                     if (isChecked) {
@@ -134,6 +124,7 @@ public class ChangeIconColorFragment extends DialogFragment {
                     }
                 });
             }
+
         }
 
         return dialog;

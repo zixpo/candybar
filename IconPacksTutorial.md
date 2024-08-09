@@ -45,7 +45,7 @@ We can add multiple colors or variations per icon pack. For example we have an i
 
 1. Replace `ic_icon_pack.png` in the drawable-nodpi-v5 folder with your own icon.
     > This icon represents the icon pack image shown in the "Icon Packs" list in the app.
-2. Replace `theme_logo.png` in the drawable-nodpi-v5 folder with your own icon.
+2. Replace `ic_icon_pack_color.png` in the drawable-nodpi-v5 folder with your own icon.
     > This icon represents the icon pack color image shown in the "Icon Packs" dialog in the app.
 
 
@@ -97,7 +97,7 @@ We can add multiple colors or variations per icon pack. For example we have an i
     > This icon represents the icon pack image shown in the "Icon Packs" list in the app.
 
     > Note: The `ic_icon_pack.png` from the main app will be used over the one from the side app.
-5. Replace `theme_logo.png` in the drawable folder with your own icon.
+5. Replace `ic_icon_pack_color.png` in the drawable folder with your own icon.
     > This icon represents the icon pack color image shown in the "Icon Packs" dialog in the app.
 6. Replace the `ic_launcher.png` in the following folders to change your app icon.
     - res/mipmap-mdpi/ic_launcher.png
