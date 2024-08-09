@@ -106,6 +106,7 @@ public class RequestHelper {
 
     @Nullable
     public static File buildXml(@NonNull Context context, @NonNull List<Request> requests, @NonNull XmlType xmlType) {
+        
         try {
             if (xmlType == XmlType.APPFILTER && !CandyBarApplication.getConfiguration().isGenerateAppFilter()) {
                 return null;
@@ -616,5 +617,19 @@ public class RequestHelper {
         private String getValue() {
             return value;
         }
+    }
+
+    public static String getDefaultIconPack(Context context) {
+        return context.getResources().getString(R.string.icon_pack);
+    }
+
+    public static String getDefaultIconPackColor(Context context) {
+        return context.getResources().getString(R.string.icon_pack_color);
+    }
+
+    public static int getIconPackDrawableId(Context context, String iconPackName) {
+        String drawableName = "icon_pack_" + iconPackName.toLowerCase();
+        int drawableId = context.getResources().getIdentifier(drawableName, "drawable", context.getPackageName());
+        return drawableId;
     }
 }

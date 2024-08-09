@@ -76,6 +76,8 @@ public class Preferences {
     private static final String KEY_LANGUAGE_PREFERENCE = "language_preference";
     private static final String KEY_CURRENT_LOCALE = "current_locale";
 
+    private static final String KEY_SELECTED_ICON_PACK_ID = "selected_icon_pack_id";
+
     private static WeakReference<Preferences> mPreferences;
 
     @NonNull
@@ -433,5 +435,13 @@ public class Preferences {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public String getSelectedIconPackId() {
+        return getSharedPreferences().getString(KEY_SELECTED_ICON_PACK_ID, "");
+    }
+
+    public void setSelectedIconPackId(String selectedDrawableName) {
+        getSharedPreferences().edit().putString(KEY_SELECTED_ICON_PACK_ID, selectedDrawableName).apply();
     }
 }

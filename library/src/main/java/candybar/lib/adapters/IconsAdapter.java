@@ -43,6 +43,13 @@ import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.IntentHelper;
 import candybar.lib.items.Icon;
 
+import android.content.res.Resources;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+
+import android.util.Log;
+
+
 /*
  * CandyBar - Material Dashboard
  *
@@ -255,8 +262,15 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
 
     private void loadIconInto(ImageView imageView, int position) {
         if (mFragment.getActivity() == null) return;
+
+        int resId = mIcons.get(position).getRes();
+        String packageName = mIcons.get(position).getPackageName();
+
+        String glideLoadUrl = "android.resource://" + packageName + "/" + resId;
+
+        // Load the drawable using Glide
         Glide.with(mFragment)
-                .load("drawable://" + mIcons.get(position).getRes())
+                .load(Uri.parse(glideLoadUrl))
                 .skipMemoryCache(true)
                 .transition(DrawableTransitionOptions.withCrossFade(300))
                 .diskCacheStrategy(DiskCacheStrategy.NONE)

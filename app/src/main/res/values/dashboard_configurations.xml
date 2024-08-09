@@ -105,4 +105,11 @@
     <bool name="quick_apply">true</bool>
     <bool name="show_random_icon">true</bool>
 
+    <!-- CONFIG: ICON PACK MANAGER -->
+    <bool name="enable_icon_packs">false</bool>
+    <!-- DEFAULT ICON PACK NAME -->
+    <string name="icon_pack">candybar</string>
+    <!-- DEFAULT ICON PACK COLOR NAME -->
+    <string name="icon_pack_color">default</string>
+
 </resources>

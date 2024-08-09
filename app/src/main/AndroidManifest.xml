@@ -256,5 +256,5 @@
         </provider>
 
     </application>
-
+    <queries> <package android:name="com.candybar.dev.hydro_navy_blue" /> </queries>
 </manifest>

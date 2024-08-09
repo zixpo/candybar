@@ -375,4 +375,13 @@
     <bool name="quick_apply">true</bool>
     <bool name="show_random_icon">true</bool>
 
+    <string name="icon_pack"></string>
+    <string name="icon_pack_color"></string>
+
+
+    <string-array name="icon_pack_names">
+        <item></item>
+    </string-array>
+    <bool name="enable_icon_packs">false</bool>
+
 </resources>

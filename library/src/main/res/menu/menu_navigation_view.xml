@@ -16,6 +16,11 @@
             android:title="@string/navigation_view_apply" />
 
         <item
+            android:id="@+id/navigation_view_icon_pack"
+            android:icon="@drawable/ic_drawer_icon_packs"
+        android:title="@string/navigation_view_icon_packs" />
+
+        <item
             android:id="@+id/navigation_view_icons"
             android:icon="@drawable/ic_drawer_icons"
             android:title="@string/navigation_view_icons" />

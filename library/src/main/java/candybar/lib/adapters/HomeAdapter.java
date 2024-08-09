@@ -36,6 +36,7 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.core.text.HtmlCompat;
 import androidx.core.widget.TextViewCompat;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -68,6 +69,7 @@ import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.dialog.ChangelogAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.DonationLinksFragment;
+import candybar.lib.fragments.dialog.ChangeIconColorFragment;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.fragments.dialog.OtherAppsFragment;
 import candybar.lib.helpers.LauncherHelper;
@@ -75,10 +77,12 @@ import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.ViewHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
+import candybar.lib.items.IconPack;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.views.HeaderView;
+import candybar.lib.helpers.RequestHelper;
 
 /*
  * CandyBar - Material Dashboard
@@ -223,7 +227,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 headerViewHolder.image.setBackgroundColor(Color.parseColor(uri));
             } else {
                 if (!URLUtil.isValidUrl(uri)) {
-                    uri = "drawable://" + getDrawableId(uri);
+                    uri = "drawable://" + getDrawableId(uri); // This is for the home top image
                 }
 
                 if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
@@ -242,12 +246,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             int finalPosition = position - 1;
 
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorPrimary);
+            LogUtil.d("COLOR IS: " + Integer.toHexString(color));
             if (mHomes.get(finalPosition).getIcon() != -1) {
                 if (mHomes.get(finalPosition).getType() == Home.Type.DIMENSION) {
                     if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
                         Glide.with(mContext)
                                 .asBitmap()
-                                .load("drawable://" + mHomes.get(finalPosition).getIcon())
+                                .load("drawable://" + mHomes.get(finalPosition).getIcon()) // This is for the icon preview in the home item
                                 .skipMemoryCache(true)
                                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                                 .listener(new RequestListener<Bitmap>() {
@@ -733,13 +738,17 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                     put("item", "icons");
                                 }}
                         );
-                        ((CandyBarMainActivity) mContext).selectPosition(2);
+                        ((CandyBarMainActivity) mContext).selectPosition(3);
                         break;
                     case DIMENSION:
                         Home home = mHomes.get(position);
                         IconPreviewFragment.showIconPreview(
                                 ((AppCompatActivity) mContext).getSupportFragmentManager(),
-                                home.getTitle(), home.getIcon(), null);
+                                home.getTitle(), home.getIcon(), null, null);
+                        break;
+                    case CHANGEICONPACK:
+                        position = 2;
+                        ((CandyBarMainActivity) mContext).selectPosition(position);
                         break;
                 }
             }
@@ -831,7 +840,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                             put("item", "icon_request");
                         }}
                 );
-                ((CandyBarMainActivity) mContext).selectPosition(3);
+                ((CandyBarMainActivity) mContext).selectPosition(4);
             }
         }
     }
@@ -888,7 +897,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public void onClick(View view) {
             int id = view.getId();
             if (id == R.id.title) {
-                ((CandyBarMainActivity) mContext).selectPosition(4);
+                ((CandyBarMainActivity) mContext).selectPosition(5);
             } else if (id == R.id.muzei) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(
                         "https://play.google.com/store/apps/details?id=net.nurik.roman.muzei"));

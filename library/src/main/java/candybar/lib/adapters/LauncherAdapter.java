@@ -89,7 +89,7 @@ public class LauncherAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
                 Glide.with(mContext)
                         .asBitmap()
-                        .load("drawable://" + mLaunchers.get(position).getRes())
+                        .load("drawable://" + mLaunchers.get(position).getRes()) // This is for the launcher icons in the apply menu
                         .transition(BitmapTransitionOptions.withCrossFade(300))
                         .skipMemoryCache(true)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
