@@ -104,8 +104,5 @@
     <item drawable="icon_99" />
     <item drawable="icon_100" />
 
-    <category title="Hydro Navy Blue" />
-    <item name="Discord" drawable="discord"/>
-
 
 </resources>
