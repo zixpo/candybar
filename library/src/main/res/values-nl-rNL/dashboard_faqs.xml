@@ -82,19 +82,19 @@
         <item>\"Rapporteer bugs\" wordt gebruikt om bugs te rapporteren die gerelateerd zijn aan het iconenpakket, niet het dashboard.</item>
         <item>Niet elke launcher ondersteunt direct toepassing, en sommige ervan kunnen niet direct vanaf het dashboard de iconen toepassen.
       	    U kunt dit iconenpakket handmatig toepassen in de individuele launcher instellingen.</item>
-        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
-      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
-      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
-      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
-            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>Wanneer je \"Achtergrond instellen\" direct vanuit de app gebruikt, wordt deze gedownload naar de cache,
+      	    dan zal het dashboard proberen deze toe te passen. Het toepassen ervan zal enige tijd in beslag nemen en heeft ook een enorme hoeveelheid RAM nodig voor een korte periode.
+      	    \"Zwart scherm\" fouten kunnen verschijnen, omdat je telefoon niet genoeg gratis RAM heeft om de achtergrond te verwerken.
+      	    Herstarten van je telefoon zal dit probleem oplossen. Na het herstarten zal uw telefoon meer RAM beschikbaar hebben.
+            Als alternatief, kan je de gedownloade achtergrond vanuit je galerij openen en daar als achtergrond instellen.</item>
+        <item>Open Muzei, kies dit iconenpakket → instellingen. Je ziet een optie om alleen de gedownloade achtergronden te laden.
+            Je moet eerst achtergronden downloaden vanaf het dashboard.</item>
         <item>Als een achtergrond al is gedownload, zal deze automatisch vanuit je telefoongeheugen worden geladen.
             Muzei zal het niet blijven downloaden wanneer de achtergrond verandert. Je moet eerst achtergronden downloaden vanaf het dashboard.</item>
         <item>Open Dashboard, download de achtergronden die je wilt gebruiken in Muzei.
             Open Muzei-instellingen en kies \"Load Downloaded Wallpapers Only\".</item>
         <item>Het wordt gebruikt voor het schrijven &amp; lezen van de cache en de icoonverzoek data op te halen.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>Het wordt gebruikt om Achtergronden uit de cloud &amp; te downloaden.</item>
         <item>Het wordt gebruikt om te controleren of je telefoon een internetverbinding heeft of niet.</item>
         <item>Het wordt gebruikt om te controleren of je telefoon een internetverbinding heeft of niet, om cloud achtergronden van Muzei te laden.</item>
         <item>Het wordt gebruikt om achtergronden rechtstreeks vanuit de dashboardapp toe te passen.</item>
