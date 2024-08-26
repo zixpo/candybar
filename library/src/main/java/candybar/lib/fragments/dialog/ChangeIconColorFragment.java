@@ -136,7 +136,9 @@ public class ChangeIconColorFragment extends DialogFragment {
         iconPackName = iconPackName.toLowerCase().replace(" ", "_");
         Context context = requireContext();
         String defaultIconPack = RequestHelper.getDefaultIconPack(context);
+        defaultIconPack = defaultIconPack.toLowerCase().replace(" ", "_");
         String defaultIconPackColor = RequestHelper.getDefaultIconPackColor(context);
+        defaultIconPackColor = defaultIconPackColor.toLowerCase().replace(" ", "_");
 
         if (defaultIconPack.equals(iconPackName) && defaultIconPackColor.equals(option)) {
             iconPackId = "";
