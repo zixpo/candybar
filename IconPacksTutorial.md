@@ -26,7 +26,7 @@ We can add multiple colors or variations per icon pack. For example we have an i
 
 3. Choose a name for your default icon pack which will be included in our main app.
 
-    > !!! Do not use caps here. If icon pack name exists of multiple words, use spaces.
+    > !!! Do not use dashes and double spaces here. If icon pack name exists of multiple words, use spaces.
 
     ```java
     <string name="icon_pack">candybar</string>
@@ -34,7 +34,7 @@ We can add multiple colors or variations per icon pack. For example we have an i
 
 4. Choose a name for your default icon pack, or give it a different name of your choosing
 
-    > !!! Do not use caps here. If color exists of multiple words, use spaces.
+    > !!! Do not use dashes and double spaces here. If color exists of multiple words, use spaces.
 
     ```java
     <string name="icon_pack_color">light blue</string>
@@ -71,9 +71,8 @@ We can add multiple colors or variations per icon pack. For example we have an i
       ```java
       <string name="icon_pack_color">navy blue</string>
       ```
-3. Open the folder in Android Studio, click on `Edit` at the top navigation, then go to `Find` and click on `Replace in Files`. 
-   1. In the first text box type in `com.candybar.dev`, in the second text box type in your main app's package identifier. Then click on `Replace All`.
-   2. In the first text box type in `com.candybar.dev.candybar_new_color`, in the second text box type in the following structure:
+3. Open the folder in Android Studio, click on `Edit` at the top navigation, then go to `Find` and click on `Replace in Files`.
+   1. In the first text box type in `com.candybar.dev.candybar_new_color`, in the second text box type in the following structure:
    `main_app_identifier + . + icon_pack + _color`. Then click on `Replace All`. It is very important to follow this structure or it will not work.
 
       **Example:**
@@ -93,13 +92,18 @@ We can add multiple colors or variations per icon pack. For example we have an i
       ```java
       com.candybar.dev.candybar_navy_blue
       ```
-4. Replace `ic_icon_pack.png` in the drawable folder with your own icon.
+   2. In the first text box type in `com.candybar.dev`, in the second text box type in your main app's package identifier. Then click on `Replace All`.
+   3. Change the name of the folders to your chosen identifier:
+        1. Find package directory `com.candybar`, right click on the directory, `Refractor > Rename` and click on `All Directories`, fill in your identifier which comes after the `com.` and click `Refractor`.
+            > This will only change `candybar`. If you want to change the `com` you'll have to do it manually outside Android Studio. Make sure you do this for all 3 folders you find under `java` in Android studio. To find where these folders are, just right click them in android studio and click `Open In > Explorer`.
+        2. Find package directory `dev` right under the one we just changed. Right click on the directory, `Refractor > Rename` and click on `All Directories`, fill in your identifier which comes after the `com.candybar.` (this is the name you have chosen of your main app identifier sub domain) and click `Refractor`. 
+5. Replace `ic_icon_pack.png` in the drawable folder with your own icon.
     > This icon represents the icon pack image shown in the "Icon Packs" list in the app.
 
     > Note: The `ic_icon_pack.png` from the main app will be used over the one from the side app.
-5. Replace `ic_icon_pack_color.png` in the drawable folder with your own icon.
+6. Replace `ic_icon_pack_color.png` in the drawable folder with your own icon.
     > This icon represents the icon pack color image shown in the "Icon Packs" dialog in the app.
-6. Replace the `ic_launcher.png` in the following folders to change your app icon.
+7. Replace the `ic_launcher.png` in the following folders to change your app icon.
     - res/mipmap-mdpi/ic_launcher.png
     - res/mipmap-hdpi/ic_launcher.png
     - res/mipmap-xhdpi/ic_launcher.png
