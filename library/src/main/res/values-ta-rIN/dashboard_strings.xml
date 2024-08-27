@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">கேண்டி பார் மெட்டீரியல் டாஷ்போர்டு</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">முகப்புத் திரை</string>
     <string name="navigation_view_apply">உபயோகி</string>
     <string name="navigation_view_icons">ஐகான்</string>
     <string name="navigation_view_request">ஐகான் கோரிக்கை</string>
     <string name="navigation_view_wallpapers">வால்பேப்பர்கள்</string>
+    <string name="navigation_view_presets">முன்னமைவுகள்</string>
     <string name="navigation_view_settings">அமைப்புகள்</string>
     <string name="navigation_view_faqs">FAQs</string>
     <string name="navigation_view_about">பற்றி</string>
@@ -16,6 +18,7 @@
     <string name="hour">Hour</string>
     <string name="save_setting">Save</string>
     <string name="muzei_refresh_duration">Refresh Duration</string>
+    <string name="muzei_wifi_only">வைஃபையிலிருந்து மட்டும் புதுப்பிக்கவும்</string>
     <string name="muzei_downloaded_only">Load Downloaded Wallpapers Only</string>
     <string name="muzei_settings_ignored">Icon Pack doesn\'t contain wallpapers, settings ignored.</string>
     <string name="muzei_settings_saved">Settings Saved</string>
@@ -23,6 +26,7 @@
     <string name="menu_search">தேடல்</string>
     <string name="menu_save">Save to Device</string>
     <string name="menu_select_all">அனைத்தையும் தெரிவுசெய்</string>
+    <string name="menu_delete">நீக்கு</string>
     <string name="menu_wallpaper_crop">Crop Wallpaper</string>
     <string name="menu_apply_homescreen">முகப்புத்திரை</string>
     <string name="menu_apply_lockscreen">லாக்ஸ்கிரீன்</string>
@@ -34,13 +38,19 @@
     <string name="ok">சரி</string>
     <string name="install">நிறுவு</string>
     <string name="donate">நன்கொடை</string>
+    <string name="update">புதுப்பி</string>
     <string name="search_noresult">எந்த முடிவும் கிடைக்கவில்லை \"%s\"</string>
     <string name="search_faqs">கேள்வி அல்லது பதில்</string>
     <string name="search_icon">ஐகான் பெயர்</string>
+    <string name="search_wallpapers">வால்பேப்பர் பெயர்</string>
     <!-- Update -->
+    <string name="checking_for_update">புதுப்பிப்பைச் சரிபார்க்கிறது…</string>
+    <string name="update_available">புதுப்பிப்பு உள்ளது!</string>
+    <string name="no_update_available">சமீபத்திய பதிப்பைப் பயன்படுத்துகிறீர்கள்!</string>
     <!-- Changelog -->
     <string name="changelog_version">பதிப்பு</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">பயன்பாட்டில் வாங்கிய தயாரிப்புகளைக் காட்ட முடியவில்லை</string>
     <!-- License -->
     <string name="license_checking">Checking license …</string>
     <string name="license_check">License Check</string>
