@@ -95,14 +95,14 @@ android {
 dependencies {
     implementation project(':extLibs:PreLollipopTransitions')
 
-    api 'androidx.annotation:annotation:1.8.0'
+    api 'androidx.annotation:annotation:1.8.2'
     api 'androidx.appcompat:appcompat:1.7.0'
     api 'com.google.android.apps.muzei:muzei-api:3.4.2'
     api 'com.android.billingclient:billing:7.0.0'
     api 'dev.jahir.KustomAPI:api:6369c37'
     api 'dev.jahir.KustomAPI:preset:6369c37'
 
-    implementation 'androidx.work:work-runtime:2.9.0'
+    implementation 'androidx.work:work-runtime:2.9.1'
     implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.palette:palette:1.0.0'
@@ -124,7 +124,7 @@ dependencies {
     implementation 'com.mikhaellopez:circularimageview:3.0.2'
     implementation 'com.github.chrisbanes:PhotoView:1.3.1'
     implementation 'me.grantland:autofittextview:0.2.1'
-    implementation 'com.github.KeepSafe:TapTargetView:1.9.1'
+    implementation 'com.github.KeepSafe:TapTargetView:1.13.2'
     implementation 'com.github.sarsamurmu:AdaptiveIconBitmap:1.0.1'
     implementation 'com.github.zixpo:recycler-fast-scroll:6add4dff39'
     implementation 'me.zhanghai.android.fastscroll:library:1.1.8'
