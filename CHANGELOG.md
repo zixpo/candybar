@@ -2,6 +2,16 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.20.3
+- Fix JitPack issue (thanks to [Donnnno][Donnnno])
+
+# v3.20.2
+- Updated Muzei to v3.4.2 (thanks to [Donnnno][Donnnno])
+- Updated translations
+
+# v3.20.1
+- Improve notification support
+
 # v3.20.0
 - Updated AGP and dependencies
 - Updated Play Billing Library to v7
