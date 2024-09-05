@@ -57,7 +57,7 @@ public class CommonDataFetcher implements DataFetcher<Bitmap> {
     }
 
     @Nullable
-    private Bitmap getDrawable(String uri) {
+    private Bitmap getDrawable(String uri) { // This is a path for all icons within the app
         String drawableIdStr = uri.replaceFirst("drawable://", "");
         int drawableId = Integer.parseInt(drawableIdStr);
         Drawable drawable = ContextCompat.getDrawable(mContext, drawableId);

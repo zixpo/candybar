@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <version>1</version>
+
+    <category title="Extra Icon Pack" />
+    <item name="Extra Icon" drawable="ic_icon_pack_color"/>
+
+</resources>

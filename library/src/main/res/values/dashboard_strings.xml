@@ -4,6 +4,7 @@
     <!-- Navigation View -->
     <string name="navigation_view_home">Home</string>
     <string name="navigation_view_apply">Apply</string>
+    <string name="navigation_view_icon_packs">Icon Packs</string>
     <string name="navigation_view_icons">Icons</string>
     <string name="navigation_view_request">Icon Request</string>
     <string name="navigation_view_wallpapers">Wallpapers</string>
@@ -12,6 +13,12 @@
     <string name="navigation_view_faqs">FAQs</string>
     <string name="navigation_view_about">About</string>
     <string name="navigation_view_donate">Support Development</string>
+
+    <!-- Icon Packs -->
+    <string name="change_icon_color_title">Select Icon Pack</string>
+    <string name="change_icon_color_desc">Apply a different icon pack.</string>
+    <string name="change_icon_color_dialog_title">Select a color</string>
+
 
     <!-- Muzei -->
     <string name="muzei_settings">Muzei Settings</string>
@@ -38,6 +45,7 @@
     <!-- Dialog -->
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="confirm">Confirm</string>
     <string name="clear">Clear</string>
     <string name="ok">OK</string>
     <string name="install">Install</string>
@@ -327,8 +335,6 @@
 
     <!-- Permission -->
     <string name="permission_storage_denied">Storage permission needed to save wallpaper</string>
-    <string name="permission_notification_denied_1">Notification permission is needed to receive notifications from the developer</string>
-    <string name="permission_notification_denied_2">Enable notifications from the app settings</string>
 
     <!-- Intent -->
     <string name="app_client">Choose App</string>

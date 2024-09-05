@@ -64,6 +64,8 @@ public class Database extends SQLiteOpenHelper {
     private static final String KEY_PRODUCT_ID = "product_id";
 
     private static final String KEY_NAME = "name";
+    private static final String KEY_PACKAGE_NAME = "packageName";
+
     private static final String KEY_ACTIVITY = "activity";
     private static final String KEY_REQUESTED_ON = "requested_on";
 
@@ -634,8 +636,9 @@ public class Database extends SQLiteOpenHelper {
             do {
                 String drawableName = cursor.getString(cursor.getColumnIndex(KEY_NAME));
                 String title = cursor.getString(cursor.getColumnIndex(KEY_TITLE));
+                String packageName = cursor.getString(cursor.getColumnIndex(KEY_PACKAGE_NAME));
                 int resId = getDrawableId(drawableName);
-                icons.add(new Icon(drawableName, null, resId).setTitle(title));
+                icons.add(new Icon(drawableName, null, resId, packageName).setTitle(title));
             } while (cursor.moveToNext());
         }
         cursor.close();
