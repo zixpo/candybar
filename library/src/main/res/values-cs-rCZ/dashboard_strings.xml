@@ -107,6 +107,7 @@
     <string name="home_icon_request_missed_apps">Chybějící aplikace: %d</string>
     <!-- Apply -->
     <string name="apply_installed">Nainstalovaný spouštěč</string>
+    <string name="apply_installed_launchers">Nainstalované spouštěče</string>
     <string name="apply_supported">Podporované spouštěče</string>
     <string name="apply_manual">Spouštěč %1$s nepodporuje přímé použití, ale můžete použít %2$s ručně v nastavení spouštěče.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso nepodporuje přímé použití, ale můžete postupovat podle následujících kroků:</string>
@@ -265,6 +266,8 @@
     <string name="pref_theme_header">Motiv</string>
     <string name="pref_theme_dark">Tmavý motiv</string>
     <string name="pref_theme_dark_desc">Pro motiv aplikace použít tmavou barvu</string>
+    <string name="pref_notifications_header">Oznámení</string>
+    <string name="pref_notifications">Přijímat oznámení</string>
     <string name="pref_wallpaper_header">Tapeta</string>
     <string name="pref_wallpaper_location">Umístění uložení tapety</string>
     <string name="pref_language_header">Jazyk</string>
