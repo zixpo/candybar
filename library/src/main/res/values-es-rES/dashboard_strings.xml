@@ -279,6 +279,8 @@ Abre \"Ajustes\" y escoge \"Restaurar las Compras\" para restaurarlo.</string>
     <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">El permiso de almacenamiento se necesita para guardar fondos de pantalla</string>
+    <string name="permission_notification_denied_1">Se necesita el permiso de notificaciones para recibir notificaciones del desarrollador</string>
+    <string name="permission_notification_denied_2">Activa las notificaciones desde la configuración de la aplicación</string>
     <!-- Intent -->
     <string name="app_client">Elige el Cliente de Correo</string>
     <string name="no_email_app">No hay aplicación para enviar el correo</string>

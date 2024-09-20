@@ -18,6 +18,7 @@
     <string name="hour">ชั่วโมง</string>
     <string name="save_setting">บันทึก</string>
     <string name="muzei_refresh_duration">ความถี่ของการรีเฟรช</string>
+    <string name="muzei_wifi_only">รีเฟรชผ่านไวไฟเท่านั้น</string>
     <string name="muzei_downloaded_only">แสดงวอลเปเปอร์ที่ดาวน์โหลดแล้วเท่านั้น</string>
     <string name="muzei_settings_ignored">การตั้งค่าไม่มีผลเพราะชุดไอคอนไม่มีวอลเปเปอร์</string>
     <string name="muzei_settings_saved">บันทึกการตั้งค่าแล้ว</string>
@@ -49,20 +50,29 @@
     <!-- Changelog -->
     <string name="changelog_version">เวอร์ชั่น</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">ไม่สามารถโหลดสินค้าสำหรับการซื้อในแอปได้</string>
     <!-- License -->
     <string name="license_checking">กำลังตรวจสอบสิทธิ์การใช้งาน…</string>
     <string name="license_check">ตรวจสอบสิทธิ์การใช้งาน</string>
+    <string name="license_check_success">การตรวจสอบสิทธิ์การใช้งานเสร็จสมบูรณ์ ขอบคุณที่ดาวน์โหลดแอปจาก Play Store</string>
+    <string name="license_check_failed">การตรวจสอบสิทธิ์การใช้งานล้มเหลว เนื่องจากแอปไม่ได้ถูกดาวน์โหลดจาก Play Store
+        คุณจะไม่สามารถใช้งานแอปได้</string>
     <string name="license_check_retry">ตรวจสอบสิทธิ์การใช้งานไม่ได้ กรุณาลองใหม่อีกครั้ง</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">ตรวจสอบ Play Store</string>
+    <string name="playstore_check_success">ขอบคุณที่ติดตั้งแอปผ่าน Play Store!</string>
+    <string name="playstore_check_failed">ดูเหมือนว่าคุณไม่ได้ทำการติดตั้งชุดไอคอนนี้จาก Google Play Store
+        คุณจะไม่สามารถใช้งานมันได้</string>
     <!-- Share -->
     <string name="share_app_title">ลองเช็ค %s ดูสิ!</string>
     <string name="share_app_body">ลองเช็ค %1$s ดูสิ ชุดไอคอนนี้เท่ดีนะ! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">แถบเมนูนำทาง</string>
+    <string name="tap_intro_home_navigation_desc">แตะที่นี่หรือปัดจากขอบซ้ายของหน้าขอเพื่อเปิดแถบเมนูนำทาง</string>
     <string name="tap_intro_home_apply">ใช้ชุดไอคอน</string>
     <string name="tap_intro_home_apply_desc">แตะที่นี่เพื่อใช้ %s กับตัวเรียกใช้ปัจจุบันของคุณ หรือแตะค้างไว้เพื่อใช้มันกับตัวเรียกใช้อื่น</string>
     <string name="tap_intro_icons_search">ค้นหา</string>
+    <string name="tap_intro_icons_search_desc">แตะที่นี่เพื่อค้นหาไอคอน</string>
     <string name="tap_intro_request_select">เลือกแอปที่ขาดไอคอน</string>
     <string name="tap_intro_request_select_desc">แตะที่นี่เพื่อเลือกแอปที่ขาดไอคอน</string>
     <string name="tap_intro_request_select_all">เลือกแอปที่ขาดไอคอนทั้งหมด</string>
@@ -70,14 +80,20 @@
     <string name="tap_intro_request_send">ส่งคำขอไอคอน</string>
     <string name="tap_intro_request_send_desc">แตะที่นี่เพื่อส่งแอปที่ขาดไอคอนที่เลือกไว้</string>
     <string name="tap_intro_request_premium">คำขอไอคอนแบบพรีเมี่ยม</string>
+    <string name="tap_intro_request_premium_desc">แตะที่นี่เพื่อซื้อแพ็กเกจคำขอไอคอนแบบพรีเมี่ยม
+        คุณสามารถใช้คำขอไอคอนแบบพรีเมี่ยมเพื่อการดำเนินการที่รวดเร็วกว่า</string>
     <string name="tap_intro_wallpapers_option">ตัวเลือกวอลเปเปอร์</string>
+    <string name="tap_intro_wallpapers_option_desc">แตะค้างไว้ที่นี่เพื่อแสดงตัวเลือกของวอลเปเปอร์ %sใช้งานวอลเปเปอร์</string>
     <string name="tap_intro_wallpapers_option_desc_download">ดาวน์โหลดหรือ</string>
     <string name="tap_intro_wallpapers_preview">ดูตัวอย่างวอลเปเปอร์</string>
+    <string name="tap_intro_wallpapers_preview_desc">แตะที่นี่เพื่อดูตัวอย่างวอลเปเปอร์ขนาดเต็ม</string>
     <string name="tap_intro_wallpaper_preview_save">บันทึกวอลเปเปอร์</string>
     <string name="tap_intro_wallpaper_preview_save_desc">แตะที่นี่เพื่อดาวน์โหลดและบันทึกวอลเปเปอร์ไปยังอุปกรณ์ของคุณเพื่อการใช้งานภายหลัง</string>
     <string name="tap_intro_wallpaper_preview_apply">ใช้วอลเปเปอร์</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">แตะที่นี่เพื่อตั้งวอลเปเปอร์เป็นภาพพื้นหลังหน้าจอหลัก</string>
     <!-- Home -->
     <string name="home_more_apps_header">แอปอื่นๆ</string>
+    <string name="home_more_apps">เช็กแอปอื่นๆบน Google Play Store</string>
     <string name="home_rate_and_review">ให้คะแนน &amp; เขียนรีวิว</string>
     <string name="home_apply_icon_pack">ใช้ %s</string>
     <string name="home_donate">บริจาค</string>
@@ -91,7 +107,9 @@
     <string name="home_icon_request_missed_apps">ขาดไอคอน\n%d แอป</string>
     <!-- Apply -->
     <string name="apply_installed">ตัวเรียกใช้ที่ติดตั้งแล้ว</string>
+    <string name="apply_installed_launchers">ตัวเรียกใช้ที่ติดตั้งไว้</string>
     <string name="apply_supported">ตัวเรียกใช้ที่สนับสนุน</string>
+    <string name="apply_manual">ตัวเรียกใช้ %1$s ไม่สนับสนุนการใช้งานโดยตรง แต่คุณสามารถใช้งาน %2$s เองได้ผ่านการตั้งค่าของตัวเรียกใช้</string>
     <string name="apply_manual_kvaesitso">ไม่สามารถเซ็ตไอคอนให้ตัวใช้งาน Kvaesitso จากแอปนี้ได้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้:</string>
     <string name="apply_manual_kvaesitso_step_1">เปิดการตั้งค่าตัวใช้งาน Kvaesitso</string>
     <string name="apply_manual_kvaesitso_step_2">แตะที่ \"กริด &amp; ไอคอน\"</string>

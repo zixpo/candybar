@@ -37,13 +37,13 @@
         <item>Ik kan geen volledige icoonnaam zien</item>
         <item>Hoe kan ik iconen vervangen door een alternatief icoon?</item>
         <item>Hoe vraag ik om een icoon?</item>
-        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
-        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
+        <item>Hoe kan ik overige Premium Aanvragen herstellen na het opnieuw installeren van de app?</item>
+        <item>Na het herstarten van mijn telefoon wordt het iconenpakket niet toegepast, is het teruggezet naar de standaardinstellingen?</item>
         <item>Waarom zien iconen er hoekerig of gepixeled uit op mijn telefoon?</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on the app drawer changed?</item>
+        <item>Ik kan het icoon zien in alle iconen,
+            maar waarom is het icoon in de app scherm niet gewijzigd?</item>
         <item>Wat is de optie \"bugs rapporteren\"?</item>
-        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
+        <item>Mijn launcher staat vermeld in de Google Play omschrijving, maar waarom is het niet opgenomen in de toepassectie?</item>
         <item>Achtergrond kan niet toegepast worden, het toont alleen het zwarte scherm?</item>
         <item>Muzei: Hoe laad je alleen gedownloade achtergronden?</item>
         <item>Muzei: Ik wil geen achtergronden blijven downloaden, telkens als de achtergrond verandert?</item>
@@ -60,41 +60,41 @@
         <item>De launcher is de interface waarmee gebruikers het startscherm kunnen aanpassen.,
             start mobiele apps, start telefoongesprekken, en andere taken uitvoeren op Androidapparaten.</item>
         <item>Een grafische set die het uiterlijk van je app-iconen wijzigt</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play Store description.
-            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
-        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
-            If your launcher is not listed there, but this icon pack is compatible with it
-            (see on Google Play Store description for supported launchers),
-            you can apply the icon pack manually in your launcher settings.</item>
-        <item>You can open the navigation drawer and then open \"Icons\"</item>
-        <item>Just tap the icon. A preview dialog will appear with a bigger image and complete icon name.</item>
-        <item>It depends on which launcher you used. Not every launcher supports icon editing.
-       	    Mostly you can edit an icon by tapping &amp; holding the icon or double tapping it.</item>
-        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
-        <item>\"Report Bugs\" is used to report bugs related to the icon pack, not the dashboard.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
-        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
-      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
-      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
-      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
-            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>Je hebt een launcher nodig die aangepaste icoonpakketten ondersteunt.
+            Ondersteunde launchers staan vermeld in de beschrijving van de Play Store.
+            Als je niet weet welke launchers gebruikt moeten worden, ga gewoon naar het \"Toepassen\" gedeelte en installeer het vanaf daar.</item>
+        <item>Je kunt het navigatiepaneel openen en vervolgens \"Toepassen\" openen. Kies uw launcher uit de lijst.
+            Als je launcher daar niet is opgenomen, maar dit icon pack is compatibel met
+            (zie op de Google Play Store beschrijving voor ondersteunde launchers),
+            je kunt het iconenpakket handmatig toepassen in uw launcher instellingen.</item>
+        <item>Je kunt het zijmenu openen en vervolgens \"Iconen\" openen</item>
+        <item>Tik op het icoon. Een preview zal verschijnen met een grotere afbeelding en een volledige naam van het icoon.</item>
+        <item>Het hangt ervan af welke launcher je hebt gebruikt. Niet elke launcher ondersteunt het bewerken van icoon.
+       	    Meestal kun je een icoon bewerken door op &amp; het ingedrukt te houden of er dubbel op te tikken.</item>
+        <item>Je kunt de navigatiebalk openen en vervolgens \"Iconen\" openen</item>
+        <item>Je kunt het zijmenu openen en vervolgens \"Instellingen\" openen en \"Aankopen Herstellen\" kiezen.
+            Als je nog resterende Premium verzoeken had voordat je opnieuw installeerde, ze zullen worden hersteld.</item>
+        <item>Het gebeurde omdat dit iconenpakket naar de SD-kaart is verplaatst; je moet het in het interne geheugen installeren.</item>
+        <item>Het probleem is misschien afkomstig van de launcher die je hebt gebruikt bij het vergroten van je iconen.
+       	    Je kunt het oplossen door de grootte van het icoon te verhogen naar 115-120%.
+       	    Als alternatief kan je je launcher wijzigen.</item>
+        <item>Open instellingen, scroll naar beneden en selecteer vervolgens \"Rapporteer bugs\".</item>
+        <item>\"Rapporteer bugs\" wordt gebruikt om bugs te rapporteren die gerelateerd zijn aan het iconenpakket, niet het dashboard.</item>
+        <item>Niet elke launcher ondersteunt direct toepassing, en sommige ervan kunnen niet direct vanaf het dashboard de iconen toepassen.
+      	    U kunt dit iconenpakket handmatig toepassen in de individuele launcher instellingen.</item>
+        <item>Wanneer je \"Achtergrond instellen\" direct vanuit de app gebruikt, wordt deze gedownload naar de cache,
+      	    dan zal het dashboard proberen deze toe te passen. Het toepassen ervan zal enige tijd in beslag nemen en heeft ook een enorme hoeveelheid RAM nodig voor een korte periode.
+      	    \"Zwart scherm\" fouten kunnen verschijnen, omdat je telefoon niet genoeg gratis RAM heeft om de achtergrond te verwerken.
+      	    Herstarten van je telefoon zal dit probleem oplossen. Na het herstarten zal uw telefoon meer RAM beschikbaar hebben.
+            Als alternatief, kan je de gedownloade achtergrond vanuit je galerij openen en daar als achtergrond instellen.</item>
+        <item>Open Muzei, kies dit iconenpakket → instellingen. Je ziet een optie om alleen de gedownloade achtergronden te laden.
+            Je moet eerst achtergronden downloaden vanaf het dashboard.</item>
         <item>Als een achtergrond al is gedownload, zal deze automatisch vanuit je telefoongeheugen worden geladen.
             Muzei zal het niet blijven downloaden wanneer de achtergrond verandert. Je moet eerst achtergronden downloaden vanaf het dashboard.</item>
         <item>Open Dashboard, download de achtergronden die je wilt gebruiken in Muzei.
             Open Muzei-instellingen en kies \"Load Downloaded Wallpapers Only\".</item>
         <item>Het wordt gebruikt voor het schrijven &amp; lezen van de cache en de icoonverzoek data op te halen.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>Het wordt gebruikt om Achtergronden uit de cloud &amp; te downloaden.</item>
         <item>Het wordt gebruikt om te controleren of je telefoon een internetverbinding heeft of niet.</item>
         <item>Het wordt gebruikt om te controleren of je telefoon een internetverbinding heeft of niet, om cloud achtergronden van Muzei te laden.</item>
         <item>Het wordt gebruikt om achtergronden rechtstreeks vanuit de dashboardapp toe te passen.</item>

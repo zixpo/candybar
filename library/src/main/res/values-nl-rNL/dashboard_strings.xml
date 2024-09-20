@@ -105,6 +105,7 @@
     <string name="home_icon_request_missed_apps">Ontbrekende\n%d apps</string>
     <!-- Apply -->
     <string name="apply_installed">Geïnstalleerde Launcher</string>
+    <string name="apply_installed_launchers">Geïnstalleerde Launchers</string>
     <string name="apply_supported">Ondersteunde Launchers</string>
     <string name="apply_manual">%1$s ondersteunt geen directe toepassing, maar je kunt %2$s handmatig toepassen via de launcherinstellingen.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso ondersteunt geen directe toepassing, maar je kunt deze stappen volgen:</string>
@@ -261,6 +262,8 @@
     <string name="pref_theme_header">Thema</string>
     <string name="pref_theme_dark">Donker thema</string>
     <string name="pref_theme_dark_desc">Donkere kleur gebruiken voor appthema</string>
+    <string name="pref_notifications_header">Meldingen</string>
+    <string name="pref_notifications">Meldingen ontvangen</string>
     <string name="pref_wallpaper_header">Achtergrond</string>
     <string name="pref_wallpaper_location">Opslaglocatie voor achtergronden</string>
     <string name="pref_language_header">Taal</string>
@@ -276,6 +279,8 @@
     <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Opslagrechten nodig om achtergrond op te slaan</string>
+    <string name="permission_notification_denied_1">De meldingen toestemming is nodig om meldingen van de ontwikkelaar te ontvangen</string>
+    <string name="permission_notification_denied_2">Activeer meldingen van de app instellingen</string>
     <!-- Intent -->
     <string name="app_client">App kiezen</string>
     <string name="no_email_app">Geen toepassing om e-mail te verzenden</string>

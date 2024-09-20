@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">கேண்டி பார் மெட்டீரியல் டாஷ்போர்டு</string>
     <!-- Navigation View -->
-    <string name="navigation_view_home">முகப்புத் திரை</string>
-    <string name="navigation_view_apply">உபயோகி</string>
-    <string name="navigation_view_icons">ஐகான்</string>
+    <string name="navigation_view_home">முகப்பு</string>
+    <string name="navigation_view_apply">செயல்படுத்து</string>
+    <string name="navigation_view_icons">ஐகான்கள்</string>
     <string name="navigation_view_request">ஐகான் கோரிக்கை</string>
-    <string name="navigation_view_wallpapers">வால்பேப்பர்கள்</string>
+    <string name="navigation_view_wallpapers">சுவர்சித்திரங்கள்</string>
+    <string name="navigation_view_presets">முன்னமைவுகள்</string>
     <string name="navigation_view_settings">அமைப்புகள்</string>
     <string name="navigation_view_faqs">FAQs</string>
     <string name="navigation_view_about">பற்றி</string>
@@ -16,6 +18,7 @@
     <string name="hour">Hour</string>
     <string name="save_setting">Save</string>
     <string name="muzei_refresh_duration">Refresh Duration</string>
+    <string name="muzei_wifi_only">வைஃபையிலிருந்து மட்டும் புதுப்பிக்கவும்</string>
     <string name="muzei_downloaded_only">Load Downloaded Wallpapers Only</string>
     <string name="muzei_settings_ignored">Icon Pack doesn\'t contain wallpapers, settings ignored.</string>
     <string name="muzei_settings_saved">Settings Saved</string>
@@ -23,6 +26,7 @@
     <string name="menu_search">தேடல்</string>
     <string name="menu_save">Save to Device</string>
     <string name="menu_select_all">அனைத்தையும் தெரிவுசெய்</string>
+    <string name="menu_delete">நீக்கு</string>
     <string name="menu_wallpaper_crop">Crop Wallpaper</string>
     <string name="menu_apply_homescreen">முகப்புத்திரை</string>
     <string name="menu_apply_lockscreen">லாக்ஸ்கிரீன்</string>
@@ -34,25 +38,41 @@
     <string name="ok">சரி</string>
     <string name="install">நிறுவு</string>
     <string name="donate">நன்கொடை</string>
+    <string name="update">புதுப்பி</string>
     <string name="search_noresult">எந்த முடிவும் கிடைக்கவில்லை \"%s\"</string>
     <string name="search_faqs">கேள்வி அல்லது பதில்</string>
     <string name="search_icon">ஐகான் பெயர்</string>
+    <string name="search_wallpapers">வால்பேப்பர் பெயர்</string>
     <!-- Update -->
+    <string name="checking_for_update">புதுப்பிப்பைச் சரிபார்க்கிறது…</string>
+    <string name="update_available">புதுப்பிப்பு உள்ளது!</string>
+    <string name="no_update_available">சமீபத்திய பதிப்பைப் பயன்படுத்துகிறீர்கள்!</string>
     <!-- Changelog -->
     <string name="changelog_version">பதிப்பு</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">பயன்பாட்டில் வாங்கிய தயாரிப்புகளைக் காட்ட முடியவில்லை</string>
     <!-- License -->
     <string name="license_checking">Checking license …</string>
     <string name="license_check">License Check</string>
+    <string name="license_check_success">உரிமம் சரிபார்ப்பு வெற்றி. பிளேஸ்டோரிலிருந்து பயன்பாட்டைப் பதிவிறக்கியதற்கு நன்றி.</string>
+    <string name="license_check_failed">உரிம சோதனை தோல்வி;  நீங்கள் ப்ளே ஸ்டோரிலிருந்து செயலியைப் பதிவிறக்கவில்லை.
+         நீங்கள் அதைப் பயன்படுத்த முடியாது.</string>
     <string name="license_check_retry">Unable to check license, please try again in a few moments.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">பிளேஸ்டோர் சோதனை</string>
+    <string name="playstore_check_success">கூகுள் பிளேஸ்டோரிலிருந்து செயலியை நிறுவியதற்கு நன்றி. மகிழுங்கள்!</string>
+    <string name="playstore_check_failed">கூகுள் ப்ளே ஸ்டோருக்கு வெளியே இந்த ஐகான் பேக்கை நிறுவியது போல் தெரிகிறது.
+         நீங்கள் அதைப் பயன்படுத்த முடியாது.</string>
     <!-- Share -->
     <string name="share_app_title">ஏய்! இதைப் பாரு %s</string>
     <string name="share_app_body">இதைப் பாரு %1$s, இந்த ஐகான் பேக் மிகவும் அருமையாக இருக்கிறது! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Navigation drawer</string>
+    <string name="tap_intro_home_navigation_desc">வழிசெலுத்தல் டிராயரைத் திறக்க, இங்கே தட்டவும் அல்லது திரையின் இடது விளிம்பிலிருந்து ஸ்வைப் செய்யவும்</string>
     <string name="tap_intro_home_apply">Apply icon pack</string>
+    <string name="tap_intro_home_apply_desc">உங்கள் தற்போதைய துவக்கிக்கு %sஐப் பயன்படுத்த இங்கே தட்டவும். மற்ற துவக்கிகளுக்குப் பயன்படுத்த நீண்ட நேரம் அழுத்தவும்.</string>
     <string name="tap_intro_icons_search">தேடல்</string>
+    <string name="tap_intro_icons_search_desc">ஐகானைத் தேட இங்கே தட்டவும்</string>
     <string name="tap_intro_request_select">Select missed app</string>
     <string name="tap_intro_request_select_desc">Tap here to select missed app for icon request</string>
     <string name="tap_intro_request_select_all">Select all missed apps</string>
@@ -60,14 +80,20 @@
     <string name="tap_intro_request_send">Send icon request</string>
     <string name="tap_intro_request_send_desc">Tap here to send selected missed apps</string>
     <string name="tap_intro_request_premium">Premium icon request</string>
+    <string name="tap_intro_request_premium_desc">பிரீமியம் ஐகான் கோரிக்கை தொகுப்பை வாங்க இங்கே தட்டவும்,
+         பிரீமியம் ஐகான் கோரிக்கையுடன், நீங்கள் கோரிய செயலிகளை விரைவாகப் பெறலாம்.</string>
     <string name="tap_intro_wallpapers_option">Wallpaper options</string>
+    <string name="tap_intro_wallpapers_option_desc">வால்பேப்பர் விருப்பங்களைக் காட்ட இங்கே அழுத்திப் பிடிக்கவும்; %s வால்பேப்பரைப் பயன்படுத்துகிறது.</string>
     <string name="tap_intro_wallpapers_option_desc_download">download or</string>
     <string name="tap_intro_wallpapers_preview">Preview wallpaper</string>
+    <string name="tap_intro_wallpapers_preview_desc">திரைசித்திரத்தின் முழு அளவை முன்னோட்டமிட இங்கே அழுத்தவும் சித்திரம்</string>
     <string name="tap_intro_wallpaper_preview_save">Save wallpaper</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Tap here to download and save wallpaper to your device so you can use it later</string>
     <string name="tap_intro_wallpaper_preview_apply">Apply wallpaper</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">முகப்புத் திரையின் பின்னணியாகத் திரைசித்திரத்தய் அமைக்க இங்கே அழுத்தவும்</string>
     <!-- Home -->
     <string name="home_more_apps_header">மேலும் பயன்பாடுகள்</string>
+    <string name="home_more_apps">கூகிள் பிலே ஸ்டோர் இல் வெளியிடப்பட்ட பிற செயலிகளைப் பார்க்கவும்</string>
     <string name="home_rate_and_review">வீதம் &amp; விமர்சனம்</string>
     <string name="home_apply_icon_pack">உபயோகி %s</string>
     <string name="home_donate">நன்கொடை</string>
@@ -82,7 +108,9 @@
     <string name="home_icon_request_missed_apps">தவறவிட்ட\n%d பயன்பாடுகள்</string>
     <!-- Apply -->
     <string name="apply_installed">நிறுவப்பட்ட லான்ச்சர்</string>
+    <string name="apply_installed_launchers">நிறுவப்பட்ட துவக்கிகள்</string>
     <string name="apply_supported">ஆதரிக்கப்பட்ட லான்ச்சர்கள்</string>
+    <string name="apply_manual_samsung_oneui_step_1">%sஐத் திறக்கவும்</string>
     <string name="apply_launch_failed">தொடங்க முடியவில்லை %s அமைப்புகள்</string>
     <string name="apply_launcher_not_installed">%s is not installed. Do you want to open
         Google Play Store to download and install it?</string>
