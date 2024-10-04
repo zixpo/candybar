@@ -210,6 +210,10 @@ public class IconsHelper {
                         public void handleResult(Bitmap resource) {
                             Intent intent = new Intent();
                             intent.putExtra("icon", resource);
+
+                            // Also add the direct icon resource ID to the intent for launchers that support it
+                            Intent.ShortcutIconResource iconRes = Intent.ShortcutIconResource.fromContext(context, icon.getRes());
+                            intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconRes);
                             ((AppCompatActivity) context).setResult(resource != null ?
                                     Activity.RESULT_OK : Activity.RESULT_CANCELED, intent);
                             ((AppCompatActivity) context).finish();
