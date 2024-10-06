@@ -37,6 +37,7 @@ public class IntentHelper {
     private static final String ACTION_NOVA_LAUNCHER = "com.novalauncher.THEME";
     private static final String ACTION_ONEPLUS_PICK_ICON = "net.oneplus.launcher.icons.ACTION_PICK_ICON";
     private static final String ACTION_PLUS_HOME = "jp.co.a_tm.android.launcher.icons.ACTION_PICK_ICON";
+    private static final String ACTION_PROJECTIVY_PICK_ICON = "com.spocky.projengmenu.icons.ACTION_PICK_ICON";
 
     public static int getAction(@Nullable Intent intent) {
         if (intent == null) return ACTION_DEFAULT;
@@ -49,6 +50,7 @@ public class IntentHelper {
                 case ACTION_NOVA_LAUNCHER:
                 case ACTION_ONEPLUS_PICK_ICON:
                 case ACTION_PLUS_HOME:
+                case ACTION_PROJECTIVY_PICK_ICON:
                     return ICON_PICKER;
                 case Intent.ACTION_PICK:
                 case Intent.ACTION_GET_CONTENT:

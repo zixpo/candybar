@@ -138,6 +138,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_pixel,
                 new String[]{"com.google.android.apps.nexuslauncher"},
                 false),
+        PROJECTIVY(
+                "Projectivy",
+                R.drawable.ic_launcher_projectivy,
+                new String[]{"com.spocky.projengmenu"},
+                true),
         SMART(
                 "Smart",
                 R.drawable.ic_launcher_smart,
@@ -689,6 +694,26 @@ public class LauncherHelper {
                 break;
             case POCO:
                 applyManual(context, launcherPackage, launcherName, "com.miui.home.settings.HomeSettingsActivity");
+                break;
+            case PROJECTIVY:
+                try {
+                    final Intent projectivy = new Intent("com.spocky.projengmenu.APPLY_ICONPACK");
+                    projectivy.setPackage("com.spocky.projengmenu");
+                    projectivy.putExtra("com.spocky.projengmenu.extra.ICONPACK_PACKAGENAME", context.getPackageName());
+                    projectivy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(projectivy);
+                    ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
                 break;
             case ONEUI:
                 applyOneUI(context, launcherName);
