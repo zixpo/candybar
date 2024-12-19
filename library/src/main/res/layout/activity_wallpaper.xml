@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="@bool/fit_system_window">
 
-    <uk.co.senab.photoview.PhotoView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/wallpaper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

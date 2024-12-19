@@ -61,7 +61,7 @@ import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.Popup;
 import candybar.lib.utils.WallpaperDownloader;
-import uk.co.senab.photoview.PhotoViewAttacher;
+import com.github.chrisbanes.photoview.PhotoView;
 
 /*
  * CandyBar - Material Dashboard
@@ -84,7 +84,7 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 public class CandyBarWallpaperActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback, WallpaperPropertiesLoaderTask.Callback {
 
-    private ImageView mImageView;
+    private PhotoView mImageView;
     private ProgressBar mProgress;
     private LinearLayout mBottomBar;
     private TextView mName;
@@ -100,7 +100,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     private String mWallpaperName;
     private Runnable mRunnable;
     private Handler mHandler;
-    private PhotoViewAttacher mAttacher;
+    private PhotoView mAttacher;
     private ExitActivityTransition mExitTransition;
 
     private boolean prevIsDarkTheme;
@@ -257,7 +257,9 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
         }
         Glide.get(this).clearMemory();
-        if (mAttacher != null) mAttacher.cleanup();
+        if (mAttacher != null) {
+            mAttacher = null;
+        }
         super.onDestroy();
     }
 
@@ -302,7 +304,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             p.updateItem(position, item);
                             if (Preferences.get(this).isCropWallpaper()) {
                                 if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
                                 }
                                 return;
                             }
@@ -462,7 +464,6 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
     private void loadWallpaper() {
         if (mAttacher != null) {
-            mAttacher.cleanup();
             mAttacher = null;
         }
 
@@ -524,7 +525,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
             if (Preferences.get(CandyBarWallpaperActivity.this).isCropWallpaper()) {
                 if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
                 }
             }
         }
@@ -533,7 +534,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     }
 
     private void onWallpaperLoaded() {
-        mAttacher = new PhotoViewAttacher(mImageView);
+        mAttacher = new PhotoView(mImageView.getContext());
         mAttacher.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         AnimationHelper.fade(mProgress).start();
