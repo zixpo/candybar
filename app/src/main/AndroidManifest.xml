@@ -163,6 +163,11 @@
                 <action android:name="net.oneplus.launcher.icons.ACTION_PICK_ICON" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <!-- Projectivy Launcher -->
+            <intent-filter>
+                <action android:name="com.spocky.projengmenu.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <!-- TSF Shell -->
             <intent-filter>
                 <action android:name="com.tsf.shell.themes" />
