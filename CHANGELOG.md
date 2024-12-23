@@ -1,12 +1,22 @@
-[moertel]: https://github.com/moertel
+[c1]: https://github.com/moertel
 
-[Donnnno]: https://github.com/Donnnno
+[c2]: https://github.com/Donnnno
+
+# v3.21.0
+- Fixed dependency issue with photoview
+- Updated social icons in the about section
+- Added Projectivy Launcher support (thanks to [@spocky][https://github.com/spocky])
+- Updated translations
+- Updated Gradle and AGP
+- Updated dependencies
+
+Big thanks 👏 to [@Donnnno][c2] for doing most of the work.
 
 # v3.20.3
-- Fix JitPack issue (thanks to [Donnnno][Donnnno])
+- Fix JitPack issue (thanks to [@Donnnno][c2])
 
 # v3.20.2
-- Updated Muzei to v3.4.2 (thanks to [Donnnno][Donnnno])
+- Updated Muzei to v3.4.2 (thanks to [@Donnnno][c2])
 - Updated translations
 
 # v3.20.1
@@ -27,8 +37,8 @@
 - Updated AGP and dependencies
 - Added Material You themes (thanks to [@GitGitro](https://github.com/GitGitro))
 - Fixed issue with icon category exclusion from icon search
-- New social icons in About section. Credit goes to [@Donnnno][Donnnno]
-- Added support for re-requesting icons. Credit goes to [@moertel][moertel]
+- New social icons in About section. Credit goes to [@Donnnno][c2]
+- Added support for re-requesting icons. Credit goes to [@moertel][c1]
 - Updated translations
 
 # v3.18.4
@@ -54,8 +64,8 @@
 # v3.17.4
 - Ability to load wallpapers from `assets`
 - Removed MultiDex (thanks to [@connyduck](https://github.com/connyduck))
-- Added support for visibly disabled requests (thanks to [@moertel][moertel])
-- Updated launchers (thanks to [@Donnnno][Donnnno])
+- Added support for visibly disabled requests (thanks to [@moertel][c1])
+- Updated launchers (thanks to [@Donnnno][c2])
 - Added support for rendering `VectorDrawable`
 - Updated translations
 
@@ -81,7 +91,7 @@
 - Added option to enable/disable the "Restore purchases" option
 - Updated translations
 
-Big thanks to [@moertel][moertel] and [@Donnnno][Donnnno] for their contribution.
+Big thanks to [@moertel][c1] and [@Donnnno][c2] for their contribution.
 
 # v3.16.2
 - Fixed app crash
@@ -97,7 +107,7 @@ Big thanks to [@moertel][moertel] and [@Donnnno][Donnnno] for their contribution
 - Added better fast scroller in icons section
 - Bumped Min SDK to 21
 
-Thanks to [@moertel][moertel], [@randomvector](//randomvector)
+Thanks to [@moertel][c1], [@randomvector](//randomvector)
 , [@one4studioicons](//one4studioicons)
 for helping with the issues.
 
@@ -122,13 +132,13 @@ for helping with the issues.
 - Ability to render layered drawables
 - Fixed an issue with the request fragment where the first missing app was not showing up when
   premium request was disabled
-  (Thanks to [@moertel][moertel] for the research)
+  (Thanks to [@moertel][c1] for the research)
 - Updated dependencies
 - Now targets Android S (API 32)
 - Hide old launchers in apply section (I will permanently remove them later)
 - Updated to work with Pacific Manager (Thanks to [@justinkruit](https://github.com/justinkruit))
 - Added support for custom icon request mode which you can configure programmatically using Java (
-  Thanks to [@moertel][moertel])
+  Thanks to [@moertel][c1])
 
 # v3.13.2
 - Updated Android Gradle Plugin
