@@ -5,7 +5,7 @@
 # v3.21.0
 - Fixed dependency issue with photoview
 - Updated social icons in the about section
-- Added Projectivy Launcher support (thanks to [@spocky][https://github.com/spocky])
+- Added Projectivy Launcher support (thanks to [@spocky](https://github.com/spocky))
 - Updated translations
 - Updated Gradle and AGP
 - Updated dependencies
