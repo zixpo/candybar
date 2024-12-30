@@ -11,6 +11,7 @@
         <item>Updated translations</item>
         <item>Updated Gradle and AGP</item>
         <item>Updated dependencies</item>
+        <item>Fixed deprecated features</item>
     </string-array>
 
 </resources>

@@ -2,6 +2,9 @@
 
 [c2]: https://github.com/Donnnno
 
+# v3.21.1
+- Fixed deprecated features
+
 # v3.21.0
 - Fixed dependency issue with photoview
 - Updated social icons in the about section
