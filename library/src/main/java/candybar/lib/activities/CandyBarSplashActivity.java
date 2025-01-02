@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -61,15 +62,17 @@ public abstract class CandyBarSplashActivity extends AppCompatActivity {
                 .executeOnThreadPool();
 
         mWallpaperThumbPreloader = new WallpaperThumbPreloader(this).execute();
-    }
 
-    @Override
-    public void onBackPressed() {
-        if (mWallpaperThumbPreloader != null) {
-            mWallpaperThumbPreloader.cancel(true);
-        }
-        Database.get(this.getApplicationContext()).closeDatabase();
-        super.onBackPressed();
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (mWallpaperThumbPreloader != null) {
+                    mWallpaperThumbPreloader.cancel(true);
+                }
+                Database.get(getApplicationContext()).closeDatabase();
+                finish();
+            }
+        });
     }
 
     @Override
