@@ -21,6 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -128,6 +129,25 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                 this, R.drawable.ic_toolbar_back, Color.WHITE));
         mBack.setOnClickListener(this);
 
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                WallpapersAdapter.sIsClickable = true;
+                if (mHandler != null && mRunnable != null) {
+                    mHandler.removeCallbacks(mRunnable);
+                }
+
+                if (mExitTransition != null) {
+                    mExitTransition.exit(CandyBarWallpaperActivity.this);
+                    return;
+                }
+
+                // Default back press behavior
+                setEnabled(false);
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
+
         String url = "";
         if (savedInstanceState != null) {
             url = savedInstanceState.getString(Extras.EXTRA_URL);
@@ -148,7 +168,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "wallpaper",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("url", mWallpaperName);
                     put("action", "preview");
                 }}
@@ -264,23 +284,10 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     }
 
     @Override
-    public void onBackPressed() {
-        WallpapersAdapter.sIsClickable = true;
-        if (mHandler != null && mRunnable != null)
-            mHandler.removeCallbacks(mRunnable);
-
-        if (mExitTransition != null) {
-            mExitTransition.exit(this);
-            return;
-        }
-        super.onBackPressed();
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -290,7 +297,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.back) {
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
         } else if (id == R.id.menu_apply) {
             Popup popup = Popup.Builder(this)
                     .to(mMenuApply)
@@ -324,7 +331,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             if (item.getType() == PopupItem.Type.LOCKSCREEN) {
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
-                                        new HashMap<String, Object>() {{
+                                        new HashMap<>() {{
                                             put("url", mWallpaperName);
                                             put("section", "lockscreen");
                                             put("action", "apply");
@@ -334,7 +341,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             } else if (item.getType() == PopupItem.Type.HOMESCREEN) {
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
-                                        new HashMap<String, Object>() {{
+                                        new HashMap<>() {{
                                             put("url", mWallpaperName);
                                             put("section", "homescreen");
                                             put("action", "apply");
@@ -344,7 +351,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             } else if (item.getType() == PopupItem.Type.HOMESCREEN_LOCKSCREEN) {
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
-                                        new HashMap<String, Object>() {{
+                                        new HashMap<>() {{
                                             put("url", mWallpaperName);
                                             put("section", "homescreen_and_lockscreen");
                                             put("action", "apply");
@@ -478,7 +485,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                     .override(2000)
                     .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                     .timeout(10000)
-                    .listener(new RequestListener<Bitmap>() {
+                    .listener(new RequestListener<>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
                             if (mWallpaper.getColor() == 0) {

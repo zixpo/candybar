@@ -76,7 +76,9 @@ public class HomeFragment extends Fragment implements HomeListener {
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "view",
-                new HashMap<String, Object>() {{ put("section", "home"); }}
+                new HashMap<>() {{
+                    put("section", "home");
+                }}
         );
 
         mManager = new StaggeredGridLayoutManager(

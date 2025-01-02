@@ -102,21 +102,21 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
             Setting setting = mSettings.get(position);
 
-            if (setting.getTitle().length() == 0) {
+            if (setting.getTitle().isEmpty()) {
                 contentViewHolder.title.setVisibility(View.GONE);
                 contentViewHolder.divider.setVisibility(View.GONE);
                 contentViewHolder.container.setVisibility(View.VISIBLE);
 
                 contentViewHolder.subtitle.setText(setting.getSubtitle());
 
-                if (setting.getContent().length() == 0) {
+                if (setting.getContent().isEmpty()) {
                     contentViewHolder.content.setVisibility(View.GONE);
                 } else {
                     contentViewHolder.content.setText(setting.getContent());
                     contentViewHolder.content.setVisibility(View.VISIBLE);
                 }
 
-                if (setting.getFooter().length() == 0) {
+                if (setting.getFooter().isEmpty()) {
                     contentViewHolder.footer.setVisibility(View.GONE);
                 } else {
                     contentViewHolder.footer.setText(setting.getFooter());
@@ -235,7 +235,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case CACHE:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("action", "open_dialog");
                                     put("item", "clear_cache");
@@ -249,7 +249,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                 .onPositive((dialog, which) -> {
                                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                             "click",
-                                            new HashMap<String, Object>() {{
+                                            new HashMap<>() {{
                                                 put("section", "settings");
                                                 put("action", "confirm");
                                                 put("item", "clear_cache");
@@ -272,22 +272,20 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                         LogUtil.e(Log.getStackTraceString(e));
                                     }
                                 })
-                                .onNegative(((dialog, which) -> {
-                                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                                            "click",
-                                            new HashMap<String, Object>() {{
-                                                put("section", "settings");
-                                                put("action", "cancel");
-                                                put("item", "clear_cache");
-                                            }}
-                                    );
-                                }))
+                                .onNegative(((dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                        "click",
+                                        new HashMap<>() {{
+                                            put("section", "settings");
+                                            put("action", "cancel");
+                                            put("item", "clear_cache");
+                                        }}
+                                )))
                                 .show();
                         break;
                     case ICON_REQUEST:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("action", "open_dialog");
                                     put("item", "clear_icon_request_data");
@@ -301,7 +299,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                 .onPositive((dialog, which) -> {
                                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                             "click",
-                                            new HashMap<String, Object>() {{
+                                            new HashMap<>() {{
                                                 put("section", "settings");
                                                 put("action", "confirm");
                                                 put("item", "clear_icon_request_data");
@@ -315,22 +313,20 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                     Toast.makeText(mContext, R.string.pref_data_request_cleared,
                                             Toast.LENGTH_LONG).show();
                                 })
-                                .onNegative(((dialog, which) -> {
-                                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                                            "click",
-                                            new HashMap<String, Object>() {{
-                                                put("section", "settings");
-                                                put("action", "cancel");
-                                                put("item", "clear_icon_request_data");
-                                            }}
-                                    );
-                                }))
+                                .onNegative(((dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                                        "click",
+                                        new HashMap<>() {{
+                                            put("section", "settings");
+                                            put("action", "cancel");
+                                            put("item", "clear_icon_request_data");
+                                        }}
+                                )))
                                 .show();
                         break;
                     case RESTORE:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("item", "restore_purchase_data");
                                     put("action", "confirm_without_dialog");
@@ -345,7 +341,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case PREMIUM_REQUEST:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("item", "rebuild_premium_request");
                                     put("action", "confirm_without_dialog");
@@ -364,7 +360,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case THEME:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("item", "change_theme");
                                     put("action", "open_dialog");
@@ -375,7 +371,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case LANGUAGE:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("item", "change_language");
                                     put("action", "open_dialog");
@@ -386,7 +382,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case REPORT_BUGS:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("item", "report_bugs");
                                     put("action", "open_dialog");
@@ -397,7 +393,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case CHANGELOG:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("item", "changelog");
                                     put("action", "open_dialog");
@@ -408,7 +404,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     case RESET_TUTORIAL:
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "settings");
                                     put("item", "reset_tutorial");
                                     put("action", "confirm_without_dialog");

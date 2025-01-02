@@ -93,14 +93,14 @@ public class InAppBillingClient implements PurchasesUpdatedListener, BillingClie
         }
 
         if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-            if (purchases != null && purchases.size() > 0) {
+            if (purchases != null && !purchases.isEmpty()) {
                 try {
                     ((InAppBillingListener) mInAppBilling.get().mContext)
                             .onProcessPurchase(purchases.get(0));
                     for (Purchase purchase : purchases) {
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "purchase",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("order_id", purchase.getOrderId());
                                     put("order_timestamp", purchase.getPurchaseTime());
                                     put("order_status", purchase.getPurchaseState());
@@ -134,7 +134,7 @@ public class InAppBillingClient implements PurchasesUpdatedListener, BillingClie
         mInAppBilling.get().getClient()
                 .queryPurchasesAsync(INAPP_PARAMS, (billingResult, purchases) -> {
                     if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                        if (purchases.size() > 0) {
+                        if (!purchases.isEmpty()) {
                             try {
                                 ((InAppBillingListener) mInAppBilling.get().mContext)
                                         .onProcessPurchase(purchases.get(0));

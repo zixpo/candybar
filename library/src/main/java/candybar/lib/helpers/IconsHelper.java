@@ -96,7 +96,7 @@ public class IconsHelper {
                 if (parser.getName().equals("category")) {
                     String title = parser.getAttributeValue(null, "title");
                     if (!sectionTitle.equals(title)) {
-                        if (sectionTitle.length() > 0 && icons.size() > 0) {
+                        if (!sectionTitle.isEmpty() && !icons.isEmpty()) {
                             count += icons.size();
                             sections.add(new Icon(sectionTitle, icons));
                         }
@@ -121,7 +121,7 @@ public class IconsHelper {
                 CandyBarApplication.getConfiguration().getCustomIconsCount() == 0) {
             CandyBarApplication.getConfiguration().setCustomIconsCount(count);
         }
-        if (icons.size() > 0) {
+        if (!icons.isEmpty()) {
             sections.add(new Icon(sectionTitle, icons));
         }
         parser.close();
@@ -158,7 +158,7 @@ public class IconsHelper {
                 // Title is already computed, so continue
                 continue;
             }
-            if (icon.getCustomName() != null && !icon.getCustomName().equals("")) {
+            if (icon.getCustomName() != null && !icon.getCustomName().isEmpty()) {
                 icon.setTitle(icon.getCustomName());
             } else {
                 icon.setTitle(replaceName(context, iconReplacer, icon.getDrawableName()));
@@ -194,7 +194,7 @@ public class IconsHelper {
     public static void selectIcon(@NonNull Context context, int action, Icon icon) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "icons");
                     put("action", "pick_icon");
                     put("item", icon.getDrawableName());
@@ -239,7 +239,7 @@ public class IconsHelper {
                     .load("drawable://" + icon.getRes())
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .listener(new RequestListener<Bitmap>() {
+                    .listener(new RequestListener<>() {
                         private void handleResult(Bitmap bitmap) {
                             Intent intent = new Intent();
                             if (bitmap != null) {

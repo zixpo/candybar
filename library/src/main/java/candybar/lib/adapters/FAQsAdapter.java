@@ -131,7 +131,7 @@ public class FAQsAdapter extends RecyclerView.Adapter<FAQsAdapter.ViewHolder> {
     public void search(String string) {
         String query = string.toLowerCase(Locale.getDefault()).trim();
         mFAQs.clear();
-        if (query.length() == 0) mFAQs.addAll(mFAQsAll);
+        if (query.isEmpty()) mFAQs.addAll(mFAQsAll);
         else {
             for (int i = 0; i < mFAQsAll.size(); i++) {
                 FAQs faq = mFAQsAll.get(i);
@@ -145,7 +145,7 @@ public class FAQsAdapter extends RecyclerView.Adapter<FAQsAdapter.ViewHolder> {
         if (getFaqsCount() == 0) {
             CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                     "type",
-                    new HashMap<String, Object>() {{
+                    new HashMap<>() {{
                         put("section", "faq");
                         put("action", "search");
                         put("found", "no");
@@ -155,7 +155,7 @@ public class FAQsAdapter extends RecyclerView.Adapter<FAQsAdapter.ViewHolder> {
         } else {
             CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                     "type",
-                    new HashMap<String, Object>() {{
+                    new HashMap<>() {{
                         put("section", "faq");
                         put("action", "search");
                         put("found", "yes");
