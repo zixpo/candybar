@@ -124,7 +124,7 @@ dependencies {
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
     implementation 'me.grantland:autofittextview:0.2.1'
     implementation 'com.github.KeepSafe:TapTargetView:1.13.2'
-    implementation 'com.github.sarsamurmu:AdaptiveIconBitmap:1.0.1'
+    implementation 'com.github.sarsamurmu:AdaptiveIconBitmap:1.0.2'
     implementation 'com.github.zixpo:recycler-fast-scroll:6add4dff39'
     implementation 'me.zhanghai.android.fastscroll:library:1.1.8'
 
