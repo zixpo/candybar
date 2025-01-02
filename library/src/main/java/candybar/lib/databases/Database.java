@@ -437,7 +437,7 @@ public class Database extends SQLiteOpenHelper {
             values.put(KEY_COLOR, wallpaper.getColor());
         }
 
-        if (values.size() > 0) {
+        if (!values.isEmpty()) {
             mDatabase.get().mSQLiteDatabase.update(TABLE_WALLPAPERS,
                     values, KEY_URL + " = ?", new String[]{wallpaper.getURL()});
         }
@@ -477,7 +477,7 @@ public class Database extends SQLiteOpenHelper {
 
                 int id = cursor.getInt(cursor.getColumnIndex(KEY_ID));
                 String name = cursor.getString(cursor.getColumnIndex(KEY_NAME));
-                if (name.length() == 0) {
+                if (name.isEmpty()) {
                     name = "Wallpaper " + id;
                 }
 
@@ -522,7 +522,7 @@ public class Database extends SQLiteOpenHelper {
 
                 int id = cursor.getInt(cursor.getColumnIndex(KEY_ID));
                 String name = cursor.getString(cursor.getColumnIndex(KEY_NAME));
-                if (name.length() == 0) {
+                if (name.isEmpty()) {
                     name = "Wallpaper " + id;
                 }
 
@@ -557,7 +557,7 @@ public class Database extends SQLiteOpenHelper {
             do {
                 int id = cursor.getInt(cursor.getColumnIndex(KEY_ID));
                 String name = cursor.getString(cursor.getColumnIndex(KEY_NAME));
-                if (name.length() == 0) {
+                if (name.isEmpty()) {
                     name = "Wallpaper " + id;
                 }
 

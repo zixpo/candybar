@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -199,6 +200,30 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
 
         mFragManager = getSupportFragmentManager();
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (mFragManager.getBackStackEntryCount() > 0) {
+                    clearBackStack();
+                    return;
+                }
+
+                if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    mDrawerLayout.closeDrawers();
+                    return;
+                }
+
+                if (mFragmentTag != Extras.Tag.HOME) {
+                    mPosition = mLastPosition = 0;
+                    setFragment(getFragment(mPosition));
+                    return;
+                }
+
+                setEnabled(false);
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
 
         initNavigationView(toolbar);
         initNavigationViewHeader();
@@ -430,26 +455,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         outState.putInt(Extras.EXTRA_POSITION, mPosition);
         Database.get(this.getApplicationContext()).closeDatabase();
         super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (mFragManager.getBackStackEntryCount() > 0) {
-            clearBackStack();
-            return;
-        }
-
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-            mDrawerLayout.closeDrawers();
-            return;
-        }
-
-        if (mFragmentTag != Extras.Tag.HOME) {
-            mPosition = mLastPosition = 0;
-            setFragment(getFragment(mPosition));
-            return;
-        }
-        super.onBackPressed();
     }
 
     @Override
@@ -865,7 +870,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             image.setRatio(16, 9);
         }
 
-        if (titleText.length() == 0) {
+        if (titleText.isEmpty()) {
             container.setVisibility(View.GONE);
         } else {
             title.setText(titleText);
@@ -996,7 +1001,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     private Fragment getFragment(int position) {
         mFragmentTag = Extras.Tag.HOME;
         if (position == Extras.Tag.HOME.idx) {
-            mFragmentTag = Extras.Tag.HOME;
             return new HomeFragment();
         } else if (position == Extras.Tag.APPLY.idx) {
             mFragmentTag = Extras.Tag.APPLY;

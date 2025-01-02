@@ -106,7 +106,9 @@ public class IconsSearchFragment extends Fragment {
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "view",
-                new HashMap<String, Object>() {{ put("section", "icons_search"); }}
+                new HashMap<>() {{
+                    put("section", "icons_search");
+                }}
         );
 
         setHasOptionsMenu(true);
@@ -153,9 +155,7 @@ public class IconsSearchFragment extends Fragment {
                 requireActivity().getSupportFragmentManager().popBackStack();
 
                 Activity activity = requireActivity();
-                new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    ((SearchListener) activity).onSearchExpanded(false);
-                }, 500);
+                new Handler(Looper.getMainLooper()).postDelayed(() -> ((SearchListener) activity).onSearchExpanded(false), 500);
                 return true;
             }
         });

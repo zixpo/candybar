@@ -4,7 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.os.Build;
 
 import androidx.annotation.NonNull;
@@ -175,7 +176,7 @@ public class Preferences {
     public void setTheme(Theme theme) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "settings");
                     put("action", "change_theme");
                     put("theme", theme.name());
@@ -410,9 +411,25 @@ public class Preferences {
         try {
             ConnectivityManager connectivityManager = (ConnectivityManager)
                     mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-            assert connectivityManager != null;
-            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-            return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+            if (connectivityManager == null) {
+                return false;
+            }
+
+            Network activeNetwork = null;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                activeNetwork = connectivityManager.getActiveNetwork();
+            }
+            if (activeNetwork == null) {
+                return false;
+            }
+
+            NetworkCapabilities networkCapabilities =
+                    connectivityManager.getNetworkCapabilities(activeNetwork);
+            return networkCapabilities != null &&
+                    (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+                            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) ||
+                            networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH));
         } catch (Exception e) {
             return false;
         }
@@ -423,15 +440,27 @@ public class Preferences {
             if (isWifiOnly()) {
                 ConnectivityManager connectivityManager = (ConnectivityManager)
                         mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-                assert connectivityManager != null;
-                NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-                assert activeNetworkInfo != null;
-                return activeNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI &&
-                        activeNetworkInfo.isConnected();
+                if (connectivityManager == null) {
+                    return false;
+                }
+
+                Network activeNetwork = null;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    activeNetwork = connectivityManager.getActiveNetwork();
+                }
+                if (activeNetwork == null) {
+                    return false;
+                }
+
+                NetworkCapabilities networkCapabilities =
+                        connectivityManager.getNetworkCapabilities(activeNetwork);
+                return networkCapabilities != null &&
+                        networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
             }
             return true;
         } catch (Exception e) {
             return false;
         }
     }
+
 }

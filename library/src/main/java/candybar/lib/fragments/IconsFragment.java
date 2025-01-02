@@ -91,7 +91,7 @@ public class IconsFragment extends Fragment {
             mIcons = Database.get(requireActivity()).getBookmarkedIcons(requireActivity());
             bookmarksIconFragment = new WeakReference<>(this);
             isBookmarksFragment = true;
-            prevIsEmpty = mIcons.size() == 0;
+            prevIsEmpty = mIcons.isEmpty();
         } else if (CandyBarMainActivity.sSections != null) {
             mIcons = CandyBarMainActivity.sSections.get(index).getIcons();
         }
@@ -103,7 +103,9 @@ public class IconsFragment extends Fragment {
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "view",
-                new HashMap<String, Object>() {{ put("section", "icons"); }}
+                new HashMap<>() {{
+                    put("section", "icons");
+                }}
         );
 
         setupViewVisibility();
@@ -138,7 +140,7 @@ public class IconsFragment extends Fragment {
     }
 
     private void setupViewVisibility() {
-        if (isBookmarksFragment && mIcons.size() == 0) {
+        if (isBookmarksFragment && mIcons.isEmpty()) {
             mNoBookmarksFoundView.setVisibility(View.VISIBLE);
             mRecyclerView.setVisibility(View.GONE);
         } else {

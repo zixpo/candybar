@@ -80,16 +80,14 @@ public class LanguagesFragment extends DialogFragment {
                 .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
                 .title(R.string.pref_language_header)
                 .negativeText(R.string.close)
-                .onNegative(((_dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "settings");
-                                put("action", "cancel");
-                                put("item", "change_language");
-                            }}
-                    );
-                }))
+                .onNegative(((_dialog, which) -> CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                        "click",
+                        new HashMap<>() {{
+                            put("section", "settings");
+                            put("action", "cancel");
+                            put("item", "change_language");
+                        }}
+                )))
                 .build();
         dialog.show();
 
@@ -120,7 +118,7 @@ public class LanguagesFragment extends DialogFragment {
     public void setLanguage(@NonNull Locale locale) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "settings");
                     put("action", "confirm");
                     put("item", "change_language");

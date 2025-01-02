@@ -103,7 +103,7 @@ public class CreditsAdapter extends BaseAdapter {
             }
         });
 
-        if (credit.getContribution().length() == 0) {
+        if (credit.getContribution().isEmpty()) {
             holder.subtitle.setVisibility(View.GONE);
         } else {
             holder.subtitle.setVisibility(View.VISIBLE);
@@ -139,8 +139,9 @@ public class CreditsAdapter extends BaseAdapter {
             image = view.findViewById(R.id.image);
 
             int color = ColorHelper.getAttributeColor(mContext, android.R.attr.textColorSecondary);
-            ViewCompat.setBackground(image, DrawableHelper.getTintedDrawable(
-                    mContext, R.drawable.ic_toolbar_circle, ColorHelper.setColorAlpha(color, 0.4f)));
+            Drawable tintedDrawable = DrawableHelper.getTintedDrawable(
+                    mContext, R.drawable.ic_toolbar_circle, ColorHelper.setColorAlpha(color, 0.4f));
+            image.setBackground(tintedDrawable);
         }
     }
 }

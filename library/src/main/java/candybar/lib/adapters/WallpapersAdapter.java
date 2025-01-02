@@ -108,7 +108,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
                     .override(ImageConfig.getThumbnailSize())
                     .transition(BitmapTransitionOptions.withCrossFade(300))
                     .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                    .listener(new RequestListener<Bitmap>() {
+                    .listener(new RequestListener<>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
                             return false;
@@ -127,7 +127,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
     public void search(String string) {
         String query = string.toLowerCase(Locale.getDefault()).trim();
         mWallpapers.clear();
-        if (query.length() == 0) mWallpapers.addAll(mWallpapersAll);
+        if (query.isEmpty()) mWallpapers.addAll(mWallpapersAll);
         else {
             for (int i = 0; i < mWallpapersAll.size(); i++) {
                 Wallpaper wallpaper = mWallpapersAll.get(i);

@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 
 import candybar.lib.R;
@@ -94,7 +95,9 @@ public class PresetsFragment extends Fragment {
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "view",
-                new HashMap<String, Object>() {{ put("section", "presets"); }}
+                new HashMap<>() {{
+                    put("section", "presets");
+                }}
         );
 
         ViewCompat.setNestedScrollingEnabled(mRecyclerView, false);
@@ -155,11 +158,13 @@ public class PresetsFragment extends Fragment {
         GridLayoutManager manager = (GridLayoutManager) mRecyclerView.getLayoutManager();
 
         try {
+            assert manager != null;
             manager.setSpanCount(column);
 
             manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                 @Override
                 public int getSpanSize(int position) {
+                    assert adapter != null;
                     if (adapter.isHeader(position)) return column;
                     return 1;
                 }
@@ -175,7 +180,7 @@ public class PresetsFragment extends Fragment {
         private List<Preset> loadPresets(String sectionName, String directory) throws IOException {
             List<Preset> presets = new ArrayList<>();
             presets.add(new Preset("", sectionName));
-            for (String item : requireActivity().getAssets().list(directory)) {
+            for (String item : Objects.requireNonNull(requireActivity().getAssets().list(directory))) {
                 presets.add(new Preset(directory + "/" + item, null));
             }
             if (presets.size() == 1) presets.clear();

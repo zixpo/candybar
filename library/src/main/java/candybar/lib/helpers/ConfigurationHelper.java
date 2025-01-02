@@ -37,8 +37,6 @@ public class ConfigurationHelper {
         switch (navigationIcon) {
             case DEFAULT:
                 return new DrawerArrowDrawable(context);
-            case STYLE_1:
-                return get(context, R.drawable.ic_toolbar_navigation);
             case STYLE_2:
                 return get(context, R.drawable.ic_toolbar_navigation_2);
             case STYLE_3:
