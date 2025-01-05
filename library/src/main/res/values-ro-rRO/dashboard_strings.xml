@@ -18,6 +18,7 @@
     <string name="hour">Oră</string>
     <string name="save_setting">Salvare</string>
     <string name="muzei_refresh_duration">Durată reîmprospătare</string>
+    <string name="muzei_wifi_only">Reîmprospătează doar din Wi-Fi</string>
     <string name="muzei_downloaded_only">Încarcă doar imaginile descărcate</string>
     <string name="muzei_settings_ignored">Pachetul de pictograme nu conține imagini de fundal, setările sunt ignorate.</string>
     <string name="muzei_settings_saved">Setări salvate</string>
@@ -49,9 +50,13 @@
     <!-- Changelog -->
     <string name="changelog_version">Versiune</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Nu se pot încărca produsele</string>
     <!-- License -->
     <string name="license_checking">Verificare licență …</string>
     <string name="license_check">Verificare Licență</string>
+    <string name="license_check_success">Verificare licență reușită. Vă mulțumim că ați descărcat aplicația din Play Store.</string>
+    <string name="license_check_failed">Verificarea licenței a eșuat; nu ați descărcat aplicația din Play Store.
+        Nu o veți putea folosi.</string>
     <string name="license_check_retry">Imposibil de verificat licența, încearcă din nou în câteva momente.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Verificare Magazin Play</string>
