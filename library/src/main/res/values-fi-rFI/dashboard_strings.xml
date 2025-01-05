@@ -1,20 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Materiaali Kojelauta</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Koti</string>
+    <string name="navigation_view_apply">Lisää </string>
+    <string name="navigation_view_icons">Kuvakkeet</string>
+    <string name="navigation_view_request">Kuvakkeen Pyyntö</string>
+    <string name="navigation_view_wallpapers">Taustakuvat</string>
+    <string name="navigation_view_presets">Esiasetukset</string>
+    <string name="navigation_view_settings">Asetukset</string>
+    <string name="navigation_view_faqs">Usein kysyttyjä kysymyksiä</string>
+    <string name="navigation_view_about">Tietoja</string>
+    <string name="navigation_view_donate">Tue kehitystä</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei-asetukset</string>
+    <string name="minute">Minuutti</string>
+    <string name="hour">Tunti</string>
+    <string name="save_setting">Tallenna</string>
+    <string name="muzei_refresh_duration">Päivitä Kesto</string>
+    <string name="muzei_wifi_only">Päivitä vain Wi-Fi-yhteydestä</string>
+    <string name="muzei_downloaded_only">Lataa Vain Ladattavat Taustakuvat</string>
+    <string name="muzei_settings_ignored">Kuvakepaketti ei sisällä taustakuvia, asetuksia ohitetaan.</string>
+    <string name="muzei_settings_saved">Asetukset Tallennettu</string>
     <!-- Menu -->
+    <string name="menu_search">Etsi</string>
+    <string name="menu_save">Tallenna laitteeseen</string>
+    <string name="menu_select_all">Valitse Kaikki</string>
+    <string name="menu_delete">Poista</string>
+    <string name="menu_wallpaper_crop">Rajaa Taustakuvaa</string>
+    <string name="menu_apply_homescreen">Kotinäyttö</string>
+    <string name="menu_apply_lockscreen">Lukitusnäyttö</string>
+    <string name="menu_apply_homescreen_lockscreen">Kotinäyttö &amp; Lukitusnäyttö</string>
     <!-- Dialog -->
+    <string name="open">Avaa</string>
+    <string name="close">Sulje</string>
+    <string name="clear">Tyhjennä</string>
+    <string name="ok">OK</string>
+    <string name="install">Asenna</string>
+    <string name="donate">Lahjoita</string>
+    <string name="update">Päivitä</string>
+    <string name="search_noresult">Ei tuloksia haulle \"%s\"</string>
+    <string name="search_faqs">Kysymys tai vastaus</string>
+    <string name="search_icon">Kuvakkeen nimi</string>
+    <string name="search_wallpapers">Taustakuvan nimi</string>
     <!-- Update -->
+    <string name="checking_for_update">Etsitään päivityksiä…</string>
+    <string name="update_available">Päivitys saatavilla!</string>
+    <string name="no_update_available">Käytät uusinta versiota!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versio</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Sovelluksen sisäisiä ostotuotteita ei voi ladata</string>
     <!-- License -->
+    <string name="license_checking">Tarkistetaan lisenssiä …</string>
+    <string name="license_check">Lisenssin Tarkistus</string>
+    <string name="license_check_success">Lisenssin tarkistus onnistui. Kiitos, että lataat sovelluksen Play-kaupasta.</string>
+    <string name="license_check_failed">Lisenssien tarkistus epäonnistui, et ladannut sovellusta Play Kaupasta.
+        Et voi käyttää sitä.</string>
+    <string name="license_check_retry">Lisenssiä ei voitu tarkistaa, yritä uudelleen hetken kuluttua.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Pelaa Kaupan Tarkistus</string>
+    <string name="playstore_check_success">Kiitos, että asensit sovelluksen Google Play kaupasta. Nauti!</string>
+    <string name="playstore_check_failed">Näyttää siltä, että olet asentanut tämän kuvakepaketin Google Play Storen ulkopuolelta.
+        Et voi käyttää sitä.</string>
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Etsi</string>
     <!-- Home -->
+    <string name="home_donate">Lahjoita</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Kuvakkeen Pyyntö</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -29,5 +86,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Avaa</string>
+    <string name="txt_close">Sulje</string>
     <!-- Content descriptions for screen readers -->
 </resources>
