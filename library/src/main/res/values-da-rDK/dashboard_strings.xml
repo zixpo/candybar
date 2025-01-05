@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Materiale Instrumentbræt</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Hjem</string>
+    <string name="navigation_view_apply">Anvend</string>
+    <string name="navigation_view_icons">Ikoner</string>
+    <string name="navigation_view_request">Ikon efterspørgsel</string>
+    <string name="navigation_view_wallpapers">Baggrunde</string>
+    <string name="navigation_view_presets">Forvalg</string>
+    <string name="navigation_view_settings">Indstillinger</string>
+    <string name="navigation_view_faqs">Ofte stillede spørgsmål</string>
+    <string name="navigation_view_about">Om</string>
+    <string name="navigation_view_donate">Støt udviklingen</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei indstillinger</string>
+    <string name="minute">Minutt</string>
+    <string name="hour">Time</string>
+    <string name="save_setting">Gem</string>
+    <string name="muzei_refresh_duration">Opdater Varighed</string>
+    <string name="muzei_wifi_only">Opdater kun fra Wi-Fi</string>
+    <string name="muzei_downloaded_only">Indlæs Kun Downloadede Baggrunde</string>
+    <string name="muzei_settings_ignored">Ikonpakken indeholder ikke baggrunde, indstillinger ignoreret.</string>
+    <string name="muzei_settings_saved">Indstillinger Gemt</string>
     <!-- Menu -->
+    <string name="menu_search">Søg</string>
+    <string name="menu_save">Gem til enhed</string>
+    <string name="menu_select_all">Vælg Alle</string>
+    <string name="menu_delete">Slet</string>
+    <string name="menu_wallpaper_crop">Beskær baggrunden</string>
+    <string name="menu_apply_homescreen">Startskærm</string>
+    <string name="menu_apply_lockscreen">Låseskærm</string>
+    <string name="menu_apply_homescreen_lockscreen">Startskærm &amp; Låseskærm</string>
     <!-- Dialog -->
+    <string name="open">Åbn</string>
+    <string name="close">Luk</string>
+    <string name="clear">Nulstil</string>
+    <string name="ok">OK</string>
+    <string name="install">Installér</string>
     <!-- Update -->
     <!-- Changelog -->
     <!-- InAppBilling -->
@@ -11,10 +44,12 @@
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Søg</string>
     <!-- Home -->
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Ikon efterspørgsel</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -29,5 +64,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Åbn</string>
+    <string name="txt_close">Luk</string>
     <!-- Content descriptions for screen readers -->
 </resources>
