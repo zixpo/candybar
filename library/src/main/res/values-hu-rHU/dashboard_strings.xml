@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Kezdőoldal</string>
     <string name="navigation_view_apply">Alkalmaz</string>
     <string name="navigation_view_icons">Ikonok</string>
     <string name="navigation_view_request">Ikonok kérése</string>
     <string name="navigation_view_wallpapers">Adwaita háttérképek</string>
+    <string name="navigation_view_presets">Presetek</string>
     <string name="navigation_view_settings">Beállítások</string>
     <string name="navigation_view_faqs">GyIK</string>
     <string name="navigation_view_about">A fejlesztőkről</string>
     <string name="navigation_view_donate">Támogasd a munkámat</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei Beállítások</string>
+    <string name="minute">Perc</string>
+    <string name="hour">Óra</string>
+    <string name="save_setting">Mentés</string>
     <!-- Menu -->
     <string name="menu_search">Keresés</string>
     <string name="menu_save">Mentés az eszközre</string>
