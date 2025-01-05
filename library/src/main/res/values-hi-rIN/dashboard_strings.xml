@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">आइकन</string>
     <string name="navigation_view_request">आइकन अनुरोध</string>
     <string name="navigation_view_wallpapers">वॉलपेपर</string>
+    <string name="navigation_view_presets">प्रीसेट</string>
     <string name="navigation_view_settings">सेटिंग</string>
     <string name="navigation_view_faqs">पूछे जाने वाले प्रश्न</string>
     <string name="navigation_view_about">इसके बारे में</string>
@@ -17,6 +18,7 @@
     <string name="hour">घंटा</string>
     <string name="save_setting">सहेजें</string>
     <string name="muzei_refresh_duration">रिफ्रेश अवधि</string>
+    <string name="muzei_wifi_only">केवल से वाईफ़ाई ताज़ा करें</string>
     <string name="muzei_downloaded_only">केवल डाउनलोड वॉलपेपर लोड करें</string>
     <string name="muzei_settings_ignored">आइकन पैक में वॉलपेपर शामिल नहीं हैं, सेटिंग को अनदेखा किया गया है।</string>
     <string name="muzei_settings_saved">सेटिंग्स को सहेजा गया</string>
@@ -24,9 +26,11 @@
     <string name="menu_search">खोज</string>
     <string name="menu_save">डिवाइस पर सहेजें</string>
     <string name="menu_select_all">सभी का चयन करे</string>
+    <string name="menu_delete">हटाएं</string>
     <string name="menu_wallpaper_crop">क्रौप वॉलपेपर</string>
     <string name="menu_apply_homescreen">होमस्क्रीन</string>
     <string name="menu_apply_lockscreen">लॉकस्क्रीन</string>
+    <string name="menu_apply_homescreen_lockscreen">होमस्क्रीन और लॉकस्क्रीन</string>
     <!-- Dialog -->
     <string name="open">खोलें</string>
     <string name="close">बंद करे</string>
@@ -34,28 +38,40 @@
     <string name="ok">ठीक</string>
     <string name="install">स्थापित करें</string>
     <string name="donate">दान करें</string>
+    <string name="update">अपडेट करें</string>
     <string name="search_noresult">कोई परिणाम नहीं मिला के लिए \"%s\"</string>
     <string name="search_faqs">प्रश्न या उत्तर</string>
     <string name="search_icon">आइकॉन का नाम</string>
     <string name="search_wallpapers">वॉलपेपर का नाम</string>
     <!-- Update -->
+    <string name="checking_for_update">अपडेट्स के लिए जांच हो रही है</string>
     <string name="update_available">अपडेट उपलब्ध है</string>
     <string name="no_update_available">आप नवीनतम संस्करण का उपयोग कर रहे हैं।</string>
     <!-- Changelog -->
     <string name="changelog_version">संस्करण</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">इन ऐप उत्पादों को लोड करने मे असमर्थ हैं</string>
     <!-- License -->
     <string name="license_checking">अनुज्ञप्ति जांच रहा है …</string>
     <string name="license_check">अनुज्ञप्ति जांच</string>
+    <string name="license_check_success">लाइसेंस चैक सफल रहा, ऐप को प्ले स्टोर से डाउनलोड करने के लिए धन्यवाद.</string>
+    <string name="license_check_failed">अनुज्ञप्ति जांच विफल हुई, आपने प्ले स्टोर से ऐप डाउनलोड नहीं किया है
+आप इसका उपयोग करने में सक्षम नहीं होंगे।</string>
     <string name="license_check_retry">अनुज्ञप्ति की जांच करने में असमर्थ, कृपया कुछ क्षण के बाद पुनः प्रयास करें।</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">प्ले स्टोर चेक</string>
+    <string name="playstore_check_success">Google Play Store से ऐप इंस्टॉल करने के लिए धन्यवाद। आनंद लेना!</string>
+    <string name="playstore_check_failed">ऐसा लगता है कि आपने इस आइकन पैक को Google Play Store के बाहर से स्थापित किया है। आप इसका उपयोग नहीं कर पाएंगे।</string>
     <!-- Share -->
     <string name="share_app_title">यो! देखे %s</string>
     <string name="share_app_body">यो! देखे %1$s,यह आइकन पैक वास्तव में अच्छा है! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">नेविगेशन ड्रॉवर</string>
+    <string name="tap_intro_home_navigation_desc">नेविगेशन ड्रॉवर खोलने के लिए स्क्रीन के बायीं किनारे से यहां टैप करें या स्वाइप करें</string>
     <string name="tap_intro_home_apply">आइकन पैक लागू करें</string>
+    <string name="tap_intro_home_apply_desc">अपने वर्तमान लॉन्चर पर% s लागू करने के लिए यहाँ टैप करें. अन्य लॉन्चर पर लागू करने के लिए देर तक दबाएं।</string>
     <string name="tap_intro_icons_search">खोज</string>
+    <string name="tap_intro_icons_search_desc">आइकन खोज के लिए यहां टैप करें</string>
     <string name="tap_intro_request_select">छुटे हुए ऐप का चयन करें</string>
     <string name="tap_intro_request_select_desc">आइकन अनुरोध के लिए छुटे हुए ऐप चुनने के लिए यहां टैप करें</string>
     <string name="tap_intro_request_select_all">सभी छुटे हुए ऐप्स चुनें</string>
@@ -63,14 +79,20 @@
     <string name="tap_intro_request_send">आइकन अनुरोध भेजें</string>
     <string name="tap_intro_request_send_desc">आइकन अनुरोध भेजें</string>
     <string name="tap_intro_request_premium">प्रीमियम आइकन अनुरोध</string>
+    <string name="tap_intro_request_premium_desc">प्रीमियम आइकन अनुरोध पैकेज खरीदने के लिए यहां टैप करें,
+प्रीमियम आइकन अनुरोध के साथ आप अपने अनुरोधित ऐप्स को तेज़ी से प्राप्त कर सकते हैं</string>
     <string name="tap_intro_wallpapers_option">वॉलपेपर विकल्प</string>
+    <string name="tap_intro_wallpapers_option_desc">वॉलपेपर विकल्पों को देखने के लिए यहां टैप करके रखें, %s एप्लाय वॉलपेपर</string>
     <string name="tap_intro_wallpapers_option_desc_download">डाउनलोड या</string>
     <string name="tap_intro_wallpapers_preview">वॉलपेपर का पूर्वावलोकन</string>
+    <string name="tap_intro_wallpapers_preview_desc">वॉलपेपर को पूर्ण आकार में पूर्वावलोकन करने के लिए यहां टैप करें</string>
     <string name="tap_intro_wallpaper_preview_save">वॉलपेपर सहेजे</string>
     <string name="tap_intro_wallpaper_preview_save_desc">वॉलपेपर अपने डिवाइस पर डाउनलोड करने के लिए यहां टैप करें ताकि आप इसे बाद में उपयोग कर सकें</string>
     <string name="tap_intro_wallpaper_preview_apply">वॉलपेपर लागु करें</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">होमस्क्रीन बैकग्राउंड के रूप में वॉलपेपर सेट करने के लिए यहां टैप करें</string>
     <!-- Home -->
     <string name="home_more_apps_header">और एप्प</string>
+    <string name="home_more_apps">गूगल प्ले स्टोर पर प्रकाशित अन्य ऐप्स भी देखें</string>
     <string name="home_rate_and_review">रेट और समीक्षा करें</string>
     <string name="home_apply_icon_pack">लागु करे %s</string>
     <string name="home_donate">दान करें</string>
@@ -84,7 +106,47 @@
     <string name="home_icon_request_missed_apps">छुटे हुए\n%d एप्प</string>
     <!-- Apply -->
     <string name="apply_installed">स्थापित लांचर</string>
+    <string name="apply_installed_launchers">स्थापित लांचर</string>
     <string name="apply_supported">समर्थित लौन्चेर्स</string>
+    <string name="apply_manual">%1$s सीधे लागू करने का समर्थन नहीं करता है, तो आप लॉन्चर सेटिंग से मैन्युअल रूप से %2$s को लागू कर सकते हैं।</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso प्रत्यक्ष आवेदन का समर्थन नहीं करता है लेकिन आप इन चरणों का पालन कर सकते हैं:</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitso की सेटिंग खोलें</string>
+    <string name="apply_manual_kvaesitso_step_2">\"ग्रिड और आइकन\" टैप करें</string>
+    <string name="apply_manual_kvaesitso_step_3">\"आइकन पैक\" पर टैप करें</string>
+    <string name="apply_manual_kvaesitso_step_4">सूची से %s चुनें</string>
+    <string name="apply_manual_kvaesitso_step_5">पृष्ठभूमि आकार को सक्षम या अक्षम करने के लिए पेंट ब्रश आइकन टैप करें</string>
+    <string name="apply_manual_kiss">KISS प्रत्यक्ष आवेदन का समर्थन नहीं करता है लेकिन आप इन चरणों का पालन कर सकते हैं:</string>
+    <string name="apply_manual_kiss_step_1">KISS सेटिंग खोलें</string>
+    <string name="apply_manual_kiss_step_2">\"यूजर इंटरफेस\" पर टैप करें</string>
+    <string name="apply_manual_kiss_step_3">\"आइकन पैक\" पर टैप करें</string>
+    <string name="apply_manual_kiss_step_4">सूची से %s चुनें</string>
+    <string name="apply_manual_samsung_oneui">%1$s सीधे लागू करने का समर्थन नहीं करता है, लेकिन %2$s से प्रारंभ करके आप किसी सहयोगी अनुप्रयोग के साथ चिह्न लागू कर सकते हैं.</string>
+    <string name="apply_manual_samsung_oneui_too_old">%s का आपका वर्तमान संस्करण बहुत पुराना है. सीधे आइकन लागू करने में सक्षम होने के लिए कृपया Android 12 या नए पर अपडेट करें। वैकल्पिक रूप से, आप एक अलग लॉन्चर स्थापित कर सकते हैं।</string>
+    <string name="apply_manual_samsung_oneui_step_1">खुला %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">अनुप्रयोग %s डाउनलोड करें</string>
+    <string name="apply_manual_samsung_oneui_step_3">\"आइकन\" टैप करें</string>
+    <string name="apply_manual_samsung_oneui_step_4">\"नया बनाएं\" पर टैप करें</string>
+    <string name="apply_manual_samsung_oneui_step_5">नीले \"आइकनपैक\" बटन पर टैप करें</string>
+    <string name="apply_manual_samsung_oneui_step_6">सूची से %s चुनें</string>
+    <string name="apply_manual_samsung_oneui_step_7">हर बार %s अद्यतन करते समय इन चरणों को दोहराएँ क्योंकि नए चिह्न स्वचालित रूप से मैप नहीं किए जाएँगे.</string>
+    <string name="apply_manual_hios">HiOS प्रत्यक्ष आवेदन का समर्थन नहीं करता है लेकिन आप इन चरणों का पालन कर सकते हैं:</string>
+    <string name="apply_manual_hios_step_1">\"सेटिंग\" खोलें</string>
+    <string name="apply_manual_hios_step_2">\"थीम और लॉकस्क्रीन\" टैप करें</string>
+    <string name="apply_manual_hios_step_3">\"मेरी थीम\" टैप करें</string>
+    <string name="apply_manual_hios_step_4">\"आइकन पैक\" टैप करें</string>
+    <string name="apply_manual_hios_step_5">%s टैप करें</string>
+    <string name="apply_manual_oxygen_os_step_1">अपनी होमस्क्रीन पर लॉन्ग-टैप करें</string>
+    <string name="apply_manual_oxygen_os_step_2">\"होम सेटिंग्स\" टैप करें</string>
+    <string name="apply_manual_oxygen_os_step_3">\"आइकन पैक\" टैप करें</string>
+    <string name="apply_manual_oxygen_os_step_4">%s टैप करें</string>
+    <string name="apply_manual_color_os_step_1">अपनी होमस्क्रीन पर लॉन्ग-टैप करें</string>
+    <string name="apply_manual_color_os_step_2">\"आइकन\" टैप करें</string>
+    <string name="apply_manual_color_os_step_3">\"कस्टम\" बटन के दाईं ओर स्क्रॉल करें (यह एक स्क्रॉल करने योग्य सूची है!)</string>
+    <string name="apply_manual_color_os_step_4">%s टैप करें</string>
+    <string name="apply_manual_before_step_5">%s टैप करें</string>
+    <string name="apply_manual_nothing_step_1">\"सेटिंग\" खोलें</string>
+    <string name="apply_manual_nothing_step_3">\"आइकन पैक\" टैप करें</string>
+    <string name="apply_manual_nothing_step_4">%s टैप करें</string>
     <string name="apply_launch_failed">सेटिंग %s लांच करने में असमर्थ</string>
     <string name="apply_launcher_not_installed">%s  इंस्टॉल नहीं है क्या आप खोलना चाहते हैं
 डाउनलोड और इंस्टॉल करने के लिए गूगल प्ले  स्टोर?</string>
