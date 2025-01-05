@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="splash_screen_title">Панель CandyBar Material</string>
+    <string name="splash_screen_title">Панель материалов CandyBar</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Главная</string>
     <string name="navigation_view_apply">Применить</string>
@@ -18,6 +18,7 @@
     <string name="hour">Часов</string>
     <string name="save_setting">Сохранить</string>
     <string name="muzei_refresh_duration">Обновить Продолжительность</string>
+    <string name="muzei_wifi_only">Обновлять только через WiFi</string>
     <string name="muzei_downloaded_only">Загружать только скачанные обои</string>
     <string name="muzei_settings_ignored">Набор Иконок не содержит обоев, настройки игнорируются.</string>
     <string name="muzei_settings_saved">Настройки сохранены</string>
@@ -49,19 +50,28 @@
     <!-- Changelog -->
     <string name="changelog_version">Версия</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Невозможно загрузить InApp продукты</string>
     <!-- License -->
     <string name="license_checking">Лицензия проверяется …</string>
     <string name="license_check">Проверка лицензии</string>
+    <string name="license_check_success">Проверка лицензии завершена, спасибо за приобретение продукта!</string>
+    <string name="license_check_failed">Лицензия прошла проверку неудачно, Вы не загрузили приложение из Play Store.
+Вы не сможете его использовать.</string>
     <string name="license_check_retry">Не удалось проверить лицензию, please try again in a few moments.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Проверьте Плей маркет</string>
+    <string name="playstore_check_success">Спасибо за установку приложения из Google Play. Наслаждайтесь!</string>
+    <string name="playstore_check_failed">Похоже, вы установили этот пакет иконок не из Google Play Store. Вы не сможете им пользоваться.</string>
     <!-- Share -->
     <string name="share_app_title">Ёу! Зацени %s</string>
     <string name="share_app_body">Зацени %1$s, это набор иконок на самом деле крутой! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Навигационное меню</string>
+    <string name="tap_intro_home_navigation_desc">Нажмите здесь или проведите пальцем от левого края экрана, чтобы открыть меню навигации</string>
     <string name="tap_intro_home_apply">Применить набор иконок</string>
+    <string name="tap_intro_home_apply_desc">Нажмите здесь, чтобы применить %s к вашему текущему лаунчеру. Длительное нажатие, чтобы применить к другим лаунчерам.</string>
     <string name="tap_intro_icons_search">Поиск</string>
+    <string name="tap_intro_icons_search_desc">Нажмите сюда для поиска значка</string>
     <string name="tap_intro_request_select">Выберите недостающее приложение</string>
     <string name="tap_intro_request_select_desc">Нажмите сюда чтобы выделить недостающее приложение для запроса иконок</string>
     <string name="tap_intro_request_select_all">Выбрать все недостающие приложения</string>
@@ -69,14 +79,19 @@
     <string name="tap_intro_request_send">Отправить запрос иконок</string>
     <string name="tap_intro_request_send_desc">Нажмите здесь, чтобы отправить выбранные приложения</string>
     <string name="tap_intro_request_premium">Премиум запрос</string>
+    <string name="tap_intro_request_premium_desc">Нажмите здесь, чтобы купить Запрос иконки, со значком \"премиум\" вы можете получить запрошенные приложения быстрее.</string>
     <string name="tap_intro_wallpapers_option">Настройки обоев</string>
+    <string name="tap_intro_wallpapers_option_desc">Долгое нажатие откроет параметры обоев %s.</string>
     <string name="tap_intro_wallpapers_option_desc_download">скачать или</string>
     <string name="tap_intro_wallpapers_preview">Просмотр фона</string>
+    <string name="tap_intro_wallpapers_preview_desc">Нажмите здесь, чтобы просмотреть полный размер обоев</string>
     <string name="tap_intro_wallpaper_preview_save">Сохранить обои</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Нажмите здесь, чтобы скачать и сохранить обои на вашем устройстве, чтобы  использовать их позже</string>
     <string name="tap_intro_wallpaper_preview_apply">Применить обои</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Нажмите, чтобы установить обои на домашний экран</string>
     <!-- Home -->
     <string name="home_more_apps_header">Ещё приложения</string>
+    <string name="home_more_apps">Проверять другие приложения, опубликованные в Google Play Store</string>
     <string name="home_rate_and_review">Рейтинг и отзыв</string>
     <string name="home_apply_icon_pack">Применить %s</string>
     <string name="home_donate">Пожертвовать</string>
@@ -90,15 +105,65 @@
     <string name="home_icon_request_missed_apps">Не изменено\n%d приложений</string>
     <!-- Apply -->
     <string name="apply_installed">Установленный лаунчер</string>
+    <string name="apply_installed_launchers">Установленные лаунчеры</string>
     <string name="apply_supported">Поддерживаемые лаунчеры</string>
+    <string name="apply_manual">%1$s Лаунчер не поддерживает прямое применение, но вы можете применить %2$s вручную из настроек лаунчера.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso не поддерживает непосредственное применение, но вы можете выполнить следующие действия:</string>
+    <string name="apply_manual_kvaesitso_step_1">Открыть настройки Kvaesitso</string>
+    <string name="apply_manual_kvaesitso_step_2">Нажмите «Сетка &amp; иконки»</string>
+    <string name="apply_manual_kvaesitso_step_3">Нажмите на «Набор значков»</string>
+    <string name="apply_manual_kvaesitso_step_4">Выберите %s из списка</string>
+    <string name="apply_manual_kvaesitso_step_5">Нажмите на значок кисти для включения или отключения фоновой формы</string>
+    <string name="apply_manual_kiss">KISS не поддерживает прямое применение, но вы можете выполнить следующие действия:</string>
+    <string name="apply_manual_kiss_step_1">Открыть настройки KISS</string>
+    <string name="apply_manual_kiss_step_2">Нажмите \"Пользовательский интерфейс\"</string>
+    <string name="apply_manual_kiss_step_3">Нажмите на «Набор значков»</string>
+    <string name="apply_manual_kiss_step_4">Выберите %s из списка</string>
+    <string name="apply_manual_samsung_oneui">%1$s не поддерживает прямое применение, но начиная с %2$s вы можете применить иконки с помощью приложения-спутника.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Ваша текущая версия %s устарела. Пожалуйста, обновите до Android 12 или выше, чтобы иметь возможность применять иконки напрямую. Кроме того, вы можете установить другой лаунчер.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Открыть %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Скачать приложение %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Нажмите «Иконка»</string>
+    <string name="apply_manual_samsung_oneui_step_4">Нажмите «Создать новый»</string>
+    <string name="apply_manual_samsung_oneui_step_5">Нажмите синюю кнопку «Иконка»</string>
+    <string name="apply_manual_samsung_oneui_step_6">Выберите %s из списка</string>
+    <string name="apply_manual_samsung_oneui_step_7">Повторять эти шаги каждый раз, когда вы обновляете %s , новые иконки не будут сопоставлены автоматически.</string>
+    <string name="apply_manual_hios">HiOS launcher не поддерживает прямое применение, но вы можете выполнить следующие действия:</string>
+    <string name="apply_manual_hios_step_1">Открыть \"Настройки\"</string>
+    <string name="apply_manual_hios_step_2">Нажмите \"Тема &amp; экран блокировки\"</string>
+    <string name="apply_manual_hios_step_3">Нажмите «Моя тема»</string>
+    <string name="apply_manual_hios_step_4">Нажмите \"Набор значков\"</string>
+    <string name="apply_manual_hios_step_5">Нажмите %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Долгое нажатие на главном экране</string>
+    <string name="apply_manual_oxygen_os_step_2">Нажмите \"Главные настройки\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Нажмите «Набор значков»</string>
+    <string name="apply_manual_oxygen_os_step_4">Нажмите %s</string>
+    <string name="apply_manual_color_os_step_1">Долгое нажатие на главном экране</string>
+    <string name="apply_manual_color_os_step_2">Нажмите «Иконки»</string>
+    <string name="apply_manual_color_os_step_3">Прокрутите справа от кнопки «Custom» (это прокручиваемый список!)</string>
+    <string name="apply_manual_color_os_step_4">Нажмите %s</string>
+    <string name="apply_manual_before">Эта версия Before Launcher пока не поддерживает непосредственное применение иконок. Вместо этого, выполните следующие шаги:</string>
+    <string name="apply_manual_before_step_1">Свайп влево на главном экране</string>
+    <string name="apply_manual_before_step_2">Нажмите «Настройки»</string>
+    <string name="apply_manual_before_step_3">Нажмите \"Стили &amp; Темы\"</string>
+    <string name="apply_manual_before_step_4">Нажмите «Стили значков &amp; Наборы»</string>
+    <string name="apply_manual_before_step_5">Нажмите %s</string>
+    <string name="apply_manual_nothing_step_1">Открыть \"Настройки\"</string>
+    <string name="apply_manual_nothing_step_2">Нажмите \"Customization\"</string>
+    <string name="apply_manual_nothing_step_3">Нажмите «Набор значков»</string>
+    <string name="apply_manual_nothing_step_4">Нажмите %s</string>
     <string name="apply_launch_failed">Не удалось запустить %s настройки</string>
     <string name="apply_launcher_not_installed">%s не установлен. Вы хотите открыть 
 Магазин Google Play, чтобы загрузить и установить его?</string>
     <string name="apply_launcher_not_installable">%s Launcher не установлен. Пожалуйста, повторите попытку после установки лаунчера.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager не поддерживается на этом устройстве</string>
+    <string name="apply_cmtheme_failed">Не удается запустить менеджер тем CM, вы можете попробовать применить набор иконок вручную в настройках.</string>
     <string name="apply_lg_home">Чтобы применить этот пакет значков откройте настройки - Дисплей - главный экран - Тема</string>
     <string name="apply_lg_home_not_available">LG Home не доступен на этом устройстве</string>
+    <string name="apply_lg_home_failed">Не удается запустить настройки главного экрана LG, вы можете попробовать применить набор иконок вручную в настройках.</string>
     <string name="apply_lg_home_nougat">LG Home с андроид 7.0+ больше не поддерживает набор значков. Вам нужен настраиваемый лаунчер для использования значков.</string>
+    <string name="apply_launcher_incompatible">%s Лаунчер не поддерживает наборы значков, поэтому вы не можете использовать этот набор значков с этим лаунчером. Вы можете попробовать стороннее приложение использовать этот набор иконок в лаунчере %2$s . Вы хотите установить его?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s лаунчер не поддерживает наборы иконок на Android %d или ниже. Пожалуйста, обновите вашу версию Android или установите лаунчер сторонних производителей для использования этого набора значков. Вы также можете попробовать вспомогательное приложение изменить отдельные иконки. Вы хотите установить его?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Не удалось загрузить иконки</string>
     <string name="icon_shape">Форма значка</string>
@@ -109,25 +174,38 @@
     <string name="request_not_selected">Выберите приложения</string>
     <string name="request_not_requested">Не запрошено</string>
     <string name="request_already_requested">Уже запрошено</string>
+    <string name="request_not_available">Невозможно запросить</string>
     <string name="request_building">Сборка запроса …</string>
     <string name="request_pacific_sending">Отправка запроса в Pacific Manager...</string>
+    <string name="request_pacific_error">Произошла ошибка при отправке запроса тихоокеанскому менеджеру. Ошибка %s</string>
     <string name="request_pacific_success">Запрос успешно отправлен в Pacific Manager</string>
+    <string name="request_custom_error">Произошла ошибка при отправке запроса на иконку. Если эта ошибка повторится, обратитесь к разработчику. %s</string>
     <string name="request_custom_success">Запрос иконки успешно отправлен</string>
     <string name="request_fetching_data">Получение последних данных …</string>
     <string name="request_build_failed">Не удалось собрать запрос</string>
     <string name="request_appfilter_failed">Не удалось считать appfilter.xml</string>
+    <string name="request_requested">Вы уже запросили этот значок и не можете запросить его снова.</string>
+    <string name="request_requested_possible">Вы уже запросили этот значок. Вы уверены, что хотите потратить на него еще один запрос?</string>
+    <string name="request_requested_button_cancel">Вернуться</string>
+    <string name="request_requested_button_confirm">Все равно выбрать</string>
     <string name="request_email_client">Выберите клиент электронной почты для отправки запроса</string>
+    <string name="request_app_disabled">Вы используете старую версию этого набора значков. Запрошенные иконки могут быть включены в последнюю версию. Пожалуйста, обновите приложение до последней версии, чтобы запросить иконки.</string>
     <string name="connection_error_long">Не удается загрузить данные с сервера. Пожалуйста, проверьте подключение к сети.</string>
+    <string name="unable_to_load_config">Произошла ошибка при получении или чтении данных с сервера.</string>
+    <string name="request_limit">Вы можете сделать %d только запрос(ов) с обычным запросом.</string>
     <string name="request_used">Вы имеете %d запрошенных иконок.</string>
     <string name="request_limit_buy">Вы можете купить Премиум запросы и просить больше значков.</string>
     <string name="request_limit_reset">Ограничение запросов сбрасывается при каждом обновлении.</string>
     <!-- Regular Request -->
     <string name="regular_request">Обычный запрос иконок</string>
+    <string name="regular_request_desc">Получите запрос на иконку, и разработчик попытается включить иконки по вашему запросу.</string>
     <string name="regular_request_count">Максимальное количество\n%d</string>
     <string name="regular_request_used">Запрошено\n%d</string>
     <string name="regular_request_available">Осталось\n%d</string>
     <!-- Premium Request -->
     <string name="premium_request">Премиум запрос</string>
+    <string name="premium_request_no_internet">Перед отправкой премиум-запроса убедитесь, что ваш телефон подключен к интернету</string>
+    <string name="premium_request_desc">Запрос иконки премиум - это запрос с оплатой. Вы можете получать запрошенные приложения быстрее с помощью премиум иконки.</string>
     <string name="premium_request_buy">Купить</string>
     <string name="premium_request_count">Максимальное количество\n%d</string>
     <string name="premium_request_used">Запрошено\n%d</string>
@@ -137,6 +215,8 @@
     <string name="premium_request_limit">У Вас есть только %d премиум запроса(ов),</string>
     <string name="premium_request_limit1">но Вы выбрали %d приложений(я). 
 \n\nВы должны использовать все Ваши премиум запросы перед использованием обычного запроса.</string>
+    <string name="premium_request_consume_failed">Не удалось использовать Премиум запрос. Убедитесь, что у вас есть стабильное подключение к Интернету и повторите попытку. 
+Зайти в Настройки, чтобы восстановить Премиум запрос.</string>
     <string name="premium_request_rebuilding">Пересборка Премиум запроса …</string>
     <string name="premium_request_rebuilding_empty">Вы не сделали Премиум запрос</string>
     <string name="premium_request_exist">У Вас еще есть Премиум запросы. 
@@ -147,6 +227,7 @@
     <string name="wallpaper_already_downloaded">Обои уже скачаны</string>
     <string name="wallpaper_downloading">Загрузка обоев …</string>
     <string name="wallpaper_download_failed">Не удалось загрузить обои</string>
+    <string name="wallpaper_download_success">Обои успешно загружены</string>
     <string name="wallpaper_loading">Загрузка обоев …</string>
     <string name="wallpaper_applying">Применение обоев …</string>
     <string name="wallpaper_applied">Обои применены</string>
@@ -159,6 +240,7 @@
     <string name="presets_load_failed">Не удалось загрузить шаблоны</string>
     <string name="presets_storage_permission">Разрешение хранилища необходимо для предварительного просмотра обоев</string>
     <string name="presets_required_apps">Необходимые приложения для использования шаблонов</string>
+    <string name="presets_required_apps_not_installed">Не установлены необходимые приложения, чтобы использовать пресет. Пожалуйста, установите отсутствующие приложения и повторите попытку.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Данные и кэш</string>
     <string name="pref_data_cache">Очистить кэш</string>
@@ -180,6 +262,8 @@
     <string name="pref_theme_header">Тема</string>
     <string name="pref_theme_dark">Темная тема</string>
     <string name="pref_theme_dark_desc">Использовать темную тему приложения</string>
+    <string name="pref_notifications_header">Уведомления</string>
+    <string name="pref_notifications">Получать уведомления</string>
     <string name="pref_wallpaper_header">Обои</string>
     <string name="pref_wallpaper_location">Место сохранения обоев</string>
     <string name="pref_language_header">Язык</string>
@@ -192,11 +276,15 @@
     <string name="theme_name_auto">Авто</string>
     <string name="theme_name_light">Светлая</string>
     <string name="theme_name_dark">Тёмная</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Требуется разрешение хранения для сохранения обоев</string>
+    <string name="permission_notification_denied_1">Разрешение на уведомление необходимо для получения уведомлений от разработчика</string>
+    <string name="permission_notification_denied_2">Включить уведомления из настроек приложения</string>
     <!-- Intent -->
     <string name="app_client">Выберите почтовый клиент</string>
     <string name="no_email_app">Нет приложений для отправки сообщения</string>
+    <string name="no_browser">Нет приложения для открытия URL</string>
     <string name="intent_email_failed">Не удалось отобразить приложения для сообщения</string>
     <string name="intent_email_supported">Поддерживается</string>
     <string name="intent_email_recommended">Рекомендуется</string>
@@ -207,6 +295,7 @@
     <string name="about_privacy_policy_title">Политика конфиденциальности</string>
     <string name="about_terms_and_conditions_title">Правила и условия</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Пожалуйста, дайте описание проблемы, о которой вы хотите сообщить</string>
     <string name="report_bugs_desc_hint">Описание</string>
     <string name="report_bugs_desc_empty">Дайте описание</string>
     <string name="report_bugs_building">Установка списка активностей …</string>
@@ -216,9 +305,13 @@
     <string name="donation_success">Благодарим Вас за пожертвования. Я буду использовать это во благо.</string>
     <!-- Crash Report -->
     <string name="crash_report">Отчет о вылетах</string>
+    <string name="crash_report_message">К сожалению, %s произошла ошибка. Выберите Отчет ниже, чтобы помочь разработчику исправить проблему.</string>
     <string name="crash_report_send">Отправить отчет</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar это открытый набор иконок панели управления под лицензией Apache 2.0 для
+        Android доступен на GitHub и бесплатно, разработанный Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Лицензия на открытый исходный код</string>
     <string name="about_dashboard_contributors">Авторы CandyBar</string>
     <string name="about_dashboard_translator">Перевод CandyBar</string>
     <!-- DrawerToggle -->
