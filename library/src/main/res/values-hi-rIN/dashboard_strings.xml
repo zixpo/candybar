@@ -297,6 +297,7 @@
     <string name="about_privacy_policy_title">गोपनीयता नीति</string>
     <string name="about_terms_and_conditions_title">नियम और शर्तें</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">आप किस प्रकार की समस्या की रिपोर्ट करना चाहते हैं, इसके बारे में विवरण दें</string>
     <string name="report_bugs_desc_hint">विवरण</string>
     <string name="report_bugs_desc_empty">कृपया एक विवरण दें</string>
     <string name="report_bugs_building">गतिविधि की सूची बना रहा …</string>
@@ -306,9 +307,13 @@
     <string name="donation_success">दान करने के लिए धन्यवाद मैं इसे अच्छे के लिए उपयोग करूंगा</string>
     <!-- Crash Report -->
     <string name="crash_report">दुर्घटना विवरणी</string>
+    <string name="crash_report_message">दुर्भाग्य से %s क्रैश हो गया है. कृपया नीचे दिए गये सेन्द रिपोर्ट का चयन करें जिससे की ऐप डेवलपर इस को ठीक कर सके</string>
     <string name="crash_report_send">विवरणी भेजो</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">कैंडीबार </string>
+    <string name="about_dashboard_dev">कैंडीबार ओपन सोर्स आइकन पैक डैशबोर्ड है जिसे अपाचे लाइसेंस 2.0 के तहत लाइसेंस प्राप्त किया गया है
+एंड्रॉइड GitHub पर उपलब्ध है और उपयोग करने के लिए स्वतंत्र, दानी महार्धिका द्वारा विकसित।</string>
+    <string name="about_open_source_licenses">ओपन सोर्स लाइसेंस</string>
     <string name="about_dashboard_contributors">कैंडबैर योगदानकर्ता</string>
     <string name="about_dashboard_translator">कैंडीबर् अनुवादक</string>
     <!-- DrawerToggle -->
@@ -316,4 +321,11 @@
     <string name="txt_close">बंद करे</string>
     <string name="txt_new">नया</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">इस आइकन को बुकमार्क अनुभाग में जोड़ें</string>
+    <string name="icon_search_close_button_content_description">आइकन खोज बंद करें</string>
+    <string name="icon_request_submit_button_content_description">आइकन अनुरोध सबमिट करें</string>
+    <string name="icon_list_content_description">आइकन पैक में शामिल आइकन की सूची</string>
+    <string name="icon_search_list_content_description">खोज शब्द से मेल खाने वाले आइकन की सूची</string>
+    <string name="about_item_social_content_description">आइकन पैक के लेखक की ऑनलाइन प्रोफ़ाइल का लिंक:</string>
+    <string name="share_icon_pack_button_content_description">इस ऐप को किसी के साथ साझा करें</string>
 </resources>
