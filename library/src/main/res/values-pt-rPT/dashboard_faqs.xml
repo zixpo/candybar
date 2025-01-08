@@ -28,4 +28,75 @@
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
     </string-array>
+    <string-array name="questions">
+        <item>O que é um lançador?</item>
+        <item>O que é um pacote de ícones?</item>
+        <item>Como usar um pacote de ícones?</item>
+        <item>Como aplicar um pacote de ícones?</item>
+        <item>Como vejo todos os ícones incluídos?</item>
+        <item>Não consigo ver um nome completo do ícone</item>
+        <item>Como posso substituir ícones por um ícone alternativo?</item>
+        <item>Como faço o pedido de um ícone?</item>
+        <item>Como posso restaurar os pedidos Premium restantes depois de reinstalar o aplicativo?</item>
+        <item>Depois de reiniciar meu telefone, o pacote de ícone não é aplicado; ele restaura para os padrões?</item>
+        <item>Por que os ícones parecem jaggy ou pixelado no meu telefone?</item>
+        <item>Posso ver o ícone incluído em todos os ícones,
+            mas por que o ícone real na gaveta de aplicativos não é alterado?</item>
+        <item>Qual é a opção \"reportar bugs\"?</item>
+        <item>Meu lançador está listado na descrição do Google Play, mas por que não está incluído na seção de aplicação?</item>
+        <item>Papel de parede não pode ser aplicado, apenas mostrando tela preta?</item>
+        <item>Muzei: Como carregar somente planos de fundo baixados?</item>
+        <item>Muzei: Não quero continuar baixando papéis de parede toda vez que o papel de parede mudar?</item>
+        <item>Muzei: só quero usar papéis de parede específicos?</item>
+        <item>Por que é necessária permissão Ler &amp; Escrever Armazenamento Externo?</item>
+        <item>Por que é necessária permissão de Internet?</item>
+        <item>Por que o Estado de Acesso à Rede é necessário?</item>
+        <item>Por que é necessária permissão de acesso a Wifi?</item>
+        <item>Por que é necessária a permissão Definir papel de parede?</item>
+        <item>Por que a permissão Wake Lock é necessária?</item>
+        <item>Por que é necessária a permissão de definir alarme?</item>
+    </string-array>
+    <string-array name="answers">
+        <item>Launcher é a parte da interface de usuário do Android que permite aos usuários personalizar a tela inicial, U
+            iniciar aplicativos de telefonia, fazer chamadas telefônicas, e executar outras tarefas em dispositivos Android.</item>
+        <item>Um conjunto de gráficos que irá mudar a aparência dos ícones da sua gaveta de aplicativos</item>
+        <item>Você precisará de um iniciador que suporte pacotes de ícones personalizados. Os lançadores suportados estão listados na descrição da Play Store. Se você está confuso sobre quais lançadores devem ser usados, basta ir para a seção \"Aplicar\" e instalar a partir daí.</item>
+        <item>Você pode abrir a gaveta de navegação e então abrir \"Aplicar\". Escolha seu launcher da lista. U
+            Se seu lançador não estiver listado lá, mas este pacote de ícones é compatível com ele
+            (veja na descrição da Google Play Store para lançadores compatíveis),
+            você pode aplicar o pacote de ícones manualmente nas configurações de lançador.</item>
+        <item>Você pode abrir a gaveta de navegação e então abrir \"Ícones\"</item>
+        <item>Basta tocar no ícone. Uma caixa de diálogo de pré-visualização irá aparecer com uma imagem maior e um nome completo de ícone.</item>
+        <item>Depende do lançador que você usou. Nem todos os lançadores suportam edição de ícones.
+       	    Quase você pode editar um ícone tocando em &amp; segurando o ícone ou tocando duas vezes nele.</item>
+        <item>Você pode abrir a gaveta de navegação, e então abrir \"Icon Request\".</item>
+        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
+            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
+        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
+        <item>The problem might come from the launcher that you used when handling big icon resolution.
+       	    You can fix it by increasing the icon size to 115–120%.
+       	    Alternatively, you might change your launcher.</item>
+        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
+        <item>\"Report Bugs\" is used to report bugs related to the icon pack, not the dashboard.</item>
+        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
+      	    You can apply this icon pack manually in the individual launcher settings.</item>
+        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
+      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
+      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
+      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
+            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
+        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
+            You will need to download wallpapers from the dashboard first.</item>
+        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
+            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
+        <item>Open Dashboard, download wallpapers that you want to use in Muzei.
+            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
+        <item>It is used to write &amp; read cache, and collect the icon request data.</item>
+        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>It is used to check if your phone has an internet connection or not.</item>
+        <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
+        <item>It is used to apply wallpapers directly from the dashboard app.</item>
+        <item>It is used by Muzei Live Wallpaper.</item>
+        <item>It is used to launch the clock app from the analog clock widget.</item>
+    </string-array>
 </resources>
