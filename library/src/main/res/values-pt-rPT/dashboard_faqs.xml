@@ -70,33 +70,26 @@
         <item>Depende do lançador que você usou. Nem todos os lançadores suportam edição de ícones.
        	    Quase você pode editar um ícone tocando em &amp; segurando o ícone ou tocando duas vezes nele.</item>
         <item>Você pode abrir a gaveta de navegação, e então abrir \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
-        <item>\"Report Bugs\" is used to report bugs related to the icon pack, not the dashboard.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
-        <item>When you \"Set Wallpaper\" directly from the app, it will be downloaded to the cache,
-      	    then the dashboard app will try to apply it. Applying will take some time and also need a huge amount of RAM for a short timespan.
-      	    \"Black Screen\" errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
-      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
-            Alternatively, you can open the downloaded wallpaper from your Gallery and set it as wallpaper from there.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
-        <item>If a wallpaper is already downloaded, it will be loaded from your phone memory automatically.
-            Muzei won\'t keep downloading it when the wallpaper changes. You will need to download wallpapers from the dashboard first.</item>
-        <item>Open Dashboard, download wallpapers that you want to use in Muzei.
-            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
-        <item>It is used to write &amp; read cache, and collect the icon request data.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
-        <item>It is used to check if your phone has an internet connection or not.</item>
-        <item>It is used to check if your phone has an internet connection to a wifi or not, to load cloud wallpapers from Muzei.</item>
-        <item>It is used to apply wallpapers directly from the dashboard app.</item>
-        <item>It is used by Muzei Live Wallpaper.</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>Você pode abrir a gaveta de navegação, em seguida, abra \"Configurações\", escolha \"Restaurar compras\". Se você tinha quaisquer Solicitações Premium restantes antes da reinstalação, elas serão restauradas.</item>
+        <item>Isso aconteceu porque este pacote de ícones foi movido para o cartão SD; você deve instalá-lo na memória interna.</item>
+        <item>O problema pode vir do launcher que você usou ao lidar com grande resolução de ícones.
+       	    Você pode corrigi-lo aumentando o tamanho do ícone para 115-120%.
+       	    Como alternativa, você pode mudar seu launcher.</item>
+        <item>Abra configurações, role para baixo e depois selecione \"Report Bugs\".</item>
+        <item>\"Reportar erros\" é usado para reportar bugs relacionados ao pacote de ícones, não ao painel.</item>
+        <item>Nem todos os lançadores suportam aplicação direta, e alguns deles não podem ser acessados diretamente do painel. Você pode aplicar este pacote de ícones manualmente nas configurações individuais do iniciador.</item>
+        <item>Quando você \"set Wallpaper\" diretamente do aplicativo, ele será baixado para o cache, Em seguida, o aplicativo Dashboard tentará aplicá-lo. A aplicação levará algum tempo e também precisará de uma enorme quantidade de RAM por um curto período de tempo. Erros de \"tela preta\" podem aparecer porque seu telefone não tem RAM livre suficiente para processar o papel de parede. Reiniciar o telefone irá corrigir este problema. Depois de reiniciar, seu telefone terá mais RAM disponível. Como alternativa, você pode abrir o papel de parede baixado da sua Galeria e defini-lo como papel de parede a partir daí.</item>
+        <item>Abra Muzei, escolha este pacote de ícones, configurações. Você verá uma opção para carregar apenas papéis de parede baixados. Você precisará baixar papéis de parede do painel primeiro.</item>
+        <item>Se um plano de fundo já for baixado, ele será carregado automaticamente a partir da memória do telefone.
+            O Muzei não continuará baixando quando o papel de parede mudar. Você precisará baixar papéis de parede do painel primeiro.</item>
+        <item>Abra o Painel, baixe papéis de parede que você deseja usar no Muzei.
+            Abra as configurações do Muzei e, em seguida, escolha apenas Carregar Papéis de Parede Baixados.</item>
+        <item>Ele é usado para escrever &amp; ler cache e coletar os dados de requisição de ícones.</item>
+        <item>É usado para carregar Papéis de Parede Baseados na Nuvem &amp; baixá-los.</item>
+        <item>É usado para verificar se o seu telefone tem uma conexão com a internet ou não.</item>
+        <item>Ele é usado para verificar se o seu telefone tem uma conexão com a internet para um wifi ou não, para carregar papéis de parede na nuvem do Muzei.</item>
+        <item>Ele é usado para aplicar papéis de parede diretamente do aplicativo do painel.</item>
+        <item>É usado por Muzei Live Wallpaper.</item>
+        <item>É usado para abrir o aplicativo de relógio a partir do widget de relógio analógico.</item>
     </string-array>
 </resources>
