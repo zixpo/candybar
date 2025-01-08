@@ -111,31 +111,106 @@
     <string name="apply_manual">%1$s সরাসরি প্রয়োগ সমর্থন করে না, আপনি লঞ্চার সেটিংস থেকে %2$s ম্যানুয়ালি প্রয়োগ করতে পারেন।</string>
     <string name="apply_manual_kvaesitso">Kvaesitso সরাসরি আবেদন সমর্থন করে না তবে আপনি এই পদক্ষেপগুলি অনুসরণ করতে পারেন:</string>
     <string name="apply_manual_kvaesitso_step_1">সেটিংস Kvaesitso\'s খুলুন</string>
+    <string name="apply_manual_kvaesitso_step_2">\"গ্রিড &amp; আইকন\" এ আলতো চাপুন</string>
+    <string name="apply_manual_kvaesitso_step_3">\"আইকন প্যাক\" এ আলতো চাপুন</string>
+    <string name="apply_manual_kvaesitso_step_4">তালিকাটি থেকে %s বেছে নিন</string>
+    <string name="apply_manual_kvaesitso_step_5">ব্যাকগ্রাউন্ড আকারটি সক্ষম বা অক্ষম করতে পেইন্ট ব্রাশ আইকনটি ট্যাপ করুন</string>
+    <string name="apply_manual_kiss">KISS সরাসরি আবেদন সমর্থন করে না তবে আপনি এই পদক্ষেপগুলি অনুসরণ করতে পারেন:</string>
+    <string name="apply_manual_kiss_step_1">KISS সেটিংস খুলুন</string>
+    <string name="apply_manual_kiss_step_2">\"ইউজার ইন্টারফেস\" এ আলতো চাপুন</string>
+    <string name="apply_manual_kiss_step_3">\"আইকন প্যাক\" এ আলতো চাপুন</string>
+    <string name="apply_manual_kiss_step_4">তালিকাটি থেকে %s বেছে নিন</string>
+    <string name="apply_manual_samsung_oneui">%1$s সরাসরি প্রয়োগ সমর্থন করে না কিন্তু %2$s দিয়ে শুরু করে আপনি একটি সহযোগী অ্যাপের সাহায্যে আইকনগুলি প্রয়োগ করতে পারেন।</string>
+    <string name="apply_manual_samsung_oneui_too_old">আপনার %s-এর বর্তমান সংস্করণটি অত্যন্ত পুরানো। সরাসরি আইকন প্রয়োগ করতে সক্ষম হতে অনুগ্রহ করে Android 12 বা আরও নতুন সংস্করণে আপডেট করুন। বিকল্পভাবে, আপনি একটি ভিন্ন লঞ্চার ইনস্টল করতে পারেন।</string>
+    <string name="apply_manual_samsung_oneui_step_1">%s খোলে</string>
+    <string name="apply_manual_samsung_oneui_step_2">%s অ্যাপটি ডাউনলোড করুন</string>
+    <string name="apply_manual_samsung_oneui_step_3">\"আইকন\" এ আলতো চাপুন</string>
+    <string name="apply_manual_samsung_oneui_step_4">\"নতুন তৈরি করুন\" এ আলতো চাপুন</string>
+    <string name="apply_manual_samsung_oneui_step_5">নীল \"আইকনপ্যাক\" বোতামটি আলতো চাপুন</string>
+    <string name="apply_manual_samsung_oneui_step_6">তালিকাটি থেকে %s বেছে নিন</string>
+    <string name="apply_manual_samsung_oneui_step_7">আপনি প্রতিবার %s আপডেট করলে এই পদক্ষেপগুলি পুনরাবৃত্তি করুন কারণ নতুন আইকনগুলি স্বয়ংক্রিয়ভাবে ম্যাপ করা হবে না।</string>
+    <string name="apply_manual_hios">HiOS সরাসরি আবেদন সমর্থন করে না তবে আপনি এই পদক্ষেপগুলি অনুসরণ করতে পারেন:</string>
+    <string name="apply_manual_hios_step_1">\"সেটিংস\" খুলুন</string>
+    <string name="apply_manual_hios_step_2">\"থিম &amp; লকস্ক্রিনে আলতো চাপুন</string>
+    <string name="apply_manual_hios_step_3">\"আমার থিম\" এ আলতো চাপুন</string>
+    <string name="apply_manual_hios_step_4">\"আইকন প্যাক\" এ আলতো চাপুন</string>
+    <string name="apply_manual_hios_step_5">%s ট্যাপ করুন</string>
+    <string name="apply_manual_oxygen_os_step_1">আপনার হোমস্ক্রিন দীর্ঘ-আলতো চাপুন</string>
+    <string name="apply_manual_oxygen_os_step_2">\"হোম সেটিংস\" এ আলতো চাপুন</string>
+    <string name="apply_manual_oxygen_os_step_3">\"আইকন প্যাক\" এ আলতো চাপুন</string>
+    <string name="apply_manual_oxygen_os_step_4">%s ট্যাপ করুন</string>
+    <string name="apply_manual_color_os_step_1">আপনার হোমস্ক্রিন দীর্ঘ-আলতো চাপুন</string>
+    <string name="apply_manual_color_os_step_2">\"আইকন\" এ আলতো চাপুন</string>
+    <string name="apply_manual_color_os_step_3">\"কাস্টম\" বোতামের ডানদিকে স্ক্রোল করুন (এটি একটি স্ক্রোলযোগ্য তালিকা!)</string>
+    <string name="apply_manual_color_os_step_4">%s ট্যাপ করুন</string>
+    <string name="apply_manual_before">বিফোর লঞ্চারের এই সংস্করণটি এখনও সরাসরি আইকন প্রয়োগ করা সমর্থন করে না। পরিবর্তে, নীচের পদক্ষেপগুলি অনুসরণ করুন:</string>
+    <string name="apply_manual_before_step_1">হোমস্ক্রিনে বামে সোয়াইপ করুন</string>
+    <string name="apply_manual_before_step_2">\"সেটিংস\" এ আলতো চাপুন</string>
+    <string name="apply_manual_before_step_3">\"স্টাইলস &amp; থিমস\" এ আলতো চাপুন</string>
+    <string name="apply_manual_before_step_4">\"আইকন স্টাইলস &amp; প্যাকগুলি\" এ আলতো চাপুন</string>
+    <string name="apply_manual_before_step_5">%s ট্যাপ করুন</string>
+    <string name="apply_manual_nothing_step_1">\"সেটিংস\" খুলুন</string>
+    <string name="apply_manual_nothing_step_2">\"কাস্টমাইজেশন\" এ আলতো চাপুন</string>
+    <string name="apply_manual_nothing_step_3">\"আইকন প্যাক\" এ আলতো চাপুন</string>
+    <string name="apply_manual_nothing_step_4">%s ট্যাপ করুন</string>
     <string name="apply_launch_failed">%s সেটিংস চালু করতে অক্ষম</string>
     <string name="apply_launcher_not_installed">%s ইনস্টল করা নেই। আপনি কি খুলতে চান গুগল প্লে স্টোর? 
 ডাউনলোড এবং ইনস্টল করার জন্য?</string>
+    <string name="apply_launcher_not_installable">%s লঞ্চার ইনস্টল করা নেই। অনুগ্রহ করে লঞ্চারটি ইনস্টল করার পরে আবার চেষ্টা করুন।</string>
     <string name="apply_cmtheme_not_available">CM থিম ম্যানেজার এই ডিভাইসে পাওয়া যায় নি।</string>
+    <string name="apply_cmtheme_failed">CM থিম ম্যানেজার আরম্ভ করা যায় নি, আপনি সেটিংস থেকে আইকন প্যাক প্রয়োগ করতে চেষ্টা করতে পারেন।</string>
     <string name="apply_lg_home">এই আইকন প্যাকটি প্রয়োগ করতে খুলুন সেটিংস - প্রদর্শন - হোম স্ক্রিন - থিম</string>
     <string name="apply_lg_home_not_available">এলজি হোম এই ডিভাইসে পাওয়া যায় না</string>
+    <string name="apply_lg_home_failed">এলজি হোম সেটিংস চালু করতে সক্ষম হয়নি, আপনি সেটিংস থেকে আইকন প্যাক প্রয়োগ করার চেষ্টা করতে পারেন।</string>
     <string name="apply_lg_home_nougat">অ্যান্ড্রয়েড নওগ্যাটের সাথে এলজি হোম আইকন প্যাক সমর্থন করে না। আইকন প্যাক ব্যবহার করতে আপনার একটি কাস্টম লঞ্চারের প্রয়োজন।</string>
+    <string name="apply_launcher_incompatible">%s Launcher কোনও আইকন প্যাককে সমর্থন করে না তাই আপনি এই লঞ্চারের সাহায্যে এই আইকন প্যাকটি ব্যবহার করতে পারবেন না। আপনি %2$s লঞ্চারে এই আইকন প্যাকটি ব্যবহার করতে একটি তৃতীয়-পক্ষের অ্যাপ চেষ্টা করতে পারেন। আপনি কি এটি ইনস্টল করতে চান?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s লঞ্চার অ্যান্ড্রয়েড %d বা তার চেয়ে কম আইকন প্যাকগুলিকে সমর্থন করে না। এই আইকন প্যাকটি ব্যবহার করতে অনুগ্রহ করে আপনার অ্যান্ড্রয়েড সংস্করণ আপডেট করুন বা একটি তৃতীয় পক্ষের লঞ্চার ইনস্টল করুন। আপনি পৃথক আইকন পরিবর্তন করতে একটি সহায়ক অ্যাপ্লিকেশনও চেষ্টা করতে পারেন। আপনি কি এটি ইনস্টল করতে চান?</string>
     <!-- Icons -->
     <string name="icons_load_failed">আইকন লোড করতে সক্ষম হয়নি</string>
+    <string name="icon_shape">আইকন আকৃতি</string>
+    <string name="bookmark_icons_empty">কোনও বুকমার্ক খুঁজে পাওয়া যায়নি। আইকনগুলি এখানে দ্রুত অ্যাক্সেস করতে সেগুলি বুকমার্ক করুন।</string>
+    <string name="items_selected">%d টি নির্বাচিত</string>
     <!-- Request -->
     <string name="request_title">আইকনের জন্য অনুরোধ</string>
     <string name="request_not_selected">অনুরোধের জন্য অ্যাপ্লিকেশানগুলি নির্বাচন করুন</string>
     <string name="request_not_requested">অনুরোধ করা হয়নি</string>
     <string name="request_already_requested">ইতিমধ্যে অনুরোধ জানানো হয়েছে</string>
+    <string name="request_not_available">অনুরোধ করা যাবে না</string>
     <string name="request_building">অনুরোধ তৈরী করা হচ্ছে …</string>
+    <string name="request_pacific_sending">প্যাসিফিক ম্যানেজারকে অনুরোধ পাঠানো হচ্ছে...</string>
+    <string name="request_pacific_error">প্যাসিফিক ম্যানেজারকে অনুরোধ পাঠানোর সময় ত্রুটি ঘটেছে। ত্রুটি হল %s</string>
+    <string name="request_pacific_success">প্যাসিফিক ম্যানেজারকে সফলভাবে অনুরোধ পাঠানো হয়েছে</string>
+    <string name="request_custom_error">একটি আইকন অনুরোধ পাঠানোর সময় ত্রুটি ঘটেছে। যদি এই ত্রুটিটি চলতে থাকে তবে বিকাশকারীর সাথে যোগাযোগ করুন। %s</string>
+    <string name="request_custom_success">সফলভাবে আইকন অনুরোধ পাঠানো হয়েছে</string>
+    <string name="request_fetching_data">সর্বশেষ তথ্য আনা হচ্ছে...</string>
     <string name="request_build_failed">আইকনের জন্য অনুরোধ জানাতে সক্ষম হয় নি</string>
     <string name="request_appfilter_failed">Appfilter.xml পড়তে অক্ষম</string>
+    <string name="request_requested">আপনি ইতিমধ্যে এই আইকনটির অনুরোধ করেছেন এবং এটির আর অনুরোধ করতে পারবেন না</string>
+    <string name="request_requested_possible">আপনি ইতিমধ্যে এই আইকনটির অনুরোধ করেছেন। আপনি কি নিশ্চিত যে আপনি এটির জন্য আরেকটি অনুরোধ ব্যয় করতে চান?</string>
+    <string name="request_requested_button_cancel">ফিরে যাও</string>
+    <string name="request_requested_button_confirm">যেভাবেই হোক সিলেক্ট করুন</string>
     <string name="request_email_client">আইকন অনুরোধ পাঠাতে আপনি ব্যবহার করতে চান এমন ইমেইল ক্লায়েন্ট নির্বাচন করুন</string>
+    <string name="request_app_disabled">আপনি এই আইকন প্যাকের একটি পুরানো সংস্করণ ব্যবহার করছেন। অনুরোধকৃত আইকনগুলো সর্বশেষ সংস্করণে অন্তর্ভুক্ত করা হতে পারে। আইকনগুলির অনুরোধ করতে অনুগ্রহ করে আপনার অ্যাপ্লিকেশনটিকে সর্বশেষ সংস্করণে আপডেট করুন।</string>
+    <string name="connection_error_long">সার্ভার থেকে তথ্য লোড করতে অক্ষম। অনুগ্রহ করে আপনার নেটওয়ার্ক সংযোগ পরীক্ষা করুন।</string>
+    <string name="unable_to_load_config">সার্ভার থেকে উপাত্ত আনার অথবা পড়ার সময় একটি ত্রুটি সংঘটিত হয়েছে।</string>
+    <string name="request_limit">আপনি নিয়মিত অনুরোধ সহ কেবলমাত্র %dটি অনুরোধ(গুলি) করতে পারবেন।</string>
     <string name="request_used">আপনি %d টি আইকন অনুরোধ করেছেন।</string>
     <string name="request_limit_buy">আপনি আরো আইকন অনুরোধ পাঠাতে প্রিমিয়াম অনুরোধ কিনতে পারেন।</string>
     <string name="request_limit_reset">প্রতিটি আপডেট এর পর আইকন অনুরোধ সীমা পুনরায় সেট করা হবে।</string>
     <!-- Regular Request -->
+    <string name="regular_request">নিয়মিত আইকন অনুরোধ</string>
+    <string name="regular_request_desc">আপনার আইকনটি অনুরোধ করুন এবং বিকাশকারী আপনার অনুরোধ করা আইকনগুলি অন্তর্ভুক্ত করার চেষ্টা করবে।</string>
+    <string name="regular_request_count">মোট\n%dটি অনুরোধ</string>
+    <string name="regular_request_used">ব্যবহৃত\n%dটি অনুরোধ</string>
+    <string name="regular_request_available">সুলভ\n%dটি অনুরোধ</string>
     <!-- Premium Request -->
     <string name="premium_request">প্রিমিয়াম আইকন অনুরোধ</string>
+    <string name="premium_request_no_internet">একটি প্রিমিয়াম অনুরোধ পাঠানোর আগে আপনার ফোন ইন্টারনেটে সংযুক্ত কিনা নিশ্চিত করুন</string>
+    <string name="premium_request_desc">প্রিমিয়াম আইকন অনুরোধটি অনুরোধের জন্য অর্থ ব্যয় করা লাগে। আপনি প্রিমিয়াম আইকন অনুরোধ ব্যবহার করে আপনার অনুরোধকৃত অ্যাপ্লিকেশনগুলি দ্রুত পেতে পারেন।</string>
     <string name="premium_request_buy">কিনুন</string>
+    <string name="premium_request_count">মোট\n%dটি অনুরোধ</string>
+    <string name="premium_request_used">ব্যবহৃত\n%dটি অনুরোধ</string>
+    <string name="premium_request_available">সুলভ\n%dটি অনুরোধ</string>
     <string name="premium_request_already_purchased">আপনার কাছে এখনও %d প্রিমিয়াম অনুরোধ রয়েছে।
 আপনি আবার একটি প্রিমিয়াম অনুরোধ প্যাকেজ কেনার আগে তাদের সব ব্যবহার করতে হবে।</string>
     <string name="premium_request_limit">আপনার কাছে শুধুমাত্র %d টি প্রিমিয়াম অনুরোধ রয়েছে,</string>
@@ -143,6 +218,8 @@
 
 
 নিয়মিত অনুরোধ পুনরায় ব্যবহার করার আগে আপনাকে আপনার সমস্ত প্রিমিয়াম অনুরোধগুলি ব্যবহার করতে হবে।</string>
+    <string name="premium_request_consume_failed">প্রিমিয়াম অনুরোধ ব্যবহার করতে অক্ষম, নিশ্চিত করুন আপনার কাছে স্থিতিশীল ইন্টারনেট সংযোগ রয়েছে এবং আবার চেষ্টা করুন।
+প্রিমিয়াম অনুরোধ পুনর্নির্মাণ করতে সেটিংসে যান।</string>
     <string name="premium_request_rebuilding">প্রিমিয়াম অনুরোধ পুনর্নির্মাণ করা হচ্ছে …</string>
     <string name="premium_request_rebuilding_empty">আপনি একটিও প্রিমিয়াম অনুরোধ করেন নি</string>
     <string name="premium_request_exist">আপনার এখনও একটি প্রিমিয়াম আইকন অনুরোধ প্যাকেজ আছে।
@@ -150,8 +227,10 @@
     <string name="premium_request_required">আইকন অনুরোধগুলি করতে আপনাকে একটি প্রিমিয়াম আইকন অনুরোধ প্যাকেজ কিনতে হবে</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">নতুন ওয়ালপেপার</string>
+    <string name="wallpaper_already_downloaded">ওয়ালপেপার ইতিমধ্যে ডাউনলোড হয়েছে</string>
     <string name="wallpaper_downloading">ওয়ালপেপার ডাউনলোড হচ্ছে …</string>
     <string name="wallpaper_download_failed">ওয়ালপেপার ডাউনলোড করতে অক্ষম</string>
+    <string name="wallpaper_download_success">ওয়ালপেপার ডাউনলোড সফল</string>
     <string name="wallpaper_loading">ওয়ালপেপার লোড করা হচ্ছে …</string>
     <string name="wallpaper_applying">ওয়ালপেপার প্রয়োগ করা হচ্ছে …</string>
     <string name="wallpaper_applied">ওয়ালপেপার প্রয়োগ করা হয়েছে</string>
@@ -161,6 +240,10 @@
     <string name="wallpaper_apply">ওয়ালপেপার প্রয়োগ করুন</string>
     <string name="wallpaper_save_to_device">ওয়ালপেপার সংরক্ষণ করুন</string>
     <!-- Presets -->
+    <string name="presets_load_failed">প্রিসেটগুলি লোড করতে অক্ষম</string>
+    <string name="presets_storage_permission">পূর্বরূপ ওয়ালপেপার লোড করতে স্টোরেজ অনুমতি প্রয়োজন</string>
+    <string name="presets_required_apps">এই প্রিসেটগুলি ব্যবহার করতে প্রয়োজনীয় অ্যাপগুলি</string>
+    <string name="presets_required_apps_not_installed">প্রিসেট ব্যবহার করতে আবশ্যক অ্যাপগুলি ইনস্টল নেই। অনুপস্থিত প্রয়োজনীয় অ্যাপ্লিকেশনগুলি ইনস্টল করুন এবং আবার চেষ্টা করুন।</string>
     <!-- Preferences -->
     <string name="pref_data_header">ডেটা &amp; ক্যাশে</string>
     <string name="pref_data_cache">ক্যাশে সাফ করুন</string>
@@ -184,6 +267,8 @@
     <string name="pref_theme_header">থীম</string>
     <string name="pref_theme_dark">গাঢ় থীম</string>
     <string name="pref_theme_dark_desc">অ্যাপ্লিকেশন থিমের জন্য গাঢ় রঙ ব্যবহার করুন</string>
+    <string name="pref_notifications_header">প্রজ্ঞাপন</string>
+    <string name="pref_notifications">বিজ্ঞপ্তি পান</string>
     <string name="pref_wallpaper_header">ওয়ালপেপার</string>
     <string name="pref_wallpaper_location">ওয়ালপেপার সংরক্ষণের স্থান </string>
     <string name="pref_language_header">ভাষা</string>
@@ -193,11 +278,18 @@
     <string name="pref_others_reset_tutorial">টিউটোরিয়াল রিসেট করুন</string>
     <string name="pref_others_reset_tutorial_reset">টিউটোরিয়াল রিসেট করা হয়েছে</string>
     <!-- Themes -->
+    <string name="theme_name_auto">স্বয়ংক্রিয়</string>
+    <string name="theme_name_light">হালকা</string>
+    <string name="theme_name_dark">অদৃশ্য</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">ওয়ালপেপার সংরক্ষণ করার জন্য স্টোরেজ অনুমতি প্রয়োজন</string>
+    <string name="permission_notification_denied_1">বিকাশকারীর থেকে বিজ্ঞপ্তিগুলি পেতে বিজ্ঞপ্তির অনুমতি প্রয়োজন</string>
+    <string name="permission_notification_denied_2">অ্যাপ সেটিংস থেকে বিজ্ঞপ্তিগুলি সক্ষম করুন</string>
     <!-- Intent -->
     <string name="app_client">ইমেল ক্লায়েন্ট নির্বাচন করুন</string>
     <string name="no_email_app">ইমেল পাঠাতে কোন অ্যাপ নেই</string>
+    <string name="no_browser">Url টি খুলতে কোনও অ্যাপ্লিকেশন নেই</string>
     <string name="intent_email_failed">ইমেল অ্যাপ্লিকেশন প্রদর্শন করতে অক্ষম</string>
     <string name="intent_email_supported">সমর্থিত</string>
     <string name="intent_email_recommended">সুপারিশকৃত</string>
@@ -205,7 +297,10 @@
     <string name="intent_email_not_supported_message">একটি অসমর্থিত ইমেল ক্লায়েন্ট নির্বাচিত, দয়া করে অন্য ইমেল ক্লায়েন্ট নির্বাচন করুন</string>
     <!-- About -->
     <string name="about_contributors_title">অবদানকারীগণ</string>
+    <string name="about_privacy_policy_title">গোপনীয়তা নীতি</string>
+    <string name="about_terms_and_conditions_title">নিয়মাবলী এবং শর্তাবলী</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">আপনি কোনও ধরনের সমস্যা সম্পর্কে রিপোর্ট করতে চান দয়া করে একটি বিবরণ দিন</string>
     <string name="report_bugs_desc_hint">বর্ণনা</string>
     <string name="report_bugs_desc_empty">একটি বিবরণ দিন দয়া করে</string>
     <string name="report_bugs_building">কার্যকলাপ তালিকা তৈরি করা হচ্ছে …</string>
@@ -215,13 +310,25 @@
     <string name="donation_success">একটি অনুদান রাখার জন্য আপনাকে ধন্যবাদ।  আমি এটি ভালো কাজে  ব্যবহার করব।</string>
     <!-- Crash Report -->
     <string name="crash_report">ক্র্যাশ রিপোর্ট</string>
+    <string name="crash_report_message">দুর্ভাগ্যবশত %s ক্র্যাশ করেছে। বিকাশকারীকে সমস্যাটির সমাধান করতে সহায়তা করার জন্য নীচের প্রতিবেদনটি নির্বাচন করুন।</string>
     <string name="crash_report_send">রিপোর্ট পাঠান</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">ক্যান্ডি বার</string>
+    <string name="about_dashboard_dev">ক্যান্ডিব্যাপার ওপেন সোর্স আইকন প্যাক ড্যাশবোর্ডটি অ্যাপাচে লাইসেন্স 2.0 এর জন্য অনুমোদিত
+GitHub এ অ্যান্ড্রয়েড উপলব্ধ এবং ব্যবহারের জন্য বিনামূল্যে, Dani Mahardhika দ্বারা উন্নয়নকৃত।</string>
+    <string name="about_open_source_licenses">ওপেন সোর্স লাইসেন্স</string>
     <string name="about_dashboard_contributors">ক্যান্ডিবারে অবদানকারীগণ</string>
     <string name="about_dashboard_translator">ক্যান্ডিবারে অনুবাদকগণ</string>
     <!-- DrawerToggle -->
     <string name="txt_open">খুলুন</string>
     <string name="txt_close">বন্ধ করুন</string>
+    <string name="txt_new">নতুন</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">বুকমার্ক বিভাগে এই আইকনটি যুক্ত করুন</string>
+    <string name="icon_search_close_button_content_description">আইকন অনুসন্ধান বন্ধ করুন</string>
+    <string name="icon_request_submit_button_content_description">একটি আইকন অনুরোধ জমা দিন</string>
+    <string name="icon_list_content_description">আইকন প্যাকে অন্তর্ভুক্ত আইকনগুলির তালিকা</string>
+    <string name="icon_search_list_content_description">অনুসন্ধান শব্দটির সাথে মেলে এমন আইকনগুলির তালিকা</string>
+    <string name="about_item_social_content_description">আইকন প্যাকের লেখকের একটি অনলাইন প্রোফাইলের লিঙ্ক:</string>
+    <string name="share_icon_pack_button_content_description">এই অ্যাপটি কারও সাথে শেয়ার করুন</string>
 </resources>
