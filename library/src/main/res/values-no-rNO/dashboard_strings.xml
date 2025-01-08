@@ -1,20 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Hjem</string>
+    <string name="navigation_view_apply">Bruk</string>
+    <string name="navigation_view_icons">Ikoner</string>
+    <string name="navigation_view_request">Icon request</string>
+    <string name="navigation_view_wallpapers">Bakgrunner</string>
+    <string name="navigation_view_presets">Forhåndsinnstillinger</string>
+    <string name="navigation_view_settings">Innstillinger</string>
+    <string name="navigation_view_faqs">FAQ</string>
+    <string name="navigation_view_about">Om</string>
+    <string name="navigation_view_donate">Støtt videreutvikling</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei innstillinger</string>
+    <string name="minute">Minutt</string>
+    <string name="hour">Time</string>
+    <string name="save_setting">Lagre</string>
+    <string name="muzei_refresh_duration">Oppdater varighet</string>
+    <string name="muzei_wifi_only">Oppdater bare fra Wi-Fi</string>
+    <string name="muzei_downloaded_only">Last bare ned bakgrunnsbilder</string>
+    <string name="muzei_settings_ignored">Ikonpakken inneholder ikke bakgrunnsbilder, innstillinger ignorert.</string>
+    <string name="muzei_settings_saved">Innstillinger lagret</string>
     <!-- Menu -->
+    <string name="menu_search">Søk</string>
+    <string name="menu_save">Lagret på enhet</string>
+    <string name="menu_select_all">Velg alle</string>
+    <string name="menu_delete">Slett</string>
+    <string name="menu_wallpaper_crop">Beskjær bakgrunnsbilde</string>
+    <string name="menu_apply_homescreen">Startskjerm</string>
+    <string name="menu_apply_lockscreen">Låseskjerm</string>
+    <string name="menu_apply_homescreen_lockscreen">Hjemmeskjerm &amp; Låseskjerm</string>
     <!-- Dialog -->
+    <string name="open">Åpen</string>
+    <string name="close">Lukk</string>
+    <string name="clear">Tøm</string>
+    <string name="ok">OK</string>
+    <string name="install">Installer</string>
+    <string name="donate">Donér</string>
+    <string name="update">Oppdater</string>
+    <string name="search_noresult">Ingen resultater funnet for %s</string>
+    <string name="search_faqs">Spørsmål eller svar</string>
+    <string name="search_icon">Navn på ikon</string>
+    <string name="search_wallpapers">Navn på bakgrunnsbilde</string>
     <!-- Update -->
+    <string name="checking_for_update">Sjekker etter oppdatering …</string>
+    <string name="update_available">Oppdatering tilgjengelig!</string>
+    <string name="no_update_available">Du bruker den nyeste versjonen!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versjon</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Kan ikke laste inn i-app kjøp produkter</string>
     <!-- License -->
+    <string name="license_checking">Kontrollerer lisens …</string>
+    <string name="license_check">Lisens sjekk</string>
+    <string name="license_check_success">Lisenssjekk vellykket. Takk for nedlasting av app fra Play Store.</string>
+    <string name="license_check_failed">Lisenssjekk feilet, du lastet ikke ned appen fra Play Store.
+        Du vil ikke kunne bruke den.</string>
+    <string name="license_check_retry">Kan ikke sjekke lisens, prøv igjen om noen øyeblikk.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play Store Sjekk</string>
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Søk</string>
     <!-- Home -->
+    <string name="home_donate">Donér</string>
     <!-- Apply -->
+    <string name="apply_manual_kvaesitso_step_4">Velg %s fra listen</string>
+    <string name="apply_manual_kiss_step_4">Velg %s fra listen</string>
+    <string name="apply_manual_samsung_oneui">%1$s støtter ikke direkte søk, men starter med %2$s kan du bruke ikoner med en companion-app.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Din nåværende versjon av %s er for gammel. Oppdater til Android 12 eller nyere for å kunne bruke ikoner direkte. Alternativt kan du installere en annen startskjerm.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Åpne %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Last ned appen %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Trykk på «Ikon»</string>
+    <string name="apply_manual_samsung_oneui_step_4">Trykk \"Opprett ny\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Trykk på den blå knappen \"Ikonpakke\"</string>
+    <string name="apply_manual_samsung_oneui_step_6">Velg %s fra listen</string>
+    <string name="apply_manual_samsung_oneui_step_7">Gjenta disse trinnene hver gang du oppdaterer %s siden nye ikoner ikke vil bli tilordnet automatisk.</string>
+    <string name="apply_manual_hios">HiOS launcher støtter ikke direkte søk, men du kan følge disse trinnene:</string>
+    <string name="apply_manual_hios_step_1">Åpne \"Innstillinger\"</string>
+    <string name="apply_manual_hios_step_2">Trykk \"Tema &amp; Låseskjerm\"</string>
+    <string name="apply_manual_hios_step_3">Trykk \"Mitt tema\"</string>
+    <string name="apply_manual_hios_step_4">Trykk \"Ikonpakke\"</string>
+    <string name="apply_manual_hios_step_5">Trykk på %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Hold inne hjemmeskjermen din</string>
+    <string name="apply_manual_oxygen_os_step_2">Trykk på \"Home Settings\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Trykk \"Ikonpakke\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Trykk på %s</string>
+    <string name="apply_manual_color_os_step_1">Hold inne hjemmeskjermen din</string>
+    <string name="apply_manual_color_os_step_2">Trykk \"Icons\"</string>
+    <string name="apply_manual_color_os_step_4">Trykk på %s</string>
+    <string name="apply_manual_before_step_5">Trykk på %s</string>
+    <string name="apply_manual_nothing_step_1">Åpne \"Innstillinger\"</string>
+    <string name="apply_manual_nothing_step_3">Trykk \"Ikonpakke\"</string>
+    <string name="apply_manual_nothing_step_4">Trykk på %s</string>
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Icon request</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -29,5 +111,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Åpen</string>
+    <string name="txt_close">Lukk</string>
     <!-- Content descriptions for screen readers -->
 </resources>
