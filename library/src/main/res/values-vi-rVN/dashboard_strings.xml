@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Trang nhất</string>
+    <string name="navigation_view_apply"></string>
+    <string name="navigation_view_icons">Biểu Tượng</string>
+    <string name="navigation_view_request">Yêu cầu biểu tượng</string>
+    <string name="navigation_view_wallpapers">Hình nền</string>
+    <string name="navigation_view_presets">Có sẵn</string>
+    <string name="navigation_view_settings">Cài đặt</string>
+    <string name="navigation_view_faqs">CÂU HỎI THƯỜNG GẶP</string>
+    <string name="navigation_view_about">Giới thiệu</string>
+    <string name="navigation_view_donate">Hỗ trợ người phát triển</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Cài đặt Muzei</string>
+    <string name="minute">Phút</string>
+    <string name="hour">Giờ</string>
+    <string name="save_setting">Lưu</string>
+    <string name="muzei_refresh_duration">Làm mới khoảng thời gian</string>
     <!-- Menu -->
     <!-- Dialog -->
     <!-- Update -->
@@ -15,6 +31,7 @@
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Yêu cầu biểu tượng</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
