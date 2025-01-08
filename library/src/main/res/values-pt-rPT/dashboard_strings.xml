@@ -1,20 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">Painel de Materiais CandyBar</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Página Principal</string>
+    <string name="navigation_view_apply">Aplicar</string>
+    <string name="navigation_view_icons">Ícones</string>
+    <string name="navigation_view_request">Solicitação de ícone</string>
+    <string name="navigation_view_wallpapers">Imagens de fundo</string>
+    <string name="navigation_view_presets">Predefinições</string>
+    <string name="navigation_view_settings">Configurações</string>
+    <string name="navigation_view_faqs">Perguntas frequentes</string>
+    <string name="navigation_view_about">Sobre</string>
+    <string name="navigation_view_donate">Apoiar o desenvolvimento</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Configurações do Muzei</string>
+    <string name="minute">Minuto</string>
+    <string name="hour">Hora</string>
+    <string name="save_setting">Gravar</string>
+    <string name="muzei_refresh_duration">Duração da atualização</string>
+    <string name="muzei_wifi_only">Atualizar somente por Wi-Fi</string>
+    <string name="muzei_downloaded_only">Carregar somente Papéis de Parede Baixados</string>
+    <string name="muzei_settings_ignored">O Pacote de Ícones não contém papéis de parede, configurações ignoradas.</string>
+    <string name="muzei_settings_saved">Configurações salvas</string>
     <!-- Menu -->
+    <string name="menu_search">Procurar</string>
+    <string name="menu_save">Salvar no dispositivo</string>
+    <string name="menu_select_all">Seleccionar Todos</string>
+    <string name="menu_delete">Apagar</string>
+    <string name="menu_wallpaper_crop">Recortar imagem de fundo</string>
+    <string name="menu_apply_homescreen">Tela inicial</string>
+    <string name="menu_apply_lockscreen">Ecrã de bloqueio</string>
+    <string name="menu_apply_homescreen_lockscreen">Tela inicial &amp; Tela de bloqueio</string>
     <!-- Dialog -->
+    <string name="open">Abrir</string>
+    <string name="close">Fechar</string>
+    <string name="clear">Limpar</string>
+    <string name="ok">OK</string>
+    <string name="install">Instale</string>
+    <string name="donate">Doar</string>
+    <string name="update">Atualização</string>
+    <string name="search_noresult">Nenhum resultado encontrado para \"%s\"</string>
+    <string name="search_faqs">Pergunta ou resposta</string>
+    <string name="search_icon">Nome do ícone</string>
+    <string name="search_wallpapers">Nome do Wallpaper</string>
     <!-- Update -->
+    <string name="checking_for_update">A verificar a existência de atualizações...</string>
     <!-- Changelog -->
     <!-- InAppBilling -->
     <!-- License -->
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Procurar</string>
     <!-- Home -->
+    <string name="home_donate">Doar</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Solicitação de ícone</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -29,5 +72,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Abrir</string>
+    <string name="txt_close">Fechar</string>
     <!-- Content descriptions for screen readers -->
 </resources>
