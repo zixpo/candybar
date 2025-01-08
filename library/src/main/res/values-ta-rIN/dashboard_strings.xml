@@ -110,6 +110,9 @@
     <string name="apply_installed">நிறுவப்பட்ட லான்ச்சர்</string>
     <string name="apply_installed_launchers">நிறுவப்பட்ட துவக்கிகள்</string>
     <string name="apply_supported">ஆதரிக்கப்பட்ட லான்ச்சர்கள்</string>
+    <string name="apply_manual">%1$s துவக்கி நேரடி பயன்பாட்டை ஆதரிக்காது, ஆனால் துவக்கி அமைப்புகளில் இருந்து %2$s ஐ கைமுறையாக பயன்படுத்தலாம்.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso நேரடி விண்ணப்பத்தை ஆதரிக்கவில்லை, ஆனால் நீங்கள் இந்த வழிமுறைகளைப் பின்பற்றலாம்:</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitso இன் அமைப்புகளைத் திறக்கவும்</string>
     <string name="apply_manual_samsung_oneui_step_1">%sஐத் திறக்கவும்</string>
     <string name="apply_launch_failed">தொடங்க முடியவில்லை %s அமைப்புகள்</string>
     <string name="apply_launcher_not_installed">%s is not installed. Do you want to open
