@@ -44,11 +44,21 @@
     <string name="search_icon">Nome do ícone</string>
     <string name="search_wallpapers">Nome do Wallpaper</string>
     <!-- Update -->
-    <string name="checking_for_update">A verificar a existência de atualizações...</string>
+    <string name="checking_for_update">A verificar a existência de atualizações ...</string>
+    <string name="update_available">Atualização disponível!</string>
+    <string name="no_update_available">Você está usando a versão mais recente!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versão</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Não é possível carregar produtos de compra no aplicativo</string>
     <!-- License -->
+    <string name="license_checking">Verificando a licença ...</string>
+    <string name="license_check">Verificação de licença</string>
+    <string name="license_check_success">Verificação de licença bem-sucedida. Obrigado por baixar o aplicativo da Play Store.</string>
+    <string name="license_check_failed">Falha na verificação da licença; você não baixou o aplicativo da Play Store. Você não será capaz de usá-lo.</string>
+    <string name="license_check_retry">Não é possível verificar a licença, tente novamente em alguns momentos.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Verificação da Play Store</string>
     <!-- Share -->
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Procurar</string>
