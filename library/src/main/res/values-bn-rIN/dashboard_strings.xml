@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">নীড়</string>
     <string name="navigation_view_apply">প্রয়োগ করুন</string>
     <string name="navigation_view_icons">আইকন</string>
     <string name="navigation_view_request">আইকনের জন্য অনুরোধ</string>
     <string name="navigation_view_wallpapers">ওয়ালপেপার</string>
+    <string name="navigation_view_presets">প্রিসেট</string>
     <string name="navigation_view_settings">সেটিংস</string>
     <string name="navigation_view_faqs">প্রায়শ জিজ্ঞাসিত প্রশ্ন</string>
     <string name="navigation_view_about">সম্পর্কে</string>
@@ -16,6 +18,7 @@
     <string name="hour">ঘণ্টা</string>
     <string name="save_setting">সংরক্ষণ করুন</string>
     <string name="muzei_refresh_duration">সতেজীকরণ ব্যাপ্তি</string>
+    <string name="muzei_wifi_only">শুধু ওয়াই ফাই এ সতেজীকরণ করুন</string>
     <string name="muzei_downloaded_only">শুধুমাত্র ডাউনলোড করা ওয়ালপেপার লোড করুন</string>
     <string name="muzei_settings_ignored">আইকন প্যাকটিতে ওয়ালপেপার নেই, সেটিংস টি এড়িয়ে যান।</string>
     <string name="muzei_settings_saved">সেটিংস সংরক্ষিত</string>
@@ -23,6 +26,11 @@
     <string name="menu_search">খুঁজুন</string>
     <string name="menu_save">ডিভাইসে সংরক্ষণ করুন</string>
     <string name="menu_select_all">সবগুলো নির্বাচন করুন</string>
+    <string name="menu_delete">বিলোপ</string>
+    <string name="menu_wallpaper_crop">ক্রপ ওয়ালপেপার</string>
+    <string name="menu_apply_homescreen">হোমস্ক্রিন</string>
+    <string name="menu_apply_lockscreen">লকস্ক্রিন</string>
+    <string name="menu_apply_homescreen_lockscreen">হোমস্ক্রিন &amp; লকস্ক্রিন</string>
     <!-- Dialog -->
     <string name="open">খুলুন</string>
     <string name="close">বন্ধ করুন</string>
@@ -30,25 +38,40 @@
     <string name="ok">ঠিক আছে</string>
     <string name="install">ইনস্টল করুন</string>
     <string name="donate">অনুদান দিন</string>
+    <string name="update">আধুনিকীকরণ</string>
     <string name="search_noresult">\"%s\" এর জন্য কোন ফলাফল পাওয়া যায় নি</string>
     <string name="search_faqs">প্রশ্ন অথবা উত্তর</string>
     <string name="search_icon">আইকনের নাম</string>
+    <string name="search_wallpapers">ওয়ালপেপারের নাম</string>
     <!-- Update -->
+    <string name="checking_for_update">আপডেটের জন্য পরীক্ষা করা হচ্ছে ...</string>
+    <string name="update_available">আপডেট উপলব্ধ</string>
+    <string name="no_update_available">আপনি সাম্প্রতিকতম সংস্করণটি ব্যবহার করছেন!</string>
     <!-- Changelog -->
     <string name="changelog_version">সংস্করণ</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">অ্যাপ মধ্যস্থ ক্রয় লোড করতে অক্ষম</string>
     <!-- License -->
     <string name="license_checking">লাইসেন্স পরীক্ষা করা হচ্ছে …</string>
     <string name="license_check">লাইসেন্স পরীক্ষা</string>
+    <string name="license_check_success">লাইসেন্স পরীক্ষা সফল, প্লে স্টোর থেকে অ্যাপ্লিকেশন ডাউনলোড করার জন্য আপনাকে ধন্যবাদ।</string>
+    <string name="license_check_failed">লাইসেন্স পরীক্ষা ব্যর্থ হয়েছে, আপনি প্লে স্টোর থেকে অ্যাপ্লিকেশন ডাউনলোড করেন নি।
+আপনি এটি ব্যবহার করতে পারবেন না।</string>
     <string name="license_check_retry">লাইসেন্সটি চেক করতে অক্ষম, অনুগ্রহ করে কিছুক্ষণ পরে আবার চেষ্টা করুন।</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">প্লে স্টোর চেক</string>
+    <string name="playstore_check_success">গুগল প্লে স্টোর থেকে অ্যাপটি ইনস্টল করার জন্য আপনাকে ধন্যবাদ। উপভোগ করুন!</string>
+    <string name="playstore_check_failed">দেখে মনে হচ্ছে আপনি গুগল প্লে স্টোরের বাইরে থেকে এই আইকন প্যাকটি ইনস্টল করেছেন। আপনি এটি ব্যবহার করতে পারবেন না।</string>
     <!-- Share -->
     <string name="share_app_title">ইয়ো! %s চেক করে দেখুন</string>
     <string name="share_app_body">%1$s চেক করে দেখুন, এই আইকন প্যাকটি অসাধারণ! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">নেভিগেশন ড্রয়ার</string>
+    <string name="tap_intro_home_navigation_desc">এখানে ট্যাপ করুন বা ন্যাভিগেশন ড্রয়ার খুলতে পর্দার বাম প্রান্ত থেকে সোয়াইপ করুন</string>
     <string name="tap_intro_home_apply">আইকন প্যাকটি প্রয়োগ করুন</string>
+    <string name="tap_intro_home_apply_desc">আপনার বর্তমান লঞ্চারে %s প্রয়োগ করতে এখানে ট্যাপ করুন। অন্যান্য লঞ্চারগুলিতে প্রয়োগ করতে দীর্ঘক্ষণ টিপুন।</string>
     <string name="tap_intro_icons_search">খুঁজুন</string>
+    <string name="tap_intro_icons_search_desc">একটি আইকন খুঁজতে এখানে ট্যাপ করুন</string>
     <string name="tap_intro_request_select">মিস করে যাওয়া অ্যাপ নির্বাচন করুন</string>
     <string name="tap_intro_request_select_desc">আইকন অনুরোধের জন্য মিস করে যাওয়া অ্যাপ নির্বাচন করতে এখানে ট্যাপ করুন</string>
     <string name="tap_intro_request_select_all">সব মিস করে যাওয়া অ্যাপ নির্বাচন</string>
@@ -56,14 +79,20 @@
     <string name="tap_intro_request_send">আইকনের জন্য অনুরোধ পাঠান</string>
     <string name="tap_intro_request_send_desc">নির্বাচিত মিস করে যাওয়া অ্যাপ এর অনুরোধ পাঠানোর জন্য এখানে ট্যাপ করুন</string>
     <string name="tap_intro_request_premium">প্রিমিয়াম আইকন অনুরোধ</string>
+    <string name="tap_intro_request_premium_desc">প্রিমিয়াম আইকন অনুরোধ প্যাকেজ কিনতে এখানে আলতো চাপুন,
+প্রিমিয়াম আইকন অনুরোধ সঙ্গে আপনি আপনার অনুরোধ করা অ্যাপ দ্রুত পেতে পারেন।</string>
     <string name="tap_intro_wallpapers_option">ওয়ালপেপার অপশন</string>
+    <string name="tap_intro_wallpapers_option_desc">ওয়ালপেপার বিকল্পগুলি প্রদর্শন করতে এখানে ট্যাপ করুন এবং ধরে থাকুন, %s ওয়ালপেপারটি প্রয়োগ করুন।</string>
     <string name="tap_intro_wallpapers_option_desc_download">ডাউনলোড করুন অথবা</string>
     <string name="tap_intro_wallpapers_preview">ওয়ালপেপার প্রিভিউ দেখান</string>
+    <string name="tap_intro_wallpapers_preview_desc">ওয়ালপেপারের সম্পূর্ণ আকারের পূর্বরূপ দেখার জন্য এখানে আলতো চাপুন</string>
     <string name="tap_intro_wallpaper_preview_save">ওয়ালপেপার সংরক্ষণ করুন</string>
     <string name="tap_intro_wallpaper_preview_save_desc">আপনার ডিভাইসে ওয়ালপেপার ডাউনলোড এবং সংরক্ষণ করতে এখানে আলতো চাপুন যাতে আপনি পরে এটি ব্যবহার করতে পারেন</string>
     <string name="tap_intro_wallpaper_preview_apply">ওয়ালপেপার প্রয়োগ করুন</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">হোম স্ক্রীন ব্যাকগ্রাউন্ড হিসাবে ওয়ালপেপার সেট করতে এখানে আলতো চাপুন</string>
     <!-- Home -->
     <string name="home_more_apps_header">আরো অ্যাপস</string>
+    <string name="home_more_apps">গুগল প্লে স্টোর এ প্রকাশিত অন্যান্য অ্যাপগুলি দেখুন</string>
     <string name="home_rate_and_review">রেটিং দিন ও রিভিউ লিখুন</string>
     <string name="home_apply_icon_pack">%s প্রয়োগ করুন</string>
     <string name="home_donate">অনুদান দিন</string>
@@ -77,7 +106,11 @@
     <string name="home_icon_request_missed_apps">মিস হয়েছে\n%d অ্যাপ</string>
     <!-- Apply -->
     <string name="apply_installed">ইনস্টল করা লঞ্চার</string>
+    <string name="apply_installed_launchers">ইনস্টল করা লঞ্চার</string>
     <string name="apply_supported">সমর্থিত লঞ্চার</string>
+    <string name="apply_manual">%1$s সরাসরি প্রয়োগ সমর্থন করে না, আপনি লঞ্চার সেটিংস থেকে %2$s ম্যানুয়ালি প্রয়োগ করতে পারেন।</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso সরাসরি আবেদন সমর্থন করে না তবে আপনি এই পদক্ষেপগুলি অনুসরণ করতে পারেন:</string>
+    <string name="apply_manual_kvaesitso_step_1">সেটিংস Kvaesitso\'s খুলুন</string>
     <string name="apply_launch_failed">%s সেটিংস চালু করতে অক্ষম</string>
     <string name="apply_launcher_not_installed">%s ইনস্টল করা নেই। আপনি কি খুলতে চান গুগল প্লে স্টোর? 
 ডাউনলোড এবং ইনস্টল করার জন্য?</string>
