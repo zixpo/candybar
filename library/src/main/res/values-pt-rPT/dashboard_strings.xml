@@ -143,13 +143,44 @@
     <string name="apply_manual_color_os_step_2">Toque em \"Ícones\"</string>
     <string name="apply_manual_color_os_step_3">Role para a direita do botão \"Personalizado\" (esta é uma lista rolável!)</string>
     <string name="apply_manual_color_os_step_4">Toque %s</string>
+    <string name="apply_manual_before">Esta versão do Before Launcher ainda não suporta a aplicação de ícones diretamente. Em vez disso, siga os passos abaixo:</string>
+    <string name="apply_manual_before_step_1">Deslize para a esquerda na tela inicial</string>
+    <string name="apply_manual_before_step_2">Toque em \"Configurações\"</string>
+    <string name="apply_manual_before_step_3">Toque em \"Estilos &amp; Temas\"</string>
+    <string name="apply_manual_before_step_4">Toque em \"Ícones de Estilos &amp; Pacotes\"</string>
     <string name="apply_manual_before_step_5">Toque %s</string>
     <string name="apply_manual_nothing_step_1">Abra \"Configurações\"</string>
+    <string name="apply_manual_nothing_step_2">Toque em \"Personalização\"</string>
     <string name="apply_manual_nothing_step_3">Toque em \"Pacote de ícones\"</string>
     <string name="apply_manual_nothing_step_4">Toque %s</string>
+    <string name="apply_launch_failed">Não é possível iniciar as configurações de %s</string>
+    <string name="apply_launcher_not_installed">O Lançador %s não está instalado. Deseja abrir
+        Google Play Store para baixar e instalar?</string>
+    <string name="apply_launcher_not_installable">O Lançador %s não está instalado. Por favor, tente novamente após instalar o launcher.</string>
+    <string name="apply_cmtheme_not_available">CM Theme Manager não está disponível neste dispositivo</string>
+    <string name="apply_cmtheme_failed">Não foi possível iniciar o CM Theme Manager, você pode tentar aplicar o Pacote de Ícones manualmente a partir de Configurações.</string>
+    <string name="apply_lg_home">Para aplicar este pacote de ícones, abra as configurações - Tela inicial - Tema</string>
+    <string name="apply_lg_home_not_available">LG Home não está disponível neste dispositivo</string>
+    <string name="apply_lg_home_failed">Não foi possível iniciar o PN nas Configurações, você pode tentar aplicar o Pacote de Ícones manualmente a partir das Configurações.</string>
+    <string name="apply_lg_home_nougat">O LG Home com Android Nougat não suporta mais pacotes de ícones. Você precisa de um launcher personalizado para usar o pacote de ícones.</string>
+    <string name="apply_launcher_incompatible">O Lançador %s não suporta nenhum pacote de ícones, então você não pode usar este pacote de ícones com este launcher. Você pode tentar um aplicativo de terceiros para usar este pacote de ícones no launcher %2$s . Você deseja instalá-lo?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">Lançador %s não suporta pacotes de ícones no Android %d ou inferior. Por favor, atualize sua versão do Android ou instale um launcher de terceiros para usar esse pacote de ícones. Você também pode tentar um aplicativo de ajuda para alterar ícones individuais. Você quer instalá-lo?</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Não foi possível carregar ícones</string>
+    <string name="icon_shape">Formato dos ícones</string>
+    <string name="bookmark_icons_empty">Nenhum marcador encontrado. Ícones de Favoritos para acessá-los rapidamente aqui.</string>
+    <string name="items_selected">%d selecionado</string>
     <!-- Request -->
     <string name="request_title">Solicitação de ícone</string>
+    <string name="request_not_selected">Selecionar aplicativos para solicitar</string>
+    <string name="request_not_requested">Não solicitado</string>
+    <string name="request_already_requested">Já solicitado</string>
+    <string name="request_not_available">Não pode ser solicitado</string>
+    <string name="request_building">Criando solicitação …</string>
+    <string name="request_pacific_sending">Enviando solicitação para o gerente do Pacífico...</string>
+    <string name="request_pacific_error">Ocorreu um erro ao enviar uma solicitação para o Pacific Manager. Erro é %s</string>
+    <string name="request_pacific_success">Pedido enviado com sucesso para o Pacific Manager</string>
+    <string name="request_custom_error">Ocorreu um erro ao enviar um pedido de ícone. Se este erro persistir, entre em contato com o desenvolvedor. %s</string>
     <string name="request_custom_success">Solicitação de ícone enviada com sucesso</string>
     <string name="request_fetching_data">Obtendo os dados mais recentes …</string>
     <string name="request_build_failed">Não foi possível criar a solicitação de ícone</string>
@@ -210,12 +241,64 @@
     <!-- Preferences -->
     <string name="pref_data_header">Dados &amp; Cache</string>
     <string name="pref_data_cache">Limpar Cache</string>
+    <string name="pref_data_cache_desc">Remova o cache de imagens do seu armazenamento, criado ao escolher uma imagem
+	    deste aplicativo, solicitando apps ausentes e depois de carregar o papel de parede em nuvem.</string>
+    <string name="pref_data_cache_size">Tamanho do cache: %s</string>
+    <string name="pref_data_cache_clear_dialog">Você realmente deseja limpar o cache?</string>
+    <string name="pref_data_cache_cleared">Cache limpo</string>
+    <string name="pref_data_request">Limpar dados de solicitação de ícone</string>
+    <string name="pref_data_request_desc">Remover dados de solicitação de ícone, criado após a solicitação
+        apps ausentes da solicitação de ícone.</string>
+    <string name="pref_data_request_clear_dialog">Você realmente deseja limpar os dados do ícone requisitado?</string>
+    <string name="pref_data_request_cleared">Dados solicitados de ícone apagados</string>
     <string name="pref_premium_request_header">Solicitação de ícone Premium</string>
+    <string name="pref_premium_request_restore">Recuperar Compras</string>
+    <string name="pref_premium_request_restore_desc">Restaurar pacote de solicitação premium após reinstalar o pacote de ícones</string>
+    <string name="pref_premium_request_restore_success">Pedido Premium Restaurado</string>
+    <string name="pref_premium_request_restore_empty">Você não comprou nenhum pacote</string>
+    <string name="pref_premium_request_rebuild">Recriar solicitação de ícone Premium</string>
+    <string name="pref_premium_request_rebuild_desc">Colete todos os dados de solicitação de ícone premium para reenviá-los</string>
+    <string name="pref_theme_header">Tema</string>
+    <string name="pref_theme_dark">Tema Escuro</string>
+    <string name="pref_theme_dark_desc">Usar cor escura para o tema da aplicação</string>
+    <string name="pref_notifications_header">Notificações</string>
+    <string name="pref_notifications">Receber Notificações</string>
+    <string name="pref_wallpaper_header">Imagem de fundo</string>
+    <string name="pref_wallpaper_location">Salvar local do papel de parede</string>
+    <string name="pref_language_header">Idioma</string>
+    <string name="pref_others_header">Outros</string>
+    <string name="pref_others_report_bugs">Reportar erros</string>
+    <string name="pref_others_changelog">Alterações</string>
+    <string name="pref_others_reset_tutorial">Reiniciar o tutorial</string>
+    <string name="pref_others_reset_tutorial_reset">Tutorial  reinicializado</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Auto</string>
+    <string name="theme_name_light">Claro</string>
+    <string name="theme_name_dark">Escuro</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Permissão de armazenamento necessária para salvar o plano de fundo</string>
+    <string name="permission_notification_denied_1">A permissão de notificação é necessária para receber notificações do desenvolvedor</string>
+    <string name="permission_notification_denied_2">Ativar notificações a partir das configurações do aplicativo</string>
     <!-- Intent -->
+    <string name="app_client">Escolher aplicativo</string>
+    <string name="no_email_app">Nenhuma solicitação para enviar e-mail</string>
+    <string name="no_browser">Nenhuma aplicação para abrir URL</string>
+    <string name="intent_email_failed">Não é possível exibir o aplicativo de e-mail</string>
+    <string name="intent_email_supported">Suportado</string>
+    <string name="intent_email_recommended">Recomendados</string>
+    <string name="intent_email_not_supported">Não Suportado</string>
+    <string name="intent_email_not_supported_message">Selecionado um cliente de e-mail não suportado, selecione outro cliente de e-mail</string>
     <!-- About -->
+    <string name="about_contributors_title">Colaboradores</string>
+    <string name="about_privacy_policy_title">Política de Privacidade</string>
+    <string name="about_terms_and_conditions_title">Termos e Condições</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Por favor, dê uma descrição do tipo de problema que você deseja relatar</string>
+    <string name="report_bugs_desc_hint">Descrição:</string>
+    <string name="report_bugs_desc_empty">Por favor, forneça uma descrição</string>
+    <string name="report_bugs_building">Construindo lista de atividades …</string>
+    <string name="report_bugs_failed">Não é possível construir a lista de atividades</string>
     <string name="report_bugs_send">Enviar um relatório</string>
     <!-- Support Development -->
     <string name="donation_success">Obrigado por fazer uma doação. Eu a usarei para o bem.</string>
