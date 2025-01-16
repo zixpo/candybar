@@ -28,7 +28,19 @@
     <string name="menu_select_all">Kies alles</string>
     <string name="menu_delete">Stoor op toestel</string>
     <string name="menu_wallpaper_crop">Snoei muurpapier</string>
+    <string name="menu_apply_homescreen">Tuis skerm</string>
+    <string name="menu_apply_lockscreen">Skermslot</string>
+    <string name="menu_apply_homescreen_lockscreen">Tuisskerm &amp; sluitskerm</string>
     <!-- Dialog -->
+    <string name="open">Maak oop</string>
+    <string name="close">Maak toe</string>
+    <string name="clear">Maak leeg</string>
+    <string name="install">Installeer</string>
+    <string name="donate">Skenk</string>
+    <string name="update">Opdateer</string>
+    <string name="search_noresult">Geen resultaat gevind vir \"%s\" nie</string>
+    <string name="search_faqs">Vraag of antwoord</string>
+    <string name="search_icon">Ikoon Naam</string>
     <!-- Update -->
     <!-- Changelog -->
     <!-- InAppBilling -->
@@ -38,6 +50,7 @@
     <!-- Tap Intro -->
     <string name="tap_intro_icons_search">Soek</string>
     <!-- Home -->
+    <string name="home_donate">Skenk</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
@@ -56,5 +69,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Maak oop</string>
+    <string name="txt_close">Maak toe</string>
     <!-- Content descriptions for screen readers -->
 </resources>
