@@ -64,10 +64,46 @@
     <string name="playstore_check_failed">Näyttää siltä, että olet asentanut tämän kuvakepaketin Google Play Storen ulkopuolelta.
         Et voi käyttää sitä.</string>
     <!-- Share -->
+    <string name="share_app_title">Yo! Kuittaa %s</string>
+    <string name="share_app_body">Tutustu %1$s, tämä kuvakepaketti on todella viileä! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Navigointivalikko</string>
+    <string name="tap_intro_home_navigation_desc">Napauta tästä tai pyyhkäise näytön vasemmasta reunasta avataksesi navigointivalikon</string>
+    <string name="tap_intro_home_apply">Käytä kuvakepakettia</string>
+    <string name="tap_intro_home_apply_desc">Napauta tästä asettaaksesi %s nykyiseen käynnistyslaitteeseesi. Paina pitkään saadaksesi lisäyksen muihin käynnistyslaitteisiin.</string>
     <string name="tap_intro_icons_search">Etsi</string>
+    <string name="tap_intro_icons_search_desc">Napauta tästä etsiäksesi kuvaketta</string>
+    <string name="tap_intro_request_select">Valitse vastaamaton sovellus</string>
+    <string name="tap_intro_request_select_desc">Napauta tästä valitaksesi vastaamattoman sovelluksen kuvakepyyntöä varten</string>
+    <string name="tap_intro_request_select_all">Valitse kaikki vastaamattomat sovellukset</string>
+    <string name="tap_intro_request_select_all_desc">Napauta tästä valitaksesi kaikki vastaamattomat sovellukset kuvakkeita varten</string>
+    <string name="tap_intro_request_send">Lähetä kuvakkeen pyyntö</string>
+    <string name="tap_intro_request_send_desc">Napauta tästä lähettääksesi valitut vastaamattomat sovellukset</string>
+    <string name="tap_intro_request_premium">Premium-kuvakkeen pyyntö</string>
+    <string name="tap_intro_request_premium_desc">Napauta tästä ostaaksesi Premium-kuvakepaketin,
+        Premium-kuvakepyynnöllä, voit saada pyydetyt sovellukset nopeammin.</string>
+    <string name="tap_intro_wallpapers_option">Taustakuvan asetukset</string>
+    <string name="tap_intro_wallpapers_option_desc">Napauta ja pidä tästä näyttääksesi taustakuvavaihtoehdot; %s käytä taustakuvaa.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">lataus tai</string>
+    <string name="tap_intro_wallpapers_preview">Esikatsele taustakuvaa</string>
+    <string name="tap_intro_wallpapers_preview_desc">Napauta tästä esikatsella koko taustakuvan kokoa</string>
+    <string name="tap_intro_wallpaper_preview_save">Tallenna taustakuva</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Napauta tästä ladataksesi ja tallentaaksesi taustakuvan laitteellesi, jotta voit käyttää sitä myöhemmin</string>
+    <string name="tap_intro_wallpaper_preview_apply">Käytä taustakuvaa</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Napauta tästä asettaaksesi taustakuvan aloitusnäytön taustaksi</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Lisää Sovelluksia</string>
+    <string name="home_more_apps">Tarkista muut Google Play Kaupassa julkaistut sovellukset</string>
+    <string name="home_rate_and_review">Arvostele &amp; Arvostelu</string>
+    <string name="home_apply_icon_pack">Käytä %s</string>
     <string name="home_donate">Lahjoita</string>
+    <string name="home_donate_desc">Tue kuvakepaketin kehittämistä</string>
+    <string name="home_icons">Mukautetut kuvakkeet</string>
+    <string name="home_icon_dimension">%s pikselin kuvakkeen ulottuvuus</string>
+    <string name="home_loud_wallpapers">%d pilven taustakuvia</string>
+    <string name="home_muzei">Muzei live taustakuva</string>
+    <string name="home_icon_request_installed_apps">Asennetut sovellukset yhteensä\n%d</string>
+    <string name="home_icon_request_themed_apps">Teemalla varustetut \n%d sovellukset</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
@@ -75,6 +111,8 @@
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
+    <string name="wallpaper_apply">Käytä taustakuvaa</string>
+    <string name="wallpaper_save_to_device">Tallenna taustakuva</string>
     <!-- Presets -->
     <!-- Preferences -->
     <!-- Themes -->
