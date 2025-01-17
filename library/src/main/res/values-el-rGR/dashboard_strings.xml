@@ -1,33 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Αρχική</string>
+    <string name="navigation_view_apply">Εφαρμογή</string>
+    <string name="navigation_view_icons">Εικονίδια</string>
+    <string name="navigation_view_request">Αίτημα Εικονιδίου</string>
+    <string name="navigation_view_wallpapers">Ταπετσαρίες</string>
+    <string name="navigation_view_presets">Προεπιλογές</string>
+    <string name="navigation_view_settings">Ρυθμίσεις</string>
+    <string name="navigation_view_faqs">Συχνές ερωτήσεις</string>
+    <string name="navigation_view_about">Σχετικά</string>
+    <string name="navigation_view_donate">Υποστήριξη Ανάπτυξης</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Ρυθμίσεις Muzei</string>
+    <string name="minute">Λεπτό</string>
+    <string name="hour">Ώρα</string>
+    <string name="save_setting">Αποθήκευση</string>
+    <string name="muzei_refresh_duration">Ανανέωση Διάρκεια</string>
+    <string name="muzei_wifi_only">Ανανέωση μόνο από Wi-Fi</string>
+    <string name="muzei_downloaded_only">Φόρτωση Μόνο Των Κατεβασμένων Ταπετσαριών</string>
+    <string name="muzei_settings_ignored">Το πακέτο εικονιδίων δεν περιέχει ταπετσαρίες, οι ρυθμίσεις αγνοούνται.</string>
+    <string name="muzei_settings_saved">Οι Ρυθμίσεις Αποθηκεύτηκαν</string>
     <!-- Menu -->
+    <string name="menu_search">Αναζήτηση</string>
+    <string name="menu_save">Αποθήκευση στη συσκευή</string>
+    <string name="menu_select_all">Επιλογή Όλων</string>
+    <string name="menu_delete">Διαγραφή</string>
+    <string name="menu_wallpaper_crop">Περικοπή Ταπετσαρίας</string>
+    <string name="menu_apply_homescreen">Αρχική</string>
+    <string name="menu_apply_lockscreen">Οθόνη Κλειδώματος</string>
+    <string name="menu_apply_homescreen_lockscreen">Αρχική Οθόνη &amp; Οθόνη Κλειδώματος</string>
     <!-- Dialog -->
+    <string name="open">Άνοιγμα</string>
+    <string name="close">Κλείσιμο</string>
+    <string name="clear">Εκκαθάριση</string>
+    <string name="ok">Εντάξει</string>
+    <string name="install">Εγκατάσταση</string>
+    <string name="donate">Δωρεά</string>
+    <string name="update">Ενημέρωση</string>
+    <string name="search_noresult">Δε βρέθηκαν αποτελέσματα για το \"%s\"</string>
+    <string name="search_faqs">Ερώτηση ή απάντηση</string>
+    <string name="search_icon">Όνομα Εικονιδίου</string>
+    <string name="search_wallpapers">Όνομα ταπετσαρίας</string>
     <!-- Update -->
+    <string name="checking_for_update">Έλεγχος για ενημέρωση ...</string>
+    <string name="update_available">Διαθέσιμη ενημέρωση!</string>
+    <string name="no_update_available">Χρησιμοποιείτε την τελευταία έκδοση!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Έκδοση</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Αδυναμία φόρτωσης προϊόντων στην εφαρμογή Αγορά</string>
     <!-- License -->
+    <string name="license_checking">Έλεγχος άδειας …</string>
+    <string name="license_check">Έλεγχος Άδειας</string>
+    <string name="license_check_success">Επιτυχής έλεγχος άδειας. Ευχαριστούμε για τη λήψη της εφαρμογής από το Play Store.</string>
+    <string name="license_check_failed">Ο έλεγχος άδειας χρήσης απέτυχε. Δεν κατεβάσατε την εφαρμογή από το Play Store. Δε θα μπορείτε να το χρησιμοποιήσετε.</string>
+    <string name="license_check_retry">Δεν είναι δυνατός ο έλεγχος της άδειας, δοκιμάστε ξανά σε λίγα λεπτά.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Έλεγχος Play Store</string>
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Αναζήτηση</string>
     <!-- Home -->
+    <string name="home_donate">Δωρεά</string>
     <!-- Apply -->
+    <string name="apply_manual_kvaesitso_step_4">Επιλέξτε %s από τη λίστα</string>
+    <string name="apply_manual_kiss_step_4">Επιλέξτε %s από τη λίστα</string>
+    <string name="apply_manual_samsung_oneui">Το %1$s δεν υποστηρίζει άμεση εφαρμογή, αλλά ξεκινώντας με %2$s μπορείτε να εφαρμόσετε εικονίδια με μια συνοδευτική εφαρμογή.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Η τρέχουσα έκδοση του %s είναι πολύ παλιά. Παρακαλούμε ενημερώστε το Android 12 ή νεότερη για να μπορείτε να εφαρμόσετε άμεσα τα εικονίδια. Εναλλακτικά, μπορείτε να εγκαταστήσετε ένα διαφορετικό πρόγραμμα εκκίνησης.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Άνοιγμα %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Κατεβάστε την εφαρμογή %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Πατήστε \"Εικονίδιο\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Πατήστε \"Δημιουργία Νέου\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Πατήστε το μπλε κουμπί \"Iconpack\"</string>
+    <string name="apply_manual_samsung_oneui_step_6">Επιλέξτε %s από τη λίστα</string>
+    <string name="apply_manual_samsung_oneui_step_7">Επαναλάβετε αυτά τα βήματα κάθε φορά που ενημερώνετε το %s καθώς τα νέα εικονίδια δεν θα χαρτογραφηθούν αυτόματα.</string>
+    <string name="apply_manual_hios">Το HiOS launcher δεν υποστηρίζει την άμεση εφαρμογή, αλλά μπορείτε να ακολουθήσετε αυτά τα βήματα:</string>
+    <string name="apply_manual_hios_step_1">Άνοιγμα \"Ρυθμίσεων\"</string>
+    <string name="apply_manual_hios_step_2">Πατήστε \"Θέμα &amp; Κλείδωμα οθόνης\"</string>
+    <string name="apply_manual_hios_step_3">Πατήστε \"Το θέμα μου\"</string>
+    <string name="apply_manual_hios_step_4">Πατήστε \"Πακέτο εικονιδίων\"</string>
+    <string name="apply_manual_hios_step_5">Πατήστε %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Πατήστε παρατεταμένα την αρχική οθόνη</string>
+    <string name="apply_manual_oxygen_os_step_2">Πατήστε \"Αρχικές Ρυθμίσεις\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Πατήστε \"Πακέτο Εικονιδίων\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Πατήστε %s</string>
+    <string name="apply_manual_color_os_step_1">Πατήστε παρατεταμένα την αρχική οθόνη</string>
+    <string name="apply_manual_color_os_step_2">Πατήστε \"Εικονίδια\"</string>
+    <string name="apply_manual_color_os_step_3">Κύλιση στα δεξιά του κουμπιού \"Προσαρμοσμένο\" (αυτή είναι μια κυλιόμενη λίστα!)</string>
+    <string name="apply_manual_color_os_step_4">Πατήστε %s</string>
+    <string name="apply_manual_before">Αυτή η έκδοση του Before Launcher δεν υποστηρίζει ακόμα την άμεση εφαρμογή εικονιδίων. Αντ \'αυτού, ακολουθήστε τα παρακάτω βήματα:</string>
+    <string name="apply_manual_before_step_1">Σύρετε προς τα αριστερά στην αρχική οθόνη</string>
+    <string name="apply_manual_before_step_2">Πατήστε \"Ρυθμίσεις\"</string>
+    <string name="apply_manual_before_step_3">Πατήστε \"Styles &amp; Themes\"</string>
+    <string name="apply_manual_before_step_4">Πατήστε \"Icon Styles &amp; Packs\"</string>
+    <string name="apply_manual_before_step_5">Πατήστε %s</string>
+    <string name="apply_manual_nothing_step_1">Άνοιγμα \"Ρυθμίσεων\"</string>
+    <string name="apply_manual_nothing_step_2">Πατήστε \"Προσαρμογή\"</string>
+    <string name="apply_manual_nothing_step_3">Πατήστε \"Πακέτο Εικονιδίων\"</string>
+    <string name="apply_manual_nothing_step_4">Πατήστε %s</string>
+    <string name="apply_launch_failed">Αδυναμία εκκίνησης ρυθμίσεων %s</string>
+    <string name="apply_launcher_not_installed">%s Launcher δεν είναι εγκατεστημένο. Θέλετε να ανοίξετε
+        το Google Play Store για να το κατεβάσετε και να το εγκαταστήσετε</string>
+    <string name="apply_launcher_not_installable">Το %s Launcher δεν είναι εγκατεστημένο. Παρακαλώ προσπαθήστε ξανά μετά την εγκατάσταση του launcher.</string>
+    <string name="apply_cmtheme_not_available">Ο Διαχειριστής Θέματος CM δεν είναι διαθέσιμος σε αυτήν τη συσκευή</string>
+    <string name="apply_cmtheme_failed">Δεν είναι δυνατή η εκκίνηση της Διαχείρισης Θέματος CM, μπορείτε να προσπαθήσετε να εφαρμόσετε το πακέτο εικονιδίων χειροκίνητα από τις Ρυθμίσεις.</string>
+    <string name="apply_lg_home">Για να εφαρμόσετε αυτό το πακέτο εικονιδίων ανοιχτές ρυθμίσεις - Οθόνη - Αρχική οθόνη - Θέμα</string>
+    <string name="apply_lg_home_not_available">Το LG Home δεν είναι διαθέσιμο σε αυτήν τη συσκευή</string>
+    <string name="apply_lg_home_failed">Δεν είναι δυνατή η εκκίνηση LG Home Settings, μπορείτε να προσπαθήσετε να εφαρμόσετε το Πακέτο Εικονιδίων χειροκίνητα από τις Ρυθμίσεις.</string>
+    <string name="apply_lg_home_nougat">LG Αρχική σελίδα με Android Nougat δεν υποστηρίζει πλέον Πακέτο εικονιδίων. Χρειάζεστε ένα προσαρμοσμένο εκκινητή για να χρησιμοποιήσετε το πακέτο εικονιδίων.</string>
+    <string name="apply_launcher_incompatible">Το %s Launcher δεν υποστηρίζει πακέτα εικονιδίων, επομένως δεν μπορείτε να χρησιμοποιήσετε αυτό το πακέτο εικονιδίων με αυτό το πρόγραμμα εκκίνησης. Μπορείτε να δοκιμάσετε μια εφαρμογή τρίτου κατασκευαστή για να χρησιμοποιήσετε αυτό το πακέτο εικονιδίων στο πρόγραμμα εκκίνησης %2$s. Θέλετε να το εγκαταστήσετε ?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">Το %s launcher δεν υποστηρίζει πακέτα εικονιδίων σε Android %d ή χαμηλότερα. Παρακαλούμε ενημερώστε την έκδοση Android σας ή εγκαταστήστε έναν εκκινητή τρίτων για να χρησιμοποιήσετε αυτό το πακέτο εικονιδίων. Μπορείτε επίσης να δοκιμάσετε μια βοηθητική εφαρμογή για να αλλάξετε μεμονωμένα εικονίδια. Θέλετε να το εγκαταστήσετε ?</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Αδυναμία φόρτωσης εικονιδίων</string>
+    <string name="icon_shape">Σχήμα Εικονιδίου</string>
+    <string name="bookmark_icons_empty">Δεν βρέθηκαν σελιδοδείκτες. Εικονίδια σελιδοδεικτών για γρήγορη πρόσβαση σε αυτούς εδώ.</string>
+    <string name="items_selected">Επιλέχθηκε %d</string>
     <!-- Request -->
+    <string name="request_title">Αίτημα Εικονιδίου</string>
+    <string name="request_not_selected">Επιλέξτε εφαρμογές για αίτηση</string>
+    <string name="request_not_requested">Δεν ζητήθηκε</string>
+    <string name="request_already_requested">Ζητήθηκε ήδη</string>
+    <string name="request_not_available">Δεν μπορεί να ζητηθεί</string>
+    <string name="request_building">Αίτηση κατασκευής...</string>
+    <string name="request_pacific_sending">Αποστολή αιτήματος στον διαχειριστή του Ειρηνικού...</string>
+    <string name="request_pacific_error">Παρουσιάστηκε σφάλμα κατά την αποστολή αιτήματος στη Διαχείριση Ειρηνικού. Σφάλμα είναι %s</string>
+    <string name="request_pacific_success">Επιτυχής αποστολή αιτήματος στο Pacific Manager</string>
+    <string name="request_custom_error">Παρουσιάστηκε σφάλμα κατά την αποστολή αιτήματος εικονιδίου. Εάν αυτό το σφάλμα επιμένει, επικοινωνήστε με τον προγραμματιστή. %s</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
     <!-- Presets -->
     <!-- Preferences -->
+    <string name="pref_data_cache_desc">Καταργήστε την προσωρινή μνήμη εικόνας από τον αποθηκευτικό χώρο σας, η οποία δημιουργήθηκε κατά την επιλογή μιας εικόνας από αυτήν την εφαρμογή, ζητώντας αναπάντητες εφαρμογές και μετά τη φόρτωση μικρογραφιών ταπετσαρίας cloud.</string>
+    <string name="pref_data_cache_size">Μέγεθος Προσωρινής Αποθήκευσης: %s</string>
+    <string name="pref_data_cache_clear_dialog">Θέλετε πραγματικά να καθαρίσετε cache?</string>
+    <string name="pref_data_cache_cleared">Η κρύπτη διαγράφηκε</string>
+    <string name="pref_data_request">Εκκαθάριση Δεδομένων Αιτήματος Εικονιδίου</string>
+    <string name="pref_data_request_desc">Αφαιρέστε τα δεδομένα αιτήματος εικονιδίων, που δημιουργήθηκαν μετά από αίτηση
+        χαμένων εφαρμογών από αίτημα εικονιδίου.</string>
+    <string name="pref_data_request_clear_dialog">Θέλετε πραγματικά να καθαρίσετε τα δεδομένα της αίτησης εικονιδίων?</string>
+    <string name="pref_data_request_cleared">Τα δεδομένα αιτήματος εικονιδίου εκκαθαρίστηκαν</string>
+    <string name="pref_premium_request_restore">Επαναφορά Αγορών</string>
+    <string name="pref_premium_request_restore_desc">Επαναφορά πακέτου αιτήματος premium μετά την επανεγκατάσταση του πακέτου εικονιδίων</string>
+    <string name="pref_premium_request_restore_success">Επαναφορά Αίτησης Premium</string>
+    <string name="pref_premium_request_restore_empty">Δεν έχετε αγοράσει πακέτα</string>
+    <string name="pref_premium_request_rebuild">Αναδόμηση Αίτησης Εικονιδίου Premium</string>
+    <string name="pref_premium_request_rebuild_desc">Συλλογή όλων των δεδομένων του εικονιδίου premium για την εκ νέου αποστολή τους</string>
+    <string name="pref_theme_header">Θέμα</string>
+    <string name="pref_theme_dark">Σκοτεινό Θέμα</string>
+    <string name="pref_theme_dark_desc">Χρήση σκούρου χρώματος για το θέμα της εφαρμογής</string>
+    <string name="pref_notifications_header">Ειδοποιήσεις</string>
+    <string name="pref_notifications">Λήψη Ειδοποιήσεων</string>
+    <string name="pref_wallpaper_header">Φόντο</string>
+    <string name="pref_wallpaper_location">Τοποθεσία Αποθήκευσης Ταπετσαρίας</string>
+    <string name="pref_language_header">Γλώσσα</string>
+    <string name="pref_others_header">Άλλα</string>
+    <string name="pref_others_report_bugs">Αναφορά Σφαλμάτων</string>
+    <string name="pref_others_changelog">Αρχείο Αλλαγών</string>
+    <string name="pref_others_reset_tutorial">Επαναφορά Εκμάθησης</string>
+    <string name="pref_others_reset_tutorial_reset">Επαναφορά Εκμάθησης</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Αυτόματο</string>
+    <string name="theme_name_light">Φωτεινό</string>
+    <string name="theme_name_dark">Σκοτεινό</string>
+    <string name="theme_name_material_you">Υλικό Εσείς</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Απαιτείται άδεια αποθήκευσης για την αποθήκευση της ταπετσαρίας</string>
+    <string name="permission_notification_denied_1">Απαιτείται άδεια ειδοποίησης για να λαμβάνετε ειδοποιήσεις από τον προγραμματιστή</string>
+    <string name="permission_notification_denied_2">Ενεργοποίηση ειδοποιήσεων από τις ρυθμίσεις της εφαρμογής</string>
     <!-- Intent -->
+    <string name="app_client">Επιλογή Εφαρμογής</string>
+    <string name="no_email_app">Καμία εφαρμογή για αποστολή email</string>
+    <string name="no_browser">Καμία εφαρμογή για να ανοίξει το URL</string>
+    <string name="intent_email_failed">Δεν είναι δυνατή η εμφάνιση εφαρμογής email</string>
+    <string name="intent_email_supported">Υποστηριζόμενο</string>
+    <string name="intent_email_recommended">Προτεινόμενο</string>
+    <string name="intent_email_not_supported">Δεν Υποστηρίζεται</string>
+    <string name="intent_email_not_supported_message">Επιλέχθηκε ένας μη υποστηριζόμενος πελάτης ηλεκτρονικού ταχυδρομείου, παρακαλώ επιλέξτε έναν άλλο πελάτη ηλεκτρονικού ταχυδρομείου</string>
     <!-- About -->
+    <string name="about_contributors_title">Συντελεστές</string>
+    <string name="about_privacy_policy_title">Πολιτική Απορρήτου</string>
     <!-- Report Bugs -->
     <!-- Support Development -->
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Άνοιγμα</string>
+    <string name="txt_close">Κλείσιμο</string>
     <!-- Content descriptions for screen readers -->
 </resources>
