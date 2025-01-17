@@ -188,6 +188,9 @@
     <string name="request_build_failed">ஐகான் கோரிக்கையை உருவாக்க முடியவில்லை</string>
     <string name="request_appfilter_failed">appfilter.xml படிக்க முடியவில்லை</string>
     <string name="request_requested">நீங்கள் ஏற்கனவே இந்த படவுருவை கோரியுள்ளீர்கள், மீண்டும் கோர முடியாது.</string>
+    <string name="request_requested_possible">நீங்கள் ஏற்கனவே இந்த படவுருவை கோரியுள்ளீர்கள். அதற்காக மற்றொரு கோரிக்கையை நிச்சயமாக செலவழிக்க விரும்புகிறீர்களா?</string>
+    <string name="request_requested_button_cancel">பின் செல்</string>
+    <string name="request_requested_button_confirm">எப்படியும் தேர்ந்தெடு</string>
     <string name="request_email_client">ஐகான் கோரிக்கையை அனுப்ப நீங்கள் பயன்படுத்த விரும்பும் மின்னஞ்சல் கிளையண்டைத் தேர்வுசெய்க</string>
     <string name="request_used">நீங்கள் கோரியுள்ளீர்கள் %d ஐகான்(கள்).</string>
     <string name="request_limit_buy">You can buy Premium Requests to request more icons.</string>
