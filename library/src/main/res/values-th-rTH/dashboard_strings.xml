@@ -118,7 +118,7 @@
     <string name="apply_manual_kiss_step_1">เปิดการตั้งค่าตัวใช้งาน KISS</string>
     <string name="apply_manual_kiss_step_2">แตะที่ \"หน้าจอผู้ใช้งาน\"</string>
     <string name="apply_manual_kiss_step_3">แตะที่ \"ชุดไอคอน\"</string>
-    <string name="apply_manual_samsung_oneui_too_old">%s ของคุณมีเวอร์ชั่นเก่าเกินไป คุณต้องอัพเดตเป็น Android 12 หรือรุ่นที่ใหม่กว่าจึงจะสามารถเซ็ตชุดไอคอนให้ตัวใช้งานได้โดยตรงได้ หรือไม่เช่นนั้นก็ต้องใช้ตัวใช้งานตัวอื่น</string>
+    <string name="apply_manual_samsung_oneui_too_old">%s ของคุณมีเวอร์ชั่นเก่าเกินไป คุณต้องอัพเดต Android ให้เป็นเวอร์ชั่น 12 ขึ้นไปจึงจะสามารถตั้งไอคอนให้ตัวใช้งานโดยตรงได้ หรือคุณอาจเปลี่ยนไปใช้ตัวใช้งานอื่น</string>
     <string name="apply_manual_samsung_oneui_step_1">เปิด %s</string>
     <string name="apply_manual_samsung_oneui_step_2">ดาวน์โหลดแอป %s</string>
     <string name="apply_manual_samsung_oneui_step_3">แตะที่ \"ไอคอน\"</string>
