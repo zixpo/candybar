@@ -138,6 +138,12 @@
     <string name="apply_launcher_not_installable">คุณยังไม่ได้ติดตั้งตัวใช้งาน %s กรุณาลองใหม่อีกครั้งหลังจากคุณติดตั้งตัวใช้งานนี้แล้ว</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager ไม่รองรับอุปกรณ์นี้</string>
     <string name="apply_cmtheme_failed">ไม่สามารถเปิด CM Theme Manager ได้ คุณสามารถลองใช้งานชุดไอคอนด้วยตนเองในเมนูการตั้งค่าของตัวใช้งาน</string>
+    <string name="apply_lg_home">ไปที่ ตั้งค่า > หน้าจอ > หน้าจอหลัก > ธีม เพื่อใช้ชุดไอคอนนี้</string>
+    <string name="apply_lg_home_not_available">LG Home ไม่รองรับอุปกรณ์นี้</string>
+    <string name="apply_lg_home_failed">ไม่สามารถเปิดเมนูการตั้งค่าของ LG Home ได้ คุณสามารถลองใช้งานชุดไอคอนด้วยตนเองในเมนูการตั้งค่าของ LG Home</string>
+    <string name="apply_lg_home_nougat">ตัวใช้งาน LG Home บนระบบ Android Nougat ไม่รองรับชุดไอคอนแล้ว คุณจำเป็นต้องติดตั้งตัวใช้งานอื่นเพื่อใช้ชุดไอคอน</string>
+    <string name="apply_launcher_incompatible">ไม่สามารถใช้งานชุดไอคอนได้ เนื่องจากตัวใช้งาน %s ไม่รองรับการใช้ชุดไอคอน คุณต้องการติดตั้งแอปเสริมเพื่อใช้ชุดไอคอนนี้กับตัวใช้งาน %2$s หรือไม่</string>
+    <string name="apply_launcher_incompatible_depending_on_version">ตัวใช้งาน %s ไม่รองรับการใช้ชุดไอคอนบน Android เวอร์ชัน %d หรือต่ำกว่า กรุณาอัปเดตเวอร์ชั่น Android ของคุณ ติดตั้งตัวใช้งานอื่น หรือติดตั้งแอปเสริมเพื่อเปลี่ยนไอคอนแต่ละแอป คุณต้องการติดตั้งหรือไม่</string>
     <!-- Icons -->
     <string name="icons_load_failed">ไม่สามารถโหลดไอคอนได้</string>
     <string name="icon_shape">รูปร่างไอคอน</string>
@@ -214,6 +220,7 @@
     <string name="presets_load_failed">ไม่สามารถโหลดชุดรูปแบบได้</string>
     <string name="presets_storage_permission">คุณต้องให้สิทธิ์การใช้พื้นที่เก็บข้อมูลจึงจะสามารถดูตัวอย่างภาพพื้นหลังได้</string>
     <string name="presets_required_apps">แอปที่จำเป็นต้องมีสำหรับการใช้ชุดรูปแบบเหล่านี้</string>
+    <string name="presets_required_apps_not_installed">คุณต้องติดตั้งแอปเพิ่มเติมเพื่อใช้งานชุดรูปแบบ กรุณาติดตั้งแอปและลองใหม่อีกครั้ง</string>
     <!-- Preferences -->
     <string name="pref_data_header">ข้อมูล &amp; แคช</string>
     <string name="pref_data_cache">ล้างแคช</string>
