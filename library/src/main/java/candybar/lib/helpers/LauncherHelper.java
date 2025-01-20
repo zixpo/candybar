@@ -392,7 +392,18 @@ public class LauncherHelper {
                 "ZenUI",
                 R.drawable.ic_launcher_zenui,
                 new String[]{"com.asus.launcher"},
-                true);
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent asus = new Intent("com.asus.launcher");
+                        asus.setAction("com.asus.launcher.intent.action.APPLY_ICONPACK");
+                        asus.addCategory(Intent.CATEGORY_DEFAULT);
+                        asus.putExtra("com.asus.launcher.iconpack.PACKAGE_NAME", context.getPackageName());
+                        asus.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(asus);
+                        ((AppCompatActivity) context).finish();
+                    }
+                });
 
         private interface DirectApply {
             default boolean isSupported(String packageName) {return true;}
@@ -826,18 +837,7 @@ public class LauncherHelper {
                 launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case ZENUI:
-                try {
-                    final Intent asus = new Intent("com.asus.launcher");
-                    asus.setAction("com.asus.launcher.intent.action.APPLY_ICONPACK");
-                    asus.addCategory(Intent.CATEGORY_DEFAULT);
-                    asus.putExtra("com.asus.launcher.iconpack.PACKAGE_NAME", context.getPackageName());
-                    asus.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(asus);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
         }
     }
