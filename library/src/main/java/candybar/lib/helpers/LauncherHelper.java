@@ -237,7 +237,17 @@ public class LauncherHelper {
                 "Projectivy",
                 R.drawable.ic_launcher_projectivy,
                 new String[]{"com.spocky.projengmenu"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent projectivy = new Intent("com.spocky.projengmenu.APPLY_ICONPACK");
+                        projectivy.setPackage("com.spocky.projengmenu");
+                        projectivy.putExtra("com.spocky.projengmenu.extra.ICONPACK_PACKAGENAME", context.getPackageName());
+                        projectivy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(projectivy);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         SMART(
                 "Smart",
                 R.drawable.ic_launcher_smart,
@@ -732,17 +742,7 @@ public class LauncherHelper {
                 applyManual(context, launcherPackage, launcherName, "com.miui.home.settings.HomeSettingsActivity");
                 break;
             case PROJECTIVY:
-                try {
-                    final Intent projectivy = new Intent("com.spocky.projengmenu.APPLY_ICONPACK");
-                    projectivy.setPackage("com.spocky.projengmenu");
-                    projectivy.putExtra("com.spocky.projengmenu.extra.ICONPACK_PACKAGENAME", context.getPackageName());
-                    projectivy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(projectivy);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case ONEUI:
                 applyOneUI(context, launcherName);
