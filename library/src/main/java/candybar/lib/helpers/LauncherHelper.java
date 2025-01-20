@@ -127,7 +127,19 @@ public class LauncherHelper {
                 "GO EX",
                 R.drawable.ic_launcher_go,
                 new String[]{"com.gau.go.launcherex"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent goex = context.getPackageManager().getLaunchIntentForPackage("com.gau.go.launcherex");
+                        final Intent go = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
+                        go.putExtra("type", 1);
+                        go.putExtra("pkgname", context.getPackageName());
+                        goex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.sendBroadcast(go);
+                        context.startActivity(goex);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         HIOS(
                 "HiOS",
                 R.drawable.ic_launcher_hios,
@@ -572,20 +584,7 @@ public class LauncherHelper {
                 launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case GO:
-                try {
-                    final Intent goex = context.getPackageManager().getLaunchIntentForPackage(
-                            "com.gau.go.launcherex");
-                    final Intent go = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
-                    go.putExtra("type", 1);
-                    go.putExtra("pkgname", context.getPackageName());
-                    goex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.sendBroadcast(go);
-                    context.startActivity(goex);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case HIOS:
                 applyWithInstructions(
