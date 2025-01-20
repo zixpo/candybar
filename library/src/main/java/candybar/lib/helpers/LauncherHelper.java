@@ -252,7 +252,16 @@ public class LauncherHelper {
                 "Smart",
                 R.drawable.ic_launcher_smart,
                 new String[]{"ginlemon.flowerfree", "ginlemon.flowerpro", "ginlemon.flowerpro.special"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent smart = new Intent("ginlemon.smartlauncher.setGSLTHEME");
+                        smart.putExtra("package", context.getPackageName());
+                        smart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(smart);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         SOLO(
                 "Solo",
                 R.drawable.ic_launcher_solo,
@@ -754,16 +763,7 @@ public class LauncherHelper {
                 applyManual(context, launcherPackage, launcherName, "com.motorola.personalize.app.IconPacksActivity");
                 break;
             case SMART:
-                try {
-                    final Intent smart = new Intent("ginlemon.smartlauncher.setGSLTHEME");
-                    smart.putExtra("package", context.getPackageName());
-                    smart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(smart);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case SOLO:
                 try {
