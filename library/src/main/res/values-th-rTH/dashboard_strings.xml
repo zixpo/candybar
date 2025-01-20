@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="splash_screen_title">กระดานแสดงชุดไอคอน CandyBar</string>
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">หน้าแรก</string>
     <string name="navigation_view_apply">ใช้งาน</string>
@@ -109,20 +109,20 @@
     <string name="apply_installed">ตัวเรียกใช้ที่ติดตั้งแล้ว</string>
     <string name="apply_installed_launchers">ตัวเรียกใช้ที่ติดตั้งไว้</string>
     <string name="apply_supported">ตัวเรียกใช้ที่สนับสนุน</string>
-    <string name="apply_manual">ตัวใช้งาน %1$s ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
-    <string name="apply_manual_kvaesitso">ตัวใช้งาน Kvaesitso ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
-    <string name="apply_manual_kvaesitso_step_1">เปิดการตั้งค่าตัวใช้งาน Kvaesitso</string>
+    <string name="apply_manual">แอปหน้าแรก %1$s ไม่สนับสนุนการใช้งานโดยตรง แต่คุณสามารถใช้งาน %2$s เองได้ผ่านการตั้งค่าของตัวเรียกใช้</string>
+    <string name="apply_manual_kvaesitso">แอปหน้าแรก Kvaesitso ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
+    <string name="apply_manual_kvaesitso_step_1">เปิดการตั้งค่าแอปหน้าแรก Kvaesitso</string>
     <string name="apply_manual_kvaesitso_step_2">แตะที่ \"ลิ้นชักและไอคอน\"</string>
     <string name="apply_manual_kvaesitso_step_3">แตะที่ \"ชุดไอคอน\"</string>
     <string name="apply_manual_kvaesitso_step_4">เลือกชุดไอคอน %s</string>
     <string name="apply_manual_kvaesitso_step_5">แตะที่ไอคอนพู่กันเพื่อเปิดหรือปิดการใช้งานรูปร่างพื้นหลัง</string>
-    <string name="apply_manual_kiss">ตัวใช้งาน KISS ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
-    <string name="apply_manual_kiss_step_1">เปิดการตั้งค่าตัวใช้งาน KISS</string>
+    <string name="apply_manual_kiss">แอปหน้าแรก KISS ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
+    <string name="apply_manual_kiss_step_1">เปิดการตั้งค่าแอปหน้าแรก KISS</string>
     <string name="apply_manual_kiss_step_2">แตะที่ \"User interface\"</string>
     <string name="apply_manual_kiss_step_3">แตะที่ \"ชุดไอคอน\"</string>
     <string name="apply_manual_kiss_step_4">เลือกชุดไอคอน %s</string>
-    <string name="apply_manual_samsung_oneui">ตัวใช้งาน %1$s ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่ตั้งแต่ %2$s ขึ้นไป คุณสามารถติดตั้งแอปเสริมเพื่อตั้งไอคอนด้วยตนเองได้</string>
-    <string name="apply_manual_samsung_oneui_too_old">เวอร์ชันของ %s ของคุณเก่าเกินไป คุณต้องอัปเดตเป็น Android เวอร์ชัน 12 ขึ้นไปจึงจะสามารถใช้ชุดไอคอนให้ตัวใช้งานผ่านแอปนี้ได้ หรือคุณอาจเปลี่ยนไปใช้ตัวใช้งานอื่นแทน</string>
+    <string name="apply_manual_samsung_oneui">แอปหน้าแรก %1$s ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่ตั้งแต่ %2$s ขึ้นไป คุณสามารถติดตั้งแอปเสริมเพื่อตั้งไอคอนด้วยตนเองได้</string>
+    <string name="apply_manual_samsung_oneui_too_old">เวอร์ชันของ %s ของคุณเก่าเกินไป คุณต้องอัปเดตเป็น Android เวอร์ชัน 12 ขึ้นไปจึงจะสามารถใช้ชุดไอคอนให้แอปหน้าแรกผ่านแอปนี้ได้ หรือคุณอาจเปลี่ยนไปใช้แอปหน้าแรกอื่นแทน</string>
     <string name="apply_manual_samsung_oneui_step_1">เปิด %s</string>
     <string name="apply_manual_samsung_oneui_step_2">ดาวน์โหลดแอป %s</string>
     <string name="apply_manual_samsung_oneui_step_3">แตะที่ \"Icon\"</string>
@@ -130,7 +130,7 @@
     <string name="apply_manual_samsung_oneui_step_5">แตะที่ปุ่ม \"Iconpack\" สีฟ้า</string>
     <string name="apply_manual_samsung_oneui_step_6">เลือกชุดไอคอน %s</string>
     <string name="apply_manual_samsung_oneui_step_7">คุณต้องทำตามขั้นตอนข้างต้นทุกครั้งที่มีการอัปเดตแอป %s เพราะไอคอนใหม่ๆจะไม่ถูกเพิ่มโดยอัตโนมัติ</string>
-    <string name="apply_manual_hios">ตัวใช้งาน HiOS ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
+    <string name="apply_manual_hios">แอปหน้าแรก HiOS ไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
     <string name="apply_manual_hios_step_1">ไปที่ \"การตั้งค่า\"</string>
     <string name="apply_manual_hios_step_2">แตะที่ \"Theme &amp; Lockscreen\"</string>
     <string name="apply_manual_hios_step_3">แตะที่ \"ธีมของฉัน\"</string>
@@ -144,7 +144,7 @@
     <string name="apply_manual_color_os_step_2">แตะที่ \"ไอคอน\"</string>
     <string name="apply_manual_color_os_step_3">เลื่อนไปทางขวาของปุ่ม \"กำหนดเอง\"</string>
     <string name="apply_manual_color_os_step_4">เลือก %s</string>
-    <string name="apply_manual_before">เวอร์ชันของตัวใช้งาน Before ที่คุณมีไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
+    <string name="apply_manual_before">เวอร์ชันของแอปหน้าแรก Before ที่คุณมีไม่รองรับการใช้ชุดไอคอนผ่านแอปนี้ แต่คุณสามารถทำตามขั้นตอนต่อไปนี้ด้วยตนเองได้:</string>
     <string name="apply_manual_before_step_1">ปัดไปทางซ้ายบนหน้าจอหลัก</string>
     <string name="apply_manual_before_step_2">แตะที่ \"Settings\"</string>
     <string name="apply_manual_before_step_3">แตะที่ \"Styles &amp; Themes\"</string>
@@ -155,17 +155,17 @@
     <string name="apply_manual_nothing_step_3">แตะที่ \"ชุดไอคอน\"</string>
     <string name="apply_manual_nothing_step_4">เลือก %s</string>
     <string name="apply_launch_failed">ไม่สามารถเปิดการตั้งค่า %s ได้</string>
-    <string name="apply_launcher_not_installed">คุณยังไม่ได้ติดตั้งตัวใช้งาน %s คุณต้องการที่จะเปิด
-        Google Play Store เพื่อดาวน์โหลดและติดตั้งตัวใช้งานนี้หรือไม่</string>
-    <string name="apply_launcher_not_installable">คุณยังไม่ได้ติดตั้งตัวใช้งาน %s กรุณาลองใหม่อีกครั้งหลังจากคุณติดตั้งตัวใช้งานนี้แล้ว</string>
+    <string name="apply_launcher_not_installed">คุณยังไม่ได้ติดตั้งแอปหน้าแรก %s คุณต้องการที่จะเปิด
+        Google Play Store เพื่อดาวน์โหลดและติดตั้งแอปหน้าแรกนี้หรือไม่</string>
+    <string name="apply_launcher_not_installable">คุณยังไม่ได้ติดตั้งแอปหน้าแรก %s กรุณาลองใหม่อีกครั้งหลังจากคุณติดตั้งแอปหน้าแรกนี้แล้ว</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager ไม่รองรับอุปกรณ์นี้</string>
-    <string name="apply_cmtheme_failed">ไม่สามารถเปิด CM Theme Manager ได้ คุณสามารถลองใช้งานชุดไอคอนด้วยตนเองในเมนูการตั้งค่าของตัวใช้งาน</string>
+    <string name="apply_cmtheme_failed">ไม่สามารถเปิด CM Theme Manager ได้ คุณสามารถลองใช้งานชุดไอคอนด้วยตนเองในเมนูการตั้งค่าของแอปหน้าแรก</string>
     <string name="apply_lg_home">ไปที่ ตั้งค่า > หน้าจอ > หน้าจอหลัก > ธีม เพื่อใช้ชุดไอคอนนี้</string>
     <string name="apply_lg_home_not_available">LG Home ไม่รองรับอุปกรณ์นี้</string>
     <string name="apply_lg_home_failed">ไม่สามารถเปิดเมนูการตั้งค่าของ LG Home ได้ คุณสามารถลองใช้งานชุดไอคอนด้วยตนเองในเมนูการตั้งค่าของ LG Home</string>
-    <string name="apply_lg_home_nougat">ตัวใช้งาน LG Home บนระบบ Android Nougat ไม่รองรับชุดไอคอนแล้ว คุณจำเป็นต้องติดตั้งตัวใช้งานอื่นเพื่อใช้ชุดไอคอน</string>
-    <string name="apply_launcher_incompatible">ไม่สามารถใช้งานชุดไอคอนได้ เนื่องจากตัวใช้งาน %s ไม่รองรับการใช้ชุดไอคอน คุณต้องการติดตั้งแอปเสริมเพื่อใช้ชุดไอคอนนี้กับตัวใช้งาน %2$s หรือไม่</string>
-    <string name="apply_launcher_incompatible_depending_on_version">ตัวใช้งาน %s ไม่รองรับการใช้ชุดไอคอนบน Android เวอร์ชัน %d หรือต่ำกว่า กรุณาอัปเดตเวอร์ชั่น Android ของคุณ ติดตั้งตัวใช้งานอื่น หรือติดตั้งแอปเสริมเพื่อเปลี่ยนไอคอนแต่ละแอป คุณต้องการติดตั้งหรือไม่</string>
+    <string name="apply_lg_home_nougat">แอปหน้าแรก LG Home บนระบบ Android Nougat ไม่รองรับชุดไอคอนแล้ว คุณจำเป็นต้องติดตั้งแอปหน้าแรกอื่นเพื่อใช้ชุดไอคอน</string>
+    <string name="apply_launcher_incompatible">ไม่สามารถใช้งานชุดไอคอนได้ เนื่องจากแอปหน้าแรก %s ไม่รองรับการใช้ชุดไอคอน คุณต้องการติดตั้งแอปเสริมเพื่อใช้ชุดไอคอนนี้กับแอปหน้าแรก %2$s หรือไม่</string>
+    <string name="apply_launcher_incompatible_depending_on_version">แอปหน้าแรก %s ไม่รองรับการใช้ชุดไอคอนบน Android เวอร์ชัน %d หรือต่ำกว่า กรุณาอัปเดตเวอร์ชั่น Android ของคุณ ติดตั้งแอปหน้าแรกอื่น หรือติดตั้งแอปเสริมเพื่อเปลี่ยนไอคอนแต่ละแอป คุณต้องการติดตั้งหรือไม่</string>
     <!-- Icons -->
     <string name="icons_load_failed">ไม่สามารถโหลดไอคอนได้</string>
     <string name="icon_shape">รูปร่างไอคอน</string>
@@ -311,7 +311,7 @@
     <string name="crash_report_send">ส่งรายงาน</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
-    <string name="about_dashboard_dev">CandyBar คือกระดานแสดงชุดไอคอนที่ถูกพัฒนาโดย Dani Mahardhika สำหรับระบบ Android ซึ่งสามารถดาวน์โหลดได้จาก GitHub และนำไปใช้งานได้โดยไม่มีค่าใช้จ่าย ภายใต้สัญญาอนุญาตอะแพชีเวอร์ชัน 2.0</string>
+    <string name="about_dashboard_dev">CandyBar คือแอปแดชบอร์ดแสดงชุดไอคอนที่ถูกพัฒนาโดย Dani Mahardhika สำหรับระบบ Android ซึ่งสามารถดาวน์โหลดได้จาก GitHub และนำไปใช้งานได้โดยไม่มีค่าใช้จ่าย ภายใต้สัญญาอนุญาตอะแพชีเวอร์ชัน 2.0</string>
     <string name="about_open_source_licenses">สัญญาอนุญาตโอเพนซอร์ส</string>
     <string name="about_dashboard_contributors">ผู้มีส่วนร่วมพัฒนาแคนดี้บาร์</string>
     <string name="about_dashboard_translator">ผู้แปลภาษาแคนดี้บาร์</string>
