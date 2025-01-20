@@ -51,7 +51,17 @@ public class LauncherHelper {
                 "Action",
                 R.drawable.ic_launcher_action,
                 new String[]{"com.actionlauncher.playstore", "com.chrislacy.actionlauncher.pro"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent action = context.getPackageManager().getLaunchIntentForPackage(packageName);
+                        action.putExtra("apply_icon_pack", context.getPackageName());
+                        action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(action);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }
+        ),
         ADW(
                 "ADW",
                 R.drawable.ic_launcher_adw,
@@ -407,17 +417,7 @@ public class LauncherHelper {
     private static void applyLauncher(@NonNull Context context, String launcherPackage, String launcherName, Launcher launcher) {
         switch (launcher) {
             case ACTION:
-                try {
-                    final Intent action = context.getPackageManager().getLaunchIntentForPackage(
-                            launcherPackage);
-                    action.putExtra("apply_icon_pack", context.getPackageName());
-                    action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(action);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case ADW:
                 try {
