@@ -266,7 +266,19 @@ public class LauncherHelper {
                 "Solo",
                 R.drawable.ic_launcher_solo,
                 new String[]{"home.solo.launcher.free"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent solo = context.getPackageManager().getLaunchIntentForPackage("home.solo.launcher.free");
+                        final Intent soloAction = new Intent("home.solo.launcher.free.APPLY_THEME");
+                        soloAction.putExtra("EXTRA_THEMENAME", context.getResources().getString(R.string.app_name));
+                        soloAction.putExtra("EXTRA_PACKAGENAME", context.getPackageName());
+                        solo.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.sendBroadcast(soloAction);
+                        context.startActivity(solo);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         STOCK_LEGACY(
                 /*
                  * Historically, ColorOS, OxygenOS and realme UI were standalone launcher variants
@@ -766,21 +778,7 @@ public class LauncherHelper {
                 launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case SOLO:
-                try {
-                    final Intent solo = context.getPackageManager().getLaunchIntentForPackage(
-                            "home.solo.launcher.free");
-                    final Intent soloAction = new Intent("home.solo.launcher.free.APPLY_THEME");
-                    soloAction.putExtra("EXTRA_THEMENAME", context.getResources().getString(
-                            R.string.app_name));
-                    soloAction.putExtra("EXTRA_PACKAGENAME", context.getPackageName());
-                    solo.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.sendBroadcast(soloAction);
-                    context.startActivity(solo);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case SQUARE:
                 try {
