@@ -106,8 +106,7 @@ public class LauncherHelper {
         COLOR_OS(
                 "ColorOS",
                 R.drawable.ic_launcher_color_os,
-                new String[]{"com.oppo.launcher"},
-                false),
+                new String[]{"com.oppo.launcher"}),
         GO(
                 "GO EX",
                 R.drawable.ic_launcher_go,
@@ -125,18 +124,15 @@ public class LauncherHelper {
         HIOS(
                 "HiOS",
                 R.drawable.ic_launcher_hios,
-                new String[]{"com.transsion.hilauncher"},
-                false),
+                new String[]{"com.transsion.hilauncher"}),
         HOLO(
                 "Holo",
                 R.drawable.ic_launcher_holo,
-                new String[]{"com.mobint.hololauncher"},
-                false),
+                new String[]{"com.mobint.hololauncher"}),
         HOLOHD(
                 "Holo HD",
                 R.drawable.ic_launcher_holohd,
-                new String[]{"com.mobint.hololauncher.hd"},
-                false),
+                new String[]{"com.mobint.hololauncher.hd"}),
         LAWNCHAIR(
                 "Lawnchair",
                 R.drawable.ic_launcher_lawnchair,
@@ -159,8 +155,7 @@ public class LauncherHelper {
         LGHOME(
                 "LG Home",
                 R.drawable.ic_launcher_lg,
-                new String[]{"com.lge.launcher2", "com.lge.launcher3"},
-                false),
+                new String[]{"com.lge.launcher2", "com.lge.launcher3"}),
         LUCID(
                 "Lucid",
                 R.drawable.ic_launcher_lucid,
@@ -174,8 +169,7 @@ public class LauncherHelper {
         NOTHING(
                 "Nothing",
                 R.drawable.ic_launcher_nothing,
-                new String[]{"com.nothing.launcher"},
-                false),
+                new String[]{"com.nothing.launcher"}),
         NOUGAT(
                 "Nougat",
                 R.drawable.ic_launcher_nougat,
@@ -209,13 +203,11 @@ public class LauncherHelper {
         OXYGEN_OS(
                 "OxygenOS",
                 R.drawable.ic_launcher_oxygen_os,
-                new String[]{"net.oneplus.launcher"},
-                false),
+                new String[]{"net.oneplus.launcher"}),
         PIXEL(
                 "Pixel",
                 R.drawable.ic_launcher_pixel,
-                new String[]{"com.google.android.apps.nexuslauncher"},
-                false),
+                new String[]{"com.google.android.apps.nexuslauncher"}),
         PROJECTIVY(
                 "Projectivy",
                 R.drawable.ic_launcher_projectivy,
@@ -261,28 +253,23 @@ public class LauncherHelper {
                  */
                 isColorOS() ? "ColorOS" : isRealmeUI() ? "realme UI" : "Stock Launcher",
                 isColorOS() ? R.drawable.ic_launcher_color_os : isRealmeUI() ? R.drawable.ic_launcher_realme_ui : R.drawable.ic_launcher_android,
-                new String[]{"com.android.launcher"},
-                false),
+                new String[]{"com.android.launcher"}),
         POCO(
                 "POCO",
                 R.drawable.ic_launcher_poco,
-                new String[]{"com.mi.android.globallauncher"},
-                false),
+                new String[]{"com.mi.android.globallauncher"}),
         MOTO(
                 "Moto Launcher",
                 R.drawable.ic_launcher_moto,
-                new String[]{"com.motorola.launcher3"},
-                false),
+                new String[]{"com.motorola.launcher3"}),
         MICROSOFT(
                 "Microsoft",
                 R.drawable.ic_launcher_microsoft,
-                new String[]{"com.microsoft.launcher"},
-                false),
+                new String[]{"com.microsoft.launcher"}),
         BLACKBERRY(
                 "BlackBerry",
                 R.drawable.ic_launcher_blackberry,
-                new String[]{"com.blackberry.blackberrylauncher"},
-                false),
+                new String[]{"com.blackberry.blackberrylauncher"}),
         FLICK(
                 "Flick",
                 R.drawable.ic_launcher_flick,
@@ -321,28 +308,23 @@ public class LauncherHelper {
         HYPERION(
                 "Hyperion",
                 R.drawable.ic_launcher_hyperion,
-                new String[]{"projekt.launcher"},
-                false),
+                new String[]{"projekt.launcher"}),
         KISS(
                 "KISS",
                 R.drawable.ic_launcher_kiss,
-                new String[]{"fr.neamar.kiss"},
-                false),
+                new String[]{"fr.neamar.kiss"}),
         Kvaesitso(
                 "Kvaesitso",
                 R.drawable.ic_launcher_kvaesitso,
-                new String[]{"de.mm20.launcher2.release"},
-                false),
+                new String[]{"de.mm20.launcher2.release"}),
         ONEUI(
                 "Samsung One UI",
                 R.drawable.ic_launcher_one_ui,
-                new String[]{"com.sec.android.app.launcher"},
-                false),
+                new String[]{"com.sec.android.app.launcher"}),
         TINYBIT(
                 "TinyBit",
                 R.drawable.ic_launcher_tinybit,
-                new String[]{"rocks.tbog.tblauncher"},
-                false),
+                new String[]{"rocks.tbog.tblauncher"}),
         ZENUI(
                 "ZenUI",
                 R.drawable.ic_launcher_zenui,
@@ -359,27 +341,39 @@ public class LauncherHelper {
 
         /**
          * Interface for launchers to implement when they support applying icons directly, without
-         * the need to open the icon pack app. The {%code run()} method should be self-contained
+         * the need to open the icon pack app. The {@code run()} method should be self-contained
          * and make sure to finish the activity after applying the icon pack.
          */
         private interface DirectApply {
-            default boolean isSupported(String packageName) {return true;}
+            default boolean isSupported(String packageName) { return true; }
 
-            void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException;
+            Intent getActivity(Context context, String launcherPackageName);
+            default Intent getBroadcast(Context context) { return null; }
+
+            default void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
+                final Intent activity = getActivity(context, launcherPackageName);
+                final Intent broadcast = getBroadcast(context);
+                if (getBroadcast(context) != null) {
+                    context.sendBroadcast(broadcast);
+                }
+                context.startActivity(activity);
+                ((AppCompatActivity) context).finish();
+            }
         }
 
         /**
          * Interface for launchers to implement when they support icon packs but not direct apply.
          * They should provide an overall compatibility description and a list of instructions for
-         * users to follow step by step on their device.
+         * users to follow step by step on their device. The {@code run()} method should be
+         * self-contained and either launch a deep link into the launcher's settings where the icon
+         * pack can be applied, or simply display a dialog with the instructions.
+         *
+         * @see Launcher#applyWithInstructions(Context, String, String, String[])
          */
         private interface ManualApply {
-            /**
-             * The resource ID of the compatibility description string for the launcher. Unless you
-             * have some launcher-specific things to say, you can use the default implementation
-             * which returns a generic description message that works for any launcher.
-             */
-            default String description(Context context, String launcherName) {
+            default boolean isSupported(String packageName) { return true; }
+
+            default String getCompatibilityMessage(Context context, String launcherName) {
                 return context.getResources().getString(
                         R.string.apply_manual,
                         launcherName,
@@ -387,19 +381,16 @@ public class LauncherHelper {
                 );
             }
 
-            /**
-             * A list of resource IDs for the instructions to apply the icon pack manually.
-             * The order of steps in the list matches the order of steps the user will be
-             * presented. Make them concise and easy to follow.
-             *
-             * <p>Example definition:</p>
-             * <pre>{@code
-             * new String[] {
-             *    context.getResources().getString(R.string.apply_manual_step_1), // "Long-tap home screen"
-             *    context.getResources().getString(R.string.apply_manual_step_2), // "Pick %s from the list"
-             * }</pre>
-             */
-            String[] instructionSteps(Context context);
+            String[] getInstructionSteps(Context context, String launcherName);
+
+            default void run(Context context, String launcherPackageName, String launcherName) throws ActivityNotFoundException, NullPointerException {
+                applyWithInstructions(
+                        context,
+                        launcherName,
+                        getCompatibilityMessage(context, launcherName),
+                        getInstructionSteps(context, launcherName)
+                );
+            }
         }
 
         /**
@@ -433,6 +424,12 @@ public class LauncherHelper {
             }
         }
 
+        public static class LauncherManualApplyNotSupported extends ActivityNotFoundException {
+            public LauncherManualApplyNotSupported(Throwable cause) {
+                super("The launcher does not support manual apply");
+                initCause(cause); // preserves the original exceptions information
+            }
+        }
         /**
          * Exception thrown when the icon pack couldn't be applied to the launcher directly. Catch
          * this when you want to show a user-friendly message to the user or offer the user to send
@@ -449,11 +446,26 @@ public class LauncherHelper {
             }
         }
 
+        /**
+         * Exception thrown when the launcher's activity couldn't be run. Catch this when you want
+         * to show a user-friendly message to the user or offer the user to send a bug report. In
+         * the wild, this exception could indicate that the launcher has been updated by the
+         * developers and its activity names have changed.
+         * For cases when the launcher isn't installed, use `LauncherNotInstalledException`.
+         *
+         * @see LauncherNotInstalledException
+         */
+        public static class LauncherManualApplyFailed extends ActivityNotFoundException {
+            public LauncherManualApplyFailed(Throwable cause) {
+                super("The launcher supports manual apply but launching the activity failed");
+                initCause(cause); // preserves the original exceptions information
+            }
+        }
+
         public final String name;
         public final @DrawableRes
         int icon;
         public final String[] packages;
-        private final boolean directApply;
         private DirectApply directApplyFunc = null;
         private ManualApply manualApplyFunc = null;
 
@@ -461,39 +473,20 @@ public class LauncherHelper {
             this.name = null;
             this.icon = 0;
             this.packages = null;
-            this.directApply = false;
         }
 
-        Launcher(String name, @DrawableRes int icon, String[] packages, boolean directApply) {
+        Launcher(String name, @DrawableRes int icon, String[] packages) {
             this.name = name;
             this.icon = icon;
             this.packages = packages;
-            this.directApply = directApply;
-        }
-
-        Launcher(String name, @DrawableRes int icon, String[] packages, ManualApply manualApplyFunc) {
-            this.name = name;
-            this.icon = icon;
-            this.packages = packages;
-            this.directApply = false;
-            this.manualApplyFunc = manualApplyFunc;
         }
 
         Launcher(String name, @DrawableRes int icon, String[] packages, DirectApply directApplyFunc, ManualApply manualApplyFunc) {
             this.name = name;
             this.icon = icon;
             this.packages = packages;
-            this.directApply = true;
             this.directApplyFunc = directApplyFunc;
             this.manualApplyFunc = manualApplyFunc;
-        }
-
-        Launcher(String name, @DrawableRes int icon, String[] packages, DirectApply directApplyFunc) {
-            this.name = name;
-            this.icon = icon;
-            this.packages = packages;
-            this.directApply = true;
-            this.directApplyFunc = directApplyFunc;
         }
 
         /**
@@ -510,7 +503,20 @@ public class LauncherHelper {
             if (directApplyFunc != null) {
                 return directApplyFunc.isSupported(launcherPackageName);
             }
-            return directApply;
+            return false;
+        }
+
+        /**
+         * Check if the launcher supports applying icon packs manually. Not all launchers do,
+         * specifically not those that want to stay close to Vanilla Android.
+         * @param launcherPackageName The package name of the launcher to check
+         * @return true if the launcher supports manual apply, false otherwise
+         */
+        public boolean supportsManualApply(String launcherPackageName) {
+            if (manualApplyFunc != null) {
+                return manualApplyFunc.isSupported(launcherPackageName);
+            }
+            return false;
         }
 
         /**
@@ -533,7 +539,7 @@ public class LauncherHelper {
          */
         public void applyDirectly(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
             if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
-            if (!directApply || directApplyFunc == null) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
+            if (directApplyFunc == null) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
             try {
                 directApplyFunc.run(context, launcherPackageName);
                 logLauncherDirectApply(launcherPackageName);
@@ -563,14 +569,15 @@ public class LauncherHelper {
             }
         }
 
-        public void applyManually(Context context, String launcherName, boolean openGooglePlayUponError) {
-            if (manualApplyFunc != null) {
-                applyWithInstructions(
-                        context,
-                        this.name,
-                        this.manualApplyFunc.description(context, launcherName),
-                        this.manualApplyFunc.instructionSteps(context)
-                );
+        public void applyManually(Context context, String launcherPackageName, String launcherName) throws ActivityNotFoundException, NullPointerException {
+            if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
+            if (manualApplyFunc == null) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
+
+            try {
+                manualApplyFunc.run(context, launcherPackageName, launcherName);
+                //logLauncherManualApply(launcherPackageName);
+            } catch (Exception e) {
+                throw new LauncherManualApplyFailed(e);
             }
         }
     }
@@ -646,7 +653,7 @@ public class LauncherHelper {
                 }
                 break;
             case BLACKBERRY:
-                applyManual(context, launcherPackage, launcherName, "com.blackberry.blackberrylauncher.MainActivity");
+                applyManualInApp(context, launcherPackage, launcherName, "com.blackberry.blackberrylauncher.MainActivity");
                 break;
             case CMTHEME:
                 try {
@@ -744,10 +751,10 @@ public class LauncherHelper {
                 break;
             case HOLO:
             case HOLOHD:
-                applyManual(context, launcherPackage, launcherName, "com.mobint.hololauncher.SettingsActivity");
+                applyManualInApp(context, launcherPackage, launcherName, "com.mobint.hololauncher.SettingsActivity");
                 break;
             case HYPERION:
-                applyManual(context, launcherPackage, launcherName, "projekt.launcher.activities.SettingsActivity");
+                applyManualInApp(context, launcherPackage, launcherName, "projekt.launcher.activities.SettingsActivity");
                 break;
             case KISS:
                 applyWithInstructions(
@@ -786,7 +793,7 @@ public class LauncherHelper {
                 if (launcher.supportsDirectApply(launcherPackage)) {
                     launcher.applyDirectly(context, launcherPackage, true);
                 } else {
-                    applyManual(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
+                    applyManualInApp(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
                 }
                 break;
             case LGHOME:
@@ -796,7 +803,7 @@ public class LauncherHelper {
                 launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case MICROSOFT:
-                applyManual(context, launcherPackage, launcherName, null);
+                applyManualInApp(context, launcherPackage, launcherName, null);
                 break;
             case NIAGARA:
                 launcher.applyDirectly(context, launcherPackage, true);
@@ -828,7 +835,7 @@ public class LauncherHelper {
                 launcherIncompatible(context, launcherName);
                 break;
             case POCO:
-                applyManual(context, launcherPackage, launcherName, "com.miui.home.settings.HomeSettingsActivity");
+                applyManualInApp(context, launcherPackage, launcherName, "com.miui.home.settings.HomeSettingsActivity");
                 break;
             case PROJECTIVY:
                 launcher.applyDirectly(context, launcherPackage, true);
@@ -837,10 +844,10 @@ public class LauncherHelper {
                 applyOneUI(context, launcherName);
                 break;
             case TINYBIT:
-                applyManual(context, launcherPackage, launcherName, "rocks.tbog.tblauncher.SettingsActivity");
+                applyManualInApp(context, launcherPackage, launcherName, "rocks.tbog.tblauncher.SettingsActivity");
                 break;
             case MOTO:
-                applyManual(context, launcherPackage, launcherName, "com.motorola.personalize.app.IconPacksActivity");
+                applyManualInApp(context, launcherPackage, launcherName, "com.motorola.personalize.app.IconPacksActivity");
                 break;
             case SMART:
                 launcher.applyDirectly(context, launcherPackage, true);
@@ -881,7 +888,7 @@ public class LauncherHelper {
     }
 
     @SuppressLint("StringFormatInvalid")
-    private static void applyManual(Context context, String launcherPackage, String launcherName, String activity) {
+    private static void applyManualInApp(Context context, String launcherPackage, String launcherName, String activity) {
         if (isInstalled(context, launcherPackage)) {
             new MaterialDialog.Builder(context)
                     .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
@@ -947,8 +954,8 @@ public class LauncherHelper {
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
-                .content(description + "\n\n\t• " + String.join("\n\t• ", steps))
-                .positiveText(android.R.string.yes)
+                .content(description + ((steps.length > 0) ? "\n\n\t• " : "") + String.join("\n\t• ", steps))
+                .positiveText(android.R.string.ok)
                 .onPositive((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
