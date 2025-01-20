@@ -201,7 +201,17 @@ public class LauncherHelper {
                 "Nougat",
                 R.drawable.ic_launcher_nougat,
                 new String[]{"me.craftsapp.nlauncher"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent nougat = new Intent("me.craftsapp.nlauncher");
+                        nougat.setAction("me.craftsapp.nlauncher.SET_THEME");
+                        nougat.putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName());
+                        nougat.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(nougat);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         NOVA(
                 "Nova",
                 R.drawable.ic_launcher_nova,
@@ -813,23 +823,7 @@ public class LauncherHelper {
                 );
                 break;
             case NOUGAT:
-                try {
-                    /*
-                     * Just want to let anyone who is going to copy
-                     * It's not easy searching for this
-                     * I will be grateful if you take this with a proper credit
-                     * Thank you
-                     */
-                    final Intent nougat = new Intent("me.craftsapp.nlauncher");
-                    nougat.setAction("me.craftsapp.nlauncher.SET_THEME");
-                    nougat.putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName());
-                    nougat.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(nougat);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case ZENUI:
                 try {
