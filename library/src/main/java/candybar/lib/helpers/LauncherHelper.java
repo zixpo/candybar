@@ -53,8 +53,8 @@ public class LauncherHelper {
                 new String[]{"com.actionlauncher.playstore", "com.chrislacy.actionlauncher.pro"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
-                        final Intent action = context.getPackageManager().getLaunchIntentForPackage(packageName);
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent action = context.getPackageManager().getLaunchIntentForPackage(launcherPackageName);
                         action.putExtra("apply_icon_pack", context.getPackageName());
                         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(action);
@@ -68,7 +68,7 @@ public class LauncherHelper {
                 new String[]{"org.adw.launcher", "org.adwfreak.launcher"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent adw = new Intent("org.adw.launcher.SET_THEME");
                         adw.putExtra("org.adw.launcher.theme.NAME", context.getPackageName());
                         adw.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -83,7 +83,7 @@ public class LauncherHelper {
                 new String[]{"com.anddoes.launcher", "com.anddoes.launcher.pro"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent apex = new Intent("com.anddoes.launcher.SET_THEME");
                         apex.putExtra("com.anddoes.launcher.THEME_PACKAGE_NAME", context.getPackageName());
                         apex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -97,7 +97,7 @@ public class LauncherHelper {
                 new String[]{"com.beforesoft.launcher"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent before = new Intent("com.beforesoftware.launcher.APPLY_ICONS");
                         before.putExtra("packageName", context.getPackageName());
                         before.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -111,9 +111,9 @@ public class LauncherHelper {
                 new String[]{"org.cyanogenmod.theme.chooser"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent cmtheme = new Intent("android.intent.action.MAIN");
-                        cmtheme.setComponent(new ComponentName(packageName, "org.cyanogenmod.theme.chooser.ChooserActivity"));
+                        cmtheme.setComponent(new ComponentName(launcherPackageName, "org.cyanogenmod.theme.chooser.ChooserActivity"));
                         cmtheme.putExtra("pkgName", context.getPackageName());
                         context.startActivity(cmtheme);
                     }
@@ -129,7 +129,7 @@ public class LauncherHelper {
                 new String[]{"com.gau.go.launcherex"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent goex = context.getPackageManager().getLaunchIntentForPackage("com.gau.go.launcherex");
                         final Intent go = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
                         go.putExtra("type", 1);
@@ -167,7 +167,7 @@ public class LauncherHelper {
                     }
 
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
                         lawnchair.putExtra("packageName", context.getPackageName());
                         context.startActivity(lawnchair);
@@ -185,7 +185,7 @@ public class LauncherHelper {
                 new String[]{"com.powerpoint45.launcher"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent lucid = new Intent("com.powerpoint45.action.APPLY_THEME", null);
                         lucid.putExtra("icontheme", context.getPackageName());
                         context.startActivity(lucid);
@@ -203,7 +203,7 @@ public class LauncherHelper {
                 new String[]{"me.craftsapp.nlauncher"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent nougat = new Intent("me.craftsapp.nlauncher");
                         nougat.setAction("me.craftsapp.nlauncher.SET_THEME");
                         nougat.putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName());
@@ -218,7 +218,7 @@ public class LauncherHelper {
                 new String[]{"com.teslacoilsw.launcher", "com.teslacoilsw.launcher.prime"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent nova = new Intent("com.teslacoilsw.launcher.APPLY_ICON_THEME");
                         nova.setPackage("com.teslacoilsw.launcher");
                         nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_TYPE", "GO");
@@ -249,7 +249,7 @@ public class LauncherHelper {
                 new String[]{"com.spocky.projengmenu"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent projectivy = new Intent("com.spocky.projengmenu.APPLY_ICONPACK");
                         projectivy.setPackage("com.spocky.projengmenu");
                         projectivy.putExtra("com.spocky.projengmenu.extra.ICONPACK_PACKAGENAME", context.getPackageName());
@@ -264,7 +264,7 @@ public class LauncherHelper {
                 new String[]{"ginlemon.flowerfree", "ginlemon.flowerpro", "ginlemon.flowerpro.special"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent smart = new Intent("ginlemon.smartlauncher.setGSLTHEME");
                         smart.putExtra("package", context.getPackageName());
                         smart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -278,7 +278,7 @@ public class LauncherHelper {
                 new String[]{"home.solo.launcher.free"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent solo = context.getPackageManager().getLaunchIntentForPackage("home.solo.launcher.free");
                         final Intent soloAction = new Intent("home.solo.launcher.free.APPLY_THEME");
                         soloAction.putExtra("EXTRA_THEMENAME", context.getResources().getString(R.string.app_name));
@@ -325,7 +325,7 @@ public class LauncherHelper {
                 new String[]{"com.universallauncher.universallauncher"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent flick = context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher");
                         final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
                         flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
@@ -342,7 +342,7 @@ public class LauncherHelper {
                 new String[]{"com.ss.squarehome2"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent square = new Intent("com.ss.squarehome2.ACTION_APPLY_ICONPACK");
                         square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
                         square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
@@ -356,7 +356,7 @@ public class LauncherHelper {
                 new String[]{"bitpit.launcher"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent niagara = new Intent("bitpit.launcher.APPLY_ICONS");
                         niagara.putExtra("packageName", context.getPackageName());
                         context.startActivity(niagara);
@@ -394,7 +394,7 @@ public class LauncherHelper {
                 new String[]{"com.asus.launcher"},
                 new DirectApply() {
                     @Override
-                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
                         final Intent asus = new Intent("com.asus.launcher");
                         asus.setAction("com.asus.launcher.intent.action.APPLY_ICONPACK");
                         asus.addCategory(Intent.CATEGORY_DEFAULT);
@@ -405,9 +405,49 @@ public class LauncherHelper {
                     }
                 });
 
+        /**
+         * Interface for launchers to implement when they support applying icons directly, without
+         * the need to open the icon pack app. The {%code run()} method should be self-contained
+         * and make sure to finish the activity after applying the icon pack.
+         */
         private interface DirectApply {
             default boolean isSupported(String packageName) {return true;}
-            void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException;
+
+            void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException;
+        }
+
+        /**
+         * Interface for launchers to implement when they support icon packs but not direct apply.
+         * They should provide an overall compatibility description and a list of instructions for
+         * users to follow step by step on their device.
+         */
+        private interface ManualApply {
+            /**
+             * The resource ID of the compatibility description string for the launcher. Unless you
+             * have some launcher-specific things to say, you can use the default implementation
+             * which returns a generic description message that works for any launcher.
+             */
+            default String description(Context context, String launcherName) {
+                return context.getResources().getString(
+                        R.string.apply_manual,
+                        launcherName,
+                        context.getResources().getString(R.string.app_name)
+                );
+            }
+
+            /**
+             * A list of resource IDs for the instructions to apply the icon pack manually.
+             * The order of steps in the list matches the order of steps the user will be
+             * presented. Make them concise and easy to follow.
+             *
+             * <p>Example definition:</p>
+             * <pre>{@code
+             * new String[] {
+             *    context.getResources().getString(R.string.apply_manual_step_1), // "Long-tap home screen"
+             *    context.getResources().getString(R.string.apply_manual_step_2), // "Pick %s from the list"
+             * }</pre>
+             */
+            String[] instructionSteps(Context context);
         }
 
         /**
@@ -416,6 +456,8 @@ public class LauncherHelper {
          * as opening Google Play. If you want to open Google Play as a default, take note of the
          * overloaded method `applyDirectly` that accepts a boolean parameter for opening Google
          * Play upon error.
+         *
+         * @see Launcher#applyDirectly(Context, String, boolean)
          */
         public static class LauncherNotInstalledException extends ActivityNotFoundException {
             public LauncherNotInstalledException(Throwable cause) {
@@ -428,7 +470,9 @@ public class LauncherHelper {
          * Exception thrown when the launcher doesn't support applying icon packs directly but if
          * the method `applyDirectly` is called anyway. CandyBar handles this gracefully in-app by
          * showing instructions for how to apply the pack manually. If you see this exception, it
-         * means you forgot to call `supportsDirectApply` before calling `applyDirectly`.
+         * means you forgot to respect `supportsDirectApply` before calling `applyDirectly`.
+         *
+         * @see Launcher#supportsDirectApply(String)
          */
         public static class LauncherDirectApplyNotSupported extends ActivityNotFoundException {
             public LauncherDirectApplyNotSupported(Throwable cause) {
@@ -443,6 +487,8 @@ public class LauncherHelper {
          * a bug report. In the wild, this exception could indicate that the launcher has been
          * updated by the developers and its interface for applying icon packs has changed.
          * For cases when the launcher isn't installed, use `LauncherNotInstalledException`.
+         *
+         * @see LauncherNotInstalledException
          */
         public static class LauncherDirectApplyFailed extends ActivityNotFoundException {
             public LauncherDirectApplyFailed(Throwable cause) {
@@ -457,6 +503,7 @@ public class LauncherHelper {
         public final String[] packages;
         private final boolean directApply;
         private DirectApply directApplyFunc = null;
+        private ManualApply manualApplyFunc = null;
 
         Launcher() {
             this.name = null;
@@ -472,6 +519,23 @@ public class LauncherHelper {
             this.directApply = directApply;
         }
 
+        Launcher(String name, @DrawableRes int icon, String[] packages, ManualApply manualApplyFunc) {
+            this.name = name;
+            this.icon = icon;
+            this.packages = packages;
+            this.directApply = false;
+            this.manualApplyFunc = manualApplyFunc;
+        }
+
+        Launcher(String name, @DrawableRes int icon, String[] packages, DirectApply directApplyFunc, ManualApply manualApplyFunc) {
+            this.name = name;
+            this.icon = icon;
+            this.packages = packages;
+            this.directApply = true;
+            this.directApplyFunc = directApplyFunc;
+            this.manualApplyFunc = manualApplyFunc;
+        }
+
         Launcher(String name, @DrawableRes int icon, String[] packages, DirectApply directApplyFunc) {
             this.name = name;
             this.icon = icon;
@@ -481,7 +545,7 @@ public class LauncherHelper {
         }
 
         /**
-         * Check if the launcher supports to be applied directly. Not all launchers do, and it's
+         * Check if the launcher supports direct apply of icon packs. Not all launchers do, and it's
          * on the launcher developers to provide the necessary interfaces to allow this. Note that
          * when you use `applyDirectly` it's still possible for it to throw an exception (see
          * exception `LauncherDirectApplyFailed`) because newer versions or OS-specific variants of
@@ -498,11 +562,22 @@ public class LauncherHelper {
         }
 
         /**
-         * Try to apply the launcher directly. If the launcher isn't installed, throw an exception.
+         * Tries to apply the icon pack directly. Before calling this, you can ask the launcher with
+         * {@code supportsDirectApply} if it supports this method. Note that this is just a hint,
+         * not a guarantee, so make sure to catch the exceptions thrown by this method and handle
+         * them gracefully.
+         *
+         * <p><b>Credit where credit is due</b></p>
+         * <p>The activities, intents, logic and fallbacks behind this simple method are the
+         * collective work of dozens of open source developers carried out over many years. If you
+         * use this method outside of the CandyBar app, please credit the contributors.</p>
+         *
          * @param launcherPackageName The package name of the launcher to apply the icon pack to.
          * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
          * @throws LauncherDirectApplyNotSupported If the launcher doesn't support applying icon packs directly.
          * @throws LauncherDirectApplyFailed If the icon pack couldn't be applied to the launcher directly. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
+         *
+         * @see Launcher#supportsDirectApply(String)
          */
         public void applyDirectly(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
             if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
@@ -516,7 +591,7 @@ public class LauncherHelper {
         }
 
         /**
-         * Try to apply the launcher directly. In case of any errors, open launcher in Google Play.
+         * Try to apply the icon pack directly. In case of any errors, open launcher in Google Play.
          * This is a convenience method to preserve backwards compatibility in CandyBar. If you
          * rather handle exceptions yourself, use `applyDirectly` without the boolean parameter
          * and catch exceptions `LauncherNotInstalledException`, `LauncherDirectApplyFailed` and
@@ -533,6 +608,17 @@ public class LauncherHelper {
                 } else {
                     throw e;
                 }
+            }
+        }
+
+        public void applyManually(Context context, String launcherName, boolean openGooglePlayUponError) {
+            if (manualApplyFunc != null) {
+                applyWithInstructions(
+                        context,
+                        this.name,
+                        this.manualApplyFunc.description(context, launcherName),
+                        this.manualApplyFunc.instructionSteps(context)
+                );
             }
         }
     }
