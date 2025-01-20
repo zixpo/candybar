@@ -330,7 +330,16 @@ public class LauncherHelper {
                 "Square",
                 R.drawable.ic_launcher_square,
                 new String[]{"com.ss.squarehome2"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent square = new Intent("com.ss.squarehome2.ACTION_APPLY_ICONPACK");
+                        square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
+                        square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
+                        context.startActivity(square);
+                        // FIXME: We never call ((AppCompatActivity) context).finish(); here, is that intentional?
+                    }
+                }),
         NIAGARA(
                 "Niagara",
                 R.drawable.ic_launcher_niagara,
@@ -781,15 +790,7 @@ public class LauncherHelper {
                 launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case SQUARE:
-                try {
-                    final Intent square = new Intent("com.ss.squarehome2.ACTION_APPLY_ICONPACK");
-                    square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
-                    square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
-                    context.startActivity(square);
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case STOCK_LEGACY:
                 applyWithInstructions(
