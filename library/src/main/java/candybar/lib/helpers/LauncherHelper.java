@@ -109,7 +109,15 @@ public class LauncherHelper {
                 "CM Theme",
                 R.drawable.ic_launcher_cm,
                 new String[]{"org.cyanogenmod.theme.chooser"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent cmtheme = new Intent("android.intent.action.MAIN");
+                        cmtheme.setComponent(new ComponentName(packageName, "org.cyanogenmod.theme.chooser.ChooserActivity"));
+                        cmtheme.putExtra("pkgName", context.getPackageName());
+                        context.startActivity(cmtheme);
+                    }
+                }),
         COLOR_OS(
                 "ColorOS",
                 R.drawable.ic_launcher_color_os,
@@ -479,12 +487,7 @@ public class LauncherHelper {
                 break;
             case CMTHEME:
                 try {
-                    final Intent cmtheme = new Intent("android.intent.action.MAIN");
-                    cmtheme.setComponent(new ComponentName(launcherPackage,
-                            "org.cyanogenmod.theme.chooser.ChooserActivity"));
-                    cmtheme.putExtra("pkgName", context.getPackageName());
-                    context.startActivity(cmtheme);
-                    logLauncherDirectApply(launcherPackage);
+                    launcher.applyDirectly(context, launcherPackage, false);
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     Toast.makeText(context, R.string.apply_cmtheme_not_available,
                             Toast.LENGTH_LONG).show();
