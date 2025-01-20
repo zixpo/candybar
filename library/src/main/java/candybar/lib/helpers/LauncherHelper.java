@@ -101,8 +101,13 @@ public class LauncherHelper {
                 "Lawnchair",
                 R.drawable.ic_launcher_lawnchair,
                 new String[]{"ch.deletescape.lawnchair.plah", "ch.deletescape.lawnchair.ci", "app.lawnchair"},
-                // Lawnchair 12 (app.lawnchair) doesn't support direct apply
-                (pkg) -> !pkg.startsWith("app")),
+                new DirectApply() {
+                    @Override
+                    public boolean isSupported(String packageName) {
+                        // Lawnchair 12 (app.lawnchair) doesn't support direct apply
+                        return !packageName.startsWith("app");
+                    }
+                }),
         LGHOME(
                 "LG Home",
                 R.drawable.ic_launcher_lg,
@@ -229,8 +234,50 @@ public class LauncherHelper {
                 new String[]{"com.asus.launcher"},
                 true);
 
-        private interface DirectApplyFunc {
-            boolean check(String packageName);
+        private interface DirectApply {
+            default boolean isSupported(String packageName) {return true;}
+            default void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {}
+        }
+
+        /**
+         * Exception thrown when the launcher isn't installed on the device. Catch this when you
+         * want to provide user-friendly feedback to the user or fall back on other methods such
+         * as opening Google Play. If you want to open Google Play as a default, take note of the
+         * overloaded method `applyDirectly` that accepts a boolean parameter for opening Google
+         * Play upon error.
+         */
+        public static class LauncherNotInstalledException extends ActivityNotFoundException {
+            public LauncherNotInstalledException(Throwable cause) {
+                super("The launcher is not installed on the device");
+                initCause(cause); // preserves the original exceptions information
+            }
+        }
+
+        /**
+         * Exception thrown when the launcher doesn't support applying icon packs directly but if
+         * the method `applyDirectly` is called anyway. CandyBar handles this gracefully in-app by
+         * showing instructions for how to apply the pack manually. If you see this exception, it
+         * means you forgot to call `supportsDirectApply` before calling `applyDirectly`.
+         */
+        public static class LauncherDirectApplyNotSupported extends ActivityNotFoundException {
+            public LauncherDirectApplyNotSupported(Throwable cause) {
+                super("The launcher does not support direct apply");
+                initCause(cause); // preserves the original exceptions information
+            }
+        }
+
+        /**
+         * Exception thrown when the icon pack couldn't be applied to the launcher directly. Catch
+         * this when you want to show a user-friendly message to the user or offer the user to send
+         * a bug report. In the wild, this exception could indicate that the launcher has been
+         * updated by the developers and its interface for applying icon packs has changed.
+         * For cases when the launcher isn't installed, use `LauncherNotInstalledException`.
+         */
+        public static class LauncherDirectApplyFailed extends ActivityNotFoundException {
+            public LauncherDirectApplyFailed(Throwable cause) {
+                super("The launcher supports direct apply but applying the icon pack failed");
+                initCause(cause); // preserves the original exceptions information
+            }
         }
 
         public final String name;
@@ -238,7 +285,7 @@ public class LauncherHelper {
         int icon;
         public final String[] packages;
         private final boolean directApply;
-        private DirectApplyFunc directApplyFunc = null;
+        private DirectApply directApplyFunc = null;
 
         Launcher() {
             this.name = null;
@@ -254,7 +301,7 @@ public class LauncherHelper {
             this.directApply = directApply;
         }
 
-        Launcher(String name, @DrawableRes int icon, String[] packages, DirectApplyFunc directApplyFunc) {
+        Launcher(String name, @DrawableRes int icon, String[] packages, DirectApply directApplyFunc) {
             this.name = name;
             this.icon = icon;
             this.packages = packages;
@@ -262,11 +309,60 @@ public class LauncherHelper {
             this.directApplyFunc = directApplyFunc;
         }
 
+        /**
+         * Check if the launcher supports to be applied directly. Not all launchers do, and it's
+         * on the launcher developers to provide the necessary interfaces to allow this. Note that
+         * when you use `applyDirectly` it's still possible for it to throw an exception (see
+         * exception `LauncherDirectApplyFailed`) because newer versions or OS-specific variants of
+         * the launcher might not support it.
+         * Consider the return value of this method as a hint, not a guarantee.
+         * @param launcherPackageName The package name of the launcher to check.
+         * @return true if the launcher supports direct apply, false otherwise.
+         */
         public boolean supportsDirectApply(String launcherPackageName) {
             if (directApplyFunc != null) {
-                return directApplyFunc.check(launcherPackageName);
+                return directApplyFunc.isSupported(launcherPackageName);
             }
             return directApply;
+        }
+
+        /**
+         * Try to apply the launcher directly. If the launcher isn't installed, throw an exception.
+         * @param launcherPackageName The package name of the launcher to apply the icon pack to.
+         * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
+         * @throws LauncherDirectApplyNotSupported If the launcher doesn't support applying icon packs directly.
+         * @throws LauncherDirectApplyFailed If the icon pack couldn't be applied to the launcher directly. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
+         */
+        public void applyDirectly(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
+            if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
+            if (!directApply || directApplyFunc == null) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
+            try {
+                directApplyFunc.run(context, launcherPackageName);
+                logLauncherDirectApply(launcherPackageName);
+            } catch (Exception e) {
+                throw new LauncherDirectApplyFailed(e);
+            }
+        }
+
+        /**
+         * Try to apply the launcher directly. In case of any errors, open launcher in Google Play.
+         * This is a convenience method to preserve backwards compatibility in CandyBar. If you
+         * rather handle exceptions yourself, use `applyDirectly` without the boolean parameter
+         * and catch exceptions `LauncherNotInstalledException`, `LauncherDirectApplyFailed` and
+         * `LauncherDirectApplyNotSupported`.
+         * @param launcherPackageName The package name of the launcher to apply the icon pack to.
+         * @param openGooglePlayUponError If true, open Google Play if the launcher isn't installed.
+         */
+        public void applyDirectly(Context context, String launcherPackageName, boolean openGooglePlayUponError) throws ActivityNotFoundException, NullPointerException {
+            try {
+                applyDirectly(context, launcherPackageName);
+            } catch (ActivityNotFoundException | NullPointerException e) {
+                if (openGooglePlayUponError) {
+                    openGooglePlay(context, launcherPackageName, name);
+                } else {
+                    throw e;
+                }
+            }
         }
     }
 
