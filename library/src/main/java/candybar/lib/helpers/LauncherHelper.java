@@ -288,7 +288,15 @@ public class LauncherHelper {
                 "Niagara",
                 R.drawable.ic_launcher_niagara,
                 new String[]{"bitpit.launcher"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent niagara = new Intent("bitpit.launcher.APPLY_ICONS");
+                        niagara.putExtra("packageName", context.getPackageName());
+                        context.startActivity(niagara);
+                        // FIXME: We never call ((AppCompatActivity) context).finish(); here, is that intentional?
+                    }
+                }),
         HYPERION(
                 "Hyperion",
                 R.drawable.ic_launcher_hyperion,
@@ -676,14 +684,7 @@ public class LauncherHelper {
                 applyManual(context, launcherPackage, launcherName, null);
                 break;
             case NIAGARA:
-                try {
-                    final Intent niagara = new Intent("bitpit.launcher.APPLY_ICONS");
-                    niagara.putExtra("packageName", context.getPackageName());
-                    context.startActivity(niagara);
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case NOTHING:
                 applyWithInstructions(
