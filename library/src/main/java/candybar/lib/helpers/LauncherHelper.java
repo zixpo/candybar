@@ -238,7 +238,19 @@ public class LauncherHelper {
                 "Flick",
                 R.drawable.ic_launcher_flick,
                 new String[]{"com.universallauncher.universallauncher"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent flick = context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher");
+                        final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
+                        flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
+                        flickAction.setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
+                        flick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.sendBroadcast(flickAction);
+                        context.startActivity(flick);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         SQUARE(
                 "Square",
                 R.drawable.ic_launcher_square,
@@ -557,19 +569,7 @@ public class LauncherHelper {
                 }
                 break;
             case FLICK:
-                try {
-                    final Intent flick = context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher");
-                    final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
-                    flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
-                    flickAction.setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
-                    flick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.sendBroadcast(flickAction);
-                    context.startActivity(flick);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case GO:
                 try {
