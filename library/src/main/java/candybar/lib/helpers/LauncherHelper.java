@@ -407,7 +407,7 @@ public class LauncherHelper {
 
         private interface DirectApply {
             default boolean isSupported(String packageName) {return true;}
-            default void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {}
+            void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException;
         }
 
         /**
