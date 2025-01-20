@@ -95,7 +95,16 @@ public class LauncherHelper {
                 "Before",
                 R.drawable.ic_launcher_before,
                 new String[]{"com.beforesoft.launcher"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent before = new Intent("com.beforesoftware.launcher.APPLY_ICONS");
+                        before.putExtra("packageName", context.getPackageName());
+                        before.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(before);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         CMTHEME(
                 "CM Theme",
                 R.drawable.ic_launcher_cm,
@@ -446,12 +455,7 @@ public class LauncherHelper {
                 break;
             case BEFORE:
                 try {
-                    final Intent before = new Intent("com.beforesoftware.launcher.APPLY_ICONS");
-                    before.putExtra("packageName", context.getPackageName());
-                    before.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(before);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
+                    launcher.applyDirectly(context, launcherPackage, false);
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     applyWithInstructions(
                             context,
