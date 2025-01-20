@@ -183,7 +183,15 @@ public class LauncherHelper {
                 "Lucid",
                 R.drawable.ic_launcher_lucid,
                 new String[]{"com.powerpoint45.launcher"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent lucid = new Intent("com.powerpoint45.action.APPLY_THEME", null);
+                        lucid.putExtra("icontheme", context.getPackageName());
+                        context.startActivity(lucid);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         NOTHING(
                 "Nothing",
                 R.drawable.ic_launcher_nothing,
@@ -662,15 +670,7 @@ public class LauncherHelper {
                 launcherIncompatible(context, launcherName);
                 break;
             case LUCID:
-                try {
-                    final Intent lucid = new Intent("com.powerpoint45.action.APPLY_THEME", null);
-                    lucid.putExtra("icontheme", context.getPackageName());
-                    context.startActivity(lucid);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case MICROSOFT:
                 applyManual(context, launcherPackage, launcherName, null);
