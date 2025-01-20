@@ -81,7 +81,16 @@ public class LauncherHelper {
                 "Apex",
                 R.drawable.ic_launcher_apex,
                 new String[]{"com.anddoes.launcher", "com.anddoes.launcher.pro"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent apex = new Intent("com.anddoes.launcher.SET_THEME");
+                        apex.putExtra("com.anddoes.launcher.THEME_PACKAGE_NAME", context.getPackageName());
+                        apex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(apex);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         BEFORE(
                 "Before",
                 R.drawable.ic_launcher_before,
@@ -433,16 +442,7 @@ public class LauncherHelper {
                 launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case APEX:
-                try {
-                    final Intent apex = new Intent("com.anddoes.launcher.SET_THEME");
-                    apex.putExtra("com.anddoes.launcher.THEME_PACKAGE_NAME", context.getPackageName());
-                    apex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(apex);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case BEFORE:
                 try {
