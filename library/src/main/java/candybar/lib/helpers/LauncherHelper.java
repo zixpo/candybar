@@ -206,7 +206,23 @@ public class LauncherHelper {
                 "Nova",
                 R.drawable.ic_launcher_nova,
                 new String[]{"com.teslacoilsw.launcher", "com.teslacoilsw.launcher.prime"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent nova = new Intent("com.teslacoilsw.launcher.APPLY_ICON_THEME");
+                        nova.setPackage("com.teslacoilsw.launcher");
+                        nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_TYPE", "GO");
+                        nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_PACKAGE", context.getPackageName());
+                        String reshapeSetting = context.getResources().getString(R.string.nova_reshape_legacy_icons);
+                        if (!reshapeSetting.equals("KEEP")) {
+                            // Allowed values are ON, OFF and AUTO
+                            nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_RESHAPE", reshapeSetting);
+                        }
+                        nova.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(nova);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }),
         OXYGEN_OS(
                 "OxygenOS",
                 R.drawable.ic_launcher_oxygen_os,
@@ -707,23 +723,7 @@ public class LauncherHelper {
                 );
                 break;
             case NOVA:
-                try {
-                    final Intent nova = new Intent("com.teslacoilsw.launcher.APPLY_ICON_THEME");
-                    nova.setPackage("com.teslacoilsw.launcher");
-                    nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_TYPE", "GO");
-                    nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_PACKAGE", context.getPackageName());
-                    String reshapeSetting = context.getResources().getString(R.string.nova_reshape_legacy_icons);
-                    if (!reshapeSetting.equals("KEEP")) {
-                        // Allowed values are ON, OFF and AUTO
-                        nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_RESHAPE", reshapeSetting);
-                    }
-                    nova.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(nova);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case PIXEL:
                 launcherIncompatible(context, launcherName);
