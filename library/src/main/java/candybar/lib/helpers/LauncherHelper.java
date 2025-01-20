@@ -66,7 +66,17 @@ public class LauncherHelper {
                 "ADW",
                 R.drawable.ic_launcher_adw,
                 new String[]{"org.adw.launcher", "org.adwfreak.launcher"},
-                true),
+                new DirectApply() {
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent adw = new Intent("org.adw.launcher.SET_THEME");
+                        adw.putExtra("org.adw.launcher.theme.NAME", context.getPackageName());
+                        adw.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(adw);
+                        ((AppCompatActivity) context).finish();
+                    }
+                }
+        ),
         APEX(
                 "Apex",
                 R.drawable.ic_launcher_apex,
@@ -420,16 +430,7 @@ public class LauncherHelper {
                 launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case ADW:
-                try {
-                    final Intent adw = new Intent("org.adw.launcher.SET_THEME");
-                    adw.putExtra("org.adw.launcher.theme.NAME", context.getPackageName());
-                    adw.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(adw);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
+                launcher.applyDirectly(context, launcherPackage, true);
                 break;
             case APEX:
                 try {
