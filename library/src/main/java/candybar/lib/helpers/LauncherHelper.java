@@ -165,6 +165,14 @@ public class LauncherHelper {
                         // Lawnchair 12 (app.lawnchair) doesn't support direct apply
                         return !packageName.startsWith("app");
                     }
+
+                    @Override
+                    public void run(Context context, String packageName) throws ActivityNotFoundException, NullPointerException {
+                        final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
+                        lawnchair.putExtra("packageName", context.getPackageName());
+                        context.startActivity(lawnchair);
+                        ((AppCompatActivity) context).finish();
+                    }
                 }),
         LGHOME(
                 "LG Home",
@@ -644,20 +652,10 @@ public class LauncherHelper {
                 );
                 break;
             case LAWNCHAIR:
-                if (launcherPackage.startsWith("app")) {
-                    // Lawnchair 12 (app.lawnchair) does not support direct apply yet
+                if (launcher.supportsDirectApply(launcherPackage)) {
+                    launcher.applyDirectly(context, launcherPackage, true);
+                } else {
                     applyManual(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
-                    break;
-                }
-
-                try {
-                    final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
-                    lawnchair.putExtra("packageName", context.getPackageName());
-                    context.startActivity(lawnchair);
-                    ((AppCompatActivity) context).finish();
-                    logLauncherDirectApply(launcherPackage);
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
                 }
                 break;
             case LGHOME:
