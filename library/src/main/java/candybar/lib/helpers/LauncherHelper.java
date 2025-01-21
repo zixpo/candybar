@@ -51,58 +51,47 @@ public class LauncherHelper {
                 "Action",
                 R.drawable.ic_launcher_action,
                 new String[]{"com.actionlauncher.playstore", "com.chrislacy.actionlauncher.pro"},
-                (context, launcherPackageName) -> {
-                    final Intent action = context.getPackageManager().getLaunchIntentForPackage(launcherPackageName);
-                    action.putExtra("apply_icon_pack", context.getPackageName());
-                    action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(action);
-                    ((AppCompatActivity) context).finish();
-                }
+                (context, launcherPackageName) -> context.getPackageManager().getLaunchIntentForPackage(launcherPackageName)
+                    .putExtra("apply_icon_pack", context.getPackageName())
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                null
         ),
         ADW(
                 "ADW",
                 R.drawable.ic_launcher_adw,
                 new String[]{"org.adw.launcher", "org.adwfreak.launcher"},
-                (context, launcherPackageName) -> {
-                    final Intent adw = new Intent("org.adw.launcher.SET_THEME");
-                    adw.putExtra("org.adw.launcher.theme.NAME", context.getPackageName());
-                    adw.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(adw);
-                    ((AppCompatActivity) context).finish();
-                }
+                (context, launcherPackageName) -> new Intent("org.adw.launcher.SET_THEME")
+                        .putExtra("org.adw.launcher.theme.NAME", context.getPackageName())
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                null
         ),
         APEX(
                 "Apex",
                 R.drawable.ic_launcher_apex,
                 new String[]{"com.anddoes.launcher", "com.anddoes.launcher.pro"},
-                (context, launcherPackageName) -> {
-                    final Intent apex = new Intent("com.anddoes.launcher.SET_THEME");
-                    apex.putExtra("com.anddoes.launcher.THEME_PACKAGE_NAME", context.getPackageName());
-                    apex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(apex);
-                    ((AppCompatActivity) context).finish();
-                }),
+                (context, launcherPackageName) -> new Intent("com.anddoes.launcher.SET_THEME")
+                        .putExtra("com.anddoes.launcher.THEME_PACKAGE_NAME", context.getPackageName())
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                null
+        ),
         BEFORE(
                 "Before",
                 R.drawable.ic_launcher_before,
                 new String[]{"com.beforesoft.launcher"},
-                (context, launcherPackageName) -> {
-                    final Intent before = new Intent("com.beforesoftware.launcher.APPLY_ICONS");
-                    before.putExtra("packageName", context.getPackageName());
-                    before.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(before);
-                    ((AppCompatActivity) context).finish();
-                }),
+                (context, launcherPackageName) -> new Intent("com.beforesoftware.launcher.APPLY_ICONS")
+                        .putExtra("packageName", context.getPackageName())
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                null
+        ),
         CMTHEME(
                 "CM Theme",
                 R.drawable.ic_launcher_cm,
                 new String[]{"org.cyanogenmod.theme.chooser"},
-                (context, launcherPackageName) -> {
-                    final Intent cmtheme = new Intent("android.intent.action.MAIN");
-                    cmtheme.setComponent(new ComponentName(launcherPackageName, "org.cyanogenmod.theme.chooser.ChooserActivity"));
-                    cmtheme.putExtra("pkgName", context.getPackageName());
-                    context.startActivity(cmtheme);
-                }),
+                (context, launcherPackageName) -> new Intent("android.intent.action.MAIN")
+                    .setComponent(new ComponentName(launcherPackageName, "org.cyanogenmod.theme.chooser.ChooserActivity"))
+                    .putExtra("pkgName", context.getPackageName()),
+                null
+        ),
         COLOR_OS(
                 "ColorOS",
                 R.drawable.ic_launcher_color_os,
@@ -111,16 +100,22 @@ public class LauncherHelper {
                 "GO EX",
                 R.drawable.ic_launcher_go,
                 new String[]{"com.gau.go.launcherex"},
-                (context, launcherPackageName) -> {
-                    final Intent goex = context.getPackageManager().getLaunchIntentForPackage("com.gau.go.launcherex");
-                    final Intent go = new Intent("com.gau.go.launcherex.MyThemes.mythemeaction");
-                    go.putExtra("type", 1);
-                    go.putExtra("pkgname", context.getPackageName());
-                    goex.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.sendBroadcast(go);
-                    context.startActivity(goex);
-                    ((AppCompatActivity) context).finish();
-                }),
+                new DirectApply() {
+                    @Override
+                    public Intent getActivity(Context context, String launcherPackageName) {
+                        return context.getPackageManager().getLaunchIntentForPackage("com.gau.go.launcherex")
+                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }
+
+                    @Override
+                    public Intent getBroadcast(Context context) {
+                        return new Intent("com.gau.go.launcherex.MyThemes.mythemeaction")
+                                .putExtra("type", 1)
+                                .putExtra("pkgname", context.getPackageName());
+                    }
+                },
+                null
+        ),
         HIOS(
                 "HiOS",
                 R.drawable.ic_launcher_hios,
@@ -145,13 +140,13 @@ public class LauncherHelper {
                     }
 
                     @Override
-                    public void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
-                        final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
-                        lawnchair.putExtra("packageName", context.getPackageName());
-                        context.startActivity(lawnchair);
-                        ((AppCompatActivity) context).finish();
+                    public Intent getActivity(Context context, String launcherName) {
+                        return new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null)
+                                .putExtra("packageName", context.getPackageName());
                     }
-                }),
+                },
+                null
+        ),
         LGHOME(
                 "LG Home",
                 R.drawable.ic_launcher_lg,
@@ -160,12 +155,10 @@ public class LauncherHelper {
                 "Lucid",
                 R.drawable.ic_launcher_lucid,
                 new String[]{"com.powerpoint45.launcher"},
-                (context, launcherPackageName) -> {
-                    final Intent lucid = new Intent("com.powerpoint45.action.APPLY_THEME", null);
-                    lucid.putExtra("icontheme", context.getPackageName());
-                    context.startActivity(lucid);
-                    ((AppCompatActivity) context).finish();
-                }),
+                (context, launcherPackageName) -> new Intent("com.powerpoint45.action.APPLY_THEME", null)
+                        .putExtra("icontheme", context.getPackageName()),
+                null
+        ),
         NOTHING(
                 "Nothing",
                 R.drawable.ic_launcher_nothing,
@@ -174,14 +167,12 @@ public class LauncherHelper {
                 "Nougat",
                 R.drawable.ic_launcher_nougat,
                 new String[]{"me.craftsapp.nlauncher"},
-                (context, launcherPackageName) -> {
-                    final Intent nougat = new Intent("me.craftsapp.nlauncher");
-                    nougat.setAction("me.craftsapp.nlauncher.SET_THEME");
-                    nougat.putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName());
-                    nougat.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(nougat);
-                    ((AppCompatActivity) context).finish();
-                }),
+                (context, launcherPackageName) -> new Intent("me.craftsapp.nlauncher")
+                    .setAction("me.craftsapp.nlauncher.SET_THEME")
+                    .putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName())
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                null
+        ),
         NOVA(
                 "Nova",
                 R.drawable.ic_launcher_nova,
@@ -197,9 +188,10 @@ public class LauncherHelper {
                         nova.putExtra("com.teslacoilsw.launcher.extra.ICON_THEME_RESHAPE", reshapeSetting);
                     }
                     nova.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(nova);
-                    ((AppCompatActivity) context).finish();
-                }),
+                    return nova;
+                },
+                null
+        ),
         OXYGEN_OS(
                 "OxygenOS",
                 R.drawable.ic_launcher_oxygen_os,
@@ -212,39 +204,41 @@ public class LauncherHelper {
                 "Projectivy",
                 R.drawable.ic_launcher_projectivy,
                 new String[]{"com.spocky.projengmenu"},
-                (context, launcherPackageName) -> {
-                    final Intent projectivy = new Intent("com.spocky.projengmenu.APPLY_ICONPACK");
-                    projectivy.setPackage("com.spocky.projengmenu");
-                    projectivy.putExtra("com.spocky.projengmenu.extra.ICONPACK_PACKAGENAME", context.getPackageName());
-                    projectivy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(projectivy);
-                    ((AppCompatActivity) context).finish();
-                }),
+                (context, launcherPackageName) -> new Intent("com.spocky.projengmenu.APPLY_ICONPACK")
+                        .setPackage("com.spocky.projengmenu")
+                        .putExtra("com.spocky.projengmenu.extra.ICONPACK_PACKAGENAME", context.getPackageName())
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                null
+        ),
         SMART(
                 "Smart",
                 R.drawable.ic_launcher_smart,
                 new String[]{"ginlemon.flowerfree", "ginlemon.flowerpro", "ginlemon.flowerpro.special"},
-                (context, launcherPackageName) -> {
-                    final Intent smart = new Intent("ginlemon.smartlauncher.setGSLTHEME");
-                    smart.putExtra("package", context.getPackageName());
-                    smart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(smart);
-                    ((AppCompatActivity) context).finish();
-                }),
+                (context, launcherPackageName) -> new Intent("ginlemon.smartlauncher.setGSLTHEME")
+                        .putExtra("package", context.getPackageName())
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                null
+        ),
         SOLO(
                 "Solo",
                 R.drawable.ic_launcher_solo,
                 new String[]{"home.solo.launcher.free"},
-                (context, launcherPackageName) -> {
-                    final Intent solo = context.getPackageManager().getLaunchIntentForPackage("home.solo.launcher.free");
-                    final Intent soloAction = new Intent("home.solo.launcher.free.APPLY_THEME");
-                    soloAction.putExtra("EXTRA_THEMENAME", context.getResources().getString(R.string.app_name));
-                    soloAction.putExtra("EXTRA_PACKAGENAME", context.getPackageName());
-                    solo.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.sendBroadcast(soloAction);
-                    context.startActivity(solo);
-                    ((AppCompatActivity) context).finish();
-                }),
+                new DirectApply() {
+                    @Override
+                    public Intent getActivity(Context context, String launcherPackageName) {
+                        return context.getPackageManager().getLaunchIntentForPackage("home.solo.launcher.free")
+                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }
+
+                    @Override
+                    public Intent getBroadcast(Context context) {
+                        return new Intent("home.solo.launcher.free.APPLY_THEME")
+                                .putExtra("EXTRA_THEMENAME", context.getResources().getString(R.string.app_name))
+                                .putExtra("EXTRA_PACKAGENAME", context.getPackageName());
+                    }
+                },
+                null
+        ),
         STOCK_LEGACY(
                 /*
                  * Historically, ColorOS, OxygenOS and realme UI were standalone launcher variants
@@ -274,37 +268,37 @@ public class LauncherHelper {
                 "Flick",
                 R.drawable.ic_launcher_flick,
                 new String[]{"com.universallauncher.universallauncher"},
-                (context, launcherPackageName) -> {
-                    final Intent flick = context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher");
-                    final Intent flickAction = new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER");
-                    flickAction.putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName());
-                    flickAction.setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
-                    flick.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.sendBroadcast(flickAction);
-                    context.startActivity(flick);
-                    ((AppCompatActivity) context).finish();
-                }),
+                new DirectApply() {
+                    @Override
+                    public Intent getActivity(Context context, String launcherPackageName) {
+                        return context.getPackageManager().getLaunchIntentForPackage("com.universallauncher.universallauncher")
+                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }
+                    @Override
+                    public Intent getBroadcast(Context context) {
+                        return new Intent("com.universallauncher.universallauncher.FLICK_ICON_PACK_APPLIER")
+                                .putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName())
+                                .setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
+                    }
+                }, null
+        ),
         SQUARE(
                 "Square",
                 R.drawable.ic_launcher_square,
                 new String[]{"com.ss.squarehome2"},
-                (context, launcherPackageName) -> {
-                    final Intent square = new Intent("com.ss.squarehome2.ACTION_APPLY_ICONPACK");
-                    square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
-                    square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
-                    context.startActivity(square);
-                    // FIXME: We never call ((AppCompatActivity) context).finish(); here, is that intentional?
-                }),
+                (context, launcherPackageName) -> new Intent("com.ss.squarehome2.ACTION_APPLY_ICONPACK")
+                        .setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"))
+                        .putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName()),
+                null
+        ),
         NIAGARA(
                 "Niagara",
                 R.drawable.ic_launcher_niagara,
                 new String[]{"bitpit.launcher"},
-                (context, launcherPackageName) -> {
-                    final Intent niagara = new Intent("bitpit.launcher.APPLY_ICONS");
-                    niagara.putExtra("packageName", context.getPackageName());
-                    context.startActivity(niagara);
-                    // FIXME: We never call ((AppCompatActivity) context).finish(); here, is that intentional?
-                }),
+                (context, launcherPackageName) -> new Intent("bitpit.launcher.APPLY_ICONS")
+                        .putExtra("packageName", context.getPackageName()),
+                null
+        ),
         HYPERION(
                 "Hyperion",
                 R.drawable.ic_launcher_hyperion,
@@ -329,15 +323,13 @@ public class LauncherHelper {
                 "ZenUI",
                 R.drawable.ic_launcher_zenui,
                 new String[]{"com.asus.launcher"},
-                (context, launcherPackageName) -> {
-                    final Intent asus = new Intent("com.asus.launcher");
-                    asus.setAction("com.asus.launcher.intent.action.APPLY_ICONPACK");
-                    asus.addCategory(Intent.CATEGORY_DEFAULT);
-                    asus.putExtra("com.asus.launcher.iconpack.PACKAGE_NAME", context.getPackageName());
-                    asus.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(asus);
-                    ((AppCompatActivity) context).finish();
-                });
+                (context, launcherPackageName) -> new Intent("com.asus.launcher")
+                        .setAction("com.asus.launcher.intent.action.APPLY_ICONPACK")
+                        .addCategory(Intent.CATEGORY_DEFAULT)
+                        .putExtra("com.asus.launcher.iconpack.PACKAGE_NAME", context.getPackageName())
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                null
+        );
 
         /**
          * Interface for launchers to implement when they support applying icons directly, without
