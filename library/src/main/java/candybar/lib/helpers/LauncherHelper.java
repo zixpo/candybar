@@ -517,10 +517,18 @@ public class LauncherHelper {
          * not a guarantee, so make sure to catch the exceptions thrown by this method and handle
          * them gracefully.
          *
-         * <p><b>Credit where credit is due</b></p>
-         * <p>The activities, intents, logic and fallbacks behind this simple method are the
-         * collective work of dozens of open source developers carried out over many years. If you
-         * use this method outside of the CandyBar app, please credit the contributors.</p>
+         * <p>
+         *  <sup>
+         *      <b>Credit where credit is due ♥</b><br>
+         *
+         *     The instructions, logic and fallback behind this simple method are the
+         *     collective work of dozens of open source developers and translators carried
+         *     out over many years. If you use this method outside of the CandyBar dashboard,
+         *     please credit the contributors.<br>
+         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
+         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
+         *  </sup>
+         * </p>
          *
          * @param launcherPackageName The package name of the launcher to apply the icon pack to.
          * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
@@ -546,6 +554,7 @@ public class LauncherHelper {
          * rather handle exceptions yourself, use `applyDirectly` without the boolean parameter
          * and catch exceptions `LauncherNotInstalledException`, `LauncherDirectApplyFailed` and
          * `LauncherDirectApplyNotSupported`.
+         *
          * @param launcherPackageName The package name of the launcher to apply the icon pack to.
          * @param openGooglePlayUponError If true, open Google Play if the launcher isn't installed.
          */
@@ -561,6 +570,31 @@ public class LauncherHelper {
             }
         }
 
+        /**
+         * Show manual instructions to the user on how to apply the icon pack to the launcher. In
+         * case the launcher offers a dedicated settings activity, it will be called after the user
+         * confirms the dialog. (If the user cancels the dialog, nothing happens.)
+         *
+         * <p>
+         *  <sup>
+         *      <b>Credit where credit is due ♥</b><br>
+         *
+         *     The instructions, logic and fallback behind this simple method are the
+         *     collective work of dozens of open source developers and translators carried
+         *     out over many years. If you use this method outside of the CandyBar dashboard,
+         *     please credit the contributors.<br>
+         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
+         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
+         *  </sup>
+         * </p>
+         *
+         * @param launcherPackageName The package name of the launcher to apply the icon pack to.
+         * @param launcherName The name of the launcher to display in the dialog.
+         * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
+         * @throws LauncherManualApplyNotSupported If the launcher doesn't support applying icon packs manually.
+         * @throws LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
+         *
+         */
         public void applyManually(Context context, String launcherPackageName, String launcherName) throws ActivityNotFoundException, NullPointerException {
             if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
             if (manualApplyFunc == null) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
