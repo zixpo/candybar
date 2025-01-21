@@ -365,6 +365,8 @@ public class LauncherHelper {
         private interface ManualApply {
             default boolean isSupported(String packageName) { return true; }
 
+            default Intent getSettingsActivity(Context context, String launcherPackageName) { return null; }
+
             default String getCompatibilityMessage(Context context, String launcherName) {
                 return context.getResources().getString(
                         R.string.apply_manual,
@@ -380,7 +382,8 @@ public class LauncherHelper {
                         context,
                         launcherName,
                         getCompatibilityMessage(context, launcherName),
-                        getInstructionSteps(context, launcherName)
+                        getInstructionSteps(context, launcherName),
+                        getSettingsActivity(context, launcherPackageName)
                 );
             }
         }
@@ -499,8 +502,7 @@ public class LauncherHelper {
         }
 
         /**
-         * Check if the launcher supports applying icon packs manually. Not all launchers do,
-         * specifically not those that want to stay close to Vanilla Android.
+         * Check if the launcher supports applying icon packs manually.
          * @param launcherPackageName The package name of the launcher to check
          * @return true if the launcher supports manual apply, false otherwise
          */
@@ -509,6 +511,16 @@ public class LauncherHelper {
                 return manualApplyFunc.isSupported(launcherPackageName);
             }
             return false;
+        }
+
+        /**
+         * Check if the launcher supports icon packs. Not all launchers do specifically not those
+         * that want to stay close to Vanilla Android.
+         * @param launcherPackageName The package name of the launcher to check
+         * @return true if the launcher supports icon packs, false otherwise
+         */
+        public boolean supportsIconPacks(String launcherPackageName) {
+            return !supportsDirectApply(launcherPackageName) && !supportsManualApply(launcherPackageName);
         }
 
         /**
@@ -540,6 +552,7 @@ public class LauncherHelper {
         public void applyDirectly(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
             if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
             if (directApplyFunc == null) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
+            if (!directApplyFunc.isSupported(launcherPackageName)) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
             try {
                 directApplyFunc.run(context, launcherPackageName);
                 logLauncherDirectApply(launcherPackageName);
@@ -598,6 +611,7 @@ public class LauncherHelper {
         public void applyManually(Context context, String launcherPackageName, String launcherName) throws ActivityNotFoundException, NullPointerException {
             if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
             if (manualApplyFunc == null) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
+            if (!manualApplyFunc.isSupported(launcherPackageName)) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
 
             try {
                 manualApplyFunc.run(context, launcherPackageName, launcherName);
@@ -626,7 +640,7 @@ public class LauncherHelper {
     public static void apply(@NonNull Context context, String packageName, String launcherName) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "apply");
                     put("action", "open_dialog");
                     put("launcher", packageName);
@@ -926,7 +940,7 @@ public class LauncherHelper {
                     .onPositive((dialog, which) -> {
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "apply");
                                     put("action", "manual_open_confirm");
                                     put("launcher", launcherPackage);
@@ -952,7 +966,7 @@ public class LauncherHelper {
                     .onNegative(((dialog, which) -> {
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "click",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("section", "apply");
                                     put("action", "manual_open_cancel");
                                     put("launcher", launcherPackage);
@@ -985,7 +999,7 @@ public class LauncherHelper {
                 .onPositive((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
-                            new HashMap<String, Object>() {{
+                            new HashMap<>() {{
                                 put("section", "apply");
                                 put("action", "manual_open_confirm");
                                 put("launcher", launcherName);
@@ -996,7 +1010,7 @@ public class LauncherHelper {
                 .onNegative(((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
-                            new HashMap<String, Object>() {{
+                            new HashMap<>() {{
                                 put("section", "apply");
                                 put("action", "manual_open_cancel");
                                 put("launcher", launcherName);
