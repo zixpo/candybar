@@ -194,7 +194,7 @@ public class IconsHelper {
     public static void selectIcon(@NonNull Context context, int action, Icon icon) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "icons");
                     put("action", "pick_icon");
                     put("item", icon.getDrawableName());
@@ -239,7 +239,7 @@ public class IconsHelper {
                     .load("drawable://" + icon.getRes())
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .listener(new RequestListener<Bitmap>() {
+                    .listener(new RequestListener<>() {
                         private void handleResult(Bitmap bitmap) {
                             Intent intent = new Intent();
                             if (bitmap != null) {

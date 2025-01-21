@@ -62,7 +62,9 @@ public class AboutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "view",
-                new HashMap<String, Object>() {{ put("section", "about"); }}
+                new HashMap<>() {{
+                    put("section", "about");
+                }}
         );
 
         resetRecyclerViewPadding(requireActivity().getResources().getConfiguration().orientation);
