@@ -44,6 +44,9 @@ public class LauncherHelper {
 
     private static final String thirdPartyHelperURL = "https://play.google.com/store/apps/details?id=rk.android.app.shortcutmaker";
 
+    private static final Launcher.DirectApply DIRECT_APPLY_NOT_SUPPORTED = null;
+    private static final Launcher.ManualApply MANUAL_APPLY_NOT_SUPPORTED = null;
+
     public enum Launcher {
         UNKNOWN,
 
@@ -54,7 +57,7 @@ public class LauncherHelper {
                 (context, launcherPackageName) -> context.getPackageManager().getLaunchIntentForPackage(launcherPackageName)
                     .putExtra("apply_icon_pack", context.getPackageName())
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         ADW(
                 "ADW",
@@ -63,7 +66,7 @@ public class LauncherHelper {
                 (context, launcherPackageName) -> new Intent("org.adw.launcher.SET_THEME")
                         .putExtra("org.adw.launcher.theme.NAME", context.getPackageName())
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         APEX(
                 "Apex",
@@ -72,7 +75,7 @@ public class LauncherHelper {
                 (context, launcherPackageName) -> new Intent("com.anddoes.launcher.SET_THEME")
                         .putExtra("com.anddoes.launcher.THEME_PACKAGE_NAME", context.getPackageName())
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         BEFORE(
                 "Before",
@@ -81,7 +84,7 @@ public class LauncherHelper {
                 (context, launcherPackageName) -> new Intent("com.beforesoftware.launcher.APPLY_ICONS")
                         .putExtra("packageName", context.getPackageName())
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         CMTHEME(
                 "CM Theme",
@@ -90,7 +93,7 @@ public class LauncherHelper {
                 (context, launcherPackageName) -> new Intent("android.intent.action.MAIN")
                     .setComponent(new ComponentName(launcherPackageName, "org.cyanogenmod.theme.chooser.ChooserActivity"))
                     .putExtra("pkgName", context.getPackageName()),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         COLOR_OS(
                 "ColorOS",
@@ -114,7 +117,7 @@ public class LauncherHelper {
                                 .putExtra("pkgname", context.getPackageName());
                     }
                 },
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         HIOS(
                 "HiOS",
@@ -145,7 +148,7 @@ public class LauncherHelper {
                                 .putExtra("packageName", context.getPackageName());
                     }
                 },
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         LGHOME(
                 "LG Home",
@@ -157,7 +160,7 @@ public class LauncherHelper {
                 new String[]{"com.powerpoint45.launcher"},
                 (context, launcherPackageName) -> new Intent("com.powerpoint45.action.APPLY_THEME", null)
                         .putExtra("icontheme", context.getPackageName()),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         NOTHING(
                 "Nothing",
@@ -171,7 +174,7 @@ public class LauncherHelper {
                     .setAction("me.craftsapp.nlauncher.SET_THEME")
                     .putExtra("me.craftsapp.nlauncher.theme.NAME", context.getPackageName())
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         NOVA(
                 "Nova",
@@ -190,7 +193,7 @@ public class LauncherHelper {
                     nova.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     return nova;
                 },
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         OXYGEN_OS(
                 "OxygenOS",
@@ -208,7 +211,7 @@ public class LauncherHelper {
                         .setPackage("com.spocky.projengmenu")
                         .putExtra("com.spocky.projengmenu.extra.ICONPACK_PACKAGENAME", context.getPackageName())
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         SMART(
                 "Smart",
@@ -217,7 +220,7 @@ public class LauncherHelper {
                 (context, launcherPackageName) -> new Intent("ginlemon.smartlauncher.setGSLTHEME")
                         .putExtra("package", context.getPackageName())
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         SOLO(
                 "Solo",
@@ -237,7 +240,7 @@ public class LauncherHelper {
                                 .putExtra("EXTRA_PACKAGENAME", context.getPackageName());
                     }
                 },
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         STOCK_LEGACY(
                 /*
@@ -280,7 +283,7 @@ public class LauncherHelper {
                                 .putExtra("com.universallauncher.universallauncher.ICON_THEME_PACKAGE", context.getPackageName())
                                 .setComponent(new ComponentName("com.universallauncher.universallauncher", "com.android.launcher3.icon.ApplyIconPack"));
                     }
-                }, null
+                }, MANUAL_APPLY_NOT_SUPPORTED
         ),
         SQUARE(
                 "Square",
@@ -289,7 +292,7 @@ public class LauncherHelper {
                 (context, launcherPackageName) -> new Intent("com.ss.squarehome2.ACTION_APPLY_ICONPACK")
                         .setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"))
                         .putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName()),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         NIAGARA(
                 "Niagara",
@@ -297,7 +300,7 @@ public class LauncherHelper {
                 new String[]{"bitpit.launcher"},
                 (context, launcherPackageName) -> new Intent("bitpit.launcher.APPLY_ICONS")
                         .putExtra("packageName", context.getPackageName()),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         ),
         HYPERION(
                 "Hyperion",
@@ -328,7 +331,7 @@ public class LauncherHelper {
                         .addCategory(Intent.CATEGORY_DEFAULT)
                         .putExtra("com.asus.launcher.iconpack.PACKAGE_NAME", context.getPackageName())
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                null
+                MANUAL_APPLY_NOT_SUPPORTED
         );
 
         /**
