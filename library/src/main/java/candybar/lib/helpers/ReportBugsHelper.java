@@ -154,7 +154,7 @@ public class ReportBugsHelper {
                 }
 
                 String drawable = drawables.get(icon.getDrawableName());
-                if ((drawable == null || drawable.length() == 0) && !addedIcons.contains(icon.getDrawableName())) {
+                if ((drawable == null || drawable.isEmpty()) && !addedIcons.contains(icon.getDrawableName())) {
                     addedIcons.add(icon.getDrawableName());
                     writer.append("Drawable: ").append(icon.getDrawableName()).append(".png")
                             .append("\r\n\r\n");
@@ -216,7 +216,7 @@ public class ReportBugsHelper {
     @Nullable
     public static File buildCrashLog(@NonNull Context context, @NonNull String stackTrace) {
         try {
-            if (stackTrace.length() == 0) return null;
+            if (stackTrace.isEmpty()) return null;
 
             File crashLog = new File(context.getCacheDir(), CRASHLOG);
             String deviceInfo = DeviceHelper.getDeviceInfoForCrashReport(context);

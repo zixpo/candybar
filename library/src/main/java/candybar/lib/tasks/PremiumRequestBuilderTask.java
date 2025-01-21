@@ -165,13 +165,13 @@ public class PremiumRequestBuilderTask extends AsyncTaskBase {
         }
 
         String subject = mContext.get().getResources().getString(R.string.premium_request_email_subject);
-        if (subject.length() == 0)
+        if (subject.isEmpty())
             subject = mContext.get().getResources().getString(R.string.app_name) + " Premium Icon Request";
         subject = "Rebuilt: " + subject;
 
         String emailAddress = mContext.get().getResources().getString(R.string.premium_request_email);
         // Fallback to regular request email
-        if (emailAddress.length() == 0)
+        if (emailAddress.isEmpty())
             emailAddress = mContext.get().getResources().getString(R.string.regular_request_email);
 
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
