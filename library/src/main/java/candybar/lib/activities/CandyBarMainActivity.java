@@ -865,7 +865,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             image.setRatio(16, 9);
         }
 
-        if (titleText.length() == 0) {
+        if (titleText.isEmpty()) {
             container.setVisibility(View.GONE);
         } else {
             title.setText(titleText);

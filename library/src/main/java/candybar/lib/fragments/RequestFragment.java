@@ -276,7 +276,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 }
 
                 if ((requireActivity().getResources().getBoolean(R.bool.json_check_before_request)) &&
-                        (CandyBarApplication.getConfiguration().getConfigHandler().configJson(requireActivity()).length() != 0)) {
+                        (!CandyBarApplication.getConfiguration().getConfigHandler().configJson(requireActivity()).isEmpty())) {
                     mAsyncTask = new CheckConfig().executeOnThreadPool();
                 } else {
                     mAsyncTask = new RequestLoader().executeOnThreadPool();
@@ -479,7 +479,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
                         List<ResolveInfo> resolveInfos = requireActivity().getPackageManager()
                                 .queryIntentActivities(intent, 0);
-                        if (resolveInfos.size() == 0) {
+                        if (resolveInfos.isEmpty()) {
                             noEmailClientError = true;
                             return false;
                         }

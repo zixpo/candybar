@@ -127,7 +127,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
     public void search(String string) {
         String query = string.toLowerCase(Locale.getDefault()).trim();
         mWallpapers.clear();
-        if (query.length() == 0) mWallpapers.addAll(mWallpapersAll);
+        if (query.isEmpty()) mWallpapers.addAll(mWallpapersAll);
         else {
             for (int i = 0; i < mWallpapersAll.size(); i++) {
                 Wallpaper wallpaper = mWallpapersAll.get(i);
