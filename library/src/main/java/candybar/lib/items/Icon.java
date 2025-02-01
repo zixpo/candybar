@@ -3,6 +3,7 @@ package candybar.lib.items;
 import androidx.annotation.NonNull;
 
 import java.util.List;
+import java.util.Objects;
 
 import candybar.lib.utils.AlphanumComparator;
 
@@ -107,4 +108,8 @@ public class Icon {
             return super.compare(s1, s2);
         }
     };
+    @Override
+    public int hashCode() {
+        return Objects.hash(mRes, mTitle);
+    }
 }
