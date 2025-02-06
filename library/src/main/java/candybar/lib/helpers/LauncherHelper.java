@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.DrawableRes;
@@ -97,6 +98,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_holohd,
                 new String[]{"com.mobint.hololauncher.hd"},
                 false),
+        ION_LAUNCHER(
+                "Ion Launcher",
+                R.drawable.ic_launcher_ion,
+                new String[]{"one.zagura.IonLauncher"},
+                true),
         LAWNCHAIR(
                 "Lawnchair",
                 R.drawable.ic_launcher_lawnchair,
@@ -544,6 +550,24 @@ public class LauncherHelper {
                 break;
             case HYPERION:
                 applyManual(context, launcherPackage, launcherName, "projekt.launcher.activities.SettingsActivity");
+                break;
+            case ION_LAUNCHER:
+                try {
+                    Intent ion = new Intent();
+                    ion.setComponent(new ComponentName("one.zagura.IonLauncher", "one.zagura.IonLauncher.ui.settings.iconPackPicker.IconPackPickerActivity"));
+                    ion.putExtra("pkgname", context.getPackageName());
+                    context.startActivity(ion);
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
                 break;
             case KISS:
                 applyWithInstructions(
