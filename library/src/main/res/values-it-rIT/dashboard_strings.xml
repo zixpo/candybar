@@ -105,6 +105,7 @@
     <string name="home_icon_request_missed_apps">%d app mancanti</string>
     <!-- Apply -->
     <string name="apply_installed">Launcher installati</string>
+    <string name="apply_installed_launchers">Launcher Installati</string>
     <string name="apply_supported">Launcher supportati</string>
     <string name="apply_manual">%1$s non supporta l\'applicazione diretta dei pacchetti icone però puoi applicare %2$s manualmente dalle impostazioni del launcher.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso non supporta l\'applicazione diretta ma puoi seguire questi passaggi:</string>
@@ -189,16 +190,21 @@
     <string name="request_email_client">Scegli l\'app che vuoi utilizzare per inviare la richiesta di icone</string>
     <string name="request_app_disabled">Non stai utilizzando l\'ultima versione dell\'app e siccome le icone richieste potrebbero essere già state aggiunte nell\'ultimo update, devi aggiornare all\'ultima versione prima di poter effettuare una richiesta.</string>
     <string name="connection_error_long">Impossibile caricare i dati dal server. Per favore, controlla la tua connessione internet.</string>
+    <string name="unable_to_load_config">Si è verificato un errore durante l\'acquisizione di informazioni dal server.</string>
+    <string name="request_limit">È possibile richiedere solo  %d  app con la richiesta free.</string>
     <string name="request_used">Hai richiesto %d icone</string>
     <string name="request_limit_buy">Puoi acquistare la funzione Premium per richiedere più icone.</string>
     <string name="request_limit_reset">Il limite delle icone richieste verrà azzerato ad ogni aggiornamento.</string>
     <!-- Regular Request -->
     <string name="regular_request">Richiesta icone standard</string>
+    <string name="regular_request_desc">Chiedi la tua icona e lo sviluppatore cercherà di includere le icone che hai richiesto.</string>
     <string name="regular_request_count">\n%d richieste totali</string>
     <string name="regular_request_used">\n%d richieste usate</string>
     <string name="regular_request_available">\n%d richieste disponibili</string>
     <!-- Premium Request -->
     <string name="premium_request">Richiesta Icone Premium</string>
+    <string name="premium_request_no_internet">Assicurati che il tuo dispositivo sia collegato ad internet prima di inviare una richiesta premium</string>
+    <string name="premium_request_desc">La funzione Premium è un servizio a pagamento. Utilizzando questa funzione riceverei le icone richieste nel più breve tempo possibile.</string>
     <string name="premium_request_buy">Acquista</string>
     <string name="premium_request_count">\n%d richieste totali</string>
     <string name="premium_request_used">\n%d richieste usate</string>
@@ -208,6 +214,8 @@ devi utilizzarle tutte prima di acquistare di nuovo la funzione Premium</string>
     <string name="premium_request_limit">Hai soltanto %d icone premium</string>
     <string name="premium_request_limit1">hai selezionato %d  app(s)
 \n\nDevi prima completare la funzione Premium per poter usare la richiesta di icone gratuita di nuovo.</string>
+    <string name="premium_request_consume_failed">Impossibile utilizzare la funzione Premium, controlla che il tuo dispositivo sia connesso ad internet e prova di nuovo.
+Vai nelle Impostazioni per resettare la funzione Premium.</string>
     <string name="premium_request_rebuilding">Riscrivendo Richiesta Premium …</string>
     <string name="premium_request_rebuilding_empty">Nessuna Richiesta Premium effettuata</string>
     <string name="premium_request_exist">Hai ancora a disposizione la Richiesta Icone Premium.
@@ -231,6 +239,7 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="presets_load_failed">Impossibile caricare i preset</string>
     <string name="presets_storage_permission">È necessario il permesso alla memoria per caricare gli sfondi</string>
     <string name="presets_required_apps">Applicazioni richieste per usare questi preset</string>
+    <string name="presets_required_apps_not_installed">Le applicazioni richieste per usare i preset non sono installate. Per favore, installa le applicazioni mancanti e prova di nuovo.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Data e Cache</string>
     <string name="pref_data_cache">Pulisci Cache</string>
@@ -252,6 +261,8 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="pref_theme_header">Tema</string>
     <string name="pref_theme_dark">Tema scuro</string>
     <string name="pref_theme_dark_desc">Usa colori scuri per il tema dell\'applicazione</string>
+    <string name="pref_notifications_header">Notifiche</string>
+    <string name="pref_notifications">Ricevi notifiche</string>
     <string name="pref_wallpaper_header">Sfondo</string>
     <string name="pref_wallpaper_location">Destinazione sfondi salvati</string>
     <string name="pref_language_header">Lingua</string>
@@ -264,11 +275,15 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="theme_name_auto">Automatico</string>
     <string name="theme_name_light">Chiaro</string>
     <string name="theme_name_dark">Scuro</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Sono necessari i permessi di memorizzazione per salvare lo sfondo</string>
+    <string name="permission_notification_denied_1">L\'autorizzazione alle notifiche è necessaria per ricevere le notifiche dallo sviluppatore</string>
+    <string name="permission_notification_denied_2">Abilita le notifiche dalle impostazioni dell\'app</string>
     <!-- Intent -->
     <string name="app_client">Scegli il client per le email</string>
     <string name="no_email_app">Nessun\'applicazione per inviare email</string>
+    <string name="no_browser">Nessuna applicazione per aprire l\'URL</string>
     <string name="intent_email_failed">Impossibile visualizzare l\'applicazione email</string>
     <string name="intent_email_supported">Supportato</string>
     <string name="intent_email_recommended">Raccomandato</string>
@@ -279,6 +294,7 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="about_privacy_policy_title">Informativa sulla privacy</string>
     <string name="about_terms_and_conditions_title">Termini e Condizioni</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Fornisci una descrizione del tipo di problema che desideri segnalare</string>
     <string name="report_bugs_desc_hint">Descrizione</string>
     <string name="report_bugs_desc_empty">Per favore, inserisci una descrizione</string>
     <string name="report_bugs_building">Creazione lista activity …</string>
@@ -288,9 +304,12 @@ Apri Impostazioni e scegli \"Azzera Acquisti\".</string>
     <string name="donation_success">Grazie per aver fatto una donazione! Ne farò un buon uso!</string>
     <!-- Crash Report -->
     <string name="crash_report">Segnalazione crash</string>
+    <string name="crash_report_message">Sfortunatamente %s si è chiusa inaspettatamente. Scegli \"Invia Report\" per aiutare lo sviluppatore a risolvere il problema.</string>
     <string name="crash_report_send">Invia Report</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar è un progetto open-source sotto Licenza Apache 2.0 per Android, disponibile su GitHub e gratis da usare, sviluppato da Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Licenze Open-Source</string>
     <string name="about_dashboard_contributors">Collaboratori della CandyBar</string>
     <string name="about_dashboard_translator">Traduttori della CandyBar</string>
     <!-- DrawerToggle -->

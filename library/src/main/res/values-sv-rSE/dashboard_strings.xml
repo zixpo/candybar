@@ -1,20 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Instrumentpanel</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Hem</string>
+    <string name="navigation_view_apply">Tillämpa</string>
+    <string name="navigation_view_icons">Ikoner</string>
+    <string name="navigation_view_request">Begäran om ikon</string>
+    <string name="navigation_view_wallpapers">Bakgrundsbilder</string>
+    <string name="navigation_view_presets">Förval</string>
+    <string name="navigation_view_settings">Inställningar</string>
+    <string name="navigation_view_faqs">Vanliga frågor</string>
+    <string name="navigation_view_about">Om</string>
+    <string name="navigation_view_donate">Stöd utveckling</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei inställningar</string>
+    <string name="minute">Minut</string>
+    <string name="hour">Timme</string>
+    <string name="save_setting">Spara</string>
+    <string name="muzei_refresh_duration">Uppdatera varaktighet</string>
+    <string name="muzei_wifi_only">Uppdatera endast från Wi-Fi</string>
+    <string name="muzei_downloaded_only">Ladda endast nerladdade bakgrundsbilder</string>
+    <string name="muzei_settings_ignored">Ikon Pack innehåller inte bakgrundsbilder, inställningar ignoreras.</string>
+    <string name="muzei_settings_saved">Inställningar sparade</string>
     <!-- Menu -->
+    <string name="menu_search">Sök</string>
+    <string name="menu_save">Spara till enhet</string>
+    <string name="menu_select_all">Markera alla</string>
+    <string name="menu_delete">Radera</string>
+    <string name="menu_wallpaper_crop">Beskär bakgrund</string>
+    <string name="menu_apply_homescreen">Hemskärm</string>
+    <string name="menu_apply_lockscreen">Låsskärm</string>
+    <string name="menu_apply_homescreen_lockscreen">Hemskärm &amp; Låsskärm</string>
     <!-- Dialog -->
+    <string name="open">Öppna</string>
+    <string name="close">Stäng</string>
+    <string name="clear">Rensa</string>
+    <string name="ok">Ok</string>
+    <string name="install">Installera</string>
+    <string name="donate">Donera</string>
+    <string name="update">Uppdatera</string>
+    <string name="search_noresult">Inga resultat hittades för \"%s\"</string>
+    <string name="search_faqs">Fråga eller svar</string>
+    <string name="search_icon">Ikon namn</string>
+    <string name="search_wallpapers">Bakgrundsnamn</string>
     <!-- Update -->
+    <string name="checking_for_update">Söker efter uppdatering …</string>
+    <string name="update_available">Uppdatering tillgänglig!</string>
+    <string name="no_update_available">Du använder den senaste versionen!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Version</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Det går inte att läsa in In-app Purchase produkter</string>
     <!-- License -->
+    <string name="license_checking">Kontrollerar licens …</string>
+    <string name="license_check">Kontroll av licens</string>
+    <string name="license_check_success">Licenskontroll framgång. Tack för att du laddar ner appen från Play Store.</string>
+    <string name="license_check_failed">Licenskontroll misslyckades; du laddade inte ner appen från Play Store.
+        Du kommer inte att kunna använda den.</string>
+    <string name="license_check_retry">Det gick inte att kontrollera licensen, försök igen om en stund.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play Store kontroll</string>
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Sök</string>
     <!-- Home -->
+    <string name="home_donate">Donera</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Begäran om ikon</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -29,5 +83,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Öppna</string>
+    <string name="txt_close">Stäng</string>
     <!-- Content descriptions for screen readers -->
 </resources>

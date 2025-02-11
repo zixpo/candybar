@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Tuis</string>
+    <string name="navigation_view_apply">Pas veranderinge toe</string>
+    <string name="navigation_view_icons">Ikone</string>
+    <string name="navigation_view_request">Ikoon Versoek</string>
+    <string name="navigation_view_wallpapers">Muurpapiere</string>
+    <string name="navigation_view_presets">Voorafinstellings</string>
+    <string name="navigation_view_settings">Instellings</string>
+    <string name="navigation_view_faqs">Gereelde vrae</string>
+    <string name="navigation_view_about">Inligting</string>
+    <string name="navigation_view_donate">Ondersteun Ontwikkeling</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei-instellings</string>
+    <string name="minute">Minuut</string>
+    <string name="hour">Uur</string>
+    <string name="save_setting">Stoor</string>
+    <string name="muzei_refresh_duration">Verfris duur</string>
+    <string name="muzei_wifi_only">Verfris slegs vanaf Wi-Fi</string>
+    <string name="muzei_downloaded_only">Laai slegs afgelaaide agtergronde</string>
+    <string name="muzei_settings_ignored">Ikoonpakket bevat nie agtergronde nie, instellings word geïgnoreer.</string>
+    <string name="muzei_settings_saved">Instellings gestoor</string>
     <!-- Menu -->
+    <string name="menu_search">Soek</string>
+    <string name="menu_save">Stoor op toestel</string>
+    <string name="menu_select_all">Kies alles</string>
+    <string name="menu_delete">Stoor op toestel</string>
+    <string name="menu_wallpaper_crop">Snoei muurpapier</string>
+    <string name="menu_apply_homescreen">Tuis skerm</string>
+    <string name="menu_apply_lockscreen">Skermslot</string>
+    <string name="menu_apply_homescreen_lockscreen">Tuisskerm &amp; sluitskerm</string>
     <!-- Dialog -->
+    <string name="open">Maak oop</string>
+    <string name="close">Maak toe</string>
+    <string name="clear">Maak leeg</string>
+    <string name="install">Installeer</string>
+    <string name="donate">Skenk</string>
+    <string name="update">Opdateer</string>
+    <string name="search_noresult">Geen resultaat gevind vir \"%s\" nie</string>
+    <string name="search_faqs">Vraag of antwoord</string>
+    <string name="search_icon">Ikoon Naam</string>
     <!-- Update -->
     <!-- Changelog -->
     <!-- InAppBilling -->
@@ -11,10 +48,13 @@
     <!-- Play Store Installation Check -->
     <!-- Share -->
     <!-- Tap Intro -->
+    <string name="tap_intro_icons_search">Soek</string>
     <!-- Home -->
+    <string name="home_donate">Skenk</string>
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Ikoon Versoek</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->
@@ -29,5 +69,7 @@
     <!-- Crash Report -->
     <!-- Please don't modify this, Just Translate -->
     <!-- DrawerToggle -->
+    <string name="txt_open">Maak oop</string>
+    <string name="txt_close">Maak toe</string>
     <!-- Content descriptions for screen readers -->
 </resources>

@@ -37,13 +37,13 @@
         <item>Я не вижу полное имя иконки</item>
         <item>Как я могу заменить иконки с другим значком?</item>
         <item>Как запросить иконку?</item>
-        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
-        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
+        <item>Как восстановить оставшиеся премиум-запросы после переустановки приложения?</item>
+        <item>После перезапуска моего телефона набор значков не применяется; он восстанавливает значения по умолчанию?</item>
         <item>Почему иконки выглядят пиксельно на моем телефоне?</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on the app drawer changed?</item>
+        <item>Я могу увидеть иконку, включенную во все иконки,
+            но почему не изменился текущий значок в меню приложений?</item>
         <item>Что такое  \"сообщение об ошибках\"?</item>
-        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
+        <item>Мой лаунчер отображается в описании Google Play, но почему он не включен в раздел применения?</item>
         <item>Обои не могут быть применены, просто показывает черный экран?</item>
         <item>Как загрузить только уже загруженные обои?</item>
         <item>Я не хочу скачивать обои каждый раз, когда они обновляются?</item>
@@ -59,40 +59,39 @@
     <string-array name="answers">
         <item>Лаунчер является частью пользовательского интерфейса Android, который позволяет пользователям настраивать домашний экран, запускать приложения, совершать телефонные звонки и выполнять другие задачи на устройствах Android.</item>
         <item>Набор графики, который будет изменять внешний вид иконки вашего приложения</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play Store description.
-            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
-        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
-            If your launcher is not listed there, but this icon pack is compatible with it
-            (see on Google Play Store description for supported launchers),
-            you can apply the icon pack manually in your launcher settings.</item>
-        <item>You can open the navigation drawer and then open \"Icons\"</item>
+        <item>Вам понадобится лаунчер, который поддерживает пользовательские наборы значков.
+            Поддерживаемые лаунчеры перечислены в описании Play Маркета.
+            Если вы путаете с какими лаунчерами должны быть использованы, просто перейдите в раздел \"Применить\" и установите оттуда.</item>
+        <item>Вы можете открыть панель навигации, а затем открыть пункт «Применить».
+            Если ваш лаунчер не указан там, но этот набор иконок совместим с ним
+            (смотрите в описании Google Play Store для поддерживаемых лаунчеров),
+            вы можете применить набор иконок вручную в настройках лаунчера.</item>
+        <item>Вы можете открыть навигационную панель и затем открыть \"Иконки\"</item>
         <item>Просто нажмите на значок. Диалоговое окно предварительного просмотра появится с большим изображением и полным названием значка.</item>
         <item>Это зависит от того, какой лаунчер используется. Не каждый лаунчер поддерживает редактирование иконок.
 В основном вы можете изменить значок, нажав и удерживая значок или дважды нажав на него.</item>
-        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
+        <item>Вы можете открыть панель навигации, затем открыть \"Запрос значка\".</item>
+        <item>Вы можете открыть панель навигации, затем открыть пункт \"Настройки\", выбрать \"Восстановить покупки\".
+            Если перед повторной установкой у вас остались дополнительные премиум запросы, они будут восстановлены.</item>
+        <item>Это произошло потому, что этот набор значков был перемещен на SD-карту; вы должны установить его во внутреннюю память.</item>
+        <item>Проблема может исходить от лаунчера, который Вы использовали при обработке значка.
+Вы можете исправить это путем увеличения размера значков на 115 - 120%.
+В качестве альтернативы вы можете изменить свой лаунчер.</item>
+        <item>Откройте настройки, переключитесь вниз, затем выберите \"Сообщить об ошибках\".</item>
         <item>\"Отчет об ошибках\" используется, чтобы сообщить об ошибках, относящихся к набору значков, а не приборной панели.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
+        <item>Не каждый лаунчер поддерживает прямое применение, некоторые из них не могут быть доступны непосредственно из панели управления.
+      	    Вы можете применить этот набор иконок вручную в отдельных настройках лаунчера.</item>
         <item>Когда вы нажали \"Установить обои\" непосредственно из приложения, оно будет загружен в кэш, тогда приложение будет пытаться применить его. Применение займет определенное время, а также требуется огромное количество оперативной памяти на короткое время.
 Ошибка с \"Чёрным экраном\" может появиться, потому что ваш телефон не имеет достаточно свободной оперативной памяти для обработки обоев.
 Перезагрузка может исправить эту проблему. После перезагрузки ваш телефон будет иметь больше оперативной памяти.
 Кроме того, вы сможете открыть скачанные обои из вашей галереи и установить их в качестве обоев оттуда.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>Откройте обои, настройки. Вы увидите опцию, чтобы загружать только картинки. Но для начала Вам нужно скачать обои из приборной панели.</item>
         <item>Если обои уже загружен, они будут загружаться автоматически с вашего телефона.
 Приложение не будет скачивать их, если обои были изменены. Но для начала Вам нужно скачать обои из приборной панели.</item>
         <item>Откройте приборную панель, скачайте обои, которые вы хотите использовать.
 Откройте настройки, затем выберите загружать только обои.</item>
         <item>Оно используется для записи и кэширования.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>Он используется для загрузки обоев на основе облака &amp; их загрузки.</item>
         <item>Оно используется, чтобы проверить, имеет ли Ваш телефон подключение к интернету.</item>
         <item>Оно используется, чтобы проверить, имеет ли Ваш телефон подключение к интернету по WiFi, чтобы загрузить обои.</item>
         <item>Оно используется, чтобы применить обои прямо из приложения в приборной панели.</item>
