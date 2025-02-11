@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">홈</string>
     <string name="navigation_view_apply">적용</string>
     <string name="navigation_view_icons">아이콘</string>
     <string name="navigation_view_request">아이콘 요청</string>
     <string name="navigation_view_wallpapers">배경화면</string>
+    <string name="navigation_view_presets">프리셋</string>
     <string name="navigation_view_settings">설정</string>
     <string name="navigation_view_faqs">자주 묻는 질문</string>
     <string name="navigation_view_about">정보</string>
@@ -16,6 +18,7 @@
     <string name="hour">시간</string>
     <string name="save_setting">저장</string>
     <string name="muzei_refresh_duration">배경화면 교체 주기</string>
+    <string name="muzei_wifi_only">Wi-Fi 연결 시에만 교체</string>
     <string name="muzei_downloaded_only">다운로드한 배경화면만 불러오기</string>
     <string name="muzei_settings_ignored">아이콘 팩에 배경화면이 포함되어 있지 않습니다. 설정이 무시됩니다.</string>
     <string name="muzei_settings_saved">설정이 저장되었습니다.</string>
@@ -23,6 +26,10 @@
     <string name="menu_search">검색</string>
     <string name="menu_save">기기에 저장</string>
     <string name="menu_select_all">모두 선택</string>
+    <string name="menu_delete">삭제</string>
+    <string name="menu_wallpaper_crop">배경화면 자르기</string>
+    <string name="menu_apply_homescreen">홈스크린</string>
+    <string name="menu_apply_lockscreen">잠금화면</string>
     <!-- Dialog -->
     <string name="open">열기</string>
     <string name="close">닫기</string>
