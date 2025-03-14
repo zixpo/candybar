@@ -100,7 +100,7 @@ public class InAppBillingClient implements PurchasesUpdatedListener, BillingClie
                     for (Purchase purchase : purchases) {
                         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                 "purchase",
-                                new HashMap<String, Object>() {{
+                                new HashMap<>() {{
                                     put("order_id", purchase.getOrderId());
                                     put("order_timestamp", purchase.getPurchaseTime());
                                     put("order_status", purchase.getPurchaseState());

@@ -83,7 +83,7 @@ public class LanguagesFragment extends DialogFragment {
                 .onNegative(((_dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
-                            new HashMap<String, Object>() {{
+                            new HashMap<>() {{
                                 put("section", "settings");
                                 put("action", "cancel");
                                 put("item", "change_language");
@@ -120,7 +120,7 @@ public class LanguagesFragment extends DialogFragment {
     public void setLanguage(@NonNull Locale locale) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "settings");
                     put("action", "confirm");
                     put("item", "change_language");

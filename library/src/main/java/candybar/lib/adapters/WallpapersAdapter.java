@@ -108,7 +108,7 @@ public class WallpapersAdapter extends RecyclerView.Adapter<WallpapersAdapter.Vi
                     .override(ImageConfig.getThumbnailSize())
                     .transition(BitmapTransitionOptions.withCrossFade(300))
                     .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                    .listener(new RequestListener<Bitmap>() {
+                    .listener(new RequestListener<>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
                             return false;

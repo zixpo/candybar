@@ -211,7 +211,7 @@ public class RequestHelper {
     public static String sendPacificRequest(List<Request> requests, List<String> iconFiles, File directory, String apiKey) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "icon_request");
                     put("action", "submit");
                     put("item", "pacific");
@@ -271,7 +271,7 @@ public class RequestHelper {
     public static String sendCustomRequest(List<Request> requests, boolean isPremium) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "icon_request");
                     put("action", "submit");
                     put("item", "custom");

@@ -148,7 +148,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "wallpaper",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("url", mWallpaperName);
                     put("action", "preview");
                 }}
@@ -324,7 +324,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             if (item.getType() == PopupItem.Type.LOCKSCREEN) {
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
-                                        new HashMap<String, Object>() {{
+                                        new HashMap<>() {{
                                             put("url", mWallpaperName);
                                             put("section", "lockscreen");
                                             put("action", "apply");
@@ -334,7 +334,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             } else if (item.getType() == PopupItem.Type.HOMESCREEN) {
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
-                                        new HashMap<String, Object>() {{
+                                        new HashMap<>() {{
                                             put("url", mWallpaperName);
                                             put("section", "homescreen");
                                             put("action", "apply");
@@ -344,7 +344,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                             } else if (item.getType() == PopupItem.Type.HOMESCREEN_LOCKSCREEN) {
                                 CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                         "wallpaper",
-                                        new HashMap<String, Object>() {{
+                                        new HashMap<>() {{
                                             put("url", mWallpaperName);
                                             put("section", "homescreen_and_lockscreen");
                                             put("action", "apply");
@@ -478,7 +478,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
                     .override(2000)
                     .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                     .timeout(10000)
-                    .listener(new RequestListener<Bitmap>() {
+                    .listener(new RequestListener<>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
                             if (mWallpaper.getColor() == 0) {

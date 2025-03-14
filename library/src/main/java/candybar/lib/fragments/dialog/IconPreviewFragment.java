@@ -128,7 +128,7 @@ public class IconPreviewFragment extends DialogFragment {
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "icon_preview");
                     put("action", "open_dialog");
                     put("item", mDrawableName);
@@ -161,7 +161,7 @@ public class IconPreviewFragment extends DialogFragment {
                 if (isBookmarked.get()) {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
-                            new HashMap<String, Object>() {{
+                            new HashMap<>() {{
                                 put("section", "icon_preview");
                                 put("action", "delete_bookmark");
                                 put("item", mDrawableName);
@@ -171,7 +171,7 @@ public class IconPreviewFragment extends DialogFragment {
                 } else {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
-                            new HashMap<String, Object>() {{
+                            new HashMap<>() {{
                                 put("section", "icon_preview");
                                 put("action", "add_bookmark");
                                 put("item", mDrawableName);
