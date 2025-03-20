@@ -231,7 +231,7 @@ public class PresetsAdapter extends RecyclerView.Adapter<PresetsAdapter.ViewHold
             List<String[]> requiredApps = getRequiredApps(type);
             LinearLayout linearLayout = itemView.findViewById(R.id.container);
 
-            if (requiredApps.size() > 0) {
+            if (!requiredApps.isEmpty()) {
                 for (String[] requiredApp : requiredApps) {
                     View item = LayoutInflater.from(mContext).inflate(R.layout.fragment_presets_item_header_list, linearLayout, false);
                     ((TextView) item.findViewById(R.id.name)).setText(requiredApp[0]);
@@ -296,7 +296,7 @@ public class PresetsAdapter extends RecyclerView.Adapter<PresetsAdapter.ViewHold
                         intent.setData(Uri.parse("kfile://" + mContext.getPackageName() + "/" + preset.getPath()));
                     }
 
-                    if (getRequiredApps(type).size() > 0) {
+                    if (!getRequiredApps(type).isEmpty()) {
                         new MaterialDialog.Builder(mContext)
                                 .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
                                 .content(R.string.presets_required_apps_not_installed)

@@ -131,7 +131,7 @@ public class FAQsAdapter extends RecyclerView.Adapter<FAQsAdapter.ViewHolder> {
     public void search(String string) {
         String query = string.toLowerCase(Locale.getDefault()).trim();
         mFAQs.clear();
-        if (query.length() == 0) mFAQs.addAll(mFAQsAll);
+        if (query.isEmpty()) mFAQs.addAll(mFAQsAll);
         else {
             for (int i = 0; i < mFAQsAll.size(); i++) {
                 FAQs faq = mFAQsAll.get(i);

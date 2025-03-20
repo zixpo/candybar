@@ -103,7 +103,7 @@ public class CreditsAdapter extends BaseAdapter {
             }
         });
 
-        if (credit.getContribution().length() == 0) {
+        if (credit.getContribution().isEmpty()) {
             holder.subtitle.setVisibility(View.GONE);
         } else {
             holder.subtitle.setVisibility(View.VISIBLE);
