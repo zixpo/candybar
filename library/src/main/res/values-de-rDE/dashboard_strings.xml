@@ -107,6 +107,7 @@ Mit Premium Icon-Anfragen kannst du deine gewünschte App schneller erhalten.</s
     <string name="home_icon_request_missed_apps">%d\nfehlende App(s)</string>
     <!-- Apply -->
     <string name="apply_installed">Installierte Launcher</string>
+    <string name="apply_installed_launchers">Installierte Launcher</string>
     <string name="apply_supported">Unterstützte Launcher</string>
     <string name="apply_manual">%1$s Launcher unterstützt kein direktes Anwenden. Du kannst %2$s manuell über die Launcher-Einstellungen anwenden.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso unterstützt keine direktes Anwenden, aber du kannst diesen Schritten folgen:</string>
@@ -265,6 +266,8 @@ fehlenden Icons erstellt wurde.</string>
     <string name="pref_theme_header">Design</string>
     <string name="pref_theme_dark">Dunkles Design</string>
     <string name="pref_theme_dark_desc">Dunkle Farbe als Design für die App verwenden</string>
+    <string name="pref_notifications_header">Benachrichtigungen</string>
+    <string name="pref_notifications">Benachrichtigungen erhalten</string>
     <string name="pref_wallpaper_header">Hintergrundbild</string>
     <string name="pref_wallpaper_location">Speicherort der Hintergrundbilder</string>
     <string name="pref_language_header">Sprache</string>
@@ -280,6 +283,8 @@ fehlenden Icons erstellt wurde.</string>
     <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Zugang zum Speicher nötig, um das Hintergrundbild zu speichern</string>
+    <string name="permission_notification_denied_1">Benachrichtigungsberechtigung wird benötigt, um Benachrichtigungen vom Entwickler zu erhalten</string>
+    <string name="permission_notification_denied_2">Benachrichtigungen in den App-Einstellungen aktivieren</string>
     <!-- Intent -->
     <string name="app_client">E-Mail-Klienten auswählen</string>
     <string name="no_email_app">Keine Apps für E-Mails verfügbar</string>

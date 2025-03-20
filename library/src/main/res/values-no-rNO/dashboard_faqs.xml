@@ -28,4 +28,72 @@
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
     </string-array>
+    <string-array name="questions">
+        <item>Hva er en startskjerm?</item>
+        <item>Hva er en ikonpakke?</item>
+        <item>Hvordan bruker jeg en ikonpakke?</item>
+        <item>Hvordan bruker jeg en ikonpakke?</item>
+        <item>Hvordan ser jeg alle ikoner inkludert?</item>
+        <item>Jeg kan ikke se fullstendig ikon-navn</item>
+        <item>Hvordan kan jeg bytte ut ikoner med et alternativt ikon?</item>
+        <item>Hvordan ber jeg om et ikon?</item>
+        <item>Hvordan kan jeg gjenopprette de resterende Premium-forespørslene etter at jeg har installert appen på nytt?</item>
+        <item>Etter å ha startet telefonen min blir ikonpakken ikke brukt; den gjenopprettes til standard?</item>
+        <item>Hvorfor ser ikonene jaggy eller pikselert ut på telefonen min?</item>
+        <item>Jeg kan se ikonet inkludert i alle ikoner,
+            men hvorfor er det ikke selve ikonet på appskuffen endret?</item>
+        <item>Hva er alternativet \"rapportfeil\"?</item>
+        <item>MMin launcheren er listet i Google Play-beskrivelsen, men hvorfor er den ikke inkludert i seksjonen du vil bruke?</item>
+        <item>Bakgrunnsbildet er ikke brukt, bare viser svart skjerm?</item>
+        <item>Musikk: Hvordan laste nedlastede bakgrunnsbilder?</item>
+        <item>Minne: Jeg vil ikke fortsette å laste ned bakgrunnsbilder hver gang bakgrunnen endrer seg?</item>
+        <item>Musikk: Jeg vil bare bruke bestemte bakgrunnsbilde?</item>
+        <item>Hvorfor trenger du lese &amp; Skriv ekstern lagringstillatelse?</item>
+        <item>Hvorfor trenger internettilgang?</item>
+        <item>Hvorfor trenger du tilgang til nettverksstatus?</item>
+        <item>Hvorfor trenger tilgang for Wifi status?</item>
+        <item>Hvorfor må du angi bakgrunnstillatelse?</item>
+        <item>Hvorfor trenger Wake Lock tilgang?</item>
+        <item>Hvorfor trenger alarmtilgang?</item>
+    </string-array>
+    <string-array name="answers">
+        <item>App-Starter er den delen av Android brukergrensesnittet som lar brukere tilpasse startskjermen,
+            åpne mobilapper, foreta telefonsamtaler, og utføre andre oppgaver på Android-enheter.</item>
+        <item>Et sett med grafikk som vil endre utseendet på appskuffikonene</item>
+        <item>Du trenger en launcher som støtter tilpassede ikonpakker. Støttede startprogrammer er oppført i beskrivelsen av Play-butikken. Hvis du er forvirret om hvilke lanseringer som skal brukes, er det bare å gå til \"Bruk\"-delen og installere derfra.</item>
+        <item>Du kan åpne navigasjonsskuffen og åpne \"Apply\". Velg launcher fra listen.
+            Hvis din launcher ikke er oppført der, men denne ikonpakken er kompatibel med den
+            (se på Google Play beskrivelsen for støttede oppstartskjermer),
+            du kan legge til ikonpakken manuelt i innstillingene for launcher.</item>
+        <item>Du kan åpne navigasjonsskuffen og åpne den «Icons»</item>
+        <item>Bare trykk på ikonet. En forhåndsvisningsdialog vil vises med et større bilde og komplett ikonnavn.</item>
+        <item>Det avhenger av hvilken launcher du brukte. Ikke alle startprogrammer støtter ikonredigering. For det meste kan du redigere et ikon ved å trykke &amp; holde på ikonet eller dobbelttrykke på det.</item>
+        <item>Du kan åpne navigasjonsskuffen og deretter åpne Ikon forespørsel\".</item>
+        <item>Du kan åpne navigasjonsskuffen, og deretter åpne \"Innstillinger\", velg \"Gjenopprett kjøper\".
+            Hvis du har hatt gjenværende Premium-forespørsler før du installerer på nytt, De vil bli gjenopprettet.</item>
+        <item>Det skjedde fordi denne ikonpakken ble flyttet til SD-kortet. Du bør installere den i intern minne.</item>
+        <item>Problemet kan komme fra startprogrammet du brukte når du håndterte stor ikonoppløsning. Du kan fikse det ved å øke ikonstørrelsen til 115–120 %. Alternativt kan du endre startprogrammet.</item>
+        <item>Åpne innstillinger, bla ned, og velg deretter \"Rapportfeil\".</item>
+        <item>\"Rapportfeil\" brukes til å rapportere feil relatert til ikonpakken, ikke dashbordet.</item>
+        <item>Ikke alle launcher støtter direkteanvendelse og noen av dem kan ikke nås direkte fra dashbordet.
+      	    Du kan påføre denne ikonpakken manuelt i individuelle startskjerminnstillinger.</item>
+        <item>Når du \"Sett Wallpaper\" direkte fra appen, vil det bli lastet ned til cachen,
+      	    så vil programmet for dashbord prøve å bruke den. Å ta anvendelse tar noe tid og trenger også enorme mengder RAM for en kort tidsperiode.
+      	    «Svart skjerm»-feil kan oppstå fordi telefonen ikke har nok fri RAM til å behandle bakgrunnen.
+      	    Start telefonen på nytt vil fikse dette problemet. Etter å ha startet på nytt, vil telefonen ha mer RAM tilgjengelig.
+            Alternativt du kan åpne det nedlastede bakgrunnsbildet fra galleriet ditt og sette det som bakgrunn derfra.</item>
+        <item>Åpne Muzei, velg dette ikonpakken, innstillingene. Du vil bare se et alternativ for å laste nedlastede bakgrunnsbilder.
+            Du må først laste ned bakgrunnsbilder fra dashbordet.</item>
+        <item>Hvis et bakgrunnsbilde allerede er lastet ned, vil dette bli lastet inn fra telefonminnet automatisk.
+            Muzei fortsetter ikke å laste ned når bakgrunnen endres. Du må først laste ned bakgrunnsbilder fra dashbordet.</item>
+        <item>Åpne Dashboard, last ned bakgrunnsbilder du vil bruke i Muzei.
+            Åpne Muzei-innstillinger, og velg deretter last ned bakgrunnsbilder nå.</item>
+        <item>Den brukes til å skrive &amp; lese cache, og samle inn ikonforespørsledata.</item>
+        <item>Det brukes til å laste inn Cloud-baserte bakgrunnsbilder &amp; laste dem ned.</item>
+        <item>Det brukes til å sjekke om telefonen har Internett-tilkobling eller ikke.</item>
+        <item>Det brukes til å sjekke om telefonen din har en internettforbindelse til en wifi eller ikke, å laste skybakgrunner fra Muzei.</item>
+        <item>Det brukes til å bruke bakgrunnsbilder direkte fra dashbordappen.</item>
+        <item>Det brukes av Muzei Live Wallpaper.</item>
+        <item>Den er brukt for å starte klokke-appen fra analog klokke widgeten.</item>
+    </string-array>
 </resources>

@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">आइकन</string>
     <string name="navigation_view_request">आइकन अनुरोध</string>
     <string name="navigation_view_wallpapers">वॉलपेपर</string>
+    <string name="navigation_view_presets">प्रीसेट</string>
     <string name="navigation_view_settings">सेटिंग</string>
     <string name="navigation_view_faqs">पूछे जाने वाले प्रश्न</string>
     <string name="navigation_view_about">इसके बारे में</string>
@@ -17,6 +18,7 @@
     <string name="hour">घंटा</string>
     <string name="save_setting">सहेजें</string>
     <string name="muzei_refresh_duration">रिफ्रेश अवधि</string>
+    <string name="muzei_wifi_only">केवल से वाईफ़ाई ताज़ा करें</string>
     <string name="muzei_downloaded_only">केवल डाउनलोड वॉलपेपर लोड करें</string>
     <string name="muzei_settings_ignored">आइकन पैक में वॉलपेपर शामिल नहीं हैं, सेटिंग को अनदेखा किया गया है।</string>
     <string name="muzei_settings_saved">सेटिंग्स को सहेजा गया</string>
@@ -24,9 +26,11 @@
     <string name="menu_search">खोज</string>
     <string name="menu_save">डिवाइस पर सहेजें</string>
     <string name="menu_select_all">सभी का चयन करे</string>
+    <string name="menu_delete">हटाएं</string>
     <string name="menu_wallpaper_crop">क्रौप वॉलपेपर</string>
     <string name="menu_apply_homescreen">होमस्क्रीन</string>
     <string name="menu_apply_lockscreen">लॉकस्क्रीन</string>
+    <string name="menu_apply_homescreen_lockscreen">होमस्क्रीन और लॉकस्क्रीन</string>
     <!-- Dialog -->
     <string name="open">खोलें</string>
     <string name="close">बंद करे</string>
@@ -34,28 +38,40 @@
     <string name="ok">ठीक</string>
     <string name="install">स्थापित करें</string>
     <string name="donate">दान करें</string>
+    <string name="update">अपडेट करें</string>
     <string name="search_noresult">कोई परिणाम नहीं मिला के लिए \"%s\"</string>
     <string name="search_faqs">प्रश्न या उत्तर</string>
     <string name="search_icon">आइकॉन का नाम</string>
     <string name="search_wallpapers">वॉलपेपर का नाम</string>
     <!-- Update -->
+    <string name="checking_for_update">अपडेट्स के लिए जांच हो रही है</string>
     <string name="update_available">अपडेट उपलब्ध है</string>
     <string name="no_update_available">आप नवीनतम संस्करण का उपयोग कर रहे हैं।</string>
     <!-- Changelog -->
     <string name="changelog_version">संस्करण</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">इन ऐप उत्पादों को लोड करने मे असमर्थ हैं</string>
     <!-- License -->
     <string name="license_checking">अनुज्ञप्ति जांच रहा है …</string>
     <string name="license_check">अनुज्ञप्ति जांच</string>
+    <string name="license_check_success">लाइसेंस चैक सफल रहा, ऐप को प्ले स्टोर से डाउनलोड करने के लिए धन्यवाद.</string>
+    <string name="license_check_failed">अनुज्ञप्ति जांच विफल हुई, आपने प्ले स्टोर से ऐप डाउनलोड नहीं किया है
+आप इसका उपयोग करने में सक्षम नहीं होंगे।</string>
     <string name="license_check_retry">अनुज्ञप्ति की जांच करने में असमर्थ, कृपया कुछ क्षण के बाद पुनः प्रयास करें।</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">प्ले स्टोर चेक</string>
+    <string name="playstore_check_success">Google Play Store से ऐप इंस्टॉल करने के लिए धन्यवाद। आनंद लेना!</string>
+    <string name="playstore_check_failed">ऐसा लगता है कि आपने इस आइकन पैक को Google Play Store के बाहर से स्थापित किया है। आप इसका उपयोग नहीं कर पाएंगे।</string>
     <!-- Share -->
     <string name="share_app_title">यो! देखे %s</string>
     <string name="share_app_body">यो! देखे %1$s,यह आइकन पैक वास्तव में अच्छा है! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">नेविगेशन ड्रॉवर</string>
+    <string name="tap_intro_home_navigation_desc">नेविगेशन ड्रॉवर खोलने के लिए स्क्रीन के बायीं किनारे से यहां टैप करें या स्वाइप करें</string>
     <string name="tap_intro_home_apply">आइकन पैक लागू करें</string>
+    <string name="tap_intro_home_apply_desc">अपने वर्तमान लॉन्चर पर% s लागू करने के लिए यहाँ टैप करें. अन्य लॉन्चर पर लागू करने के लिए देर तक दबाएं।</string>
     <string name="tap_intro_icons_search">खोज</string>
+    <string name="tap_intro_icons_search_desc">आइकन खोज के लिए यहां टैप करें</string>
     <string name="tap_intro_request_select">छुटे हुए ऐप का चयन करें</string>
     <string name="tap_intro_request_select_desc">आइकन अनुरोध के लिए छुटे हुए ऐप चुनने के लिए यहां टैप करें</string>
     <string name="tap_intro_request_select_all">सभी छुटे हुए ऐप्स चुनें</string>
@@ -63,14 +79,20 @@
     <string name="tap_intro_request_send">आइकन अनुरोध भेजें</string>
     <string name="tap_intro_request_send_desc">आइकन अनुरोध भेजें</string>
     <string name="tap_intro_request_premium">प्रीमियम आइकन अनुरोध</string>
+    <string name="tap_intro_request_premium_desc">प्रीमियम आइकन अनुरोध पैकेज खरीदने के लिए यहां टैप करें,
+प्रीमियम आइकन अनुरोध के साथ आप अपने अनुरोधित ऐप्स को तेज़ी से प्राप्त कर सकते हैं</string>
     <string name="tap_intro_wallpapers_option">वॉलपेपर विकल्प</string>
+    <string name="tap_intro_wallpapers_option_desc">वॉलपेपर विकल्पों को देखने के लिए यहां टैप करके रखें, %s एप्लाय वॉलपेपर</string>
     <string name="tap_intro_wallpapers_option_desc_download">डाउनलोड या</string>
     <string name="tap_intro_wallpapers_preview">वॉलपेपर का पूर्वावलोकन</string>
+    <string name="tap_intro_wallpapers_preview_desc">वॉलपेपर को पूर्ण आकार में पूर्वावलोकन करने के लिए यहां टैप करें</string>
     <string name="tap_intro_wallpaper_preview_save">वॉलपेपर सहेजे</string>
     <string name="tap_intro_wallpaper_preview_save_desc">वॉलपेपर अपने डिवाइस पर डाउनलोड करने के लिए यहां टैप करें ताकि आप इसे बाद में उपयोग कर सकें</string>
     <string name="tap_intro_wallpaper_preview_apply">वॉलपेपर लागु करें</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">होमस्क्रीन बैकग्राउंड के रूप में वॉलपेपर सेट करने के लिए यहां टैप करें</string>
     <!-- Home -->
     <string name="home_more_apps_header">और एप्प</string>
+    <string name="home_more_apps">गूगल प्ले स्टोर पर प्रकाशित अन्य ऐप्स भी देखें</string>
     <string name="home_rate_and_review">रेट और समीक्षा करें</string>
     <string name="home_apply_icon_pack">लागु करे %s</string>
     <string name="home_donate">दान करें</string>
@@ -84,37 +106,117 @@
     <string name="home_icon_request_missed_apps">छुटे हुए\n%d एप्प</string>
     <!-- Apply -->
     <string name="apply_installed">स्थापित लांचर</string>
+    <string name="apply_installed_launchers">स्थापित लांचर</string>
     <string name="apply_supported">समर्थित लौन्चेर्स</string>
+    <string name="apply_manual">%1$s सीधे लागू करने का समर्थन नहीं करता है, तो आप लॉन्चर सेटिंग से मैन्युअल रूप से %2$s को लागू कर सकते हैं।</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso प्रत्यक्ष आवेदन का समर्थन नहीं करता है लेकिन आप इन चरणों का पालन कर सकते हैं:</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitso की सेटिंग खोलें</string>
+    <string name="apply_manual_kvaesitso_step_2">\"ग्रिड और आइकन\" टैप करें</string>
+    <string name="apply_manual_kvaesitso_step_3">\"आइकन पैक\" पर टैप करें</string>
+    <string name="apply_manual_kvaesitso_step_4">सूची से %s चुनें</string>
+    <string name="apply_manual_kvaesitso_step_5">पृष्ठभूमि आकार को सक्षम या अक्षम करने के लिए पेंट ब्रश आइकन टैप करें</string>
+    <string name="apply_manual_kiss">KISS प्रत्यक्ष आवेदन का समर्थन नहीं करता है लेकिन आप इन चरणों का पालन कर सकते हैं:</string>
+    <string name="apply_manual_kiss_step_1">KISS सेटिंग खोलें</string>
+    <string name="apply_manual_kiss_step_2">\"यूजर इंटरफेस\" पर टैप करें</string>
+    <string name="apply_manual_kiss_step_3">\"आइकन पैक\" पर टैप करें</string>
+    <string name="apply_manual_kiss_step_4">सूची से %s चुनें</string>
+    <string name="apply_manual_samsung_oneui">%1$s सीधे लागू करने का समर्थन नहीं करता है, लेकिन %2$s से प्रारंभ करके आप किसी सहयोगी अनुप्रयोग के साथ चिह्न लागू कर सकते हैं.</string>
+    <string name="apply_manual_samsung_oneui_too_old">%s का आपका वर्तमान संस्करण बहुत पुराना है. सीधे आइकन लागू करने में सक्षम होने के लिए कृपया Android 12 या नए पर अपडेट करें। वैकल्पिक रूप से, आप एक अलग लॉन्चर स्थापित कर सकते हैं।</string>
+    <string name="apply_manual_samsung_oneui_step_1">खुला %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">अनुप्रयोग %s डाउनलोड करें</string>
+    <string name="apply_manual_samsung_oneui_step_3">\"आइकन\" टैप करें</string>
+    <string name="apply_manual_samsung_oneui_step_4">\"नया बनाएं\" पर टैप करें</string>
+    <string name="apply_manual_samsung_oneui_step_5">नीले \"आइकनपैक\" बटन पर टैप करें</string>
+    <string name="apply_manual_samsung_oneui_step_6">सूची से %s चुनें</string>
+    <string name="apply_manual_samsung_oneui_step_7">हर बार %s अद्यतन करते समय इन चरणों को दोहराएँ क्योंकि नए चिह्न स्वचालित रूप से मैप नहीं किए जाएँगे.</string>
+    <string name="apply_manual_hios">HiOS प्रत्यक्ष आवेदन का समर्थन नहीं करता है लेकिन आप इन चरणों का पालन कर सकते हैं:</string>
+    <string name="apply_manual_hios_step_1">\"सेटिंग\" खोलें</string>
+    <string name="apply_manual_hios_step_2">\"थीम और लॉकस्क्रीन\" टैप करें</string>
+    <string name="apply_manual_hios_step_3">\"मेरी थीम\" टैप करें</string>
+    <string name="apply_manual_hios_step_4">\"आइकन पैक\" टैप करें</string>
+    <string name="apply_manual_hios_step_5">%s टैप करें</string>
+    <string name="apply_manual_oxygen_os_step_1">अपनी होमस्क्रीन पर लॉन्ग-टैप करें</string>
+    <string name="apply_manual_oxygen_os_step_2">\"होम सेटिंग्स\" टैप करें</string>
+    <string name="apply_manual_oxygen_os_step_3">\"आइकन पैक\" टैप करें</string>
+    <string name="apply_manual_oxygen_os_step_4">%s टैप करें</string>
+    <string name="apply_manual_color_os_step_1">अपनी होमस्क्रीन पर लॉन्ग-टैप करें</string>
+    <string name="apply_manual_color_os_step_2">\"आइकन\" टैप करें</string>
+    <string name="apply_manual_color_os_step_3">\"कस्टम\" बटन के दाईं ओर स्क्रॉल करें (यह एक स्क्रॉल करने योग्य सूची है!)</string>
+    <string name="apply_manual_color_os_step_4">%s टैप करें</string>
+    <string name="apply_manual_before">बिफोर लॉन्चर का यह संस्करण अभी तक सीधे आइकन लगाने का समर्थन नहीं करता है। इसके बजाय, नीचे दिए गए चरणों का पालन करें:</string>
+    <string name="apply_manual_before_step_1">होमस्क्रीन पर बाईं ओर स्वाइप करें</string>
+    <string name="apply_manual_before_step_2">नल \"Settings\"</string>
+    <string name="apply_manual_before_step_3">नल \"Styles &amp; Themes\"</string>
+    <string name="apply_manual_before_step_4">नल \"Icon Styles &amp; Packs\"</string>
+    <string name="apply_manual_before_step_5">%s टैप करें</string>
+    <string name="apply_manual_nothing_step_1">\"सेटिंग\" खोलें</string>
+    <string name="apply_manual_nothing_step_2">नल \"Customization\"</string>
+    <string name="apply_manual_nothing_step_3">\"आइकन पैक\" टैप करें</string>
+    <string name="apply_manual_nothing_step_4">%s टैप करें</string>
     <string name="apply_launch_failed">सेटिंग %s लांच करने में असमर्थ</string>
     <string name="apply_launcher_not_installed">%s  इंस्टॉल नहीं है क्या आप खोलना चाहते हैं
 डाउनलोड और इंस्टॉल करने के लिए गूगल प्ले  स्टोर?</string>
+    <string name="apply_launcher_not_installable">%s लॉन्चर स्थापित नहीं है. कृपया लॉन्चर स्थापित करने के बाद पुन: प्रयास करें।</string>
     <string name="apply_cmtheme_not_available">CM Theme प्रबंधक इस डिवाइस पर उपलब्ध नहीं है</string>
+    <string name="apply_cmtheme_failed">सीएम थीम मैनेजर को लॉन्च करने में असमर्थ, आप सेटिंग से मैन्युअल रूप से आइकन पैक को लागू करने का प्रयास कर सकते हैं।</string>
     <string name="apply_lg_home">इस आइकन पैक को खोलने के लिए सेटिंग - प्रदर्शन - होम स्क्रीन - थीम</string>
     <string name="apply_lg_home_not_available">LG होम इस डिवाइस पर उपलब्ध नहीं है</string>
+    <string name="apply_lg_home_failed">LG होम सेटिंग्स लॉन्च करने में असमर्थ, आप सेटिंग से मैन्युअल रूप से आइकन पैक को लागू करने का प्रयास कर सकते हैं।</string>
     <string name="apply_lg_home_nougat">एंड्रॉइड नोगैट के साथ LG होम अब आइकन पैक का समर्थन नहीं करता है। आइकॉन पैक का उपयोग करने के लिए आपको कस्टम लॉन्चर की आवश्यकता है</string>
+    <string name="apply_launcher_incompatible">%s लॉन्चर किसी भी चिह्न पैक का समर्थन नहीं करता, इसलिए आप इस लॉन्चर के साथ इस चिह्न पैक का उपयोग नहीं कर सकते. आप %2$s लॉन्चर में इस चिह्न पैक का उपयोग करने के लिए किसी तृतीय-पक्ष अनुप्रयोग को आज़मा सकते हैं. क्या आप इसे स्थापित करना चाहते हैं?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s लॉन्चर Android %d या उससे पहले वाले वर्शन पर चिह्न पैक का समर्थन नहीं करता है. कृपया अपने Android संस्करण को अपडेट करें या इस आइकन पैक का उपयोग करने के लिए एक तृतीय-पक्ष लॉन्चर स्थापित करें। आप अलग-अलग आइकन बदलने के लिए एक सहायक ऐप भी आज़मा सकते हैं। क्या आप इसे स्थापित करना चाहते हैं?</string>
     <!-- Icons -->
     <string name="icons_load_failed">आइकॉन लोड करने में असमर्थ</string>
     <string name="icon_shape">आईकन का आकार</string>
+    <string name="bookmark_icons_empty">कोई बुकमार्क नहीं मिला. बुकमार्क आइकन उन्हें जल्दी से यहाँ का उपयोग करने के लिए.</string>
+    <string name="items_selected">%d चयनित</string>
     <!-- Request -->
     <string name="request_title">आइकन अनुरोध</string>
     <string name="request_not_selected">अनुरोध के लिए आइकॉन चुने</string>
     <string name="request_not_requested">अनिवेदित</string>
     <string name="request_already_requested">पहले से अनुरोध किया गया</string>
+    <string name="request_not_available">अनुरोध नहीं किया जा सकता</string>
     <string name="request_building">अनुरोध कर रहा है …</string>
+    <string name="request_pacific_sending">प्रशांत प्रबंधक को अनुरोध भेज रहा है...</string>
+    <string name="request_pacific_error">प्रशांत प्रबंधक को अनुरोध भेजते समय त्रुटि उत्पन्न हुई. त्रुटि %s है</string>
+    <string name="request_pacific_success">प्रशांत प्रबंधक को सफलतापूर्वक अनुरोध भेजा</string>
+    <string name="request_custom_error">चिह्न अनुरोध भेजते समय त्रुटि उत्पन्न हुई. यदि यह त्रुटि बनी रहती है, तो डेवलपर से संपर्क करें। %s</string>
+    <string name="request_custom_success">सफलतापूर्वक भेजा गया आइकन अनुरोध</string>
+    <string name="request_fetching_data">नवीनतम डेटा प्राप्त करना...</string>
     <string name="request_build_failed">आइकॉन निवदेन करने में असमर्थ</string>
     <string name="request_appfilter_failed">appfilter.xml को पढ़ने में असमर्थ</string>
+    <string name="request_requested">आपने पहले ही इस चिह्न का अनुरोध किया है और आप फिर से इसका अनुरोध नहीं कर सकते.</string>
+    <string name="request_requested_possible">आपने पहले ही इस चिह्न का अनुरोध किया है. क्या आप वाकई इस पर एक और अनुरोध खर्च करना चाहते हैं?</string>
+    <string name="request_requested_button_cancel">पस जाओ</string>
+    <string name="request_requested_button_confirm">फिर भी चुनें</string>
     <string name="request_email_client">उस ईमेल क्लाइंट को चुनें, जिससे आप आइकन निवेदन भेजने के लिए उपयोग करना चाहते हैं</string>
+    <string name="request_app_disabled">आप इस आइकन पैक के पुराने संस्करण का उपयोग कर रहे हैं। अनुरोधित आइकन नवीनतम संस्करण में शामिल किए जा सकते हैं। आइकन का अनुरोध करने के लिए कृपया अपने ऐप को नवीनतम संस्करण में अपडेट करें।</string>
+    <string name="connection_error_long">सर्वर से डेटा लोड करने में असमर्थ. कृपया, अपने नेटवर्क कनेक्शन की जाँच करें।</string>
+    <string name="unable_to_load_config">सर्वर से डेटा लाते या पढ़ते समय कोई त्रुटि उत्पन्न हुई.</string>
+    <string name="request_limit">आप %d अनुरोध केवल नियमित अनुरोध के साथ कर सकते हैं.</string>
     <string name="request_used">आपने %d आइकन (ओं) का अनुरोध किया है</string>
     <string name="request_limit_buy">आप आइकॉन निवेदन करने के लिए प्रीमियम निवेदन खरीद सकते है </string>
     <string name="request_limit_reset">प्रत्येक निवेदन पर आइकन निवेदन सीमा फिर से गिनी जाएगी</string>
     <!-- Regular Request -->
+    <string name="regular_request">नियमित आइकन अनुरोध</string>
+    <string name="regular_request_desc">अपने आइकन का अनुरोध प्राप्त करें, और डेवलपर आपके द्वारा अनुरोधित आइकन शामिल करने का प्रयास करेगा।</string>
+    <string name="regular_request_count">कुल \n%d अनुरोध</string>
+    <string name="regular_request_used">प्रयुक्त \n%d अनुरोध</string>
+    <string name="regular_request_available">उपलब्ध \n%d अनुरोध</string>
     <!-- Premium Request -->
     <string name="premium_request">प्रीमियम आइकॉन निवेदन</string>
+    <string name="premium_request_no_internet">सुनिश्चित करें कि प्रीमियम अनुरोध भेजने से पहले आपका फ़ोन इंटरनेट से जुड़ा है</string>
+    <string name="premium_request_desc">प्रीमियम आइकन अनुरोध एक भुगतान-अनुरोध है। आप प्रीमियम आइकन अनुरोध का उपयोग करके अपने अनुरोधित ऐप्स तेज़ी से प्राप्त कर सकते हैं।</string>
     <string name="premium_request_buy">खरीदे</string>
+    <string name="premium_request_count">कुल \n%d अनुरोध</string>
+    <string name="premium_request_used">प्रयुक्त \n%d अनुरोध</string>
+    <string name="premium_request_available">उपलब्ध \n%d अनुरोध</string>
     <string name="premium_request_already_purchased">आपके पास अभी भी %d प्रीमियम निवेदन है
 फिर से प्रीमियम निवेदन पैकेज खरीदने से पहले आपको उन सभी का उपयोग करना होगा।</string>
     <string name="premium_request_limit">आपके पास केवल %d प्रीमियम निवेदन हैं,</string>
     <string name="premium_request_limit1">लेकिन आपने %d ऐप (Apps) का चयन किया \n\n फिर से नियमित अनुरोध का उपयोग करने से पहले आपको अपने सभी प्रीमियम अनुरोधों का उपयोग करने की आवश्यकता है</string>
+    <string name="premium_request_consume_failed">प्रीमियम निवेदन का उपयोग करने में असमर्थ, सुनिश्चित करें कि आपके पास स्थिर इंटरनेट कनेक्शन है और पुनः प्रयास करें।
+प्रीमियम निवेदन को पुनर्निर्माण के लिए सेटिंग पर जाएं</string>
     <string name="premium_request_rebuilding">प्रीमियम निवेदन पुनर्निर्माण …</string>
     <string name="premium_request_rebuilding_empty">अपने कोई प्रीमियम निवेदन नही किया है</string>
     <string name="premium_request_exist">आपके पास अभी भी एक प्रीमियम आइकन निवेदन पैकेज है।
@@ -125,6 +227,7 @@
     <string name="wallpaper_already_downloaded">वॉलपेपर पहले से ही डाउनलोड हैं</string>
     <string name="wallpaper_downloading">वॉलपेपर डाउनलोड किया जा रहा है …</string>
     <string name="wallpaper_download_failed">वॉलपेपर डाउनलोड करने में असमर्थ</string>
+    <string name="wallpaper_download_success">वॉलपेपर डाउनलोड सफल</string>
     <string name="wallpaper_loading">वॉलपेपर लोड हो रहा …</string>
     <string name="wallpaper_applying">वॉलपेपर लागु किया जा रहा …</string>
     <string name="wallpaper_applied">वॉलपेपर लागु किया गया</string>
@@ -134,6 +237,10 @@
     <string name="wallpaper_apply">वॉलपेपर लागु करें</string>
     <string name="wallpaper_save_to_device">वॉलपेपर सहेजे</string>
     <!-- Presets -->
+    <string name="presets_load_failed">प्रीसेट लोड करने में असमर्थ</string>
+    <string name="presets_storage_permission">पूर्वावलोकन वॉलपेपर लोड करने के लिए भंडारण अनुमति की आवश्यकता है</string>
+    <string name="presets_required_apps">इन प्रीसेट का उपयोग करने के लिए आवश्यक ऐप्स</string>
+    <string name="presets_required_apps_not_installed">प्रीसेट का उपयोग करने के लिए आवश्यक ऐप्स इंस्टॉल नहीं हैं। कृपया अनुपलब्ध आवश्यक ऐप्स इंस्टॉल करें और पुनः प्रयास करें।</string>
     <!-- Preferences -->
     <string name="pref_data_header">डेटा और कैश</string>
     <string name="pref_data_cache">कैश हटायें</string>
@@ -157,6 +264,8 @@
     <string name="pref_theme_header">थीम</string>
     <string name="pref_theme_dark">डार्क थीम</string>
     <string name="pref_theme_dark_desc">एप्लिकेशन थीम के लिए गहरे रंग का प्रयोग करें</string>
+    <string name="pref_notifications_header">सूचनाएँ</string>
+    <string name="pref_notifications">दूरस्थ सूचनाएँ</string>
     <string name="pref_wallpaper_header">वॉलपेपर</string>
     <string name="pref_wallpaper_location">वॉलपेपर सहेजने की जगह</string>
     <string name="pref_language_header">भाषा</string>
@@ -169,11 +278,15 @@
     <string name="theme_name_auto">स्वचालित</string>
     <string name="theme_name_light">प्रकाश</string>
     <string name="theme_name_dark">अंधेरा</string>
+    <string name="theme_name_material_you">मेटीरियल यू</string>
     <!-- Permission -->
     <string name="permission_storage_denied">वॉलपेपर को सहेजने के लिए संग्रहण अनुमति की आवश्यकता है</string>
+    <string name="permission_notification_denied_1">डेवलपर से सूचनाएं प्राप्त करने के लिए अधिसूचना अनुमति की आवश्यकता होती है</string>
+    <string name="permission_notification_denied_2">ऐप सेटिंग से सूचनाएं सक्षम करें</string>
     <!-- Intent -->
     <string name="app_client">ईमेल क्लाइंट चुने</string>
     <string name="no_email_app">ईमेल भेजने के लिए कोई एप्लिकेशन नहीं है</string>
+    <string name="no_browser">URL खोलने के लिए कोई एप्लिकेशन नहीं</string>
     <string name="intent_email_failed">ईमेल एप्लिकेशन को प्रदर्शित करने में असमर्थ</string>
     <string name="intent_email_supported">समर्थित</string>
     <string name="intent_email_recommended">संस्तुत</string>
@@ -184,6 +297,7 @@
     <string name="about_privacy_policy_title">गोपनीयता नीति</string>
     <string name="about_terms_and_conditions_title">नियम और शर्तें</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">आप किस प्रकार की समस्या की रिपोर्ट करना चाहते हैं, इसके बारे में विवरण दें</string>
     <string name="report_bugs_desc_hint">विवरण</string>
     <string name="report_bugs_desc_empty">कृपया एक विवरण दें</string>
     <string name="report_bugs_building">गतिविधि की सूची बना रहा …</string>
@@ -193,9 +307,13 @@
     <string name="donation_success">दान करने के लिए धन्यवाद मैं इसे अच्छे के लिए उपयोग करूंगा</string>
     <!-- Crash Report -->
     <string name="crash_report">दुर्घटना विवरणी</string>
+    <string name="crash_report_message">दुर्भाग्य से %s क्रैश हो गया है. कृपया नीचे दिए गये सेन्द रिपोर्ट का चयन करें जिससे की ऐप डेवलपर इस को ठीक कर सके</string>
     <string name="crash_report_send">विवरणी भेजो</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">कैंडीबार </string>
+    <string name="about_dashboard_dev">कैंडीबार ओपन सोर्स आइकन पैक डैशबोर्ड है जिसे अपाचे लाइसेंस 2.0 के तहत लाइसेंस प्राप्त किया गया है
+एंड्रॉइड GitHub पर उपलब्ध है और उपयोग करने के लिए स्वतंत्र, दानी महार्धिका द्वारा विकसित।</string>
+    <string name="about_open_source_licenses">ओपन सोर्स लाइसेंस</string>
     <string name="about_dashboard_contributors">कैंडबैर योगदानकर्ता</string>
     <string name="about_dashboard_translator">कैंडीबर् अनुवादक</string>
     <!-- DrawerToggle -->
@@ -203,4 +321,11 @@
     <string name="txt_close">बंद करे</string>
     <string name="txt_new">नया</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">इस आइकन को बुकमार्क अनुभाग में जोड़ें</string>
+    <string name="icon_search_close_button_content_description">आइकन खोज बंद करें</string>
+    <string name="icon_request_submit_button_content_description">आइकन अनुरोध सबमिट करें</string>
+    <string name="icon_list_content_description">आइकन पैक में शामिल आइकन की सूची</string>
+    <string name="icon_search_list_content_description">खोज शब्द से मेल खाने वाले आइकन की सूची</string>
+    <string name="about_item_social_content_description">आइकन पैक के लेखक की ऑनलाइन प्रोफ़ाइल का लिंक:</string>
+    <string name="share_icon_pack_button_content_description">इस ऐप को किसी के साथ साझा करें</string>
 </resources>

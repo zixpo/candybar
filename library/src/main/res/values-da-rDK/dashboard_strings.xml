@@ -1,33 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Materiale Instrumentbræt</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Hjem</string>
+    <string name="navigation_view_apply">Anvend</string>
+    <string name="navigation_view_icons">Ikoner</string>
+    <string name="navigation_view_request">Ikon efterspørgsel</string>
+    <string name="navigation_view_wallpapers">Baggrunde</string>
+    <string name="navigation_view_presets">Forvalg</string>
+    <string name="navigation_view_settings">Indstillinger</string>
+    <string name="navigation_view_faqs">Ofte stillede spørgsmål</string>
+    <string name="navigation_view_about">Om</string>
+    <string name="navigation_view_donate">Støt udviklingen</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei indstillinger</string>
+    <string name="minute">Minutt</string>
+    <string name="hour">Time</string>
+    <string name="save_setting">Gem</string>
+    <string name="muzei_refresh_duration">Opdater Varighed</string>
+    <string name="muzei_wifi_only">Opdater kun fra Wi-Fi</string>
+    <string name="muzei_downloaded_only">Indlæs Kun Downloadede Baggrunde</string>
+    <string name="muzei_settings_ignored">Ikonpakken indeholder ikke baggrunde, indstillinger ignoreret.</string>
+    <string name="muzei_settings_saved">Indstillinger Gemt</string>
     <!-- Menu -->
+    <string name="menu_search">Søg</string>
+    <string name="menu_save">Gem til enhed</string>
+    <string name="menu_select_all">Vælg Alle</string>
+    <string name="menu_delete">Slet</string>
+    <string name="menu_wallpaper_crop">Beskær baggrunden</string>
+    <string name="menu_apply_homescreen">Startskærm</string>
+    <string name="menu_apply_lockscreen">Låseskærm</string>
+    <string name="menu_apply_homescreen_lockscreen">Startskærm &amp; Låseskærm</string>
     <!-- Dialog -->
+    <string name="open">Åbn</string>
+    <string name="close">Luk</string>
+    <string name="clear">Nulstil</string>
+    <string name="ok">OK</string>
+    <string name="install">Installér</string>
+    <string name="donate">Donere</string>
+    <string name="update">Opdatering</string>
+    <string name="search_noresult">Intet resultat fundet for \"%s\"</string>
+    <string name="search_faqs">Spørgsmål eller svar</string>
+    <string name="search_icon">Ikon Navn</string>
+    <string name="search_wallpapers">Baggrunds navn</string>
     <!-- Update -->
+    <string name="checking_for_update">Søger efter opdatering…</string>
+    <string name="update_available">Opdatering tilgængelig!</string>
+    <string name="no_update_available">!Du bruger den nyeste version!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Version</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Kan ikke indlæse indkøbsprodukter i appen</string>
     <!-- License -->
+    <string name="license_checking">Tjekker licens…</string>
+    <string name="license_check">Kontrol Af Licens</string>
+    <string name="license_check_success">Licens tjek lykkedes. Tak fordi du har downloadet appen fra Play Butik.</string>
+    <string name="license_check_failed">Licenscheck mislykkedes. Du har ikke downloadet appen fra Play Butik.
+        Du vil ikke kunne bruge den.</string>
+    <string name="license_check_retry">Kan ikke kontrollere licensen. Prøv igen om et øjeblik.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play Butik Tjek</string>
+    <string name="playstore_check_success">Tak fordi du har installeret appen fra Google Play Butik. Nyd!</string>
+    <string name="playstore_check_failed">Det ser ud til, at du har installeret dette ikon pakke fra uden for Google Play Butik.
+        Du vil ikke være i stand til at bruge det.</string>
     <!-- Share -->
+    <string name="share_app_title">Yo! Tjek %s</string>
+    <string name="share_app_body">Tjek %1$s, denne ikonpakke er virkelig cool! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Navigation skuffe</string>
+    <string name="tap_intro_home_navigation_desc">Tryk her eller stryg fra venstre kant af skærmen for at åbne navigationsskuffen</string>
+    <string name="tap_intro_home_apply">Anvend ikon pack</string>
+    <string name="tap_intro_home_apply_desc">Tryk her for at anvende %s til din nuværende launcher. Langt tryk for at gælde for andre launchere.</string>
+    <string name="tap_intro_icons_search">Søg</string>
+    <string name="tap_intro_icons_search_desc">Tryk her for at søge efter et ikon</string>
+    <string name="tap_intro_request_select">Vælg ubesvarede app</string>
+    <string name="tap_intro_request_select_desc">Tryk her for at vælge manglende app til ikonanmodning</string>
+    <string name="tap_intro_request_select_all">Vælg ubesvarede app</string>
+    <string name="tap_intro_request_select_all_desc">Tryk her for at vælge manglende app til ikonanmodning</string>
+    <string name="tap_intro_request_send">Send ikonanmodning</string>
+    <string name="tap_intro_request_send_desc">Tryk her for at sende valgte ubesvarede apps</string>
+    <string name="tap_intro_request_premium">Premium ikon anmodning</string>
+    <string name="tap_intro_request_premium_desc">Tryk her for at købe premium-ikon-anmodningspakken,
+        med en premium-ikonanmodning, kan du få dine ønskede apps hurtigere.</string>
+    <string name="tap_intro_wallpapers_option">Valgmuligheder for baggrundsbilleder</string>
+    <string name="tap_intro_wallpapers_option_desc">Tryk og hold her for at vise tapet muligheder; %s anvende tapet.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">download eller</string>
+    <string name="tap_intro_wallpapers_preview">Forhåndsvis baggrund</string>
+    <string name="tap_intro_wallpapers_preview_desc">Tryk her for at se den fulde størrelse af tapetet</string>
+    <string name="tap_intro_wallpaper_preview_save">Forhåndsvis baggrund</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Tryk her for at downloade og gemme tapet til din enhed, så du kan bruge det senere</string>
+    <string name="tap_intro_wallpaper_preview_apply">Anvend baggrund</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Tryk her for at indstille tapet som hjemmeskærm baggrund</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Flere Apps</string>
+    <string name="home_more_apps">Tjek andre apps offentliggjort i Google Play Butik</string>
+    <string name="home_rate_and_review">Bedøm &amp; Gennemgang</string>
+    <string name="home_apply_icon_pack">Anvend %s</string>
+    <string name="home_donate">Donere</string>
+    <string name="home_donate_desc">Støt udvikling af ikonpakken</string>
+    <string name="home_icons">Brugerdefinerede ikoner</string>
+    <string name="home_icon_dimension">%s pixels ikon dimension</string>
+    <string name="home_loud_wallpapers">%d skybaggrunde</string>
+    <string name="home_muzei">Muzei live tapet</string>
+    <string name="home_icon_request_installed_apps">\n%d installerede apps i alt</string>
+    <string name="home_icon_request_themed_apps">\n%d apps</string>
+    <string name="home_icon_request_missed_apps">\n%d apps</string>
     <!-- Apply -->
+    <string name="apply_installed">Installeret Launcher</string>
+    <string name="apply_installed_launchers">Installeret Launcher</string>
+    <string name="apply_supported">Understøttede Løfteraketter</string>
+    <string name="apply_manual">%1$s Launcher understøtter ikke direkte anvendelse, men du kan anvende %2$s manuelt fra launcher indstillinger.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso understøtter ikke direkte anvendelse, men du kan følge disse trin:</string>
+    <string name="apply_manual_kvaesitso_step_1">Åbn Kvaesitsos indstillinger</string>
+    <string name="apply_manual_kvaesitso_step_2">Tryk På \"Gitter &amp; Ikoner\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Tryk på \"Ikon Pack\"</string>
+    <string name="apply_manual_kvaesitso_step_4">Vælg %s fra listen</string>
+    <string name="apply_manual_kvaesitso_step_5">Tryk på penselikonet for at aktivere eller deaktivere baggrundsformen</string>
+    <string name="apply_manual_kiss">KISS understøtter ikke direkte anvendelse, men du kan følge disse trin:</string>
+    <string name="apply_manual_kiss_step_1">Åbn KISS indstillinger</string>
+    <string name="apply_manual_kiss_step_2">Tryk På \"Brugergrænseflade\"</string>
+    <string name="apply_manual_kiss_step_3">Tryk på \"Ikon Pack\"</string>
+    <string name="apply_manual_kiss_step_4">Vælg %s fra listen</string>
+    <string name="apply_manual_samsung_oneui">%1$s understøtter ikke direkte anvendelse, men du kan starte med %2$s anvende ikoner med en følgesvend app.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Din nuværende version af %s er for gammel. Opdatér til Android 12 eller nyere for at kunne anvende ikoner direkte. Alternativt kan du installere en anden launcher.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Åbn %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Download appen %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Tryk På \"Ikon\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Tryk På \"Opret Ny\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Tryk på den blå \"Ikonpack\" knap</string>
+    <string name="apply_manual_samsung_oneui_step_6">Vælg %s fra listen</string>
+    <string name="apply_manual_samsung_oneui_step_7">Gentag disse trin, hver gang du opdaterer %s , da nye ikoner ikke tilknyttes automatisk.</string>
+    <string name="apply_manual_hios">HiOS launcher understøtter ikke direkte anvendelse, men du kan følge disse trin:</string>
+    <string name="apply_manual_hios_step_1">Åbn \"Indstillinger\"</string>
+    <string name="apply_manual_hios_step_2">Tryk På \"Tema &amp; Lockscreen\"</string>
+    <string name="apply_manual_hios_step_3">Tryk på \"Mit tema\"</string>
+    <string name="apply_manual_hios_step_4">Tryk på \"Ikon-pakke\"</string>
+    <string name="apply_manual_hios_step_5">Tryk %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Langt tryk på din startskærm</string>
+    <string name="apply_manual_oxygen_os_step_2">Tryk På \"Startindstillinger\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Tryk På \"Ikonpakke\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Tryk %s</string>
+    <string name="apply_manual_color_os_step_1">Langt tryk på din startskærm</string>
+    <string name="apply_manual_color_os_step_2">Tryk På \"Ikoner\"</string>
+    <string name="apply_manual_color_os_step_3">Rul til højre for \"Brugerdefineret\" knappen (dette er en rulleliste !)</string>
+    <string name="apply_manual_color_os_step_4">Tryk %s</string>
+    <string name="apply_manual_before">Denne version af Før Launcher understøtter endnu ikke at anvende ikoner direkte. Følg i stedet nedenstående trin:</string>
+    <string name="apply_manual_before_step_1">Stryg til venstre på startskærmen</string>
+    <string name="apply_manual_before_step_2">Tryk På \"Indstillinger\"</string>
+    <string name="apply_manual_before_step_3">Tryk På \"Stilarter &amp; Temaer\"</string>
+    <string name="apply_manual_before_step_4">Tryk På \"Ikon Stilarter &amp; Pakker\"</string>
+    <string name="apply_manual_before_step_5">Tryk %s</string>
+    <string name="apply_manual_nothing_step_1">Åbn \"Indstillinger\"</string>
+    <string name="apply_manual_nothing_step_2">Tryk På \"Tilpasning\"</string>
+    <string name="apply_manual_nothing_step_3">Tryk På \"Ikonpakke\"</string>
+    <string name="apply_manual_nothing_step_4">Tryk %s</string>
+    <string name="apply_launch_failed">Kan ikke starte %s indstillinger</string>
+    <string name="apply_launcher_not_installed">%s Launcher er ikke installeret. Vil du åbne
+        Google Play Butik for at downloade og installere den?</string>
+    <string name="apply_launcher_not_installable">%s Launcher er ikke installeret. Prøv igen efter installation af launcher.</string>
+    <string name="apply_cmtheme_not_available">CM Theme Manager er ikke tilgængelig på denne enhed</string>
+    <string name="apply_cmtheme_failed">Kan ikke starte CM Theme Manager, kan du forsøge at anvende Icon Pack manuelt fra Indstillinger.</string>
+    <string name="apply_lg_home">For at anvende denne Ikon Pack åbne indstillinger - Display - Hjemmeskærm - Tema</string>
+    <string name="apply_lg_home_not_available">LG Home er ikke tilgængeligt på denne enhed</string>
+    <string name="apply_lg_home_failed">Kan ikke starte LG Home Indstillinger, kan du forsøge at anvende Icon Pack manuelt fra Indstillinger.</string>
+    <string name="apply_lg_home_nougat">LG Home med Android Nougat understøtter ikke længere Ikon Pack. Du har brug for en brugerdefineret launcher for at bruge Ikon Pack.</string>
+    <string name="apply_launcher_incompatible">%s Launcher understøtter ikke nogen ikonpakker, så du kan ikke bruge denne ikonpakke med denne launcher. Du kan prøve en tredjeparts-app for at bruge denne ikonpakke i %2$s launcher. Vil du installere den?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s launcher understøtter ikke ikonpakker på Android %d eller lavere. Opdater venligst din Android-version eller installer en tredjeparts launcher for at bruge denne ikonpakke. Du kan også prøve en hjælpeapp til at ændre individuelle ikoner. Vil du installere den?</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Ikoner kan ikke indlæses</string>
+    <string name="icon_shape">Ikonform</string>
+    <string name="bookmark_icons_empty">Ingen bogmærker fundet. Bogmærk ikoner til hurtigt at tilgå dem her.</string>
+    <string name="items_selected">%d valgte</string>
     <!-- Request -->
+    <string name="request_title">Ikon efterspørgsel</string>
+    <string name="request_not_selected">Vælg apps, der skal anmodes om</string>
+    <string name="request_not_requested">Ikke anmodet om</string>
+    <string name="request_already_requested">Allerede anmodet</string>
+    <string name="request_not_available">Kan ikke anmodes om</string>
+    <string name="request_building">Bygger forespørgsel …</string>
+    <string name="request_pacific_sending">Sender anmodning til Pacific Manager...</string>
+    <string name="request_pacific_error">Der opstod en fejl under afsendelse af en anmodning til Pacific Manager. Fejl er %s</string>
+    <string name="request_pacific_success">Anmodning blev sendt til Pacific Manager</string>
+    <string name="request_custom_error">Der opstod en fejl under afsendelse af en ikonanmodning. Hvis fejlen fortsætter, skal du kontakte udvikleren. %s</string>
+    <string name="request_custom_success">Anmodning om ikonet er afsendt</string>
+    <string name="request_fetching_data">Henter seneste data …</string>
+    <string name="request_build_failed">Kunne ikke bygge ikonanmodning</string>
+    <string name="request_appfilter_failed">Kan ikke læse appfilter.xml</string>
+    <string name="request_requested">Du har allerede anmodet om dette ikon og kan ikke anmode om det igen.</string>
+    <string name="request_requested_possible">Du har allerede anmodet om dette ikon. Er du sikker på, at du vil bruge en anden anmodning på det?</string>
+    <string name="request_requested_button_cancel">Gå tilbage</string>
+    <string name="request_requested_button_confirm">Vælg alligevel</string>
+    <string name="request_email_client">Vælg den app, du vil bruge til at sende ikonforespørgslen</string>
+    <string name="request_app_disabled">Du bruger en ældre version af denne ikonpakke. De ønskede ikoner kan være inkluderet i den seneste version. Opdater venligst din app til den nyeste version for at anmode om ikoner.</string>
+    <string name="connection_error_long">Kan ikke indlæse data fra serveren. Tjek venligst din netværksforbindelse.</string>
+    <string name="unable_to_load_config">Der opstod en fejl under hentning eller læsning af data fra serveren.</string>
+    <string name="request_limit">Du kan kun foretage %d forespørgsler med regelmæssig anmodning.</string>
+    <string name="request_used">Du har anmodet om %d ikoner.</string>
+    <string name="request_limit_buy">Du kan købe Premium-anmodninger for at anmode om flere ikoner.</string>
+    <string name="request_limit_reset">Grænsen for ikonforespørgsler vil blive nulstillet ved hver opdatering.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Almindelig Ikonforespørgsel</string>
+    <string name="regular_request_desc">Få dit ikon forespurgt, og udvikleren vil forsøge at inkludere ikoner, du har anmodet om.</string>
+    <string name="regular_request_count">Samlet\n%d anmodning</string>
+    <string name="regular_request_used">Brugt\n%d anmodning</string>
+    <string name="regular_request_available">Tilgængelig\n%d anmodning</string>
     <!-- Premium Request -->
+    <string name="premium_request">Premium ikon anmodning</string>
+    <string name="premium_request_no_internet">Sørg for, at din telefon er tilsluttet internettet, før du sender en premium-anmodning</string>
+    <string name="premium_request_desc">Premium-ikonanmodning er en betalings-til-anmodning. Du kan få dine ønskede apps hurtigere ved at bruge en premium-ikonanmodning.</string>
+    <string name="premium_request_buy">Købe</string>
+    <string name="premium_request_count">Samlet\n%d anmodning</string>
+    <string name="premium_request_used">Brugt\n%d anmodning</string>
+    <string name="premium_request_available">Tilgængelig\n%d anmodning</string>
+    <string name="premium_request_already_purchased">Du har stadig %d premium anmodning.
+        Du skal bruge dem alle før du køber en premium request pakke igen.</string>
+    <string name="premium_request_limit">Du har kun %d premium anmodning(er),</string>
+    <string name="premium_request_limit1">men du valgte %d app(s).
+        \n\nDu skal bruge alle dine Premium-anmodninger, før du bruger den almindelige anmodning igen.</string>
+    <string name="premium_request_consume_failed">Kan ikke bruge Premium-anmodningen, sørg for at du har en stabil internetforbindelse og prøv igen.
+        Gå til Indstillinger for at genopbygge Premium-anmodninger.</string>
+    <string name="premium_request_rebuilding">Genopbygger Premium Request …</string>
+    <string name="premium_request_rebuilding_empty">Du har ikke lavet en Premium-anmodning</string>
+    <string name="premium_request_exist">Du har stadig en Premium Icon Request pakke.
+        Åbn Indstillinger, vælg \"Gendan Indkøb\" for at gendanne den.</string>
+    <string name="premium_request_required">Du skal købe en premium ikon anmodning pakke for at lave ikonanmodninger</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Nyt Baggrund</string>
+    <string name="wallpaper_already_downloaded">Baggrund allerede downloadet</string>
+    <string name="wallpaper_downloading">Downloader baggrundsbillede …</string>
+    <string name="wallpaper_download_failed">Baggrund kan ikke hentes</string>
+    <string name="wallpaper_download_success">Download af baggrundsbillede lykkedes</string>
+    <string name="wallpaper_loading">Downloader baggrundsbillede …</string>
+    <string name="wallpaper_applying">Anvender tapet …</string>
+    <string name="wallpaper_applied">Baggrund anvendt</string>
+    <string name="wallpaper_apply_failed">Baggrund kan ikke hentes</string>
+    <string name="wallpaper_apply_cancelled">Tapet gælder annulleret</string>
+    <string name="connection_failed">Kan ikke hente data fra serveren</string>
+    <string name="wallpaper_apply">Anvend baggrund</string>
+    <string name="wallpaper_save_to_device">Forhåndsvis baggrund</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Ikoner kan ikke indlæses</string>
+    <string name="presets_storage_permission">Lagringstilladelse er nødvendig for at indlæse preview tapet</string>
+    <string name="presets_required_apps">Påkrævede apps for at bruge disse forudindstillinger</string>
+    <string name="presets_required_apps_not_installed">Påkrævede apps til brug af forudindstillingen er ikke installeret. Installér de manglende nødvendige apps, og prøv igen.</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Data &amp; Cache</string>
+    <string name="pref_data_cache">Ryd Cache</string>
+    <string name="pref_data_cache_desc">Fjern billed-cache fra din lagerplads, oprettet ved valg af et billede
+	    fra denne app, anmoder om manglende apps og efter indlæsning af miniaturebilleder i skyens baggrunde.</string>
+    <string name="pref_data_cache_size">Cache Størrelse: %s</string>
+    <string name="pref_data_cache_clear_dialog">Vil du virkelig rydde cache?</string>
+    <string name="pref_data_cache_cleared">Cache ryddet</string>
+    <string name="pref_data_request">Ryd Ikonforespørgselsdata</string>
+    <string name="pref_data_request_desc">Fjern ikonanmodningsdata, oprettet efter anmodning om
+        ubesvarede apps fra ikonanmodning.</string>
+    <string name="pref_data_request_clear_dialog">Vil du virkelig rydde ikonforespørgselsdata?</string>
+    <string name="pref_data_request_cleared">Ikonforespørgselsdata ryddet</string>
+    <string name="pref_premium_request_header">Premium ikon anmodning</string>
+    <string name="pref_premium_request_restore">Einkäufe wiederherstellen</string>
+    <string name="pref_premium_request_restore_desc">Gendan premium anmodningspakke efter geninstallation af ikonpakken</string>
+    <string name="pref_premium_request_restore_success">Premium Forespørgsel Gendannet</string>
+    <string name="pref_premium_request_restore_empty">Du har ingen købte pakker</string>
+    <string name="pref_premium_request_rebuild">Genopbyg Premium-ikonanmodning</string>
+    <string name="pref_premium_request_rebuild_desc">Indsaml alle premium ikon anmodning data for at gensende dem</string>
+    <string name="pref_theme_header">Tema</string>
+    <string name="pref_theme_dark">Mørkt tema</string>
+    <string name="pref_theme_dark_desc">Brug mørk farve til programtema</string>
+    <string name="pref_notifications_header">Notifikationer</string>
+    <string name="pref_notifications">Modtage notifikationer</string>
+    <string name="pref_wallpaper_header">Baggrund</string>
+    <string name="pref_wallpaper_location">Baggrund Gem Placering</string>
+    <string name="pref_language_header">Sprog</string>
+    <string name="pref_others_header">Andre</string>
+    <string name="pref_others_report_bugs">Anmeld fejl</string>
+    <string name="pref_others_changelog">Ændringslog</string>
+    <string name="pref_others_reset_tutorial">Nulstil Intro</string>
+    <string name="pref_others_reset_tutorial_reset">Nulstilling Af Vejledning</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Auto</string>
+    <string name="theme_name_light">Lys</string>
+    <string name="theme_name_dark">Mørk</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Lagringstilladelse nødvendig for at gemme baggrund</string>
+    <string name="permission_notification_denied_1">Notifikationstilladelse er nødvendig for at modtage notifikationer fra udvikleren</string>
+    <string name="permission_notification_denied_2">Aktiver notifikationer fra app-indstillingerne</string>
     <!-- Intent -->
+    <string name="app_client">Vælg app</string>
+    <string name="no_email_app">Ingen app til at sende e-mail</string>
+    <string name="no_browser">Intet program at åbne URL</string>
+    <string name="intent_email_failed">Kan ikke vise e-mail-applikation</string>
+    <string name="intent_email_supported">Understøttet</string>
+    <string name="intent_email_recommended">Anbefalet</string>
+    <string name="intent_email_not_supported">Ikke understøttet</string>
+    <string name="intent_email_not_supported_message">Valgt en ikke-understøttet e-mail-klient, vælg venligst en anden e-mail-klient</string>
     <!-- About -->
+    <string name="about_contributors_title">Bidragydere</string>
+    <string name="about_privacy_policy_title">Fortrolighedspolitik</string>
+    <string name="about_terms_and_conditions_title">Vilkår og Betingelser</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Giv venligst en beskrivelse af den type problem, du ønsker at rapportere</string>
+    <string name="report_bugs_desc_hint">Beskriveslse</string>
+    <string name="report_bugs_desc_empty">Giv venligst en beskrivelse</string>
+    <string name="report_bugs_building">Bygger aktivitetsliste …</string>
+    <string name="report_bugs_failed">Ikke i stand til at opbygge aktivitetsliste</string>
+    <string name="report_bugs_send">Send Rapport</string>
     <!-- Support Development -->
+    <string name="donation_success">Tak fordi De har doneret en donation, og jeg vil bruge den til gode.</string>
     <!-- Crash Report -->
+    <string name="crash_report">Nedbrudsrapport</string>
+    <string name="crash_report_message">Desværre er %s gået ned. Vælg Send rapport nedenfor for at hjælpe udvikleren med at løse problemet.</string>
+    <string name="crash_report_send">Send Rapport</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar er et open source ikon pack dashboard licenseret under Apache License 2.0 for
+        Android tilgængelig på GitHub og gratis at bruge, udviklet af Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Open Source Licenser</string>
+    <string name="about_dashboard_contributors">CandyBar Contributors</string>
+    <string name="about_dashboard_translator">CandyBar Oversætter</string>
     <!-- DrawerToggle -->
+    <string name="txt_open">Åbn</string>
+    <string name="txt_close">Luk</string>
+    <string name="txt_new">Ny</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Tilføj dette ikon til sektionen bogmærker</string>
+    <string name="icon_search_close_button_content_description">Luk ikonsøgning</string>
+    <string name="icon_request_submit_button_content_description">Indsend en ikonanmodning</string>
+    <string name="icon_list_content_description">Listen over ikoner inkluderet i ikonpakken</string>
+    <string name="icon_search_list_content_description">Listen over ikoner der matcher søgeordet</string>
+    <string name="about_item_social_content_description">Et link til en online profil af forfatteren af ikonpakken: </string>
+    <string name="share_icon_pack_button_content_description">Del denne app med nogen</string>
 </resources>

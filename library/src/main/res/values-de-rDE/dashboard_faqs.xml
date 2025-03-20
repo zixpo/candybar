@@ -37,13 +37,13 @@
         <item>Ich kann den kompletten Namen eines Icons nicht sehen</item>
         <item>Wie kann ich Icons durch alternative Icons ersetzen?</item>
         <item>Wie kann ich ein Icon anfordern?</item>
-        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
-        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
+        <item>Wie kann ich die verbleibenden Premium-Anfragen nach der Neuinstallation der App wiederherstellen?</item>
+        <item>Nach einem Neustart meines Telefons wird das Icon-Paket nicht angewendet; es stellt die Standardwerte wieder her?</item>
         <item>Wieso sehen Icons verpixelt und kantig auf meinem Handy aus?</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on the app drawer changed?</item>
+        <item>Ich sehe das Symbol in allen Symbolen,
+            , aber warum ändert sich das aktuelle Symbol im App-Drawer nicht?</item>
         <item>Was ist die \"Fehler melden\" Option?</item>
-        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
+        <item>Mein Launcher ist in der Google Play-Beschreibung aufgelistet, aber warum ist es nicht im Anwendungsbereich enthalten?</item>
         <item>Hintergrundbild kann nicht angewandt werden und es wird nur ein schwarzer Bildschirm angezeigt.</item>
         <item>Muzei: Wie kann ich nur heruntergeladene Hintergrundbilder laden?</item>
         <item>Muzei: Ich möchte nicht ständig Hintergründe herunterladen, jedes Mal wenn es sich ändert.</item>
@@ -59,42 +59,42 @@
     <string-array name="answers">
         <item>Der Launcher ist der Teil der Androidbenutzeroberfläche, der zulässt den Startbildschirm anzupassen, Apps zu starten, Anrufe zu tätigen und andere Aufgaben auf Android-Geräten zu erfüllen.</item>
         <item>Ein Set von Grafiken, das Aussehen deiner Icons in der App-Übersicht ändert</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play Store description.
-            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
-        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
-            If your launcher is not listed there, but this icon pack is compatible with it
-            (see on Google Play Store description for supported launchers),
-            you can apply the icon pack manually in your launcher settings.</item>
-        <item>You can open the navigation drawer and then open \"Icons\"</item>
+        <item>Sie werden einen Launcher benötigen, der benutzerdefinierte Icon-Pakete unterstützt.
+            Unterstützte Launcher werden in der Beschreibung des Play Store aufgelistet.
+            Wenn Sie verwirrt sind, welche Launcher verwendet werden sollen gehen Sie einfach zum Abschnitt \"Anwenden\" und installieren Sie von dort.</item>
+        <item>Sie können die Navigationsleiste öffnen und dann \"Anwenden\" öffnen. Wählen Sie Ihren Launcher aus der Liste.
+            Wenn Ihr Launcher dort nicht aufgeführt ist aber dieses Icon Pack ist mit ihm kompatibel
+            (siehe Google Play Store Beschreibung für unterstützte Launcher),
+            Sie können das Symbolpaket in Ihren Launcher-Einstellungen manuell anwenden.</item>
+        <item>Sie können die Navigationsleiste öffnen und dann \"Icons\" öffnen</item>
         <item>Klicke auf das Icon. Es wird eine Vorschau mit einem größeren Bild und dem kompletten Namen des Icons erscheinen.</item>
         <item>Es hängt davon ab, welchen Launcher du benutzt hast. Nicht jeder Launcher unterstützt das Bearbeiten von Icons.
 Normalerweise kannst du ein Icon bearbeiten, indem du das Icon anklickst &amp; festhältst oder es doppelt anklickst.</item>
-        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
+        <item>Sie können die Navigationsleiste öffnen und dann \"Icon Request\" öffnen.</item>
+        <item>Sie können die Navigationsleiste öffnen und dann \"Einstellungen\" öffnen und \"Einkäufe wiederherstellen\" wählen.
+            Wenn du noch Premium-Anfragen vor der Neuinstallation hast, sie werden wiederhergestellt.</item>
+        <item>Es ist passiert, weil dieses Icon-Paket auf die SD-Karte verschoben wurde; Sie sollten es im internen Speicher installieren.</item>
+        <item>Das Problem könnte von dem Launcher kommen, den Sie bei der Auflösung von großen Symbolen verwendet haben.
+       	    Du kannst es beheben, indem du die Symbolgröße auf 115–120% erhöht.
+       	    Alternativ können Sie Ihren Launcher ändern.</item>
+        <item>Öffnen Sie die Einstellungen, scrollen Sie nach unten und wählen Sie dann \"Bugs melden\".</item>
         <item>\"Fehler melden\" wird benutzt, um Fehler in Bezug zum Icon Pack und nicht dem Dashboard zu melden.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
+        <item>Nicht jeder Launcher unterstützt direkte Anwendung, und einige davon können nicht direkt vom Dashboard aus erreicht werden.
+      	    Du kannst dieses Symbolpaket in den einzelnen Launcher-Einstellungen manuell anwenden.</item>
         <item>Wenn du ein Hintergrundbild aus der App festlegst, wird es in den Cache heruntergeladen
 und die Dashboard-App wird versuchen es anzuwenden. Die Anwendung braucht einige Zeit und wird für eine kurze Zeitspanne eine hohe Menge an RAM beanspruchen.
 Ein schwarzes Display könnte erscheinen, weil dein Handy nicht genügend RAM zur Verfügung hat.
 Ein Neustart deines Handys wird das Problem lösen. Nach dem Neustart hat dein Handy wieder mehr RAM zur Verfügung.
 Ansonsten kannst du das heruntergeladene Hintergrundbild aus deiner Galerie als Hintergrund festlegen.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>Öffnen Sie Muzei, wählen Sie dieses Symbol-Paket. Sie werden eine Option sehen, um nur heruntergeladene Hintergrundbilder zu laden.
+            Du musst zuerst Hintergrundbilder aus dem Dashboard herunterladen.</item>
         <item>Wenn ein Hintergrundbild bereits heruntergeladen wurde, wird es aus deinem Gerätespeicher automatisch geladen.
 Muzei wird es nicht ständig herunterladen, wenn sich das Hintergrundbild ändert.
 Du musst die Hintergrundbilder zuerst herunterladen.</item>
         <item>Dashboard öffnen und lade die Hintergrundbilder herunter, die du in Muzei nutzen möchtest.
 Muzei-Einstellungen öffnen und wähle, dass nur heruntergeladene Hintergrundbilder geladen werden.</item>
         <item>Es wird benutzt, um den Cache zu lesen und zu schreiben und um Daten der Icon-Anfrage zu sammeln.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>Es wird verwendet, um Cloud-basierte Hintergrundbilder &amp; herunterzuladen.</item>
         <item>Es wird benutzt, um zu überprüfen, ob dein Handy eine Internetverbindung hat.</item>
         <item>Es wird benutzt, um zu überprüfen, ob dein Handy eine Internetverbindung mit einem WLAN-Netzwerk hat, damit Cloud-Hintergründe von Muzei geladen werden können.</item>
         <item>Es wird benutzt, um Hintergrundbilder direkt aus der Dashboard App anzuwenden.</item>

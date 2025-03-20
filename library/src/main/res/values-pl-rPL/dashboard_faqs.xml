@@ -37,13 +37,13 @@
         <item>Nie widzę pełnej nazwy ikony</item>
         <item>Jak mogę wymienić ikonę na alternatywną?</item>
         <item>Jak wysłać prośbę o ikonę?</item>
-        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
-        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
+        <item>Jak mogę przywrócić pozostałe żądania Premium po ponownej instalacji aplikacji?</item>
+        <item>Po ponownym uruchomieniu mojego telefonu paczka ikon nie jest zastosowana; przywraca domyślne?</item>
         <item>Dlaczego ikony są rozpikselizowane lub niewyraźne na moim telefonie?</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on the app drawer changed?</item>
+        <item>Widzę ikonę zawartą we wszystkich ikonach,
+            , ale dlaczego nie zmieniono ikony w szufladzie aplikacji?</item>
         <item>Do czego służy opcja \"Zgłoś błędy\"?</item>
-        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
+        <item>Mój launcher znajduje się na liście w opisie Google Play, ale dlaczego nie jest on zawarty w sekcji aplikowania?</item>
         <item>Nie mogę zastosować tapety, widzę tylko czarny ekran.</item>
         <item>Muzei: Jak ładować tylko pobrane tapety?</item>
         <item>Muzei: Nie chcę, aby tapety były pobierane przy każdej automatycznej zmianie tła.</item>
@@ -59,38 +59,38 @@
     <string-array name="answers">
         <item>Launcher to część interfejsu użytkownika systemu Android, która pozwala użytkownikom personalizować swój ekran główny, uruchamiać aplikacje, wykonywać połączenia telefoniczne, oraz wykonywać inne zadania na urządzeniu.</item>
         <item>Zestaw grafik, które zmienią wygląd ikon na pulpicie twojego urządzenia.</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play Store description.
-            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
-        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
-            If your launcher is not listed there, but this icon pack is compatible with it
-            (see on Google Play Store description for supported launchers),
-            you can apply the icon pack manually in your launcher settings.</item>
-        <item>You can open the navigation drawer and then open \"Icons\"</item>
+        <item>Będziesz potrzebował launchera, który obsługuje niestandardowe pakiety ikon.
+            Wspierane launchery są wymienione w opisie Sklepu Play.
+            Jeśli jesteś zdezorientowany co do tego, które launchery powinny być używane, po prostu przejdź do sekcji \"Zastosuj\" i zainstaluj stąd.</item>
+        <item>Możesz otworzyć szufladę nawigacyjną, a następnie otworzyć \"Zastosuj\". Wybierz launcher z listy.
+            Jeśli twój launcher nie jest tam wymieniony, ale ten pakiet ikon jest z nim kompatybilny
+            (zobacz w opisie Sklepu Google Play dla wspieranych launcherów),
+            możesz ręcznie zastosować paczkę ikon w ustawieniach launchera.</item>
+        <item>Możesz otworzyć szufladę nawigacji, a następnie otworzyć \"Ikony\"</item>
         <item>Po prostu dotknij ikonę. Zobaczysz wtedy okno z większym obrazkiem oraz całą jej nazwę.</item>
         <item>To zależy od launchera, którego używasz - nie każdy launcher wspiera edytowanie ikon. W większości przypadków opcja ta jest dostępna po przytrzymaniu palca na ikonie bądź jej podwójnym dotknięciu.</item>
-        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
+        <item>Możesz otworzyć szufladę nawigacji, a następnie otworzyć \"Żądanie ikon\".</item>
+        <item>Możesz otworzyć szufladę nawigacji, a następnie otworzyć \"Ustawienia\", wybierz \"Przywróć zakupy\".
+            Jeśli masz jakieś pozostałe żądania Premium przed ponowną instalacją, zostaną przywrócone.</item>
+        <item>Zdarzało się, ponieważ ta paczka ikon została przeniesiona na kartę SD. Powinieneś zainstalować ją w pamięci wewnętrznej.</item>
+        <item>Problem może wynikać z launcher, którego używałeś podczas obsługi dużej rozdzielczości ikon.
+       	    Możesz to naprawić, zwiększając rozmiar ikony do 115–120%.
+       	    Alternatywnie, możesz zmienić swój launcher.</item>
+        <item>Otwórz ustawienia, przewiń w dół i wybierz \"Zgłoś błędy\".</item>
         <item>Opcja \"Zgłoś błędy\" jest używana by zgłosić problemy z paczką ikon, a nie aplikacją.</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
+        <item>Nie każdy launcher obsługuje bezpośrednie aplikacje, a niektóre z nich nie mogą być dostępne bezpośrednio z pulpitu nawigacyjnego.
+      	    Możesz ręcznie zastosować tę paczkę ikon w ustawieniach launcher.</item>
         <item>Gdy ustawisz tapetę bezpośrednio z aplikacji, zostanie ona pobrana do pamieći cache, a następnie aplikacja podejmie próbę zastosowania tła pulpity. Ten proces może chwilę potrwać. Używa on także wielkiej ilości pamięci RAM w którkim czasie. Błędy z czarnym ekranem mogą być związane z niewystarczającą ilością wolnej pamięci RAM w telefonie. Ten problem można naprawić uruchamiając ponownie telefon - spowoduje to oczyszczenie pamięci RAM. Alternatywnie, możesz otworzyć pobraną tapetę w galerii i zastosować ją stamtąd.</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
+        <item>Otwórz Muzei, wybierz ten pakiet ikon, ustawień. Zobaczysz opcję, aby załadować tylko pobrane tapety.
+            Najpierw musisz pobrać tapetę z pulpitu nawigacyjnego.</item>
         <item>Jeżeli tapeta jest już pobrana, zostanie ona automatycznie załadowana z pamięci urządzenia. Muzei nie będzie pobierało ponownie obrazka w przypadku automatycznej zmiany tła pulpitu. Będzie konieczne pobranie tapet z aplikacji aby ta opcja działała.</item>
         <item>Otwórz aplikację, pobierz tapety których chcesz użyć w Muzei. Otwórz ustawienia Muzei i wybierz opcję ładowania tylko pobranych tapet.</item>
         <item>Jest używane aby zapisywać i czytać pamięć cache, oraz zbierać informacje dotyczące próśb o ikony.</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
+        <item>Jest używany do załadowania tapety z chmury &amp; je pobierać.</item>
         <item>Jest używane aby sprawdzić, czy telefon jest połączony z internetem.</item>
         <item>Jest używane aby sprawdzić czy telefon ma połączenie z siecią WiFi, w celu ładowania przechowywanych w chmurze tapet w Muzei.</item>
         <item>Jest używane aby zastosowywać tapety bezpośrednio z aplikacji.</item>
         <item>Jest używane przez Muzei Live Wallpaper</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>Jest ona używana do uruchamiania aplikacji zegara z widżetu zegara analogowego.</item>
     </string-array>
 </resources>

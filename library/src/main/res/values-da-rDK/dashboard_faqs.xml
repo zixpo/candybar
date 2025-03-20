@@ -28,4 +28,77 @@
         <!-- Why is Wake Lock Permission needed? -->
         <!-- Why is Set Alarm permission needed? -->
     </string-array>
+    <string-array name="questions">
+        <item>Hvad er en løfteraket?</item>
+        <item>Hvad er en ikonpakke?</item>
+        <item>Hvordan bruger jeg en ikonpakke?</item>
+        <item>Hvordan bruger jeg en ikonpakke?</item>
+        <item>Hvordan ser jeg alle ikoner inkluderet?</item>
+        <item>Jeg kan ikke se et komplet ikonnavn</item>
+        <item>Hvordan kan jeg erstatte ikoner med et alternativt ikon?</item>
+        <item>Hvordan beder jeg om et ikon?</item>
+        <item>Hvordan kan jeg gendanne de resterende Premium-anmodninger efter geninstallation af appen?</item>
+        <item>Efter genstart af min telefon, er ikonpakken ikke anvendt; den gendanner til standard?</item>
+        <item>Hvorfor ser ikonerne ud jaggy eller pixeleret på min telefon?</item>
+        <item>Jeg kan se ikonet inkluderet i alle ikoner,
+            , men hvorfor er det faktiske ikon i app-skuffen ikke ændret?</item>
+        <item>Hvad er \"rapport bugs\" mulighed?</item>
+        <item>Min launcher er anført i Google Play beskrivelse, men hvorfor er det ikke inkluderet i anvende sektionen?</item>
+        <item>Tapet kan ikke anvendes, viser blot sort skærm?</item>
+        <item>Muzei: Sådan indlæses downloadede wallpapers kun?</item>
+        <item>Muzei: Jeg ønsker ikke at holde downloade wallpapers hver gang tapet skifter?</item>
+        <item>Muzei: Jeg ønsker kun at bruge specifikke baggrundsbilleder?</item>
+        <item>Hvorfor er Læs &amp; Skriv tilladelse til ekstern lagring?</item>
+        <item>Hvorfor er der brug for internettilladelse?</item>
+        <item>Hvorfor er der behov for adgang til netværksstatus?</item>
+        <item>Hvorfor er der brug for adgang til Wifi Stat?</item>
+        <item>Hvorfor er Angiv Tapettilladelse nødvendig?</item>
+        <item>Hvorfor er Wake Lock tilladelse nødvendig?</item>
+        <item>Hvorfor er Angiv alarm tilladelse påkrævet?</item>
+    </string-array>
+    <string-array name="answers">
+        <item>Launcher er den del af Android brugergrænseflade, der lader brugerne tilpasse startskærmen,
+            start mobile apps, foretage telefonopkald, og udføre andre opgaver på Android-enheder.</item>
+        <item>Et sæt grafik, der vil ændre udseendet af din app skuffe ikoner</item>
+        <item>Du skal bruge en launcher, der understøtter brugerdefinerede ikonpakker.
+            Understøttede launchers er anført i Play Butik beskrivelsen.
+            Hvis du er forvirret over, hvilke løfteraketter der skal bruges, bare gå til \"Anvend\" sektionen og installere derfra.</item>
+        <item>Du kan åbne navigationsskuffen, og derefter åbne \"Anvend\". Vælg din launcher fra listen.
+            Hvis din launcher ikke er listet der, men denne ikonpakke er kompatibel med det
+            (se på Google Play Butik beskrivelse for understøttede launchers),
+            du kan anvende ikonpakken manuelt i dine launcher-indstillinger.</item>
+        <item>Du kan åbne navigationsskuffen, og derefter åbne \"Ikonanmodning\"</item>
+        <item>Bare tryk på ikonet. En forhåndsvisning dialog vises med et større billede og komplet ikon navn.</item>
+        <item>Det afhænger af, hvilken launcher du brugte. Ikke alle launcher understøtter ikon redigering.
+       	    For det meste kan du redigere et ikon ved at trykke på &amp; og holde ikonet eller dobbelttrykke det.</item>
+        <item>Du kan åbne navigationsskuffen, og derefter åbne \"Ikonanmodning\".</item>
+        <item>Du kan åbne navigationsskuffen, og derefter åbne \"Indstillinger\", vælg \"Gendan køb\".
+            Hvis du har haft nogen resterende Premium Anmodninger før geninstallation, de vil blive genoprettet.</item>
+        <item>Det skete, fordi dette ikon pakke blev flyttet til SD-kortet; du skal installere det i intern hukommelse.</item>
+        <item>Problemet kan komme fra launcheren, som du brugte, når du håndterer stor ikon opløsning.
+       	    Du kan rette den ved at øge ikonstørrelsen til 115–120%.
+       	    Alternativt kan du ændre din launcher.</item>
+        <item>Åbn indstillinger, rul ned, og vælg derefter \"Rapportér fejl\".</item>
+        <item>\"Rapportér fejl\" bruges til at rapportere fejl relateret til ikonpakken, ikke instrumentbrættet.</item>
+        <item>Ikke alle launcher understøtter direkte anvendelse, og nogle af dem kan ikke tilgås direkte fra instrumentbrættet.
+      	    Du kan anvende denne ikonpakke manuelt i de individuelle launcher-indstillinger.</item>
+        <item>Når du \"Set Wallpaper\" direkte fra appen, vil den blive hentet til cachen
+      	    så vil dashboard app forsøge at anvende det. Anvendelse vil tage nogen tid og også brug for en enorm mængde RAM i en kort tidsplan.
+      	    \"Black Screen\" fejl kan vises, fordi din telefon ikke har nok gratis RAM til at behandle tapet.
+      	    Genstart af din telefon vil løse dette problem. Efter genstart vil telefonen have mere RAM tilgængelig.
+            Alternativt, du kan åbne den downloadede tapet fra dit galleri og indstille det som tapet derfra.</item>
+        <item>Åbn Muzei, vælg denne ikonpakke, indstillinger. Du vil se en mulighed for at indlæse downloadede baggrunde kun.
+            Du skal først downloade baggrunde fra dashboardet.</item>
+        <item>Hvis et tapet allerede er downloadet, vil det automatisk blive indlæst fra din telefonhukommelse.
+            Muzei vil ikke blive ved med at downloade den, når tapetet ændres. Du skal først downloade baggrunde fra dashboardet.</item>
+        <item>Åbn Dashboard, download baggrunde, som du ønsker at bruge i Muzei.
+            Åbn Muzei indstillinger, og vælg derefter Indlæs kun downloadede baggrunde.</item>
+        <item>Det bruges til at skrive &amp; læse cache, og indsamle ikonet anmodning data.</item>
+        <item>Det bruges til at indlæse Cloud-Based Wallpapers &amp; downloade dem.</item>
+        <item>Det bruges til at kontrollere, om din telefon har en internetforbindelse eller ej.</item>
+        <item>Det bruges til at kontrollere, om din telefon har en internetforbindelse til en wifi eller ej, til at indlæse cloud wallpapers fra Muzei.</item>
+        <item>Det bruges til at anvende baggrunde direkte fra dashboard app.</item>
+        <item>Det bruges af Muzei Live Wallpaper.</item>
+        <item>Det bruges til at starte ur app fra det analoge ur widget.</item>
+    </string-array>
 </resources>
