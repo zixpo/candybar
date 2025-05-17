@@ -118,6 +118,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_lucid,
                 new String[]{"com.powerpoint45.launcher"},
                 true),
+        MLAUNCHER(
+                "mLauncher",
+                R.drawable.ic_launcher_mlauncher,
+                new String[]{"app.mlauncher"},
+                true),
         NOTHING(
                 "Nothing",
                 R.drawable.ic_launcher_nothing,
@@ -648,6 +653,24 @@ public class LauncherHelper {
                 break;
             case MICROSOFT:
                 applyManual(context, launcherPackage, launcherName, null);
+                break;
+            case MLAUNCHER:
+                try {
+                    final Intent mlauncher = new Intent("app.mlauncher.APPLY_ICONS", null);
+                    mlauncher.putExtra("packageName", context.getPackageName());
+                    context.startActivity(mlauncher);
+                    ((AppCompatActivity) context).finish();
+                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                            "click",
+                            new HashMap<String, Object>() {{
+                                put("section", "apply");
+                                put("action", "confirm");
+                                put("launcher", launcherPackage);
+                            }}
+                    );
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
                 break;
             case NIAGARA:
                 try {
