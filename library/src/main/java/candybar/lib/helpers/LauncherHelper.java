@@ -230,6 +230,16 @@ public class LauncherHelper {
                 DIRECT_APPLY_NOT_SUPPORTED,
                 (context, launcherName) -> new String[]{} // FIXME: Opens app without instructions
         ),
+        ION_LAUNCHER(
+                "Ion Launcher",
+                R.drawable.ic_launcher_ion,
+                new String[]{"one.zagura.IonLauncher"},
+                NO_SETTINGS_ACTIVITY,
+                (context, launcherPackageName) -> new Intent("one.zagura.IonLauncher.ui.settings.iconPackPicker.IconPackPickerActivity")
+                        .putExtra("pkgname", context.getPackageName())
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                MANUAL_APPLY_NOT_SUPPORTED // TODO: Add instructions
+        ),
         LAWNCHAIR(
                 "Lawnchair",
                 R.drawable.ic_launcher_lawnchair,

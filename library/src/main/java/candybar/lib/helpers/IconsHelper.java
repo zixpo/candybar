@@ -30,7 +30,9 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -129,24 +131,24 @@ public class IconsHelper {
     }
 
     public static List<Icon> getTabAllIcons() {
-        List<Icon> icons = new ArrayList<>();
+        Set<Icon> iconSet = new HashSet<>();
         String[] categories = CandyBarApplication.getConfiguration().getCategoryForTabAllIcons();
 
         if (categories != null && categories.length > 0) {
             for (String category : categories) {
                 for (Icon section : CandyBarMainActivity.sSections) {
                     if (section.getTitle().equals(category)) {
-                        icons.addAll(section.getIcons());
+                        iconSet.addAll(section.getIcons());
                         break;
                     }
                 }
             }
         } else {
             for (Icon section : CandyBarMainActivity.sSections) {
-                icons.addAll(section.getIcons());
+                iconSet.addAll(section.getIcons());
             }
         }
-
+        List<Icon> icons = new ArrayList<>(iconSet);
         Collections.sort(icons, Icon.TitleComparator);
         return icons;
     }
