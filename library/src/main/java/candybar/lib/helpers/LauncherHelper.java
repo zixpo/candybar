@@ -854,7 +854,17 @@ public class LauncherHelper {
         }
     }
 
-    private static Launcher getLauncher(String packageName) {
+    /**
+     * Get the launcher object for a given package name. If the package name is null or not
+     * recognized, it returns Launcher.UNKNOWN. Even though Launcher.UNKNOWN satisfies the
+     * interface and responds to all methods, it's wiser to check for it explicitly and then
+     * suggest the user to 1) install a different launcher or 2) submit this launcher to you
+     * so it can be added to this library.
+     *
+     * @param packageName The package name of the launcher to look up.
+     * @return The corresponding Launcher enum value or Launcher.UNKNOWN if not found.
+     */
+    public static Launcher getLauncher(String packageName) {
         if (packageName == null) return Launcher.UNKNOWN;
 
         for (Launcher launcher : Launcher.values()) {
