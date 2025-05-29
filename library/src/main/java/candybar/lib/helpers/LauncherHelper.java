@@ -599,13 +599,15 @@ public class LauncherHelper {
             default Intent getBroadcast(Context context) { return null; }
 
             default void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
-                final Intent activity = getActivity(context, launcherPackageName);
-                final Intent broadcast = getBroadcast(context);
-                if (getBroadcast(context) != null) {
-                    context.sendBroadcast(broadcast);
+                final Intent activityIntent = getActivity(context, launcherPackageName);
+                final Intent broadcastIntent = getBroadcast(context);
+                if (broadcastIntent != null) {
+                    context.sendBroadcast(broadcastIntent);
                 }
-                context.startActivity(activity);
-                ((AppCompatActivity) context).finish();
+                context.startActivity(activityIntent);
+                if (context instanceof android.app.Activity) {
+                    ((android.app.Activity) context).finish();
+                }
             }
         }
 
