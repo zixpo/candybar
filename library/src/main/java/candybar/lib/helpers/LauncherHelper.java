@@ -565,7 +565,7 @@ public class LauncherHelper {
 
                     @Override
                     public void run(Context context, String launcherPackageName, ApplyCallback callback) {
-                        applyOneUI(context, "Samsung One UI");
+                        applyOneUI(context, launcherPackageName, "Samsung One UI", callback);
                     }
                 }
         ),
@@ -824,7 +824,7 @@ public class LauncherHelper {
             }
         }
         public void applyDirectly(Context context) throws ActivityNotFoundException, NullPointerException {
-            applyDirectly(context, null);
+            applyDirectly(context, DEFAULT_CALLBACK);
         }
 
         /**
@@ -845,10 +845,14 @@ public class LauncherHelper {
          *  </sup>
          * </p>
          *
+         * @param context The context to use for launching the settings activity or showing the dialog.
+         * @param callback The success callback to be called when the user closes the dialog.
+         *
          * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
          * @throws LauncherManualApplyNotSupported If the launcher doesn't support applying icon packs manually.
          * @throws LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
          *
+         * @see Launcher#supportsManualApply()
          */
         public void applyManually(Context context, ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
             //if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
@@ -857,13 +861,40 @@ public class LauncherHelper {
 
             try {
                 manualApplyFunc.run(context, this.installedPackage, callback);
-                //logLauncherManualApply(launcherPackageName);
+                logLauncherManualApply(this.installedPackage, "confirm");
             } catch (Exception e) {
                 throw new LauncherManualApplyFailed(e);
             }
         }
+
+        /**
+         * Show manual instructions to the user on how to apply the icon pack to the launcher. In
+         * case the launcher offers a dedicated settings activity, it will be called after the user
+         * confirms the dialog. (If the user cancels the dialog, nothing happens.)
+         *
+         * <p>
+         *  <sup>
+         *      <b>Credit where credit is due ♥</b><br>
+         *
+         *     The instructions, logic and fallback behind this simple method are the
+         *     collective work of dozens of open source developers and translators carried
+         *     out over many years. If you use this method outside of the CandyBar dashboard,
+         *     please credit the contributors.<br>
+         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
+         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
+         *  </sup>
+         * </p>
+         *
+         * @param context The context to use for launching the settings activity or showing the dialog.
+         *
+         * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
+         * @throws LauncherManualApplyNotSupported If the launcher doesn't support applying icon packs manually.
+         * @throws LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
+         *
+         * @see Launcher#supportsManualApply()
+         */
         public void applyManually(Context context) throws ActivityNotFoundException, NullPointerException {
-            applyManually(context, null);
+            applyManually(context, DEFAULT_CALLBACK);
         }
 
         private boolean isInstalled(Context context) {
@@ -877,6 +908,14 @@ public class LauncherHelper {
             return found;
         }
 
+        /**
+         * Apply the icon pack to the launcher. This method follows the CandyBar standard flow:
+         * If the launcher supports direct apply, it will try to apply the icon pack directly.
+         * If that fails or isn't supported, it will try to show manual instructions to the user.
+         * If the launcher doesn't support icon packs, an incompatibility message will be shown.
+         *
+         * @param context
+         */
         @SuppressLint("StringFormatInvalid")
         public void apply(@NonNull Context context) {
             String packageName = this.installedPackage;
@@ -960,6 +999,17 @@ public class LauncherHelper {
         );
     }
 
+    private static void logLauncherManualApply(String launcherPackage, String action) {
+        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                "click",
+                new HashMap<>() {{
+                    put("section", "apply");
+                    put("action", "manual_open_" + action);
+                    put("launcher", launcherPackage);
+                }}
+        );
+    }
+
     @SuppressLint("StringFormatInvalid")
     private static void showManualApplyDialog(Context context, String launcherPackageName, Launcher.ApplyCallback callback) {
         Launcher launcher = getLauncher(launcherPackageName);
@@ -986,14 +1036,7 @@ public class LauncherHelper {
                 .positiveText(positiveButton)
                 .onPositive((dialog, which) -> {
                     if (isInstalled) {
-                        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                                "click",
-                                new HashMap<>() {{
-                                    put("section", "apply");
-                                    put("action", "manual_open_confirm");
-                                    put("launcher", launcher.name);
-                                }}
-                        );
+                        logLauncherManualApply(launcherPackageName, "confirm");
                         if (launcher.settingsActivityName == null) return;
                         try {
                             String settingsActivity = launcher.manualApplyFunc.getSettingsActivity(context, launcherPackageName);
@@ -1013,14 +1056,7 @@ public class LauncherHelper {
                 })
                 .negativeText(negativeButton)
                 .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_cancel");
-                                put("launcher", launcher.name);
-                            }}
-                    );
+                    logLauncherManualApply(launcherPackageName, "cancel");
                 }))
                 .show();
     }
@@ -1042,11 +1078,11 @@ public class LauncherHelper {
      * 11 or lower, and display step-by-step theming instructions to everyone else.
      * <p>
      * See:
-     * [1] <a href="https://www.androidpolice.com/how-to-use-custom-icon-packs-on-samsung-one-ui-4/"/>
-     * [2] <a href="https://en.wikipedia.org/wiki/One_UI#One_UI_4_2"/>
-     * [3] <a href="https://github.com/zixpo/candybar/pull/122#issuecomment-1510379686"/>
+     * [1] <a href="https://www.androidpolice.com/how-to-use-custom-icon-packs-on-samsung-one-ui-4/">How to use custom icon packs on Samsung One UI 4</a>
+     * [2] <a href="https://en.wikipedia.org/wiki/One_UI#One_UI_4">One UI 4.1.1</a>
+     * [3] <a href="https://github.com/zixpo/candybar/pull/122#issuecomment-1510379686">Samsung OneUI Support in CandyBar</a>
      */
-    private static void applyOneUI(Context context, String launcherName) {
+    private static void applyOneUI(Context context, String launcherPackage, String launcherName, Launcher.ApplyCallback callback) {
         String incompatibleText = context.getResources().getString(
                 R.string.apply_manual_samsung_oneui_too_old,
                 launcherName
@@ -1085,20 +1121,14 @@ public class LauncherHelper {
                 )
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_confirm");
-                                put("launcher", launcherName);
-                            }}
-                    );
+                    logLauncherManualApply(launcherPackage, "confirm");
                     if (Build.VERSION.SDK_INT > Build.VERSION_CODES.R) {
                         String packageName = "com.samsung.android.themedesigner";
                         try {
                             String uri = "samsungapps://ProductDetail/" + packageName;
                             Intent store = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                             context.startActivity(store);
+                            if (callback != null) callback.onSuccess(context);
                         } catch (ActivityNotFoundException e) {
                             // The device can't handle Samsung Deep Links
                             // Let us point to the app in a browser instead
@@ -1106,6 +1136,7 @@ public class LauncherHelper {
                                 Uri uri = Uri.parse("https://galaxystore.samsung.com/detail/" + packageName);
                                 Intent store = new Intent(Intent.ACTION_VIEW, uri);
                                 context.startActivity(store);
+                                if (callback != null) callback.onSuccess(context);
                             } catch (ActivityNotFoundException ignored) {
                                 Toast.makeText(context, context.getResources().getString(
                                         R.string.no_browser), Toast.LENGTH_LONG).show();
@@ -1126,14 +1157,7 @@ public class LauncherHelper {
                 })
                 .negativeText(android.R.string.cancel)
                 .onNegative(((dialog, which) -> {
-                    CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                            "click",
-                            new HashMap<String, Object>() {{
-                                put("section", "apply");
-                                put("action", "manual_open_cancel");
-                                put("launcher", launcherName);
-                            }}
-                    );
+                    logLauncherManualApply(launcherPackage, "cancel");
                 }))
                 .show();
     }
@@ -1157,7 +1181,7 @@ public class LauncherHelper {
                 .onPositive((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
-                            new HashMap<String, Object>() {{
+                            new HashMap<>() {{
                                 put("section", "apply");
                                 put("action", "incompatible_third_party_open");
                                 put("launcher", launcherName);
@@ -1175,7 +1199,7 @@ public class LauncherHelper {
                 .onNegative(((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
-                            new HashMap<String, Object>() {{
+                            new HashMap<>() {{
                                 put("section", "apply");
                                 put("action", "incompatible_third_party_cancel");
                                 put("launcher", launcherName);
