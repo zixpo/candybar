@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
@@ -48,6 +47,9 @@ public class LauncherHelper {
     private static final String NO_SETTINGS_ACTIVITY = null;
     private static final Launcher.DirectApply DIRECT_APPLY_NOT_SUPPORTED = null;
     private static final Launcher.ManualApply MANUAL_APPLY_NOT_SUPPORTED = null;
+    private static final Launcher.ApplyCallback DEFAULT_CALLBACK = context -> {
+        if (context instanceof Activity) { ((Activity) context).finish(); }
+    };
 
     public enum Launcher {
         UNKNOWN,
@@ -124,9 +126,9 @@ public class LauncherHelper {
                     }
 
                     @Override
-                    public void run (Context context, String launcherPackageName) {
+                    public void run (Context context, String launcherPackageName, ApplyCallback callback) {
                         try {
-                            DirectApply.super.run(context, launcherPackageName);
+                            DirectApply.super.run(context, launcherPackageName, callback);
                         } catch (ActivityNotFoundException | NullPointerException e) {
                             Toast.makeText(context, R.string.apply_cmtheme_not_available, Toast.LENGTH_LONG).show();
                         } catch (SecurityException | IllegalArgumentException e) {
@@ -163,9 +165,9 @@ public class LauncherHelper {
                     }
 
                     @Override
-                    public void run(Context context, String launcherPackageName) {
+                    public void run(Context context, String launcherPackageName, ApplyCallback callback) {
                         if (isSupported(launcherPackageName)) {
-                            ManualApply.super.run(context, launcherPackageName);
+                            ManualApply.super.run(context, launcherPackageName, callback);
                         } else {
                             launcherIncompatibleCustomMessage(
                                     context,
@@ -352,9 +354,9 @@ public class LauncherHelper {
                     }
 
                     @Override
-                    public void run(Context context, String launcherPackageName) {
+                    public void run(Context context, String launcherPackageName, ApplyCallback callback) {
                         if (isSupported(launcherPackageName)) {
-                            ManualApply.super.run(context, launcherPackageName);
+                            ManualApply.super.run(context, launcherPackageName, callback);
                         } else {
                             launcherIncompatibleCustomMessage(
                                     context,
@@ -562,7 +564,7 @@ public class LauncherHelper {
                     }
 
                     @Override
-                    public void run(Context context, String launcherPackageName) {
+                    public void run(Context context, String launcherPackageName, ApplyCallback callback) {
                         applyOneUI(context, "Samsung One UI");
                     }
                 }
@@ -599,16 +601,14 @@ public class LauncherHelper {
             Intent getActivity(Context context, String launcherPackageName);
             default Intent getBroadcast(Context context) { return null; }
 
-            default void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
+            default void run(Context context, String launcherPackageName, ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
                 final Intent activityIntent = getActivity(context, launcherPackageName);
                 final Intent broadcastIntent = getBroadcast(context);
                 if (broadcastIntent != null) {
                     context.sendBroadcast(broadcastIntent);
                 }
                 context.startActivity(activityIntent);
-                if (context instanceof android.app.Activity) {
-                    ((android.app.Activity) context).finish();
-                }
+                callback.onSuccess(context);
             }
         }
 
@@ -619,7 +619,7 @@ public class LauncherHelper {
          * self-contained and either launch a deep link into the launcher's settings where the icon
          * pack can be applied, or simply display a dialog with the instructions.
          *
-         * @see Launcher#showManualApplyDialog(Context, String)
+         * @see Launcher#showManualApplyDialog(Context, String, ApplyCallback)
          */
         private interface ManualApply {
             default boolean isSupported(String launcherPackageName) { return true; }
@@ -636,8 +636,8 @@ public class LauncherHelper {
 
             String[] getInstructionSteps(Context context, String launcherName);
 
-            default void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
-                showManualApplyDialog(context, launcherPackageName);
+            default void run(Context context, String launcherPackageName, ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
+                showManualApplyDialog(context, launcherPackageName, callback);
             }
         }
 
@@ -645,8 +645,8 @@ public class LauncherHelper {
          * Interface for callbacks to be used when applying icon packs directly or manually.
          */
         public interface ApplyCallback {
-            void onSuccess();
-            void onError(Exception error);
+            void onSuccess(Context context);
+            //void onError(Exception error);
         }
 
         /**
@@ -812,12 +812,12 @@ public class LauncherHelper {
          *
          * @see Launcher#supportsDirectApply()
          */
-        public void applyDirectly(Context context) throws ActivityNotFoundException, NullPointerException {
+        public void applyDirectly(Context context, ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
             if (!isInstalled(context)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
             if (directApplyFunc == null) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
             if (!directApplyFunc.isSupported(this.installedPackage)) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
             try {
-                directApplyFunc.run(context, this.installedPackage);
+                directApplyFunc.run(context, this.installedPackage, callback);
                 logLauncherDirectApply(this.installedPackage);
             } catch (Exception e) {
                 throw new LauncherDirectApplyFailed(e);
@@ -847,13 +847,13 @@ public class LauncherHelper {
          * @throws LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
          *
          */
-        public void applyManually(Context context) throws ActivityNotFoundException, NullPointerException {
+        public void applyManually(Context context, ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
             //if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
             if (manualApplyFunc == null) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
             if (!manualApplyFunc.isSupported(this.installedPackage)) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
 
             try {
-                manualApplyFunc.run(context, this.installedPackage);
+                manualApplyFunc.run(context, this.installedPackage, callback);
                 //logLauncherManualApply(launcherPackageName);
             } catch (Exception e) {
                 throw new LauncherManualApplyFailed(e);
@@ -899,7 +899,7 @@ public class LauncherHelper {
             // Try direct apply first
             if (this.supportsDirectApply()) {
                 try {
-                    this.applyDirectly(context);
+                    this.applyDirectly(context, DEFAULT_CALLBACK);
                     return;
                 } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
             }
@@ -907,7 +907,7 @@ public class LauncherHelper {
             // Fall back to showing instructions if direct apply failed or isn't supported
             if(this.supportsManualApply()) {
                 try {
-                    this.applyManually(context);
+                    this.applyManually(context, DEFAULT_CALLBACK);
                     return;
                 } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
             }
@@ -955,7 +955,7 @@ public class LauncherHelper {
     }
 
     @SuppressLint("StringFormatInvalid")
-    private static void showManualApplyDialog(Context context, String launcherPackageName) {
+    private static void showManualApplyDialog(Context context, String launcherPackageName, Launcher.ApplyCallback callback) {
         Launcher launcher = getLauncher(launcherPackageName);
         boolean isInstalled = launcher.isInstalled(context);
 
@@ -995,7 +995,7 @@ public class LauncherHelper {
                             intent.setComponent(new ComponentName(launcherPackageName, settingsActivity));
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
-                            ((Activity) context).finish();
+                            callback.onSuccess(context);
                         } catch (ActivityNotFoundException | NullPointerException e) {
                             openGooglePlay(context, launcherPackageName);
                         } catch (SecurityException | IllegalArgumentException e) {
@@ -1020,7 +1020,7 @@ public class LauncherHelper {
     }
 
     private static void showInstallPrompt(Context context, String launcherPackageName) {
-        showManualApplyDialog(context, launcherPackageName);
+        showManualApplyDialog(context, launcherPackageName, LauncherHelper.DEFAULT_CALLBACK);
     }
 
     /**
@@ -1207,7 +1207,7 @@ public class LauncherHelper {
         Launcher launcher = getLauncher(packageName);
         try {
             if (launcher.supportsDirectApply()) {
-                launcher.applyDirectly(context);
+                launcher.applyDirectly(context, DEFAULT_CALLBACK);
                 return true;
             }
         } catch (ActivityNotFoundException | NullPointerException e) {
