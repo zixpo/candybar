@@ -1,6 +1,7 @@
 package candybar.lib.helpers;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
@@ -618,7 +619,7 @@ public class LauncherHelper {
          * self-contained and either launch a deep link into the launcher's settings where the icon
          * pack can be applied, or simply display a dialog with the instructions.
          *
-         * @see Launcher#showManualApplyDialog(Context, String, String, String, String[], String)
+         * @see Launcher#showManualApplyDialog(Context, String)
          */
         private interface ManualApply {
             default boolean isSupported(String launcherPackageName) { return true; }
@@ -636,16 +637,16 @@ public class LauncherHelper {
             String[] getInstructionSteps(Context context, String launcherName);
 
             default void run(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
-                Launcher launcher = getLauncher(launcherPackageName);
-                showManualApplyDialog(
-                        context,
-                        launcherPackageName,
-                        launcher.name,
-                        getCompatibilityMessage(context, launcher.name),
-                        getInstructionSteps(context, launcher.name),
-                        getSettingsActivity(context, launcherPackageName)
-                );
+                showManualApplyDialog(context, launcherPackageName);
             }
+        }
+
+        /**
+         * Interface for callbacks to be used when applying icon packs directly or manually.
+         */
+        public interface ApplyCallback {
+            void onSuccess();
+            void onError(Exception error);
         }
 
         /**
@@ -668,7 +669,7 @@ public class LauncherHelper {
          * showing instructions for how to apply the pack manually. If you see this exception, it
          * means you forgot to respect `supportsDirectApply` before calling `applyDirectly`.
          *
-         * @see Launcher#supportsDirectApply(String)
+         * @see Launcher#supportsDirectApply()
          */
         public static class LauncherDirectApplyNotSupported extends ActivityNotFoundException {
             public LauncherDirectApplyNotSupported(Throwable cause) {
@@ -677,12 +678,21 @@ public class LauncherHelper {
             }
         }
 
+        /**
+         * Exception thrown when the launcher doesn't support applying icon packs manually but if
+         * the method `applyManually` is called anyway. CandyBar handles this gracefully in-app by
+         * showing a generic launcher incompatibility message. If you see this exception, it
+         * means you forgot to respect `supportsManualApply` before calling `applyManually`.
+         *
+         * @see Launcher#supportsManualApply()
+         */
         public static class LauncherManualApplyNotSupported extends ActivityNotFoundException {
             public LauncherManualApplyNotSupported(Throwable cause) {
                 super("The launcher does not support manual apply");
                 initCause(cause); // preserves the original exceptions information
             }
         }
+
         /**
          * Exception thrown when the icon pack couldn't be applied to the launcher directly. Catch
          * this when you want to show a user-friendly message to the user or offer the user to send
@@ -720,6 +730,7 @@ public class LauncherHelper {
         int icon;
         public final String[] packages;
         public final String settingsActivityName;
+        private String installedPackage;
 
         private DirectApply directApplyFunc = null;
         private ManualApply manualApplyFunc = null;
@@ -747,24 +758,22 @@ public class LauncherHelper {
          * exception `LauncherDirectApplyFailed`) because newer versions or OS-specific variants of
          * the launcher might not support it.
          * Consider the return value of this method as a hint, not a guarantee.
-         * @param launcherPackageName The package name of the launcher to check.
          * @return true if the launcher supports direct apply, false otherwise.
          */
-        public boolean supportsDirectApply(String launcherPackageName) {
+        public boolean supportsDirectApply() {
             if (directApplyFunc != null) {
-                return directApplyFunc.isSupported(launcherPackageName);
+                return directApplyFunc.isSupported(this.installedPackage);
             }
             return false;
         }
 
         /**
          * Check if the launcher supports applying icon packs manually.
-         * @param launcherPackageName The package name of the launcher to check
          * @return true if the launcher supports manual apply, false otherwise
          */
-        public boolean supportsManualApply(String launcherPackageName) {
+        public boolean supportsManualApply() {
             if (manualApplyFunc != null) {
-                return manualApplyFunc.isSupported(launcherPackageName);
+                return manualApplyFunc.isSupported(this.installedPackage);
             }
             return false;
         }
@@ -772,11 +781,10 @@ public class LauncherHelper {
         /**
          * Check if the launcher supports icon packs. Not all launchers do specifically not those
          * that want to stay close to Vanilla Android.
-         * @param launcherPackageName The package name of the launcher to check
          * @return true if the launcher supports icon packs, false otherwise
          */
-        public boolean supportsIconPacks(String launcherPackageName) {
-            return supportsDirectApply(launcherPackageName) || supportsManualApply(launcherPackageName);
+        public boolean supportsIconPacks() {
+            return supportsDirectApply() || supportsManualApply();
         }
 
         /**
@@ -798,20 +806,19 @@ public class LauncherHelper {
          *  </sup>
          * </p>
          *
-         * @param launcherPackageName The package name of the launcher to apply the icon pack to.
          * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
          * @throws LauncherDirectApplyNotSupported If the launcher doesn't support applying icon packs directly.
          * @throws LauncherDirectApplyFailed If the icon pack couldn't be applied to the launcher directly. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
          *
-         * @see Launcher#supportsDirectApply(String)
+         * @see Launcher#supportsDirectApply()
          */
-        public void applyDirectly(Context context, String launcherPackageName) throws ActivityNotFoundException, NullPointerException {
-            if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
+        public void applyDirectly(Context context) throws ActivityNotFoundException, NullPointerException {
+            if (!isInstalled(context)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
             if (directApplyFunc == null) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
-            if (!directApplyFunc.isSupported(launcherPackageName)) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
+            if (!directApplyFunc.isSupported(this.installedPackage)) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
             try {
-                directApplyFunc.run(context, launcherPackageName);
-                logLauncherDirectApply(launcherPackageName);
+                directApplyFunc.run(context, this.installedPackage);
+                logLauncherDirectApply(this.installedPackage);
             } catch (Exception e) {
                 throw new LauncherDirectApplyFailed(e);
             }
@@ -835,24 +842,78 @@ public class LauncherHelper {
          *  </sup>
          * </p>
          *
-         * @param launcherPackageName The package name of the launcher to apply the icon pack to.
-         * @param launcherName The name of the launcher to display in the dialog.
          * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
          * @throws LauncherManualApplyNotSupported If the launcher doesn't support applying icon packs manually.
          * @throws LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
          *
          */
-        public void applyManually(Context context, String launcherPackageName, String launcherName) throws ActivityNotFoundException, NullPointerException {
+        public void applyManually(Context context) throws ActivityNotFoundException, NullPointerException {
             //if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
             if (manualApplyFunc == null) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
-            if (!manualApplyFunc.isSupported(launcherPackageName)) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
+            if (!manualApplyFunc.isSupported(this.installedPackage)) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
 
             try {
-                manualApplyFunc.run(context, launcherPackageName);
+                manualApplyFunc.run(context, this.installedPackage);
                 //logLauncherManualApply(launcherPackageName);
             } catch (Exception e) {
                 throw new LauncherManualApplyFailed(e);
             }
+        }
+
+        private boolean isInstalled(Context context) {
+            PackageManager packageManager = context.getPackageManager();
+            boolean found = true;
+            try {
+                packageManager.getPackageInfo(this.installedPackage, 0);
+            } catch (PackageManager.NameNotFoundException e) {
+                found = false;
+            }
+            return found;
+        }
+
+        @SuppressLint("StringFormatInvalid")
+        public void apply(@NonNull Context context) {
+            String packageName = this.installedPackage;
+            String launcherName = this.name;
+
+            CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                    "click",
+                    new HashMap<>() {{
+                        put("section", "apply");
+                        put("action", "open_dialog");
+                        put("launcher", packageName);
+                    }}
+            );
+
+            if (!this.supportsIconPacks()) {
+                launcherIncompatible(context, launcherName);
+                return;
+            }
+
+            if (!isInstalled(context) && !this.supportsManualApply()) {
+                // FIXME: Not every launcher is on the Play Store
+                showInstallPrompt(context, packageName);
+                return;
+            }
+
+            // Try direct apply first
+            if (this.supportsDirectApply()) {
+                try {
+                    this.applyDirectly(context);
+                    return;
+                } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
+            }
+
+            // Fall back to showing instructions if direct apply failed or isn't supported
+            if(this.supportsManualApply()) {
+                try {
+                    this.applyManually(context);
+                    return;
+                } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
+            }
+
+            // If we're here, it means neither direct nor manual apply worked or are not supported
+            launcherIncompatible(context, launcherName);
         }
     }
 
@@ -873,55 +934,13 @@ public class LauncherHelper {
             if (launcher.packages == null) continue;
             for (String launcherPackageName : launcher.packages) {
                 if (launcherPackageName.contentEquals(packageName)) {
+                    launcher.installedPackage = packageName;
                     return launcher;
                 }
             }
         }
 
         return Launcher.UNKNOWN;
-    }
-
-    @SuppressLint("StringFormatInvalid")
-    public static void apply(@NonNull Context context, String packageName, String launcherName) {
-        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                "click",
-                new HashMap<>() {{
-                    put("section", "apply");
-                    put("action", "open_dialog");
-                    put("launcher", packageName);
-                }}
-        );
-        Launcher launcher = getLauncher(packageName);
-
-        if (!launcher.supportsIconPacks(packageName)) {
-            launcherIncompatible(context, launcherName);
-            return;
-        }
-
-        if (!isInstalled(context, packageName) && !launcher.supportsManualApply(packageName)) {
-            // FIXME: Not every launcher is on the Play Store
-            showInstallPrompt(context, packageName, launcherName);
-            return;
-        }
-
-        // Try direct apply first
-        if (launcher.supportsDirectApply(packageName)) {
-            try {
-                launcher.applyDirectly(context, packageName);
-                return;
-            } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
-        }
-
-        // Fall back to showing instructions if direct apply failed or isn't supported
-        if(launcher.supportsManualApply(packageName)) {
-            try {
-                launcher.applyManually(context, packageName, launcherName);
-                return;
-            } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
-        }
-
-        // If we're here, it means neither direct nor manual apply worked or are not supported
-        launcherIncompatible(context, launcherName);
     }
 
     private static void logLauncherDirectApply(String launcherPackage) {
@@ -935,27 +954,19 @@ public class LauncherHelper {
         );
     }
 
-    private static boolean isInstalled(Context context, String packageName) {
-        PackageManager packageManager = context.getPackageManager();
-        boolean found = true;
-        try {
-            packageManager.getPackageInfo(packageName, 0);
-        } catch (PackageManager.NameNotFoundException e) {
-            found = false;
-        }
-        return found;
-    }
-
     @SuppressLint("StringFormatInvalid")
-    private static void showManualApplyDialog(Context context, String launcherPackageName, String launcherName, String description, String[] steps, String settingsActivityName) {
-        boolean isInstalled = isInstalled(context, launcherPackageName);
+    private static void showManualApplyDialog(Context context, String launcherPackageName) {
+        Launcher launcher = getLauncher(launcherPackageName);
+        boolean isInstalled = launcher.isInstalled(context);
 
         int positiveButton = isInstalled ? android.R.string.ok : R.string.install;
         int negativeButton = android.R.string.cancel;
 
-        String installPrompt = context.getResources().getString(R.string.apply_launcher_not_installed, launcherName);
-        String activityLaunchFailed = context.getResources().getString(R.string.apply_launch_failed, launcherName);
+        String installPrompt = context.getResources().getString(R.string.apply_launcher_not_installed, launcher.name);
+        String activityLaunchFailed = context.getResources().getString(R.string.apply_launch_failed, launcher.name);
 
+        String description = (launcher.manualApplyFunc == MANUAL_APPLY_NOT_SUPPORTED) ? null : launcher.manualApplyFunc.getCompatibilityMessage(context, launcher.name);
+        String[] steps = (launcher.manualApplyFunc == MANUAL_APPLY_NOT_SUPPORTED) ? new String[]{} : launcher.manualApplyFunc.getInstructionSteps(context, launcher.name);
         String content = ((description == null) ? "" : (description + "\n\n"))
                 + ((steps.length > 0) ? "\t• " : "")
                 + String.join("\n\t• ", steps) // bullet point list of instructions
@@ -964,7 +975,7 @@ public class LauncherHelper {
 
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcherName)
+                .title(launcher.name)
                 .content(content)
                 .positiveText(positiveButton)
                 .onPositive((dialog, which) -> {
@@ -974,16 +985,17 @@ public class LauncherHelper {
                                 new HashMap<>() {{
                                     put("section", "apply");
                                     put("action", "manual_open_confirm");
-                                    put("launcher", launcherName);
+                                    put("launcher", launcher.name);
                                 }}
                         );
-                        if (settingsActivityName == null) return;
+                        if (launcher.settingsActivityName == null) return;
                         try {
+                            String settingsActivity = launcher.manualApplyFunc.getSettingsActivity(context, launcherPackageName);
                             final Intent intent = new Intent(Intent.ACTION_MAIN);
-                            intent.setComponent(new ComponentName(launcherPackageName, settingsActivityName));
+                            intent.setComponent(new ComponentName(launcherPackageName, settingsActivity));
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
-                            ((AppCompatActivity) context).finish();
+                            ((Activity) context).finish();
                         } catch (ActivityNotFoundException | NullPointerException e) {
                             openGooglePlay(context, launcherPackageName);
                         } catch (SecurityException | IllegalArgumentException e) {
@@ -1000,22 +1012,15 @@ public class LauncherHelper {
                             new HashMap<>() {{
                                 put("section", "apply");
                                 put("action", "manual_open_cancel");
-                                put("launcher", launcherName);
+                                put("launcher", launcher.name);
                             }}
                     );
                 }))
                 .show();
     }
 
-    private static void showInstallPrompt(Context context, String launcherPackageName, String launcherName) {
-        showManualApplyDialog(
-                context,
-                launcherPackageName,
-                launcherName,
-                null,
-                new String[]{},
-                null
-        );
+    private static void showInstallPrompt(Context context, String launcherPackageName) {
+        showManualApplyDialog(context, launcherPackageName);
     }
 
     /**
@@ -1201,8 +1206,8 @@ public class LauncherHelper {
         String packageName = pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo.packageName;
         Launcher launcher = getLauncher(packageName);
         try {
-            if (launcher.supportsDirectApply(packageName)) {
-                launcher.applyDirectly(context, packageName);
+            if (launcher.supportsDirectApply()) {
+                launcher.applyDirectly(context);
                 return true;
             }
         } catch (ActivityNotFoundException | NullPointerException e) {
