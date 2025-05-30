@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.util.Pair;
 import android.widget.Toast;
 
 import androidx.annotation.DrawableRes;
@@ -823,6 +824,52 @@ public class LauncherHelper {
         }
 
         /**
+         * Get the instruction steps for applying the icon pack manually. Make sure to call
+         * {@code supportsManualApply} before calling this or otherwise the result might be empty
+         *
+         * @return An array of strings containing the steps to apply the icon pack manually.
+         */
+        public String[] getManualApplyInstructions(Context context) {
+            if (manualApplyFunc != null) {
+                return manualApplyFunc.getInstructionSteps(context, this.name);
+            }
+            return new String[]{};
+        }
+
+        /**
+         * Get the settings activity name for the launcher. This is used to launch the settings
+         * activity of the launcher where the icon pack can be applied. Make sure to call
+         * {@code supportsManualApply} before calling this or otherwise the result might be null.
+         *
+         * @return The settings activity name for the launcher, or null if not available.
+         */
+        public String getSettingsActivity(Context context) {
+            if (manualApplyFunc != null) {
+                return manualApplyFunc.getSettingsActivity(context, this.installedPackage);
+            }
+            return null;
+        }
+
+        /**
+         * Get the direct apply activity for the launcher. This is used to apply the icon pack
+         * without leaving the app. Make sure to call {@code supportsDirectApply} before calling this
+         * or otherwise the result might be null.
+         *
+         * @return A pair of intents, the first one is the activity intent to apply the icon pack,
+         * and the second one is a broadcast intent to notify the launcher about the change. Either
+         * of these can be null.
+         */
+        public Pair<Intent, Intent> getDirectApplyIntents(Context context) {
+            if (directApplyFunc != null) {
+                return new Pair<>(
+                        directApplyFunc.getActivity(context, this.installedPackage),
+                        directApplyFunc.getBroadcast(context)
+                );
+            }
+            return null;
+        }
+
+        /**
          * Tries to apply the icon pack directly. Before calling this, you can ask the launcher with
          * {@code supportsDirectApply} if it supports this method. Note that this is just a hint,
          * not a guarantee, so make sure to catch the exceptions thrown by this method and handle
@@ -979,7 +1026,7 @@ public class LauncherHelper {
             // Try direct apply first
             if (this.supportsDirectApply()) {
                 try {
-                    this.applyDirectly(context, DEFAULT_CALLBACK);
+                    this.applyDirectly(context);
                     return;
                 } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
             }
@@ -987,7 +1034,7 @@ public class LauncherHelper {
             // Fall back to showing instructions if direct apply failed or isn't supported
             if(this.supportsManualApply()) {
                 try {
-                    this.applyManually(context, DEFAULT_CALLBACK);
+                    this.applyManually(context);
                     return;
                 } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
             }
@@ -1240,7 +1287,7 @@ public class LauncherHelper {
                 .show();
     }
 
-    private static void openGooglePlay(Context context, String packageName) {
+    public static void openGooglePlay(Context context, String packageName) {
         try {
             Intent store = new Intent(Intent.ACTION_VIEW, Uri.parse(
                     "https://play.google.com/store/apps/details?id=" + packageName));
