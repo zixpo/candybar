@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.HashMap;
 
 import candybar.lib.R;
@@ -559,13 +560,47 @@ public class LauncherHelper {
                 DIRECT_APPLY_NOT_SUPPORTED,
                 new ManualApply() {
                     @Override
+                    public boolean isSupported(String launcherPackageName) {
+                        return Build.VERSION.SDK_INT > Build.VERSION_CODES.R;
+                    }
+
+                    @Override
+                    public String getCompatibilityMessage(Context context, String launcherName) {
+                        return context.getResources().getString(
+                                R.string.apply_manual_samsung_oneui,
+                                launcherName,
+                                launcherName + " 4.0"
+                        );
+                    }
+
+                    @Override
                     public String[] getInstructionSteps(Context context, String launcherName) {
-                        return null; // Can't use the standard flow
+                        return new String[] {
+                                context.getResources().getString(
+                                        R.string.apply_manual_samsung_oneui_step_1,
+                                        "Samsung Galaxy Store"
+                                ),
+                                context.getResources().getString(
+                                        R.string.apply_manual_samsung_oneui_step_2,
+                                        "Theme Park"
+                                ),
+                                context.getResources().getString(R.string.apply_manual_samsung_oneui_step_3),
+                                context.getResources().getString(R.string.apply_manual_samsung_oneui_step_4),
+                                context.getResources().getString(R.string.apply_manual_samsung_oneui_step_5),
+                                context.getResources().getString(
+                                        R.string.apply_manual_samsung_oneui_step_6,
+                                        context.getResources().getString(R.string.app_name)
+                                ),
+                                context.getResources().getString(
+                                        R.string.apply_manual_samsung_oneui_step_7,
+                                        context.getResources().getString(R.string.app_name)
+                                )
+                        };
                     }
 
                     @Override
                     public void run(Context context, String launcherPackageName, ApplyCallback callback) {
-                        applyOneUI(context, launcherPackageName, "Samsung One UI", callback);
+                        applyOneUI(context, launcherPackageName, callback);
                     }
                 }
         ),
@@ -1082,47 +1117,34 @@ public class LauncherHelper {
      * [2] <a href="https://en.wikipedia.org/wiki/One_UI#One_UI_4">One UI 4.1.1</a>
      * [3] <a href="https://github.com/zixpo/candybar/pull/122#issuecomment-1510379686">Samsung OneUI Support in CandyBar</a>
      */
-    private static void applyOneUI(Context context, String launcherPackage, String launcherName, Launcher.ApplyCallback callback) {
+    private static void applyOneUI(Context context, String launcherPackage, Launcher.ApplyCallback callback) {
+        Launcher launcher = getLauncher(launcherPackage);
+        String launcherName = launcher.name;
+        String[] instructions = launcher.manualApplyFunc.getInstructionSteps(context, launcherName);
+
         String incompatibleText = context.getResources().getString(
                 R.string.apply_manual_samsung_oneui_too_old,
                 launcherName
         );
         String compatibleText =
-                "\t• " + context.getResources().getString(
-                        R.string.apply_manual_samsung_oneui_step_1,
-                        "Samsung Galaxy Store"
-                ) + "\n\t• " +
-                        context.getResources().getString(
-                                R.string.apply_manual_samsung_oneui_step_2,
-                                "Theme Park"
-                        ) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_samsung_oneui_step_3) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_samsung_oneui_step_4) + "\n\t• " +
-                        context.getResources().getString(R.string.apply_manual_samsung_oneui_step_5) + "\n\t• " +
-                        context.getResources().getString(
-                                R.string.apply_manual_samsung_oneui_step_6,
-                                context.getResources().getString(R.string.app_name)
-                        ) + "\n\n" +
-                        context.getResources().getString(
-                                R.string.apply_manual_samsung_oneui_step_7,
-                                context.getResources().getString(R.string.app_name)
-                        );
+                "\t• " + instructions[0]
+                + "\n\t• " + String.join(
+                        "\n\t• ",
+                        Arrays.copyOfRange(instructions, 1, instructions.length - 2)
+                )
+                + "\n\n" + instructions[instructions.length - 1];
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
                 .content(
-                        context.getResources().getString(
-                                R.string.apply_manual_samsung_oneui,
-                                launcherName,
-                                launcherName + " 4.0"
-                        )
+                        launcher.manualApplyFunc.getCompatibilityMessage(context, launcherName)
                                 + "\n\n"
-                                + (Build.VERSION.SDK_INT > Build.VERSION_CODES.R ? compatibleText : incompatibleText)
+                                + (launcher.manualApplyFunc.isSupported(launcherPackage) ? compatibleText : incompatibleText)
                 )
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
                     logLauncherManualApply(launcherPackage, "confirm");
-                    if (Build.VERSION.SDK_INT > Build.VERSION_CODES.R) {
+                    if (launcher.manualApplyFunc.isSupported(launcherPackage)) {
                         String packageName = "com.samsung.android.themedesigner";
                         try {
                             String uri = "samsungapps://ProductDetail/" + packageName;
