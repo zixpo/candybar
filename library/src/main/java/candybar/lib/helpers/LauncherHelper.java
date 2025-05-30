@@ -608,7 +608,7 @@ public class LauncherHelper {
                     context.sendBroadcast(broadcastIntent);
                 }
                 context.startActivity(activityIntent);
-                callback.onSuccess(context);
+                if (callback != null) callback.onSuccess(context);
             }
         }
 
@@ -823,6 +823,9 @@ public class LauncherHelper {
                 throw new LauncherDirectApplyFailed(e);
             }
         }
+        public void applyDirectly(Context context) throws ActivityNotFoundException, NullPointerException {
+            applyDirectly(context, null);
+        }
 
         /**
          * Show manual instructions to the user on how to apply the icon pack to the launcher. In
@@ -858,6 +861,9 @@ public class LauncherHelper {
             } catch (Exception e) {
                 throw new LauncherManualApplyFailed(e);
             }
+        }
+        public void applyManually(Context context) throws ActivityNotFoundException, NullPointerException {
+            applyManually(context, null);
         }
 
         private boolean isInstalled(Context context) {
@@ -995,7 +1001,7 @@ public class LauncherHelper {
                             intent.setComponent(new ComponentName(launcherPackageName, settingsActivity));
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
-                            callback.onSuccess(context);
+                            if (callback != null) callback.onSuccess(context);
                         } catch (ActivityNotFoundException | NullPointerException e) {
                             openGooglePlay(context, launcherPackageName);
                         } catch (SecurityException | IllegalArgumentException e) {
