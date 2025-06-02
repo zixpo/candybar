@@ -158,7 +158,7 @@ public class ApplyFragment extends Fragment {
                 try {
                     Thread.sleep(1);
 
-                    LauncherHelper.Launcher[] dataLaunchers = LauncherHelper.Launcher.values();
+                    LauncherHelper.LauncherType[] dataLaunchers = LauncherHelper.LauncherType.values();
                     String[] showableLauncherNames = getResources().getStringArray(
                             R.array.dashboard_launchers);
 
@@ -172,7 +172,7 @@ public class ApplyFragment extends Fragment {
                         showable.add(filtered_name);
                     }
 
-                    for (LauncherHelper.Launcher value : dataLaunchers) {
+                    for (LauncherHelper.LauncherType value : dataLaunchers) {
                         if (value.name == null) continue;
                         if (value.packages == null) continue;
 

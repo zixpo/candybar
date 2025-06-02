@@ -47,13 +47,13 @@ public class LauncherHelper {
     private static final String thirdPartyHelperURL = "https://play.google.com/store/apps/details?id=rk.android.app.shortcutmaker";
 
     private static final String NO_SETTINGS_ACTIVITY = null;
-    private static final Launcher.DirectApply DIRECT_APPLY_NOT_SUPPORTED = null;
-    private static final Launcher.ManualApply MANUAL_APPLY_NOT_SUPPORTED = null;
-    private static final Launcher.ApplyCallback DEFAULT_CALLBACK = context -> {
+    private static final LauncherType.DirectApply DIRECT_APPLY_NOT_SUPPORTED = null;
+    private static final LauncherType.ManualApply MANUAL_APPLY_NOT_SUPPORTED = null;
+    private static final LauncherType.ApplyCallback DEFAULT_CALLBACK = context -> {
         if (context instanceof Activity) { ((Activity) context).finish(); }
     };
 
-    public enum Launcher {
+    public enum LauncherType {
         UNKNOWN,
 
         ACTION(
@@ -655,7 +655,7 @@ public class LauncherHelper {
          * self-contained and either launch a deep link into the launcher's settings where the icon
          * pack can be applied, or simply display a dialog with the instructions.
          *
-         * @see Launcher#showManualApplyDialog(Context, String, ApplyCallback)
+         * @see LauncherType#showManualApplyDialog(Context, String, ApplyCallback)
          */
         private interface ManualApply {
             default boolean isSupported(String launcherPackageName) { return true; }
@@ -685,12 +685,303 @@ public class LauncherHelper {
             //void onError(Exception error);
         }
 
+        public final String name;
+        public final @DrawableRes
+        int icon;
+        public final String[] packages;
+        public final String settingsActivityName;
+
+        private DirectApply directApplyFunc = null;
+        private ManualApply manualApplyFunc = null;
+
+        LauncherType() {
+            this.name = null;
+            this.icon = 0;
+            this.packages = null;
+            this.settingsActivityName = null;
+        }
+
+        LauncherType(String name, @DrawableRes int icon, String[] packages, String settingsActivityName, DirectApply directApplyFunc, ManualApply manualApplyFunc) {
+            this.name = name;
+            this.icon = icon;
+            this.packages = packages;
+            this.settingsActivityName = settingsActivityName;
+            this.directApplyFunc = directApplyFunc;
+            this.manualApplyFunc = manualApplyFunc;
+        }
+    }
+
+    public static class Launcher {
+        public final LauncherType type;
+        public final String installedPackage;
+
+        public Launcher(@NonNull LauncherType type, @NonNull String installedPackage) {
+            this.type = type;
+            this.installedPackage = installedPackage;
+        }
+
+        /**
+         * Check if the launcher supports direct apply of icon packs. Not all launchers do, and it's
+         * on the launcher developers to provide the necessary interfaces to allow this. Note that
+         * when you use `applyDirectly` it's still possible for it to throw an exception (see
+         * exception `LauncherDirectApplyFailed`) because newer versions or OS-specific variants of
+         * the launcher might not support it.
+         * Consider the return value of this method as a hint, not a guarantee.
+         * @return true if the launcher supports direct apply, false otherwise.
+         */
+        public boolean supportsDirectApply() {
+            if (this.type.directApplyFunc != null) {
+                return this.type.directApplyFunc.isSupported(this.installedPackage);
+            }
+            return false;
+        }
+
+        /**
+         * Check if the launcher supports applying icon packs manually.
+         * @return true if the launcher supports manual apply, false otherwise
+         */
+        public boolean supportsManualApply() {
+            if (this.type.manualApplyFunc != null) {
+                return this.type.manualApplyFunc.isSupported(this.installedPackage);
+            }
+            return false;
+        }
+
+        /**
+         * Check if the launcher supports icon packs. Not all launchers do specifically not those
+         * that want to stay close to Vanilla Android.
+         * @return true if the launcher supports icon packs, false otherwise
+         */
+        public boolean supportsIconPacks() {
+            return supportsDirectApply() || supportsManualApply();
+        }
+
+        /**
+         * Get the instruction steps for applying the icon pack manually. Make sure to call
+         * {@code supportsManualApply} before calling this or otherwise the result might be empty
+         *
+         * @return An array of strings containing the steps to apply the icon pack manually.
+         */
+        public String[] getManualApplyInstructions(Context context) {
+            if (this.type.manualApplyFunc != null) {
+                return this.type.manualApplyFunc.getInstructionSteps(context, this.type.name);
+            }
+            return new String[]{};
+        }
+
+        /**
+         * Get the settings activity name for the launcher. This is used to launch the settings
+         * activity of the launcher where the icon pack can be applied. Make sure to call
+         * {@code supportsManualApply} before calling this or otherwise the result might be null.
+         *
+         * @return The settings activity name for the launcher, or null if not available.
+         */
+        public String getSettingsActivity(Context context) {
+            if (this.type.manualApplyFunc != null) {
+                return this.type.manualApplyFunc.getSettingsActivity(context, this.installedPackage);
+            }
+            return null;
+        }
+
+        /**
+         * Get the direct apply activity for the launcher. This is used to apply the icon pack
+         * without leaving the app. Make sure to call {@code supportsDirectApply} before calling this
+         * or otherwise the result might be null.
+         *
+         * @return A pair of intents, the first one is the activity intent to apply the icon pack,
+         * and the second one is a broadcast intent to notify the launcher about the change. Either
+         * of these can be null.
+         */
+        public Pair<Intent, Intent> getDirectApplyIntents(Context context) {
+            if (this.type.directApplyFunc != null) {
+                return new Pair<>(
+                        this.type.directApplyFunc.getActivity(context, this.installedPackage),
+                        this.type.directApplyFunc.getBroadcast(context)
+                );
+            }
+            return null;
+        }
+
+        /**
+         * Tries to apply the icon pack directly. Before calling this, you can ask the launcher with
+         * {@code supportsDirectApply} if it supports this method. Note that this is just a hint,
+         * not a guarantee, so make sure to catch the exceptions thrown by this method and handle
+         * them gracefully.
+         *
+         * <p>
+         *  <sup>
+         *      <b>Credit where credit is due ♥</b><br>
+         *
+         *     The instructions, logic and fallback behind this simple method are the
+         *     collective work of dozens of open source developers and translators carried
+         *     out over many years. If you use this method outside of the CandyBar dashboard,
+         *     please credit the contributors.<br>
+         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
+         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
+         *  </sup>
+         * </p>
+         *
+         * @throws Launcher.LauncherNotInstalledException If the launcher isn't installed on the device.
+         * @throws Launcher.LauncherDirectApplyNotSupported If the launcher doesn't support applying icon packs directly.
+         * @throws Launcher.LauncherDirectApplyFailed If the icon pack couldn't be applied to the launcher directly. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
+         *
+         * @see Launcher#supportsDirectApply()
+         */
+        public void applyDirectly(Context context, LauncherType.ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
+            if (!isInstalled(context)) throw new Launcher.LauncherNotInstalledException(new ActivityNotFoundException());
+            if (this.type.directApplyFunc == null) throw new Launcher.LauncherDirectApplyNotSupported(new ActivityNotFoundException());
+            if (!this.type.directApplyFunc.isSupported(this.installedPackage)) throw new Launcher.LauncherDirectApplyNotSupported(new ActivityNotFoundException());
+            try {
+                this.type.directApplyFunc.run(context, this.installedPackage, callback);
+                logLauncherDirectApply(this.installedPackage);
+            } catch (Exception e) {
+                throw new Launcher.LauncherDirectApplyFailed(e);
+            }
+        }
+        public void applyDirectly(Context context) throws ActivityNotFoundException, NullPointerException {
+            applyDirectly(context, DEFAULT_CALLBACK);
+        }
+
+        /**
+         * Show manual instructions to the user on how to apply the icon pack to the launcher. In
+         * case the launcher offers a dedicated settings activity, it will be called after the user
+         * confirms the dialog. (If the user cancels the dialog, nothing happens.)
+         *
+         * <p>
+         *  <sup>
+         *      <b>Credit where credit is due ♥</b><br>
+         *
+         *     The instructions, logic and fallback behind this simple method are the
+         *     collective work of dozens of open source developers and translators carried
+         *     out over many years. If you use this method outside of the CandyBar dashboard,
+         *     please credit the contributors.<br>
+         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
+         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
+         *  </sup>
+         * </p>
+         *
+         * @param context The context to use for launching the settings activity or showing the dialog.
+         * @param callback The success callback to be called when the user closes the dialog.
+         *
+         * @throws Launcher.LauncherNotInstalledException If the launcher isn't installed on the device.
+         * @throws Launcher.LauncherManualApplyNotSupported If the launcher doesn't support applying icon packs manually.
+         * @throws Launcher.LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
+         *
+         * @see Launcher#supportsManualApply()
+         */
+        public void applyManually(Context context, LauncherType.ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
+            //if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
+            if (this.type.manualApplyFunc == null) throw new Launcher.LauncherManualApplyNotSupported(new ActivityNotFoundException());
+            if (!this.type.manualApplyFunc.isSupported(this.installedPackage)) throw new Launcher.LauncherManualApplyNotSupported(new ActivityNotFoundException());
+
+            try {
+                this.type.manualApplyFunc.run(context, this.installedPackage, callback);
+                logLauncherManualApply(this.installedPackage, "confirm");
+            } catch (Exception e) {
+                throw new Launcher.LauncherManualApplyFailed(e);
+            }
+        }
+
+        /**
+         * Show manual instructions to the user on how to apply the icon pack to the launcher. In
+         * case the launcher offers a dedicated settings activity, it will be called after the user
+         * confirms the dialog. (If the user cancels the dialog, nothing happens.)
+         *
+         * <p>
+         *  <sup>
+         *      <b>Credit where credit is due ♥</b><br>
+         *
+         *     The instructions, logic and fallback behind this simple method are the
+         *     collective work of dozens of open source developers and translators carried
+         *     out over many years. If you use this method outside of the CandyBar dashboard,
+         *     please credit the contributors.<br>
+         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
+         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
+         *  </sup>
+         * </p>
+         *
+         * @param context The context to use for launching the settings activity or showing the dialog.
+         *
+         * @throws Launcher.LauncherNotInstalledException If the launcher isn't installed on the device.
+         * @throws Launcher.LauncherManualApplyNotSupported If the launcher doesn't support applying icon packs manually.
+         * @throws Launcher.LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
+         *
+         * @see Launcher#supportsManualApply()
+         */
+        public void applyManually(Context context) throws ActivityNotFoundException, NullPointerException {
+            applyManually(context, DEFAULT_CALLBACK);
+        }
+
+        private boolean isInstalled(Context context) {
+            PackageManager packageManager = context.getPackageManager();
+            boolean found = true;
+            try {
+                packageManager.getPackageInfo(this.installedPackage, 0);
+            } catch (PackageManager.NameNotFoundException e) {
+                found = false;
+            }
+            return found;
+        }
+
+        /**
+         * Apply the icon pack to the launcher. This method follows the CandyBar standard flow:
+         * If the launcher supports direct apply, it will try to apply the icon pack directly.
+         * If that fails or isn't supported, it will try to show manual instructions to the user.
+         * If the launcher doesn't support icon packs, an incompatibility message will be shown.
+         *
+         * @param context
+         */
+        @SuppressLint("StringFormatInvalid")
+        public void apply(@NonNull Context context) {
+            String packageName = this.installedPackage;
+            String launcherName = this.type.name;
+
+            CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                    "click",
+                    new HashMap<>() {{
+                        put("section", "apply");
+                        put("action", "open_dialog");
+                        put("launcher", packageName);
+                    }}
+            );
+
+            if (!this.supportsIconPacks()) {
+                launcherIncompatible(context, launcherName);
+                return;
+            }
+
+            if (!isInstalled(context) && !this.supportsManualApply()) {
+                // FIXME: Not every launcher is on the Play Store
+                showInstallPrompt(context, packageName);
+                return;
+            }
+
+            // Try direct apply first
+            if (this.supportsDirectApply()) {
+                try {
+                    this.applyDirectly(context);
+                    return;
+                } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
+            }
+
+            // Fall back to showing instructions if direct apply failed or isn't supported
+            if(this.supportsManualApply()) {
+                try {
+                    this.applyManually(context);
+                    return;
+                } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
+            }
+
+            // If we're here, it means neither direct nor manual apply worked or are not supported
+            launcherIncompatible(context, launcherName);
+        }
+
         /**
          * Exception thrown when the launcher isn't installed on the device. Catch this when you
          * want to provide user-friendly feedback to the user or fall back on other methods such
          * as opening Google Play.
          *
-         * @see Launcher#openGooglePlay(Context, String)
+         * @see LauncherType#openGooglePlay(Context, String)
          */
         public static class LauncherNotInstalledException extends ActivityNotFoundException {
             public LauncherNotInstalledException(Throwable cause) {
@@ -760,288 +1051,6 @@ public class LauncherHelper {
                 initCause(cause); // preserves the original exceptions information
             }
         }
-
-        public final String name;
-        public final @DrawableRes
-        int icon;
-        public final String[] packages;
-        public final String settingsActivityName;
-        private String installedPackage;
-
-        private DirectApply directApplyFunc = null;
-        private ManualApply manualApplyFunc = null;
-
-        Launcher() {
-            this.name = null;
-            this.icon = 0;
-            this.packages = null;
-            this.settingsActivityName = null;
-        }
-
-        Launcher(String name, @DrawableRes int icon, String[] packages, String settingsActivityName, DirectApply directApplyFunc, ManualApply manualApplyFunc) {
-            this.name = name;
-            this.icon = icon;
-            this.packages = packages;
-            this.settingsActivityName = settingsActivityName;
-            this.directApplyFunc = directApplyFunc;
-            this.manualApplyFunc = manualApplyFunc;
-        }
-
-        /**
-         * Check if the launcher supports direct apply of icon packs. Not all launchers do, and it's
-         * on the launcher developers to provide the necessary interfaces to allow this. Note that
-         * when you use `applyDirectly` it's still possible for it to throw an exception (see
-         * exception `LauncherDirectApplyFailed`) because newer versions or OS-specific variants of
-         * the launcher might not support it.
-         * Consider the return value of this method as a hint, not a guarantee.
-         * @return true if the launcher supports direct apply, false otherwise.
-         */
-        public boolean supportsDirectApply() {
-            if (directApplyFunc != null) {
-                return directApplyFunc.isSupported(this.installedPackage);
-            }
-            return false;
-        }
-
-        /**
-         * Check if the launcher supports applying icon packs manually.
-         * @return true if the launcher supports manual apply, false otherwise
-         */
-        public boolean supportsManualApply() {
-            if (manualApplyFunc != null) {
-                return manualApplyFunc.isSupported(this.installedPackage);
-            }
-            return false;
-        }
-
-        /**
-         * Check if the launcher supports icon packs. Not all launchers do specifically not those
-         * that want to stay close to Vanilla Android.
-         * @return true if the launcher supports icon packs, false otherwise
-         */
-        public boolean supportsIconPacks() {
-            return supportsDirectApply() || supportsManualApply();
-        }
-
-        /**
-         * Get the instruction steps for applying the icon pack manually. Make sure to call
-         * {@code supportsManualApply} before calling this or otherwise the result might be empty
-         *
-         * @return An array of strings containing the steps to apply the icon pack manually.
-         */
-        public String[] getManualApplyInstructions(Context context) {
-            if (manualApplyFunc != null) {
-                return manualApplyFunc.getInstructionSteps(context, this.name);
-            }
-            return new String[]{};
-        }
-
-        /**
-         * Get the settings activity name for the launcher. This is used to launch the settings
-         * activity of the launcher where the icon pack can be applied. Make sure to call
-         * {@code supportsManualApply} before calling this or otherwise the result might be null.
-         *
-         * @return The settings activity name for the launcher, or null if not available.
-         */
-        public String getSettingsActivity(Context context) {
-            if (manualApplyFunc != null) {
-                return manualApplyFunc.getSettingsActivity(context, this.installedPackage);
-            }
-            return null;
-        }
-
-        /**
-         * Get the direct apply activity for the launcher. This is used to apply the icon pack
-         * without leaving the app. Make sure to call {@code supportsDirectApply} before calling this
-         * or otherwise the result might be null.
-         *
-         * @return A pair of intents, the first one is the activity intent to apply the icon pack,
-         * and the second one is a broadcast intent to notify the launcher about the change. Either
-         * of these can be null.
-         */
-        public Pair<Intent, Intent> getDirectApplyIntents(Context context) {
-            if (directApplyFunc != null) {
-                return new Pair<>(
-                        directApplyFunc.getActivity(context, this.installedPackage),
-                        directApplyFunc.getBroadcast(context)
-                );
-            }
-            return null;
-        }
-
-        /**
-         * Tries to apply the icon pack directly. Before calling this, you can ask the launcher with
-         * {@code supportsDirectApply} if it supports this method. Note that this is just a hint,
-         * not a guarantee, so make sure to catch the exceptions thrown by this method and handle
-         * them gracefully.
-         *
-         * <p>
-         *  <sup>
-         *      <b>Credit where credit is due ♥</b><br>
-         *
-         *     The instructions, logic and fallback behind this simple method are the
-         *     collective work of dozens of open source developers and translators carried
-         *     out over many years. If you use this method outside of the CandyBar dashboard,
-         *     please credit the contributors.<br>
-         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
-         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
-         *  </sup>
-         * </p>
-         *
-         * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
-         * @throws LauncherDirectApplyNotSupported If the launcher doesn't support applying icon packs directly.
-         * @throws LauncherDirectApplyFailed If the icon pack couldn't be applied to the launcher directly. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
-         *
-         * @see Launcher#supportsDirectApply()
-         */
-        public void applyDirectly(Context context, ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
-            if (!isInstalled(context)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
-            if (directApplyFunc == null) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
-            if (!directApplyFunc.isSupported(this.installedPackage)) throw new LauncherDirectApplyNotSupported(new ActivityNotFoundException());
-            try {
-                directApplyFunc.run(context, this.installedPackage, callback);
-                logLauncherDirectApply(this.installedPackage);
-            } catch (Exception e) {
-                throw new LauncherDirectApplyFailed(e);
-            }
-        }
-        public void applyDirectly(Context context) throws ActivityNotFoundException, NullPointerException {
-            applyDirectly(context, DEFAULT_CALLBACK);
-        }
-
-        /**
-         * Show manual instructions to the user on how to apply the icon pack to the launcher. In
-         * case the launcher offers a dedicated settings activity, it will be called after the user
-         * confirms the dialog. (If the user cancels the dialog, nothing happens.)
-         *
-         * <p>
-         *  <sup>
-         *      <b>Credit where credit is due ♥</b><br>
-         *
-         *     The instructions, logic and fallback behind this simple method are the
-         *     collective work of dozens of open source developers and translators carried
-         *     out over many years. If you use this method outside of the CandyBar dashboard,
-         *     please credit the contributors.<br>
-         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
-         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
-         *  </sup>
-         * </p>
-         *
-         * @param context The context to use for launching the settings activity or showing the dialog.
-         * @param callback The success callback to be called when the user closes the dialog.
-         *
-         * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
-         * @throws LauncherManualApplyNotSupported If the launcher doesn't support applying icon packs manually.
-         * @throws LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
-         *
-         * @see Launcher#supportsManualApply()
-         */
-        public void applyManually(Context context, ApplyCallback callback) throws ActivityNotFoundException, NullPointerException {
-            //if (!isInstalled(context, launcherPackageName)) throw new LauncherNotInstalledException(new ActivityNotFoundException());
-            if (manualApplyFunc == null) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
-            if (!manualApplyFunc.isSupported(this.installedPackage)) throw new LauncherManualApplyNotSupported(new ActivityNotFoundException());
-
-            try {
-                manualApplyFunc.run(context, this.installedPackage, callback);
-                logLauncherManualApply(this.installedPackage, "confirm");
-            } catch (Exception e) {
-                throw new LauncherManualApplyFailed(e);
-            }
-        }
-
-        /**
-         * Show manual instructions to the user on how to apply the icon pack to the launcher. In
-         * case the launcher offers a dedicated settings activity, it will be called after the user
-         * confirms the dialog. (If the user cancels the dialog, nothing happens.)
-         *
-         * <p>
-         *  <sup>
-         *      <b>Credit where credit is due ♥</b><br>
-         *
-         *     The instructions, logic and fallback behind this simple method are the
-         *     collective work of dozens of open source developers and translators carried
-         *     out over many years. If you use this method outside of the CandyBar dashboard,
-         *     please credit the contributors.<br>
-         *     • <b>Contributors:</b> com/candybar/lib/src/main/res/xml/dashboard_contributors.xml<br>
-         *     • <b>Translators:</b> com/candybar/lib/src/main/res/xml/dashboard_translator.xml
-         *  </sup>
-         * </p>
-         *
-         * @param context The context to use for launching the settings activity or showing the dialog.
-         *
-         * @throws LauncherNotInstalledException If the launcher isn't installed on the device.
-         * @throws LauncherManualApplyNotSupported If the launcher doesn't support applying icon packs manually.
-         * @throws LauncherManualApplyFailed If an associated settings activity could not be launched. This is never an expected case. If it happens, it might indicate that the launcher interface changed.
-         *
-         * @see Launcher#supportsManualApply()
-         */
-        public void applyManually(Context context) throws ActivityNotFoundException, NullPointerException {
-            applyManually(context, DEFAULT_CALLBACK);
-        }
-
-        private boolean isInstalled(Context context) {
-            PackageManager packageManager = context.getPackageManager();
-            boolean found = true;
-            try {
-                packageManager.getPackageInfo(this.installedPackage, 0);
-            } catch (PackageManager.NameNotFoundException e) {
-                found = false;
-            }
-            return found;
-        }
-
-        /**
-         * Apply the icon pack to the launcher. This method follows the CandyBar standard flow:
-         * If the launcher supports direct apply, it will try to apply the icon pack directly.
-         * If that fails or isn't supported, it will try to show manual instructions to the user.
-         * If the launcher doesn't support icon packs, an incompatibility message will be shown.
-         *
-         * @param context
-         */
-        @SuppressLint("StringFormatInvalid")
-        public void apply(@NonNull Context context) {
-            String packageName = this.installedPackage;
-            String launcherName = this.name;
-
-            CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
-                    "click",
-                    new HashMap<>() {{
-                        put("section", "apply");
-                        put("action", "open_dialog");
-                        put("launcher", packageName);
-                    }}
-            );
-
-            if (!this.supportsIconPacks()) {
-                launcherIncompatible(context, launcherName);
-                return;
-            }
-
-            if (!isInstalled(context) && !this.supportsManualApply()) {
-                // FIXME: Not every launcher is on the Play Store
-                showInstallPrompt(context, packageName);
-                return;
-            }
-
-            // Try direct apply first
-            if (this.supportsDirectApply()) {
-                try {
-                    this.applyDirectly(context);
-                    return;
-                } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
-            }
-
-            // Fall back to showing instructions if direct apply failed or isn't supported
-            if(this.supportsManualApply()) {
-                try {
-                    this.applyManually(context);
-                    return;
-                } catch (ActivityNotFoundException | NullPointerException e) { /* No-op */ }
-            }
-
-            // If we're here, it means neither direct nor manual apply worked or are not supported
-            launcherIncompatible(context, launcherName);
-        }
     }
 
     /**
@@ -1055,19 +1064,18 @@ public class LauncherHelper {
      * @return The corresponding Launcher enum value or Launcher.UNKNOWN if not found.
      */
     public static Launcher getLauncher(String packageName) {
-        if (packageName == null) return Launcher.UNKNOWN;
+        if (packageName == null) return new Launcher(LauncherType.UNKNOWN, packageName);
 
-        for (Launcher launcher : Launcher.values()) {
+        for (LauncherType launcher : LauncherType.values()) {
             if (launcher.packages == null) continue;
             for (String launcherPackageName : launcher.packages) {
                 if (launcherPackageName.contentEquals(packageName)) {
-                    launcher.installedPackage = packageName;
-                    return launcher;
+                    return new Launcher(launcher, packageName);
                 }
             }
         }
 
-        return Launcher.UNKNOWN;
+        return new Launcher(LauncherType.UNKNOWN, packageName);
     }
 
     private static void logLauncherDirectApply(String launcherPackage) {
@@ -1093,18 +1101,18 @@ public class LauncherHelper {
     }
 
     @SuppressLint("StringFormatInvalid")
-    private static void showManualApplyDialog(Context context, String launcherPackageName, Launcher.ApplyCallback callback) {
+    private static void showManualApplyDialog(Context context, String launcherPackageName, LauncherType.ApplyCallback callback) {
         Launcher launcher = getLauncher(launcherPackageName);
         boolean isInstalled = launcher.isInstalled(context);
 
         int positiveButton = isInstalled ? android.R.string.ok : R.string.install;
         int negativeButton = android.R.string.cancel;
 
-        String installPrompt = context.getResources().getString(R.string.apply_launcher_not_installed, launcher.name);
-        String activityLaunchFailed = context.getResources().getString(R.string.apply_launch_failed, launcher.name);
+        String installPrompt = context.getResources().getString(R.string.apply_launcher_not_installed, launcher.type.name);
+        String activityLaunchFailed = context.getResources().getString(R.string.apply_launch_failed, launcher.type.name);
 
-        String description = (launcher.manualApplyFunc == MANUAL_APPLY_NOT_SUPPORTED) ? null : launcher.manualApplyFunc.getCompatibilityMessage(context, launcher.name);
-        String[] steps = (launcher.manualApplyFunc == MANUAL_APPLY_NOT_SUPPORTED) ? new String[]{} : launcher.manualApplyFunc.getInstructionSteps(context, launcher.name);
+        String description = (launcher.type.manualApplyFunc == MANUAL_APPLY_NOT_SUPPORTED) ? null : launcher.type.manualApplyFunc.getCompatibilityMessage(context, launcher.type.name);
+        String[] steps = (launcher.type.manualApplyFunc == MANUAL_APPLY_NOT_SUPPORTED) ? new String[]{} : launcher.type.manualApplyFunc.getInstructionSteps(context, launcher.type.name);
         String content = ((description == null) ? "" : (description + "\n\n"))
                 + ((steps.length > 0) ? "\t• " : "")
                 + String.join("\n\t• ", steps) // bullet point list of instructions
@@ -1113,15 +1121,15 @@ public class LauncherHelper {
 
         new MaterialDialog.Builder(context)
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcher.name)
+                .title(launcher.type.name)
                 .content(content)
                 .positiveText(positiveButton)
                 .onPositive((dialog, which) -> {
                     if (isInstalled) {
                         logLauncherManualApply(launcherPackageName, "confirm");
-                        if (launcher.settingsActivityName == null) return;
+                        if (launcher.type.settingsActivityName == null) return;
                         try {
-                            String settingsActivity = launcher.manualApplyFunc.getSettingsActivity(context, launcherPackageName);
+                            String settingsActivity = launcher.type.manualApplyFunc.getSettingsActivity(context, launcherPackageName);
                             final Intent intent = new Intent(Intent.ACTION_MAIN);
                             intent.setComponent(new ComponentName(launcherPackageName, settingsActivity));
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -1164,10 +1172,10 @@ public class LauncherHelper {
      * [2] <a href="https://en.wikipedia.org/wiki/One_UI#One_UI_4">One UI 4.1.1</a>
      * [3] <a href="https://github.com/zixpo/candybar/pull/122#issuecomment-1510379686">Samsung OneUI Support in CandyBar</a>
      */
-    private static void applyOneUI(Context context, String launcherPackage, Launcher.ApplyCallback callback) {
+    private static void applyOneUI(Context context, String launcherPackage, LauncherType.ApplyCallback callback) {
         Launcher launcher = getLauncher(launcherPackage);
-        String launcherName = launcher.name;
-        String[] instructions = launcher.manualApplyFunc.getInstructionSteps(context, launcherName);
+        String launcherName = launcher.type.name;
+        String[] instructions = launcher.type.manualApplyFunc.getInstructionSteps(context, launcherName);
 
         String incompatibleText = context.getResources().getString(
                 R.string.apply_manual_samsung_oneui_too_old,
@@ -1184,14 +1192,14 @@ public class LauncherHelper {
                 .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
                 .title(launcherName)
                 .content(
-                        launcher.manualApplyFunc.getCompatibilityMessage(context, launcherName)
+                        launcher.type.manualApplyFunc.getCompatibilityMessage(context, launcherName)
                                 + "\n\n"
-                                + (launcher.manualApplyFunc.isSupported(launcherPackage) ? compatibleText : incompatibleText)
+                                + (launcher.type.manualApplyFunc.isSupported(launcherPackage) ? compatibleText : incompatibleText)
                 )
                 .positiveText(android.R.string.yes)
                 .onPositive((dialog, which) -> {
                     logLauncherManualApply(launcherPackage, "confirm");
-                    if (launcher.manualApplyFunc.isSupported(launcherPackage)) {
+                    if (launcher.type.manualApplyFunc.isSupported(launcherPackage)) {
                         String packageName = "com.samsung.android.themedesigner";
                         try {
                             String uri = "samsungapps://ProductDetail/" + packageName;
