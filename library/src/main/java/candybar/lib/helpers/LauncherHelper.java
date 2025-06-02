@@ -313,24 +313,21 @@ public class LauncherHelper {
                         context.getResources().getString(R.string.apply_manual_kvaesitso_step_5),
                 }
         ),
+        LAWNCHAIR_LEGACY(
+                "Lawnchair Legacy",
+                R.drawable.ic_launcher_lawnchair,
+                new String[]{"ch.deletescape.lawnchair.plah", "ch.deletescape.lawnchair.ci"},
+                NO_SETTINGS_ACTIVITY,
+                (context, launcherName) -> new Intent("ch.deletescape.lawnchair.APPLY_ICONS")
+                        .putExtra("packageName", context.getPackageName()),
+                (context, launcherName) -> new String[]{} // FIXME: Opens app without instructions
+        ),
         LAWNCHAIR(
                 "Lawnchair",
                 R.drawable.ic_launcher_lawnchair,
-                new String[]{"ch.deletescape.lawnchair.plah", "ch.deletescape.lawnchair.ci", "app.lawnchair"},
-                "app.lawnchair.ui.preferences.PreferenceActivity", // FIXME: Lawnchair 12 should really be its own launcher even if it looks the same
-                new DirectApply() {
-                    @Override
-                    public boolean isSupported(String packageName) {
-                        // Lawnchair 12 (app.lawnchair) doesn't support direct apply
-                        return !packageName.startsWith("app");
-                    }
-
-                    @Override
-                    public Intent getActivity(Context context, String launcherName) {
-                        return new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null)
-                                .putExtra("packageName", context.getPackageName());
-                    }
-                },
+                new String[]{"app.lawnchair", "app.lawnchair.play"},
+                "app.lawnchair.ui.preferences.PreferenceActivity",
+                DIRECT_APPLY_NOT_SUPPORTED,
                 (context, launcherName) -> new String[]{} // FIXME: Opens app without instructions
         ),
         LGHOME( /* INCOMPATIBLE */
