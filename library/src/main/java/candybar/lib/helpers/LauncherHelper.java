@@ -709,6 +709,28 @@ public class LauncherHelper {
             this.directApplyFunc = directApplyFunc;
             this.manualApplyFunc = manualApplyFunc;
         }
+
+        /**
+         * Check if this launcher type is installed on the device. All known packages are checked
+         * so in the case of multiple matches, you won't know which package is installed.
+         *
+         * @param context
+         * @return true if the launcher is installed, false otherwise.
+         */
+        public boolean isInstalled(Context context) {
+            PackageManager packageManager = context.getPackageManager();
+            if (this.packages == null) return false;
+
+            for (String packageName : this.packages) {
+                try {
+                    packageManager.getPackageInfo(packageName, 0);
+                    return true;
+                } catch (PackageManager.NameNotFoundException e) {
+                    /* keep searching */
+                }
+            }
+            return false;
+        }
     }
 
     public static class Launcher {
@@ -912,7 +934,15 @@ public class LauncherHelper {
             applyManually(context, DEFAULT_CALLBACK);
         }
 
-        private boolean isInstalled(Context context) {
+        /**
+         * Check if the launcher is actually installed on the device. Only the installedPackage
+         * parameter is used to determine this, all other known packages in the LauncherType are
+         * ignored and not checked for. To check for all packages, use {@link LauncherType#isInstalled(Context)} instead.
+         *
+         * @param context
+         * @return true if the launcher is installed, false otherwise.
+         */
+        public boolean isInstalled(Context context) {
             PackageManager packageManager = context.getPackageManager();
             boolean found = true;
             try {
