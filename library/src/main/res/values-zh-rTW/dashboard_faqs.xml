@@ -39,24 +39,24 @@
         <item>我該如何申請圖示？</item>
         <item>我該如何在重裝應用程式後取得剩餘的高級申請數？</item>
         <item>為何重新啟動手機後仍然無法套用圖示包？</item>
-        <item>為什麼 icon 們在我的手機上看起來有鋸齒感?</item>
-        <item>我在所有 icon 中能夠看到某個 icon ，但為什麼應用抽屜裡的那個啟用的 icon 沒有變化?</item>
-        <item>\"回報問題\" 選項是什麼?</item>
-        <item>Google Play 介紹中包含了我使用的啟動器，但為什麼在啟用 icon 畫面中沒有?</item>
-        <item>桌布無法啟用，只是黑色畫面?</item>
-        <item>Muzei: 如何只載入已下載 icon ?</item>
-        <item>Muzei: 不想每次桌布變化的時候都要下載它們?</item>
-        <item>Muzei: 我只想用特定的桌布?</item>
-        <item>為什麼需要用到存儲讀寫權限?</item>
-        <item>為什麼需要用到聯網權限?</item>
-        <item>為什麼需要用到取得網絡連接狀態權限?</item>
-        <item>為什麼需要用到取得 WiFi 連接狀態權限?</item>
-        <item>為什麼需要用到設定桌布權限?</item>
-        <item>為什麼需要用到喚醒鎖權限?</item>
-        <item>為什麼需要用到設定桌布權限?</item>
+        <item>我的圖示看起來糊糊的；有鋸齒狀！</item>
+        <item>某些圖示雖然有在應用程式中，但它們沒有在應用程式抽屜中套用！</item>
+        <item>「回報問題」是回報哪個項目的問題？</item>
+        <item>我的啟動器雖然有列在 Google Play 應用程式說明中，但為何它沒有在「套用圖示」中顯示？</item>
+        <item>套用桌布後在桌面顯示黑畫面？</item>
+        <item>Muzei：我該如何讓應用程式只載入已下載的桌布？</item>
+        <item>Muzei：我該如何避免在每次更改桌布時重新下載它們？</item>
+        <item>Muzei：我只想使用特定的桌布！</item>
+        <item>為何應用程式需要讀寫外部儲存空間權限？</item>
+        <item>為何需要網路權限？</item>
+        <item>為何需要讀取網路連接狀態（ACCESS_NETWORK_STATE）的權限？</item>
+        <item>為何需要讀取 Wi-Fi 連接狀態（ACCESS_WIFI_STATE）的權限？</item>
+        <item>為何需要設定桌布權限？</item>
+        <item>為何需要 Wake Lock 權限？</item>
+        <item>為何需要用到設定鬧鐘權限？</item>
     </string-array>
     <string-array name="answers">
-        <item>啟動器是 Android 界面的一部分，它可以讓使用者在使用 Android 設備時自定義主屏幕，啟動應用 App ，撥打電話，以及其它種種任務。</item>
+        <item>啟動器是 Android 界面不可或缺的一部分。其不但可用於啟動應用程式、打電話，高度客製化也是其一大特性。</item>
         <item>一組能夠改變 Navigation drawer 中 App 的 icon 的圖形們。</item>
         <item>你需要一個支持自定義 icon pack的啟動器。
 受支持的啟動器們已經在 Play 商店中列出來了。
