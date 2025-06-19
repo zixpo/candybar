@@ -57,10 +57,10 @@
     </string-array>
     <string-array name="answers">
         <item>啟動器是 Android 界面不可或缺的一部分。其不但可用於啟動應用程式、打電話，高度客製化也是其一大特性。</item>
-        <item>一組能夠改變 Navigation drawer 中 App 的 icon 的圖形們。</item>
-        <item>你需要一個支持自定義 icon pack的啟動器。
-受支持的啟動器們已經在 Play 商店中列出來了。
-如果你不知道該用哪一個啟動器，去 App 中的 \"應用\" 屏幕，然後從哪里安裝一個。</item>
+        <item>一組能夠更改應用程式圖示的圖形</item>
+        <item>您需要一個支援自訂圖示的啟動器。
+            詳細支援項目已列於 Play Store 說明中。
+            若您仍然不確定要使用哪個啟動器可移至「套用圖示」區域安裝。</item>
         <item>你可以打開 Navigation drawer，然後選擇 \"啟用 icon\"。從列表中選擇你的啟動器。
 如果列表中沒有包含你所使用的啟動器，但 icon pack的確是兼容它的（參考Google Play 商店中的介紹裡所寫的受支持的啟動器），你可以從該啟動器的設置中手動啟用 icon pack。</item>
         <item>你可以打開 Navigation drawer，然後選擇 \"icon\"。</item>
