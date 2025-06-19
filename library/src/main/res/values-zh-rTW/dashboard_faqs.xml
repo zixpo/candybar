@@ -29,16 +29,16 @@
         <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
-        <item>什麼是啟動器?</item>
-        <item>什麼是 icon pack?</item>
-        <item>我該怎樣使用一個 icon pack?</item>
-        <item>我該如啟用一個 icon pack?</item>
-        <item>我怎樣才能看到所有包含的 icon ?</item>
-        <item>我看不到一個完整的 icon 名稱</item>
-        <item>我該如何才能將 icon 替換為備用 icon ?</item>
-        <item>我該如何申請 icon ?</item>
-        <item>重新安裝應用後，我怎樣才能恢復剩餘的高級申請數?</item>
-        <item>重啟手機後， icon 們被重置回默認， icon pack未能啟用?</item>
+        <item>什麼是啟動器？</item>
+        <item>什麼是圖示包？</item>
+        <item>我該如何使用圖示包？</item>
+        <item>我該如何套用圖示包？</item>
+        <item>我該如何看到此圖示包的所有圖示？</item>
+        <item>我看不到完整的圖示名稱</item>
+        <item>我該如何將目前圖示更改為其他圖示？</item>
+        <item>我該如何申請圖示？</item>
+        <item>我該如何在重裝應用程式後取得剩餘的高級申請數？</item>
+        <item>為何重新啟動手機後仍然無法套用圖示包？</item>
         <item>為什麼 icon 們在我的手機上看起來有鋸齒感?</item>
         <item>我在所有 icon 中能夠看到某個 icon ，但為什麼應用抽屜裡的那個啟用的 icon 沒有變化?</item>
         <item>\"回報問題\" 選項是什麼?</item>
