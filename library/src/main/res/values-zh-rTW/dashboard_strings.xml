@@ -39,7 +39,7 @@
     <string name="install">安裝</string>
     <string name="donate">捐贈</string>
     <string name="update">更新</string>
-    <string name="search_noresult">未找到 \"%s\"</string>
+    <string name="search_noresult">找不到「%s」的結果</string>
     <string name="search_faqs">問題或回答</string>
     <string name="search_icon">圖示名稱</string>
     <string name="search_wallpapers">桌布名稱</string>
@@ -219,23 +219,23 @@
     <string name="premium_request_rebuilding_empty">您尚未提交過高級 icon 申請</string>
     <string name="premium_request_exist">您仍有一個高級 icon 申請的安裝包。
 前往設定，選擇 \"恢復已購買內容\" 來恢復它。</string>
-    <string name="premium_request_required">您需要購買高級 icon 申請包來提交 icon 申請。</string>
+    <string name="premium_request_required">您需要購買高級圖示申請包以提交圖示申請</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">新桌布</string>
-    <string name="wallpaper_already_downloaded">桌布已下載</string>
-    <string name="wallpaper_downloading">下載桌布中……</string>
+    <string name="wallpaper_already_downloaded">已下載桌布</string>
+    <string name="wallpaper_downloading">正在下載桌布……</string>
     <string name="wallpaper_download_failed">無法下載桌布</string>
-    <string name="wallpaper_download_success">壁紙下載成功</string>
-    <string name="wallpaper_loading">載入桌布中……</string>
-    <string name="wallpaper_applying">啟用桌布中……</string>
-    <string name="wallpaper_applied">已啟用桌布</string>
-    <string name="wallpaper_apply_failed">無法啟用桌布</string>
-    <string name="wallpaper_apply_cancelled">已取消啟用桌布</string>
+    <string name="wallpaper_download_success">桌布下載成功</string>
+    <string name="wallpaper_loading">正在載入桌布……</string>
+    <string name="wallpaper_applying">正在套用桌布……</string>
+    <string name="wallpaper_applied">已套用桌布</string>
+    <string name="wallpaper_apply_failed">無法套用桌布</string>
+    <string name="wallpaper_apply_cancelled">已取消套用桌布</string>
     <string name="connection_failed">無法從服務器獲取資料</string>
     <string name="wallpaper_apply">套用桌布</string>
     <string name="wallpaper_save_to_device">儲存桌布</string>
     <!-- Presets -->
-    <string name="presets_load_failed">無法載入預設</string>
+    <string name="presets_load_failed">無法載入預製設定</string>
     <string name="presets_storage_permission">需要存儲許可權才能載入預覽壁紙</string>
     <string name="presets_required_apps">使用這些預設所需的應用程式</string>
     <string name="presets_required_apps_not_installed">未安裝使用預設所需的應用程式。請安裝缺少的必需應用程式，然後重試。</string>
