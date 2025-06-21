@@ -187,38 +187,36 @@
     <string name="request_requested_button_cancel">回上頁</string>
     <string name="request_requested_button_confirm">仍然選擇</string>
     <string name="request_email_client">請選擇電子郵件應用程式</string>
-    <string name="request_app_disabled">您使用的是此圖示包的舊版本。請求的圖示可能包含在最新版本中。請將您的應用程式更新到最新版本以請求圖示。</string>
-    <string name="connection_error_long">無法從伺服器載入資料。請檢查您的網路連接。</string>
-    <string name="unable_to_load_config">從伺服器獲取或讀取資料時發生錯誤。</string>
-    <string name="request_limit">您在常規 icon 申請權狀態下僅能提交 %d 個適配申請。</string>
-    <string name="request_used">您已申請適配 %d 個 icon 。</string>
-    <string name="request_limit_buy">您可以購買高級 icon 申請權來提交更多個 icon 申請。</string>
-    <string name="request_limit_reset">icon 申請限制將在每次更新後重置。</string>
+    <string name="request_app_disabled">您使用的是此圖示包的舊版本。請求的圖示可能早已包含在最新版本中。請將您的應用程式更新到最新版本以請求圖示。</string>
+    <string name="connection_error_long">無法從伺服器載入資料。請檢查連線狀態。</string>
+    <string name="unable_to_load_config">從伺服器讀取資料時發生錯誤。</string>
+    <string name="request_limit">常規圖示申請僅能提交 %d 個圖示申請。</string>
+    <string name="request_used">您已申請 %d 個圖示。</string>
+    <string name="request_limit_buy">請購買高級圖示申請以申請更多圖示。</string>
+    <string name="request_limit_reset">圖示申請次數將於每次更新後重置。</string>
     <!-- Regular Request -->
     <string name="regular_request">常規圖示請求</string>
-    <string name="regular_request_desc">請求您的圖示，開發人員將嘗試包含您請求的圖示。</string>
+    <string name="regular_request_desc">提交圖示請求後，開發者將嘗試將您的請求圖示加入於圖示包內。</string>
     <string name="regular_request_count">總計\n%d 個請求</string>
     <string name="regular_request_used">已使用\n%d 個請求</string>
     <string name="regular_request_available">可用\n%d 請求</string>
     <!-- Premium Request -->
-    <string name="premium_request">高級 icon 申請</string>
-    <string name="premium_request_no_internet">在提交高級 icon 申請前請確保您的手機已連接到網絡</string>
-    <string name="premium_request_desc">高級 icon 申請是付費申請。您可以通過高級 icon 申請來更快的得到您所申請的 icon 。</string>
+    <string name="premium_request">高級圖示申請</string>
+    <string name="premium_request_no_internet">在提交高級圖示申請前請確保連線狀態</string>
+    <string name="premium_request_desc">高級圖示申請是能夠比常規圖示申請得到回應的付費申請。</string>
     <string name="premium_request_buy">購買</string>
     <string name="premium_request_count">總計\n%d 個請求</string>
     <string name="premium_request_used">已使用\n%d 個請求</string>
     <string name="premium_request_available">可用\n%d 請求</string>
-    <string name="premium_request_already_purchased">您仍剩餘 %d 個高級申請數。
-在再次購買高級 icon 申請權之前，您需要用光當前剩餘的高級申請次數。</string>
-    <string name="premium_request_limit">您只擁有 %d 個高級 icon 申請數，</string>
-    <string name="premium_request_limit1">但您選擇了 %d 個 App 。
-\n\n您需要在用完所有剩餘的高級 icon 申請數後才可以使用常規申請。</string>
-    <string name="premium_request_consume_failed">無法使用高級 icon 申請，請確保您的網絡環境穩定並重試。
-去設定裡重建高級 icon 申請數。</string>
-    <string name="premium_request_rebuilding">重建高級如表申請中……</string>
-    <string name="premium_request_rebuilding_empty">您尚未提交過高級 icon 申請</string>
-    <string name="premium_request_exist">您仍有一個高級 icon 申請的安裝包。
-前往設定，選擇 \"恢復已購買內容\" 來恢復它。</string>
+    <string name="premium_request_already_purchased">您仍剩餘 %d 個高級圖示申請次數。
+請於再次購買高級圖示申請包前使用完畢剩餘次數。</string>
+    <string name="premium_request_limit">僅剩 %d 次高級圖示申請，</string>
+    <string name="premium_request_limit1">但已選擇了 %d 個應用程式。
+\n\n請於使用常規圖示申請前將剩餘的高級圖示申請使用完畢。</string>
+    <string name="premium_request_consume_failed">無法使用高級圖示申請，請確認連線狀態並於設定重新整理高級圖示申請次數。</string>
+    <string name="premium_request_rebuilding">正在重新整理高級圖示申請中……</string>
+    <string name="premium_request_rebuilding_empty">尚未使用任何高級圖示申請</string>
+    <string name="premium_request_exist">您仍有一個高級圖示申請包。請開啟設定並點選「回復已購買項目」以回復它。</string>
     <string name="premium_request_required">您需要購買高級圖示申請包以提交圖示申請</string>
     <!-- Wallpapers -->
     <string name="wallpaper_new_added">新桌布</string>
@@ -236,79 +234,79 @@
     <string name="wallpaper_save_to_device">儲存桌布</string>
     <!-- Presets -->
     <string name="presets_load_failed">無法載入預製設定</string>
-    <string name="presets_storage_permission">需要存儲許可權才能載入預覽壁紙</string>
-    <string name="presets_required_apps">使用這些預設所需的應用程式</string>
-    <string name="presets_required_apps_not_installed">未安裝使用預設所需的應用程式。請安裝缺少的必需應用程式，然後重試。</string>
+    <string name="presets_storage_permission">需要儲存權限才能載入預覽桌布</string>
+    <string name="presets_required_apps">使用這些預製設定所需的應用程式</string>
+    <string name="presets_required_apps_not_installed">未安裝預製設定所需的應用程式。請安裝缺少的應用程式並重試。</string>
     <!-- Preferences -->
-    <string name="pref_data_header">資料 &amp; 快取</string>
+    <string name="pref_data_header">資料和快取</string>
     <string name="pref_data_cache">清除快取</string>
-    <string name="pref_data_cache_desc">從您的存儲器中清除圖片快取，它們是在從本 App 中選擇一張圖片、申請未支援的 App 以及載入雲端桌布縮略圖的時候產生的。</string>
-    <string name="pref_data_cache_size">快取大小: %s</string>
+    <string name="pref_data_cache_desc">清除此應用程式所產生的所有圖片快取，包括挑選圖片、申請圖示、或雲端桌布的縮圖。</string>
+    <string name="pref_data_cache_size">快取大小：%s</string>
     <string name="pref_data_cache_clear_dialog">您確認要清除快取嗎？</string>
-    <string name="pref_data_cache_cleared">快取已清除</string>
-    <string name="pref_data_request">清除 icon 申請資料</string>
-    <string name="pref_data_request_desc">刪除 icon 申請資料，它們是在申請未支援的 App 的是偶產生的。</string>
-    <string name="pref_data_request_clear_dialog">您確認要清除 icon 申請資料嗎？</string>
-    <string name="pref_data_request_cleared">icon 申請資料已清除</string>
-    <string name="pref_premium_request_header">高級 icon 申請</string>
-    <string name="pref_premium_request_restore">恢復已購買內容</string>
-    <string name="pref_premium_request_restore_desc">在重新安裝 icon pack 後恢復高級 icon 申請</string>
-    <string name="pref_premium_request_restore_success">高級 icon 申請權已恢復</string>
-    <string name="pref_premium_request_restore_empty">您沒有任何已購買內容</string>
-    <string name="pref_premium_request_rebuild">重建高級 icon 申請資料</string>
-    <string name="pref_premium_request_rebuild_desc">收集全部高級 icon 申請資料重新提交</string>
+    <string name="pref_data_cache_cleared">已清除快取</string>
+    <string name="pref_data_request">清除圖示申請資料</string>
+    <string name="pref_data_request_desc">刪除於申請圖示後所產生的圖示申請資料。</string>
+    <string name="pref_data_request_clear_dialog">是否清除圖示申請資料？</string>
+    <string name="pref_data_request_cleared">已清除圖示申請資料</string>
+    <string name="pref_premium_request_header">高級圖示申請</string>
+    <string name="pref_premium_request_restore">回復已購買項目</string>
+    <string name="pref_premium_request_restore_desc">在重新安裝圖示包後回復高級申請包</string>
+    <string name="pref_premium_request_restore_success">已回復高級圖示申請</string>
+    <string name="pref_premium_request_restore_empty">尚未購買任何項目</string>
+    <string name="pref_premium_request_rebuild">重新整理高級圖示申請</string>
+    <string name="pref_premium_request_rebuild_desc">重新整理全部高級圖示申請資料以重新提交</string>
     <string name="pref_theme_header">主題</string>
-    <string name="pref_theme_dark">黑色主題</string>
-    <string name="pref_theme_dark_desc">使用黑色主題</string>
+    <string name="pref_theme_dark">深色主題</string>
+    <string name="pref_theme_dark_desc">於應用程式中顯示深色主題</string>
     <string name="pref_notifications_header">通知</string>
     <string name="pref_notifications">接收通知</string>
     <string name="pref_wallpaper_header">桌布</string>
     <string name="pref_wallpaper_location">桌布儲存位置</string>
     <string name="pref_language_header">語言</string>
     <string name="pref_others_header">其它</string>
-    <string name="pref_others_report_bugs">反饋問題</string>
+    <string name="pref_others_report_bugs">回報問題</string>
     <string name="pref_others_changelog">更新日誌</string>
     <string name="pref_others_reset_tutorial">重置教程</string>
-    <string name="pref_others_reset_tutorial_reset">教程已重置</string>
+    <string name="pref_others_reset_tutorial_reset">已重置教程</string>
     <!-- Themes -->
-    <string name="theme_name_auto">默认</string>
+    <string name="theme_name_auto">自動</string>
     <string name="theme_name_light">淺色</string>
     <string name="theme_name_dark">深色</string>
     <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
-    <string name="permission_storage_denied">需要存儲權限以儲存桌布</string>
-    <string name="permission_notification_denied_1">需要通知許可權才能接收來自開發者的通知</string>
-    <string name="permission_notification_denied_2">從應用程式設置中啟用通知</string>
+    <string name="permission_storage_denied">需要儲存權限以儲存桌布</string>
+    <string name="permission_notification_denied_1">需要通知權限才能接收來自開發者的通知</string>
+    <string name="permission_notification_denied_2">從應用程式設定中啟用通知</string>
     <!-- Intent -->
-    <string name="app_client">選擇郵件 App</string>
-    <string name="no_email_app">沒有 App 可以發送郵件</string>
-    <string name="no_browser">沒有 App 可以打開 url 地址</string>
-    <string name="intent_email_failed">無法顯示郵件 App </string>
+    <string name="app_client">選擇電子郵件應用程式</string>
+    <string name="no_email_app">沒有應用程式可以發送郵件</string>
+    <string name="no_browser">沒有應用程式可以開啟網站</string>
+    <string name="intent_email_failed">無法顯示電子郵件應用程式</string>
     <string name="intent_email_supported">支援</string>
     <string name="intent_email_recommended">推薦</string>
     <string name="intent_email_not_supported">不支援</string>
-    <string name="intent_email_not_supported_message">選擇了一個不支援的郵件 App，請更換另一個郵件 App</string>
+    <string name="intent_email_not_supported_message">請選擇其他受支援的電子郵件應用程式</string>
     <!-- About -->
     <string name="about_contributors_title">貢獻者</string>
     <string name="about_privacy_policy_title">隱私政策</string>
     <string name="about_terms_and_conditions_title">條款及細則</string>
     <!-- Report Bugs -->
-    <string name="report_bugs_desc">請描述您要報告的問題類型</string>
-    <string name="report_bugs_desc_hint">描述</string>
-    <string name="report_bugs_desc_empty">請給予一些描述</string>
-    <string name="report_bugs_building">產生 activity 列表中……</string>
-    <string name="report_bugs_failed">無法產生 activity 列表</string>
-    <string name="report_bugs_send">發送報告</string>
+    <string name="report_bugs_desc">請描述您要回報的問題類型</string>
+    <string name="report_bugs_desc_hint">說明</string>
+    <string name="report_bugs_desc_empty">請給予一些說明</string>
+    <string name="report_bugs_building">正在產生活動列表……</string>
+    <string name="report_bugs_failed">無法產生活動列表</string>
+    <string name="report_bugs_send">提交回報</string>
     <!-- Support Development -->
-    <string name="donation_success">感謝您的捐贈。我會好好利用它的。</string>
+    <string name="donation_success">感謝您的捐贈讓開發者能吃點飯。</string>
     <!-- Crash Report -->
     <string name="crash_report">崩潰報告</string>
-    <string name="crash_report_message">不幸的是，%s 已崩潰。選擇下面的 Send Report （發送報告） 以幫助開發人員解決問題。</string>
-    <string name="crash_report_send">發送報告</string>
+    <string name="crash_report_message">不幸的是，%s 已崩潰。請點選「回報問題」以幫助開發人員解決問題。</string>
+    <string name="crash_report_send">提交回報</string>
     <!-- Please don't modify this, Just Translate -->
-    <string name="about_dashboard">直板</string>
-    <string name="about_dashboard_dev">CandyBar 是 GitHub 上一個受 Apache License 2.0 保護的開源 Android  icon pack 儀錶盤，免費使用，由 Dani Mahardhika 開發。</string>
-    <string name="about_open_source_licenses">開源許可證</string>
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar 是 GitHub 上一個受 Apache License 2.0 保護的免費開源 Android 圖示包儀表板，由 Dani Mahardhika 開發。</string>
+    <string name="about_open_source_licenses">開放原始碼授權</string>
     <string name="about_dashboard_contributors">CandyBar 貢獻者</string>
     <string name="about_dashboard_translator">CandyBar 翻譯者</string>
     <!-- DrawerToggle -->
@@ -316,11 +314,11 @@
     <string name="txt_close">關閉</string>
     <string name="txt_new">新</string>
     <!-- Content descriptions for screen readers -->
-    <string name="bookmark_button_content_description">將此圖示添加到書籤部分</string>
-    <string name="icon_search_close_button_content_description">關閉圖示搜索</string>
+    <string name="bookmark_button_content_description">將此圖示新增到書籤</string>
+    <string name="icon_search_close_button_content_description">關閉圖示搜尋</string>
     <string name="icon_request_submit_button_content_description">提交圖示請求</string>
-    <string name="icon_list_content_description">圖示包中包含的圖示清單</string>
-    <string name="icon_search_list_content_description">與搜索詞匹配的圖示清單</string>
-    <string name="about_item_social_content_description">指向圖示包作者線上個人資料的連結</string>
-    <string name="share_icon_pack_button_content_description">與他人分享此應用程式</string>
+    <string name="icon_list_content_description">圖示包中所包含的圖示</string>
+    <string name="icon_search_list_content_description">與搜尋目標匹配的圖示</string>
+    <string name="about_item_social_content_description">此圖示包的作者：</string>
+    <string name="share_icon_pack_button_content_description">分享此應用程式</string>
 </resources>
