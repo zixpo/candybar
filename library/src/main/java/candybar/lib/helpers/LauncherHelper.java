@@ -351,7 +351,7 @@ public class LauncherHelper {
                 "Moto Launcher",
                 R.drawable.ic_launcher_moto,
                 new String[]{"com.motorola.launcher3"},
-                "com.motorola.personalize.app.IconPacksActivity",
+                "com.motorola.personalize/com.motorola.personalize.app.IconPacksActivity",
                 DIRECT_APPLY_NOT_SUPPORTED,
                 (context, launcherName) -> new String[]{} // FIXME: Opens app without instructions
         ),
@@ -657,8 +657,6 @@ public class LauncherHelper {
         private interface ManualApply {
             default boolean isSupported(String launcherPackageName) { return true; }
 
-            default String getSettingsActivity(Context context, String launcherPackageName) { return null; }
-
             default String getCompatibilityMessage(Context context, String launcherName) {
                 return context.getResources().getString(
                         R.string.apply_manual,
@@ -786,20 +784,6 @@ public class LauncherHelper {
                 return this.type.manualApplyFunc.getInstructionSteps(context, this.type.name);
             }
             return new String[]{};
-        }
-
-        /**
-         * Get the settings activity name for the launcher. This is used to launch the settings
-         * activity of the launcher where the icon pack can be applied. Make sure to call
-         * {@code supportsManualApply} before calling this or otherwise the result might be null.
-         *
-         * @return The settings activity name for the launcher, or null if not available.
-         */
-        public String getSettingsActivity(Context context) {
-            if (this.type.manualApplyFunc != null) {
-                return this.type.manualApplyFunc.getSettingsActivity(context, this.installedPackage);
-            }
-            return null;
         }
 
         /**
@@ -1156,10 +1140,14 @@ public class LauncherHelper {
                         logLauncherManualApply(launcherPackageName, "confirm");
                         if (launcher.type.settingsActivityName == null) return;
                         try {
-                            String settingsActivity = launcher.type.manualApplyFunc.getSettingsActivity(context, launcherPackageName);
-                            final Intent intent = new Intent(Intent.ACTION_MAIN);
-                            intent.setComponent(new ComponentName(launcherPackageName, settingsActivity));
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            String settingsActivity = launcher.type.settingsActivityName;
+                            final Intent intent = new Intent(Intent.ACTION_MAIN)
+                                    .setComponent(
+                                        (settingsActivity.contains("/"))
+                                                ? new ComponentName(settingsActivity.split("/")[0], settingsActivity.split("/")[1])
+                                                : new ComponentName(launcherPackageName, settingsActivity)
+                                    )
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             context.startActivity(intent);
                             if (callback != null) callback.onSuccess(context);
                         } catch (ActivityNotFoundException | NullPointerException e) {
