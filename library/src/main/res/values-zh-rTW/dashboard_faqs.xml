@@ -29,75 +29,59 @@
         <!-- Why is Set Alarm permission needed? -->
     </string-array>
     <string-array name="questions">
-        <item>什麼是啟動器?</item>
-        <item>什麼是 icon pack?</item>
-        <item>我該怎樣使用一個 icon pack?</item>
-        <item>我該如啟用一個 icon pack?</item>
-        <item>我怎樣才能看到所有包含的 icon ?</item>
-        <item>我看不到一個完整的 icon 名稱</item>
-        <item>我該如何才能將 icon 替換為備用 icon ?</item>
-        <item>我該如何申請 icon ?</item>
-        <item>How can I restore the remaining Premium Requests after reinstalling the app?</item>
-        <item>After restarting my phone, the icon pack is not applied; it restores to defaults?</item>
-        <item>為什麼 icon 們在我的手機上看起來有鋸齒感?</item>
-        <item>I can see the icon included in all icons,
-            but why isn\'t the actual icon on the app drawer changed?</item>
-        <item>\"回報問題\" 選項是什麼?</item>
-        <item>My launcher is listed in the Google Play description, but why isn\'t it included in apply section?</item>
-        <item>桌布無法啟用，只是黑色畫面?</item>
-        <item>Muzei: 如何只載入已下載 icon ?</item>
-        <item>Muzei: 不想每次桌布變化的時候都要下載它們?</item>
-        <item>Muzei: 我只想用特定的桌布?</item>
-        <item>為什麼需要用到存儲讀寫權限?</item>
-        <item>為什麼需要用到聯網權限?</item>
-        <item>為什麼需要用到取得網絡連接狀態權限?</item>
-        <item>為什麼需要用到取得 WiFi 連接狀態權限?</item>
-        <item>為什麼需要用到設定桌布權限?</item>
-        <item>為什麼需要用到喚醒鎖權限?</item>
-        <item>Why is Set Alarm permission needed?</item>
+        <item>什麼是啟動器？</item>
+        <item>什麼是圖示包？</item>
+        <item>我該如何使用圖示包？</item>
+        <item>我該如何套用圖示包？</item>
+        <item>我該如何看到此圖示包的所有圖示？</item>
+        <item>我看不到完整的圖示名稱</item>
+        <item>我該如何將目前圖示更改為其他圖示？</item>
+        <item>我該如何申請圖示？</item>
+        <item>我該如何在重裝應用程式後取得剩餘的高級圖示申請數？</item>
+        <item>為何重新啟動手機後仍然無法套用圖示包？</item>
+        <item>我的圖示看起來糊糊的；有鋸齒狀！</item>
+        <item>某些圖示雖然有在應用程式中，但它們沒有在應用程式抽屜中套用！</item>
+        <item>「回報問題」是回報哪個項目的問題？</item>
+        <item>我的啟動器雖然有列在 Google Play 應用程式說明中，但為何它沒有在「套用圖示」中顯示？</item>
+        <item>套用桌布後在桌面顯示黑畫面？</item>
+        <item>Muzei：我該如何讓應用程式只載入已下載的桌布？</item>
+        <item>Muzei：我該如何避免在每次更改桌布時重新下載它們？</item>
+        <item>Muzei：我只想使用特定的桌布！</item>
+        <item>為何應用程式需要讀寫外部儲存空間權限？</item>
+        <item>為何需要網路權限？</item>
+        <item>為何需要讀取網路連接狀態（ACCESS_NETWORK_STATE）的權限？</item>
+        <item>為何需要讀取 Wi-Fi 連接狀態（ACCESS_WIFI_STATE）的權限？</item>
+        <item>為何需要設定桌布權限？</item>
+        <item>為何需要 Wake Lock 權限？</item>
+        <item>為何需要用到設定鬧鐘權限？</item>
     </string-array>
     <string-array name="answers">
-        <item>啟動器是 Android 界面的一部分，它可以讓使用者在使用 Android 設備時自定義主屏幕，啟動應用 App ，撥打電話，以及其它種種任務。</item>
-        <item>一組能夠改變 Navigation drawer 中 App 的 icon 的圖形們。</item>
-        <item>You will need a launcher that supports custom icon packs.
-            Supported launchers are listed in the Play Store description.
-            If you are confused about which launchers should be used, just go to the \"Apply\" section and install from there.</item>
-        <item>You can open the navigation drawer, then open \"Apply\". Choose your launcher from the list.
-            If your launcher is not listed there, but this icon pack is compatible with it
-            (see on Google Play Store description for supported launchers),
-            you can apply the icon pack manually in your launcher settings.</item>
-        <item>You can open the navigation drawer and then open \"Icons\"</item>
-        <item>輕點一下 icon 。一個預覽窗口將會彈出，那裡有更大的 icon 以及 icon 的全名。</item>
-        <item>那取決於你用的是哪一個啟動器。不是所有啟動器都支持 icon 編輯。但大多數情況下，你可以通過長按或者雙擊一個 icon 來編輯它。</item>
-        <item>You can open the navigation drawer, then open \"Icon Request\".</item>
-        <item>You can open the navigation drawer, then open \"Settings\", choose \"Restore Purchases\".
-            If you had any remaining Premium Requests before reinstalling, they will be restored.</item>
-        <item>It happened because this icon pack was moved to the SD Card; you should install it in internal memory.</item>
-        <item>The problem might come from the launcher that you used when handling big icon resolution.
-       	    You can fix it by increasing the icon size to 115–120%.
-       	    Alternatively, you might change your launcher.</item>
-        <item>Open settings, scroll down, and then select \"Report Bugs\".</item>
-        <item>\"回報問題\" 是用來報告本 icon pack存在的 bug 的，而不是 Candy Bar Dashboard 的 bug。</item>
-        <item>Not every launcher supports direct apply, and some of them can\'t be accessed directly from the dashboard.
-      	    You can apply this icon pack manually in the individual launcher settings.</item>
-        <item>當你從本 App 裡直接設定桌布的時候，它（桌布）會被下載到快取中，然後本 App 會嘗試應用它。
-啟用桌布的過程會花一些時間，並且需要在短時間內佔用很多的運行內存。
-\"黑色畫面\" 的錯誤之所以會出現，可能是因為你的手機沒有足夠用來處理該桌布的空閒運行內存。
-重啟你的手機能夠修復這個問題。
-重啟之後你的手機有更多可用的運行內存。
-或者，你可以在圖庫 App 中打開之前下載的桌布圖片，從那裡設定為桌布。</item>
-        <item>Open Muzei, choose this icon pack, settings. You will see an option to load downloaded wallpapers only.
-            You will need to download wallpapers from the dashboard first.</item>
-        <item>如果一張桌布已下載了，那麼它將被自動載入到你的手機內存中。
-Muzei 並不會在每次桌布變化的時候下載桌布。你需要先在 Dashboard 中下載桌布才行。</item>
-        <item>打開 Dashboard  App ，下載那些你想要在 Muzei 中使用的桌布。
-打開 Muzei 設置，然後選擇只使用已下載的桌布。</item>
-        <item>是用來讀寫快取，以及收集 icon 申請資料的。</item>
-        <item>It is used to load Cloud-Based Wallpapers &amp; download them.</item>
-        <item>是用來檢查你的手機是否擁有網路連接的。</item>
-        <item>是用來檢查你的手機是否連接到 Wifi 網絡的，以便載入 Muzei 上的雲端桌布。</item>
-        <item>是用來從 Dashboard  App 中直接啟用桌布的。</item>
-        <item>它被 Muzei 動態桌布所使用</item>
-        <item>It is used to launch the clock app from the analog clock widget.</item>
+        <item>啟動器是 Android 界面不可或缺的一部分。其不但可用於啟動應用程式、打電話，高度客製化也是其一大特性。</item>
+        <item>一組能夠更改應用程式圖示的圖形</item>
+        <item>您需要一個支援自訂圖示的啟動器。
+            詳細支援項目已列於 Play Store 說明中。
+            若您仍然不確定要使用哪個啟動器可移至「套用圖示」區域安裝。</item>
+        <item>您可以在側欄的「套用圖示」中選擇您所使用的啟動器。若您所使用的啟動器雖已列於 Google Play 說明中但未在「套用圖示」中出現，請自行於啟動器設定中套用圖示包。</item>
+        <item>開啟側欄後選擇「圖示」</item>
+        <item>輕點一下圖示將放大圖檔並且顯示名稱。</item>
+        <item>並非所有啟動器皆支援圖示編輯。您可以嘗試長按或雙擊應用程式圖示開啟編輯面板。</item>
+        <item>開啟側欄並且選擇「申請圖示」。</item>
+        <item>開啟並點選側欄中的「設定」>「回復已購買項目」。此將回復未使用的高級圖示申請餘額。</item>
+        <item>請將圖示包安裝於內部儲存空間並避免安裝於 SD 卡上。</item>
+        <item>某些啟動器在處理這些高解析度圖示時可能會有的問題。請將圖示放大為 115-120% 或更換啟動器。</item>
+        <item>開啟設定並選擇「回報問題」。</item>
+        <item>「回報問題」將回報有關此圖示包的問題而非關於此應用程式本身。</item>
+        <item>並非所有啟動器皆支援直接套用圖示的功能，或是無法直接於此取用。您可於啟動器設定中套用此圖示包。</item>
+        <item>「設定桌布」會將下載的桌布儲存於快取並且套用桌布。套用桌布的過程將在極短時間內佔用大量內存，若這些內存不足將顯示黑畫面。您可嘗試重新啟動以釋放內存空間。您亦可自行下載桌布並於其他桌布管理器中套用。</item>
+        <item>請於下載桌布後開啟 Muzei，選擇此圖示包 > 設定 > 僅載入已下載桌布。</item>
+        <item>桌布下載後將自動於手機內存中載入。Muzei 不會在更改桌布後下載圖檔。請先自行下載桌布。</item>
+        <item>請先下載欲於 Muzei 上套用的桌布並且於 Muzei 設定中開啟「僅載入已下載桌布」。</item>
+        <item>此權限用於讀寫內存並且收集申請圖示的相關資料。</item>
+        <item>此權限僅用於下載雲端桌布。</item>
+        <item>此權限用於確認手機的連線狀態。</item>
+        <item>此權限用於確認手機連接 Wi-Fi 的狀態，也同時用於載入 Muzei 的雲端桌布。</item>
+        <item>此權限讓您能夠直接在此應用程式直接套用桌布。</item>
+        <item>此權限用於 Muzei 動態桌布。</item>
+        <item>此用於從指針時鐘小工具中啟動時鐘應用程式。</item>
     </string-array>
 </resources>

@@ -1,33 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Materiaali Kojelauta</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Koti</string>
+    <string name="navigation_view_apply">Lisää </string>
+    <string name="navigation_view_icons">Kuvakkeet</string>
+    <string name="navigation_view_request">Kuvakkeen Pyyntö</string>
+    <string name="navigation_view_wallpapers">Taustakuvat</string>
+    <string name="navigation_view_presets">Esiasetukset</string>
+    <string name="navigation_view_settings">Asetukset</string>
+    <string name="navigation_view_faqs">Usein kysyttyjä kysymyksiä</string>
+    <string name="navigation_view_about">Tietoja</string>
+    <string name="navigation_view_donate">Tue kehitystä</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Muzei-asetukset</string>
+    <string name="minute">Minuutti</string>
+    <string name="hour">Tunti</string>
+    <string name="save_setting">Tallenna</string>
+    <string name="muzei_refresh_duration">Päivitä Kesto</string>
+    <string name="muzei_wifi_only">Päivitä vain Wi-Fi-yhteydestä</string>
+    <string name="muzei_downloaded_only">Lataa Vain Ladattavat Taustakuvat</string>
+    <string name="muzei_settings_ignored">Kuvakepaketti ei sisällä taustakuvia, asetuksia ohitetaan.</string>
+    <string name="muzei_settings_saved">Asetukset Tallennettu</string>
     <!-- Menu -->
+    <string name="menu_search">Etsi</string>
+    <string name="menu_save">Tallenna laitteeseen</string>
+    <string name="menu_select_all">Valitse Kaikki</string>
+    <string name="menu_delete">Poista</string>
+    <string name="menu_wallpaper_crop">Rajaa Taustakuvaa</string>
+    <string name="menu_apply_homescreen">Kotinäyttö</string>
+    <string name="menu_apply_lockscreen">Lukitusnäyttö</string>
+    <string name="menu_apply_homescreen_lockscreen">Kotinäyttö &amp; Lukitusnäyttö</string>
     <!-- Dialog -->
+    <string name="open">Avaa</string>
+    <string name="close">Sulje</string>
+    <string name="clear">Tyhjennä</string>
+    <string name="ok">OK</string>
+    <string name="install">Asenna</string>
+    <string name="donate">Lahjoita</string>
+    <string name="update">Päivitä</string>
+    <string name="search_noresult">Ei tuloksia haulle \"%s\"</string>
+    <string name="search_faqs">Kysymys tai vastaus</string>
+    <string name="search_icon">Kuvakkeen nimi</string>
+    <string name="search_wallpapers">Taustakuvan nimi</string>
     <!-- Update -->
+    <string name="checking_for_update">Etsitään päivityksiä…</string>
+    <string name="update_available">Päivitys saatavilla!</string>
+    <string name="no_update_available">Käytät uusinta versiota!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versio</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Sovelluksen sisäisiä ostotuotteita ei voi ladata</string>
     <!-- License -->
+    <string name="license_checking">Tarkistetaan lisenssiä …</string>
+    <string name="license_check">Lisenssin Tarkistus</string>
+    <string name="license_check_success">Lisenssin tarkistus onnistui. Kiitos, että lataat sovelluksen Play-kaupasta.</string>
+    <string name="license_check_failed">Lisenssien tarkistus epäonnistui, et ladannut sovellusta Play Kaupasta.
+        Et voi käyttää sitä.</string>
+    <string name="license_check_retry">Lisenssiä ei voitu tarkistaa, yritä uudelleen hetken kuluttua.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Pelaa Kaupan Tarkistus</string>
+    <string name="playstore_check_success">Kiitos, että asensit sovelluksen Google Play kaupasta. Nauti!</string>
+    <string name="playstore_check_failed">Näyttää siltä, että olet asentanut tämän kuvakepaketin Google Play Storen ulkopuolelta.
+        Et voi käyttää sitä.</string>
     <!-- Share -->
+    <string name="share_app_title">Yo! Kuittaa %s</string>
+    <string name="share_app_body">Tutustu %1$s, tämä kuvakepaketti on todella viileä! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Navigointivalikko</string>
+    <string name="tap_intro_home_navigation_desc">Napauta tästä tai pyyhkäise näytön vasemmasta reunasta avataksesi navigointivalikon</string>
+    <string name="tap_intro_home_apply">Käytä kuvakepakettia</string>
+    <string name="tap_intro_home_apply_desc">Napauta tästä asettaaksesi %s nykyiseen käynnistyslaitteeseesi. Paina pitkään saadaksesi lisäyksen muihin käynnistyslaitteisiin.</string>
+    <string name="tap_intro_icons_search">Etsi</string>
+    <string name="tap_intro_icons_search_desc">Napauta tästä etsiäksesi kuvaketta</string>
+    <string name="tap_intro_request_select">Valitse vastaamaton sovellus</string>
+    <string name="tap_intro_request_select_desc">Napauta tästä valitaksesi vastaamattoman sovelluksen kuvakepyyntöä varten</string>
+    <string name="tap_intro_request_select_all">Valitse kaikki vastaamattomat sovellukset</string>
+    <string name="tap_intro_request_select_all_desc">Napauta tästä valitaksesi kaikki vastaamattomat sovellukset kuvakkeita varten</string>
+    <string name="tap_intro_request_send">Lähetä kuvakkeen pyyntö</string>
+    <string name="tap_intro_request_send_desc">Napauta tästä lähettääksesi valitut vastaamattomat sovellukset</string>
+    <string name="tap_intro_request_premium">Premium-kuvakkeen pyyntö</string>
+    <string name="tap_intro_request_premium_desc">Napauta tästä ostaaksesi Premium-kuvakepaketin,
+        Premium-kuvakepyynnöllä, voit saada pyydetyt sovellukset nopeammin.</string>
+    <string name="tap_intro_wallpapers_option">Taustakuvan asetukset</string>
+    <string name="tap_intro_wallpapers_option_desc">Napauta ja pidä tästä näyttääksesi taustakuvavaihtoehdot; %s käytä taustakuvaa.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">lataus tai</string>
+    <string name="tap_intro_wallpapers_preview">Esikatsele taustakuvaa</string>
+    <string name="tap_intro_wallpapers_preview_desc">Napauta tästä esikatsella koko taustakuvan kokoa</string>
+    <string name="tap_intro_wallpaper_preview_save">Tallenna taustakuva</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Napauta tästä ladataksesi ja tallentaaksesi taustakuvan laitteellesi, jotta voit käyttää sitä myöhemmin</string>
+    <string name="tap_intro_wallpaper_preview_apply">Käytä taustakuvaa</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Napauta tästä asettaaksesi taustakuvan aloitusnäytön taustaksi</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Lisää Sovelluksia</string>
+    <string name="home_more_apps">Tarkista muut Google Play Kaupassa julkaistut sovellukset</string>
+    <string name="home_rate_and_review">Arvostele &amp; Arvostelu</string>
+    <string name="home_apply_icon_pack">Käytä %s</string>
+    <string name="home_donate">Lahjoita</string>
+    <string name="home_donate_desc">Tue kuvakepaketin kehittämistä</string>
+    <string name="home_icons">Mukautetut kuvakkeet</string>
+    <string name="home_icon_dimension">%s pikselin kuvakkeen ulottuvuus</string>
+    <string name="home_loud_wallpapers">%d pilven taustakuvia</string>
+    <string name="home_muzei">Muzei live taustakuva</string>
+    <string name="home_icon_request_installed_apps">Asennetut sovellukset yhteensä\n%d</string>
+    <string name="home_icon_request_themed_apps">Teemalla varustetut \n%d sovellukset</string>
+    <string name="home_icon_request_missed_apps">Teemalla varustetut \n%d sovellukset</string>
     <!-- Apply -->
+    <string name="apply_installed">Asennettu Käynnistysohjelma</string>
+    <string name="apply_installed_launchers">Asennetut Käynnistimet</string>
+    <string name="apply_supported">Tuetut Käynnistimet</string>
+    <string name="apply_manual">%1$s Launcher ei tue suoraa sovellusta, mutta voit ottaa %2$s käyttöön manuaalisesti käynnistysohjelman asetuksista.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso ei tue suoraa sovellusta, mutta voit seurata näitä ohjeita:</string>
+    <string name="apply_manual_kvaesitso_step_1">Avaa Kvaesitson asetukset</string>
+    <string name="apply_manual_kvaesitso_step_2">Napauta \"Ruudukko &amp; Kuvakkeet\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Napauta \"Kuvakepaketti\" -painiketta</string>
+    <string name="apply_manual_kvaesitso_step_4">Valitse %s listasta</string>
+    <string name="apply_manual_kvaesitso_step_5">Napauta maalausharjalla kuvaketta ottaaksesi käyttöön tai poistaaksesi käytöstä taustamuodon</string>
+    <string name="apply_manual_kiss">KISS ei tue suoraa sovellusta, mutta voit seurata näitä ohjeita:</string>
+    <string name="apply_manual_kiss_step_1">Avaa KISS-asetukset</string>
+    <string name="apply_manual_kiss_step_2">Napauta \"Käyttöliittymää\"</string>
+    <string name="apply_manual_kiss_step_3">Napauta \"Kuvakepaketti\" -painiketta</string>
+    <string name="apply_manual_kiss_step_4">Valitse %s listasta</string>
+    <string name="apply_manual_samsung_oneui">%1$s ei tue suoraa sovellusta, mutta alkaen %2$s voit ottaa käyttöön kuvakkeita kumppanisovelluksella.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Nykyinen %s -versiosi on liian vanha. Päivitä Android 12:een tai uudempaan voidaksesi ottaa kuvakkeet käyttöön suoraan. Vaihtoehtoisesti voit asentaa eri kantoraketin.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Avaa %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Lataa sovellus %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Napauta \"Kuvake\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Napauta \"Luo Uusi\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Napauta sinistä \"Iconpack\" painiketta</string>
+    <string name="apply_manual_samsung_oneui_step_6">Valitse %s listasta</string>
+    <string name="apply_manual_samsung_oneui_step_7">Toista nämä vaiheet joka kerta kun päivität %s -kuvakkeita, koska uusia kuvakkeita ei kartoiteta automaattisesti.</string>
+    <string name="apply_manual_hios">HiOS launcher ei tue suoraa sovellusta, mutta voit seurata näitä ohjeita:</string>
+    <string name="apply_manual_hios_step_1">Avaa \"Asetukset\"</string>
+    <string name="apply_manual_hios_step_2">Napauta \"Teema &amp; lukitusnäyttö\"</string>
+    <string name="apply_manual_hios_step_3">Napauta \"teemaani\"</string>
+    <string name="apply_manual_hios_step_4">Napauta \"Kuvakepaketti\"</string>
+    <string name="apply_manual_hios_step_5">Napauta %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Pitkä napauta aloitusnäyttöäsi</string>
+    <string name="apply_manual_oxygen_os_step_2">Napauta \"Kotiasetukset\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Napauta \"Kuvakepaketti\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Napauta %s</string>
+    <string name="apply_manual_color_os_step_1">Pitkä napauta aloitusnäyttöäsi</string>
+    <string name="apply_manual_color_os_step_2">Napauta \"Kuvakkeet\"</string>
+    <string name="apply_manual_color_os_step_3">Vieritä \"Mukautettu\" -painikkeen oikealle (tämä on vieritettävä lista!)</string>
+    <string name="apply_manual_color_os_step_4">Napauta %s</string>
+    <string name="apply_manual_before">Tämä versio ennen käynnistystä ei vielä tue kuvakkeiden käyttöä suoraan. Sen sijaan seuraa alla olevia ohjeita:</string>
+    <string name="apply_manual_before_step_1">Pyyhkäise vasemmalle aloitusnäytöllä</string>
+    <string name="apply_manual_before_step_2">Napauta \"Asetukset\"</string>
+    <string name="apply_manual_before_step_3">Napauta \"Tyylit &amp; teemat\"</string>
+    <string name="apply_manual_before_step_4">Napauta \"Kuvake Tyylit &amp; Pakkaukset\"</string>
+    <string name="apply_manual_before_step_5">Napauta %s</string>
+    <string name="apply_manual_nothing_step_1">Avaa \"Asetukset\"</string>
+    <string name="apply_manual_nothing_step_2">Napauta \"Mukauttaminen\"</string>
+    <string name="apply_manual_nothing_step_3">Napauta \"Kuvakepaketti\"</string>
+    <string name="apply_manual_nothing_step_4">Napauta %s</string>
+    <string name="apply_launch_failed">%s -asetuksia ei voi käynnistää</string>
+    <string name="apply_launcher_not_installed">%s Launcher ei ole asennettu. Haluatko avata
+        Google Play Kaupan, jotta voit ladata ja asentaa sen?</string>
+    <string name="apply_launcher_not_installable">%s Launcher ei ole asennettu. Yritä uudelleen käynnistimen asennuksen jälkeen.</string>
+    <string name="apply_cmtheme_not_available">CM Teemanhallinta ei ole käytettävissä tällä laitteella</string>
+    <string name="apply_cmtheme_failed">CM Theme Manageria ei voitu käynnistää, voit yrittää ottaa kuvakepaketin käyttöön manuaalisesti Asetuksista.</string>
+    <string name="apply_lg_home">Tämän kuvakepaketin avausasetukset - Näyttö - Kotinäyttö - Teema</string>
+    <string name="apply_lg_home_not_available">LG Home ei ole käytettävissä tällä laitteella</string>
+    <string name="apply_lg_home_failed">LG Home -asetuksia ei voitu käynnistää, joten voit yrittää ottaa kuvakepaketin käyttöön manuaalisesti asetuksista.</string>
+    <string name="apply_lg_home_nougat">LG Home Android Nougat ei enää tue kuvakepakettia. Tarvitset mukautetun käynnistysohjelman käyttääksesi kuvakepakettia.</string>
+    <string name="apply_launcher_incompatible">%s Launcher ei tue yhtäkään kuvakepakettia, joten et voi käyttää tätä kuvakepakettia tämän käynnistimen kanssa. Voit kokeilla kolmannen osapuolen sovellusta käyttääksesi tätä kuvakepakettia %2$s -käynnistyksessä. Haluatko asentaa sen?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s käynnistysohjelma ei tue kuvakepaketteja Androidissa %d tai pienempi. Päivitä Android-versio tai asenna kolmannen osapuolen käynnistin käyttääksesi tätä kuvakepakettia. Voit myös kokeilla apuohjelmaa vaihtaaksesi yksittäisiä kuvakkeita. Haluatko asentaa sen?</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Kuvakkeiden lataaminen epäonnistui</string>
+    <string name="icon_shape">Kuvakkeen Muoto</string>
+    <string name="bookmark_icons_empty">Kirjanmerkkejä ei löytynyt. Lisää kuvakkeet päästäksesi nopeasti käsiksi tähän.</string>
+    <string name="items_selected">%d valittu</string>
     <!-- Request -->
+    <string name="request_title">Kuvakkeen Pyyntö</string>
+    <string name="request_not_selected">Valitse pyytävät sovellukset</string>
+    <string name="request_not_requested">Ei pyydetty</string>
+    <string name="request_already_requested">Jo pyydetty</string>
+    <string name="request_not_available">Ei voida pyytää</string>
+    <string name="request_building">Rakenna pyyntöä …</string>
+    <string name="request_pacific_sending">Lähetetään pyyntö Pacific Managerille...</string>
+    <string name="request_pacific_error">Virhe lähetettäessä pyyntöä Pacific Managerille. Virhe on %s</string>
+    <string name="request_pacific_success">Pyyntö lähetetty onnistuneesti Pacific Managerille</string>
+    <string name="request_custom_error">Virhe lähetettäessä kuvakepyyntöä. Jos tämä virhe jatkuu, ota yhteyttä kehittäjään. %s</string>
+    <string name="request_custom_success">Kuvakkeen pyyntö lähetetty onnistuneesti</string>
+    <string name="request_fetching_data">Haetaan viimeisimpiä tietoja …</string>
+    <string name="request_build_failed">Kuvakkeen pyyntöä ei voitu luoda</string>
+    <string name="request_appfilter_failed">Ei voitu lukea appfilter.xml</string>
+    <string name="request_requested">Olet jo pyytänyt tätä kuvaketta etkä voi pyytää sitä uudelleen.</string>
+    <string name="request_requested_possible">Olet jo pyytänyt tätä kuvaketta. Oletko varma, että haluat viettää toisen pyynnön siitä?</string>
+    <string name="request_requested_button_cancel">Mene takaisin</string>
+    <string name="request_requested_button_confirm">Valitse joka tapauksessa</string>
+    <string name="request_email_client">Valitse sovellus, jota haluat käyttää kuvakkeen lähettämiseen</string>
+    <string name="request_app_disabled">Käytät tämän kuvakepaketin vanhempaa versiota. Pyydetyt kuvakkeet voidaan sisällyttää uusimpaan versioon. Ole hyvä ja päivitä sovellus uusimpaan versioon pyytääksesi kuvakkeita.</string>
+    <string name="connection_error_long">Tietoja ei voitu ladata palvelimelta. Tarkista verkkoyhteytesi.</string>
+    <string name="unable_to_load_config">Palvelimen tietoja haettaessa tai luettaessa tapahtui virhe.</string>
+    <string name="request_limit">Voit tehdä vain %d pyyntöä säännöllisellä pyynnöllä.</string>
+    <string name="request_used">Olet pyytänyt %d kuvakkeita.</string>
+    <string name="request_limit_buy">Voit ostaa Premium-pyyntöjä pyytää lisää kuvakkeita.</string>
+    <string name="request_limit_reset">Kuvakkeen pyynnön raja nollataan joka päivitys.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Tavallinen Kuvakkeen Pyyntö</string>
+    <string name="regular_request_desc">Pyydä kuvaketta ja kehittäjä yrittää sisällyttää kuvakkeita, joita olet pyytänyt.</string>
+    <string name="regular_request_count">Pyyntö yhteensä \n%d</string>
+    <string name="regular_request_used">Käytetty \n%d-pyyntö</string>
+    <string name="regular_request_available">Käytettävissä oleva \n%d-pyyntö</string>
     <!-- Premium Request -->
+    <string name="premium_request">Premium-kuvakkeen Pyyntö</string>
+    <string name="premium_request_no_internet">Varmista, että puhelimesi on yhteydessä internetiin ennen Premium-pyynnön lähettämistä</string>
+    <string name="premium_request_desc">Premium-kuvakkeen pyyntö on maksupyyntö. Voit saada pyydetyt sovelluksesi nopeammin käyttämällä Premium-kuvaketta.</string>
+    <string name="premium_request_buy">Osta</string>
+    <string name="premium_request_count">Pyyntö yhteensä \n%d</string>
+    <string name="premium_request_used">Käytetty \n%d-pyyntö</string>
+    <string name="premium_request_available">Käytettävissä oleva \n%d-pyyntö</string>
+    <string name="premium_request_already_purchased">Sinulla on edelleen %d Premium-pyyntö.
+        Sinun täytyy käyttää ne kaikki ennen kuin ostat Premium-pyyntöpaketin uudelleen.</string>
+    <string name="premium_request_limit">Sinulla on vain %d premium-pyyntöä,</string>
+    <string name="premium_request_limit1">mutta valitsit %d sovelluksen.
+        \n\nSinun täytyy käyttää kaikkia Premium-pyyntöjäsi ennen kuin käytät tavallista pyyntöä uudelleen.</string>
+    <string name="premium_request_consume_failed">Premium-pyyntöä ei voida käyttää, varmista, että sinulla on vakaa internet-yhteys ja yritä uudelleen.
+        Mene Asetuksiin rakentaaksesi Premium-pyynnöt uudelleen.</string>
+    <string name="premium_request_rebuilding">Rakennetaan Premium-pyyntö …</string>
+    <string name="premium_request_rebuilding_empty">Et ole tehnyt Premium-pyyntöä</string>
+    <string name="premium_request_exist">Sinulla on edelleen Premium Icon Request -paketti.
+        Avoimet asetukset, valitse \"Palauta ostot\" palauttaaksesi sen.</string>
+    <string name="premium_request_required">Sinun täytyy ostaa Premium-kuvake pyyntö paketti tehdä kuvake pyyntöjä</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Uusi Taustakuva</string>
+    <string name="wallpaper_already_downloaded">Taustakuva ladattu</string>
+    <string name="wallpaper_downloading">Ladataan taustakuvaa …</string>
+    <string name="wallpaper_download_failed">Ei voi ladata taustakuvaa</string>
+    <string name="wallpaper_download_success">Taustakuvan lataus onnistui</string>
+    <string name="wallpaper_loading">Ladataan taustakuvaa …</string>
+    <string name="wallpaper_applying">Asetetaan taustakuvaa …</string>
+    <string name="wallpaper_applied">Taustakuva asetettu</string>
+    <string name="wallpaper_apply_failed">Ei voitu ottaa taustakuvaa käyttöön</string>
+    <string name="wallpaper_apply_cancelled">Taustakuvan lataus peruttu</string>
+    <string name="connection_failed">Tietoja ei voitu noutaa palvelimelta</string>
+    <string name="wallpaper_apply">Käytä taustakuvaa</string>
+    <string name="wallpaper_save_to_device">Tallenna taustakuva</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Ei voitu ladata esiasetuksia</string>
+    <string name="presets_storage_permission">Tallennustilan käyttöoikeus tarvitaan esikatselun taustakuvan lataamiseksi</string>
+    <string name="presets_required_apps">Vaaditut sovellukset näiden esiasetusten käyttämiseksi</string>
+    <string name="presets_required_apps_not_installed">Asetusta käyttäviä vaadittuja sovelluksia ei ole asennettu. Asenna puuttuvat vaaditut sovellukset ja yritä uudelleen.</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Data &amp; Välimuisti</string>
+    <string name="pref_data_cache">Tyhjennä Välimuisti</string>
+    <string name="pref_data_cache_desc">Poista kuvien välimuisti tallennustilasta, luotu poimittaessa kuva
+	    tästä sovelluksesta, pyytämällä unohdettuja sovelluksia ja ladattaessa pilven taustakuva pikkukuvat.</string>
+    <string name="pref_data_cache_size">Välimuistin Koko: %s</string>
+    <string name="pref_data_cache_clear_dialog">Haluatko varmasti tyhjentää kätkön?</string>
+    <string name="pref_data_cache_cleared">Välimuisti tyhjennetty</string>
+    <string name="pref_data_request">Tyhjennä Kuvakkeen Pyynnön Tiedot</string>
+    <string name="pref_data_request_desc">Poista kuvakepyyntötiedot, jotka on luotu pyytämällä
+        vastaamattomia sovelluksia kuvakepyynnöstä.</string>
+    <string name="pref_data_request_clear_dialog">Haluatko varmasti tyhjentää kuvakkeen pyynnön tiedot?</string>
+    <string name="pref_data_request_cleared">Kuvakkeen pyynnön tiedot tyhjennetty</string>
+    <string name="pref_premium_request_header">Premium-kuvakkeen Pyyntö</string>
+    <string name="pref_premium_request_restore">Palauta Ostokset</string>
+    <string name="pref_premium_request_restore_desc">Palauta Premium-pyyntöpaketti kuvakepaketin uudelleenasentamisen jälkeen</string>
+    <string name="pref_premium_request_restore_success">Premium-pyyntö Palautettu</string>
+    <string name="pref_premium_request_restore_empty">Sinulla ei ole ostettuja paketteja</string>
+    <string name="pref_premium_request_rebuild">Rakenna Premium-kuvake Pyyntö</string>
+    <string name="pref_premium_request_rebuild_desc">Kerää kaikki Premium-kuvakkeen pyynnön tiedot lähettääksesi ne uudelleen</string>
+    <string name="pref_theme_header">Teema</string>
+    <string name="pref_theme_dark">Tumma Teema</string>
+    <string name="pref_theme_dark_desc">Käytä sovelluksen teeman tummaa väriä</string>
+    <string name="pref_notifications_header">Ilmoitukset</string>
+    <string name="pref_notifications">Vastaanota Ilmoituksia</string>
+    <string name="pref_wallpaper_header">Taustakuva</string>
+    <string name="pref_wallpaper_location">Taustakuvan Tallennussijainti</string>
+    <string name="pref_language_header">Kieli</string>
+    <string name="pref_others_header">Muut</string>
+    <string name="pref_others_report_bugs">Raportoi Bugeja</string>
+    <string name="pref_others_changelog">Muutosloki</string>
+    <string name="pref_others_reset_tutorial">Palauta Opastus</string>
+    <string name="pref_others_reset_tutorial_reset">Opastus Nollaa</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automaattinen</string>
+    <string name="theme_name_light">Vaalea</string>
+    <string name="theme_name_dark">Tumma</string>
+    <string name="theme_name_material_you">Materiaali Sinä</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Tallennustilan käyttöoikeus tarvitaan taustakuvan tallentamiseen</string>
+    <string name="permission_notification_denied_1">Ilmoituslupa tarvitaan ilmoitusten vastaanottamiseen kehittäjältä</string>
+    <string name="permission_notification_denied_2">Ota ilmoitukset käyttöön sovelluksen asetuksista</string>
     <!-- Intent -->
+    <string name="app_client">Valitse Sovellus</string>
+    <string name="no_email_app">Ei sovellusta sähköpostin lähettämiseen</string>
+    <string name="no_browser">Ei sovellusta URL-osoitteen avaamiseksi</string>
+    <string name="intent_email_failed">Sähköpostisovellusta ei voi näyttää</string>
+    <string name="intent_email_supported">Tuettu</string>
+    <string name="intent_email_recommended">Suositeltu</string>
+    <string name="intent_email_not_supported">Ei Tueta</string>
+    <string name="intent_email_not_supported_message">Valittu sähköpostiohjelma, jota ei tueta, ole hyvä ja valitse toinen sähköpostiohjelma</string>
     <!-- About -->
+    <string name="about_contributors_title">Avustajat</string>
+    <string name="about_privacy_policy_title">Yksityisyyden Suoja</string>
+    <string name="about_terms_and_conditions_title">Ehdot ja ehdot</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Ole hyvä ja anna kuvaus siitä, millaista ongelmaa haluat raportoida</string>
+    <string name="report_bugs_desc_hint">Kuvaus</string>
+    <string name="report_bugs_desc_empty">Ole hyvä ja anna kuvaus</string>
+    <string name="report_bugs_building">Rakennetaan aktiviteettiluetteloa …</string>
+    <string name="report_bugs_failed">Toimintoluetteloa ei voitu luoda</string>
+    <string name="report_bugs_send">Lähetä Raportti</string>
     <!-- Support Development -->
+    <string name="donation_success">Kiitos siitä, että teette lahjoituksen, käytän sitä lopullisesti.</string>
     <!-- Crash Report -->
+    <string name="crash_report">Kaatumisilmoitus</string>
+    <string name="crash_report_message">Valitettavasti %s kaatui. Valitse Lähetä raportti alta auttaaksesi kehittäjää korjaamaan ongelman.</string>
+    <string name="crash_report_send">Lähetä Raportti</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar on avoimen lähdekoodin kuvakepaketti kojelauta lisensoitu Apache Lisenssi 2.0
+        Android saatavilla GitHubissa ja vapaasti käytettäväksi, kehittänyt Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Avoimen Lähteen Lisenssit</string>
+    <string name="about_dashboard_contributors">CandyBar-avustajat</string>
+    <string name="about_dashboard_translator">CandyBar Kääntäjä</string>
     <!-- DrawerToggle -->
+    <string name="txt_open">Avaa</string>
+    <string name="txt_close">Sulje</string>
+    <string name="txt_new">Uusi</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Lisää tämä kuvake kirjanmerkkien osioon</string>
+    <string name="icon_search_close_button_content_description">Sulje kuvakehaku</string>
+    <string name="icon_request_submit_button_content_description">Lähetä kuvakkeen pyyntö</string>
+    <string name="icon_list_content_description">Kuvakepakettiin sisältyvien kuvakkeiden luettelo</string>
+    <string name="icon_search_list_content_description">Luettelo kuvakkeista, jotka vastaavat hakutermiä</string>
+    <string name="about_item_social_content_description">Linkki linkin verkkoprofiiliin, joka on luotu kuvakepaketin tekijälle: </string>
+    <string name="share_icon_pack_button_content_description">Jaa tämä sovellus jonkun kanssa</string>
 </resources>

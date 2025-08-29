@@ -189,6 +189,7 @@ Google Playストアを開きダウンロードしてインストールします
     <string name="request_requested">あなたは既にこのアイコンをリクエストしており、再度リクエストすることはできません。</string>
     <string name="request_requested_possible">あなたは既にこのアイコンをリクエストしています。他のアイコンをリクエストしますか？</string>
     <string name="request_requested_button_cancel">戻る</string>
+    <string name="request_requested_button_confirm">とにかく選択</string>
     <string name="request_email_client">アイコンリクエストを送信したいメールクライアントを選択してください</string>
     <string name="request_app_disabled">あなたは古いバージョンのアイコンパックを使用しています。リクエストしたアイコンは最新のバージョンに含まれている可能性があります。アイコンをリクエストするにはアプリを最新のバージョンに更新してください。</string>
     <string name="connection_error_long">サーバーからデータを読み込むことができませんでした。申し訳ありませんが、ネットワーク接続を確認してください。</string>
@@ -319,6 +320,7 @@ Google Playストアを開きダウンロードしてインストールします
     <!-- DrawerToggle -->
     <string name="txt_open">開く</string>
     <string name="txt_close">閉じる</string>
+    <string name="txt_new">新規作成</string>
     <!-- Content descriptions for screen readers -->
     <string name="bookmark_button_content_description">このアイコンをブックマークセクションに追加します</string>
     <string name="icon_search_close_button_content_description">アイコン検索を閉じます</string>

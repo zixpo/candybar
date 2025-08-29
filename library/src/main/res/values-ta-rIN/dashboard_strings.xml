@@ -110,37 +110,115 @@
     <string name="apply_installed">நிறுவப்பட்ட லான்ச்சர்</string>
     <string name="apply_installed_launchers">நிறுவப்பட்ட துவக்கிகள்</string>
     <string name="apply_supported">ஆதரிக்கப்பட்ட லான்ச்சர்கள்</string>
+    <string name="apply_manual">%1$s துவக்கி நேரடி பயன்பாட்டை ஆதரிக்காது, ஆனால் துவக்கி அமைப்புகளில் இருந்து %2$s ஐ கைமுறையாக பயன்படுத்தலாம்.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso நேரடி விண்ணப்பத்தை ஆதரிக்கவில்லை, ஆனால் நீங்கள் இந்த வழிமுறைகளைப் பின்பற்றலாம்:</string>
+    <string name="apply_manual_kvaesitso_step_1">Kvaesitso இன் அமைப்புகளைத் திறக்கவும்</string>
+    <string name="apply_manual_kvaesitso_step_2">\"கட்டம் &amp; சின்னங்கள்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_kvaesitso_step_3">\"ஐகான் பேக்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_kvaesitso_step_4">பட்டியலில் இருந்து %s தேர்வு செய்யவும்</string>
+    <string name="apply_manual_kvaesitso_step_5">பின்னணி வடிவத்தை இயக்க அல்லது முடக்க பெயிண்ட் தூரிகை ஐகானைத் தட்டவும்</string>
+    <string name="apply_manual_kiss">KISS நேரடி விண்ணப்பத்தை ஆதரிக்கவில்லை, ஆனால் நீங்கள் இந்த வழிமுறைகளைப் பின்பற்றலாம்:</string>
+    <string name="apply_manual_kiss_step_1">KISS அமைப்புகளைத் திறக்கவும்</string>
+    <string name="apply_manual_kiss_step_2">\"பயனர் இடைமுகம்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_kiss_step_3">\"ஐகான் பேக்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_kiss_step_4">பட்டியலில் இருந்து %s தேர்வு செய்யவும்</string>
+    <string name="apply_manual_samsung_oneui">%1$s நேரடி பயன்பாட்டை ஆதரிக்காது, ஆனால் %2$s உடன் தொடங்கி நீங்கள் துணைப் பயன்பாட்டைப் பயன்படுத்தி படவுருக்களைப் பயன்படுத்தலாம்.</string>
+    <string name="apply_manual_samsung_oneui_too_old">%s -இன் உங்கள் நடப்புப் பதிப்பு மிகவும் பழையது. ஐகான்களை நேரடியாகப் பயன்படுத்த Android 12 அல்லது புதியவற்றிற்குப் புதுப்பிக்கவும். மாற்றாக, நீங்கள் வேறு துவக்கியை நிறுவலாம்.</string>
     <string name="apply_manual_samsung_oneui_step_1">%sஐத் திறக்கவும்</string>
+    <string name="apply_manual_samsung_oneui_step_2">பயன்பாட்டைப் பதிவிறக்கு %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">\"ஐகான்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_samsung_oneui_step_4">\"புதியதை உருவாக்கு\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_samsung_oneui_step_5">நீல \"ஐகான்பேக்\" பொத்தானைத் தட்டவும்</string>
+    <string name="apply_manual_samsung_oneui_step_6">பட்டியலில் இருந்து %s தேர்வு செய்யவும்</string>
+    <string name="apply_manual_samsung_oneui_step_7">%s -ஐ நீங்கள் புதுப்பிக்கும் ஒவ்வொரு முறையும் இந்த படிகளை மீண்டும் செய்யவும், ஏனெனில் புதிய படவுருகள் தானாகவே வரையமைக்கப்படாது.</string>
+    <string name="apply_manual_hios">HiOS Launcher நேரடி விண்ணப்பத்தை ஆதரிக்கவில்லை, ஆனால் நீங்கள் இந்த வழிமுறைகளைப் பின்பற்றலாம்:</string>
+    <string name="apply_manual_hios_step_1">திறக்க \"அமைப்புகள்\"</string>
+    <string name="apply_manual_hios_step_2">\"தீம் &amp; லாக்ஸ்கிரீன்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_hios_step_3">\"எனது தீம்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_hios_step_4">\"ஐகான் பேக்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_hios_step_5">%s -ஐ தட்டவும்</string>
+    <string name="apply_manual_oxygen_os_step_1">உங்கள் முகப்புத் திரையை நீண்ட நேரம் தட்டவும்</string>
+    <string name="apply_manual_oxygen_os_step_2">\"முகப்பு அமைப்புகள்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_oxygen_os_step_3">\"ஐகான் பேக்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_oxygen_os_step_4">%s -ஐ தட்டவும்</string>
+    <string name="apply_manual_color_os_step_1">உங்கள் முகப்புத் திரையை நீண்ட நேரம் தட்டவும்</string>
+    <string name="apply_manual_color_os_step_2">\"சின்னங்கள்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_color_os_step_3">\"தனிப்பயன்\" பொத்தானின் வலதுபுறமாக உருட்டவும் (இது உருட்டக்கூடிய பட்டியல்!)</string>
+    <string name="apply_manual_color_os_step_4">%s -ஐ தட்டவும்</string>
+    <string name="apply_manual_before">Before Launcher இன் இந்த பதிப்பு சின்னங்களை நேரடியாக பயன்படுத்துவதை இன்னும் ஆதரிக்கவில்லை. அதற்கு பதிலாக, கீழே உள்ள படிகளைப் பின்பற்றவும்:</string>
+    <string name="apply_manual_before_step_1">முகப்புத் திரையில் இடதுபுறமாக ஸ்வைப் செய்யவும்</string>
+    <string name="apply_manual_before_step_2">\"அமைப்புகள்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_before_step_3">\"பாணிகள் &amp; தீம்கள்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_before_step_4">\"ஐகான் பாணிகள் &amp; பொதிகள்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_before_step_5">%s -ஐ தட்டவும்</string>
+    <string name="apply_manual_nothing_step_1">திறக்க \"அமைப்புகள்\"</string>
+    <string name="apply_manual_nothing_step_2">\"தனிப்பயனாக்கம்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_nothing_step_3">\"ஐகான் பேக்\" என்பதைத் தட்டவும்</string>
+    <string name="apply_manual_nothing_step_4">%s -ஐ தட்டவும்</string>
     <string name="apply_launch_failed">தொடங்க முடியவில்லை %s அமைப்புகள்</string>
     <string name="apply_launcher_not_installed">%s is not installed. Do you want to open
         Google Play Store to download and install it?</string>
+    <string name="apply_launcher_not_installable">%s துவக்கி நிறுவப்படவில்லை. துவக்கியை நிறுவிய பின் மீண்டும் முயற்சிக்கவும்.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager is not available on this device</string>
+    <string name="apply_cmtheme_failed">CM தீம் மேனேஜரைத் தொடங்க முடியவில்லை, அமைப்புகளிலிருந்து ஐகான் பேக்கை கைமுறையாகப் பயன்படுத்த முயற்சி செய்யலாம்.</string>
     <string name="apply_lg_home">To apply this Icon Pack open Settings - Display - Home Screen - Theme</string>
     <string name="apply_lg_home_not_available">LG Home is not available on this device</string>
+    <string name="apply_lg_home_failed">LG Home Settings ஐத் தொடங்க முடியவில்லை, அமைப்புகளிலிருந்து ஐகான் பேக்கை கைமுறையாகப் பயன்படுத்த முயற்சி செய்யலாம்.</string>
     <string name="apply_lg_home_nougat">LG Home with Android Nougat no longer supports Icon Pack. You need a custom launcher to use Icon Pack.</string>
+    <string name="apply_launcher_incompatible">%s துவக்கி எந்த படவுரு கட்டுகளையும் ஆதரிக்காது, அதனால் இந்த துவக்கியுடன் இந்த ஐகான் பேக்கை பயன்படுத்த முடியாது. %2$s துவக்கியில் இந்த ஐகான் பேக்கைப் பயன்படுத்த மூன்றாம் தரப்பு பயன்பாட்டை நீங்கள் முயற்சி செய்யலாம். இதை நிறுவ விரும்புகிறீர்களா?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">Android -இல் ஐகான் பேக்குகளை %s துவக்கி ஆதரிக்காது %d அல்லது அதற்கும் குறைவானது. இந்த ஐகான் பேக்கைப் பயன்படுத்த, உங்கள் Android பதிப்பைப் புதுப்பிக்கவும் அல்லது மூன்றாம் தரப்பு துவக்கியை நிறுவவும். தனிப்பட்ட ஐகான்களை மாற்ற உதவி பயன்பாட்டையும் முயற்சி செய்யலாம். இதை நிறுவ விரும்புகிறீர்களா?</string>
     <!-- Icons -->
     <string name="icons_load_failed">ஐகானை ஏற்ற முடியவில்லை</string>
+    <string name="icon_shape">படவுரு வடிவம்</string>
+    <string name="bookmark_icons_empty">புத்தகக்குறிகள் எதுவும் காணப்படவில்லை. அவற்றை விரைவாக அணுக புக்மார்க்கு ஐகான்கள் இங்கே.</string>
+    <string name="items_selected">%d தேர்ந்தெடுக்கப்பட்டது</string>
     <!-- Request -->
     <string name="request_title">ஐகான் கோரிக்கை</string>
     <string name="request_not_selected">கோர பயன்பாடுகளைத் தேர்ந்தெடுக்கவும்</string>
     <string name="request_not_requested">கோரப்படவில்லை</string>
     <string name="request_already_requested">ஏற்கனவே கோரப்பட்டுள்ளது</string>
+    <string name="request_not_available">கோர முடியாது</string>
     <string name="request_building">கட்டிட கோரிக்கை …</string>
+    <string name="request_pacific_sending">Pacific Manager-க்கு கோரிக்கை அனுப்புகிறது...</string>
+    <string name="request_pacific_error">பசிபிக் மேலாளருக்கு கோரிக்கை அனுப்பும்போது பிழை ஏற்பட்டது. பிழை %s</string>
+    <string name="request_pacific_success">கோரிக்கை வெற்றிகரமாக அனுப்பப்பட்டது Pacific Manager</string>
+    <string name="request_custom_error">படவுரு கோரிக்கை அனுப்புகையில் பிழை ஏற்பட்டது. இந்த பிழை தொடர்ந்தால், டெவலப்பரைத் தொடர்பு கொள்ளவும். %s</string>
+    <string name="request_custom_success">ஐகான் கோரிக்கை வெற்றிகரமாக அனுப்பப்பட்டது</string>
+    <string name="request_fetching_data">லேட்டஸ்ட் டேட்டா கிடைக்குது ...</string>
     <string name="request_build_failed">ஐகான் கோரிக்கையை உருவாக்க முடியவில்லை</string>
     <string name="request_appfilter_failed">appfilter.xml படிக்க முடியவில்லை</string>
+    <string name="request_requested">நீங்கள் ஏற்கனவே இந்த படவுருவை கோரியுள்ளீர்கள், மீண்டும் கோர முடியாது.</string>
+    <string name="request_requested_possible">நீங்கள் ஏற்கனவே இந்த படவுருவை கோரியுள்ளீர்கள். அதற்காக மற்றொரு கோரிக்கையை நிச்சயமாக செலவழிக்க விரும்புகிறீர்களா?</string>
+    <string name="request_requested_button_cancel">பின் செல்</string>
+    <string name="request_requested_button_confirm">எப்படியும் தேர்ந்தெடு</string>
     <string name="request_email_client">ஐகான் கோரிக்கையை அனுப்ப நீங்கள் பயன்படுத்த விரும்பும் மின்னஞ்சல் கிளையண்டைத் தேர்வுசெய்க</string>
+    <string name="request_app_disabled">நீங்கள் பயன்படுத்துகிறீர்கள் இந்த ஐகான் பேக்கின் பழைய பதிப்பை. கோரப்பட்ட சின்னங்கள் சமீபத்திய பதிப்பில் சேர்க்கப்படலாம். ஐகான்களைக் கோர உங்கள் செயலியைச் சமீபத்திய பதிப்பிற்குப் புதுப்பிக்கவும்.</string>
+    <string name="connection_error_long">சேவகனிலிருந்து தரவை நினைவேற்ற இயலவில்லை. தயவுசெய்து, உங்கள் நெட்வொர்க் இணைப்பைச் சரிபார்க்கவும்.</string>
+    <string name="unable_to_load_config">சேவகனிலிருந்து தரவைப் பெறும்போது அல்லது படிக்கும்போது பிழை ஏற்பட்டது.</string>
+    <string name="request_limit">வழக்கமான கோரிக்கையுடன் %d கோரிக்கை(களை) மட்டுமே நீங்கள் செய்ய முடியும்.</string>
     <string name="request_used">நீங்கள் கோரியுள்ளீர்கள் %d ஐகான்(கள்).</string>
     <string name="request_limit_buy">You can buy Premium Requests to request more icons.</string>
     <string name="request_limit_reset">ஒவ்வொரு புதுப்பிப்பிலும் ஐகான் கோரிக்கை வரம்பு மீட்டமைக்கப்படும்.</string>
     <!-- Regular Request -->
+    <string name="regular_request">வழக்கமான ஐகான் கோரிக்கை</string>
+    <string name="regular_request_desc">உங்கள் ஐகான் கோரப்பட்டது, டெவலப்பர் நீங்கள் கோரிய ஐகான்களைச் சேர்க்க முயற்சிப்பார்.</string>
+    <string name="regular_request_count">மொத்தம்\n%d கோரிக்கை</string>
+    <string name="regular_request_used">பயன்படுத்தப்பட்ட\n%d கோரிக்கை</string>
+    <string name="regular_request_available">கிடைக்கும்\n%d கோரிக்கை</string>
     <!-- Premium Request -->
     <string name="premium_request">Premium Icon Request</string>
+    <string name="premium_request_no_internet">பிரீமியம் கோரிக்கையை அனுப்புவதற்கு முன்பு, உங்கள் ஃபோன் இணையத்துடன் இணைக்கப்பட்டுள்ளதா என்பதை உறுதிப்படுத்திக் கொள்ளவும்</string>
+    <string name="premium_request_desc">பிரீமியம் ஐகான் கோரிக்கை பணம் செலுத்துவதற்கான கோரிக்கையாகும். பிரீமியம் ஐகான் கோரிக்கையைப் பயன்படுத்தி நீங்கள் கோரிய பயன்பாடுகளை விரைவாகப் பெறலாம்.</string>
     <string name="premium_request_buy">Buy</string>
+    <string name="premium_request_count">மொத்தம்\n%d கோரிக்கை</string>
+    <string name="premium_request_used">பயன்படுத்தப்பட்ட\n%d கோரிக்கை</string>
+    <string name="premium_request_available">கிடைக்கும்\n%d கோரிக்கை</string>
     <string name="premium_request_already_purchased">You still have %d premium request.
         You need to use all of them before buying a premium request package again.</string>
     <string name="premium_request_limit">You only have %d premium request(s),</string>
     <string name="premium_request_limit1">but you selected %d app(s).
         \n\nYou need to use all of your premium requests before using regular request again.</string>
+    <string name="premium_request_consume_failed">பிரீமியம் கோரிக்கையைப் பயன்படுத்த இயலவில்லை, உங்களிடம் நிலையான இணைய இணைப்பு இருப்பதை உறுதிசெய்து மீண்டும் முயற்சிக்கவும். பிரீமியம் கோரிக்கைகளை மீண்டும் உருவாக்க அமைப்புகள் என்பதற்குச் செல்லவும்.</string>
     <string name="premium_request_rebuilding">Rebuilding Premium Request …</string>
     <string name="premium_request_rebuilding_empty">You have not made a Premium Request</string>
     <string name="premium_request_exist">You still have a Premium Icon Request package.
@@ -151,6 +229,7 @@
     <string name="wallpaper_already_downloaded">வால்பேப்பர் ஏற்கனவே பதிவிறக்கம் செய்யப்பட்டது</string>
     <string name="wallpaper_downloading">வால்பேப்பரைப் பதிவிறக்குகிறது …</string>
     <string name="wallpaper_download_failed">வால்பேப்பரைப் பதிவிறக்க முடியவில்லை</string>
+    <string name="wallpaper_download_success">வால்பேப்பர் பதிவிறக்கம் வெற்றிகரமாக</string>
     <string name="wallpaper_loading">வால்பேப்பரை ஏற்றுகிறது …</string>
     <string name="wallpaper_applying">வால்பேப்பரைப் பயன்படுத்துதல் …</string>
     <string name="wallpaper_applied">வால்பேப்பர் பயன்படுத்தப்பட்டது</string>
@@ -160,6 +239,10 @@
     <string name="wallpaper_apply">Apply wallpaper</string>
     <string name="wallpaper_save_to_device">Save wallpaper</string>
     <!-- Presets -->
+    <string name="presets_load_failed">முன்னமைவுகளை ஏற்ற முடியவில்லை</string>
+    <string name="presets_storage_permission">முன்னோட்ட வால்பேப்பரை ஏற்றச் சேமிப்பக அனுமதி தேவை</string>
+    <string name="presets_required_apps">இந்த முன்னமைவுகளைப் பயன்படுத்தத் தேவையான பயன்பாடுகள்</string>
+    <string name="presets_required_apps_not_installed">முன்னமைவைப் பயன்படுத்தத் தேவையான பயன்பாடுகள் நிறுவப்படவில்லை. விடுபட்ட தேவையான பயன்பாடுகளை நிறுவி மீண்டும் முயலவும்.</string>
     <!-- Preferences -->
     <string name="pref_data_header">தகவல்கள் &amp; தற்காலிக சேமிப்பு</string>
     <string name="pref_data_cache">அலி தற்காலிக சேமிப்பு</string>
@@ -181,6 +264,8 @@
     <string name="pref_theme_header">தீம்</string>
     <string name="pref_theme_dark">இருள் தீம்</string>
     <string name="pref_theme_dark_desc">பயன்பாட்டு கருப்பொருளுக்கு இருண்ட வண்ணத்தைப் பயன்படுத்தவும்</string>
+    <string name="pref_notifications_header">அறிவிக்கைகள்</string>
+    <string name="pref_notifications">அறிவிப்புகளைப் பெறுங்கள்</string>
     <string name="pref_wallpaper_header">வால்பேப்பர்</string>
     <string name="pref_wallpaper_location">வால்பேப்பர் இருப்பிடத்தைச் சேமிக்கவும்</string>
     <string name="pref_language_header">மொழி</string>
@@ -190,10 +275,18 @@
     <string name="pref_others_reset_tutorial">Reset Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial Reset</string>
     <!-- Themes -->
+    <string name="theme_name_auto">தானியங்கு</string>
+    <string name="theme_name_light">ஒளி</string>
+    <string name="theme_name_dark">இருள்</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
     <string name="permission_storage_denied">வால்பேப்பரைச் சேமிக்க சேமிப்பு அனுமதி தேவை</string>
+    <string name="permission_notification_denied_1">டெவலப்பரிடமிருந்து அறிவிப்புகளைப் பெற அறிவிப்பு அனுமதி தேவை</string>
+    <string name="permission_notification_denied_2">பயன்பாட்டு அமைப்புகளிலிருந்து அறிவிப்புகளை இயக்கவும்</string>
     <!-- Intent -->
+    <string name="app_client">பயன்பாட்டைத் தேர்வு செய்யவும்</string>
     <string name="no_email_app">No application to send email</string>
+    <string name="no_browser">URL ஐ திறக்கப் பயன்பாடு இல்லை</string>
     <string name="intent_email_failed">Unable to display email application</string>
     <string name="intent_email_supported">Supported</string>
     <string name="intent_email_recommended">Recommended</string>
@@ -201,7 +294,10 @@
     <string name="intent_email_not_supported_message">Selected an unsupported email client, please select another email client</string>
     <!-- About -->
     <string name="about_contributors_title">பங்களிப்பாளர்கள்</string>
+    <string name="about_privacy_policy_title">தனியுரிமை கொள்கை</string>
+    <string name="about_terms_and_conditions_title">விதிமுறைகள் மற்றும் நிபந்தனைகள்</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">நீங்கள் புகாரளிக்க விரும்பும் சிக்கலின் வகையின் விளக்கத்தை அளிக்கவும்</string>
     <string name="report_bugs_desc_hint">Description</string>
     <string name="report_bugs_desc_empty">Please give a description</string>
     <string name="report_bugs_building">Building activity list …</string>
@@ -211,13 +307,24 @@
     <string name="donation_success">Thank you for making a donation. I will use it for good.</string>
     <!-- Crash Report -->
     <string name="crash_report">Crash Report</string>
+    <string name="crash_report_message">துரதிருஷ்டவசமாக, %s செயலிழந்துவிட்டது. சிக்கலைச் சரிசெய்ய டெவலப்பருக்கு உதவ கீழே உள்ள அறிக்கையை அனுப்பு என்பதைத் தேர்வுசெய்க.</string>
     <string name="crash_report_send">Send Report</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar என்பது அப்பாச்சி உரிமம் 2.0 இன் கீழ் உரிமம் பெற்ற ஒரு திறந்த மூல ஐகான் பேக் டாஷ்போர்டு ஆகும் ஆண்ட்ராய்டு கிட்ஹப்பில் கிடைக்கிறது மற்றும் பயன்படுத்த இலவசம், டானி மஹர்திகா உருவாக்கியது.</string>
+    <string name="about_open_source_licenses">திறந்த மூல உரிமங்கள்</string>
     <string name="about_dashboard_contributors">CandyBar Contributors</string>
     <string name="about_dashboard_translator">CandyBar Translator</string>
     <!-- DrawerToggle -->
     <string name="txt_open">திற</string>
     <string name="txt_close">மூடு</string>
+    <string name="txt_new">புதிய</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">இந்த ஐகானை புக்மார்க்குகள் பிரிவில் சேர்க்கவும்</string>
+    <string name="icon_search_close_button_content_description">ஐகான் தேடலை மூடு</string>
+    <string name="icon_request_submit_button_content_description">ஐகான் கோரிக்கையைச் சமர்ப்பிக்கவும்</string>
+    <string name="icon_list_content_description">ஐகான் பேக்கில் சேர்க்கப்பட்டுள்ள ஐகான்களின் பட்டியல்</string>
+    <string name="icon_search_list_content_description">தேடல் சொல்லுடன் பொருந்தக்கூடிய சின்னங்களின் பட்டியல்</string>
+    <string name="about_item_social_content_description">ஐகான் பேக் ஆசிரியரின் ஆன்லைன் சுயவிவரத்திற்கான இணைப்பு:</string>
+    <string name="share_icon_pack_button_content_description">இந்தச் செயலியை வேறொருவருடன் பகிரலாம்</string>
 </resources>
