@@ -102,21 +102,21 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ContentViewHolder contentViewHolder = (ContentViewHolder) holder;
             Setting setting = mSettings.get(position);
 
-            if (setting.getTitle().length() == 0) {
+            if (setting.getTitle().isEmpty()) {
                 contentViewHolder.title.setVisibility(View.GONE);
                 contentViewHolder.divider.setVisibility(View.GONE);
                 contentViewHolder.container.setVisibility(View.VISIBLE);
 
                 contentViewHolder.subtitle.setText(setting.getSubtitle());
 
-                if (setting.getContent().length() == 0) {
+                if (setting.getContent().isEmpty()) {
                     contentViewHolder.content.setVisibility(View.GONE);
                 } else {
                     contentViewHolder.content.setText(setting.getContent());
                     contentViewHolder.content.setVisibility(View.VISIBLE);
                 }
 
-                if (setting.getFooter().length() == 0) {
+                if (setting.getFooter().isEmpty()) {
                     contentViewHolder.footer.setVisibility(View.GONE);
                 } else {
                     contentViewHolder.footer.setText(setting.getFooter());

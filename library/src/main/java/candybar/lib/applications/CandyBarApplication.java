@@ -303,7 +303,7 @@ public abstract class CandyBarApplication extends Application {
 
         public Configuration setTabAllIconsTitle(@NonNull String title) {
             mTabAllIconsTitle = title;
-            if (mTabAllIconsTitle.length() == 0) mTabAllIconsTitle = "All Icons";
+            if (mTabAllIconsTitle.isEmpty()) mTabAllIconsTitle = "All Icons";
             return this;
         }
 

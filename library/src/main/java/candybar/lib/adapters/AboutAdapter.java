@@ -91,9 +91,9 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         mShowContributors = mContext.getResources().getBoolean(R.bool.show_contributors_dialog);
 
-        mShowPrivacyPolicy = mContext.getResources().getString(R.string.privacy_policy_link).length() > 0;
+        mShowPrivacyPolicy = !mContext.getResources().getString(R.string.privacy_policy_link).isEmpty();
 
-        mShowTerms = mContext.getResources().getString(R.string.terms_and_conditions_link).length() > 0;
+        mShowTerms = !mContext.getResources().getString(R.string.terms_and_conditions_link).isEmpty();
 
         mShowExtraInfo = mShowContributors || mShowPrivacyPolicy || mShowTerms;
 
