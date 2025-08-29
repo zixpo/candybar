@@ -89,7 +89,9 @@ public class SettingsFragment extends Fragment {
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "view",
-                new HashMap<String, Object>() {{ put("section", "settings"); }}
+                new HashMap<>() {{
+                    put("section", "settings");
+                }}
         );
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());

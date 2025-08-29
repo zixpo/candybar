@@ -175,7 +175,7 @@ public class Preferences {
     public void setTheme(Theme theme) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "settings");
                     put("action", "change_theme");
                     put("theme", theme.name());
