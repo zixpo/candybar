@@ -205,6 +205,12 @@
                 <action android:name="one.zagura.IonLauncher.ICON_PACK" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <!-- mLauncher -->
+            <intent-filter>
+                <action android:name="app.mlauncher.APPLY_ICONS" />
+                <action android:name="app.mlauncher.THEME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <provider

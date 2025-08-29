@@ -363,6 +363,15 @@ public class LauncherHelper {
                 DIRECT_APPLY_NOT_SUPPORTED,
                 (context, launcherName) -> new String[]{} // FIXME: There are no instructions!
         ),
+        MLAUNCHER(
+                "mLauncher",
+                R.drawable.ic_launcher_mlauncher,
+                new String[]{"app.mlauncher"},
+                NO_SETTINGS_ACTIVITY,
+                (context, launcherPackageName) -> new Intent("app.mlauncher.APPLY_ICONS", null)
+                        .putExtra("packageName", context.getPackageName()),
+                MANUAL_APPLY_NOT_SUPPORTED
+        ),
         NIAGARA(
                 "Niagara",
                 R.drawable.ic_launcher_niagara,
