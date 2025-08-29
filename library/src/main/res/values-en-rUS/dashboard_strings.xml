@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Home</string>
+    <string name="navigation_view_apply">Apply</string>
+    <string name="navigation_view_icons">Icons</string>
     <!-- Muzei -->
     <!-- Menu -->
     <!-- Dialog -->

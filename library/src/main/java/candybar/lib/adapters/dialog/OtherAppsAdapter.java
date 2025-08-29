@@ -101,7 +101,7 @@ public class OtherAppsAdapter extends BaseAdapter {
 
         holder.title.setText(otherApp.getTitle());
 
-        if (otherApp.getDescription() == null || otherApp.getDescription().length() == 0) {
+        if (otherApp.getDescription() == null || otherApp.getDescription().isEmpty()) {
             holder.desc.setVisibility(View.GONE);
         } else {
             holder.desc.setText(otherApp.getDescription());

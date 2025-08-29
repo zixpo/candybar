@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Inici</string>
+    <string name="navigation_view_apply">Aplica</string>
+    <string name="navigation_view_icons">Icones</string>
+    <string name="navigation_view_request">Sol·licitud d\'icones</string>
+    <string name="navigation_view_wallpapers">Fons de pantalla</string>
+    <string name="navigation_view_presets">Predefinits</string>
+    <string name="navigation_view_settings">Configuració</string>
     <!-- Muzei -->
     <!-- Menu -->
     <!-- Dialog -->
@@ -15,6 +23,7 @@
     <!-- Apply -->
     <!-- Icons -->
     <!-- Request -->
+    <string name="request_title">Sol·licitud d\'icones</string>
     <!-- Regular Request -->
     <!-- Premium Request -->
     <!-- Wallpapers -->

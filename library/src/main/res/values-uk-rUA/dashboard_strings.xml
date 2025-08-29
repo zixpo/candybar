@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="splash_screen_title">CandyBar Material Dashboard</string>
+    <string name="splash_screen_title">Панель приладів для жінок</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Головна</string>
     <string name="navigation_view_apply">Застосувати</string>
     <string name="navigation_view_icons">Іконки</string>
     <string name="navigation_view_request">Запит іконок</string>
     <string name="navigation_view_wallpapers">Шпалери</string>
+    <string name="navigation_view_presets">Шаблони</string>
     <string name="navigation_view_settings">Налаштування</string>
     <string name="navigation_view_faqs">Запитання й відповіді</string>
     <string name="navigation_view_about">Про додаток</string>
@@ -17,6 +18,7 @@
     <string name="hour">Година</string>
     <string name="save_setting">Зберегти</string>
     <string name="muzei_refresh_duration">Оновити тривалість</string>
+    <string name="muzei_wifi_only">Оновити лише з Wi-Fi</string>
     <string name="muzei_downloaded_only">Завантажувати лише завантажені шпалери</string>
     <string name="muzei_settings_ignored">Пакет іконок не містить шпалер, налаштування проігноровано.</string>
     <string name="muzei_settings_saved">Налаштування збережено</string>
@@ -24,6 +26,7 @@
     <string name="menu_search">Пошук</string>
     <string name="menu_save">Зберегти на пристрій</string>
     <string name="menu_select_all">Виділити всі</string>
+    <string name="menu_delete">Видалити</string>
     <string name="menu_wallpaper_crop">Обрізати шпалери</string>
     <string name="menu_apply_homescreen">Головний екран</string>
     <string name="menu_apply_lockscreen">Заблокований екран</string>
@@ -39,6 +42,7 @@
     <string name="search_noresult">Нічого не знайдено для \"%s\"</string>
     <string name="search_faqs">Питання чи відповідь</string>
     <string name="search_icon">Назва іконки</string>
+    <string name="search_wallpapers">Назва шпалер</string>
     <!-- Update -->
     <string name="checking_for_update">Перевірка на наявність оновлень…</string>
     <string name="update_available">Доступне оновлення!</string>
@@ -46,19 +50,29 @@
     <!-- Changelog -->
     <string name="changelog_version">Версія</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Не вдалося завантажити товари покупки в додатку</string>
     <!-- License -->
     <string name="license_checking">Перевірка ліцензії…</string>
     <string name="license_check">Перевірка ліцензії</string>
+    <string name="license_check_success">Перевірка ліцензії вдалася. Дякуємо за завантаження додатку з Play Store.</string>
+    <string name="license_check_failed">Не вдалося перевірити ліцензію; ви не завантажили додаток з Play Store.
+        Ви не зможете використовувати його.</string>
     <string name="license_check_retry">Неможливо перевірити ліцензію, будь ласка, спробуйте ще раз через кілька хвилин.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Перевірити Play Маркет</string>
+    <string name="playstore_check_success">Дякуємо, що встановили додаток з Google Play Store. Насолоджуйтесь!</string>
+    <string name="playstore_check_failed">Схоже, що у вас встановлений цей пакет значків поза межами Google Play Store.
+        Ви не зможете його використовувати.</string>
     <!-- Share -->
     <string name="share_app_title">Йо! Заціни %s</string>
     <string name="share_app_body">Заціни %1$s, цей пакет іконок справді крутий! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Панель навігації</string>
+    <string name="tap_intro_home_navigation_desc">Натисніть тут або проведіть від лівого краю екрану, щоб відкрити меню навігації</string>
     <string name="tap_intro_home_apply">Застосувати набір іконок</string>
+    <string name="tap_intro_home_apply_desc">Натисніть тут, щоб застосувати %s до поточного лаунчера. Довгий натисніть, щоб застосувати його до інших лаунчерів.</string>
     <string name="tap_intro_icons_search">Пошук</string>
+    <string name="tap_intro_icons_search_desc">Торкніться тут для пошуку іконок</string>
     <string name="tap_intro_request_select">Виберіть пропущений додаток</string>
     <string name="tap_intro_request_select_desc">Натисніть тут, щоб вибрати пропущений додаток для запиту іконки</string>
     <string name="tap_intro_request_select_all">Виберіть усі пропущені додатки</string>
@@ -66,14 +80,20 @@
     <string name="tap_intro_request_send">Надіслати запит іконок</string>
     <string name="tap_intro_request_send_desc">Натисніть тут для надсилання вибраних пропущених додатків</string>
     <string name="tap_intro_request_premium">Преміум запит іконок</string>
+    <string name="tap_intro_request_premium_desc">Натисніть тут, щоб придбати пакет запиту преміум піктограм,
+        з запитом на значок преміум-версії, ви можете швидше отримати запит на ваші запити програм.</string>
     <string name="tap_intro_wallpapers_option">Опції шпалер</string>
+    <string name="tap_intro_wallpapers_option_desc">Натисніть і утримуйте тут, щоб показати опції фонового малюнка; %s застосувати шпалери.</string>
     <string name="tap_intro_wallpapers_option_desc_download">завантажити або</string>
     <string name="tap_intro_wallpapers_preview">Перегляд шпалер</string>
+    <string name="tap_intro_wallpapers_preview_desc">Натисніть тут для перегляду повного розміру шпалери</string>
     <string name="tap_intro_wallpaper_preview_save">Зберегти шпалери</string>
     <string name="tap_intro_wallpaper_preview_save_desc">Натисніть тут для завантажити і збереження шпалери на ваш пристрій, щоб пізніше ви могли її використати</string>
     <string name="tap_intro_wallpaper_preview_apply">Застосувати шпалери</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Натисніть тут, щоб встановити шпалери як фон домашнього екрану</string>
     <!-- Home -->
     <string name="home_more_apps_header">Більше додатків</string>
+    <string name="home_more_apps">Подивитися інші додатки, опубліковані в Google Play Store</string>
     <string name="home_rate_and_review">Оцінки й відгуки</string>
     <string name="home_apply_icon_pack">Застосувати %s</string>
     <string name="home_donate">Пожертвувати</string>
@@ -87,41 +107,107 @@
     <string name="home_icon_request_missed_apps">Пропущені\n%d додатки</string>
     <!-- Apply -->
     <string name="apply_installed">Встановлений лаунчер</string>
+    <string name="apply_installed_launchers">Встановлені лаунчери</string>
     <string name="apply_supported">Підтримувані лаунчери</string>
+    <string name="apply_manual">%1$s Launcher не підтримує прямий додаток, але Ви можете застосувати %2$s вручну з налаштувань лаунчера.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso не підтримує прямий застосування, але ви можете виконати наступні дії:</string>
+    <string name="apply_manual_kvaesitso_step_1">Відкрити налаштування Kvaesitso\'s</string>
+    <string name="apply_manual_kvaesitso_step_2">Натисніть \"Сітка &amp; значки\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Натисніть на \"Набір іконок\"</string>
+    <string name="apply_manual_kvaesitso_step_4">Виберіть %s зі списку</string>
+    <string name="apply_manual_kvaesitso_step_5">Торкніться значка \"Фарба ки\", щоб увімкнути або вимкнути фонову форму</string>
+    <string name="apply_manual_kiss">KISS не підтримує прямий приклад, але Ви можете виконати наступні дії:</string>
+    <string name="apply_manual_kiss_step_1">Відкрити налаштування KISS</string>
+    <string name="apply_manual_kiss_step_2">Натисни \"Інтерфейс користувача\"</string>
+    <string name="apply_manual_kiss_step_3">Натисніть на \"Набір іконок\"</string>
+    <string name="apply_manual_kiss_step_4">Виберіть %s зі списку</string>
+    <string name="apply_manual_samsung_oneui">%1$s не підтримує прямий пакет, але починається з %2$s , ви можете застосувати іконки через додаток супутника.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Поточна версія %s застаріла. Будь ласка, оновіться до Android 12 або новіше, щоб мати можливість застосовувати іконки безпосередньо. Крім того, ви можете встановити інший лаунчер.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Відкрити %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Завантажити програму %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Натисніть \"Іконка\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Натисніть \"Створити нове\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Натисніть на синю кнопку «Набір іконок»</string>
+    <string name="apply_manual_samsung_oneui_step_6">Виберіть %s зі списку</string>
+    <string name="apply_manual_samsung_oneui_step_7">Повторювати ці кроки кожного разу при оновленні %s , оскільки нові іконки не будуть автоматично відображені.</string>
+    <string name="apply_manual_hios">HiOS-лаунчер не підтримує прямий приклад, але Ви можете виконати наступні дії:</string>
+    <string name="apply_manual_hios_step_1">Відкрити \"Параметри\"</string>
+    <string name="apply_manual_hios_step_2">Натисніть \"Тема &amp; екран блокування\"</string>
+    <string name="apply_manual_hios_step_3">Натисніть \"Моя тема\"</string>
+    <string name="apply_manual_hios_step_4">Натисніть \"Набір іконок\"</string>
+    <string name="apply_manual_hios_step_5">Клацни %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Довгий тап на домашній екран</string>
+    <string name="apply_manual_oxygen_os_step_2">Натисніть \"Налаштування домівки\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Натисніть «Набір значків»</string>
+    <string name="apply_manual_oxygen_os_step_4">Клацни %s</string>
+    <string name="apply_manual_color_os_step_1">Довгий тап на домашній екран</string>
+    <string name="apply_manual_color_os_step_2">Натисніть \"Іконка\"</string>
+    <string name="apply_manual_color_os_step_3">Прокрутіть праворуч від кнопки \"Налаштування\" (це список з прокручування!)</string>
+    <string name="apply_manual_color_os_step_4">Клацни %s</string>
+    <string name="apply_manual_before">Ця версія до запуску ще не підтримує застосування значків безпосередньо. Замість цього, виконайте дії нижче:</string>
+    <string name="apply_manual_before_step_1">Проведіть ліворуч на робочому столі</string>
+    <string name="apply_manual_before_step_2">Натисніть \"Налаштування домівки\"</string>
+    <string name="apply_manual_before_step_3">Натисніть \"Стилі &amp; теми\"</string>
+    <string name="apply_manual_before_step_4">Натисніть \"Стилі &amp; пакети іконок\"</string>
+    <string name="apply_manual_before_step_5">Клацни %s</string>
+    <string name="apply_manual_nothing_step_1">Відкрити \"Параметри\"</string>
+    <string name="apply_manual_nothing_step_2">Натисніть \"Налаштувати\"</string>
+    <string name="apply_manual_nothing_step_3">Натисніть «Набір значків»</string>
+    <string name="apply_manual_nothing_step_4">Клацни %s</string>
     <string name="apply_launch_failed">Не вдалося запустити налаштування %s</string>
     <string name="apply_launcher_not_installed">%s Лаунчер не встановлено. Ви хочете відкрити
         Google Play Маркет для його завантаження та встановлення?</string>
     <string name="apply_launcher_not_installable">%s Лаунчер не встановлено. Будь ласка, спробуйте ще раз після встановлення лаунчера.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager не підтримує на цьому пристрої</string>
+    <string name="apply_cmtheme_failed">Не вдалося запустити CM менеджер тем, спробуйте застосувати значок вручну в налаштуваннях.</string>
     <string name="apply_lg_home">Щоб застосувати пакет іконок відкрийте налаштування - Дисплей - Головний екран - Тема</string>
     <string name="apply_lg_home_not_available">LG Home не доступний на цьому пристрої</string>
+    <string name="apply_lg_home_failed">Не вдалося запустити налаштування LG Home, спробуйте застосувати пакет іконок вручну з налаштувань.</string>
     <string name="apply_lg_home_nougat">LG Home на android 7.0+ не підтримує набори іконок. Вам потрібен сторонній лаунчер для використання пакету іконок.</string>
+    <string name="apply_launcher_incompatible">%s Launcher не підтримує жодних пакетів іконок, так що ви не можете використовувати цей пакет значків за допомогою цього лаунчера. Ви можете використати сторонній додаток для використання цього набору значків в %2$s . Бажаєте встановити його?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">%s не підтримує пакети значків на Android %d або нижче... Будь ласка, оновіть вашу версію Android або встановіть сторонній лаунчер, щоб використовувати цей пакет іконок. Ви можете також спробувати помічник для зміни індивідуальних значків. Бажаєте встановити його?</string>
     <!-- Icons -->
     <string name="icons_load_failed">Не вдалося завантажити іконки</string>
     <string name="icon_shape">Форма іконок</string>
+    <string name="bookmark_icons_empty">Не знайдено жодної закладки. Значки закладок для швидкого доступу до них тут.</string>
+    <string name="items_selected">%d вибрано</string>
     <!-- Request -->
     <string name="request_title">Запит іконок</string>
     <string name="request_not_selected">Виберіть додатки для запиту</string>
     <string name="request_not_requested">Запит ще не надіслано</string>
     <string name="request_already_requested">Запит вже надіслано</string>
+    <string name="request_not_available">Не можна надіслати запит</string>
     <string name="request_building">Створення запиту …</string>
     <string name="request_pacific_sending">Надсилання запиту до Pacific Manager...</string>
+    <string name="request_pacific_error">Сталася помилка під час надсилання запиту до Pacific Manager. Помилка %s</string>
     <string name="request_pacific_success">Успішно надіслано запит до Pacific Manager</string>
+    <string name="request_custom_error">Помилка під час надсилання запиту на іконки. Якщо помилка не зникне, зв\'яжіться з розробником. %s</string>
+    <string name="request_custom_success">Запит на значок успішно відправлений</string>
     <string name="request_fetching_data">Отримання останніх даних …</string>
     <string name="request_build_failed">Неможливо створити запит іконок</string>
     <string name="request_appfilter_failed">Неможливо прочитати appfilter.xml</string>
+    <string name="request_requested">Ви вже запитували цей значок і не можете надіслати йому запит ще раз.</string>
+    <string name="request_requested_possible">Ви вже подали запит на додавання цієї піктограми. Впевнені, що хочете провести ще раз?</string>
+    <string name="request_requested_button_cancel">Повернутися назад</string>
+    <string name="request_requested_button_confirm">Вибрати все одно</string>
     <string name="request_email_client">Виберіть додаток, за допомогою якого ви хочете надіслати запит іконок</string>
+    <string name="request_app_disabled">Ви використовуєте стару версію цього пакета значків. Іконки можуть бути включені в останню версію. Будь ласка, оновіть додаток до останньої версії для піктограм запиту.</string>
     <string name="connection_error_long">Не вдалося завантажити дані з сервера. Будь ласка, перевірте ваше мережеве з\'єднання.</string>
+    <string name="unable_to_load_config">Помилка при отриманні даних або читання з сервера.</string>
+    <string name="request_limit">Ви можете зробити лише запити %d за допомогою регулярного запиту.</string>
     <string name="request_used">Ви запросили %d іконок.</string>
     <string name="request_limit_buy">Ви можете купити преміум запити і просити більше значків.</string>
     <string name="request_limit_reset">Ліміт запитів іконок буде скинутий при кожному оновленні.</string>
     <!-- Regular Request -->
     <string name="regular_request">Звичайний запит іконок</string>
+    <string name="regular_request_desc">Отримати пропозиції на ваші іконки, і розробник намагатиметься включити потрібні іконки.</string>
     <string name="regular_request_count">Всього\n%d запита</string>
     <string name="regular_request_used">Використано\n%d запита</string>
     <string name="regular_request_available">Доступно\n%d запита</string>
     <!-- Premium Request -->
     <string name="premium_request">Преміум запит іконок</string>
+    <string name="premium_request_no_internet">Перед надсиланням запиту преміум під’єднайтеся до інтернету</string>
+    <string name="premium_request_desc">Запит на преміум іконки є запитом на оплату купівлю. Ви можете отримати ваші запити на преміум сигарет швидше, використовуючи запит на піктограми.</string>
     <string name="premium_request_buy">Придбати</string>
     <string name="premium_request_count">Всього\n%d запита</string>
     <string name="premium_request_used">Використано\n%d запита</string>
@@ -131,6 +217,8 @@
     <string name="premium_request_limit">У Вас є тільки %d преміум запит(ів),</string>
     <string name="premium_request_limit1">але ви обрали %d додатки(ів).
         \n\nВи повинні використати всі свої преміум запити перед використанням звичайного запиту знову.</string>
+    <string name="premium_request_consume_failed">Неможливо використати преміум запит. Переконайтеся, що у вас є стабільне інтернет-з\'єднання і спробуйте ще раз.
+        Зайди в Налаштування, щоб перебудувати преміум запит.</string>
     <string name="premium_request_rebuilding">Перебудова преміум запиту …</string>
     <string name="premium_request_rebuilding_empty">Ви не зробили преміум запитів</string>
     <string name="premium_request_exist">У Вас ще є преміум запити.
@@ -141,6 +229,7 @@
     <string name="wallpaper_already_downloaded">Шпалери вже завантажені</string>
     <string name="wallpaper_downloading">Завантаження шпалер …</string>
     <string name="wallpaper_download_failed">Не вдалося завантажити шпалери</string>
+    <string name="wallpaper_download_success">Шпалери успішно завантажено</string>
     <string name="wallpaper_loading">Завантаження шпалер …</string>
     <string name="wallpaper_applying">Застосування шпалер …</string>
     <string name="wallpaper_applied">Шпалери застосовано</string>
@@ -150,6 +239,10 @@
     <string name="wallpaper_apply">Застосувати шпалери</string>
     <string name="wallpaper_save_to_device">Зберегти шпалери</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Не вдалося завантажити пресети</string>
+    <string name="presets_storage_permission">Для завантаження шпалер попереднього перегляду необхідний дозвіл на доступ до сховища</string>
+    <string name="presets_required_apps">Необхідні додатки для використання цих пресетів</string>
+    <string name="presets_required_apps_not_installed">Необхідні додатки для використання пресету не встановлені. Встановіть необхідні програми та спробуйте ще раз.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Дані і кеш</string>
     <string name="pref_data_cache">Очистити кеш</string>
@@ -171,6 +264,8 @@
     <string name="pref_theme_header">Тема</string>
     <string name="pref_theme_dark">Темна тема</string>
     <string name="pref_theme_dark_desc">Використовувати темний колір для теми додатку</string>
+    <string name="pref_notifications_header">Сповіщення</string>
+    <string name="pref_notifications">Отримати повідомлення</string>
     <string name="pref_wallpaper_header">Шпалери</string>
     <string name="pref_wallpaper_location">Розташування збереження шпалер</string>
     <string name="pref_language_header">Мова</string>
@@ -183,11 +278,15 @@
     <string name="theme_name_auto">Авто</string>
     <string name="theme_name_light">Світла</string>
     <string name="theme_name_dark">Темна</string>
+    <string name="theme_name_material_you">Виготовлення матеріалу</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Для збереження шпалер потрібен доступ до сховища</string>
+    <string name="permission_notification_denied_1">Дозвіл на сповіщення необхідний для отримання сповіщень від розробника</string>
+    <string name="permission_notification_denied_2">Увімкнути сповіщення з налаштувань програми</string>
     <!-- Intent -->
     <string name="app_client">Виберіть додаток</string>
     <string name="no_email_app">Відсутній додаток, щоб виправити email</string>
+    <string name="no_browser">Не має додатку для відкриття URL</string>
     <string name="intent_email_failed">Не вдалося відобразити email додаток</string>
     <string name="intent_email_supported">Підтримується</string>
     <string name="intent_email_recommended">Рекомендовано</string>
@@ -198,6 +297,7 @@
     <string name="about_privacy_policy_title">Політика конфіденційності</string>
     <string name="about_terms_and_conditions_title">Правила та умови</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Будь ласка, опишіть проблему на яку хочете повідомити</string>
     <string name="report_bugs_desc_hint">Опис</string>
     <string name="report_bugs_desc_empty">Будь ласка, дайте опис</string>
     <string name="report_bugs_building">Створення списку активностей …</string>
@@ -207,9 +307,13 @@
     <string name="donation_success">Дякуємо Вам за пожертви. Я використаю їх на благо.</string>
     <!-- Crash Report -->
     <string name="crash_report">Звіт про збій</string>
+    <string name="crash_report_message">На жаль, %s зазнав краху. Виберіть Звіт нижче, щоб допомогти розробнику вирішити цю проблему.</string>
     <string name="crash_report_send">Надіслати звіт</string>
     <!-- Please don't modify this, Just Translate -->
     <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar — це допоміжна панель керування піктограмами з відкритим кодом під ліцензією Apache License 2.0 для
+        Android доступний на GitHub і вільне використання, розроблений Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Ліцензії з відкритим кодом</string>
     <string name="about_dashboard_contributors">Автори CandyBar</string>
     <string name="about_dashboard_translator">Переклад CandyBar</string>
     <!-- DrawerToggle -->
@@ -217,4 +321,11 @@
     <string name="txt_close">Закрити</string>
     <string name="txt_new">Новий</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Додати цей значок до розділу закладок</string>
+    <string name="icon_search_close_button_content_description">Закрити пошук значків</string>
+    <string name="icon_request_submit_button_content_description">Надіслати запит на значок</string>
+    <string name="icon_list_content_description">Список іконок, заданих в пакеті іконок</string>
+    <string name="icon_search_list_content_description">Список іконок, які відповідають пошуковому запиту</string>
+    <string name="about_item_social_content_description">Посилання на онлайн-профіль автора пакета значків: </string>
+    <string name="share_icon_pack_button_content_description">Поділитися цим додатком з кимось</string>
 </resources>
