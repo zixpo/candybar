@@ -66,7 +66,7 @@ public class IconRequestTask extends AsyncTaskBase {
                         mContext.get().getResources().getBoolean(R.bool.enable_premium_request)) {
                     List<Request> requests = new ArrayList<>();
                     HashMap<String, String> appFilter = RequestHelper.getAppFilter(mContext.get(), RequestHelper.Key.ACTIVITY);
-                    if (appFilter.size() == 0) {
+                    if (appFilter.isEmpty()) {
                         mError = Extras.Error.APPFILTER_NULL;
                         return false;
                     }
@@ -77,7 +77,7 @@ public class IconRequestTask extends AsyncTaskBase {
                     intent.addCategory(Intent.CATEGORY_LAUNCHER);
                     List<ResolveInfo> installedApps = packageManager.queryIntentActivities(
                             intent, PackageManager.GET_RESOLVED_FILTER);
-                    if (installedApps.size() == 0) {
+                    if (installedApps.isEmpty()) {
                         mError = Extras.Error.INSTALLED_APPS_NULL;
                         return false;
                     }

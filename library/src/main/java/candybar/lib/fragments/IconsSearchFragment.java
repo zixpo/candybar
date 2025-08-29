@@ -106,7 +106,9 @@ public class IconsSearchFragment extends Fragment {
 
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "view",
-                new HashMap<String, Object>() {{ put("section", "icons_search"); }}
+                new HashMap<>() {{
+                    put("section", "icons_search");
+                }}
         );
 
         setHasOptionsMenu(true);

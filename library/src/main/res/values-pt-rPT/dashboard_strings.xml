@@ -1,33 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">Painel de Materiais CandyBar</string>
     <!-- Navigation View -->
+    <string name="navigation_view_home">Página Principal</string>
+    <string name="navigation_view_apply">Aplicar</string>
+    <string name="navigation_view_icons">Ícones</string>
+    <string name="navigation_view_request">Solicitação de ícone</string>
+    <string name="navigation_view_wallpapers">Imagens de fundo</string>
+    <string name="navigation_view_presets">Predefinições</string>
+    <string name="navigation_view_settings">Configurações</string>
+    <string name="navigation_view_faqs">Perguntas frequentes</string>
+    <string name="navigation_view_about">Sobre</string>
+    <string name="navigation_view_donate">Apoiar o desenvolvimento</string>
     <!-- Muzei -->
+    <string name="muzei_settings">Configurações do Muzei</string>
+    <string name="minute">Minuto</string>
+    <string name="hour">Hora</string>
+    <string name="save_setting">Gravar</string>
+    <string name="muzei_refresh_duration">Duração da atualização</string>
+    <string name="muzei_wifi_only">Atualizar somente por Wi-Fi</string>
+    <string name="muzei_downloaded_only">Carregar somente Papéis de Parede Baixados</string>
+    <string name="muzei_settings_ignored">O Pacote de Ícones não contém papéis de parede, configurações ignoradas.</string>
+    <string name="muzei_settings_saved">Configurações salvas</string>
     <!-- Menu -->
+    <string name="menu_search">Procurar</string>
+    <string name="menu_save">Salvar no dispositivo</string>
+    <string name="menu_select_all">Seleccionar Todos</string>
+    <string name="menu_delete">Apagar</string>
+    <string name="menu_wallpaper_crop">Recortar imagem de fundo</string>
+    <string name="menu_apply_homescreen">Tela inicial</string>
+    <string name="menu_apply_lockscreen">Ecrã de bloqueio</string>
+    <string name="menu_apply_homescreen_lockscreen">Tela inicial &amp; Tela de bloqueio</string>
     <!-- Dialog -->
+    <string name="open">Abrir</string>
+    <string name="close">Fechar</string>
+    <string name="clear">Limpar</string>
+    <string name="ok">OK</string>
+    <string name="install">Instale</string>
+    <string name="donate">Doar</string>
+    <string name="update">Atualização</string>
+    <string name="search_noresult">Nenhum resultado encontrado para \"%s\"</string>
+    <string name="search_faqs">Pergunta ou resposta</string>
+    <string name="search_icon">Nome do ícone</string>
+    <string name="search_wallpapers">Nome do Wallpaper</string>
     <!-- Update -->
+    <string name="checking_for_update">A verificar a existência de atualizações ...</string>
+    <string name="update_available">Atualização disponível!</string>
+    <string name="no_update_available">Você está usando a versão mais recente!</string>
     <!-- Changelog -->
+    <string name="changelog_version">Versão</string>
     <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Não é possível carregar produtos de compra no aplicativo</string>
     <!-- License -->
+    <string name="license_checking">Verificando a licença ...</string>
+    <string name="license_check">Verificação de licença</string>
+    <string name="license_check_success">Verificação de licença bem-sucedida. Obrigado por baixar o aplicativo da Play Store.</string>
+    <string name="license_check_failed">Falha na verificação da licença; você não baixou o aplicativo da Play Store. Você não será capaz de usá-lo.</string>
+    <string name="license_check_retry">Não é possível verificar a licença, tente novamente em alguns momentos.</string>
     <!-- Play Store Installation Check -->
+    <string name="playstore_check">Verificação da Play Store</string>
+    <string name="playstore_check_success">Obrigado por instalar o aplicativo a partir da Google Play Store. Divirta-se!</string>
+    <string name="playstore_check_failed">Parece que você instalou este pacote de ícones de fora da loja do Google.
+        Você não poderá usá-lo.</string>
     <!-- Share -->
+    <string name="share_app_title">Ei! Confira a %s</string>
+    <string name="share_app_body">Confira %1$s, este pacote de ícones é muito legal! %2$s</string>
     <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Menu de navegação</string>
+    <string name="tap_intro_home_navigation_desc">Toque aqui ou deslize do canto esquerdo da tela para abrir o menu de navegação</string>
+    <string name="tap_intro_home_apply">Aplicar o pacote de ícones</string>
+    <string name="tap_intro_home_apply_desc">Toque aqui para aplicar %s ao seu lançador atual. Pressione e segure para aplicar a outros lançadores.</string>
+    <string name="tap_intro_icons_search">Procurar</string>
+    <string name="tap_intro_icons_search_desc">Toque aqui para pesquisar um ícone</string>
+    <string name="tap_intro_request_select">Selecione o app ausente</string>
+    <string name="tap_intro_request_select_desc">Toque aqui para selecionar o app ausente para solicitação de ícone</string>
+    <string name="tap_intro_request_select_all">Selecionar todos os apps ausentes</string>
+    <string name="tap_intro_request_select_all_desc">Toque aqui para selecionar todos os apps ausentes para solicitação de ícone</string>
+    <string name="tap_intro_request_send">Pedido de envio de ícone</string>
+    <string name="tap_intro_request_send_desc">Toque aqui para enviar apps ausentes selecionados</string>
+    <string name="tap_intro_request_premium">Solicitação de ícone premium</string>
+    <string name="tap_intro_request_premium_desc">Toque aqui para comprar o pacote de solicitação de ícone premium,
+        com uma solicitação de ícone premium, você pode obter seus aplicativos solicitados mais rápido.</string>
+    <string name="tap_intro_wallpapers_option">Opções de fundo</string>
+    <string name="tap_intro_wallpapers_option_desc">Toque e segure aqui para mostrar opções de papel de parede; %s aplica o papel de parede.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">Baixar ou</string>
+    <string name="tap_intro_wallpapers_preview">Pré-visualizar fundo</string>
+    <string name="tap_intro_wallpapers_preview_desc">Toque aqui para visualizar o tamanho total do papel de parede</string>
+    <string name="tap_intro_wallpaper_preview_save">Salvar plano de fundo</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Toque aqui para baixar e salvar o papel de parede no seu dispositivo para que você possa usá-lo mais tarde</string>
+    <string name="tap_intro_wallpaper_preview_apply">Aplicar plano de fundo</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Toque aqui para definir o papel de parede como a tela inicial</string>
     <!-- Home -->
+    <string name="home_more_apps_header">Mais aplicativos</string>
+    <string name="home_more_apps">Verificar outros aplicativos publicados na Google Play Store</string>
+    <string name="home_rate_and_review">Avaliar &amp; Analisar</string>
+    <string name="home_apply_icon_pack">Aplicar %s</string>
+    <string name="home_donate">Doar</string>
+    <string name="home_donate_desc">Apoie o desenvolvimento do pacote de ícones</string>
+    <string name="home_icons">Ícones personalizados</string>
+    <string name="home_icon_dimension">Dimensão do ícone de %s pixels</string>
+    <string name="home_loud_wallpapers">%d Cloud wallpapers</string>
+    <string name="home_muzei">Papel de parede ao vivo Muzei</string>
+    <string name="home_icon_request_installed_apps">Total\n%d instalados aplicativos</string>
+    <string name="home_icon_request_themed_apps">Apps\n%d temáticos</string>
+    <string name="home_icon_request_missed_apps">Apps\n%d perdidos</string>
     <!-- Apply -->
+    <string name="apply_installed">Lançador instalado</string>
+    <string name="apply_installed_launchers">Lançadores Instalados</string>
+    <string name="apply_supported">Lançadores Suportados</string>
+    <string name="apply_manual">O Lançador %1$s não suporta a aplicação direta, mas você pode aplicar %2$s manualmente a partir das configurações do lançador.</string>
+    <string name="apply_manual_kvaesitso">Kvaesitso não suporta aplicação direta, mas você pode seguir estes passos:</string>
+    <string name="apply_manual_kvaesitso_step_1">Abrir configurações do Kvaesitso</string>
+    <string name="apply_manual_kvaesitso_step_2">Toque em \"Grade &amp; Ícones\"</string>
+    <string name="apply_manual_kvaesitso_step_3">Toque no \"pacote de ícones\"</string>
+    <string name="apply_manual_kvaesitso_step_4">Escolha %s da lista</string>
+    <string name="apply_manual_kvaesitso_step_5">Toque no ícone de pintura para ativar ou desativar a forma de fundo</string>
+    <string name="apply_manual_kiss">KISS não suporta aplicação direta, mas você pode seguir estas etapas:</string>
+    <string name="apply_manual_kiss_step_1">Abrir configurações KISS</string>
+    <string name="apply_manual_kiss_step_2">Toque em \"Interface de Usuário\"</string>
+    <string name="apply_manual_kiss_step_3">Toque no \"pacote de ícones\"</string>
+    <string name="apply_manual_kiss_step_4">Escolha %s da lista</string>
+    <string name="apply_manual_samsung_oneui">%1$s não suporta aplicação direta, mas começando com %2$s , você pode aplicar ícones com um aplicativo companion.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Sua versão atual do %s é muito antiga. Atualize para o Android 12 ou mais recente para poder aplicar ícones diretamente. Como alternativa, você pode instalar um lançador diferente.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Abrir %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Baixe o app %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Toque em \"Ícone\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Toque em \"Criar Novo\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Toque no botão azul \"Iconpack\"</string>
+    <string name="apply_manual_samsung_oneui_step_6">Escolha %s da lista</string>
+    <string name="apply_manual_samsung_oneui_step_7">Repita esses passos cada vez que você atualizar %s como novos ícones não serão mapeados automaticamente.</string>
+    <string name="apply_manual_hios">O Launcher HiOS não suporta aplicação direta, mas você pode seguir estes passos:</string>
+    <string name="apply_manual_hios_step_1">Abra \"Configurações\"</string>
+    <string name="apply_manual_hios_step_2">Toque em \"Tema &amp; Bloqueio de tela\"</string>
+    <string name="apply_manual_hios_step_3">Toque em \"Meu tema\"</string>
+    <string name="apply_manual_hios_step_4">Toque em \"Pacote de ícones\"</string>
+    <string name="apply_manual_hios_step_5">Toque %s</string>
+    <string name="apply_manual_oxygen_os_step_1">Toque longo em sua tela inicial</string>
+    <string name="apply_manual_oxygen_os_step_2">Toque em \"Configurações Iniciais\"</string>
+    <string name="apply_manual_oxygen_os_step_3">Toque em \"Pacote de ícones\"</string>
+    <string name="apply_manual_oxygen_os_step_4">Toque %s</string>
+    <string name="apply_manual_color_os_step_1">Toque longo em sua tela inicial</string>
+    <string name="apply_manual_color_os_step_2">Toque em \"Ícones\"</string>
+    <string name="apply_manual_color_os_step_3">Role para a direita do botão \"Personalizado\" (esta é uma lista rolável!)</string>
+    <string name="apply_manual_color_os_step_4">Toque %s</string>
+    <string name="apply_manual_before">Esta versão do Before Launcher ainda não suporta a aplicação de ícones diretamente. Em vez disso, siga os passos abaixo:</string>
+    <string name="apply_manual_before_step_1">Deslize para a esquerda na tela inicial</string>
+    <string name="apply_manual_before_step_2">Toque em \"Configurações\"</string>
+    <string name="apply_manual_before_step_3">Toque em \"Estilos &amp; Temas\"</string>
+    <string name="apply_manual_before_step_4">Toque em \"Ícones de Estilos &amp; Pacotes\"</string>
+    <string name="apply_manual_before_step_5">Toque %s</string>
+    <string name="apply_manual_nothing_step_1">Abra \"Configurações\"</string>
+    <string name="apply_manual_nothing_step_2">Toque em \"Personalização\"</string>
+    <string name="apply_manual_nothing_step_3">Toque em \"Pacote de ícones\"</string>
+    <string name="apply_manual_nothing_step_4">Toque %s</string>
+    <string name="apply_launch_failed">Não é possível iniciar as configurações de %s</string>
+    <string name="apply_launcher_not_installed">O Lançador %s não está instalado. Deseja abrir
+        Google Play Store para baixar e instalar?</string>
+    <string name="apply_launcher_not_installable">O Lançador %s não está instalado. Por favor, tente novamente após instalar o launcher.</string>
+    <string name="apply_cmtheme_not_available">CM Theme Manager não está disponível neste dispositivo</string>
+    <string name="apply_cmtheme_failed">Não foi possível iniciar o CM Theme Manager, você pode tentar aplicar o Pacote de Ícones manualmente a partir de Configurações.</string>
+    <string name="apply_lg_home">Para aplicar este pacote de ícones, abra as configurações - Tela inicial - Tema</string>
+    <string name="apply_lg_home_not_available">LG Home não está disponível neste dispositivo</string>
+    <string name="apply_lg_home_failed">Não foi possível iniciar o PN nas Configurações, você pode tentar aplicar o Pacote de Ícones manualmente a partir das Configurações.</string>
+    <string name="apply_lg_home_nougat">O LG Home com Android Nougat não suporta mais pacotes de ícones. Você precisa de um launcher personalizado para usar o pacote de ícones.</string>
+    <string name="apply_launcher_incompatible">O Lançador %s não suporta nenhum pacote de ícones, então você não pode usar este pacote de ícones com este launcher. Você pode tentar um aplicativo de terceiros para usar este pacote de ícones no launcher %2$s . Você deseja instalá-lo?</string>
+    <string name="apply_launcher_incompatible_depending_on_version">Lançador %s não suporta pacotes de ícones no Android %d ou inferior. Por favor, atualize sua versão do Android ou instale um launcher de terceiros para usar esse pacote de ícones. Você também pode tentar um aplicativo de ajuda para alterar ícones individuais. Você quer instalá-lo?</string>
     <!-- Icons -->
+    <string name="icons_load_failed">Não foi possível carregar ícones</string>
+    <string name="icon_shape">Formato dos ícones</string>
+    <string name="bookmark_icons_empty">Nenhum marcador encontrado. Ícones de Favoritos para acessá-los rapidamente aqui.</string>
+    <string name="items_selected">%d selecionado</string>
     <!-- Request -->
+    <string name="request_title">Solicitação de ícone</string>
+    <string name="request_not_selected">Selecionar aplicativos para solicitar</string>
+    <string name="request_not_requested">Não solicitado</string>
+    <string name="request_already_requested">Já solicitado</string>
+    <string name="request_not_available">Não pode ser solicitado</string>
+    <string name="request_building">Criando solicitação …</string>
+    <string name="request_pacific_sending">Enviando solicitação para o gerente do Pacífico...</string>
+    <string name="request_pacific_error">Ocorreu um erro ao enviar uma solicitação para o Pacific Manager. Erro é %s</string>
+    <string name="request_pacific_success">Pedido enviado com sucesso para o Pacific Manager</string>
+    <string name="request_custom_error">Ocorreu um erro ao enviar um pedido de ícone. Se este erro persistir, entre em contato com o desenvolvedor. %s</string>
+    <string name="request_custom_success">Solicitação de ícone enviada com sucesso</string>
+    <string name="request_fetching_data">Obtendo os dados mais recentes …</string>
+    <string name="request_build_failed">Não foi possível criar a solicitação de ícone</string>
+    <string name="request_appfilter_failed">Não foi possível ler appfilter.xml</string>
+    <string name="request_requested">Você já solicitou este ícone e não pode solicitar novamente.</string>
+    <string name="request_requested_possible">Você já solicitou este ícone. Tem certeza que deseja gastar outro pedido?</string>
+    <string name="request_requested_button_cancel">Voltar atrás</string>
+    <string name="request_requested_button_confirm">Selecionar mesmo assim</string>
+    <string name="request_email_client">Escolha o aplicativo que você deseja usar para enviar o pedido do ícone</string>
+    <string name="request_app_disabled">Você está usando uma versão antiga deste pacote de ícones. Os ícones solicitados podem ser incluídos na versão mais recente. Por favor, atualize seu aplicativo para a versão mais recente para solicitar ícones.</string>
+    <string name="connection_error_long">Não foi possível carregar os dados do servidor. Por favor, verifique sua conexão de rede.</string>
+    <string name="unable_to_load_config">Ocorreu um erro ao obter ou ler dados do servidor.</string>
+    <string name="request_limit">Você só pode fazer solicitações %d com solicitação regular.</string>
+    <string name="request_used">Você solicitou %d ícone(s).</string>
+    <string name="request_limit_buy">Você pode comprar pedidos Premium para solicitar mais ícones.</string>
+    <string name="request_limit_reset">Limite de pedidos de ícone será redefinido em cada atualização.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Solicitação de ícone regular</string>
+    <string name="regular_request_desc">Obtenha seu ícone solicitado, e o desenvolvedor tentará incluir ícones que você solicitou.</string>
+    <string name="regular_request_count">Total\n%d pedido</string>
+    <string name="regular_request_used">Solicitação usada\n%d</string>
+    <string name="regular_request_available">Disponível\nSolicitação%d</string>
     <!-- Premium Request -->
+    <string name="premium_request">Solicitação de ícone Premium</string>
+    <string name="premium_request_no_internet">Certifique-se de que seu telefone está conectado à internet antes de enviar uma solicitação premium</string>
+    <string name="premium_request_desc">Pedido de ícone Premium é uma solicitação de pagamento. Você pode obter seus aplicativos solicitados mais rapidamente usando uma solicitação de ícone premium.</string>
+    <string name="premium_request_buy">Comprar</string>
+    <string name="premium_request_count">Total\n%d pedido</string>
+    <string name="premium_request_used">Solicitação usada\n%d</string>
+    <string name="premium_request_available">Disponível\nSolicitação%d</string>
+    <string name="premium_request_already_purchased">Você ainda tem %d solicitação premium. Você precisa usar todos eles antes de comprar um pacote de solicitação premium novamente.</string>
+    <string name="premium_request_limit">Você só tem %d pedido(s) premium,</string>
+    <string name="premium_request_limit1">Mas selecionou a(s) aplicação(ões) %d. \n\nVocê precisa usar todas as suas solicitações premium antes de usar a solicitação regular novamente.</string>
+    <string name="premium_request_consume_failed">Não é possível utilizar o Pedido Premium, certifique-se de que tem uma ligação à Internet estável e tente novamente. Aceda a Definições para reconstruir Pedidos Premium.</string>
+    <string name="premium_request_rebuilding">Recriando Requisição Premium …</string>
+    <string name="premium_request_rebuilding_empty">Você não fez uma solicitação Premium</string>
+    <string name="premium_request_exist">Você ainda tem um pacote Premium Icon Request. Abra Configurações, escolha \"Restaurar compras\" para restaurá-lo.</string>
+    <string name="premium_request_required">Você precisa comprar um pacote de solicitação de ícone premium para fazer pedidos de ícone</string>
     <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Novo papel de parede</string>
+    <string name="wallpaper_already_downloaded">Plano de fundo já baixado</string>
+    <string name="wallpaper_downloading">Baixando plano de fundo …</string>
+    <string name="wallpaper_download_failed">Não foi possível baixar o plano de fundo</string>
+    <string name="wallpaper_download_success">Wallpaper baixado com sucesso</string>
+    <string name="wallpaper_loading">Carregando plano de fundo …</string>
+    <string name="wallpaper_applying">Aplicando plano de fundo …</string>
+    <string name="wallpaper_applied">Plano de fundo aplicado</string>
+    <string name="wallpaper_apply_failed">Não foi possível aplicar o plano de fundo</string>
+    <string name="wallpaper_apply_cancelled">Aplicar Plano de fundo cancelado</string>
+    <string name="connection_failed">Não foi possível buscar dados do servidor</string>
+    <string name="wallpaper_apply">Aplicar plano de fundo</string>
+    <string name="wallpaper_save_to_device">Salvar plano de fundo</string>
     <!-- Presets -->
+    <string name="presets_load_failed">Não foi possível carregar as predefinições</string>
+    <string name="presets_storage_permission">A permissão de armazenamento é necessária para carregar pré-visualização do papel de parede</string>
+    <string name="presets_required_apps">Aplicativos necessários para usar estas predefinições</string>
+    <string name="presets_required_apps_not_installed">Aplicativos necessários para usar a predefinição não estão instalados. Por favor, instale os aplicativos que estão ausentes e tente novamente.</string>
     <!-- Preferences -->
+    <string name="pref_data_header">Dados &amp; Cache</string>
+    <string name="pref_data_cache">Limpar Cache</string>
+    <string name="pref_data_cache_desc">Remova o cache de imagens do seu armazenamento, criado ao escolher uma imagem
+	    deste aplicativo, solicitando apps ausentes e depois de carregar o papel de parede em nuvem.</string>
+    <string name="pref_data_cache_size">Tamanho do cache: %s</string>
+    <string name="pref_data_cache_clear_dialog">Você realmente deseja limpar o cache?</string>
+    <string name="pref_data_cache_cleared">Cache limpo</string>
+    <string name="pref_data_request">Limpar dados de solicitação de ícone</string>
+    <string name="pref_data_request_desc">Remover dados de solicitação de ícone, criado após a solicitação
+        apps ausentes da solicitação de ícone.</string>
+    <string name="pref_data_request_clear_dialog">Você realmente deseja limpar os dados do ícone requisitado?</string>
+    <string name="pref_data_request_cleared">Dados solicitados de ícone apagados</string>
+    <string name="pref_premium_request_header">Solicitação de ícone Premium</string>
+    <string name="pref_premium_request_restore">Recuperar Compras</string>
+    <string name="pref_premium_request_restore_desc">Restaurar pacote de solicitação premium após reinstalar o pacote de ícones</string>
+    <string name="pref_premium_request_restore_success">Pedido Premium Restaurado</string>
+    <string name="pref_premium_request_restore_empty">Você não comprou nenhum pacote</string>
+    <string name="pref_premium_request_rebuild">Recriar solicitação de ícone Premium</string>
+    <string name="pref_premium_request_rebuild_desc">Colete todos os dados de solicitação de ícone premium para reenviá-los</string>
+    <string name="pref_theme_header">Tema</string>
+    <string name="pref_theme_dark">Tema Escuro</string>
+    <string name="pref_theme_dark_desc">Usar cor escura para o tema da aplicação</string>
+    <string name="pref_notifications_header">Notificações</string>
+    <string name="pref_notifications">Receber Notificações</string>
+    <string name="pref_wallpaper_header">Imagem de fundo</string>
+    <string name="pref_wallpaper_location">Salvar local do papel de parede</string>
+    <string name="pref_language_header">Idioma</string>
+    <string name="pref_others_header">Outros</string>
+    <string name="pref_others_report_bugs">Reportar erros</string>
+    <string name="pref_others_changelog">Alterações</string>
+    <string name="pref_others_reset_tutorial">Reiniciar o tutorial</string>
+    <string name="pref_others_reset_tutorial_reset">Tutorial  reinicializado</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Auto</string>
+    <string name="theme_name_light">Claro</string>
+    <string name="theme_name_dark">Escuro</string>
+    <string name="theme_name_material_you">Material You</string>
     <!-- Permission -->
+    <string name="permission_storage_denied">Permissão de armazenamento necessária para salvar o plano de fundo</string>
+    <string name="permission_notification_denied_1">A permissão de notificação é necessária para receber notificações do desenvolvedor</string>
+    <string name="permission_notification_denied_2">Ativar notificações a partir das configurações do aplicativo</string>
     <!-- Intent -->
+    <string name="app_client">Escolher aplicativo</string>
+    <string name="no_email_app">Nenhuma solicitação para enviar e-mail</string>
+    <string name="no_browser">Nenhuma aplicação para abrir URL</string>
+    <string name="intent_email_failed">Não é possível exibir o aplicativo de e-mail</string>
+    <string name="intent_email_supported">Suportado</string>
+    <string name="intent_email_recommended">Recomendados</string>
+    <string name="intent_email_not_supported">Não Suportado</string>
+    <string name="intent_email_not_supported_message">Selecionado um cliente de e-mail não suportado, selecione outro cliente de e-mail</string>
     <!-- About -->
+    <string name="about_contributors_title">Colaboradores</string>
+    <string name="about_privacy_policy_title">Política de Privacidade</string>
+    <string name="about_terms_and_conditions_title">Termos e Condições</string>
     <!-- Report Bugs -->
+    <string name="report_bugs_desc">Por favor, dê uma descrição do tipo de problema que você deseja relatar</string>
+    <string name="report_bugs_desc_hint">Descrição:</string>
+    <string name="report_bugs_desc_empty">Por favor, forneça uma descrição</string>
+    <string name="report_bugs_building">Construindo lista de atividades …</string>
+    <string name="report_bugs_failed">Não é possível construir a lista de atividades</string>
+    <string name="report_bugs_send">Enviar um relatório</string>
     <!-- Support Development -->
+    <string name="donation_success">Obrigado por fazer uma doação. Eu a usarei para o bem.</string>
     <!-- Crash Report -->
+    <string name="crash_report">Relatório de Erro</string>
+    <string name="crash_report_message">Infelizmente, %s travou. Escolha Enviar relatório abaixo para ajudar o desenvolvedor a corrigir o problema.</string>
+    <string name="crash_report_send">Enviar um relatório</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar é um dashboard de pacote de ícones de código aberto licenciado sob a licença Apache 2.0 para
+        Android disponível no GitHub e gratuito para uso, desenvolvido por Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Licenças Open Source</string>
+    <string name="about_dashboard_contributors">CandyBar Contributors</string>
+    <string name="about_dashboard_translator">Tradutor CandyBar</string>
     <!-- DrawerToggle -->
+    <string name="txt_open">Abrir</string>
+    <string name="txt_close">Fechar</string>
+    <string name="txt_new">Novidades</string>
     <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Adicionar este ícone à seção de favoritos</string>
+    <string name="icon_search_close_button_content_description">Fechar a pesquisa de ícone</string>
+    <string name="icon_request_submit_button_content_description">Enviar um pedido de ícone</string>
+    <string name="icon_list_content_description">A lista de ícones incluídos no pacote de ícones</string>
+    <string name="icon_search_list_content_description">A lista de ícones que correspondem ao termo de busca</string>
+    <string name="about_item_social_content_description">Um link para um perfil online do autor do pacote de ícones: </string>
+    <string name="share_icon_pack_button_content_description">Compartilhe este app com alguém</string>
 </resources>

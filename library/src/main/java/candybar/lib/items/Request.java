@@ -48,7 +48,7 @@ public class Request {
     @Nullable
     public String getPackageName() {
         if (mPackageName == null) {
-            if (mActivity.length() > 0) {
+            if (!mActivity.isEmpty()) {
                 return mActivity.substring(0, mActivity.lastIndexOf("/"));
             }
         }

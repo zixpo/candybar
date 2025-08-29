@@ -184,34 +184,34 @@ public class RequestHelper {
     }
 
     public static boolean isRegularPacificEnabled(Context context) {
-        return context.getResources().getString(R.string.regular_request_method).length() > 0
+        return !context.getResources().getString(R.string.regular_request_method).isEmpty()
                 ? context.getResources().getString(R.string.regular_request_method).contentEquals("pacific")
                 // Use fallback method to check if pacific is enabled
-                : getRegularPacificApiKey(context).length() > 0;
+                : !getRegularPacificApiKey(context).isEmpty();
     }
 
     public static String getPremiumPacificApiKey(Context context) {
         String pacificApiKey = context.getResources().getString(R.string.premium_request_pacific_api_key);
         // Fallback to regular request's api key
-        if (pacificApiKey.length() == 0) pacificApiKey = getRegularPacificApiKey(context);
+        if (pacificApiKey.isEmpty()) pacificApiKey = getRegularPacificApiKey(context);
 
         return pacificApiKey;
     }
 
     public static boolean isPremiumPacificEnabled(Context context) {
-        return context.getResources().getString(R.string.premium_request_method).length() > 0
+        return !context.getResources().getString(R.string.premium_request_method).isEmpty()
                 ? context.getResources().getString(R.string.premium_request_method).contentEquals("pacific")
                 // Fallback to regular request's method
-                : context.getResources().getString(R.string.regular_request_method).length() > 0
+                : !context.getResources().getString(R.string.regular_request_method).isEmpty()
                 ? context.getResources().getString(R.string.regular_request_method).contentEquals("pacific")
                 // Use fallback method to check if pacific is enabled
-                : getRegularPacificApiKey(context).length() > 0;
+                : !getRegularPacificApiKey(context).isEmpty();
     }
 
     public static String sendPacificRequest(List<Request> requests, List<String> iconFiles, File directory, String apiKey) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "icon_request");
                     put("action", "submit");
                     put("item", "pacific");
@@ -255,23 +255,23 @@ public class RequestHelper {
     }
 
     public static boolean isRegularCustomEnabled(Context context) {
-        return context.getResources().getString(R.string.regular_request_method).length() > 0
+        return !context.getResources().getString(R.string.regular_request_method).isEmpty()
                 && context.getResources().getString(R.string.regular_request_method).contentEquals("custom");
     }
 
     public static boolean isPremiumCustomEnabled(Context context) {
-        return (context.getResources().getString(R.string.premium_request_method).length() > 0
+        return (!context.getResources().getString(R.string.premium_request_method).isEmpty()
                 && context.getResources().getString(R.string.premium_request_method).contentEquals("custom"))
                 ||
                 // Fallback to regular request's method
-                (context.getResources().getString(R.string.regular_request_method).length() > 0
+                (!context.getResources().getString(R.string.regular_request_method).isEmpty()
                 && context.getResources().getString(R.string.regular_request_method).contentEquals("custom"));
     }
 
     public static String sendCustomRequest(List<Request> requests, boolean isPremium) {
         CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                 "click",
-                new HashMap<String, Object>() {{
+                new HashMap<>() {{
                     put("section", "icon_request");
                     put("action", "submit");
                     put("item", "custom");

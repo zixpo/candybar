@@ -86,7 +86,7 @@ public class ChangelogFragment extends DialogFragment {
         try {
             String version = activity.getPackageManager().getPackageInfo(
                     activity.getPackageName(), 0).versionName;
-            if (version != null && version.length() > 0) {
+            if (version != null && !version.isEmpty()) {
                 changelogVersion.setText(activity.getResources().getString(
                         R.string.changelog_version));
                 changelogVersion.append(" " + version);
@@ -95,7 +95,7 @@ public class ChangelogFragment extends DialogFragment {
         }
 
         String date = activity.getResources().getString(R.string.changelog_date);
-        if (date.length() > 0) changelogDate.setText(date);
+        if (!date.isEmpty()) changelogDate.setText(date);
         else changelogDate.setVisibility(View.GONE);
 
         String[] changelog = activity.getResources().getStringArray(R.array.changelog);
