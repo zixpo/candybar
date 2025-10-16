@@ -208,28 +208,30 @@ public class InAppBillingFragment extends DialogFragment {
                             QueryProductDetailsParams.newBuilder()
                                     .setProductList(products)
                                     .build(),
-                            (billingResult, productDetailsList) -> {
+                            (billingResult, productDetailsResult) -> {
                                 if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                                    if (productDetailsList != null) {
-                                        Map<String, ProductDetails> productDetailsMap = new HashMap<>();
-                                        for (ProductDetails productDetails : productDetailsList) {
-                                            productDetailsMap.put(productDetails.getProductId(), productDetails);
-                                        }
-
-                                        for (int i = 0; i < mProductsId.length; i++) {
-                                            String productId = mProductsId[i];
-                                            ProductDetails productDetails = productDetailsMap.get(productId);
-                                            if (productDetails != null) {
-                                                inAppBillings.add(mProductsCount != null
-                                                        ? new InAppBilling(productDetails, productId, mProductsCount[i])
-                                                        : new InAppBilling(productDetails, productId));
-                                            } else {
-                                                LogUtil.e("Found invalid product ID - " + productId);
-                                            }
-                                        }
-
-                                        isSuccess.set(true);
+                                    Map<String, ProductDetails> productDetailsMap = new HashMap<>();
+                                    for (ProductDetails productDetails : productDetailsResult.getProductDetailsList()) {
+                                        productDetailsMap.put(productDetails.getProductId(), productDetails);
                                     }
+
+                                    for (int i = 0; i < mProductsId.length; i++) {
+                                        String productId = mProductsId[i];
+                                        ProductDetails productDetails = productDetailsMap.get(productId);
+                                        if (productDetails != null) {
+                                            inAppBillings.add(mProductsCount != null
+                                                    ? new InAppBilling(productDetails, productId, mProductsCount[i])
+                                                    : new InAppBilling(productDetails, productId));
+                                        } else {
+                                            LogUtil.e("Found invalid product ID - " + productId);
+                                        }
+                                    }
+
+                                    if (!productDetailsResult.getUnfetchedProductList().isEmpty()) {
+                                        LogUtil.e("Unable to fetch details of some products.");
+                                    }
+
+                                    isSuccess.set(true);
                                 } else {
                                     LogUtil.e("Failed to load Product details. Response Code: " + billingResult.getResponseCode());
                                 }
