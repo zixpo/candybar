@@ -35,7 +35,7 @@ publishing {
 }
 
 android {
-    compileSdk rootProject.ext.CompileSdk
+    compileSdk = rootProject.ext.CompileSdk
 
     namespace 'com.kogitune.activity_transition'
 
@@ -56,6 +56,12 @@ android {
             withSourcesJar()
             withJavadocJar()
         }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 

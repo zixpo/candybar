@@ -26,8 +26,8 @@ allprojects {
         VersionName = "$major.$minor.$patch"
 
         MinSdk = 21
-        TargetSdk = 35
-        CompileSdk = 35
+        TargetSdk = 36
+        CompileSdk = 36
     }
 }
 

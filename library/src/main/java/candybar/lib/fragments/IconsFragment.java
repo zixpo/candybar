@@ -115,17 +115,6 @@ public class IconsFragment extends Fragment {
 
         new FastScrollerBuilder(mRecyclerView)
                 .useMd2Style()
-                .setPopupTextProvider(position -> {
-                    Icon icon = mIcons.get(position);
-                    String name = icon.getTitle();
-                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
-                        name = icon.getCustomName();
-                    }
-                    if (name != null) {
-                        return name.substring(0, 1);
-                    }
-                    return "";
-                })
                 .build();
 
         ((ImageView) mNoBookmarksFoundView.findViewById(R.id.bookmark_image))
