@@ -19,9 +19,9 @@
         link="" />
 
     <contributor
-        name="Primo Korn"
+        name="Vividly8487"
         contribution="French"
-        image="https://pbs.twimg.com/profile_images/1030412547860692992/Wuey7pDZ_400x400.jpg"
+        image="https://github.com/walrus543.png"
         link="https://twitter.com/primokorn" />
 
     <contributor
@@ -151,5 +151,29 @@
         name="Dhanu Saud"
         contribution="Nepali"
         image="https://crowdin-static.downloads.crowdin.com/avatar/14049345/large/1686a6cceb98d8a6c316f74ca6a2a5dd.jpeg" />
+
+    <contributor
+        name="Stefanie Grunwald"
+        contribution="German"
+        image="https://github.com/moertel.png"
+        link="https://github.com/moertel" />
+
+    <contributor
+        name="Gonzalo Cruz"
+        contribution="Spanish"
+        image="https://github.com/purplemanta6754.png"
+        link="https://github.com/purplemanta6754" />
+
+    <contributor
+        name="小火星 (Xiao Huoxing)"
+        contribution="Simplified Chinese"
+        image="https://github.com/xiaohuoxing.png"
+        link="https://github.com/xiaohuoxing" />
+
+    <contributor
+        name="Wari"
+        contribution="Thai"
+        image="https://github.com/wwwwwwari.png"
+        link="https://github.com/wwwwwwari" />
 
 </resources>
