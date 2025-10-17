@@ -5,7 +5,7 @@
 
 Improved version of the original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
 
-Check out [Blueprint Dashboard](https://github.com/jahirfiquitiva/blueprint/). It's modular and uses new build features. You may like it :D
+Also, you should definitely check out [Blueprint Dashboard](https://github.com/jahirfiquitiva/blueprint/)! It's a modern project that takes advantage of new build features.
 
 This is the library of CandyBar Dashboard. It is only used for development purpose. Use the [sample implementation](https://github.com/zixpo/candybar-sample) for making icon packs.
 
