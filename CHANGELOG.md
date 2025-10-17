@@ -4,6 +4,9 @@
 
 [//]: # (TODO: Fix images with transparent background showing placeholder in translators dialog)
 
+# v3.22.2
+- Fixed bottom bar overlapping in wallpaper preview
+
 # v3.22.1
 - Fixed issue with predictive back gesture
 - Minor fixes
