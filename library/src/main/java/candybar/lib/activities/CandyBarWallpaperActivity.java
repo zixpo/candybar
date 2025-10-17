@@ -13,8 +13,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.transition.Transition;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowInsets;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -27,6 +29,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.palette.graphics.Palette;
 
 import com.bumptech.glide.Glide;
@@ -163,7 +169,28 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
         );
 
         initBottomBar();
-        resetBottomBarPadding();
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.rootview), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+            if (mBack.getLayoutParams() instanceof CoordinatorLayout.LayoutParams params) {
+                params.topMargin = systemBars.top;
+            }
+
+            LinearLayout container = findViewById(R.id.bottom_bar_container);
+            container.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
+
+            if (container.getLayoutParams() instanceof LinearLayout.LayoutParams params) {
+                int height = getResources().getDimensionPixelSize(R.dimen.bottom_bar_height);
+                params.height = height + systemBars.bottom;
+            }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                return WindowInsetsCompat.toWindowInsetsCompat(WindowInsets.CONSUMED);
+            } else {
+                return insets.consumeSystemWindowInsets();
+            }
+        });
 
         if (!mIsResumed) {
             mExitTransition = ActivityTransition
@@ -240,7 +267,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
             return;
         }
         LocaleHelper.setLocale(this);
-        resetBottomBarPadding();
+        // resetBottomBarPadding();
     }
 
     @Override
@@ -278,7 +305,6 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
         if (mExitTransition != null) {
             mExitTransition.exit(this);
-            return;
         }
     }
 
@@ -435,37 +461,6 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
 
         mMenuApply.setOnLongClickListener(this);
         mMenuSave.setOnLongClickListener(this);
-    }
-
-    private void resetBottomBarPadding() {
-        LinearLayout container = findViewById(R.id.bottom_bar_container);
-        int height = getResources().getDimensionPixelSize(R.dimen.bottom_bar_height);
-        int bottom = 0;
-        int right = WindowHelper.getNavigationBarHeight(this);
-
-        if (mBack.getLayoutParams() instanceof CoordinatorLayout.LayoutParams) {
-            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) mBack.getLayoutParams();
-            params.topMargin = WindowHelper.getStatusBarHeight(this);
-        }
-
-        boolean tabletMode = getResources().getBoolean(com.danimahardhika.android.helpers.core.R.bool.android_helpers_tablet_mode);
-        if (tabletMode || getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            bottom = right;
-            right = 0;
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            if (isInMultiWindowMode()) {
-                bottom = right = 0;
-            }
-        }
-
-        container.setPadding(0, 0, right, bottom);
-
-        if (container.getLayoutParams() instanceof LinearLayout.LayoutParams) {
-            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) container.getLayoutParams();
-            params.height = height + bottom;
-        }
     }
 
     private void loadWallpaper() {
