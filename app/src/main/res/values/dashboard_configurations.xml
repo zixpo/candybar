@@ -65,14 +65,14 @@
     <string name="premium_request_pacific_api_key"></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
-    <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/walls_alt.json</string>
+    <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/walls.json</string>
     <!--<string name="wallpaper_json">assets://wallpapers_offline.json</string>-->
     <bool name="enable_wallpaper_download">true</bool>
     <bool name="wallpaper_show_name_author">true</bool>
     <string name="wallpaper_grid_preview_style">square</string>
 
     <!-- CONFIG: ABOUT -->
-    <string name="about_image">https://source.unsplash.com/_8WAobqAJog/1400x0</string>
+    <string name="about_image">https://zixpo.github.io/candybar-sources/images/tasha-kostyuk-0DshL2mq68s-unsplash.jpg</string>
     <string name="about_profile_image">about_image</string>
     <string name="about_title">CandyBar \nMaterial Dashboard</string>
     <string name="about_desc">

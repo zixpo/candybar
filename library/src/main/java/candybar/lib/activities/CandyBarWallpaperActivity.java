@@ -21,6 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,7 @@ import com.danimahardhika.android.helpers.animation.AnimationHelper;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.WindowHelper;
+import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.kogitune.activitytransition.ActivityTransition;
 import com.kogitune.activitytransition.ExitActivityTransition;
@@ -127,6 +129,12 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
         mBack.setImageDrawable(DrawableHelper.getTintedDrawable(
                 this, R.drawable.ic_toolbar_back, Color.WHITE));
         mBack.setOnClickListener(this);
+        getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                closePreview();
+            }
+        });
 
         String url = "";
         if (savedInstanceState != null) {
@@ -263,8 +271,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
         super.onDestroy();
     }
 
-    @Override
-    public void onBackPressed() {
+    private void closePreview() {
         WallpapersAdapter.sIsClickable = true;
         if (mHandler != null && mRunnable != null)
             mHandler.removeCallbacks(mRunnable);
@@ -273,14 +280,13 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
             mExitTransition.exit(this);
             return;
         }
-        super.onBackPressed();
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            onBackPressed();
+            closePreview();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -290,7 +296,7 @@ public class CandyBarWallpaperActivity extends AppCompatActivity implements View
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.back) {
-            onBackPressed();
+            closePreview();
         } else if (id == R.id.menu_apply) {
             Popup popup = Popup.Builder(this)
                     .to(mMenuApply)
