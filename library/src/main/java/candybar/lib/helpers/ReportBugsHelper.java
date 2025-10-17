@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -57,7 +58,7 @@ public class ReportBugsHelper {
     private static final String BROKEN_DRAWABLES = "broken_drawables.xml";
     private static final String ACTIVITY_LIST = "activity_list.xml";
     private static final String CRASHLOG = "crashlog.txt";
-    private static String UTF8 = "UTF8";
+    private static final String UTF8 = "UTF8";
 
     public static void prepareReportBugs(@NonNull Context context) {
         MaterialDialog dialog = new MaterialDialog.Builder(context)
@@ -71,7 +72,7 @@ public class ReportBugsHelper {
         TextInputLayout inputLayout = (TextInputLayout) dialog.findViewById(R.id.input_layout);
 
         dialog.getActionButton(DialogAction.POSITIVE).setOnClickListener(view -> {
-            if (editText.getText().length() > 0) {
+            if (!editText.getText().isEmpty()) {
                 inputLayout.setErrorEnabled(false);
                 new ReportBugsTask(context, editText.getText().toString()).executeOnThreadPool();
                 dialog.dismiss();
@@ -89,7 +90,7 @@ public class ReportBugsHelper {
             HashMap<String, String> activities = RequestHelper.getAppFilter(context, RequestHelper.Key.ACTIVITY);
             File brokenAppFilter = new File(context.getCacheDir(), BROKEN_APPFILTER);
             Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(brokenAppFilter), UTF8));
+                    new FileOutputStream(brokenAppFilter), StandardCharsets.UTF_8));
 
             boolean first = true;
             for (Map.Entry<String, String> entry : activities.entrySet()) {
@@ -129,7 +130,7 @@ public class ReportBugsHelper {
 
             File brokenDrawables = new File(context.getCacheDir(), BROKEN_DRAWABLES);
             Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(brokenDrawables), UTF8));
+                    new FileOutputStream(brokenDrawables), StandardCharsets.UTF_8));
 
             for (Icon icon : iconList) {
                 if (CandyBarApplication.getConfiguration().isShowTabAllIcons()) {
@@ -175,7 +176,7 @@ public class ReportBugsHelper {
         try {
             File activityList = new File(context.getCacheDir(), ACTIVITY_LIST);
             Writer out = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(activityList), UTF8));
+                    new FileOutputStream(activityList), StandardCharsets.UTF_8));
 
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
@@ -221,7 +222,7 @@ public class ReportBugsHelper {
             File crashLog = new File(context.getCacheDir(), CRASHLOG);
             String deviceInfo = DeviceHelper.getDeviceInfoForCrashReport(context);
             Writer out = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(crashLog), UTF8));
+                    new FileOutputStream(crashLog), StandardCharsets.UTF_8));
             out.append(deviceInfo).append(stackTrace);
             out.flush();
             out.close();

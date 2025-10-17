@@ -113,7 +113,7 @@ public class WallpaperDownloader {
             }
 
             if (!directory.exists() && !directory.mkdirs()) {
-                LogUtil.e("Unable to create directory " + directory.toString());
+                LogUtil.e("Unable to create directory " + directory);
                 showCafeBar(R.string.wallpaper_download_failed);
                 return;
             }
@@ -141,19 +141,21 @@ public class WallpaperDownloader {
             showCafeBar(R.string.wallpaper_downloading);
 
             try {
-                InputStream is = mContext.getAssets().open(url.replaceFirst("assets://", ""));
-                File output = new File(directory, fileName);
-                if (!directory.exists()) {
-                    if (!directory.mkdirs()) return;
-                }
-                if (!output.exists()) {
-                    if (!output.createNewFile()) return;
-                }
-                OutputStream os = new FileOutputStream(output);
-                byte[] buffer = new byte[1024];
-                int read;
-                while ((read = is.read(buffer)) != -1) {
-                    os.write(buffer, 0, read);
+                File output;
+                try (InputStream is = mContext.getAssets().open(url.replaceFirst("assets://", ""))) {
+                    output = new File(directory, fileName);
+                    if (!directory.exists()) {
+                        if (!directory.mkdirs()) return;
+                    }
+                    if (!output.exists()) {
+                        if (!output.createNewFile()) return;
+                    }
+                    OutputStream os = new FileOutputStream(output);
+                    byte[] buffer = new byte[1024];
+                    int read;
+                    while ((read = is.read(buffer)) != -1) {
+                        os.write(buffer, 0, read);
+                    }
                 }
 
                 mContext.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(output)));

@@ -193,8 +193,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
         super.onAttachedToRecyclerView(recyclerView);
         mRecyclerView = new WeakReference<>(recyclerView);
         RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
-        if (manager instanceof GridLayoutManager && getItemCount() > 0) {
-            GridLayoutManager glm = (GridLayoutManager) manager;
+        if (manager instanceof GridLayoutManager glm && getItemCount() > 0) {
             recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
                 @Override
                 public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {

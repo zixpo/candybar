@@ -43,23 +43,19 @@ public class IntentHelper {
         if (intent == null) return ACTION_DEFAULT;
         String action = intent.getAction();
         if (action != null) {
-            switch (action) {
-                case ACTION_ADW_PICK_ICON:
-                case ACTION_TURBO_PICK_ICON:
-                case ACTION_LAWNCHAIR_ICONPACK:
-                case ACTION_NOVA_LAUNCHER:
-                case ACTION_ONEPLUS_PICK_ICON:
-                case ACTION_PLUS_HOME:
-                case ACTION_PROJECTIVY_PICK_ICON:
-                    return ICON_PICKER;
-                case Intent.ACTION_PICK:
-                case Intent.ACTION_GET_CONTENT:
-                    return IMAGE_PICKER;
-                case Intent.ACTION_SET_WALLPAPER:
-                    return WALLPAPER_PICKER;
-                default:
-                    return ACTION_DEFAULT;
-            }
+            return switch (action) {
+                case ACTION_ADW_PICK_ICON,
+                     ACTION_TURBO_PICK_ICON,
+                     ACTION_LAWNCHAIR_ICONPACK,
+                     ACTION_NOVA_LAUNCHER,
+                     ACTION_ONEPLUS_PICK_ICON,
+                     ACTION_PLUS_HOME,
+                     ACTION_PROJECTIVY_PICK_ICON -> ICON_PICKER;
+                case Intent.ACTION_PICK,
+                     Intent.ACTION_GET_CONTENT -> IMAGE_PICKER;
+                case Intent.ACTION_SET_WALLPAPER -> WALLPAPER_PICKER;
+                default -> ACTION_DEFAULT;
+            };
         }
 
         return ACTION_DEFAULT;

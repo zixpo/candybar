@@ -34,20 +34,14 @@ import candybar.lib.applications.CandyBarApplication;
 public class ConfigurationHelper {
 
     public static Drawable getNavigationIcon(@NonNull Context context, @NonNull CandyBarApplication.NavigationIcon navigationIcon) {
-        switch (navigationIcon) {
-            case DEFAULT:
-                return new DrawerArrowDrawable(context);
-            case STYLE_1:
-                return get(context, R.drawable.ic_toolbar_navigation);
-            case STYLE_2:
-                return get(context, R.drawable.ic_toolbar_navigation_2);
-            case STYLE_3:
-                return get(context, R.drawable.ic_toolbar_navigation_3);
-            case STYLE_4:
-                return get(context, R.drawable.ic_toolbar_navigation_4);
-            default:
-                return get(context, R.drawable.ic_toolbar_navigation);
-        }
+        return switch (navigationIcon) {
+            case DEFAULT -> new DrawerArrowDrawable(context);
+            case STYLE_1 -> get(context, R.drawable.ic_toolbar_navigation);
+            case STYLE_2 -> get(context, R.drawable.ic_toolbar_navigation_2);
+            case STYLE_3 -> get(context, R.drawable.ic_toolbar_navigation_3);
+            case STYLE_4 -> get(context, R.drawable.ic_toolbar_navigation_4);
+            default -> get(context, R.drawable.ic_toolbar_navigation);
+        };
     }
 
     public static int getSocialIconColor(@NonNull Context context, @NonNull CandyBarApplication.IconColor iconColor) {

@@ -67,6 +67,5 @@ public class ActivityTransitionLauncher {
 
         intent.putExtras(createBundle());
         ActivityCompat.startActivity(activity, intent, createOptions());
-        return;
     }
 }

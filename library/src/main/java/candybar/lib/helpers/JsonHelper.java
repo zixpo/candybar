@@ -59,9 +59,8 @@ public class JsonHelper {
 
     @Nullable
     public static Wallpaper getWallpaper(@NonNull Object object) {
-        if (object instanceof Map) {
+        if (object instanceof Map<?, ?> map) {
             JsonStructure jsonStructure = CandyBarApplication.getConfiguration().getWallpaperJsonStructure();
-            Map<?, ?> map = (Map<?, ?>) object;
             return Wallpaper.Builder()
                     .name((String) map.get(jsonStructure.getName()))
                     .author(getAuthor(map))

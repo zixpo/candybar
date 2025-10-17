@@ -43,29 +43,22 @@ public class ViewHelper {
     }
 
     public static Point getWallpaperViewRatio(String viewStyle) {
-        switch (viewStyle.toLowerCase(Locale.getDefault())) {
-            default:
-            case "square":
-                return new Point(1, 1);
-            case "landscape":
-                return new Point(16, 9);
-            case "portrait":
-                return new Point(4, 5);
-        }
+        // There is a case "square"
+        return switch (viewStyle.toLowerCase(Locale.getDefault())) {
+            case "landscape" -> new Point(16, 9);
+            case "portrait" -> new Point(4, 5);
+            default -> new Point(1, 1);
+        };
     }
 
     public static Home.Style getHomeImageViewStyle(String viewStyle) {
-        switch (viewStyle.toLowerCase(Locale.getDefault())) {
-            case "card_square":
-                return new Home.Style(new Point(1, 1), Home.Style.Type.CARD_SQUARE);
-            default:
-            case "card_landscape":
-                return new Home.Style(new Point(16, 9), Home.Style.Type.CARD_LANDSCAPE);
-            case "square":
-                return new Home.Style(new Point(1, 1), Home.Style.Type.SQUARE);
-            case "landscape":
-                return new Home.Style(new Point(16, 9), Home.Style.Type.LANDSCAPE);
-        }
+        // There is a case "card_landscape"
+        return switch (viewStyle.toLowerCase(Locale.getDefault())) {
+            case "square" -> new Home.Style(new Point(1, 1), Home.Style.Type.SQUARE);
+            case "landscape" -> new Home.Style(new Point(16, 9), Home.Style.Type.LANDSCAPE);
+            case "card_square" -> new Home.Style(new Point(1, 1), Home.Style.Type.CARD_SQUARE);
+            default -> new Home.Style(new Point(16, 9), Home.Style.Type.CARD_LANDSCAPE);
+        };
     }
 
     public static void addBottomPadding(Activity actvity, RecyclerView v) {

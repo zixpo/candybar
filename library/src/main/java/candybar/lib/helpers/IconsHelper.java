@@ -289,7 +289,7 @@ public class IconsHelper {
     }
 
     public interface OnFileNameChange {
-        public void call(String newName);
+        void call(String newName);
     }
 
     @Nullable

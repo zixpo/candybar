@@ -42,7 +42,7 @@ import candybar.lib.utils.listeners.HomeListener;
 public class ChangelogFragment extends DialogFragment {
 
     private static final String TAG = "candybar.dialog.changelog";
-    private Runnable onPositive;
+    private final Runnable onPositive;
 
     private static ChangelogFragment newInstance(Runnable onPositive) {
         return new ChangelogFragment(onPositive);

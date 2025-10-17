@@ -107,8 +107,7 @@ public class TransitionAnimation {
     }
 
     private static void setImageToView(View toView, Bitmap bitmap) {
-        if (toView instanceof ImageView) {
-            final ImageView toImageView = (ImageView) toView;
+        if (toView instanceof ImageView toImageView) {
             toImageView.setImageBitmap(bitmap);
         } else {
             ViewCompat.setBackground(toView, new BitmapDrawable(toView.getResources(), bitmap));
@@ -117,6 +116,5 @@ public class TransitionAnimation {
 
     public static void startExitAnimation(MoveData moveData, TimeInterpolator interpolator, final Runnable endAction) {
         endAction.run();
-        return;
     }
 }

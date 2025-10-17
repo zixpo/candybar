@@ -24,8 +24,7 @@ public final class CandyBarGlideModule extends AppGlideModule {
         if (context == null) {
             return false;
         }
-        if (context instanceof Activity) {
-            final Activity activity = (Activity) context;
+        if (context instanceof Activity activity) {
             return !activity.isDestroyed() && !activity.isFinishing();
         }
         return true;

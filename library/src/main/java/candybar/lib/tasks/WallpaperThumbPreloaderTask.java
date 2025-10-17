@@ -47,8 +47,7 @@ public class WallpaperThumbPreloaderTask extends AsyncTaskBase {
                         return false;
                     }
 
-                    if (!list.isEmpty() && list.get(0) instanceof Map) {
-                        Map<?, ?> map = (Map<?, ?>) list.get(0);
+                    if (!list.isEmpty() && list.get(0) instanceof Map<?, ?> map) {
                         String thumbUrl = JsonHelper.getThumbUrl(map);
 
                         // Preload the first wallpaper's thumbnail

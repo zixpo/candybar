@@ -42,10 +42,7 @@ public class ExitActivityTransition {
         if (interpolator == null) {
             interpolator = new DecelerateInterpolator();
         }
-        TransitionAnimation.startExitAnimation(moveData, interpolator, () -> {
-            activity.finishAfterTransition();
-            return;
-        });
+        TransitionAnimation.startExitAnimation(moveData, interpolator, activity::finishAfterTransition);
     }
 
 }

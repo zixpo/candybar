@@ -33,13 +33,9 @@ public class HeaderView extends AppCompatImageView {
 
     public HeaderView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.HeaderView);
-
-        try {
+        try (TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.HeaderView)) {
             mWidthRatio = typedArray.getInteger(R.styleable.HeaderView_widthRatio, 16);
             mHeightRatio = typedArray.getInteger(R.styleable.HeaderView_heightRatio, 9);
-        } finally {
-            typedArray.recycle();
         }
     }
 

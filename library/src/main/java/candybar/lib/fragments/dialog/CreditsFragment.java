@@ -114,29 +114,24 @@ public class CreditsFragment extends DialogFragment {
     @NonNull
     private String getTitle(int type) {
         if (getActivity() == null) return "";
-        switch (type) {
-            case TYPE_ICON_PACK_CONTRIBUTORS:
-                return getActivity().getResources().getString(R.string.about_contributors_title);
-            case TYPE_DASHBOARD_CONTRIBUTORS:
-                return getActivity().getResources().getString(R.string.about_dashboard_contributors);
-            case TYPE_DASHBOARD_TRANSLATOR:
-                return getActivity().getResources().getString(R.string.about_dashboard_translator);
-            default:
-                return "";
-        }
+        return switch (type) {
+            case TYPE_ICON_PACK_CONTRIBUTORS ->
+                    getActivity().getResources().getString(R.string.about_contributors_title);
+            case TYPE_DASHBOARD_CONTRIBUTORS ->
+                    getActivity().getResources().getString(R.string.about_dashboard_contributors);
+            case TYPE_DASHBOARD_TRANSLATOR ->
+                    getActivity().getResources().getString(R.string.about_dashboard_translator);
+            default -> "";
+        };
     }
 
     private int getResource(int type) {
-        switch (type) {
-            case TYPE_ICON_PACK_CONTRIBUTORS:
-                return R.xml.contributors;
-            case TYPE_DASHBOARD_CONTRIBUTORS:
-                return R.xml.dashboard_contributors;
-            case TYPE_DASHBOARD_TRANSLATOR:
-                return R.xml.dashboard_translator;
-            default:
-                return -1;
-        }
+        return switch (type) {
+            case TYPE_ICON_PACK_CONTRIBUTORS -> R.xml.contributors;
+            case TYPE_DASHBOARD_CONTRIBUTORS -> R.xml.dashboard_contributors;
+            case TYPE_DASHBOARD_TRANSLATOR -> R.xml.dashboard_translator;
+            default -> -1;
+        };
     }
 
     private class CreditsLoader extends AsyncTaskBase {

@@ -390,18 +390,16 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {
-                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
+                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
                     params.setMarginEnd(margin);
-                } else if (card.getLayoutParams() instanceof LinearLayout.LayoutParams) {
+                } else if (card.getLayoutParams() instanceof LinearLayout.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) card.getLayoutParams();
                     if (mImageStyle.getType() == Home.Style.Type.LANDSCAPE ||
                             mImageStyle.getType() == Home.Style.Type.SQUARE) {
                         params.setMargins(margin,
@@ -654,11 +652,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {
-                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
+                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
                     params.setMarginEnd(margin);
                 }
@@ -714,13 +711,12 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                     put("item", "donate");
                                 }}
                         );
-                        if (mContext instanceof CandyBarMainActivity) {
+                        if (mContext instanceof CandyBarMainActivity mainActivity) {
                             if (CandyBarApplication.getConfiguration().getDonationLinks() != null) {
                                 DonationLinksFragment.showDonationLinksDialog(((AppCompatActivity) mContext).getSupportFragmentManager());
                                 break;
                             }
 
-                            CandyBarMainActivity mainActivity = (CandyBarMainActivity) mContext;
                             mainActivity.showSupportDevelopmentDialog();
                         }
                         break;
@@ -783,11 +779,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {
-                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
+                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
                     params.setMarginEnd(margin);
                 }
@@ -847,11 +842,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {
-                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
+                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
                     params.setMarginEnd(margin);
                 }
@@ -907,11 +901,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getHomeGrid() == CandyBarApplication.GridStyle.FLAT) {
-                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
+                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
                     params.setMarginEnd(margin);
                 }

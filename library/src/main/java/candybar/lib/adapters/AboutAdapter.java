@@ -215,8 +215,7 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                         subtitle.getPaddingRight(),
                         subtitle.getPaddingBottom() + mContext.getResources().getDimensionPixelSize(R.dimen.content_margin));
             } else {
-                if (recyclerView.getLayoutParams() instanceof LinearLayout.LayoutParams) {
-                    LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) recyclerView.getLayoutParams();
+                if (recyclerView.getLayoutParams() instanceof LinearLayout.LayoutParams params) {
                     if (urls.length < 7) {
                         params.width = LinearLayout.LayoutParams.WRAP_CONTENT;
                         params.gravity = Gravity.CENTER_HORIZONTAL;
@@ -229,11 +228,10 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getAboutStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT &&
                     card != null) {
-                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
+                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
                     params.setMarginEnd(margin);
                 }
@@ -276,11 +274,10 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getAboutStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT &&
                     card != null) {
-                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
+                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
                     params.setMarginEnd(margin);
                 }
@@ -384,11 +381,10 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             MaterialCardView card = itemView.findViewById(R.id.card);
             if (CandyBarApplication.getConfiguration().getAboutStyle() == CandyBarApplication.Style.PORTRAIT_FLAT_LANDSCAPE_FLAT &&
                     card != null) {
-                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams) {
+                if (card.getLayoutParams() instanceof StaggeredGridLayoutManager.LayoutParams params) {
                     card.setRadius(0f);
                     card.setUseCompatPadding(false);
                     int margin = mContext.getResources().getDimensionPixelSize(R.dimen.card_margin);
-                    StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) card.getLayoutParams();
                     params.setMargins(0, 0, margin, margin);
                     params.setMarginEnd(margin);
                 }

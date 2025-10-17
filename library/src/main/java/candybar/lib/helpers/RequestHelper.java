@@ -237,13 +237,15 @@ public class RequestHelper {
         okhttp3.OkHttpClient okHttpClient = new okhttp3.OkHttpClient();
 
         try {
-            okhttp3.Response response = okHttpClient.newCall(okRequest).execute();
-            boolean success = response.code() > 199 && response.code() < 300;
-            if (!success) {
-                return "Unknown error.";
+            JSONObject responseJson;
+            try (okhttp3.Response response = okHttpClient.newCall(okRequest).execute()) {
+                boolean success = response.code() > 199 && response.code() < 300;
+                if (!success) {
+                    return "Unknown error.";
+                }
+                responseJson = new JSONObject(Objects.requireNonNull(response.body()).string());
             }
-            JSONObject responseJson = new JSONObject(Objects.requireNonNull(response.body()).string());
-            if(responseJson.getString("status").equals("error")) {
+            if (responseJson.getString("status").equals("error")) {
                 return responseJson.getString("error");
             }
         } catch (IOException | JSONException e) {

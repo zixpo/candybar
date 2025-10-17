@@ -34,8 +34,8 @@ public abstract class Extras {
         FAQS("faqs"),
         ABOUT("about");
 
-        public String value;
-        public int idx;
+        public final String value;
+        public final int idx;
 
         Tag(String name) {
             value = name;
@@ -58,22 +58,15 @@ public abstract class Extras {
         ICON_REQUEST_PROPERTY_COMPONENT_NULL;
 
         public String getMessage() {
-            switch (this) {
-                case APPFILTER_NULL:
-                    return "Error: Unable to read appfilter.xml";
-                case DATABASE_ERROR:
-                    return "Error: Unable to read database";
-                case INSTALLED_APPS_NULL:
-                    return "Error: Unable to collect installed apps";
-                case ICON_REQUEST_NULL:
-                    return "Error: Icon request is null";
-                case ICON_REQUEST_PROPERTY_NULL:
-                    return "Error: Icon request property is null";
-                case ICON_REQUEST_PROPERTY_COMPONENT_NULL:
-                    return "Error: Email client component is null";
-                default:
-                    return "Error: Unknown";
-            }
+            return switch (this) {
+                case APPFILTER_NULL -> "Error: Unable to read appfilter.xml";
+                case DATABASE_ERROR -> "Error: Unable to read database";
+                case INSTALLED_APPS_NULL -> "Error: Unable to collect installed apps";
+                case ICON_REQUEST_NULL -> "Error: Icon request is null";
+                case ICON_REQUEST_PROPERTY_NULL -> "Error: Icon request property is null";
+                case ICON_REQUEST_PROPERTY_COMPONENT_NULL -> "Error: Email client component is null";
+                default -> "Error: Unknown";
+            };
         }
 
         public void showToast(Context context) {

@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.util.Patterns;
 import android.webkit.URLUtil;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -36,46 +37,29 @@ public class UrlHelper {
     @Nullable
     public static Drawable getSocialIcon(@NonNull Context context, @NonNull Type type) {
         int color = ConfigurationHelper.getSocialIconColor(context, CandyBarApplication.getConfiguration().getSocialIconColor());
-        switch (type) {
-            case EMAIL:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_email, color);
-            case BEHANCE:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_behance, color);
-            case BLUESKY:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_bluesky, color);
-            case DRIBBBLE:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_dribbble, color);
-            case DISCORD:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_discord, color);                
-            case FACEBOOK:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_facebook, color);
-            case GITHUB:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_github, color);
-            case GITLAB:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_gitlab, color);
-            case GOOGLEPLAY:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_googleplay, color);
-            case INSTAGRAM:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_instagram, color);
-            case KOFI:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_kofi, color);
-            case MASTODON:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_mastodon, color);
-            case MATRIX:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_matrix, color);
-            case PINTEREST:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_pinterest, color);
-            case THREADS:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_threads, color);
-            case TWITTER:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_x, color);
-            case TELEGRAM:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_telegram, color);
-            case TIKTOK:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_tiktok, color);
-            default:
-                return getTintedDrawable(context, R.drawable.ic_toolbar_website, color);
-        }
+        @DrawableRes
+        int drawableRes = switch (type) {
+            case EMAIL -> R.drawable.ic_toolbar_email;
+            case BEHANCE -> R.drawable.ic_toolbar_behance;
+            case BLUESKY -> R.drawable.ic_toolbar_bluesky;
+            case DRIBBBLE -> R.drawable.ic_toolbar_dribbble;
+            case DISCORD -> R.drawable.ic_toolbar_discord;
+            case FACEBOOK -> R.drawable.ic_toolbar_facebook;
+            case GITHUB -> R.drawable.ic_toolbar_github;
+            case GITLAB -> R.drawable.ic_toolbar_gitlab;
+            case GOOGLEPLAY -> R.drawable.ic_toolbar_googleplay;
+            case INSTAGRAM -> R.drawable.ic_toolbar_instagram;
+            case KOFI -> R.drawable.ic_toolbar_kofi;
+            case MASTODON -> R.drawable.ic_toolbar_mastodon;
+            case MATRIX -> R.drawable.ic_toolbar_matrix;
+            case PINTEREST -> R.drawable.ic_toolbar_pinterest;
+            case THREADS -> R.drawable.ic_toolbar_threads;
+            case TWITTER -> R.drawable.ic_toolbar_x;
+            case TELEGRAM -> R.drawable.ic_toolbar_telegram;
+            case TIKTOK -> R.drawable.ic_toolbar_tiktok;
+            default -> R.drawable.ic_toolbar_website;
+        };
+        return getTintedDrawable(context, drawableRes, color);
     }
 
     public static Type getType(String url) {
