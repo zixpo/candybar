@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -167,21 +168,34 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     @NonNull
     public abstract ActivityConfiguration onInit();
 
+    private final OnBackPressedCallback backPressedCallback = new OnBackPressedCallback(true) {
+        @Override
+        public void handleOnBackPressed() {
+            if (mFragManager.getBackStackEntryCount() > 0) {
+                clearBackStack();
+                return;
+            }
+
+            if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+                mDrawerLayout.closeDrawers();
+                return;
+            }
+
+            if (mFragmentTag != Extras.Tag.HOME) {
+                mPosition = mLastPosition = 0;
+                setFragment(getFragment(mPosition));
+            }
+        }
+    };
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         final boolean isMaterialYou = Preferences.get(this).isMaterialYou();
-        final int nightMode;
-        switch (Preferences.get(this).getTheme()) {
-            case LIGHT:
-                nightMode = AppCompatDelegate.MODE_NIGHT_NO;
-                break;
-            case DARK:
-                nightMode = AppCompatDelegate.MODE_NIGHT_YES;
-                break;
-            default:
-                nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-                break;
-        }
+        final int nightMode = switch (Preferences.get(this).getTheme()) {
+            case LIGHT -> AppCompatDelegate.MODE_NIGHT_NO;
+            case DARK -> AppCompatDelegate.MODE_NIGHT_YES;
+            default -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        };
         AppCompatDelegate.setDefaultNightMode(nightMode);
 
         LocaleHelper.setLocale(this);
@@ -202,6 +216,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
         initNavigationView(toolbar);
         initNavigationViewHeader();
+        registerBackPressHandler();
 
         ViewCompat.setOnApplyWindowInsetsListener(toolbar, (v, insets) -> {
             ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
@@ -432,24 +447,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         super.onSaveInstanceState(outState);
     }
 
-    @Override
-    public void onBackPressed() {
-        if (mFragManager.getBackStackEntryCount() > 0) {
-            clearBackStack();
-            return;
-        }
-
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-            mDrawerLayout.closeDrawers();
-            return;
-        }
-
-        if (mFragmentTag != Extras.Tag.HOME) {
-            mPosition = mLastPosition = 0;
-            setFragment(getFragment(mPosition));
-            return;
-        }
-        super.onBackPressed();
+    private void registerBackPressHandler() {
+        getOnBackPressedDispatcher().addCallback(backPressedCallback);
     }
 
     @Override
@@ -991,10 +990,11 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         Menu menu = mNavigationView.getMenu();
         menu.getItem(mPosition).setChecked(true);
         mToolbarTitle.setText(menu.getItem(mPosition).getTitle());
+
+        backPressedCallback.setEnabled(mFragmentTag != Extras.Tag.HOME);
     }
 
     private Fragment getFragment(int position) {
-        mFragmentTag = Extras.Tag.HOME;
         if (position == Extras.Tag.HOME.idx) {
             mFragmentTag = Extras.Tag.HOME;
             return new HomeFragment();
@@ -1023,6 +1023,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             mFragmentTag = Extras.Tag.ABOUT;
             return new AboutFragment();
         }
+
+        mFragmentTag = Extras.Tag.HOME;
         return new HomeFragment();
     }
 
