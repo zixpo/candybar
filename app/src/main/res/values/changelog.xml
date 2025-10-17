@@ -19,6 +19,7 @@
         <item>Updated translations</item>
         <item>Updated Gradle and AGP</item>
         <item>Updated dependencies</item>
+        <item>Fixed issue with predictive back gesture</item>
     </string-array>
 
 </resources>

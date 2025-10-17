@@ -4,6 +4,10 @@
 
 [//]: # (TODO: Fix images with transparent background showing placeholder in translators dialog)
 
+# v3.22.1
+- Fixed issue with predictive back gesture
+- Minor fixes
+
 # v3.22.0
 - Improved CandyBar for library usage (thanks to [@moertel][c1])
 - Added support for Ion Launcher and mLauncher (thanks to [@GitGitro](https://github.com/GitGitro))
