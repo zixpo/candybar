@@ -623,7 +623,7 @@ public class LauncherHelper {
                 "Yasan",
                 R.drawable.ic_launcher_yasan,
                 new String[]{"yasan.space.mnml.ai.launcher"},
-                NO_SETTINGS_ACTIVITY,
+                "yasan.space.mnml.ai.launcher.SettingsActivity",
                 (context, launcherPackageName) -> new Intent("yasan.space.mnml.ai.launcher.APPLY_ICONS")
                         .putExtra("packageName", context.getPackageName()),
                 MANUAL_APPLY_NOT_SUPPORTED
