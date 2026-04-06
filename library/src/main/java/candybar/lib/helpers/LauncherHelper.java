@@ -619,6 +619,15 @@ public class LauncherHelper {
                 DIRECT_APPLY_NOT_SUPPORTED,
                 (context, launcherName) -> new String[]{} // FIXME: Opens app without instructions
         ),
+        YASAN(
+                "Yasan",
+                R.drawable.ic_launcher_yasan,
+                new String[]{"yasan.space.mnml.ai.launcher"},
+                NO_SETTINGS_ACTIVITY,
+                (context, launcherPackageName) -> new Intent("yasan.space.mnml.ai.launcher.APPLY_ICONS")
+                        .putExtra("packageName", context.getPackageName()),
+                MANUAL_APPLY_NOT_SUPPORTED
+        ),
         ZENUI(
                 "ZenUI",
                 R.drawable.ic_launcher_zenui,
