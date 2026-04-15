@@ -41,7 +41,6 @@ android {
 
     defaultConfig {
         minSdkVersion rootProject.ext.MinSdk
-        targetSdkVersion rootProject.ext.TargetSdk
     }
 
     buildTypes {
@@ -56,6 +55,12 @@ android {
             withSourcesJar()
             withJavadocJar()
         }
+    }
+    lint {
+        targetSdk 36
+    }
+    testOptions {
+        targetSdk 36
     }
 }
 

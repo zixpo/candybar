@@ -50,7 +50,6 @@ android {
 
     defaultConfig {
         minSdkVersion rootProject.ext.MinSdk
-        targetSdkVersion rootProject.ext.TargetSdk
         vectorDrawables.useSupportLibrary true
         buildConfigField 'String', 'VERSION_NAME', "\"${rootProject.ext.VersionName}\""
     }
@@ -79,10 +78,14 @@ android {
     lint {
         abortOnError false
         disable 'MissingTranslation'
+        targetSdk 36
     }
 
     buildFeatures {
         buildConfig = true
+    }
+    testOptions {
+        targetSdk 36
     }
 }
 
