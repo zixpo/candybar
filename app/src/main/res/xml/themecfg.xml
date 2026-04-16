@@ -2,9 +2,9 @@
 <theme>
     <version>1</version>
 
-    <pkgName>com.your.package.name.here</pkgName>
-    <themeName>Your Icon Pack Name</themeName>
-    <themeInfo>Info</themeInfo>
+    <pkgName>com.candybar.dev</pkgName>
+    <themeName>Furina Icon Pack</themeName>
+    <themeInfo>A Furina-themed icon pack created by sirbl.</themeInfo>
     <preview
         img1="preview1"
         img2="preview2" />

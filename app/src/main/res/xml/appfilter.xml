@@ -1,6 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <item
-        component="ComponentInfo{some.app/some.app.MainActivity}"
-        drawable="icon_1" />
+    <!-- Juegos -->
+    <item component="ComponentInfo{com.supercell.clashroyale/com.supercell.titan.GameApp}" drawable="furina_sword_h1_1_1" />
+    <item component="ComponentInfo{com.mojang.minecraftpe/com.mojang.minecraftpe.MainActivity}" drawable="furina_sword_h1_1_2" />
+    <item component="ComponentInfo{com.roblox.client/com.roblox.client.StartupActivity}" drawable="furina_sword_h1_1_3" />
+    <item component="ComponentInfo{com.playdigious.deadcells.mobile/com.playdigious.deadcells.mobile.MainActivity}" drawable="furina_sword_h1_1_4" />
+    <item component="ComponentInfo{com.playdigious.skul/com.playdigious.skul.MainActivity}" drawable="furina_sword_h1_1_5" />
+    <item component="ComponentInfo{com.trickcal.re/com.trickcal.re.MainActivity}" drawable="furina_sword_h1_1_8" />
+    <item component="ComponentInfo{com.playdigious.littlenightmares/com.playdigious.littlenightmares.MainActivity}" drawable="furina_hat_light_blue1" />
+    <item component="ComponentInfo{com.ustwo.monumentvalley/com.ustwo.monumentvalley.MainActivity}" drawable="furina_endless_waltz_dark_blue1" />
+    <item component="ComponentInfo{com.cygames.umamusume/jp.co.cygames.umamusume_activity.UmamusumeActivity}" drawable="genshin_character_development__dark_blue1" />
+    <item component="ComponentInfo{com.valvesoftware.android.steam.community/com.valvesoftware.android.steam.community.MainActivity}" drawable="furina_sword_v1_3" />
+    <item component="ComponentInfo{com.valvesoftware.android.steam.community/com.valvesoftware.android.steam.community.SteamMainActivity}" drawable="furina_sword_v1_3" />
+    <item component="ComponentInfo{com.epicgames.portal/com.epicgames.portal.MainActivity}" drawable="furina_sword_h1_1_3" />
+
+    <!-- Comunicación -->
+    <item component="ComponentInfo{com.whatsapp/com.whatsapp.Main}" drawable="whatsapp_dark_blue1" />
+    <item component="ComponentInfo{com.whatsapp/com.whatsapp.HomeActivity}" drawable="whatsapp_dark_blue1" />
+    <item component="ComponentInfo{com.instagram.android/com.instagram.android.activity.MainTabActivity}" drawable="instagram_dark_blue1" />
+    <item component="ComponentInfo{com.instagram.barcelona/com.instagram.barcelona.mainactivity.BarcelonaActivity}" drawable="threads_dark_blue1" />
+    <item component="ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity}" drawable="facebook_dark_blue1" />
+    <item component="ComponentInfo{com.facebook.katana/com.facebook.katana.MainActivity}" drawable="facebook_dark_blue1" />
+    <item component="ComponentInfo{com.discord/com.discord.main.MainActivity}" drawable="discord_dark_blue1" />
+    <item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon}" drawable="telegram_dark_blue1" />
+    <item component="ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity}" drawable="messenger_dark_blue1" />
+    <item component="ComponentInfo{com.linkedin.android/com.linkedin.android.lia.MainActivity}" drawable="linked_in_dark_blue1" />
+    <item component="ComponentInfo{com.ss.android.ugc.aweme/com.ss.android.ugc.aweme.main.MainActivity}" drawable="tiktok_dark_blue1" />
+    <item component="ComponentInfo{com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity}" drawable="tiktok_dark_blue1" />
+    <item component="ComponentInfo{com.twitter.android/com.twitter.android.StartActivity}" drawable="x_dark_blue1" />
+    <item component="ComponentInfo{com.microsoft.teams/com.microsoft.teams.MainActivity}" drawable="teams_dark_blue1" />
+    <item component="ComponentInfo{com.snapchat.android/com.snapchat.android.LandingPageActivity}" drawable="furina_hat_light_blue1" />
+
+    <!-- Google Apps -->
+    <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.ConversationListActivityGmail}" drawable="google_mail_dark_blue1" />
+    <item component="ComponentInfo{com.android.vending/com.google.android.finsky.activities.MainActivity}" drawable="app_store_light_blue1" />
+    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity}" drawable="google_chrome_dark_blue1" />
+    <item component="ComponentInfo{com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}" drawable="google_photos_dark_blue1" />
+    <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity}" drawable="google_maps_dark_blue1" />
+    <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="files_dark_blue1" />
+    <item component="ComponentInfo{com.google.android.apps.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_drive_dark_blue1" />
+    <item component="ComponentInfo{com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.editors.sheets.HomeScreenActivity}" drawable="google_documents_dark_blue1" />
+    <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.activities.MainActivity}" drawable="find_my_phone_light_blue1" />
+    <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.ui.ConversationListActivity}" drawable="messenger_dark_blue1" />
+    <item component="ComponentInfo{com.google.android.keep/com.google.android.apps.keep.ui.MainActivity}" drawable="notes_dark_blue1" />
+    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calender_dark_blue1" />
+
+    <!-- Navegadores -->
+    <item component="ComponentInfo{com.android.chrome/com.google.android.apps.chrome.Main}" drawable="google_chrome_dark_blue1" />
+    <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.BrowserActivity}" drawable="google_chrome_dark_blue1" />
+    <item component="ComponentInfo{com.brave.browser/com.google.android.apps.chrome.Main}" drawable="google_chrome_dark_blue1" />
+
+    <!-- Herramientas de Sistema (ColorOS / OPPO / Realme) -->
+    <item component="ComponentInfo{com.coloros.alarmclock/com.coloros.alarmclock.AlarmClock}" drawable="clock_dark_blue1" />
+    <item component="ComponentInfo{com.oplus.alarmclock/com.oplus.alarmclock.AlarmClock}" drawable="clock_dark_blue1" />
+    <item component="ComponentInfo{com.coloros.calculator/com.android.calculator2.Calculator}" drawable="calculator_dark_blue1" />
+    <item component="ComponentInfo{com.oplus.calculator/com.android.calculator2.Calculator}" drawable="calculator_dark_blue1" />
+    <item component="ComponentInfo{com.coloros.filemanager/com.coloros.filemanager.MainActivity}" drawable="files_dark_blue1" />
+    <item component="ComponentInfo{com.oplus.filemanager/com.oplus.filemanager.main.ui.SplashActivity}" drawable="files_dark_blue1" />
+    <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.MainActivity}" drawable="weather_dark_blue1" />
+    <item component="ComponentInfo{com.oplus.weather2/com.oplus.weather.main.view.WeatherMainActivity}" drawable="weather_dark_blue1" />
+    <item component="ComponentInfo{com.coloros.calendar/com.android.calendar.AllInOneActivity}" drawable="calender_dark_blue1" />
+    <item component="ComponentInfo{com.oplus.calendar/com.android.calendar.AllInOneActivity}" drawable="calender_dark_blue1" />
+    <item component="ComponentInfo{com.coloros.phonemanager/com.coloros.phonemanager.MainActivity}" drawable="settings_dark_blue1" />
+    <item component="ComponentInfo{com.android.settings/com.android.settings.Settings}" drawable="settings_dark_blue1" />
+    <item component="ComponentInfo{com.heytap.music/com.heytap.music.MainActivity}" drawable="music_dark_blue1" />
+    <item component="ComponentInfo{com.oplus.music/com.oplus.music.MainActivity}" drawable="music_dark_blue1" />
+    <item component="ComponentInfo{com.coloros.compass/com.coloros.compass.MainActivity}" drawable="compass_dark_blue1" />
+    <item component="ComponentInfo{com.oplus.compass/com.oplus.compass.MainActivity}" drawable="compass_dark_blue1" />
+    <item component="ComponentInfo{com.oplus.consumerIRApp/com.oplus.consumerIRApp.navigation.HomeActivity}" drawable="furina_hat_dark_blue1" />
+    <item component="ComponentInfo{com.heytap.themestore/com.heytap.themestore.MainActivity}" drawable="furina_sword_v1_4" />
+
+    <!-- Apps Mexicanas / Regionales / Finanzas -->
+    <item component="ComponentInfo{mx.gob.sat.satmovil/mx.gob.sat.satmovil.MainActivity}" drawable="furina_sword_v1_1" />
+    <item component="ComponentInfo{mx.gob.sat.satmovil/mx.gob.sat.satmovil.SplashActivity}" drawable="furina_sword_v1_1" />
+    <item component="ComponentInfo{com.spin.oxxo/com.spin.oxxo.MainActivity}" drawable="furina_sword_h1_1_1" />
+    <item component="ComponentInfo{com.coppel.and/com.coppel.and.MainActivity}" drawable="furina_sword_h1_1_2" />
+    <item component="ComponentInfo{com.cfe.contigo/com.cfe.contigo.MainActivity}" drawable="furina_salon_solitair_dark_blue1" />
+    <item component="ComponentInfo{com.ado.main/com.ado.main.MainActivity}" drawable="furina_sword_h1_1_4" />
+    <item component="ComponentInfo{com.mercadolibre/com.mercadolibre.reseller.ResellerActivity}" drawable="paypal_dark_blue1" />
+    <item component="ComponentInfo{com.walmart.android.cashi/com.walmart.android.cashi.MainActivity}" drawable="wallet_dark_blue1" />
+    <item component="ComponentInfo{com.nu.production/com.nu.production.MainActivity}" drawable="furina_sword_h1_1_5" />
+
+    <!-- Otros -->
+    <item component="ComponentInfo{com.einnovation.temu/com.einnovation.temu.MainActivity}" drawable="temu_dark_blue1" />
+    <item component="ComponentInfo{com.alibaba.aliexpress/com.alibaba.aliexpress.module.launcher.MainActivity}" drawable="furina_hat_dark_blue1" />
+    <item component="ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}" drawable="amazon_dark_blue1" />
+    <item component="ComponentInfo{com.niksoftware.snapseed/com.google.android.apps.snapseed.MainActivity}" drawable="furina_sword_v1_4" />
+    <item component="ComponentInfo{com.junkfood.seal/com.junkfood.seal.ui.MainActivity}" drawable="music_dark_blue1" />
+    <item component="ComponentInfo{com.patreon.android/com.patreon.android.ui.HomeActivity}" drawable="furina_hydro_dark_blue1" />
+    <item component="ComponentInfo{jp.pxv.android/jp.pxv.android.MainActivity}" drawable="furina_hydro_light_blue1" />
+    <item component="ComponentInfo{com.huawei.appmarket/com.huawei.appmarket.MainActivity}" drawable="app_store_light_blue1" />
+    <item component="ComponentInfo{com.mihoyo.hoyolab/com.mihoyo.hoyolab.main.MainActivity}" drawable="hoyolab_dark_blue1" />
+    <item component="ComponentInfo{com.crunchyroll.crunchyroid/com.crunchyroll.crunchyroid.MainActivity}" drawable="crunchy_roll_dark_blue1" />
 </resources>
