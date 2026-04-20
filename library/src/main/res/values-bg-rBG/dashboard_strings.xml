@@ -90,6 +90,7 @@
     <!-- Apply -->
     <string name="apply_installed">Инсталиран Лаунчер</string>
     <string name="apply_supported">Поддържани Лаунчери</string>
+    <string name="apply_manual_samsung_oneui_step_1"></string>
     <string name="apply_launch_failed">Настройките не могат да се стартират</string>
     <string name="apply_launcher_not_installed">Лаунчера не е инсталиран.  Искате ли да отворите Google Play Store, за да го изтеглите и инсталирате?</string>
     <string name="apply_launcher_not_installable">Лаунчера не е инсталиран.  Моля, опитайте отново, след като инсталирате лаунчера.</string>

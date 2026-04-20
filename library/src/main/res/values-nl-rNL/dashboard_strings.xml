@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="splash_screen_title">CandyBar Material Dashboard</string>
     <!-- Navigation View -->
-    <string name="navigation_view_home">Home</string>
+    <string name="navigation_view_home">Thuis</string>
     <string name="navigation_view_apply">Toepassen</string>
     <string name="navigation_view_icons">Iconen</string>
     <string name="navigation_view_request">Icoonverzoek</string>
@@ -63,11 +63,11 @@
     <string name="playstore_check_failed">Het lijkt erop dat je dit icoonpakket hebt geïnstalleerd van buiten de Google Play Store. Je kunt het niet gebruiken.</string>
     <!-- Share -->
     <string name="share_app_title">Yo! Bekijk %s</string>
-    <string name="share_app_body">Bekijk %1$s, dit pictogrampakket is erg cool! %2$s</string>
+    <string name="share_app_body">Bekijk %1$s, dit icoonpakket is erg cool! %2$s</string>
     <!-- Tap Intro -->
     <string name="tap_intro_home_navigation">Navigatiemenu</string>
     <string name="tap_intro_home_navigation_desc">Klik hier of veeg vanaf de linkerkant van het scherm om het navigatiemenu te openen</string>
-    <string name="tap_intro_home_apply">Pictogrampakket toepassen</string>
+    <string name="tap_intro_home_apply">Icoonpakket toepassen</string>
     <string name="tap_intro_home_apply_desc">Tik hier om %s toe te passen op je huidige launcher. Druk lang om toe te passen op andere launchers.</string>
     <string name="tap_intro_icons_search">Zoeken</string>
     <string name="tap_intro_icons_search_desc">Klik hier om een icoon te zoeken</string>
@@ -189,13 +189,13 @@
     <string name="request_requested_button_cancel">Terug</string>
     <string name="request_requested_button_confirm">Toch selecteren</string>
     <string name="request_email_client">Kies een app die je wilt meesturen in de icoonaanvraag</string>
-    <string name="request_app_disabled">Je gebruikt een oudere versie van dit icoonpakket. De verzochte pictogrammen zijn mogelijk al toegevoegd. App alsjeblieft bijwerken naar de laatste versie om iconen aan te vragen.</string>
+    <string name="request_app_disabled">Je gebruikt een oudere versie van dit icoonpakket. De verzochte iconen zijn mogelijk al toegevoegd. Update de app naar de laatste versie om iconen aan te vragen.</string>
     <string name="connection_error_long">Kan geen gegevens laden van de server. Controleer je netwerkverbinding.</string>
     <string name="unable_to_load_config">Fout bij het ophalen/lezen van gegevens van de server.</string>
     <string name="request_limit">Je kunt slechts %d verzoek(en) doen met reguliere aanvraag.</string>
     <string name="request_used">Je hebt %d iconen aangevraagd.</string>
     <string name="request_limit_buy">Je kunt Premium aanvragen kopen om meer iconen aan te vragen.</string>
-    <string name="request_limit_reset">Icoonaanvraaglimiet wordt gereset bij iedere update.</string>
+    <string name="request_limit_reset">Icoonaanvraaglimiet wordt teruggezet bij iedere update.</string>
     <!-- Regular Request -->
     <string name="regular_request">Reguliere icoonaanvraag</string>
     <string name="regular_request_desc">Vraag je icoon aan en de ontwikkelaar zal deze proberen toe te voegen.</string>
@@ -283,9 +283,9 @@
     <string name="permission_notification_denied_2">Activeer meldingen van de app instellingen</string>
     <!-- Intent -->
     <string name="app_client">App kiezen</string>
-    <string name="no_email_app">Geen toepassing om e-mail te verzenden</string>
+    <string name="no_email_app">Geen app om e-mail te verzenden</string>
     <string name="no_browser">Geen app om URL te openen</string>
-    <string name="intent_email_failed">Kan e-mailtoepassing niet weergeven</string>
+    <string name="intent_email_failed">Kan e-mailapp niet weergeven</string>
     <string name="intent_email_supported">Ondersteund</string>
     <string name="intent_email_recommended">Aanbevolen</string>
     <string name="intent_email_not_supported">Niet ondersteund</string>
