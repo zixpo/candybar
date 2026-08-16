@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Iconos</string>
     <string name="navigation_view_request">Solicitud de iconos</string>
     <string name="navigation_view_wallpapers">Fondos de pantalla</string>
+    <string name="navigation_view_wallpaper_app">App de fondos</string>
     <string name="navigation_view_presets">Preajustes</string>
     <string name="navigation_view_settings">Ajustes</string>
     <string name="navigation_view_faqs">Preguntas frecuentes</string>

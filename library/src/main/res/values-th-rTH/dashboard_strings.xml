@@ -6,7 +6,8 @@
     <string name="navigation_view_apply">ใช้งาน</string>
     <string name="navigation_view_icons">ไอคอน</string>
     <string name="navigation_view_request">คำขอไอคอน</string>
-    <string name="navigation_view_wallpapers">วอลเปเปอร์</string>
+    <string name="navigation_view_wallpapers">ภาพพื้นหลัง</string>
+    <string name="navigation_view_wallpaper_app">แอปภาพพื้นหลัง</string>
     <string name="navigation_view_presets">ชุดรูปแบบ</string>
     <string name="navigation_view_settings">การตั้งค่า</string>
     <string name="navigation_view_faqs">ถาม-ตอบ</string>
