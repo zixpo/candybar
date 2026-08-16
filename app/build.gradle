@@ -8,14 +8,14 @@ android {
             storeFile file('candybar.jks')
             storePassword 'candybar'
 
-            v1SigningEnabled true
-            v2SigningEnabled true
+            v1SigningEnabled = true
+            v2SigningEnabled = true
         }
     }
 
     compileSdk = rootProject.ext.CompileSdk
 
-    namespace 'com.candybar.dev'
+    namespace = 'com.candybar.dev'
 
     defaultConfig {
         applicationId 'com.candybar.dev'
@@ -38,8 +38,8 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
-            minifyEnabled true
+            signingConfig = signingConfigs.release
+            minifyEnabled = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -49,7 +49,7 @@ android {
     }
 
     lint {
-        abortOnError false
+        abortOnError = false
     }
 }
 
