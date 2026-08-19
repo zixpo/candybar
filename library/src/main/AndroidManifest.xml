@@ -72,6 +72,11 @@
         <service
             android:name="candybar.lib.services.CandyBarService"
             android:stopWithTask="false" />
+
+        <provider
+            android:name="candybar.lib.providers.IconsProvider"
+            android:authorities="${applicationId}.icons"
+            android:exported="true" />
     </application>
 
 </manifest>

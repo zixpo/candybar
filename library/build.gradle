@@ -105,6 +105,10 @@ dependencies {
     api 'dev.jahir.KustomAPI:api:6369c37'
     api 'dev.jahir.KustomAPI:preset:6369c37'
 
+    // Local, on device search index used by the icon tag search (see candybar.lib.search)
+    api 'androidx.appsearch:appsearch:1.1.0'
+    implementation 'androidx.appsearch:appsearch-local-storage:1.1.0'
+
     implementation 'androidx.work:work-runtime:2.10.5'
     implementation 'androidx.recyclerview:recyclerview:1.4.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'

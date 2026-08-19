@@ -142,6 +142,21 @@
         Disabling this will improve performance and icons will load faster (because there is no sorting to do) -->
     <bool name="enable_icons_sort">true</bool>
 
+    <!-- Enable/disable icon tags
+        Enabling this will read tags from res/xml/icon_tags.xml which allows to add tags to icons,
+        so they have more chances to show up in search for users -->
+    <bool name="enable_icons_tag_search">false</bool>
+    <string name="icon_tags_xml">icon_tags</string>
+
+    <!-- Enable/disable icon substring search
+        KNOW THE IMPLICATIONS: The search index is optimized for prefix search. Lookup is usually
+        in the range of 1.5ms, full search round trip is 3-7ms when this value is `false`.
+        If set to `true`, all icons will be loaded and compared against the query. Latency for this
+        can reach 100ms or more depending on icon pack size, which can be a visible delay in the UI.
+
+        For apps with names like "My Verizon", consider adding a tag "Verizon" -->
+    <bool name="enable_icons_substring_search">false</bool>
+
     <!-- Shows icon's name below the icon, in "Icons" section -->
     <bool name="show_icon_name">true</bool>
 

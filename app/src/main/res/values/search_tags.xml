@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Translatable tag values for the icon tag search.
+
+    Reference them from res/xml/icon_tags.xml with @string/tag_name.
+    Search runs against the translated value, so a German user
+    searching "kamera" will find an icon tagged @string/tag_camera
+    if that string is translated accordingly.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="tag_energy">energy</string>
+    <string name="tag_weather">weather</string>
+    <string name="tag_battery">battery</string>
+    <string name="tag_sun">sun</string>
+    <string name="tag_green">green</string>
+    <string name="tag_orange">orange</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Example tag map for improved icon search.
+
+    Each <icon> points at a drawable and lists the tags a user might search for
+    to find it. Tags usually reference @string/... values (kept in
+    res/values/search_tags.xml) so they can be translated. Useful if an app
+    title is "camera" but a German user might rather search for "Kamera".
+
+    Adding, removing, or changing entries here needs no code change.
+    The tag search rebuilds its index from this file.
+
+    All entries are case-insensitive.
+-->
+<icons>
+    <icon drawable="@drawable/accubattery">
+        <tag value="@string/tag_energy" />
+        <tag value="@string/tag_battery" />
+        <tag value="@string/tag_green" />
+    </icon>
+    <icon drawable="@drawable/accuweather">
+        <tag value="@string/tag_sun" />
+        <tag value="@string/tag_orange" />
+        <tag value="@string/tag_weather" />
+    </icon>
+</icons>

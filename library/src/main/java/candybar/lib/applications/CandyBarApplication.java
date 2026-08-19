@@ -21,6 +21,7 @@ import java.util.Map;
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarCrashReport;
 import candybar.lib.databases.Database;
+import candybar.lib.helpers.AppSearchHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
@@ -89,6 +90,7 @@ public abstract class CandyBarApplication extends Application {
         }
 
         LocaleHelper.setLocale(this);
+        AppSearchHelper.getInstance(this).initAsync(this);
     }
 
     private void handleUncaughtException(Thread thread, Throwable throwable) {

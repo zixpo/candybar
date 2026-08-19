@@ -389,19 +389,13 @@ public class IconsAdapter extends RecyclerView.Adapter<IconsAdapter.ViewHolder> 
             mIconsAll = mIcons;
         }
 
-        String query = string.toLowerCase(Locale.ENGLISH).trim();
+        String query = string.toLowerCase(Locale.getDefault()).trim();
 
         mIcons = new ArrayList<>();
         if (query.isEmpty()) mIcons.addAll(mIconsAll);
         else {
-            for (int i = 0; i < mIconsAll.size(); i++) {
-                Icon icon = mIconsAll.get(i);
-                String name = icon.getTitle();
-                name = name.toLowerCase(Locale.ENGLISH);
-                if (name.contains(query)) {
-                    mIcons.add(icon);
-                }
-            }
+            boolean substring = mContext.getResources().getBoolean(R.bool.enable_icons_substring_search);
+            mIcons = IconsHelper.search(mContext, query, substring);
         }
 
         if (mIcons.isEmpty()) {

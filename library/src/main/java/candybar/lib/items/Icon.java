@@ -2,8 +2,10 @@ package candybar.lib.items;
 
 import androidx.annotation.NonNull;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import candybar.lib.utils.AlphanumComparator;
 
@@ -30,6 +32,7 @@ public class Icon {
     private String mDrawableName;
     private String mCustomName;
     private String mTitle;
+    private Set<String> mTags;
     private int mRes;
     private String mPackageName;
     private List<Icon> mIcons;
@@ -88,6 +91,10 @@ public class Icon {
     public void setPackageName(String packageName) {
         mPackageName = packageName;
     }
+
+    public void setTags(Set<String> tags) { mTags = tags; }
+
+    public Set<String> getTags() { return (mTags != null) ? mTags : Collections.emptySet(); }
 
     @Override
     public boolean equals(Object object) {
