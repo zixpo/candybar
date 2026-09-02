@@ -323,13 +323,33 @@ public class LauncherHelper {
                         .putExtra("packageName", context.getPackageName()),
                 (context, launcherName) -> new String[]{} // FIXME: Opens app without instructions
         ),
+        LAWNCHAIR_NIGHTLY(
+                "Lawnchair Nightly",
+                R.drawable.ic_launcher_lawnchair_nightly,
+                new String[]{"app.lawnchair.nightly"},
+                "app.lawnchair.ui.preferences.PreferenceActivity",
+                DIRECT_APPLY_NOT_SUPPORTED,
+                (context, launcherName) -> new String[]{
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_1),
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_2),
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_3),
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_4),
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_5, context.getResources().getString(R.string.app_name)),
+                }
+        ),
         LAWNCHAIR(
                 "Lawnchair",
                 R.drawable.ic_launcher_lawnchair,
                 new String[]{"app.lawnchair", "app.lawnchair.play"},
                 "app.lawnchair.ui.preferences.PreferenceActivity",
                 DIRECT_APPLY_NOT_SUPPORTED,
-                (context, launcherName) -> new String[]{} // FIXME: Opens app without instructions
+                (context, launcherName) -> new String[]{
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_1),
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_2),
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_3),
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_4),
+                        context.getResources().getString(R.string.apply_manual_lawnchair_step_5, context.getResources().getString(R.string.app_name)),
+                }
         ),
         LGHOME( /* INCOMPATIBLE */
                 "LG Home",
