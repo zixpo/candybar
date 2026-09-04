@@ -23,7 +23,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.FileHelper;
@@ -45,7 +45,6 @@ import candybar.lib.fragments.dialog.ChangelogFragment;
 import candybar.lib.fragments.dialog.LanguagesFragment;
 import candybar.lib.fragments.dialog.ThemeChooserFragment;
 import candybar.lib.helpers.ReportBugsHelper;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Setting;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.tasks.IconRequestTask;
@@ -241,12 +240,9 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                     put("item", "clear_cache");
                                 }}
                         );
-                        new MaterialDialog.Builder(mContext)
-                                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                                .content(R.string.pref_data_cache_clear_dialog)
-                                .positiveText(R.string.clear)
-                                .negativeText(android.R.string.cancel)
-                                .onPositive((dialog, which) -> {
+                        new MaterialAlertDialogBuilder(mContext)
+                                .setMessage(R.string.pref_data_cache_clear_dialog)
+                                .setPositiveButton(R.string.clear, (dialog, which) -> {
                                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                             "click",
                                             new HashMap<>() {{
@@ -272,7 +268,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                         LogUtil.e(Log.getStackTraceString(e));
                                     }
                                 })
-                                .onNegative(((dialog, which) -> {
+                                .setNegativeButton(android.R.string.cancel, ((dialog, which) -> {
                                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                             "click",
                                             new HashMap<>() {{
@@ -293,12 +289,9 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                     put("item", "clear_icon_request_data");
                                 }}
                         );
-                        new MaterialDialog.Builder(mContext)
-                                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                                .content(R.string.pref_data_request_clear_dialog)
-                                .positiveText(R.string.clear)
-                                .negativeText(android.R.string.cancel)
-                                .onPositive((dialog, which) -> {
+                        new MaterialAlertDialogBuilder(mContext)
+                                .setMessage(R.string.pref_data_request_clear_dialog)
+                                .setPositiveButton(R.string.clear, (dialog, which) -> {
                                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                             "click",
                                             new HashMap<>() {{
@@ -315,7 +308,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                     Toast.makeText(mContext, R.string.pref_data_request_cleared,
                                             Toast.LENGTH_LONG).show();
                                 })
-                                .onNegative(((dialog, which) -> {
+                                .setNegativeButton(android.R.string.cancel, ((dialog, which) -> {
                                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                                             "click",
                                             new HashMap<>() {{

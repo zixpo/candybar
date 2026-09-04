@@ -10,8 +10,10 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.view.LayoutInflater;
+import android.view.View;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -61,25 +63,27 @@ public class ReportBugsHelper {
     private static final String UTF8 = "UTF8";
 
     public static void prepareReportBugs(@NonNull Context context) {
-        MaterialDialog dialog = new MaterialDialog.Builder(context)
-                .customView(R.layout.dialog_report_bugs, true)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .positiveText(R.string.report_bugs_send)
-                .negativeText(R.string.close)
-                .build();
+        View view = LayoutInflater.from(context).inflate(R.layout.dialog_report_bugs, null);
+        AlertDialog dialog = new MaterialAlertDialogBuilder(context)
+                .setView(view)
+                .setPositiveButton(R.string.report_bugs_send, null)
+                .setNegativeButton(R.string.close, null)
+                .create();
 
-        EditText editText = (EditText) dialog.findViewById(R.id.input_desc);
-        TextInputLayout inputLayout = (TextInputLayout) dialog.findViewById(R.id.input_layout);
+        EditText editText = view.findViewById(R.id.input_desc);
+        TextInputLayout inputLayout = view.findViewById(R.id.input_layout);
 
-        dialog.getActionButton(DialogAction.POSITIVE).setOnClickListener(view -> {
-            if (editText.getText().length() != 0) {
-                inputLayout.setErrorEnabled(false);
-                new ReportBugsTask(context, editText.getText().toString()).executeOnThreadPool();
-                dialog.dismiss();
-                return;
-            }
+        dialog.setOnShowListener(d -> {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
+                if (editText.getText().length() != 0) {
+                    inputLayout.setErrorEnabled(false);
+                    new ReportBugsTask(context, editText.getText().toString()).executeOnThreadPool();
+                    dialog.dismiss();
+                    return;
+                }
 
-            inputLayout.setError(context.getResources().getString(R.string.report_bugs_desc_empty));
+                inputLayout.setError(context.getResources().getString(R.string.report_bugs_desc_empty));
+            });
         });
         dialog.show();
     }

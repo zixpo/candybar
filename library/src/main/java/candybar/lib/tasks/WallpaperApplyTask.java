@@ -15,7 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.widget.ProgressBar;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.ColorHelper;
@@ -59,7 +61,7 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
     private Apply mApply;
     private RectF mRectF;
     private Wallpaper mWallpaper;
-    private MaterialDialog mDialog;
+    private AlertDialog mDialog;
 
     public WallpaperApplyTask(@NonNull Context context, @NonNull Wallpaper wallpaper) {
         mContext = new WeakReference<>(context);
@@ -85,18 +87,14 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
                 color = ColorHelper.getAttributeColor(mContext.get(), com.google.android.material.R.attr.colorSecondary);
             }
 
-            final MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext.get());
-            builder.widgetColor(color)
-                    .typeface(TypefaceHelper.getMedium(mContext.get()), TypefaceHelper.getRegular(mContext.get()))
-                    .progress(true, 0)
-                    .cancelable(false)
-                    .progressIndeterminateStyle(true)
-                    .content(R.string.wallpaper_loading)
-                    .positiveColor(color)
-                    .positiveText(android.R.string.cancel)
-                    .onPositive((dialog, which) -> cancel(true));
+            ProgressBar progressBar = new ProgressBar(mContext.get());
+            final AlertDialog.Builder builder = new MaterialAlertDialogBuilder(mContext.get());
+            builder.setMessage(R.string.wallpaper_loading)
+                    .setView(progressBar)
+                    .setCancelable(false)
+                    .setPositiveButton(android.R.string.cancel, (dialog, which) -> cancel(true));
 
-            mDialog = builder.build();
+            mDialog = builder.create();
         }
 
         if (!mDialog.isShowing()) mDialog.show();
@@ -233,7 +231,7 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
                              */
                             LogUtil.d(String.format(Locale.getDefault(), "loaded bitmap: %d x %d",
                                     loadedBitmap.getWidth(), loadedBitmap.getHeight()));
-                            runOnUiThread(() -> mDialog.setContent(R.string.wallpaper_applying));
+                            runOnUiThread(() -> mDialog.setMessage(mContext.get().getResources().getString(R.string.wallpaper_applying)));
 
                             Bitmap bitmap = loadedBitmap;
                             if (Preferences.get(mContext.get()).isCropWallpaper() && adjustedRectF != null) {

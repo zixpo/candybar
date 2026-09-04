@@ -31,7 +31,7 @@ import candybar.lib.items.Request;
 import candybar.lib.tasks.IconRequestBuilderTask;
 import candybar.lib.tasks.PremiumRequestBuilderTask;
 import candybar.lib.utils.AsyncTaskBase;
-import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
+import android.widget.ProgressBar;
 
 /*
  * CandyBar - Material Dashboard
@@ -166,7 +166,7 @@ public class IntentAdapter extends BaseAdapter {
         private final TextView type;
         private final ImageView icon;
         private final LinearLayout container;
-        private final MaterialProgressBar progressBar;
+        private final ProgressBar progressBar;
 
         ViewHolder(View view) {
             name = view.findViewById(R.id.name);

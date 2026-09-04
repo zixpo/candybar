@@ -43,7 +43,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.android.billingclient.api.AcknowledgePurchaseParams;
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingFlowParams;
@@ -96,7 +96,6 @@ import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.ThemeHelper;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
@@ -665,11 +664,10 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     (billingResult, s) -> {
                         if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
                             Preferences.get(this).setInAppBillingType(-1);
-                            runOnUiThread(() -> new MaterialDialog.Builder(this)
-                                    .typeface(TypefaceHelper.getMedium(this), TypefaceHelper.getRegular(this))
-                                    .title(R.string.navigation_view_donate)
-                                    .content(R.string.donation_success)
-                                    .positiveText(R.string.close)
+                            runOnUiThread(() -> new MaterialAlertDialogBuilder(this)
+                                    .setTitle(R.string.navigation_view_donate)
+                                    .setMessage(R.string.donation_success)
+                                    .setPositiveButton(R.string.close, null)
                                     .show());
                         } else {
                             LogUtil.e("Failed to consume donation product. Response Code: " + billingResult.getResponseCode());

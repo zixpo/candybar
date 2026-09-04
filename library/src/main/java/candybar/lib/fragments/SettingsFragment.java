@@ -20,7 +20,9 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.widget.ProgressBar;
 import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
@@ -39,7 +41,6 @@ import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Language;
 import candybar.lib.items.Request;
 import candybar.lib.items.Setting;
@@ -231,7 +232,7 @@ public class SettingsFragment extends Fragment {
 
     private class PremiumRequestRebuilder extends AsyncTaskBase {
 
-        private MaterialDialog dialog;
+        private AlertDialog dialog;
         private boolean isPacific;
         private String pacificApiKey;
         private boolean isCustom;
@@ -246,14 +247,12 @@ public class SettingsFragment extends Fragment {
             isCustom = RequestHelper.isPremiumCustomEnabled(requireActivity());
             isPremium = true;
 
-            dialog = new MaterialDialog.Builder(requireActivity())
-                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                    .content(R.string.premium_request_rebuilding)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .progress(true, 0)
-                    .progressIndeterminateStyle(true)
-                    .build();
+            ProgressBar progressBar = new ProgressBar(requireActivity());
+            dialog = new MaterialAlertDialogBuilder(requireActivity())
+                    .setMessage(R.string.premium_request_rebuilding)
+                    .setCancelable(false)
+                    .setView(progressBar)
+                    .create();
 
             dialog.show();
         }

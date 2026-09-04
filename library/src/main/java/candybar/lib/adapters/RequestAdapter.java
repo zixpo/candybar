@@ -20,7 +20,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -34,7 +34,6 @@ import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.CandyBarGlideModule;
@@ -235,11 +234,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 contentViewHolder.infoIcon.setImageDrawable(AppCompatResources.getDrawable(mContext, R.drawable.ic_drawer_about));
                 contentViewHolder.infoIcon.setColorFilter(mTextColorSecondary);
                 int pos = finalPosition;
-                contentViewHolder.infoIcon.setOnClickListener(v -> new MaterialDialog.Builder(mContext)
-                        .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                        .title(mRequests.get(pos).getName())
-                        .content(mRequests.get(pos).getInfoText())
-                        .positiveText(android.R.string.yes)
+                contentViewHolder.infoIcon.setOnClickListener(v -> new MaterialAlertDialogBuilder(mContext)
+                        .setTitle(mRequests.get(pos).getName())
+                        .setMessage(mRequests.get(pos).getInfoText())
+                        .setPositiveButton(android.R.string.yes, null)
                         .show());
             }
 
@@ -507,16 +505,12 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 if (isDuplicateRequestAllowed) {
                     // Icon was already requested but re-request is allowed
                     // Ask user if they really want to re-request the icon
-                    new MaterialDialog.Builder(mContext)
-                            .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                            .title(R.string.request_already_requested)
-                            .content(R.string.request_requested_possible)
-                            .cancelable(false)
-                            .canceledOnTouchOutside(false)
-                            .negativeText(R.string.request_requested_button_cancel)
-                            .onNegative((dialog, which) -> toggleListener.onNegativeResult())
-                            .positiveText(R.string.request_requested_button_confirm)
-                            .onPositive((dialog, which) -> {
+                    new MaterialAlertDialogBuilder(mContext)
+                            .setTitle(R.string.request_already_requested)
+                            .setMessage(R.string.request_requested_possible)
+                            .setCancelable(false)
+                            .setNegativeButton(R.string.request_requested_button_cancel, (dialog, which) -> toggleListener.onNegativeResult())
+                            .setPositiveButton(R.string.request_requested_button_confirm, (dialog, which) -> {
                                 mSelectedItems.put(position, true);
                                 toggleListener.onPositiveResult();
                             })
@@ -524,22 +518,20 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 } else {
                     // Re-requesting icons is not allowed
                     toggleListener.onNegativeResult();
-                    new MaterialDialog.Builder(mContext)
-                            .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                            .title(R.string.request_not_available)
-                            .content(R.string.request_requested)
-                            .negativeText(R.string.request_requested_button_cancel)
+                    new MaterialAlertDialogBuilder(mContext)
+                            .setTitle(R.string.request_not_available)
+                            .setMessage(R.string.request_requested)
+                            .setNegativeButton(R.string.request_requested_button_cancel, null)
                             .show();
                 }
             } else if (!mRequests.get(position).isAvailableForRequest()) {
                 // Icon is not available for request
                 toggleListener.onNegativeResult();
                 if (!mRequests.get(position).getInfoText().isEmpty()) {
-                    new MaterialDialog.Builder(mContext)
-                            .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                            .title(mContext.getResources().getString(R.string.request_not_available))
-                            .content(mRequests.get(position).getInfoText())
-                            .positiveText(android.R.string.yes)
+                    new MaterialAlertDialogBuilder(mContext)
+                            .setTitle(mContext.getResources().getString(R.string.request_not_available))
+                            .setMessage(mRequests.get(position).getInfoText())
+                            .setPositiveButton(android.R.string.yes, null)
                             .show();
                 }
             } else {

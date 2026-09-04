@@ -12,7 +12,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.view.LayoutInflater;
+import android.view.View;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -22,7 +25,6 @@ import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.LicensesAdapter;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.License;
 import candybar.lib.utils.AsyncTaskBase;
 
@@ -72,15 +74,14 @@ public class LicensesFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
-                .customView(R.layout.fragment_licenses, false)
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .title(R.string.about_open_source_licenses)
-                .negativeText(R.string.close)
-                .build();
-        dialog.show();
+        View view = LayoutInflater.from(requireActivity()).inflate(R.layout.fragment_licenses, null);
+        AlertDialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setTitle(R.string.about_open_source_licenses)
+                .setView(view)
+                .setNegativeButton(R.string.close, null)
+                .create();
 
-        mListView = (ListView) dialog.findViewById(R.id.licenses_list);
+        mListView = view.findViewById(R.id.licenses_list);
 
         mAsyncTask = new LicensesLoader().executeOnThreadPool();
 

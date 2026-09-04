@@ -16,7 +16,8 @@ import androidx.annotation.ChecksSdkIntAtLeast;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -1150,12 +1151,10 @@ public class LauncherHelper {
                 + ((!isInstalled && (steps.length > 0)) ? "\n\n" : "")
                 + (isInstalled ? "" : installPrompt); // prompt to install the launcher
 
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcher.type.name)
-                .content(content)
-                .positiveText(positiveButton)
-                .onPositive((dialog, which) -> {
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(launcher.type.name)
+                .setMessage(content)
+                .setPositiveButton(positiveButton, (dialog, which) -> {
                     if (isInstalled) {
                         logLauncherManualApply(launcherPackageName, "confirm");
                         if (launcher.type.settingsActivityName == null) return;
@@ -1179,8 +1178,7 @@ public class LauncherHelper {
                         openGooglePlay(context, launcherPackageName);
                     }
                 })
-                .negativeText(negativeButton)
-                .onNegative(((dialog, which) -> {
+                .setNegativeButton(negativeButton, ((dialog, which) -> {
                     logLauncherManualApply(launcherPackageName, "cancel");
                 }))
                 .show();
@@ -1223,16 +1221,14 @@ public class LauncherHelper {
                         Arrays.copyOfRange(instructions, 1, instructions.length - 2)
                 )
                 + "\n\n" + instructions[instructions.length - 1];
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcherName)
-                .content(
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(launcherName)
+                .setMessage(
                         launcher.type.manualApplyFunc.getCompatibilityMessage(context, launcherName)
                                 + "\n\n"
                                 + (launcher.type.manualApplyFunc.isSupported(launcherPackage) ? compatibleText : incompatibleText)
                 )
-                .positiveText(android.R.string.yes)
-                .onPositive((dialog, which) -> {
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                     logLauncherManualApply(launcherPackage, "confirm");
                     if (launcher.type.manualApplyFunc.isSupported(launcherPackage)) {
                         String packageName = "com.samsung.android.themedesigner";
@@ -1267,8 +1263,7 @@ public class LauncherHelper {
                         }
                     }
                 })
-                .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
+                .setNegativeButton(android.R.string.cancel, ((dialog, which) -> {
                     logLauncherManualApply(launcherPackage, "cancel");
                 }))
                 .show();
@@ -1285,12 +1280,10 @@ public class LauncherHelper {
     }
 
     private static void launcherIncompatibleCustomMessage(Context context, String launcherName, String message) {
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcherName)
-                .content(message)
-                .positiveText(android.R.string.yes)
-                .onPositive((dialog, which) -> {
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(launcherName)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
                             new HashMap<>() {{
@@ -1307,8 +1300,7 @@ public class LauncherHelper {
                                 R.string.no_browser), Toast.LENGTH_LONG).show();
                     }
                 })
-                .negativeText(android.R.string.cancel)
-                .onNegative(((dialog, which) -> {
+                .setNegativeButton(android.R.string.cancel, ((dialog, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
                             new HashMap<>() {{
@@ -1322,11 +1314,10 @@ public class LauncherHelper {
     }
 
     private static void notInstalledError(Context context, String launcherName) {
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(launcherName)
-                .content(R.string.apply_launcher_not_installable, launcherName)
-                .positiveText(context.getResources().getString(R.string.close))
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(launcherName)
+                .setMessage(context.getResources().getString(R.string.apply_launcher_not_installable, launcherName))
+                .setPositiveButton(context.getResources().getString(R.string.close), null)
                 .show();
     }
 

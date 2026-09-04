@@ -35,7 +35,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.Purchase;
 import com.danimahardhika.android.helpers.animation.AnimationHelper;
@@ -69,7 +70,6 @@ import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.TapIntroHelper;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -395,7 +395,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     private class RequestLoader extends AsyncTaskBase {
 
-        private MaterialDialog dialog;
+        private AlertDialog dialog;
         private boolean isPacific;
         private String pacificApiKey;
         private boolean isCustom;
@@ -416,14 +416,12 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 pacificApiKey = RequestHelper.getRegularPacificApiKey(requireActivity());
             }
 
-            dialog = new MaterialDialog.Builder(requireActivity())
-                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                    .content(R.string.request_building)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .progress(true, 0)
-                    .progressIndeterminateStyle(true)
-                    .build();
+            ProgressBar progressBar = new ProgressBar(requireActivity());
+            dialog = new MaterialAlertDialogBuilder(requireActivity())
+                    .setMessage(R.string.request_building)
+                    .setCancelable(false)
+                    .setView(progressBar)
+                    .create();
 
             dialog.show();
         }
@@ -561,13 +559,10 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             } else {
                 if (isPacific || isCustom) {
                     int content = isPacific ? R.string.request_pacific_error : R.string.request_custom_error;
-                    new MaterialDialog.Builder(getActivity())
-                            .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
-                            .content(content, "\"" + errorMessage + "\"")
-                            .cancelable(true)
-                            .canceledOnTouchOutside(false)
-                            .positiveText(R.string.close)
-                            .build()
+                    new MaterialAlertDialogBuilder(getActivity())
+                            .setMessage(getActivity().getResources().getString(content, "\"" + errorMessage + "\""))
+                            .setCancelable(true)
+                            .setPositiveButton(R.string.close, null)
                             .show();
                 } else if (noEmailClientError) {
                     Toast.makeText(getActivity(), R.string.no_email_app,
@@ -582,20 +577,18 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     public class CheckConfig extends AsyncTaskBase {
 
-        private MaterialDialog dialog;
+        private AlertDialog dialog;
         private boolean canRequest = true;
         private String updateUrl;
 
         @Override
         protected void preRun() {
-            dialog = new MaterialDialog.Builder(requireActivity())
-                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                    .content(R.string.request_fetching_data)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .progress(true, 0)
-                    .progressIndeterminateStyle(true)
-                    .build();
+            ProgressBar progressBar = new ProgressBar(requireActivity());
+            dialog = new MaterialAlertDialogBuilder(requireActivity())
+                    .setMessage(R.string.request_fetching_data)
+                    .setCancelable(false)
+                    .setView(progressBar)
+                    .create();
 
             dialog.show();
         }
@@ -661,19 +654,15 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
             if (ok) {
                 if (!canRequest) {
-                    new MaterialDialog.Builder(requireActivity())
-                            .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                            .content(R.string.request_app_disabled)
-                            .negativeText(R.string.close)
-                            .positiveText(R.string.update)
-                            .onPositive(((dialog, which) -> {
+                    new MaterialAlertDialogBuilder(requireActivity())
+                            .setMessage(R.string.request_app_disabled)
+                            .setNegativeButton(R.string.close, null)
+                            .setPositiveButton(R.string.update, ((dialog, which) -> {
                                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
                                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                                 requireActivity().startActivity(intent);
                             }))
-                            .cancelable(false)
-                            .canceledOnTouchOutside(false)
-                            .build()
+                            .setCancelable(false)
                             .show();
 
                     mAdapter.resetSelectedItems();
@@ -682,12 +671,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     mAsyncTask = new RequestLoader().executeOnThreadPool();
                 }
             } else {
-                new MaterialDialog.Builder(requireActivity())
-                        .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                        .content(R.string.unable_to_load_config)
-                        .canceledOnTouchOutside(false)
-                        .positiveText(R.string.close)
-                        .build()
+                new MaterialAlertDialogBuilder(requireActivity())
+                        .setMessage(R.string.unable_to_load_config)
+                        .setPositiveButton(R.string.close, null)
                         .show();
             }
         }

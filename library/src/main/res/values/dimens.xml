@@ -46,8 +46,6 @@
     <dimen name="tab_text">14sp</dimen>
 
     <!-- Dialog -->
-    <dimen name="md_bg_corner_radius" tools:override="true">10dp</dimen>
-    <dimen name="md_action_corner_radius" tools:override="true">6dp</dimen>
 
     <!-- Splash Screen -->
     <dimen name="splash_screen_logo">120dp</dimen>

@@ -98,14 +98,6 @@
         <item name="actionModeStyle">@style/ActionModeStyle</item>
         <item name="actionBarTheme">@style/ActionBarOverlay</item>
 
-        <item name="md_background_color">?cb_cardBackground</item>
-        <item name="md_positive_color">?cb_colorAccent</item>
-        <item name="md_neutral_color">?cb_primaryText</item>
-        <item name="md_negative_color">?cb_primaryText</item>
-        <item name="md_content_color">?cb_primaryText</item>
-        <item name="md_link_color">?cb_colorAccent</item>
-        <item name="md_widget_color">?cb_colorAccent</item>
-        <item name="md_item_color">?cb_primaryText</item>
     </style>
 
     <style name="CandyBar.Theme.App.DayNight" parent="CandyBar.Theme.Base" />

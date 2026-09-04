@@ -16,7 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.view.LayoutInflater;
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.ProductDetails;
 import com.android.billingclient.api.QueryProductDetailsParams;
@@ -31,7 +33,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.InAppBillingAdapter;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.InAppBilling;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -118,14 +119,12 @@ public class InAppBillingFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(requireActivity());
-        builder.title(mType == InAppBilling.DONATE ?
-                R.string.navigation_view_donate : R.string.premium_request)
-                .customView(R.layout.fragment_inapp_dialog, false)
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .positiveText(mType == InAppBilling.DONATE ? R.string.donate : R.string.premium_request_buy)
-                .negativeText(R.string.close)
-                .onPositive((dialog, which) -> {
+        View view = LayoutInflater.from(requireActivity()).inflate(R.layout.fragment_inapp_dialog, null);
+        AlertDialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setTitle(mType == InAppBilling.DONATE ?
+                        R.string.navigation_view_donate : R.string.premium_request)
+                .setView(view)
+                .setPositiveButton(mType == InAppBilling.DONATE ? R.string.donate : R.string.premium_request_buy, (d, which) -> {
                     if (mAsyncTask == null) {
                         try {
                             InAppBillingListener listener = (InAppBillingListener) requireActivity();
@@ -136,16 +135,15 @@ public class InAppBillingFragment extends DialogFragment {
                         dismiss();
                     }
                 })
-                .onNegative((dialog, which) ->
-                        Preferences.get(requireActivity()).setInAppBillingType(-1));
-        MaterialDialog dialog = builder.build();
+                .setNegativeButton(R.string.close, (d, which) ->
+                        Preferences.get(requireActivity()).setInAppBillingType(-1))
+                .create();
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
-        dialog.show();
         setCancelable(false);
 
-        mInAppList = (ListView) dialog.findViewById(R.id.inapp_list);
-        mProgress = (ProgressBar) dialog.findViewById(R.id.progress);
+        mInAppList = view.findViewById(R.id.inapp_list);
+        mProgress = view.findViewById(R.id.progress);
 
         if (savedInstanceState != null) {
             mType = savedInstanceState.getInt(TYPE);

@@ -14,11 +14,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.view.LayoutInflater;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.ChangelogAdapter;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.utils.listeners.HomeListener;
 
 /*
@@ -70,17 +71,15 @@ public class ChangelogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .customView(R.layout.fragment_changelog, false)
-                .positiveText(R.string.close)
-                .onPositive((d, which) -> this.onPositive.run())
-                .build();
-        dialog.show();
+        View view = LayoutInflater.from(requireActivity()).inflate(R.layout.fragment_changelog, null);
+        AlertDialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setView(view)
+                .setPositiveButton(R.string.close, (d, which) -> this.onPositive.run())
+                .create();
 
-        ListView changelogList = (ListView) dialog.findViewById(R.id.changelog_list);
-        TextView changelogDate = (TextView) dialog.findViewById(R.id.changelog_date);
-        TextView changelogVersion = (TextView) dialog.findViewById(R.id.changelog_version);
+        ListView changelogList = view.findViewById(R.id.changelog_list);
+        TextView changelogDate = view.findViewById(R.id.changelog_date);
+        TextView changelogVersion = view.findViewById(R.id.changelog_version);
 
         Activity activity = requireActivity();
         try {

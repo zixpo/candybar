@@ -8,7 +8,9 @@ import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.widget.ProgressBar;
 import com.danimahardhika.android.helpers.license.LicenseCallback;
 import com.danimahardhika.android.helpers.license.LicenseHelper;
 
@@ -37,17 +39,17 @@ public class LicenseCallbackHelper implements LicenseCallback {
 
     private final Context mContext;
     private final Runnable mCallback;
-    private final MaterialDialog mDialog;
+    private final AlertDialog mDialog;
 
     public LicenseCallbackHelper(@NonNull Context context, Runnable callback) {
         mContext = context;
         mCallback = callback;
 
-        mDialog = new MaterialDialog.Builder(mContext)
-                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                .content(R.string.license_checking)
-                .progress(true, 0)
-                .build();
+        ProgressBar progressBar = new ProgressBar(mContext);
+        mDialog = new MaterialAlertDialogBuilder(mContext)
+                .setMessage(R.string.license_checking)
+                .setView(progressBar)
+                .create();
         mDialog.setCancelable(false);
         mDialog.setCanceledOnTouchOutside(false);
     }
@@ -81,29 +83,22 @@ public class LicenseCallbackHelper implements LicenseCallback {
     private void showLicenseDialog(LicenseHelper.Status status) {
         int message = status == LicenseHelper.Status.SUCCESS ?
                 R.string.license_check_success : R.string.license_check_failed;
-        new MaterialDialog.Builder(mContext)
-                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                .title(R.string.license_check)
-                .content(message)
-                .positiveText(R.string.close)
-                .onPositive((dialog, which) -> {
+        new MaterialAlertDialogBuilder(mContext)
+                .setTitle(R.string.license_check)
+                .setMessage(message)
+                .setPositiveButton(R.string.close, (dialog, which) -> {
                     onLicenseChecked(status);
-                    dialog.dismiss();
                 })
-                .cancelable(false)
-                .canceledOnTouchOutside(false)
+                .setCancelable(false)
                 .show();
     }
 
     private void showRetryDialog() {
-        new MaterialDialog.Builder(mContext)
-                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                .title(R.string.license_check)
-                .content(R.string.license_check_retry)
-                .positiveText(R.string.close)
-                .cancelable(false)
-                .canceledOnTouchOutside(false)
-                .onPositive((dialog, which) -> ((AppCompatActivity) mContext).finish())
+        new MaterialAlertDialogBuilder(mContext)
+                .setTitle(R.string.license_check)
+                .setMessage(R.string.license_check_retry)
+                .setPositiveButton(R.string.close, (dialog, which) -> ((AppCompatActivity) mContext).finish())
+                .setCancelable(false)
                 .show();
     }
 

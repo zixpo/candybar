@@ -10,7 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.widget.ProgressBar;
 import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
@@ -23,7 +25,6 @@ import candybar.lib.R;
 import candybar.lib.helpers.DeviceHelper;
 import candybar.lib.helpers.ReportBugsHelper;
 import candybar.lib.helpers.RequestHelper;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 
@@ -51,7 +52,7 @@ public class ReportBugsTask extends AsyncTaskBase {
     private final String mDescription;
     private String mZipPath = null;
     private StringBuilder mStringBuilder;
-    private MaterialDialog mDialog;
+    private AlertDialog mDialog;
 
     public ReportBugsTask(Context context, String description) {
         mContext = new WeakReference<>(context);
@@ -60,14 +61,12 @@ public class ReportBugsTask extends AsyncTaskBase {
 
     @Override
     protected void preRun() {
-        mDialog = new MaterialDialog.Builder(mContext.get())
-                .typeface(TypefaceHelper.getMedium(mContext.get()), TypefaceHelper.getRegular(mContext.get()))
-                .content(R.string.report_bugs_building)
-                .progress(true, 0)
-                .progressIndeterminateStyle(true)
-                .cancelable(false)
-                .canceledOnTouchOutside(false)
-                .build();
+        ProgressBar progressBar = new ProgressBar(mContext.get());
+        mDialog = new MaterialAlertDialogBuilder(mContext.get())
+                .setMessage(R.string.report_bugs_building)
+                .setView(progressBar)
+                .setCancelable(false)
+                .create();
         mDialog.show();
         mStringBuilder = new StringBuilder();
     }

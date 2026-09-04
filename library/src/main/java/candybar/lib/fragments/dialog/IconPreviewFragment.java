@@ -16,7 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.view.LayoutInflater;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -30,7 +32,6 @@ import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.fragments.IconsFragment;
-import candybar.lib.helpers.TypefaceHelper;
 
 /*
  * CandyBar - Material Dashboard
@@ -99,13 +100,11 @@ public class IconPreviewFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
-                .customView(R.layout.fragment_icon_preview, false)
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .positiveText(R.string.close)
-                .build();
-
-        dialog.show();
+        View rootView = LayoutInflater.from(requireActivity()).inflate(R.layout.fragment_icon_preview, null);
+        AlertDialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setView(rootView)
+                .setPositiveButton(R.string.close, null)
+                .create();
 
         if (savedInstanceState != null) {
             mIconTitle = savedInstanceState.getString(TITLE);
@@ -113,9 +112,9 @@ public class IconPreviewFragment extends DialogFragment {
             mIconId = savedInstanceState.getInt(ID);
         }
 
-        TextView name = (TextView) dialog.findViewById(R.id.name);
-        ImageView icon = (ImageView) dialog.findViewById(R.id.icon);
-        ImageView bookmark = (ImageView) dialog.findViewById(R.id.bookmark_button);
+        TextView name = rootView.findViewById(R.id.name);
+        ImageView icon = rootView.findViewById(R.id.icon);
+        ImageView bookmark = rootView.findViewById(R.id.bookmark_button);
 
         name.setText(mIconTitle);
 

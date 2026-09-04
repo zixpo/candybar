@@ -12,7 +12,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.view.LayoutInflater;
+import android.view.View;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.util.HashMap;
@@ -23,7 +26,6 @@ import candybar.lib.R;
 import candybar.lib.adapters.dialog.LanguagesAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.helpers.LocaleHelper;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Language;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -75,12 +77,11 @@ public class LanguagesFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
-                .customView(R.layout.fragment_languages, false)
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .title(R.string.pref_language_header)
-                .negativeText(R.string.close)
-                .onNegative(((_dialog, which) -> {
+        View view = LayoutInflater.from(requireActivity()).inflate(R.layout.fragment_languages, null);
+        AlertDialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setTitle(R.string.pref_language_header)
+                .setView(view)
+                .setNegativeButton(R.string.close, (d, which) -> {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",
                             new HashMap<>() {{
@@ -89,11 +90,10 @@ public class LanguagesFragment extends DialogFragment {
                                 put("item", "change_language");
                             }}
                     );
-                }))
-                .build();
-        dialog.show();
+                })
+                .create();
 
-        mListView = (ListView) dialog.findViewById(R.id.listview);
+        mListView = view.findViewById(R.id.listview);
         mAsyncTask = new LanguagesLoader().executeOnThreadPool();
 
         return dialog;

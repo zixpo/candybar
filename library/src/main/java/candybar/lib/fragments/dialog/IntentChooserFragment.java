@@ -22,8 +22,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
+import androidx.appcompat.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.view.LayoutInflater;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.io.File;
@@ -35,7 +36,6 @@ import candybar.lib.R;
 import candybar.lib.adapters.dialog.IntentAdapter;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.RequestFragment;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.IntentChooser;
 import candybar.lib.utils.AsyncTaskBase;
 
@@ -105,36 +105,37 @@ public class IntentChooserFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
-                .customView(R.layout.fragment_intent_chooser, false)
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .positiveText(android.R.string.cancel)
-                .build();
+        View view = LayoutInflater.from(requireActivity()).inflate(R.layout.fragment_intent_chooser, null);
+        AlertDialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setView(view)
+                .setPositiveButton(android.R.string.cancel, null)
+                .create();
 
-        dialog.getActionButton(DialogAction.POSITIVE).setOnClickListener(view -> {
-            if (mAdapter == null || mAdapter.isAsyncTaskRunning()) return;
+        dialog.setOnShowListener(d -> {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
+                if (mAdapter == null || mAdapter.isAsyncTaskRunning()) return;
 
-            if (CandyBarApplication.sZipPath != null) {
-                File file = new File(CandyBarApplication.sZipPath);
-                if (file.exists()) {
-                    if (file.delete()) {
-                        LogUtil.e(String.format("Intent chooser cancel: %s deleted", file.getName()));
+                if (CandyBarApplication.sZipPath != null) {
+                    File file = new File(CandyBarApplication.sZipPath);
+                    if (file.exists()) {
+                        if (file.delete()) {
+                            LogUtil.e(String.format("Intent chooser cancel: %s deleted", file.getName()));
+                        }
                     }
                 }
-            }
 
-            RequestFragment.sSelectedRequests = null;
-            CandyBarApplication.sRequestProperty = null;
-            CandyBarApplication.sZipPath = null;
-            dialog.dismiss();
+                RequestFragment.sSelectedRequests = null;
+                CandyBarApplication.sRequestProperty = null;
+                CandyBarApplication.sZipPath = null;
+                dialog.dismiss();
+            });
         });
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
-        dialog.show();
         setCancelable(false);
 
-        mIntentList = (ListView) dialog.findViewById(R.id.intent_list);
-        mNoApp = (TextView) dialog.findViewById(R.id.intent_noapp);
+        mIntentList = view.findViewById(R.id.intent_list);
+        mNoApp = view.findViewById(R.id.intent_noapp);
         mAsyncTask = new IntentChooserLoader().execute();
 
         return dialog;

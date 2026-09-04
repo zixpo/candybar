@@ -7,7 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.danimahardhika.android.helpers.core.FileHelper;
 
 import java.io.File;
@@ -57,14 +57,11 @@ public class CandyBarCrashReport extends AppCompatActivity {
             String message = getResources().getString(R.string.crash_report_message, getResources().getString(R.string.app_name));
             String emailAddress = getResources().getString(R.string.regular_request_email);
 
-            new MaterialDialog.Builder(this)
-                    .title(R.string.crash_report)
-                    .content(message)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .positiveText(R.string.crash_report_send)
-                    .negativeText(R.string.close)
-                    .onPositive((dialog, which) -> {
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle(R.string.crash_report)
+                    .setMessage(message)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.crash_report_send, (dialog, which) -> {
                         Intent intent = new Intent(Intent.ACTION_SEND);
                         intent.setType("text/plain");
                         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailAddress});
@@ -74,9 +71,9 @@ public class CandyBarCrashReport extends AppCompatActivity {
 
                         startActivity(Intent.createChooser(intent,
                                 getResources().getString(R.string.app_client)));
-                        dialog.dismiss();
                     })
-                    .dismissListener(dialogInterface -> finish())
+                    .setNegativeButton(R.string.close, null)
+                    .setOnDismissListener(dialogInterface -> finish())
                     .show();
         } catch (Exception e) {
             finish();
