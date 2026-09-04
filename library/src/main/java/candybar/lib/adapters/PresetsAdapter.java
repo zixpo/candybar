@@ -105,7 +105,7 @@ public class PresetsAdapter extends RecyclerView.Adapter<PresetsAdapter.ViewHold
             holder.setType(preset.getHeaderText());
         } else if (holder.getItemViewType() == TYPE_CONTENT) {
             PresetInfoLoader.create(new AssetPresetFile(preset.getPath()))
-                    .load(mContext, info -> holder.name.setText(info.getTitle().replaceAll("_", "")));
+                    .load(mContext, info -> holder.name.setText(info.getTitle().replace("_", "")));
 
             if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
                 Glide.with(mContext)

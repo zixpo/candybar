@@ -176,7 +176,7 @@ public class IconsHelper {
                     name = name.replace(strings[0], strings.length > 1 ? strings[1] : "");
             }
         }
-        name = name.replaceAll("_", " ");
+        name = name.replace("_", " ");
         name = name.trim().replaceAll("\\s+", " ");
         return capitalizeWord(name);
     }

@@ -170,7 +170,7 @@ public class ApplyFragment extends Fragment {
                     List<String> showable = new ArrayList<>();
 
                     for (String name : showableLauncherNames) {
-                        String filtered_name = name.toLowerCase().replaceAll(" ", "_");
+                        String filtered_name = name.toLowerCase().replace(" ", "_");
                         showable.add(filtered_name);
                     }
 
@@ -178,7 +178,7 @@ public class ApplyFragment extends Fragment {
                         if (value.name == null) continue;
                         if (value.packages == null) continue;
 
-                        String lowercaseLauncherName = value.name.toLowerCase().replaceAll(" ", "_");
+                        String lowercaseLauncherName = value.name.toLowerCase().replace(" ", "_");
 
                         if (!showable.contains(lowercaseLauncherName)) {
                             LogUtil.d("Launcher Excluded: " + lowercaseLauncherName);
