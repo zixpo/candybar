@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-        TODO:
-            Dutch
-            Romanian
-            Tamil
-            Thai
-    -->
 
     <string-array name="languages_name">
         <item>Arabic</item>
@@ -15,6 +8,7 @@
         <item>Chinese Simplified</item>
         <item>Chinese Traditional</item>
         <item>Czech</item>
+        <item>Dutch</item>
         <item>English</item>
         <item>French</item>
         <item>German</item>
@@ -28,8 +22,11 @@
         <item>Norwegian</item>
         <item>Polish</item>
         <item>Portuguese, Brazilian</item>
+        <item>Romanian</item>
         <item>Russian</item>
         <item>Spanish</item>
+        <item>Thai</item>
+        <item>Tamil</item>
         <item>Turkish</item>
         <item>Ukrainian</item>
     </string-array>
@@ -41,6 +38,7 @@
         <item>zh_CN</item>
         <item>zh_rTW</item>
         <item>cs_CZ</item>
+        <item>nl_rNL</item>
         <item>en_US</item>
         <item>fr_FR</item>
         <item>de_DE</item>
@@ -54,8 +52,11 @@
         <item>no_rNO</item>
         <item>pl_PL</item>
         <item>pt_rBR</item>
+        <item>ro_rRO</item>
         <item>ru_RU</item>
         <item>es_ES</item>
+        <item>th_rTH</item>
+        <item>ta_rIN</item>
         <item>tr_TR</item>
         <item>uk_rUA</item>
     </string-array>
