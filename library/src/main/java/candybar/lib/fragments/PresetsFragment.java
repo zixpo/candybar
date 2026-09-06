@@ -28,8 +28,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.danimahardhika.cafebar.CafeBar;
-import com.danimahardhika.cafebar.CafeBarTheme;
+import com.google.android.material.snackbar.Snackbar;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.io.IOException;
@@ -41,7 +40,6 @@ import java.util.concurrent.CountDownLatch;
 import candybar.lib.R;
 import candybar.lib.adapters.PresetsAdapter;
 import candybar.lib.applications.CandyBarApplication;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Preset;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
@@ -119,13 +117,7 @@ public class PresetsFragment extends Fragment {
                 Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (!isGranted) {
-                    CafeBar.builder(requireActivity())
-                            .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(requireActivity(), R.attr.cb_cardBackground)))
-                            .floating(true)
-                            .fitSystemWindow()
-                            .duration(CafeBar.Duration.MEDIUM)
-                            .typeface(TypefaceHelper.getRegular(requireActivity()), TypefaceHelper.getBold(requireActivity()))
-                            .content(R.string.presets_storage_permission)
+                    Snackbar.make(requireView(), R.string.presets_storage_permission, Snackbar.LENGTH_LONG)
                             .show();
                 }
 

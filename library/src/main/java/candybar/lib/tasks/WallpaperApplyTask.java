@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,8 +21,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.danimahardhika.cafebar.CafeBar;
-import com.danimahardhika.cafebar.CafeBarTheme;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.ref.WeakReference;
 import java.util.Locale;
@@ -352,13 +352,9 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
         }
 
         if (ok) {
-            CafeBar.builder(mContext.get())
-                    .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(
-                            mContext.get(), R.attr.cb_cardBackground)))
-                    .contentTypeface(TypefaceHelper.getRegular(mContext.get()))
-                    .floating(true)
-                    .fitSystemWindow()
-                    .content(R.string.wallpaper_applied)
+            Activity activity = (Activity) mContext.get();
+            View view = activity.findViewById(android.R.id.content);
+            Snackbar.make(view, R.string.wallpaper_applied, Snackbar.LENGTH_LONG)
                     .show();
         } else {
             Toast.makeText(mContext.get(), R.string.wallpaper_apply_failed,
