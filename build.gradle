@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:9.2.1'
+        classpath 'com.android.tools.build:gradle:9.3.1'
     }
 }
 
@@ -13,8 +13,8 @@ allprojects {
     repositories {
         mavenCentral()
         google()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://maven.google.com' }
+        maven { url = 'https://jitpack.io' }
+        maven { url = 'https://maven.google.com' }
     }
 
     rootProject.ext {
@@ -26,8 +26,8 @@ allprojects {
         VersionName = "$major.$minor.$patch"
 
         MinSdk = 21
-        TargetSdk = 36
-        CompileSdk = 36
+        TargetSdk = 37
+        CompileSdk = 37
     }
 }
 

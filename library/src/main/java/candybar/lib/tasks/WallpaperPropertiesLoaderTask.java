@@ -1,7 +1,6 @@
 package candybar.lib.tasks;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
@@ -12,11 +11,9 @@ import com.bumptech.glide.Glide;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import java.io.File;
-import java.io.InputStream;
 import java.lang.ref.WeakReference;
 
 import candybar.lib.databases.Database;
-import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.ImageSize;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.utils.AsyncTaskBase;
@@ -58,30 +55,37 @@ public class WallpaperPropertiesLoaderTask extends AsyncTaskBase {
                 Thread.sleep(1);
                 if (mWallpaper == null) return false;
 
+                Context context = mContext.get();
+                if (context == null) return false;
+
                 if (mWallpaper.getDimensions() != null &&
                         mWallpaper.getMimeType() != null &&
                         mWallpaper.getSize() > 0) {
                     return false;
                 }
 
-                final BitmapFactory.Options options = new BitmapFactory.Options();
+                String url = mWallpaper.getURL();
+                if (url.startsWith("assets://")) {
+                    url = url.replaceFirst("assets://", "file:///android_asset/");
+                }
 
-                InputStream stream = WallpaperHelper.getStream(mContext.get(), mWallpaper.getURL());
+                File file = Glide.with(context)
+                        .asFile()
+                        .load(url)
+                        .submit()
+                        .get();
 
-                if (stream != null) {
-                    Bitmap bitmap = BitmapFactory.decodeStream(stream, null, options);
+                if (file != null && file.exists()) {
+                    final BitmapFactory.Options options = new BitmapFactory.Options();
+                    options.inJustDecodeBounds = true;
+                    BitmapFactory.decodeFile(file.getAbsolutePath(), options);
 
                     ImageSize imageSize = new ImageSize(options.outWidth, options.outHeight);
                     mWallpaper.setDimensions(imageSize);
                     mWallpaper.setMimeType(options.outMimeType);
-
-                    int contentLength = bitmap.getAllocationByteCount();
-                    if (contentLength > 0) {
-                        mWallpaper.setSize(contentLength);
-                    }
+                    mWallpaper.setSize((int) file.length());
 
                     Database.get(mContext.get()).updateWallpaper(mWallpaper);
-                    stream.close();
                     return true;
                 }
                 return false;
@@ -95,23 +99,6 @@ public class WallpaperPropertiesLoaderTask extends AsyncTaskBase {
 
     @Override
     protected void postRun(boolean ok) {
-        if (ok && mContext.get() != null && !((AppCompatActivity) mContext.get()).isFinishing()) {
-            if (mWallpaper.getSize() <= 0) {
-                try {
-                    File target = Glide.with(mContext.get())
-                            .asFile()
-                            .load(mWallpaper.getURL())
-                            .onlyRetrieveFromCache(true)
-                            .submit()
-                            .get();
-                    if (target != null && target.exists()) {
-                        mWallpaper.setSize((int) target.length());
-                    }
-                } catch (Exception ignored) {
-                }
-            }
-        }
-
         if (mCallback.get() != null) {
             mCallback.get().onPropertiesReceived(mWallpaper);
         }
