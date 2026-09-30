@@ -37,7 +37,7 @@ publishing {
 android {
     compileSdk = rootProject.ext.CompileSdk
 
-    namespace 'com.kogitune.activity_transition'
+    namespace = 'com.kogitune.activity_transition'
 
     defaultConfig {
         minSdkVersion rootProject.ext.MinSdk
@@ -45,7 +45,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -71,5 +71,5 @@ java {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0' // higher versions don't support MinSdk 21 anymore
 }
