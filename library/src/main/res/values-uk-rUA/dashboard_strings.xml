@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Значки</string>
     <string name="navigation_view_request">Запит значків</string>
     <string name="navigation_view_wallpapers">Шпалери</string>
+    <string name="navigation_view_wallpaper_app">Застосунок шпалер</string>
     <string name="navigation_view_presets">Шаблони</string>
     <string name="navigation_view_settings">Налаштування</string>
     <string name="navigation_view_faqs">Запитання й відповіді</string>
